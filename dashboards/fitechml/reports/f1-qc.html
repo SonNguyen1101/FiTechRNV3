@@ -1,0 +1,87 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>f1-qc</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>f1-qc</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 615d157e76fe0bf8ef358430e47417ac806f39998178d3f018fdafc3f98d0694</p><pre class="document-text"># F1 Codex re-QC sau remediation
+
+Ngày 18-10-2026. Đối tượng là working-tree bytes của F1 đã sửa, chưa commit; base HEAD `817993687dcab9c9a193f1f02cd9c9af912a6c0c`, branch master. **Đóng QC-F01..QC-F05 trong phạm vi đã kiểm.** Chấp nhận phần engineering contracts/synthetic của F1 với giới hạn dưới đây; không nghiệm thu toàn bộ FTML capability, integration hoặc nghiên cứu.
+
+```
+TASK = FITECHML_F1_CODEX_REQC_V1
+TARGET_COMMIT = N/A: uncommitted working tree; base 817993687dcab9c9a193f1f02cd9c9af912a6c0c; exact bytes bound by re-QC verification JSON
+TARGET_SCOPE = Three changed source modules, three changed tests, metadata correction, successor manifest and preservation checks
+REVIEW_MODE = INDEPENDENT_RED_TEAM
+INDEPENDENCE_LIMITATION = Codex authored R4 design and prior QC/probes, saw implementer report, but did not implement F1 or remediation source/tests. Not blinded or an independent scientific certification.
+VERDICT = PASS_WITH_RESERVATION
+CANONICALIZATION_RECOMMENDATION = SAFE_WITH_EXPLICIT_LIMITATIONS
+ASSUMPTIONS_TESTED = 5 groups: panel validity; instant invariance; join preservation/error handling; numeric shapes; metadata/provenance
+ASSUMPTIONS_BROKEN = 0 in the tested final scope
+BLOCKER_FINDINGS = 0
+HIGH_FINDINGS = 0
+MEDIUM_FINDINGS = 0
+LOW_FINDINGS = 0
+STRONGEST_REJECTION_CASE = The fixes might only fit the reported examples while invalid inputs still pass or equivalent instant representations disagree; reconstructed baseline might not bind original bytes.
+REJECTION_CASE_STATUS = DISPROVEN for the reviewed counterexamples and added boundary checks; exhaustive correctness is not established
+AUTHORITY_INFLATION_RISK = LOW within explicitly structural F1 scope
+REPRESENTATION_DEPENDENCE_RISK = LOW within tested datetime/numeric input classes
+POPULATION_DEPENDENCE_RISK = MEDIUM: synthetic checks only, not real-market validation
+DATA_LEAKAGE_RISK = MEDIUM: no actual pipeline evaluated, references/canaries do not prove PIT safety
+SEMANTIC_DRIFT_RISK = MEDIUM: documented quarantine/rejection behavior changes require caller handling
+DOWNSTREAM_DAMAGE_RISK = LOW within the reviewed F1 contracts, not an assessment of F2 or integration
+REPRODUCIBILITY_RISK = LOW for bound bytes and fresh checks; original snapshot timing remains a disclosed process deviation
+REQUIRED_REMEDIATION = NONE for QC-F01..QC-F05
+OPTIONAL_IMPROVEMENTS = Pin declared numeric domain explicitly at adapter boundary; make optional timezone-test availability visible in CI; preserve snapshot-before-edit discipline
+OPEN_BLOCKER = 0
+OPEN_HIGH = 0
+CODEX_REVIEW = Completed: fresh full suite, independent baseline/final probes, source diff and hash/accounting verification
+```
+
+`SAFE_WITH_EXPLICIT_LIMITATIONS` ở đây chỉ áp dụng engineering F1 theo byte bindings đã kiểm, không là quyền freeze registry G1, approve source/method, deploy, promote hoặc chạy F2. Không commit/stage/push trong QC.
+
+## 1. Evidence thực sự kiểm trong lượt này
+
+**VERIFIED_THIS_TASK:**
+
+- Đọc đủ diff của ba module sửa và source quanh các nhánh liên quan; đọc vùng tests regression. Hai module F1 còn lại và I1 được kiểm hash/bộ test, không claim đọc lại mọi dòng trong re-QC.
+- **35/35 output records** của successor manifest khớp raw bytes tại intake; **30/30 protected paths** khớp hash `before`/`after`. Source/test changes so với intake đúng sáu file allowlist; kiểm lại riêng ở final receipt. Docs thay đổi được manifest ghi riêng, không nhầm với sáu file source/test.
+- Chạy mới `python -B -m pytest -q -p no:cacheprovider`: **327 passed in 0.55s**, exit **0**, host Python **3.14.4**. Log `F1_CODEX_REQC_PYTEST_20261018.log`. Không dùng 327 như coverage hay số capability hoàn tất.
+- Script mới của Codex `F1_CODEX_REQC_PROBES_20261018.py` kiểm lại **13 kịch bản cũ**, dùng exact-disposition expectations và truy cập output an toàn; bản sửa đạt **13/13**. Không sửa script/JSON QC cũ.
+- Đã kiểm hash sáu snapshot tái dựng với intake gốc. Dựng scratch baseline chỉ trong artifacts, thay ba module bằng bytes gốc đã bind, giữ source thật nguyên. Chạy mới cùng 13 kịch bản: **2 controls đạt, 11 expectations thất bại** đúng các lỗi cũ; exit **1 được dự kiến**, log `F1_CODEX_REQC_BASELINE_REPLAY_20261018.log`. Đây là fresh baseline/final comparison, không cần tin kết luận replay của implementer.
+- Bản sửa còn đạt **28/28 kịch bản bổ sung**: bridge quarantine, missing H, variant/H types, reserved columns hai phía và input immutability, output-key có ở một số row, numeric types, False/zero/Fraction controls, Decimal restriction, UTC offset sai kiểu/ngoài tầm và underflow. Một kịch bản chứa **1.000 phép so sánh** theo seed cố định, dùng thứ tự UTC độc lập làm chuẩn cho biểu diễn timezone tương đương và cả hai boundary rules. Tổng **41/41 kịch bản probe đạt**; số 41 này chỉ là probe count, không liên quan 41 node G1, coverage hoặc independent support.
+- Codegraph status read-only: 17 files, 118 nodes, 263 edges, pending 27 added/1 modified tại lần đo. Index chưa cập nhật F1; không sync/reindex, source là bằng chứng. Clone ML4T HEAD/status và hash database được kiểm ở receipt. Không truy cập repo ngoài, dữ liệu thật, OOS hoặc runtime ML4T.
+
+## 2. Disposition năm findings cũ
+
+| Finding | Mức cũ | Kết quả source và hành vi đã xác minh | Disposition |
+| --- | --- | --- | --- |
+| QC-F01 | HIGH | `research_learning.py:315` `assess_horizon_panel` kiểm từng row/key/H, truyền quarantine, loại H sai/ngoài panel; null key và extra H99 bị REJECTED; missing H giữ UNRESOLVED. Tests `test_qc_f01_*`, probes panel và controls đạt. | **CLOSED_VERIFIED_IN_SCOPE** |
+| QC-F02 | HIGH | `research_validation.py:60` và `:92` so instant sau trừ UTC offset thực; cặp DST fold bị loại đúng ở native/UTC, strict/inclusive đúng khi bằng nhau. Offset sai kiểu/ngoài tầm/underflow trả UNRESOLVED. Tests `test_qc_f02_*` và probe biểu diễn tương đương đạt. | **CLOSED_VERIFIED_IN_SCOPE** |
+| QC-F03 | MEDIUM | `join_spec.py:226` chặn reserved fields trước filter; `:258` kiểm output-key được sinh, `:284` kiểm từng output row trước duplicate indexing. Cột nguồn không bị ghi đè, missing/partial output key trả REJECTED thay vì exception; 1:n control còn hợp lệ. Tests `test_qc_f03_*` và probes đạt. | **CLOSED_VERIFIED_IN_SCOPE** |
+| QC-F04 | MEDIUM | `research_learning.py:30/:259` và `research_validation.py:237` chặn NaN/±inf/chuỗi/bool, kiểm target flag bool, claimed value hữu hạn không âm. False flag, zero claim và Fraction outcome controls đạt. Tests `test_qc_f04_*` và probes đạt. | **CLOSED_VERIFIED_IN_SCOPE** |
+| QC-F05 | LOW | Sidecar `F1_REMEDIATION_ERRATUM_QC_F05_20261018.json` giữ manifest gốc, nêu phép đo hiện tại và giới hạn lịch sử. Successor `staged=false` phù hợp index rỗng đo mới. Snapshot script dòng 44 có biểu thức đảo nghĩa `staged = cached_diff == &#x27;&#x27;`; xem giới hạn nguồn bên dưới. | **CLOSED_VERIFIED_IN_SCOPE** |
+
+Không phát hiện finding mới có bằng chứng cần giữ open trong phạm vi re-QC. Việc đóng chỉ áp dụng năm lỗi đã mô tả, không khẳng định phần mềm không còn lỗi.
+
+## 3. Những giới hạn được giữ, không coi là finding chưa sửa
+
+- **Snapshot timing:** file gốc được tái dựng sau sửa, không sao chép trước. Codex xác minh cả sáu raw hashes và tái hiện lỗi gốc trên scratch, nên đủ binding cho QC này. Không suy ra quy trình đã snapshot trước hoặc full Harness capture.
+- **QC-F05 provenance:** Codex đọc snapshot script do implementer cung cấp và kiểm biểu thức/byte binding; không mở scratchpad ngoài repo hoặc chứng minh độc lập script đó đã tạo manifest ở thời điểm lịch sử. Nguyên nhân thực thi lịch sử vẫn **REPORTED_BY_IMPLEMENTER**. Sidecar correction và index hiện tại là đủ để đóng mâu thuẫn metadata trong scope; không quy kết lịch sử stage/unstage.
+- **Panel scope:** identity/horizon only; caller vẫn phải gọi row assessor để kiểm payload/maturity/availability. QUARANTINED mới là thay đổi có chủ đích. STRUCTURALLY_COMPLETE không là training/evaluation-ready.
+- **Time:** UTC ordering được kiểm trên synthetic inputs; không kiểm lịch/timezone dữ liệu thị trường thật. Local ambiguous time thiếu fold được Python đọc fold=0 theo docstring, không suy thành source timestamp đáng tin. UTC underflow hiện fail closed; không chọn boundary/calendar/embargo hoặc PQ-2.
+- **Numeric domain:** helper nhận `numbers.Real` biểu diễn hữu hạn được qua phép kiểm hiện tại; Decimal và số nguyên quá lớn bị reject. Restriction này đã công bố, core target field là float; không chọn chuẩn numeric cho adapter thật ở bước này. Không chọn N_eff method hay gọi references là chứng minh độc lập.
+- **Tests/runtime:** 327 là số tests thực thi tại host Python 3.14.4; không xác minh runtime 3.10–3.13. Mutation set 19 ca cũ không được chạy lại; không gọi mutation coverage hoặc exhaustive correctness. RED logs của CC được đọc theo record, không claim tái tạo toàn bộ 102-test RED workflow; Codex đã chạy baseline/final probes riêng.
+- Regex/reference-use canary và label-name canary vẫn là heuristic đã khai báo. Chưa có purge/grouping/N_eff/splitter hay market-data feature/training/recommendation pipeline. Synthetic không chứng minh hiệu quả trading Việt Nam hoặc PIT của bộ local.
+- Cài đặt R1 có receipt hoàn tất trong verified scope; notebook/model/data smoke chưa chạy. Re-QC không chạy lại WSL/ML4T.
+
+## 4. Trạng thái và bước kế tiếp
+
+**F1_CODEX_QC_ACCEPTED_IN_REVIEWED_CONTRACT_SCOPE**; QC-F01..QC-F05 **CLOSED_VERIFIED_IN_SCOPE**, verdict **PASS_WITH_RESERVATION** với các giới hạn trên. Đây là đánh giá của Codex đối với triển khai CC theo snapshot hiện tại, không phải self-check của implementer và không là acceptance toàn bộ capability.
+
+Giữ integration **HOLD**, I2 chưa đóng, F2 **NOT_AUTHORIZED_BY_THIS_QC**, Autoresearch **NOT_AUTHORIZED**, OQ/PQ giữ nguyên; source/tests/target docs/evidence cũ không sửa trong re-QC. Không cập nhật DOCX/report chung cho QC. Các banner “chờ Codex QC” trong hồ sơ implementer là snapshot trước lượt này; báo cáo mới này là kết luận re-QC, không viết lại manifest cũ.
+
+Bước cụ thể tiếp theo được đề xuất: thiết kế bounded **F2 local-price adapter và causal feature fixtures**, dựa trên contracts F1 cùng inventory local đã có; chỉ chốt phạm vi/schema/checks có thể review, chưa chạy adapter/dữ liệu thật/train. Prompt `PROMPT_CC_F2_DESIGN_ONLY_V1.md` đã soạn **PREPARED_NOT_DISPATCHED**, không tự cấp quyền F2 execution. Những lựa chọn units/calendar/adjustment/availability còn thiếu phải ghi open dependency trước phần phụ thuộc.
+
+**FTML ID 01, 02, 06 (liên quan 07, 11) | F1 consumer contracts | Được chấp nhận trong engineering scope đã kiểm, các ID mới hoàn thành một phần.**
+
+**Tiến độ FTML: 0/18 ID PASS; còn 18 ID chưa PASS.** Không dùng 327 tests, 41 probes, 18 acceptance cases hoặc việc đóng năm findings để tăng bộ đếm capability.
+
+## Plain-language summary
+
+Năm lỗi cũ đã được sửa và Codex kiểm lại được trên source cuối. F1 có thể được dùng làm nền hợp đồng trong phạm vi đã kiểm, với các giới hạn rõ về policy, dữ liệu và phương pháp. Chưa có kết quả nghiên cứu trading hoặc quyền chạy bước kế tiếp từ verdict này.
+</pre></article></body></html>

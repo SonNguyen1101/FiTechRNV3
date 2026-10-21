@@ -1,0 +1,84 @@
+{
+  "schema": "RNV3_REPORTING_ACCEPTANCE_MATRIX_V1",
+  "milestone": "PF14",
+  "rows": [
+    {
+      "criterion_id": "REPORTING/PF14/C01",
+      "contract_type": "Input",
+      "observed": "Chưa có PF13 completion được chấp nhận để mở gate.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Nhận PF13 result được nghiệm thu, final candidate inputs, source/parameter/family và nợ còn lại."
+    },
+    {
+      "criterion_id": "REPORTING/PF14/C02",
+      "contract_type": "Methodology",
+      "observed": "Không có final review hoặc lựa chọn tham số/family/sweep mới trong lượt reporting này.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Review toàn bộ applicable candidates: identity, family, standard/schema, L/U/step/value set, geometry/constraints/count, baseline và authority conflicts."
+    },
+    {
+      "criterion_id": "REPORTING/PF14/C03",
+      "contract_type": "Technical / Engineering / Program",
+      "observed": "Không có execution của PF14 được quan sát.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Đối soát numeric/validity/PIT/session blockers, explicit N/A cho non-tunable; không tự chọn ngưỡng hoặc policy."
+    },
+    {
+      "criterion_id": "REPORTING/PF14/C04",
+      "contract_type": "Output",
+      "observed": "Chưa có quyết định phê chuẩn từng candidate và ô thuộc gate.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Quyết định final parameter/sweep/family có scope từng candidate và các ô liên quan."
+    },
+    {
+      "criterion_id": "REPORTING/PF14/C05",
+      "contract_type": "Acceptance",
+      "observed": "NOT_STARTED; 100 hàng hiện hữu không đủ để PASS.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Chỉ Son phê chuẩn. Outcomes theo nguồn: PASS, PASS_WITH_DOCUMENTED_DEBT có explicit Son authority, REMEDIATION_REQUIRED hoặc BLOCKED."
+    }
+  ],
+  "interpretation": "Current observations are not tests under a retroactively preregistered contract",
+  "milestone_closed": false,
+  "scientific_acceptance_granted": false
+}

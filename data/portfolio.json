@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-21T15:21:10.086485+00:00",
+  "observed_at": "2026-10-21T15:41:01.677980+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -15,11 +15,11 @@
       "category": "Nghiên cứu thị trường",
       "description": "Nền nghiên cứu thị trường Việt Nam, dữ liệu và bộ lọc theo ngành.",
       "local_route": "#overview",
-      "public_url": null,
+      "public_url": "./dashboards/kronos/",
       "connected": true,
       "stale": false,
       "response_sha256": "3fd4e984c0869b4bcd7f1e27026e888dfb39e273dc64572ba64de5301e71d65b",
-      "checked_at": "2026-10-21T15:21:07.746451+00:00",
+      "checked_at": "2026-10-21T15:40:58.843570+00:00",
       "milestones": [],
       "facts": [
         {
@@ -45,7 +45,8 @@
       "status_literal": "INFRASTRUCTURE_READY",
       "status_label": "Hạ tầng sẵn sàng",
       "status_tone": "neutral",
-      "next_action": "Tiếp tục hồ sơ P2 theo dashboard gốc."
+      "next_action": "Tiếp tục hồ sơ P2 theo dashboard gốc.",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "fitechml",
@@ -58,11 +59,11 @@
       "category": "Machine learning",
       "description": "Dữ liệu D1, đặc trưng và quy trình nghiên cứu mô hình có kiểm chứng.",
       "local_route": "#milestones",
-      "public_url": null,
+      "public_url": "./dashboards/fitechml/",
       "connected": true,
       "stale": false,
-      "response_sha256": "12fb2448902300aa9dc891061ac6abb072ef97fd1b8e548eb867537338cd2f8c",
-      "checked_at": "2026-10-21T15:21:07.749449+00:00",
+      "response_sha256": "8d3d8b4f6556b4aa415fe049784a5d0026e39c6a6bf7b8d74643ada1db166265",
+      "checked_at": "2026-10-21T15:40:58.848569+00:00",
       "milestones": [
         {
           "key": "fitechml:R1.1",
@@ -164,7 +165,8 @@
       "status_label": "Chờ nghiệm thu",
       "status_tone": "amber",
       "next_action": "R1.2 — intake D1 toàn universe, sau nghiệm thu",
-      "reported_at": "2026-10-21T15:21:07.748265+00:00"
+      "reported_at": "2026-10-21T15:40:58.847312+00:00",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "fitechsnm",
@@ -177,11 +179,11 @@
       "category": "RN V2 · Điều phối",
       "description": "Kết nối RN, Runtime và AILL theo các mốc và hợp đồng riêng.",
       "local_route": "#overview",
-      "public_url": null,
+      "public_url": "./dashboards/fitechsnm/",
       "connected": true,
       "stale": false,
-      "response_sha256": "814142b2f186a3829bb4ce301b5827132c309fe52142bbd947e9d2dcca629d0c",
-      "checked_at": "2026-10-21T15:21:07.988196+00:00",
+      "response_sha256": "70f800dffea2316eeb1526698cdc88703450f9356047e8b12b4ce18ee33f0799",
+      "checked_at": "2026-10-21T15:40:58.952950+00:00",
       "milestones": [
         {
           "key": "fitechsnm:M1",
@@ -261,7 +263,8 @@
       "status_label": "Đang hoàn thiện",
       "status_tone": "violet",
       "next_action": "Hoàn thiện program control và các binding đầu vào đúng phạm vi.",
-      "reported_at": "2026-10-21T15:21:07.983776+00:00"
+      "reported_at": "2026-10-21T15:40:58.926129+00:00",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "rnv3",
@@ -274,11 +277,11 @@
       "category": "RN V3 · POP100",
       "description": "Hoàn thiện R0, ma trận 100 × 17 và lộ trình bàn giao R1.",
       "local_route": "#overview",
-      "public_url": null,
+      "public_url": "./dashboards/rnv3/",
       "connected": true,
       "stale": false,
-      "response_sha256": "f33f380f74ef5837aece306a8fc0255ef14ac55c731edf07d0eddd488965c5d3",
-      "checked_at": "2026-10-21T15:21:10.085485+00:00",
+      "response_sha256": "904ec0b8c7c80518720d431a7ee417cf12e0cc048e88e19fb4be60aaf07ba98e",
+      "checked_at": "2026-10-21T15:41:01.677980+00:00",
       "milestones": [
         {
           "key": "rnv3:M1",
@@ -357,9 +360,10 @@
       "status_literal": "NOT_COMPLETE",
       "status_label": "Cần xử lý blocker",
       "status_tone": "amber",
-      "reported_at": "2026-10-21T15:21:09.666308+00:00",
+      "reported_at": "2026-10-21T15:41:01.125475+00:00",
       "evidence_as_of": "2026-10-21T06:16:02.618182+00:00",
-      "next_action": "Xử lý binding bootstrap IND061 trước qualification và replay."
+      "next_action": "Xử lý binding bootstrap IND061 trước qualification và replay.",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "stockmonitor",
@@ -373,11 +377,11 @@
       "group": "tools",
       "description": "Theo dõi lượt nhắc cổ phiếu từ tin tổng hợp và báo cáo công ty chứng khoán.",
       "local_route": "finpath_dashboard.html",
-      "public_url": null,
+      "public_url": "./dashboards/stockmonitor/",
       "connected": true,
       "stale": false,
       "response_sha256": "77644ce9e26da74d8fb9a4cbd905c8d3ab36a0beaf5e0a210a43fd2fccecd0d8",
-      "checked_at": "2026-10-21T15:21:07.847325+00:00",
+      "checked_at": "2026-10-21T15:40:58.944951+00:00",
       "milestones": [],
       "facts": [
         {
@@ -403,7 +407,8 @@
       "status_label": "Snapshot · cần đối chiếu",
       "status_tone": "amber",
       "phase_basis": "Công cụ dữ liệu snapshot; không có milestone nghiên cứu trong kết nối này.",
-      "next_action": "Mở bảng gốc để tra cứu; đối chiếu số tổng trước khi dùng thống kê."
+      "next_action": "Mở bảng gốc để tra cứu; đối chiếu số tổng trước khi dùng thống kê.",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "lunavn",
@@ -417,11 +422,11 @@
       "group": "tools",
       "description": "Bộ lọc động lượng, tăng trưởng, chủ đề và ETF. Hiện dùng dữ liệu minh hoạ.",
       "local_route": "",
-      "public_url": null,
+      "public_url": "./dashboards/lunavn/",
       "connected": true,
       "stale": false,
       "response_sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603",
-      "checked_at": "2026-10-21T15:21:07.939877+00:00",
+      "checked_at": "2026-10-21T15:40:59.206483+00:00",
       "milestones": [],
       "facts": [
         {
@@ -443,11 +448,11 @@
       "documents": [
         {
           "title": "Nghiên cứu sâu",
-          "route": "learn"
+          "route": "#/learn"
         },
         {
           "title": "Giới thiệu LunaVN",
-          "route": "about"
+          "route": "#/about"
         }
       ],
       "phase": "DEMO",
@@ -457,7 +462,8 @@
       "status_tone": "violet",
       "phase_basis": "Công cụ bộ lọc; không tạo milestone hoặc nghiệm thu từ kết nối API.",
       "next_action": "Mở bộ lọc để khám phá giao diện; dữ liệu minh hoạ không dùng làm kết quả thị trường.",
-      "page_sha256": "0ebcbec16e5ce530ee08569175152533b22855bd6077624f38c2c45ae52f27bf"
+      "page_sha256": "3d896eb21438a82992807c7ea1988755cafa5a701c1c37edcbf25d1a6a660030",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     }
   ],
   "connected": 6,

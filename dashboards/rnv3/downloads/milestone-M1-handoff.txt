@@ -1,0 +1,3 @@
+Nguồn local: M1 · handoff
+SHA256: 7edebdcc4c4f7d62691b9c6b6d1a5ede2e97ec6e93d4e033932813f58fcdc457
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

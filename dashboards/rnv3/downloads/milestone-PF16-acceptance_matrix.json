@@ -1,0 +1,84 @@
+{
+  "schema": "RNV3_REPORTING_ACCEPTANCE_MATRIX_V1",
+  "milestone": "PF16",
+  "rows": [
+    {
+      "criterion_id": "REPORTING/PF16/C01",
+      "contract_type": "Input",
+      "observed": "PF15 final freeze chưa có.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED (`MILESTONE_D_FORMAL_CLOSURE = PENDING`)",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "PF15 final freeze và chuỗi lịch sử R0, A/B/C/D, D1–D14, assessment, QC và reconciliation."
+    },
+    {
+      "criterion_id": "REPORTING/PF16/C02",
+      "contract_type": "Methodology",
+      "observed": "Chưa đối soát cuối chuỗi R0→A→B→C→D với final freeze.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED (`MILESTONE_D_FORMAL_CLOSURE = PENDING`)",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Đối soát 85 implementation + 15 VERIFIED_REUSE thành 100/100; mọi supersession và replacement có authority tường minh."
+    },
+    {
+      "criterion_id": "REPORTING/PF16/C03",
+      "contract_type": "Technical / Engineering / Program",
+      "observed": "Không xóa/sửa lịch sử 85 implementation + 15 verified reuse.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED (`MILESTONE_D_FORMAL_CLOSURE = PENDING`)",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Kiểm lineage/hash/accounting, không silent deletion/replacement và giữ lịch sử bất biến."
+    },
+    {
+      "criterion_id": "REPORTING/PF16/C04",
+      "contract_type": "Output",
+      "observed": "Chưa có formal closure record.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED (`MILESTONE_D_FORMAL_CLOSURE = PENDING`)",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Final reconciliation và formal closure record của Milestone D."
+    },
+    {
+      "criterion_id": "REPORTING/PF16/C05",
+      "contract_type": "Acceptance",
+      "observed": "NOT_STARTED theo roadmap; MILESTONE_D_FORMAL_CLOSURE chưa được cấp.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED (`MILESTONE_D_FORMAL_CLOSURE = PENDING`)",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Chỉ khi đối soát đủ theo nguồn và Son nghiệm thu mới MILESTONE_D_FORMAL_CLOSURE=TRUE."
+    }
+  ],
+  "interpretation": "Current observations are not tests under a retroactively preregistered contract",
+  "milestone_closed": false,
+  "scientific_acceptance_granted": false
+}

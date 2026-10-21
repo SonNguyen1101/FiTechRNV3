@@ -1,0 +1,3 @@
+Nguồn local: Governor QC bootstrap V2 và đề xuất phục hồi
+SHA256: d23aef584ed0562570eab0914e8ca1d12bffd9b5e762317ce1a92c7e5f63071d
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

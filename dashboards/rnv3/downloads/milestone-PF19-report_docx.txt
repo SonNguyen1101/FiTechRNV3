@@ -1,0 +1,3 @@
+Nguồn local: PF19 · report_docx
+SHA256: 9f1036fe5a51139b394341912e12930a9f90995c996a54caeaeda19aabf108a8
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

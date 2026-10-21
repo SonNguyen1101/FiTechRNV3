@@ -1,0 +1,32 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>d1-scope</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>d1-scope</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 5ac371cd9e23d83e5f561849c197f2337302c498e23772d3c01733412a5afb62</p><pre class="document-text"># Phạm vi hiện hành chỉ D1 — 21-10-2026
+
+Nguồn thẩm quyền: chỉ đạo trực tiếp của người dùng “dữ liệu chỉ làm ở khung D1 (không sử dụng khung H1, H4) loại dữ liệu H1, H4”. Vì chỉ D1, W1 cũng ngoài phạm vi. Không có quyền xóa file gốc hoặc evidence lịch sử. Không phải nghiệm thu R1.1, không mở R1.2.
+
+Đã thêm `config/market_data_scope.json`: allowed_timeframes=[1D], không resample từ non-D1. Runner `scripts/f2_r1_pilot.py` hiện chỉ có3route AAA_1D, VN30_1D, VNINDEX_1D; mọi path khác bị reject trước FsProbe. Policy không được mở thêm timeframe ngầm. Output cho run D1 sau này đổi sang thư mục riêng để không ghi đè run7file cũ; lượt correction này không execute runner.
+
+Đã chèn chỉ đạo hiện hành vào AGENTS, PROJECT_HANDOFF, progress, SESSION_CONTEXT, roadmap, DATA_CONTRACT, METHODOLOGY. Giữ nguyên bytes lịch sử bằng insert-only. Source runner trước sửa nằm ở `artifacts/f2_d1_scope_20261021/before/scripts/f2_r1_pilot.py`; hash report/run cũ vẫn truy về source gốc, không diễn giải source mới như source đã chạy7file.
+
+Active scope `artifacts/f2_d1_scope_20261021/active_d1_scope.json` chọn3receipt D1 từ kết quả cũ đã hash-bound, không đọc CSV mới:
+
+| File D1 | Input | Retained | Quarantine |
+|---|---:|---:|---:|
+| AAA_1D | 4.052 | 4.051 | 1 |
+| VN30_1D | 3.518 | 3.518 | 0 |
+| VNINDEX_1D | 6.387 | 6.387 | 0 |
+| Tổng | 13.957 | 13.956 | 1 |
+
+Loại4route lịch sử H1/W1, tổng37.875rows khỏi active scope. H4 không có trong pilot cũ. Thống kê29.228zero-volume của pilot7file không còn là active D1 statistic; D1 chỉ có2retainedzero-volume, đều ởAAA. Dòng AAA2013-06-21 vẫn cách ly OHLC. Không sửa raw bytes hoặc nội dung receipt. D1subset chưa chứng minh độ mới, semantics/PIT/license hoặc hiệu quả trading.
+
+Kiểm thử trước sửa:8case mới có7failed/1passed (6behavior failures,1missing-policy-file,1H4rejectcontrol đãpass). Sau sửa8/8pass. Full suite mới **654pass =646cũ+8**,0skip/xfail,30,17s. Log `F2_D1_SCOPE_20261021_RUN_TESTS.log`; đây self-verification cùng Codeximplementer, không independentQC. Không sửa635F1/F2tests cũ hoặc11R1runner tests. Không sửa core `src/`, pyproject/env/clone.
+
+Phương pháp: thay ràng buộc input timeframe ở runner, không thay công thức ML4T, rolling windows hoặc label horizon. H={5,10,20,40} là số phiên D1, không phải khung nến H1/H4. N/A thuật toán nghiên cứu mới; SOURCE_SPEC_MATCH/T2status cũ không được nâng từ test scope này.
+
+| Công cụ | Thực tế / evidence / giới hạn |
+|---|---|
+| Harness Engineering | Contract/intake snapshot→RED/GREEN→full suite→scope selection→preservation; partial manual, không independentQC/enforcement toàn vòng đời. |
+| Autoresearch | NOT_AUTHORIZED/NOT_RUN; không trial/model, không FAIL vì chưa cấp quyền. |
+| Codegraph | Chỉ đối chiếu DBhash trước/sau, khôngsync/query; freshnessNOT_VERIFIED. Source/config trực tiếp là bằng chứng. |
+| Memory | Used for routing; userD1instruction và livefiles thắng note cũ. Không ghi globalmemory. |
+
+DoD: runtime entrypoint/config/docs thống nhất; source trước sửa cósnapshot; core/tests/evidence/QRW không đổi; indexempty, khôngcommit/push; globalresearchlog/decisions không sửa vì chỉ ghi trực tiếp userconstraint vàoAGENTS/contract, không tự chốt policy khoa học. KhôngDOCX mới vì đây scope correction, không mốc nghiên cứu mới; reportcommon giữ lịch sử, phần nghiên cứu tiếp theo chỉ dùngD1 và sẽ bổ sung định chính scope khi cập nhật. R1.1chờusernghiệmthu, FTML01,06(02related),0/18IDPASS.
+</pre></article></body></html>

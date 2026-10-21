@@ -1,0 +1,451 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>g1-roadmap</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>g1-roadmap</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: ae8e9628ee95df0dcee59cb65b7a649229f1bf153de52e716126a31b3936dd91</p><pre class="document-text"># Roadmap FiTechML theo đủ 41 node G1 CCE
+
+Trạng thái: **PROPOSED / DOCUMENTARY_DELIVERY_PENDING_OWNER_REVIEW**. Đây là projection kế hoạch của FiTechML, không là registry/status/authority G1 mới. Chỉ topology 41 node được đối chiếu set/order trong R4; task, output và QC FiTechML là đề xuất của Codex. R4 chưa triển khai 41 adapter hoặc chạy bất kỳ node G1 nào.
+
+Nguồn live: G1 main HEAD `0e1a9547bf76660a279db7b14498b2b297eb6fee`, kèm working-tree hashes vì Runtime/Harness và AILL README có dirty/untracked work. Registry/crosswalk/edge-map/AILL matrix/M00 map đều cùng **41/41 node**. SP0=12, SP1=7, SP2=1, OUTSIDE_SP=21. Có metadata inventory 23.857 file, chỉ 27 nguồn được hash/đọc theo coverage và 3 schema header được xem; không gọi đây là đã đọc mọi thuật toán.
+
+## Cách đi từng node
+
+Số 01–41 là **canonical registry order**, không là lịch tự động chạy node 01→41. `MKT_REGIME` và các nhánh market data có dependency riêng; `R5C` conditional; `RNV2_GATE`/`POLICY_V2` là prerequisites; production là nhánh song song, `PROD_OBS` đóng vòng qua change intake. Cạnh lấy từ edge map là dependency được tài liệu báo, không chứng minh call/data-flow đã chạy. Cột next/gate ở CSV giữ đúng seal-time; authority đang có hiệu lực phải được bind lại trước task material. Earliest replay hint không tự là earliest affected node của một thay đổi cụ thể.
+
+FiTechML hỗ trợ nghiên cứu/khuyến nghị qua artifacts; không làm thay phương pháp, MTP, gate, selection, registry, promotion, activation, sizing, phân bổ vốn hoặc broker. Đủ 41 node trong kế hoạch không có nghĩa triển khai 41 mô hình hoặc buộc mọi node phải đổi.
+
+## Các gói triển khai đề xuất và thứ tự
+
+| Gói | Công việc và node liên quan | Điều kiện vào | Exit evidence | Trạng thái |
+| --- | --- | --- | --- | --- |
+| F0 | Survey mới, identity và roadmap 41 node | User giao khảo sát | Source capture, findings và 41-row projection | R4 đã thực hiện tài liệu; không cấp integration PASS |
+| F1 | Contract market-data + learning; R0/R1/PIT_UNIV; binding cho R2 | Review design; giữ I1 compatibility; các policy để mở nếu chưa chọn | Schemas/validators với synthetic negative cases; no real data ingestion | Chưa code |
+| F2 | Local-price adapter và causal feature fixtures; MKT_REGIME/R2 | F1 interface accepted; units/calendar/adjustment explicit | Read-only market intake, feature lineage/canaries, không học từ outcome | Chưa code/run |
+| F3 | G1 research-artifact adapters và label contract; R3..R6, gates, R03..RQ2/RQ4 | F1/F2; source/lineage/export và owner policy được bind | Key/grain/cardinality/maturity/overlap/accounting fixtures; đủ H theo contract | Chưa nhận artifact thật |
+| F4 | Synthetic baseline/evaluator trước; RQ3/RQ3EXT/SHADOW/T10/PHASE2/COMPARE | F1/F2 + F3 synthetic-schema QC; real evaluation cần F3 source binding và approved policies | Return-risk distribution theo H; calibration/coverage; reproducibility và failures | Chưa train; synthetic không chứng minh hiệu quả VN |
+| F5 | Interfaces validation/authority/model version; PHASE3_GATE/PHASE3/PROMOTION/PROD_ACTIVATION/REGISTRY | Evidence + authority/partition/version pin riêng | References/receipts chỉ đọc; không tạo quyền G1 | Chưa implementation/activation |
+| F6 | Observation/advisory shadow; SCREENER..TRADE_ELIG và PROD_OBS | Plane 2/3 contract; owner chọn consumer cluster; model được approve; receipt path rõ | Frozen inference→consumer receipt→outcome/feedback trace trong scope | Chưa shadow; không chặn mọi thiết kế vì runtime pending |
+| F7 | Research interfaces SLTP/RISK/CAPITAL/BUY_READY | Owner mở node, method/risk policy và consumer path được authorize | Advisory specs + isolated tests theo từng node | Chưa triển khai; không broker/order |
+
+F3 gồm phần schema/fixtures và phần bind artifact thật. F4 synthetic chỉ cần phần schema/fixtures đã QC, không chờ quyền export/ingest G1 thật; F4 trên dữ liệu thật mới cần source/lineage/arm và policies được owner bind. Đây là chia scope công việc, không thêm node hoặc science gate.
+
+F5 registry identity tối thiểu cần có từ F1/F4, không đợi train xong mới tạo lineage. F6 contract có thể soạn trước, nhưng inference/consumer execution chỉ mở khi prerequisites của F6 thực sự có. F0–F7 là work-package labels của báo cáo, không phải node G1 mới hoặc standing dispatch.
+
+## Chi tiết đủ 41 node
+
+
+### 01 MKT_REGIME — Market Regime
+
+- Phase/owner: OUTSIDE_SP / Research (cross-cutting). G1 input → output: VNINDEX D1 OHLCV → regime series.
+- Gói F2: Bind VNINDEX local và regime-method version; nghiên cứu causal regime features, Kalman/spectral/HMM trong namespace riêng.
+- Đầu ra FiTechML: RegimeFeatureSpec và feature receipt theo decision time.
+- QC/giới hạn: Không thay regime G1 bằng state ML; không dùng smoother hoặc toàn kỳ để gắn regime quá khứ.
+- Dependency upstream (tài liệu): EMPTY_IN_EDGE_MAP_NOT_PROOF_OF_NO_DEPENDENCY; next seal-time: R2; gate seal-time: Market Regime Method Occupancy/Transition Audit (D347 Priority 1).
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=ACTIVE_UNAUDITED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G014;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:2, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 02 R0 — Research Method Contract
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: none → method hash.
+- Gói F1: Bind methodology và intended target; tách market-data, learning và governance contracts; giữ uncertainty policy refs.
+- Đầu ra FiTechML: LearningContractSpec có method/schema/hash/cutoff, mục đích và owner.
+- QC/giới hạn: Không biến policy ML4T hoặc report roadmap thành method authority G1; không tự chốt OQ/PQ.
+- Dependency upstream (tài liệu): EMPTY_IN_EDGE_MAP_NOT_PROOF_OF_NO_DEPENDENCY; next seal-time: R1; gate seal-time: none (self-authorizing freeze).
+- G1 status được nguồn báo: FROZEN. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:3, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 03 R1 — Authorized Parameter Candidate Space
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R0 → 438 candidate rows.
+- Gói F1: Đọc candidate/variant inventory được xuất hợp lệ; giữ 0/1/nhiều tuple và toàn bộ provenance.
+- Đầu ra FiTechML: CandidateIdentityAdapterSpec; candidate ↔ variant mapping có authority ref.
+- QC/giới hạn: Không chọn tuple đầu, winner hoặc code default; không mở thêm sweep/candidate từ model.
+- Dependency upstream (tài liệu): R0; next seal-time: R2; gate seal-time: none.
+- G1 status được nguồn báo: FROZEN. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:4, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 04 R2 — Evidence Cube
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R0,R1 → 445008-slot primitives.
+- Gói F2: Đặc tả feature store causal từ OHLCV local và cube có grain/lineage riêng; phân tách features khỏi outcome.
+- Đầu ra FiTechML: FeaturePanelSpec event/lane/bar và manifest đơn vị, adjustment, calendar.
+- QC/giới hạn: Không giả định CSV giá là research cube; audit join keys, availability và toàn bộ denominator.
+- Dependency upstream (tài liệu): R0;R1; next seal-time: R3; gate seal-time: none.
+- G1 status được nguồn báo: FROZEN. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:5, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 05 R3 — Sample Eligibility + Conditional Edge
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R2 → eligible candidate ledger.
+- Gói F3: Nhận eligibility/edge như evidence có method version; đo coverage/missingness theo population.
+- Đầu ra FiTechML: EligibilityReceipt và support diagnostics theo grain gốc.
+- QC/giới hạn: Không thay ngưỡng eligibility/N_eff, dùng model filter candidate hoặc gọi unique count là độc lập.
+- Dependency upstream (tài liệu): R2; next seal-time: R4; gate seal-time: Son adoption decision for V2.
+- G1 status được nguồn báo: V1_FROZEN_V2_AUDITED_NOT_ADOPTED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:6, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 06 R4 — Structural Robustness Readiness
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R3 → diagnostic flags (0 filtered).
+- Gói F3: Nhận diagnostic flags và kiểm feature quality/drift; giữ diagnostic-only.
+- Đầu ra FiTechML: StructuralDiagnosticsAdapterSpec và disposition ledger.
+- QC/giới hạn: Không biến flag thành bộ lọc; input = retained + excluded + quarantined nếu có lọc được phép.
+- Dependency upstream (tài liệu): R3; next seal-time: R5A_AUTH; gate seal-time: none (never filters).
+- G1 status được nguồn báo: FROZEN_V1_PENDING_V2. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:7, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 07 R5A_AUTH — R5A Method / Multiplicity Authority
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R0,R4 → alpha allocation + bootstrap design.
+- Gói F3: Bind family/candidate universe, alpha/bootstrap/method và quyền của từng run.
+- Đầu ra FiTechML: MultiplicityAuthorityReference, chỉ đọc.
+- QC/giới hạn: Không chọn alpha/B từ kết quả ML hoặc tự cấp quyền MTP; population đổi phải được owner xem lại.
+- Dependency upstream (tài liệu): R0;R4; next seal-time: R5A; gate seal-time: new authority for m=11064.
+- G1 status được nguồn báo: FROZEN_FOR_M6513_NEW_AUTHORITY_REQUIRED_FOR_M11064. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:8, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 08 R5A — Multiple Testing (MTP)
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R4,R5A_AUTH → supported/rejected candidates.
+- Gói F3: Ingest MTP support/rejection có family/variant identity; giữ failed/rejected rows trong lineage.
+- Đầu ra FiTechML: MTPSupportAdapterSpec và population reconciliation.
+- QC/giới hạn: Không dùng p-value làm nhãn lợi nhuận event, không thay MTP bằng model score.
+- Dependency upstream (tài liệu): R4;R5A_AUTH; next seal-time: R5B; gate seal-time: R5A_AUTH gate.
+- G1 status được nguồn báo: COMPLETE_V1_BLOCKED_V2. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:9, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 09 R5B — Non-selective Characterization
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R5A → proximity bands B0-B3/NhA/NhC.
+- Gói F3: Nhận non-selective characterization làm context, tách khỏi predictive target.
+- Đầu ra FiTechML: CharacterizationContextSpec; không ranking/elimination.
+- QC/giới hạn: Không tạo Pareto/winner ngầm; metric mô tả không cấp quyền selection.
+- Dependency upstream (tài liệu): R5A; next seal-time: R6; gate seal-time: none (no selection authority).
+- G1 status được nguồn báo: COMPLETE_V1. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:10, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 10 R5C — Neighborhood Robustness Labeling
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R5B (nominal) → 6-state label.
+- Gói F3: Giữ branch conditional và trạng thái NOT_APPLICABLE/bypass theo authority được bind.
+- Đầu ra FiTechML: ConditionalBranchDisposition, không bắt chạy nhãn chưa có authority.
+- QC/giới hạn: Không ép R5C vào critical path hiện tại hoặc tự chọn margin để lấp đủ 6 trạng thái.
+- Dependency upstream (tài liệu): R5B; next seal-time: R6 (nominal); gate seal-time: margin authority (2/6 states blocked).
+- G1 status được nguồn báo: DESIGNED_NOT_IMPLEMENTED_SUPERSEDED_IN_PRACTICE. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G016;INT02-G017;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:11, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 11 R6 — Supported Variant Set / Resolver Map
+
+- Phase/owner: SP0 / Param Opt V2. G1 input → output: R5A,R5B → supported variant set + resolver map.
+- Gói F3: Bind supported variant set/resolver-map version; bảo toàn multi-variant và source lineage.
+- Đầu ra FiTechML: SupportedVariantSetReceipt; exact membership read-only.
+- QC/giới hạn: Không thêm/xóa variant nhờ prediction; research map không phải production membership.
+- Dependency upstream (tài liệu): R5A;R5B; next seal-time: RNV2_GATE / LINE2 promotion; gate seal-time: Son review for policy creation.
+- G1 status được nguồn báo: COMPLETE_RESEARCH_ONLY_V1. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G019;INT02-G020;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:12, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 12 RNV2_GATE — RN V2 Activation Gate
+
+- Phase/owner: OUTSIDE_SP / RN v2. G1 input → output: R6 + 6 prerequisites → GO/HOLD.
+- Gói F3: Nhận reconciliation của các prerequisites và scoped dispatch làm input kiểm quyền.
+- Đầu ra FiTechML: ActivationPrerequisiteReference, GO/HOLD chỉ từ owner.
+- QC/giới hạn: File tồn tại, certification PASS và entry_allowed không tự thành quyền chạy RN.
+- Dependency upstream (tài liệu): R6; next seal-time: R03_V2; gate seal-time: Son approval, policy freeze, R03 V2 authorization, Market Regime Audit, Joint Direction Decision, D346 remediation.
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=BLOCKED_MULTIPLE_PREREQUISITES_OPEN. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G003;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:13, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 13 POLICY_V2 — TICKER_REGIME_PARAMETER_POLICY_V2
+
+- Phase/owner: OUTSIDE_SP / Param Opt V2 -&gt; RN v2. G1 input → output: R6 → frozen policy object.
+- Gói F3: Bind policy object bytes, authority, effective version và lineage; giữ provenance chưa đủ ở HOLD.
+- Đầu ra FiTechML: PolicyBindingSpec liên kết policy ↔ parameter map ↔ run.
+- QC/giới hạn: Không gọi NOT_CREATED là fact hiện hành chỉ từ registry; artifact có mặt cũng chưa chứng minh approved.
+- Dependency upstream (tài liệu): R6; next seal-time: R03_V2; gate seal-time: Son explicit approval.
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=NOT_CREATED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G004;INT02-G005;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:14, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 14 R03_V2 — Full Alpha Matrix V2
+
+- Phase/owner: SP0 / RN v2. G1 input → output: POLICY_V2 → signal/alpha events.
+- Gói F3: Thiết kế event intake theo ticker/strategy/regime/variant và full event identity; nguồn G1 tạo signal.
+- Đầu ra FiTechML: ResearchEventAdapterSpec, không tự sinh signal canonical.
+- QC/giới hạn: Không collapse cross-variant cùng ngày; không coi phase2_event_id/lane_id là globally unique thiếu run binding.
+- Dependency upstream (tài liệu): POLICY_V2; next seal-time: RN01_V2; gate seal-time: RNV2_GATE.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:15, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 15 RN01_V2 — Regime Alpha Matrix V2
+
+- Phase/owner: SP0 / RN v2. G1 input → output: R03_V2 → regime alpha stats.
+- Gói F3: Nhận event ledger và regime/lane context theo same lineage; tách aggregate view.
+- Đầu ra FiTechML: EventContextJoinSpec có declared cardinality.
+- QC/giới hạn: Không broadcast cell statistic thành event label; regime tại entry phải bind theo source.
+- Dependency upstream (tài liệu): R03_V2; next seal-time: RQ1_V2; gate seal-time: none (characterizes only).
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:16, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 16 RQ1_V2 — Alpha Horizon Decay V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: RN01_V2 → horizon-decay profile.
+- Gói F3: Map horizon decay và event outcome cho H={5,10,20,40}; giữ toàn population.
+- Đầu ra FiTechML: HorizonPanelSpec và source-role classification.
+- QC/giới hạn: Top30 chỉ review shortlist; không cắt training universe từ shortlist, không chọn canonical H.
+- Dependency upstream (tài liệu): RN01_V2; next seal-time: RQ2_V2; gate seal-time: none.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:17, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 17 RQ2_V2 — Sample-Size Reliability V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: RQ1_V2 → reliability class.
+- Gói F3: Tách row occurrences, unique event, unique event×H và N_eff methodology; thiết kế dependency groups.
+- Đầu ra FiTechML: SupportAccountingSpec và dependency-policy reference.
+- QC/giới hạn: Khác key không chứng minh độc lập; không tự dùng N/H hoặc chọn group_by=ticker.
+- Dependency upstream (tài liệu): RQ1_V2; next seal-time: RQ3_V2; gate seal-time: none.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:18, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 18 RQ3_V2 — Edge Mechanism Cohort V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: RQ2_V2 → payoff/hit-rate profile.
+- Gói F4: Dùng payoff/hit-rate/cohort evidence làm diagnostics và baseline comparison ở scope cho phép.
+- Đầu ra FiTechML: ReturnRiskBaselineDesign và metric definitions theo H/cohort.
+- QC/giới hạn: Không dùng full-period cohort metric làm feature cùng kỳ; không claim superiority từ count.
+- Dependency upstream (tài liệu): RQ2_V2; next seal-time: RQ3EXT_V2; gate seal-time: none.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:19, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 19 RQ3EXT_V2 — RQ3 Extension V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: RQ2_V2,RQ3_V2 → extended cohort profile.
+- Gói F4: Đặc tả heterogeneity/persistence diagnostics theo variant, regime, time và ticker.
+- Đầu ra FiTechML: ConditionalEvaluationSlices, denominator và lineage.
+- QC/giới hạn: Không lựa strata sau kết quả rồi coi preregistered; giữ search/exposure ledger theo owner.
+- Dependency upstream (tài liệu): RQ2_V2;RQ3_V2; next seal-time: RQ4_V2; gate seal-time: none.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:20, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 20 RQ4_V2 — MFE/MAE Path and Exit Efficiency V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: RQ3EXT_V2 → path metrics.
+- Gói F3: Map event×H MFE/MAE/path labels và method lineage D380-corrected khi source được bind.
+- Đầu ra FiTechML: PathLabelAdapterSpec có horizon, valid/mature/censored, label-end và availability riêng.
+- QC/giới hạn: Không chuyển aggregate median/mean sang label event; không impute nhãn chưa mature bằng zero.
+- Dependency upstream (tài liệu): RQ3EXT_V2; next seal-time: SHADOW_V2; gate seal-time: none.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:21, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 21 SHADOW_V2 — Shadow V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: RQ1-4_V2 → shadow support class.
+- Gói F4: Thiết kế so sánh baseline/model trong shadow riêng, không làm ảnh hưởng production.
+- Đầu ra FiTechML: ShadowEvaluationSpec và immutable prediction/outcome receipts.
+- QC/giới hạn: Không tự chạy canonical shadow executor; accepted output-path isolation là prerequisite trước execution.
+- Dependency upstream (tài liệu): RQ1_V2;RQ2_V2;RQ3_V2;RQ4_V2; next seal-time: SUPPORT_T10_V2; gate seal-time: none.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:22, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 22 SUPPORT_T10_V2 — Support/T10 V2
+
+- Phase/owner: SP1 / RN v2. G1 input → output: SHADOW_V2 → support-qualified set.
+- Gói F4: Nhận support-qualified set và comparison-grain authority; đánh giá calibration/coverage theo scope.
+- Đầu ra FiTechML: SupportGateInputReference và evaluation eligibility report.
+- QC/giới hạn: ML score không tự vượt T10; tách lane/event/cell comparison và không thêm gate khoa học mới.
+- Dependency upstream (tài liệu): SHADOW_V2; next seal-time: PHASE2_V2; gate seal-time: persistence funnel gate.
+- G1 status được nguồn báo: EXECUTED_HISTORICALLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G006;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:23, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 23 PHASE2_V2 — Phase 2 V2 (incl Hold-Time/Signal-Success/QC)
+
+- Phase/owner: SP2 / RN v2. G1 input → output: SUPPORT_T10_V2 → consolidated report.
+- Gói F4: Đặc tả label/probability/calibration, maturity và censoring intake; model phân phối return-risk là nghiên cứu riêng có evaluator.
+- Đầu ra FiTechML: Phase2LearningAdapterSpec và baseline evaluation protocol.
+- QC/giới hạn: P2-C1..C7, P2X-R1..R7 là nội bộ node 23; D388 yêu cầu một gate mỗi dispatch. Không đọc numeric comparator trước seal trong rerun.
+- Dependency upstream (tài liệu): SUPPORT_T10_V2; next seal-time: COMPARE; gate seal-time: none (closure stage).
+- G1 status được nguồn báo: CONFLICT: JSON execution=DESIGNED_NOT_IMPLEMENTED_HOLD; certification SP2=PASS; master §52.1 says historical execution preserved. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G006;INT02-G012;INT02-G016;INT02-G018;INT02-G019;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:24, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 24 COMPARE — Compare RN V1 vs RN V2
+
+- Phase/owner: OUTSIDE_SP / RN. G1 input → output: RN v1 [H] + RN v2 → stagewise comparison rows.
+- Gói F4: Đặc tả comparison cùng population/key/H và non-comparability disposition; ML candidate thêm như phiên bản riêng.
+- Đầu ra FiTechML: LikeForLikeComparisonSpec, gaps và failure retained.
+- QC/giới hạn: RN V1/V2 comparison không tự là model evaluation hoặc promotion; không gộp variant thành winner.
+- Dependency upstream (tài liệu): PHASE2_V2; next seal-time: PHASE3_GATE; gate seal-time: progressive stagewise activation.
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=DESIGNED_NOT_STARTED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G012;INT02-G015;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:25, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 25 PHASE3_GATE — Phase 3 Authority Gate
+
+- Phase/owner: OUTSIDE_SP / RN. G1 input → output: COMPARE → GO/HOLD.
+- Gói F5: Chuẩn bị model/data/method/evaluator evidence để owner đánh giá entry, không tự mở gate.
+- Đầu ra FiTechML: ValidationEntryEvidenceReference và unresolved prerequisites.
+- QC/giới hạn: Thiết kế P3.0 đã có không phải launch token; partition/OOS/candidate scope phải được authority bind.
+- Dependency upstream (tài liệu): COMPARE; next seal-time: PHASE3; gate seal-time: Son review (never lifted since D306).
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=HOLD_NEVER_LIFTED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G003;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:26, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 26 PHASE3 — Phase 3 / Validation
+
+- Phase/owner: OUTSIDE_SP / RN. G1 input → output: PHASE3_GATE → undefined (target role only).
+- Gói F5: Chỉ thiết kế external validation interface: frozen predictions, calibration/error slices và result receipt.
+- Đầu ra FiTechML: ValidationConsumerSpec; empirical run chờ protocol/partition riêng.
+- QC/giới hạn: Không mở OOS/Final Holdout, không tune từ validation và không tự đặt PASS threshold.
+- Dependency upstream (tài liệu): PHASE3_GATE; next seal-time: PROMOTION; gate seal-time: Validation gate.
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=NOT_ESTABLISHED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G003;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:27, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 27 PROMOTION — Promotion Authority
+
+- Phase/owner: OUTSIDE_SP / cross-cutting. G1 input → output: Validation PASS → promotion event.
+- Gói F5: Cung cấp evidence summary và đọc quyết định của authority; model role trained/approved/champion-reference tách biệt.
+- Đầu ra FiTechML: PromotionDecisionReference, không ghi quyết định G1.
+- QC/giới hạn: Không promote model/challenger vì metric tốt hoặc chứng nhận kỹ thuật PASS.
+- Dependency upstream (tài liệu): PHASE3; next seal-time: PROD_ACTIVATION; gate seal-time: per-component explicit authority.
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=PER_COMPONENT_AD_HOC. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G005;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:28, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 28 PROD_ACTIVATION — Production Activation
+
+- Phase/owner: OUTSIDE_SP / cross-cutting. G1 input → output: Promotion → new active version.
+- Gói F5: Bind approved inference version và activation receipt/rollback refs do owner phát hành.
+- Đầu ra FiTechML: InferenceActivationReference và compatibility checklist.
+- QC/giới hạn: FiTechML không kích hoạt/thay champion; không dựng executor hoặc controller cạnh tranh Runtime.
+- Dependency upstream (tài liệu): EMPTY_IN_EDGE_MAP_NOT_PROOF_OF_NO_DEPENDENCY; next seal-time: production layer; gate seal-time: none.
+- G1 status được nguồn báo: NO_CURRENT_NODE_FIELD; SEALED_REGISTRY_ONLY=PER_COMPONENT. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G002;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:29, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 29 PIT_UNIV — PIT Universe
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: market data → universe.
+- Gói F1: Bind universe lịch sử theo ngày với local price manifest; đối chiếu delist/inactive/exemption scope.
+- Đầu ra FiTechML: MarketDatasetContract và UniverseAsOfSpec.
+- QC/giới hạn: 718 file hôm nay không chứng minh membership lịch sử; không tự kế thừa gate QRW là PIT PASS.
+- Dependency upstream (tài liệu): EMPTY_IN_EDGE_MAP_NOT_PROOF_OF_NO_DEPENDENCY; next seal-time: SCREENER; gate seal-time: none.
+- G1 status được nguồn báo: ACTIVE. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:30, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 30 SCREENER — Daily Screener DS1-DS11
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: PIT_UNIV → screened universe.
+- Gói F6: Thiết kế nhận screened universe và feature snapshot tại decision time; inference chỉ advisory/shadow khi được phép.
+- Đầu ra FiTechML: ScreenObservationSpec và recommendation receipt.
+- QC/giới hạn: Không sửa screener filter/ranking bằng prediction trước approved production-policy change.
+- Dependency upstream (tài liệu): PIT_UNIV; next seal-time: EXEC_UNIV; gate seal-time: none.
+- G1 status được nguồn báo: CLOSED_V1. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:31, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 31 EXEC_UNIV — Strategy Execution Universe
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: R1 (438x46) → full execution universe.
+- Gói F6: Bind execution universe với candidate/parameter-map versions và exact identities.
+- Đầu ra FiTechML: ExecutionUniverseReference và identity bridge cần owner duyệt.
+- QC/giới hạn: Không dùng candidate_id ↔ parameter_set_id như tương đương nếu chưa có bridge authority.
+- Dependency upstream (tài liệu): SCREENER;R1; next seal-time: ALPHA_RESOLVER; gate seal-time: none.
+- G1 status được nguồn báo: FROZEN. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G007;INT02-G012;INT02-G020;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:32, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 32 REGIME_CUR — Current Market Regime
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: market data → current regime.
+- Gói F6: Nhận current regime đã versioned, so training/inference semantics và stale/missing state.
+- Đầu ra FiTechML: RegimeObservationSpec có cutoff/effective_time.
+- QC/giới hạn: Không thay regime production bằng HMM; regime research và live không mặc định cùng version.
+- Dependency upstream (tài liệu): EMPTY_IN_EDGE_MAP_NOT_PROOF_OF_NO_DEPENDENCY; next seal-time: ALPHA_RESOLVER; gate seal-time: none.
+- G1 status được nguồn báo: ACTIVE. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G008;INT02-G012;INT02-G021;INT02-G022.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:33, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 33 ALPHA_RESOLVER — Exact Alpha Resolver
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: signals + R6 → EXACT_ALPHA_FOUND/SHADOW_ALPHA/etc..
+- Gói F6: Nhận exact resolver outcome/coverage gaps để cung cấp advisory return-risk context.
+- Đầu ra FiTechML: ResolverObservationSpec giữ exact key và variant.
+- QC/giới hạn: Không biến forecast thành EXACT_ALPHA_FOUND hoặc fallback shadow/unresolved thành approved alpha.
+- Dependency upstream (tài liệu): EXEC_UNIV;REGIME_CUR;R6; next seal-time: CONSENSUS; gate seal-time: none.
+- G1 status được nguồn báo: ACTIVE. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012;INT02-G020;INT02-G022.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:34, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 34 CONSENSUS — Alpha Consensus
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: ALPHA_RESOLVER → CONSENSUS_PASS records.
+- Gói F6: Nhận consensus reference và thiết kế diagnostic disagreement/correlation, không sửa công thức G1.
+- Đầu ra FiTechML: ConsensusObservationSpec, advisory uncertainty.
+- QC/giới hạn: Không dùng majority vote model/agent để tạo CONSENSUS_PASS hoặc đổi threshold.
+- Dependency upstream (tài liệu): ALPHA_RESOLVER; next seal-time: REGISTRY; gate seal-time: none.
+- G1 status được nguồn báo: COMPLETE_PASS. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:35, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 35 REGISTRY — Production Registry V2
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: R6 (27 identities) → AUTHORIZED lookups.
+- Gói F5: Lookup/read approved identity/version khi được cấp; reconcile model eligibility với G1 authority reference.
+- Đầu ra FiTechML: RegistryMembershipReference read-only và audit receipt.
+- QC/giới hạn: Không ghi membership; artifact/model được trained không đồng nghĩa production-authorized.
+- Dependency upstream (tài liệu): R6; next seal-time: TRADE_ELIG; gate seal-time: new promotion event to update membership.
+- G1 status được nguồn báo: COMPLETE_PASS_FIRST_BASELINE_ONLY. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012;INT02-G020.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:36, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 36 TRADE_ELIG — Trade Eligibility
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: CONSENSUS,REGISTRY → TRADE_ELIGIBLE records.
+- Gói F6: Quan sát eligibility và reasons; recommendation giữ quyền advisory, không nâng eligibility.
+- Đầu ra FiTechML: EligibilityObservationSpec và recommendation reason trace.
+- QC/giới hạn: CONSENSUS/REGISTRY checks vẫn do G1 sở hữu; không tự cho TRADE_ELIGIBLE.
+- Dependency upstream (tài liệu): CONSENSUS;REGISTRY; next seal-time: SLTP; gate seal-time: consensus+registry both PASS.
+- G1 status được nguồn báo: COMPLETE_PASS. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012;INT02-G021;INT02-G022.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:37, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 37 SLTP — SL/TP
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: TRADE_ELIG → LiveSLTPResult.
+- Gói F7: Đặc tả return/path-risk advisory có thể cung cấp quantiles cho owner nghiên cứu khi SLTP được mở lại.
+- Đầu ra FiTechML: SLTPResearchAdvisorySpec theo H; chưa là live provider.
+- QC/giới hạn: SLTP vẫn PARKED theo snapshot được đọc; không tự resume hoặc dùng quantile làm lệnh stop/target.
+- Dependency upstream (tài liệu): TRADE_ELIG; next seal-time: RISK; gate seal-time: SLTP provider implementation.
+- G1 status được nguồn báo: PARKED_BY_SON. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G010;INT02-G011;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:38, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 38 RISK — Risk
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: SLTP → risk-sized order.
+- Gói F7: Đặc tả risk-distribution scenarios/uncertainty cho risk owner, tách khỏi position sizing.
+- Đầu ra FiTechML: RiskAdvisoryContract đề xuất; policy sizing chưa do FiTechML chọn.
+- QC/giới hạn: Không tạo risk-sized order, cap hay sizing threshold; cần risk-method authority và provider evidence.
+- Dependency upstream (tài liệu): SLTP; next seal-time: CAPITAL; gate seal-time: none yet.
+- G1 status được nguồn báo: PENDING_NOT_BUILT. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G009;INT02-G011;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:39, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 39 CAPITAL — Capital / Portfolio
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: RISK → allocated order.
+- Gói F7: Đặc tả correlation/concentration/scenario diagnostics để owner portfolio tham khảo.
+- Đầu ra FiTechML: PortfolioResearchAdvisorySpec; không phân bổ vốn.
+- QC/giới hạn: Không đặt weights/capital allocation từ model; topology RISK→CAPITAL→BUY_READY giữ nguyên, runtime data-flow chưa kiểm.
+- Dependency upstream (tài liệu): RISK; next seal-time: BUY_READY; gate seal-time: none yet.
+- G1 status được nguồn báo: PENDING_NOT_BUILT. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G011;INT02-G012;INT02-G021;INT02-G023.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:40, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 40 BUY_READY — BUY_READY
+
+- Phase/owner: OUTSIDE_SP / LINE2. G1 input → output: CAPITAL → BuyReadyRecord.
+- Gói F7: Chỉ thiết kế quan sát kết quả G1 đã được authorize để đối chiếu recommendation/outcome.
+- Đầu ra FiTechML: ReadOnlyBuyReadyObservationSpec khi consumer path có quyền rõ.
+- QC/giới hạn: Không tạo BUY_READY, order hoặc gọi broker; không dùng callable đã báo tồn tại làm proof node đạt production gate.
+- Dependency upstream (tài liệu): CAPITAL; next seal-time: production trading; gate seal-time: capital+risk+sltp all clear.
+- G1 status được nguồn báo: PENDING_NEVER_REACHED. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G011;INT02-G012;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:41, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+### 41 PROD_OBS — Production Observation / Monitoring
+
+- Phase/owner: OUTSIDE_SP / cross-cutting. G1 input → output: all production nodes → drift/gap/failure signals.
+- Gói F6: Đặc tả immutable observation→drift/gap/opportunity→research-candidate evidence và gửi qua intake được owner bind.
+- Đầu ra FiTechML: ObservationFeedbackSpec, consumer receipt và candidate proposal.
+- QC/giới hạn: CHANGE_INTAKE là khái niệm handoff, không node 42; alert không tự retrain/replay/promote/dispatch.
+- Dependency upstream (tài liệu): PIT_UNIV;SCREENER;EXEC_UNIV;REGIME_CUR;ALPHA_RESOLVER;CONSENSUS;REGISTRY;TRADE_ELIG;SLTP;RISK;CAPITAL;BUY_READY; next seal-time: CHANGE_INTAKE; gate seal-time: none.
+- G1 status được nguồn báo: ACTIVE_STRUCTURAL. Producer body: NOT_REVERIFIED_THIS_TASK; AILL gaps: INT02-G001;INT02-G005;INT02-G012;INT02-G013;INT02-G014;INT02-G021.
+- FiTechML implementation: NOT_IMPLEMENTED_BY_R4. Source: G1_CCE_NODE_REGISTRY_V1.csv:42, crosswalk/edge-map/AILL matrix cùng node_id; hashes trong source capture.
+
+
+## Các điều kiện chung cho mọi node
+
+G1 certification hiện được CSV chủ nguồn báo PASS cho SP0/X01/SP1/X12/SP2; R4 không chạy lại và không xác nhận độc lập các kết quả này. JSON execution PHASE2 còn mâu thuẫn với registry certification và master §52.1. Không dùng bất kỳ cột status này làm auto-run grant. `next_authorized_task=null` không mâu thuẫn với certification PASS.
+
+RN V3 có registry riêng 22 node và owner trạng thái riêng ở worktree khác; không cộng thành 63 hoặc dùng initial_status làm trạng thái live. FiTechML không là node 42. CHANGE_INTAKE, P2-C1..C7, P2X-R1..R7, CERT-C1..C10 và PRE-OOS HOLD không bổ sung node vào sealed set.
+
+Đọc source claim ≠ xác minh body; artifact tồn tại ≠ consumer thực sự dùng; test xanh ≠ khoa học/championship; trained ≠ approved inference ≠ champion. Mọi chưa biết giữ literal NOT_VERIFIED/UNRESOLVED/HOLD, không dùng placeholder làm default có hiệu lực.
+</pre></article></body></html>

@@ -1,0 +1,3 @@
+Nguồn local: M1 · input_manifest
+SHA256: 524d9f462c9bee99b6d9e7f14fb5c43a7dea5237640fc1e2cfd16bbfb0b8335d
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

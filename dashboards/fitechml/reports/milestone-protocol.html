@@ -1,0 +1,44 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>milestone-protocol</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>milestone-protocol</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: f6613109c2d1b37574929fdd09ed4e8a5416c25fd3e0ab6370415a87fe3339e7</p><pre class="document-text"># Quy trình báo cáo và chuyển mốc FiTechML V1
+
+Áp dụng theo yêu cầu trực tiếp của người dùng21-10-2026. Nguồn tham khảo đã đọc: Kronos `docs/milestones/P2/inputs/docs/MILESTONE_PROTOCOL.md`, registration P0/P1/P2 và handoff P1; hash trong intake của adoption. Đây là quy trình FTML repository-local, không nhập authority/data/policy của Kronos hay G1.
+
+## Vòng mốc và năm hợp đồng
+
+1. **Intake**: xác định output tiền nhiệm được nhận, bản/hash, quyết định nghiệm thu có scope và giới hạn còn hiệu lực. Dữ liệu bổ sung phải đăng ký riêng.
+2. **Đăng ký trước**: trình năm hợp đồng bên dưới, input manifest và acceptance cases. Người dùng xác nhận đúng phiên bản/hash và phạm vi execution trước khi chạy phần mới.
+3. **Thực thi**: theo đúng contract đã xác nhận, log input/code/config/output; dừng khi source drift, vượt scope hoặc gặp policy chưa chốt. Thay đổi có ảnh hưởng phải ra version mới và xác nhận trước phần bị ảnh hưởng. Giữ mọi failure, không sửa hợp đồng cũ để khớp kết quả.
+4. **Đóng hồ sơ kỹ thuật/nghiên cứu**: đối chiếu thực tế theo năm hợp đồng, lập acceptance matrix, output manifest và report. Self-check, independent QC, kết luận khoa học, owner acceptance là bốn lớp khác nhau.
+5. **Người dùng nghiệm thu**: có thể chấp nhận một phần với danh sách output/purpose cụ thể. Chỉ phần đó đủ điều kiện làm input cho mốc sau. Nghiệm thu output không tự cấp execution mới; chuyển mốc cần xác nhận contract kế tiếp và ủy quyền riêng trong đúng scope.
+
+| Hợp đồng | Đăng ký mở mốc | Đối chiếu đóng mốc |
+|---|---|---|
+| Input | Artifact ID/path/version/rawSHA256, schema, grain, đơn vị, khoảng thời gian, coverage, source, tiền nhiệm/acceptance và hạn chế | File/row thực dùng, hash, retained/excluded/quarantined, lineage; source thay đổi hoặc thiếu phải rõ |
+| Methodology | Câu hỏi/mục tiêu, phương pháp gốc/version/pin/file/symbol, định nghĩa/công thức, giả định, đối chứng, phép kiểm và giới hạn | Phương pháp thực áp dụng, giả định đã kiểm/chưa kiểm, kết quả, sai lệch; exploratory tách registered |
+| Technical / Program | Runtime/deps/code/config, read/write allowlist, entrypoint, tài nguyên, log/checkpoint/resume, bảo vệ nguồn, budget/stop | Code/config/hash/lệnh/exit/time, kiểm đường vào thật và tái lập; khác biệt triển khai và giới hạn |
+| Output | Từng artifact/schema/unit/path, lineage, mục đích tiêu thụ ở mốc sau, phần không cho dùng | Thực có/thiếu/bị chặn, kết quả đo/phạm vi/hash và cờ chất lượng; giữ bản cũ bất biến |
+| Acceptance | ID/câu hỏi/phép kiểm/fixture/ngưỡng có lý do/evidence/mandatory và quy tắc kết luận; người quyết định | PASS/FAIL/NOT_EXECUTED/NOT_VERIFIED trong scope cho từng phép kiểm; reviewer và user acceptance riêng; output nào được bàn giao |
+
+Mốc kỹ thuật kiểm provenance, hành vi/refusal, bookkeeping và phục hồi; không bịa p-value/alpha để gọi khoa học. Mốc model phải đăng ký split thời gian, availability/maturity/label-end, overlap/purge/embargo, grouping, đơn vị phân tích/count/N_eff, preprocessing, baseline/ablation, metric, multiplicity, trial budget, seed và stop conditions phù hợp. PQ/OQ chưa chốt thì ghi UNRESOLVED và chặn đúng consumer; không tự chốt từ protocol.
+
+## Báo cáo và thư mục
+
+`docs/milestones/&lt;ID&gt;/`: `contract_vN.md`, `input_manifest_vN.json`, `registration_vN.json`, `evidence/`, `report/`, `handoff_vN.json` khi đã có output thực. Hồ sơ prospective và retrospective phải ghi rõ. Mốc chưa chạy không có báo cáo kết quả giả. File mới tạo exclusive; correction/supersede thêm version, không sửa record đã sealed. Không sao chép nguyên dataset/clone vào bộ hồ sơ chỉ để đủ hình thức.
+
+**Theo chỉ đạo FTML, khác mẫu Kronos:** report nghiên cứu chỉ nối tiếp cùng `docs/integrations/ml4t/ML4T_FITECHML_FUNCTION_COMPARISON_ROADMAP_20261018.md/.docx`, backup hash và render QA trước giao. Không xuất DOCX rời cho từng mốc và không đưa QC/remediation/engineering log vào DOCX. `report/` từng mốc giữ con trỏ và hash tới phiên bản report chung tại lúc đóng, hoặc report Markdown kỹ thuật riêng. Lần nối tiếp sau không làm mất lineage bản report tại lúc bàn giao. Contract nháp và công việc tổ chức hồ sơ này không cần DOCX.
+
+Phần nghiên cứu trong report chung gồm: câu hỏi + FTML ID; phương pháp thực dùng/dữ liệu/cách đánh giá; kết quả quan sát/evidence; phân tích theo phương pháp/giới hạn/bất định; phương pháp bước tiếp/lý do/kết quả kỳ vọng/tiêu chí. Kỳ vọng không viết như kết quả đã có. Mỗi phần có FTML ID theo18ID gốc và checklist01–18; chỉ đếm ID sau acceptance toàn scope, không đếm test/node/mốc.
+
+QC Markdown/chat phải đủ Harness, Autoresearch, Codegraph, Memory và compatibility với phương pháp gốc theo hai template QC của repo. Không gọi source match là runtime/numeric parity. Engineering không thuật toán định lượng ghi N/A có lý do.
+
+## Đăng ký điều kiện chuyển mốc
+
+Mỗi cạnh có source/target, condition ID, câu hỏi, mandatory, trạng thái quan sát, phép kiểm, evidence rawhash, người chịu trách nhiệm/quyết định và hạn chế. Một mốc có thể có nhiều tiền nhiệm. Điều kiện input/policy chưa biết ghi NOT_VERIFIED/UNRESOLVED, không coi thiếu=0 hay PASS. Gate có ba lớp: evidence đủ và không drift; output được người dùng chấp nhận đúng purpose; target contract được xác nhận và execution được cấp rõ. Đạt lớp kỹ thuật không thay hai lớp authority.
+
+`registry_v1.json` là chỉ mục có hash tới hồ sơ, không controller, không thay authority ngoài repo. Dashboard chỉ projection read-only, hiển thị condition được ghi nhận và tình trạng hash. Không approve/run từ UI. Bộ kiểm tra hồ sơ chỉ xác minh cấu trúc/binding, không xác thực độc lập lời khai và không cấp quyền chạy.
+
+## Ranh giới hiện hành
+
+Chỉ D1/1D, không H1/H4/W1 hoặc resample non-D1. Không đọc OOS/credentials, không broker/paid API, không tự promote/thay champion. Không nhập scope HOSE/HNX/UPCoM, ngưỡng, L=256 hoặc ngày development của Kronos vào FTML. Universe/range/semantics phải được đăng ký riêng bằng evidence FTML. Autoresearch NOT_AUTHORIZED, integration HOLD, I2 chưa đóng.
+
+Các mốc cũ được tiếp nhận hồi cứu theo evidence hiện có, không tạo chứng nhận đăng ký trước hoặc tự nâng nghiệm thu. R1.1 hiện chỉ3file D1 từ receipt cũ, chưa research-ready; R1.2 là hồ sơ đề nghị, chưa authorize. Chỉ đạo “tốt rồi” về UI không được chuyển thành nghiệm thu nghiên cứu R1.1. Quy trình này không tạo canonical node42 hoặc mở R1.2/feature/model.
+</pre></article></body></html>

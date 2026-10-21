@@ -1,0 +1,11 @@
+{
+  "id": "aill-sequence",
+  "title": "AILL sequencing còn cần chốt",
+  "path": "reports/aill-sequence.html",
+  "text": "# Source review: next actual-composition joins\n\nN1/RN program construction is testable before source registration/actual commissioning. It does not wait for a future R0 run. N2/AILL requires the MR5/MR6 single-writer semantic preparation→Runtime association→final AdapterResult join. Logical observe/ack returning durable refs before the fact is associated would be circular; creating a second receiver ledger to avoid this is prohibited. Current private Runtime respond returns material, whereas the public logical functions return only finalized durable metadata. Neither interface may be silently identified with the other.\n\nThis is an Owner design observation requiring exact protocol completion, not a demonstrated exploit or reopened Slot63 host defect. Preserve existing logical signatures and accepted closed return schema. The Owner will map prepare/retain/attest/claim/single Runtime publish/readback to those interfaces before assigning AILL endpoint coding. No endpoint, callback identity, owner key, receipt or source fact is invented in Slot64. Selected full O/A intake requirement remains; source/clock/registry/12+7 approvals and actual grant are still missing. No go-live credentials/accounts are newly required.\n\nPrevious forecast grouped N1+N2 in one conditional work order. Current source review right-sizes Slot64 to N1 only because a reviewer can accept the pure RN programs while rejecting the unresolved AILL durability sequencing. N2/actual-act preparation proceeds in Owner work, not as a hidden second CC project. No new human approval is inferred for actual effects.\n",
+  "sha256": "d193d516857966be041a88d7269252007c31b04a29c8db9050c8c6edb980d8c4",
+  "bytes": 1599,
+  "truncated": false,
+  "public_sanitized": true,
+  "source_sha256": "d193d516857966be041a88d7269252007c31b04a29c8db9050c8c6edb980d8c4"
+}

@@ -1,0 +1,59 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>r1-pilot</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>r1-pilot</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 4c1e3102aa05429bf52639c2f9fdbe9402d0929c2db122d641b938314a539853</p><pre class="document-text"># R1.1 local intake pilot — kết quả chờ người dùng nghiệm thu
+
+Ngày21-10-2026, Codex trực tiếp thực hiện theo lệnh người dùng, không qua CC. Vai trò hiện tại **implementer/self-verifier**; không gọi lượt này independent Codex QC. Trạng thái `R1_1_COMPLETED_PENDING_USER_ACCEPTANCE`; chưa thực hiện R1.2 toàn thị trường. Source trước task HEAD `817993687dcab9c9a193f1f02cd9c9af912a6c0c`, master/index rỗng. Không commit/push.
+
+## Kết quả quan sát
+
+| File | Dòng input | Giữ | Cách ly | Volume0 ở dòng giữ |
+|---|---:|---:|---:|---:|
+| AAA_1D | 4.052 | 4.051 | 1 | 2 |
+| VN30_1D | 3.518 | 3.518 | 0 | 0 |
+| VN30_1W | 729 | 729 | 0 | 0 |
+| VN30_H1 | 17.566 | 17.566 | 0 | 14.928 |
+| VNINDEX_1D | 6.387 | 6.387 | 0 | 0 |
+| VNINDEX_1W | 1.352 | 1.352 | 0 | 0 |
+| VNINDEX_H1 | 18.228 | 18.228 | 0 | 14.298 |
+| **Tổng** | **51.832** | **51.831** | **1** | **29.228** |
+
+Không excluded, duplicate/order violation trong scan này. Dòng data732 AAA (dòng vật lý733 vì header), ngày2013-06-21, `close=3.72` ngoài `low=high=3.69` ⇒ `E-08 close outside [low, high]`. Dữ liệu gốc không sửa, dòng được cách ly có identity/reason. Chưa biết nguyên nhân từ provider/adjustment/rounding; không tự gán nguyên nhân.
+
+Tổng giữ/loại/cách ly cân bằng51.832=51.831+0+1; checksum runtime có payload và accounting không lỗi ở7file. Parent projection của7receipt lưu dạng gzipJSON được tái tính digest khớp; chúng **lược payload**, không gọi storedreceipt là full-row proof. Bytes snapshot7CSV được giữ tại `artifacts/f2_r1_1_20261021/run/source_snapshot/`; lineage tới snapshot/manifest và source hash có trong result.
+
+7CSV và2manifest gốc giữ nguyên SHA256 giữa trước/sau run, khớp snapshot manifest17-10 và inventory18-10. Điều này xác nhận đang đọc đúng snapshot cũ, **không** xác nhận dữ liệu đã cập nhật tới21-10. AAA và indexdaily manifestlastdate16-10; weeklylastdate12-10 (nhãn tuần), index epoch vẫn numeric chưa chọn đơn vị/timezone. Không kiểm gate/calendar/gap/exemptions, không gọi thiếu phiên giao dịch chỉ từ lịch ngày.
+
+Volume0 tập trung ở H1: VN30 14.928/17.566 và VNINDEX14.298/18.228. Đây là giá trị đã quan sát và gắn cờ, không loại mặc định. Chưa biết đó là thiếu volume từ nguồn, convention của index hay0thực; không đưa vào feature volume trước khi bind semantics.
+
+## Phương pháp và nguồn
+
+Contract trước code/run: `F2_R1_1_EXECUTION_CONTRACT_20261021_V1.md`. Chọn cố định AAAngày+toàn6route index để thử2layout/3grain, không chọn theo outcome. Read-only root `[NATIVE_PATH_OMITTED]
+
+Runner mới `scripts/f2_r1_pilot.py --execute`: kiểm allowlist và đường dẫn bằng `safe_fs.OsFsProbe`; rawhash phải khớp manifest trước ghi snapshot workspace. Snapshot được intake từng file qua **adapter hiện có** `local_price.intake_from_file`, `Origin.LOCAL_FILE`, semantics giữ UNRESOLVED. Kiểm `verify_intake_receipt` khi retained còn đầy đủ; `check_accounting`; scan CSV riêng không gọi helper parser/validator của adapter, đối chiếu retained/quarantine source row IDs; save/verify parent projection; đọc lại source soSHA. Run mất3,85s, không phải benchmark toàn universe.
+
+Independent scan ở đây nghĩa implementation quét riêng cùng tác giả, **không phải independent reviewer**. Gate research vẫn đóng: tất cả entry assessment UNRESOLVED; purpose PRICE_LEVEL_FEATURES/SESSION_ALIGNMENT/AVAILABILITY_DEPENDENT bị QUARANTINED do thiếu semantics. `ELIGIBLE` structural không có nghĩa nghiên cứu/tradingready.
+
+Accounting/filter method gốc: F1 `AccountingReceipt/check_accounting`, F2designV4+DATA_CONTRACT; giữ1input row1disposition, không sort/dedup/fill, timekeykhôngbiếnthànhavailability. Không có thuật toán ML4T chạy trong R1.1. Six-feature source match của F2synthetic giữ scope cũ, chưa feature thật, T2/NUMERIC_PARITY_VERIFIED vẫn0; coredependencies không đổi.
+
+## Verification và giới hạn thực thi
+
+- Preflight khớp229protected hash,46source/test/config records; snapshot7tài liệu trước sửa ở `artifacts/f2_r1_1_20261021/before`.
+- RED log trước runner: **11setup/API-missing errors**, không behavioralRED. GREEN đầu10pass1skip vì không tạo được symlink. Junctiontest thay thế chạy sandbox bị AccessDenied; retry chính ca đó ngoài sandbox được1PASS. Full suite ngoài sandbox **646PASS =635cũ+11mới**,0skip/xfail,31,44s; logSHA `235d224e0d0234a225f50d0568a0f729d2a49fd4eb2de9740f888cb21a37b7a8`. Giữ mọi logfailed/skipped, không gọi chúngPASS.
+- Junction fixture ngoài sandbox được tạo chỉ dưới workspace scratch; adapter từ chối reparse intermediate trước khi đọc. Không chứng minh mọi loại reparse/race/hostile TOCTOU. Existing safe_fs đọc O_RDONLY; source pre/posthash là kiểm ổn định bytes trong run, không formal OScontainment/controller. Không sửa core adapter để vượt gate.
+- Có lỗi tiện ích read-only: lệnh bundledPython in tiếngViệt thiếuUTF8 báo UnicodeEncodeError; không sửaartifact. Bundled runtime không cófitz, dùng pypdfium2 cósẵn đểrender. Không cài library.
+
+## Công cụ và trạng thái
+
+| Công cụ | Dùng và bằng chứng mới | Giới hạn/ảnh hưởng |
+|---|---|---|
+| Harness Engineering | Contract/intake/test/run/receipt/snapshot/verification có log; `PARTIAL_MANUAL_EVIDENCE` | Codex implement+self-verify, chưa independentreview/enforcement/full-lifecycle. MấtJSONV1 lịch sử vẫnLOST_ORIGINAL_EVIDENCE; run mới không khôi phục. |
+| Autoresearch | `NOT_AUTHORIZED / NOT_RUN` | Không trial/tuning/model; không là lý do FAIL kỹ thuật. |
+| Codegraph | DBhash intake vàfinal, khôngsync/query; freshnessNOT_VERIFIED | Source thật quyết định, runner/testmới chưa được chứng minh indexed. |
+| Memory | USED_FOR_ROUTING, registryFiTechML hiện hành54-98 | QuyềnR1 mới từ user21-10 supersede noteoldchưaauthorize; khôngdùngmemorylàauthority, khôngghi globalmemory. |
+
+## Nghiệm thu và bước tiếp
+
+**Chờ người dùng nghiệm thu R1.1**, không self-PASS ID. FTMLID01Dataquality/PIT và06Nguồn/lineage/license (02identity liênquan). **Tiến độFTML:0/18IDPASS; còn18IDchưaPASS.** IntegrationHOLD,I2open. R1.2fulluniverse sau nghiệmthu; R2feature/model/P/Autoresearch không được mở từ kết quả này.
+
+Phương pháp bước tiếp đề xuất: khóa danh sách ticker/file và manifest hiện hành toàn718mã đã inventory; hash/read-only stable snapshot, intake tuần tự, scan độc lập theo từngrow, count/quarantine/gap/zero-volume phân nhóm, giữ đầy đủ rejectedfiles. Phạm vi hiện tại thiếuHNX/newticker phải báo rõ, không gọi folderhose=toànthịtrường. Dừng nếusource/manifestdrift; không tự lấydữliệuonline hoặc sửaQRW. Kỳ vọng: bảngqualityvàreceipt đầyđủ theo universe đãkhóa, danh sách cầnownerxửlý trướcsemantics/features, **không** kỳ vọng alpha/tradingmetrics.
+
+Báo cáo chung MD/DOCX nối tiếp phần **kết quả khảo sát/phương pháp/phân tích/bước kế**, không chèn QC/findings/tooltable. Backuphash vàrenderQA đi kèm evidence.
+</pre></article></body></html>

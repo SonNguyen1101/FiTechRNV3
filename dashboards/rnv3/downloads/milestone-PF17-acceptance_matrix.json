@@ -1,0 +1,84 @@
+{
+  "schema": "RNV3_REPORTING_ACCEPTANCE_MATRIX_V1",
+  "milestone": "PF17",
+  "rows": [
+    {
+      "criterion_id": "REPORTING/PF17/C01",
+      "contract_type": "Input",
+      "observed": "PF15/PF16 chưa hoàn tất.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Final POP100 freeze PF15 và reconciliation PF16 đã được chấp nhận."
+    },
+    {
+      "criterion_id": "REPORTING/PF17/C02",
+      "contract_type": "Methodology",
+      "observed": "Không dựng kết luận khoa học bằng placeholder hoặc coi báo cáo interim là final.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Tổng hợp R0, construction 85+15, assessment/QC, formula/authority, sweep/family, numeric/validity/PIT/session, debt và reproducibility từ bằng chứng thật."
+    },
+    {
+      "criterion_id": "REPORTING/PF17/C03",
+      "contract_type": "Technical / Engineering / Program",
+      "observed": "Các Word hiện tại chỉ là báo cáo trạng thái/reporting, không phải deliverable PF17 final.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Báo cáo tiếng Việt Word đọc độc lập; kiểm nội dung, hash/lineage và render trước giao."
+    },
+    {
+      "criterion_id": "REPORTING/PF17/C04",
+      "contract_type": "Output",
+      "observed": "Chưa có báo cáo final dựa trên final freeze đã được nghiệm thu.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "G1_RNV3_R0_TO_MILESTONE_D_SCIENTIFIC_FINAL_REPORT_V1.docx; đầy đủ nội dung tối thiểu của roadmap."
+    },
+    {
+      "criterion_id": "REPORTING/PF17/C05",
+      "contract_type": "Acceptance",
+      "observed": "NOT_STARTED; final DOCX vẫn là prerequisite riêng trước PF19.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_STARTED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Son nghiệm thu báo cáo final sau freeze và trước PF19. Báo cáo trạng thái hiện tại không thay PF17."
+    }
+  ],
+  "interpretation": "Current observations are not tests under a retroactively preregistered contract",
+  "milestone_closed": false,
+  "scientific_acceptance_granted": false
+}

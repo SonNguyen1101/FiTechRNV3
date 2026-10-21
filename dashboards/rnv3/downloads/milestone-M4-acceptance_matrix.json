@@ -1,0 +1,94 @@
+{
+  "schema": "RNV3_REPORTING_ACCEPTANCE_MATRIX_V1",
+  "milestone": "M4",
+  "rows": [
+    {
+      "criterion_id": "REPORTING/M4/C01",
+      "contract_type": "Input",
+      "observed": "M2 lỗi bootstrap; M3 chưa chạy. Chưa có bộ output hợp lệ để nghiệm thu công việc IND061.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "BLOCKED_PENDING_OWNER_DECISION_EXECUTION_AND_QC",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "v1-snapshot",
+        "v2-snapshot"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Nhận raw evidence, source pins, disclosure và qualification/replay/consumer của M2/M3."
+    },
+    {
+      "criterion_id": "REPORTING/M4/C02",
+      "contract_type": "Methodology",
+      "observed": "Đã có Governor QC của lỗi và đề xuất recovery hai phase; chưa có quyền chạy recovery mới.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "BLOCKED_PENDING_OWNER_DECISION_EXECUTION_AND_QC",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "v1-snapshot",
+        "v2-snapshot"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Governor recount độc lập trong scope, đọc adverse findings và đối chiếu phần đủ/thiếu với nguồn; không suy completion từ chat."
+    },
+    {
+      "criterion_id": "REPORTING/M4/C03",
+      "contract_type": "Technical / Engineering / Program",
+      "observed": "V1/V2 chưa seal và được giữ nguyên; metadata custody không hồi phục Harness lịch sử.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "BLOCKED_PENDING_OWNER_DECISION_EXECUTION_AND_QC",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "v1-snapshot",
+        "v2-snapshot"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Kiểm output membership/hash, lineage source→record→cell, terminal seal nếu profile yêu cầu; nêu giới hạn reviewer không blind."
+    },
+    {
+      "criterion_id": "REPORTING/M4/C04",
+      "contract_type": "Output",
+      "observed": "Chưa có accepted output mới. Các receipt và acceptance có giới hạn trước đây không bị thay thế.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "BLOCKED_PENDING_OWNER_DECISION_EXECUTION_AND_QC",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "v1-snapshot",
+        "v2-snapshot"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Acceptance matrix và handoff có decision reference, artifact hash/schema/unit/limits; chưa nhận thì giữ pending."
+    },
+    {
+      "criterion_id": "REPORTING/M4/C05",
+      "contract_type": "Acceptance",
+      "observed": "BLOCKED; adoption/certified-current/sweep-finalized/R1-eligible giữ 0 theo QC.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "BLOCKED_PENDING_OWNER_DECISION_EXECUTION_AND_QC",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "v1-snapshot",
+        "v2-snapshot"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Chỉ output được acceptance rõ ràng mới thành input được nhận; không tự grant adoption/PF13/PF14/R1."
+    }
+  ],
+  "interpretation": "Current observations are not tests under a retroactively preregistered contract",
+  "milestone_closed": false,
+  "scientific_acceptance_granted": false
+}

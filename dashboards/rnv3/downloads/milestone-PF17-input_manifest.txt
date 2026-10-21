@@ -1,0 +1,3 @@
+Nguồn local: PF17 · input_manifest
+SHA256: 3d2a3e3ff40ce59b38ff659dbc28b84b19df9cb9c126cd9fdc009692f30c46a6
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,0 +1,143 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>f2-qc</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>f2-qc</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: e26ab030b79b970e8786811aa79f27d86872cdbfdde35b75b1e2e8f1fbed163f</p><pre class="document-text"># F2 mixed accounting — Codex QC và tiến độ FTML, 20-10-2026
+
+Nguồn: `VERIFIED_THIS_TASK` cho intake, source/diff, suite và probes mới; `REPORTED_PRIOR_SESSION` cho các mốc lịch sử. Không sửa target source/test/docs, không cập nhật DOCX. Đây là QC engineering synthetic, không phải kết quả nghiên cứu thị trường.
+
+```text
+TASK = F2_MIXED_CODEX_REQC_20261020
+TARGET_COMMIT = 817993687dcab9c9a193f1f02cd9c9af912a6c0c / master; target là working tree chưa commit
+TARGET_SCOPE = F2-RQC-02 remediation V2; causal_price.py, test_f2_qc_mixed_accounting.py, callers, manifest/report và doc inserts
+REVIEW_MODE = INDEPENDENT_RED_TEAM
+INDEPENDENCE_LIMITATION = Cùng Codex conversation đã viết finding/prompt và thấy handoff; không blind. Reviewer độc lập với implementer, tự đọc diff và dựng public-API counterexamples.
+VERDICT = PASS_WITH_RESERVATION
+CANONICALIZATION_RECOMMENDATION = SAFE_WITH_EXPLICIT_LIMITATIONS
+ASSUMPTIONS_TESTED = 6
+ASSUMPTIONS_BROKEN = 0
+BLOCKER_FINDINGS = 0
+HIGH_FINDINGS = 0
+MEDIUM_FINDINGS = 0
+LOW_FINDINGS = 0
+STRONGEST_REJECTION_CASE = Một phần payload bị lược có thể tiếp tục tắt kiểm accounting identity mà dữ liệu còn lại đủ để xác định.
+REJECTION_CASE_STATUS = DISPROVEN (114 ca synthetic được kiểm; không là chứng minh tổng quát)
+AUTHORITY_INFLATION_RISK = MEDIUM
+REPRESENTATION_DEPENDENCE_RISK = LOW
+POPULATION_DEPENDENCE_RISK = MEDIUM
+DATA_LEAKAGE_RISK = MEDIUM
+SEMANTIC_DRIFT_RISK = LOW
+DOWNSTREAM_DAMAGE_RISK = MEDIUM
+REPRODUCIBILITY_RISK = MEDIUM
+REQUIRED_REMEDIATION = NONE trong scope F2-RQC-02 đã kiểm
+OPTIONAL_IMPROVEMENTS = Bind external temporal context trong task riêng trước claim temporal provenance; không mở task đó từ QC này
+OPEN_BLOCKER = 0
+OPEN_HIGH = 0
+CODEX_REVIEW = EXECUTED / PASS_WITH_RESERVATION in reviewed synthetic engineering scope
+```
+
+Các risk MEDIUM là giới hạn khi suy rộng sang dữ liệu/nghiên cứu thật hoặc historical preservation, không phải finding leakage mới. Không phát hiện defect material mới trong phạm vi review; không có quota finding.
+
+## 1. Kết luận
+
+**Đóng F2-RQC-02: `CLOSED_VERIFIED_IN_SCOPE`, Codex 20-10-2026.** Source được QC: `src/fitechml/features/causal_price.py`, raw SHA256 `5659576d04332c1cd765dd1314071a77217712a68a00a03d4f8c9511dcfa6bd6`.
+
+Lát **F2 synthetic engineering** được chấp nhận `F2_SYNTHETIC_CODEX_QC_ACCEPTED_IN_REVIEWED_SCOPE / PASS_WITH_RESERVATION`. Đây không phải nghiệm thu toàn F2 real-data, cả một FTML ID, integration readiness hoặc scientific validity. Giữ các disposition F2-QC-02/03/04 và F2-RQC-01 đã đóng trong scope từ các report trước; residual accounting RQC-02 nay đã sửa. Không sửa lại report cũ từng yêu cầu remediation.
+
+Phản ví dụ cũ accounting A = `(SYN_A,101..104)`, rows B bị lược: trước `ok=True`; sau **`ok=False`**, `ACCOUNTING_RECEIPT_MISMATCH` chỉ nêu A, `payload_checked=False`. Valid mixed receipt vẫn OK/partial. Không suy ra payload đã mất.
+
+## 2. Evidence reviewer mới và preservation
+
+Contract review: READ FiTechML source/tests/docs/evidence, body phương pháp ML4T đã pin, Memory để routing; WRITE chỉ reviewer evidence/scripts mới prefix `F2_MIXED_CODEX_REQC_20261020_*`, report và prompt handoff mới. Không real data, repo ngoài, OOS/credentials, network, runtime installation/upstream/model, Autoresearch. Dừng nếu target drift ngoài allowlist; không reset/clean/stash/amend/unstage/stage/commit/push.
+
+`F2_MIXED_CODEX_REQC_20261020_INTAKE.json` xác minh:
+
+- HEAD/master khớp, index rỗng; dirty/untracked inventory được lưu.
+- **55 record** manifest V2 khớp raw hash; **115 protected path** khớp. Bốn tài liệu có hai lớp chèn: gỡ erratum rồi gỡ first block tái lập đúng hash trước task.
+- So intake Codex trước: chỉ một source cũ đổi (`causal_price.py`), thêm một test (`test_f2_qc_mixed_accounting.py`). Pre-edit snapshot khớp source Codex đã QC. Không dùng hash để tự chứng minh chronology implementer.
+- Clone ML4T đúng pin, sạch; DB Codegraph hash `64aaa8748a0ea642102ff5ffd1a6483d42a181bb76a6e997cbff6fa7aa2d61de`, freshness chưa kiểm.
+
+Suite độc lập: `[NATIVE_PATH_OMITTED]
+
+`…_PROBES.py/.json` có **114/114 ca đúng**, không coi là coverage hay 114 mẫu độc lập:
+
+1. 16 tổ hợp có/lược retained bars của A/B × có/lược feature rows của A/B, valid controls đều đúng.
+2. Trên mỗi tổ hợp, từng panel bị đổi đồng bộ input/record IDs, hoặc đảo riêng input order, hoặc đảo riêng record order. Reject khi có dữ liệu đối chiếu; khi không còn nửa tương ứng thì không bịa identity. Tổng 96 perturbation cases.
+3. Với các ca này, direct `check_assembly(accounting=…, require_payload=False)` đồng ý với public `validate_feature_receipt`; partial flag không bị nâng thành True.
+4. Đổi thứ tự panel và accounting tương ứng vẫn hợp lệ; khi mọi payload thiếu, count mâu thuẫn vẫn bị bắt. Hai control bổ sung → tổng114.
+5. Replay source snapshot trước sửa và source hiện tại tái lập đúng sự thay đổi của counterexample.
+6. Cùng input/created_at, **tám digest** trước/sau khớp: intake, cells A/B, full feature, lean, mixed valid/bad và all-present bad.
+
+RED9/control9 và mutation18/18 là evidence implementer được đọc/hash-bound, **không chạy lại bởi reviewer**. Reviewer đã chạy suite/replay riêng nêu trên. Các run633/634, bản V1 bị thay thế và failures được giữ; không dùng các số đó như kết quả hiện hành. Việc implementer gọi advisor là `REPORTED_IMPLEMENTER`; không mặc định đây là reviewer độc lập khác hoặc Harness enforcement.
+
+Final receipt `F2_MIXED_CODEX_REQC_20261020_FINAL.json` kiểm preservation trước khi giao. Không chạm report chung MD/DOCX, source/tests/config/môi trường/clone/DB hay historical evidence.
+
+## 3. Phương pháp gốc và mức tương thích
+
+**Accounting là engineering**, theo F2 V4, DATA_CONTRACT §10 và `AccountingReceipt/check_accounting` trong `contracts/research_validation.py:135/147`: một retained bar → một feature row; `NO_GRAIN_CHANGE_NO_FILTER` giữ mỗi input đúng một lần với RETAINED disposition. Không có nguyên mẫu ML4T cho validator riêng này, không phải purge/grouping/N_eff.
+
+FTML hiện đối chiếu **hai nửa độc lập** ở `causal_price.py:_accounting_metadata_issues`: input IDs so với retained bars khi bars hiện diện; records so với feature rows khi rows hiện diện. Bỏ guard tổng ở `validate_feature_receipt`; `payload_checked=False` vẫn đúng khi thiếu payload cần thiết. Không thay schema/projection/công thức. Đây phù hợp contract engineering trong scope đã chạy.
+
+Phần sáu feature: reviewer đọc lại thân code ML4T **3rd Edition @ `16dbb8ce0abd358d6513d9cd697f45f650ad1f0b`**, đối chiếu `specs.tap_a_specs` và thân `numeric_safe`:
+
+| Nguyên mẫu đã đọc | Định nghĩa/giả định | FTML / tương thích |
+|---|---|---|
+| P8 `08_financial_features/01_price_volume_features.py:189-205`, `compute_returns_manual`, config209 | `ln(C_t)-ln(C_(t-h))`, h=1/5/21; giá dương, cần h+1 bars và h warmup | Ba logret tương ứng; giữ horizon/window. `SOURCE_SPEC_MATCH`. |
+| P8:975-977, relative volume expression | `V_t / mean_21(V)` **gồm hiện tại**; mẫu số xác định | `rel_volume_21`, `math.fsum/21`, zero-denom/status riêng; không dùng previous20. `SOURCE_SPEC_MATCH`, chưa float/runtime parity. |
+| C7 `07_defining_the_learning_task/08_causal_sanity_checks.py:215-219`, `dist_200ma` | `(C_t-mean_200(C))/mean_200(C)` theo symbol, đủ window | `dist_ma200_rel`, một ticker/panel, default200; fixture window khác là `PARAMETERIZED_REFERENCE`. |
+| P8:582-585, `parkinson_vol` | `sqrt(252*mean_21((ln H-ln L)^2/(4 ln2)))`; high/low dương | `parkinson_vol_21`; literal252 giữ theo source, phù hợp lịch VN chưa resolve. `SOURCE_SPEC_MATCH`. |
+
+P8 SHA256 `2d82cb0dd83f1f1bf7931a807fac5f864dbdec12466aa9362c614ae464451244`, C7 `6f9255128d13f9add39c2cfdfef90eb4a5447d065fee05f8860b4ab8ef112661`. Không xác minh nguồn phát minh học thuật đầu tiên. Source match/FTML oracle tests không phải chạy Polars/ml4t-engineer; T2 chưa chạy, **`NUMERIC_PARITY_VERIFIED=0`**. Missingness/warmup/float behavior upstream đầy đủ chưa parity.
+
+## 4. Bốn công cụ
+
+| Công cụ | Dùng / trạng thái | Evidence, freshness, giới hạn và ảnh hưởng |
+|---|---|---|
+| Harness Engineering | Intake→source review→suite→probes→QC→preservation thủ công; `PARTIAL_MANUAL_EVIDENCE` | Receipt/log/probe reviewer mới20-10. Không controller/enforcement/full-lifecycle capture đã chứng minh. JSON hash-implication V1 lịch sử vẫn `LOST_ORIGINAL_EVIDENCE`; bản V2 và replay mới không phục hồi bytes gốc. Cho phép chấp nhận source trong scope, không Harness/full-history PASS. |
+| Autoresearch | Không dùng, `NOT_AUTHORIZED / NOT_RUN` | Suite/probes tất định không là research loop. Không FAIL vì chưa cấp quyền; không mở trial từ verdict. |
+| Codegraph | Chỉ hash DB, không query/sync/reindex; `HASH_OBSERVATION_ONLY` | Hash §2; freshness `NOT_VERIFIED`, không dùng graph làm bằng chứng source/coverage. Source/diff trực tiếp thắng. |
+| Memory | `USED_FOR_ROUTING` | `MEMORY.md:28-39` định tuyến synthetic/receipt/availability limits; kiểm lại live source, Git, report. Installation-blocked trong note cũ bị lịch sử R1 supersede. Không authority, không ghi global memory. |
+
+Không công cụ nào được tự cấp PASS từ635test hoặc hash. Giới hạn lịch sử/công cụ phải đi tiếp cùng handoff nhưng không làm thất bại bản sửa accounting đã chứng minh.
+
+## 5. Tiến độ hiện tại — đúng 18 FTML ID gốc
+
+**0/18 là số ID đã hoàn tất toàn bộ tiêu chí nghiệm thu, không phải phần trăm thi công và không có nghĩa chưa làm gì.**
+
+- F1: receipt QC lịch sử `F1_CODEX_REQC_VERIFICATION_20261018.json` ghi `PASS_WITH_RESERVATION / F1_CODEX_QC_ACCEPTED_IN_REVIEWED_CONTRACT_SCOPE`; các contract còn giới hạn, không đóng I2 hay cả ID.
+- F2: thiết kế + adapter/features/receipts **synthetic** nay được chấp nhận có giới hạn. Chưa intake/feature thật trong F2 R1/R2, chưa T2, chưa model/recommendation.
+- Roadmap G1 lưu trong `FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv` có **41 dòng**; đây là planning projection, không chứng minh41node đã tích hợp/chạy và không tái xác minh current G1 bên ngoài trong task này.
+- Clone: đúng pin/sạch `VERIFIED_THIS_TASK`. Cài WSL/uv/runtime: hoàn thành theo evidence R1 lịch sử, không kiểm lại ở QC này. Notebook/model/data smoke upstream `NOT_RUN`. Installation R1 lịch sử và F2 R1 intake là hai scope khác nhau.
+
+| PASS | FTML ID | Chức năng gốc | Tiến độ/giới hạn hiện tại |
+|---|---|---|---|
+| [ ] | 01 | Data quality và PIT | Có F1 contracts và F2 synthetic QC; chưa kiểm chất lượng/PIT trên pipeline dữ liệu thật. |
+| [ ] | 02 | Identity và nhãn | Có contracts/join/accounting; F2 chỉ bar grain, chưa event labels/availability end-to-end. |
+| [ ] | 03 | Hình thái giá và volume | Sáu feature default synthetic được QC; chưa feature thật hoặc hiệu quả nghiên cứu. |
+| [ ] | 04 | Dữ liệu tổng hợp | Có fixture engineering; chưa đồng nhất với chương trình simulation/generative hoặc event×variant×H toàn scope. |
+| [ ] | 05 | Đặc trưng nâng cao | Có nguồn OHLCV/fundamental local đã khảo sát trước; feature/model nâng cao chưa được thực thi trong scope này. |
+| [ ] | 06 | Nguồn dữ liệu và license | Clone/pin và inventory local có evidence; consumer provenance/ngữ nghĩa/quyền dùng chưa nghiệm thu toàn ID. |
+| [ ] | 07 | Chronological validation | Chưa splitter/evaluator, purge/maturity/grouping/embargo đã kiểm end-to-end. |
+| [ ] | 08 | Baseline tuyến tính | Chưa training baseline trên dataset nghiên cứu đã bind. |
+| [ ] | 09 | Gradient boosting | Chưa training/search được cấp và đánh giá. |
+| [ ] | 10 | Return-risk và calibration | Chưa mô hình phân phối/calibration đã đánh giá. |
+| [ ] | 11 | Overlap và support | Có contract phân biệt counts với independence; chưa thuật toán grouping/N_eff đã chốt. |
+| [ ] | 12 | Deep learning và causal | Deferred sau baseline/evidence; không mở để đủ PASS. |
+| [ ] | 13 | Experiment registry | Có digest/receipt engineering; chưa registry vòng đời training/evaluation đã nghiệm thu. |
+| [ ] | 14 | Drift và observation | Chưa production-observation pipeline. |
+| [ ] | 15 | Backtest chi phí danh mục | Chưa backtest VN được bind/đánh giá; không có claim hiệu quả. |
+| [ ] | 16 | Rollout và governance | Giữ giới hạn không promote/champion; chưa nghiệm thu toàn interface/governance scope. |
+| [ ] | 17 | Text/RAG/LLM và G2/G3 | Deferred, daily inference chưa được mở. |
+| [ ] | 18 | RL/broker/live | Không thuộc execution được phép; chưa nghiệm thu bounded boundary toàn ID, không mở live để đủ18. |
+
+**Tiến độ FTML: 0/18 ID PASS; còn 18 ID chưa PASS.** FTML ID01,03,06 (02 liên quan) | F2 — adapter/causal features/receipts synthetic | Codex chấp nhận trong scope engineering, có reservation. Không tự đặt phần trăm hoàn thành tổng thể từ số test/milestone/node.
+
+## 6. Reservation và bước tiếp
+
+- Integration **HOLD**, I2 chưa đóng; không cấp R1/R2/P/Autoresearch từ QC.
+- Khi cả intake bars và panel rows đều lược, accounting identity không có nguồn đối chiếu: chỉ partial metadata/bookkeeping verification. Không tính lại feature values, không chống rewrite/reseal nhất quán mọi object.
+- Availability/boundary/cutoff chưa nằm trong binding: temporal provenance `NOT_ESTABLISHED`; OQ/PQ/OD giữ nguyên. Chỉ Python3.14.4, FS giả/synthetic; chưa efficacy VN, chưa upstream T2.
+- Historical evidence loss vẫn là reservation; không báo toàn package history đã bảo toàn.
+
+Bước cụ thể: CC ghi nhận acceptance F2 synthetic và **soạn thiết kế R1 intake dữ liệu local chỉ tạo receipt**, từ inventory/contract hiện có, trước khi đọc/chạy dữ liệu thật. Thiết kế phải có exact allowlist, binding, safety, count/accounting, tiêu chí dừng và kế hoạch verification. Không mở real features/training. Prompt `PROMPT_CC_F2_CLOSURE_R1_INTAKE_DESIGN_ONLY_V1.md` là chuẩn bị để người dùng chuyển CC, chưa dispatch.
+
+DoD reviewer: đã intake/contract, kiểm mới, disposition, method/tool assessment, handoff và final hash receipt; không stage/commit/push hoặc sửa status docs đang review. DOCX không thay đổi vì đây là QC, không phải mốc nghiên cứu.
+
+Nói đơn giản: nền contracts F1 và phần adapter/features tổng hợp F2 đã qua QC trong phạm vi giới hạn. Tiếp theo cần chuẩn bị cổng nhận dữ liệu local thật; FiTechML chưa có kết quả model/return-risk/recommendation đầu cuối để nghiệm thu bất kỳ ID nào.
+</pre></article></body></html>

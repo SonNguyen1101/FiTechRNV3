@@ -1,0 +1,3 @@
+Nguồn local: Quy trình hồ sơ trước/sau mốc RN V3
+SHA256: c94c8a813f09af093d476a3e91978ab758a34f72478a28fcd3d72fc676fa82fc
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

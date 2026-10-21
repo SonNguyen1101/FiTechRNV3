@@ -1,0 +1,11 @@
+{
+  "id": "m4-inputs",
+  "title": "M4 · Manifest nguồn báo cáo",
+  "path": "reports/m4-inputs.html",
+  "text": "{\n  \"schema\": \"FITECHSNM_MILESTONE_REPORTING_INPUT_MANIFEST_V1\",\n  \"node\": \"R0\",\n  \"milestone\": \"M4\",\n  \"at\": \"2026-10-21T09:31:02.102851+00:00\",\n  \"classification\": \"REPORTING_SOURCE_MANIFEST_NOT_ACTUAL_R0_INPUT_MANIFEST\",\n  \"registration_timing\": \"PROSPECTIVE_NOT_EXECUTED\",\n  \"execution_authorized_by_this_file\": false,\n  \"inputs\": [\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"9558667488a9f6524ab9882020b7e6b9e1ee103ede4b9c26b355b75c193684d0\",\n      \"bytes\": 57259\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"ab6829cd16c15a5248ab87d00e7fce227add9833c0fe06960879c3ecbdb51256\",\n      \"bytes\": 29610\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"9db97682bffe779cfda9b3703b031c43fa8da0e538af37396fd104dbc68c14d4\",\n      \"bytes\": 40816\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"c9f9782173639be11c89fc85e32444a71a98bf08762e29a9c6c23e2deb6fb375\",\n      \"bytes\": 73514\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"741ba516940c5703a216e9a3306f37b81805329a509417af88dc2f15b7b08bfb\",\n      \"bytes\": 33351\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"2e0cf3415d45242262ca8c8b8f61d0d9ffa9bd78db6fa29f989ff325124f92ef\",\n      \"bytes\": 1054\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"e465bede803f4f640698e7357644d5668e5521a5ac8aaea6e8f05e411ab70de4\",\n      \"bytes\": 15038\n    },\n    {\n      \"path\": \"[NATIVE_PATH_OMITTED]\",\n      \"sha256\": \"09e7ea2f751efaa480b33b2515c5b4d7b971bc17c66355946817574bdd8021c8\",\n      \"bytes\": 19837\n    }\n  ],\n  \"actual_run_inputs\": null,\n  \"actual_input_manifest_ref\": null,\n  \"predecessor_accepted_output_ref\": null,\n  \"missing_reason\": \"Actual predecessor/instance set not accepted; exact engineering grants remain separately scoped\"\n}\n",
+  "sha256": "5124576448d9ff2190ec14c118a4626f71c6c24732f70cb92d27e0c49f5fbc04",
+  "bytes": 1825,
+  "truncated": false,
+  "public_sanitized": true,
+  "source_sha256": "fc56ecbea6638049ae43dfb2e614a11b92d5b0a4748f74ca3fe11ed3f6042195"
+}

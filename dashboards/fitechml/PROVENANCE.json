@@ -1,0 +1,191 @@
+{
+  "schema": "FITECH_CHILD_READONLY_PUBLIC_EXPORT_V1",
+  "project": "fitechml",
+  "mode": "PUBLIC_READ_ONLY_SNAPSHOT",
+  "captured_at": "2026-10-21T15:30:25.803250+00:00",
+  "source_route": "/api/status",
+  "source_port": 8789,
+  "source_response_sha256": "45688164619702f336375651536150e9e1ef257df704ef5a6cb8f85f970ffd6c",
+  "read_only": true,
+  "live": false,
+  "scientific_acceptance": false,
+  "original_evidence_exported": false,
+  "source_assets_sha256": {
+    "index.html": "943f5030ed805021545c375c63cca9e1dd7302bca15e2cf22390d8974fcd65ec",
+    "app.css": "697759a6664183dd8066a03a06c265041bee9212ac68cabe491edc74dcc10f6f",
+    "app.js": "902e06ec30f193c66de0b5ed0baa1b531cce5814f11c12c4c74b760dc15327f8"
+  },
+  "source_api_url": "loopback:8789/api/status",
+  "public_path": "/FiTechRNV3/dashboards/fitechml/",
+  "report_exports": [
+    {
+      "id": "report.md",
+      "exported": true,
+      "path": "reports/report-md.html",
+      "source_sha256": "54df6fa0b056a02bcc9517d71359e5d7668fbc8bfee8bca16c2eba505fd525c2",
+      "exported_sha256": "8a8f7b14b3cc6d3c8e400448d1384d5fe60bb40401bf8eba3bae4d13a61b8473"
+    },
+    {
+      "id": "d1-scope",
+      "exported": true,
+      "path": "reports/d1-scope.html",
+      "source_sha256": "5ac371cd9e23d83e5f561849c197f2337302c498e23772d3c01733412a5afb62",
+      "exported_sha256": "f814a207fd901d3cbb7f5c2a6d48b2f70b1b15c9e74448a945bf8c78125f45ed"
+    },
+    {
+      "id": "r1-pilot",
+      "exported": true,
+      "path": "reports/r1-pilot.html",
+      "source_sha256": "4c1e3102aa05429bf52639c2f9fdbe9402d0929c2db122d641b938314a539853",
+      "exported_sha256": "0f99be85713ec0f98b056348540be6dfa6050f7cb5b7ea3606c51ee0c8e2d29a"
+    },
+    {
+      "id": "f1-qc",
+      "exported": true,
+      "path": "reports/f1-qc.html",
+      "source_sha256": "615d157e76fe0bf8ef358430e47417ac806f39998178d3f018fdafc3f98d0694",
+      "exported_sha256": "dc6d5c274f60e83ff9724f3ada6324c0f259512948ff9a9b765cf83914446238"
+    },
+    {
+      "id": "f2-qc",
+      "exported": true,
+      "path": "reports/f2-qc.html",
+      "source_sha256": "e26ab030b79b970e8786811aa79f27d86872cdbfdde35b75b1e2e8f1fbed163f",
+      "exported_sha256": "ba7cd15ebe0e89863c9c07ace0e38fdae7c19a22996acf7c59577d19f5672633"
+    },
+    {
+      "id": "g1-roadmap",
+      "exported": true,
+      "path": "reports/g1-roadmap.html",
+      "source_sha256": "ae8e9628ee95df0dcee59cb65b7a649229f1bf153de52e716126a31b3936dd91",
+      "exported_sha256": "f4bc0a4dac168b3a650bd861450247937ba1c000e948931282d8a25b354f0c50"
+    },
+    {
+      "id": "milestone-protocol",
+      "exported": true,
+      "path": "reports/milestone-protocol.html",
+      "source_sha256": "f6613109c2d1b37574929fdd09ed4e8a5416c25fd3e0ab6370415a87fe3339e7",
+      "exported_sha256": "38a8fc5b03e965bb41c747fad408a76368472d8441f38bf9e6fe0fecca5a5b9b"
+    },
+    {
+      "id": "milestone-registry",
+      "exported": true,
+      "path": "reports/milestone-registry.html",
+      "source_sha256": "7dff0cab80f84f19fe1c5051d116df81f16f06285fd55073704a43ecd92170bd",
+      "exported_sha256": "93465d7f6b07c5816e648e8b39b00d7e06fd08a6b228e6e28294cf7359c9ef5d"
+    },
+    {
+      "id": "r1-1-inputs",
+      "exported": true,
+      "path": "reports/r1-1-inputs.html",
+      "source_sha256": "83f92ba72fad6e35012212f625e996756fda3511fab8e6cd82aad0c09aceab35",
+      "exported_sha256": "6f1d4a0058c41c32e2d9ccb27805e86c0c5bea69fa08cfedf9dc62543fec712a"
+    },
+    {
+      "id": "r1-1-handoff",
+      "exported": true,
+      "path": "reports/r1-1-handoff.html",
+      "source_sha256": "eba5cc02e0d588ff732fe29bc191e5fbfdae5bdf03fddb868e2161bde15953b9",
+      "exported_sha256": "f1c264f625309ca7e6be3c16c0ffbce1a2982e465f96b4d1a5c204809ce237b6"
+    },
+    {
+      "id": "r1-2-contract",
+      "exported": true,
+      "path": "reports/r1-2-contract.html",
+      "source_sha256": "8049c3c69b73c976ac65e9b0311cb1bea59fe755a9a9ba834ccac70cad8003fb",
+      "exported_sha256": "3061cfb382b8075b591b457fb77dbfb1754ab0f89c99951d1a0c553026fba532"
+    },
+    {
+      "id": "r1-2-inputs",
+      "exported": true,
+      "path": "reports/r1-2-inputs.html",
+      "source_sha256": "2feedb819ef1d9571ee7f2a2b2fba24bc5d83aa52858782b3e1941f7f7b363fe",
+      "exported_sha256": "6a80163c287e5f6c4903b20bd4bc5a14329c166d1c0082be044a2634558a4f0f"
+    },
+    {
+      "id": "r1-2-registration",
+      "exported": true,
+      "path": "reports/r1-2-registration.html",
+      "source_sha256": "6ca200ce0475304cfac0de0d1a102c7524c02c468a55c855764ab64b60c301c5",
+      "exported_sha256": "8a77559fa8a3d8f65d3333eaa38ef1fb062e85ad4b36ddc029c74deabd285085"
+    },
+    {
+      "id": "f1-registration",
+      "exported": true,
+      "path": "reports/f1-registration.html",
+      "source_sha256": "0ca63606409f549815bdb41df9a75acf031428405a6613303911e3343e6ce3d0",
+      "exported_sha256": "83dda483da7934b4d3e075459aac43f49a5bcc5962b7ee6ad30965ce7399c174"
+    },
+    {
+      "id": "f1-report",
+      "exported": true,
+      "path": "reports/f1-report.html",
+      "source_sha256": "eb80353b30261ab0089564491bc3dfb17ccf098c173c8c298d99b08fbf514653",
+      "exported_sha256": "9626dfb8bef426bee770c0b3c02d92377d07262e934fd5f92d255571b100d173"
+    },
+    {
+      "id": "f2-registration",
+      "exported": true,
+      "path": "reports/f2-registration.html",
+      "source_sha256": "acafecb0f742a17925e1455750d912a9b765d8d15324e03e7b1638d8831c3d58",
+      "exported_sha256": "a99996f093925fce44e4c82d6210198080c56eef1feff41d6a31213920eee4b0"
+    },
+    {
+      "id": "f2-report",
+      "exported": true,
+      "path": "reports/f2-report.html",
+      "source_sha256": "5645fa11d688b8c6ca70fd07c52a4daa98974332b77003c3799f8ac548944fd9",
+      "exported_sha256": "0f6067a325b25c215d902383596bb81a1abf26f974e0a29da81a8ca884d7886d"
+    },
+    {
+      "id": "r4-registration",
+      "exported": true,
+      "path": "reports/r4-registration.html",
+      "source_sha256": "30589788d916ac0d7bcab75db37f99df8497f6ed6ce3413bd335d5ab2f907706",
+      "exported_sha256": "956dab778163739c34f2afc000179616a4a5c174fea0f6830f37855ddac96284"
+    },
+    {
+      "id": "r4-report",
+      "exported": true,
+      "path": "reports/r4-report.html",
+      "source_sha256": "c01f01c93a301a2d7347312d7cdb38ce4af33abd5b194a9013a5454312999690",
+      "exported_sha256": "8dd918345efd0a7af3e1bbf6285e7af1498449e0c2041b49f29b24f39f79abca"
+    },
+    {
+      "id": "d1-registration",
+      "exported": true,
+      "path": "reports/d1-registration.html",
+      "source_sha256": "f55a3996ff64f26c09774f05a9258ab5016c8aed619944a22634176bfd43d7fd",
+      "exported_sha256": "0c1c4561eef1c9da60235d06e1d1dceb72f741d58a74446936d9a0ddd9e4dc91"
+    },
+    {
+      "id": "d1-report",
+      "exported": true,
+      "path": "reports/d1-report.html",
+      "source_sha256": "398b470d99f2037dd8d7a4313664e6c11573be3256a98017257512ebee19d31b",
+      "exported_sha256": "aeab4f795bd29a5bdf06a5a1bd49da899b6f148497ddba8c632e2ef6f29529ba"
+    },
+    {
+      "id": "r1-1-registration",
+      "exported": true,
+      "path": "reports/r1-1-registration.html",
+      "source_sha256": "ad80828350948b03d7598afc6cc2999b63df244e6a2af5d5cfe140bff224f98b",
+      "exported_sha256": "0eb69a9b81ddb3ebd4b8af936fc558d3ad53f24a9f81636a632b2e65a3488d50"
+    },
+    {
+      "id": "r1-1-report",
+      "exported": true,
+      "path": "reports/r1-1-report.html",
+      "source_sha256": "381f25e784091f67169717772152086f2f7d9b38762c0c28de5a8eb6ba481c9b",
+      "exported_sha256": "ceff5af8f7f891cec7406e85205382fe8be934a08c8e4f20f1c6cc19e57d4a22"
+    }
+  ],
+  "limitations": [
+    "Fixed snapshot; refresh rereads the same JSON, not source PC.",
+    "Source statuses and source stale/warning flags preserved; hashes/UI metadata do not establish execution, acceptance, or PASS.",
+    "Native paths/local URLs/private fields are redacted from report text. Exported text hashes differ from source hashes.",
+    "Original Word, prompts/relays, raw execution evidence, native config, raw price rows are not published.",
+    "Original dashboard includes some fixed planning prose; canonical captured states remain controlling.",
+    "Frontend action and theme/search/filter/modal/navigation retained; no backend or mutation routes included."
+  ]
+}

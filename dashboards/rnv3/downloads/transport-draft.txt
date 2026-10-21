@@ -1,0 +1,3 @@
+Nguồn local: Đề xuất phục hồi 2 phase · chưa cấp quyền
+SHA256: a4d04cf764230d8286af721fcd314ca3a8aacf926bdabe196b361a7ef7a26c22
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

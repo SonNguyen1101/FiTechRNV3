@@ -1,0 +1,346 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>milestone-registry</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>milestone-registry</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 7dff0cab80f84f19fe1c5051d116df81f16f06285fd55073704a43ecd92170bd</p><pre class="document-text">{
+  &quot;schema_version&quot;: 1,
+  &quot;project&quot;: &quot;FiTechML&quot;,
+  &quot;issued_on_local&quot;: &quot;2026-10-21&quot;,
+  &quot;authority&quot;: &quot;DOCUMENTARY_PROJECTION_ONLY&quot;,
+  &quot;execution_authorized&quot;: false,
+  &quot;contract_types&quot;: [
+    &quot;Input&quot;,
+    &quot;Methodology&quot;,
+    &quot;Technical / Engineering / Program&quot;,
+    &quot;Output&quot;,
+    &quot;Acceptance&quot;
+  ],
+  &quot;records&quot;: [
+    {
+      &quot;id&quot;: &quot;F1&quot;,
+      &quot;registration_mode&quot;: &quot;RETROSPECTIVE_NOT_PREREGISTERED&quot;,
+      &quot;ftml_ids&quot;: [
+        &quot;01&quot;,
+        &quot;02&quot;,
+        &quot;06&quot;,
+        &quot;07&quot;,
+        &quot;11&quot;
+      ],
+      &quot;documents&quot;: [
+        &quot;f1-registration&quot;,
+        &quot;f1-report&quot;
+      ],
+      &quot;state&quot;: &quot;SCOPED_QC_REPORTED&quot;
+    },
+    {
+      &quot;id&quot;: &quot;F2&quot;,
+      &quot;registration_mode&quot;: &quot;RETROSPECTIVE_NOT_PREREGISTERED&quot;,
+      &quot;ftml_ids&quot;: [
+        &quot;01&quot;,
+        &quot;02&quot;,
+        &quot;03&quot;,
+        &quot;04&quot;,
+        &quot;06&quot;
+      ],
+      &quot;documents&quot;: [
+        &quot;f2-registration&quot;,
+        &quot;f2-report&quot;
+      ],
+      &quot;state&quot;: &quot;SCOPED_QC_REPORTED&quot;
+    },
+    {
+      &quot;id&quot;: &quot;R4&quot;,
+      &quot;registration_mode&quot;: &quot;RETROSPECTIVE_NOT_PREREGISTERED&quot;,
+      &quot;ftml_ids&quot;: [
+        &quot;01&quot;,
+        &quot;02&quot;,
+        &quot;03&quot;,
+        &quot;04&quot;,
+        &quot;05&quot;,
+        &quot;06&quot;,
+        &quot;07&quot;,
+        &quot;08&quot;,
+        &quot;09&quot;,
+        &quot;10&quot;,
+        &quot;11&quot;,
+        &quot;12&quot;,
+        &quot;13&quot;,
+        &quot;14&quot;,
+        &quot;15&quot;,
+        &quot;16&quot;,
+        &quot;17&quot;,
+        &quot;18&quot;
+      ],
+      &quot;documents&quot;: [
+        &quot;r4-registration&quot;,
+        &quot;r4-report&quot;
+      ],
+      &quot;state&quot;: &quot;PLANNING_REPORTED&quot;
+    },
+    {
+      &quot;id&quot;: &quot;D1&quot;,
+      &quot;registration_mode&quot;: &quot;RETROSPECTIVE_NOT_PREREGISTERED&quot;,
+      &quot;ftml_ids&quot;: [
+        &quot;01&quot;,
+        &quot;02&quot;,
+        &quot;06&quot;
+      ],
+      &quot;documents&quot;: [
+        &quot;d1-registration&quot;,
+        &quot;d1-report&quot;
+      ],
+      &quot;state&quot;: &quot;USER_CONSTRAINT_APPLIED&quot;
+    },
+    {
+      &quot;id&quot;: &quot;R1.1&quot;,
+      &quot;registration_mode&quot;: &quot;RETROSPECTIVE_NOT_PREREGISTERED&quot;,
+      &quot;ftml_ids&quot;: [
+        &quot;01&quot;,
+        &quot;06&quot;,
+        &quot;02&quot;
+      ],
+      &quot;documents&quot;: [
+        &quot;r1-1-registration&quot;,
+        &quot;r1-1-report&quot;,
+        &quot;r1-1-inputs&quot;,
+        &quot;r1-1-handoff&quot;
+      ],
+      &quot;state&quot;: &quot;PENDING_USER_ACCEPTANCE&quot;
+    },
+    {
+      &quot;id&quot;: &quot;R1.2&quot;,
+      &quot;registration_mode&quot;: &quot;PROSPECTIVE_PROPOSED&quot;,
+      &quot;ftml_ids&quot;: [
+        &quot;01&quot;,
+        &quot;06&quot;,
+        &quot;02&quot;
+      ],
+      &quot;state&quot;: &quot;PREPARED_PENDING_USER_CONFIRMATION&quot;,
+      &quot;documents&quot;: [
+        &quot;r1-2-registration&quot;,
+        &quot;r1-2-contract&quot;,
+        &quot;r1-2-inputs&quot;
+      ]
+    }
+  ],
+  &quot;transitions&quot;: [
+    {
+      &quot;source&quot;: &quot;R1.1&quot;,
+      &quot;target&quot;: &quot;R1.2&quot;,
+      &quot;state&quot;: &quot;HOLD_PENDING_ACCEPTANCE_AND_REGISTRATION&quot;,
+      &quot;conditions&quot;: [
+        {
+          &quot;id&quot;: &quot;G01&quot;,
+          &quot;title&quot;: &quot;Phạm vi chỉ D1&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;OBSERVED_IN_EVIDENCE&quot;,
+          &quot;responsible&quot;: &quot;Codex kiểm bytes; chủ dự án giữ policy&quot;,
+          &quot;verification&quot;: &quot;Đối chiếu policy/active scope, hash và grain; không mở CSV&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G02&quot;,
+          &quot;title&quot;: &quot;Pilot có accounting và limitation ledger&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;REPORTED_SELF_VERIFIED&quot;,
+          &quot;responsible&quot;: &quot;Reviewer / chủ dự án&quot;,
+          &quot;verification&quot;: &quot;Đọc report và receipts; không coi historical tests là run mới hoặc independent QC&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G03&quot;,
+          &quot;title&quot;: &quot;Nghiệm thu đầu ra R1.1 đúng scope&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;PENDING_USER_ACCEPTANCE&quot;,
+          &quot;responsible&quot;: &quot;Chủ dự án&quot;,
+          &quot;verification&quot;: &quot;Quyết định có output ID/hash/purpose/hạn chế; hiện chưa có&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G04&quot;,
+          &quot;title&quot;: &quot;Xác nhận năm hợp đồng R1.2&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;PENDING_USER_CONFIRMATION&quot;,
+          &quot;responsible&quot;: &quot;Chủ dự án&quot;,
+          &quot;verification&quot;: &quot;Xác nhận version/hash; draft chưa khóa dữ liệu không được dùng như final run contract&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G05&quot;,
+          &quot;title&quot;: &quot;Khóa universe/source snapshot/range D1&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;NOT_REGISTERED&quot;,
+          &quot;responsible&quot;: &quot;Nguồn dữ liệu + Codex trong scope được cấp&quot;,
+          &quot;verification&quot;: &quot;Danh sáchfile/mã, schema/unit/grain/date/manifest/rawhash; coverage có mẫu số; không nhập dữ liệu Kronos&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G06&quot;,
+          &quot;title&quot;: &quot;Phạm vi ngày và OOS fence có binding&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;NOT_VERIFIED&quot;,
+          &quot;responsible&quot;: &quot;Chủ dự án / owner dữ liệu&quot;,
+          &quot;verification&quot;: &quot;Không mở file có vùng bị cấm; snapshot lọc phạm vi trước đọc/hash nếu cần&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G07&quot;,
+          &quot;title&quot;: &quot;Ngân sách, runtime, allowlist và stop/resume&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;PENDING_USER_CONFIRMATION&quot;,
+          &quot;responsible&quot;: &quot;Chủ dự án + implementer&quot;,
+          &quot;verification&quot;: &quot;Budget được chấp nhận, runner version/entrypoint, outputdir mới và stop khi drift&quot;
+        },
+        {
+          &quot;id&quot;: &quot;G08&quot;,
+          &quot;title&quot;: &quot;Ủy quyền execution đúng contract&quot;,
+          &quot;mandatory&quot;: true,
+          &quot;status&quot;: &quot;NOT_AUTHORIZED&quot;,
+          &quot;responsible&quot;: &quot;Chủ dự án&quot;,
+          &quot;verification&quot;: &quot;Ghi riêng authorization actor/date/scope/contract hash; không tự chạy khi checks xanh&quot;
+        }
+      ],
+      &quot;source_output_acceptance&quot;: null,
+      &quot;target_contract_confirmation&quot;: null,
+      &quot;execution_authorization&quot;: null,
+      &quot;limits&quot;: &quot;Đăng ký điều kiện chưa phải điều kiện đã đạt. Không có endpoint approve/run.&quot;
+    }
+  ],
+  &quot;sources&quot;: [
+    {
+      &quot;artifact_id&quot;: &quot;milestone-protocol&quot;,
+      &quot;path&quot;: &quot;docs/milestones/PROTOCOL_V1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;f6613109c2d1b37574929fdd09ed4e8a5416c25fd3e0ab6370415a87fe3339e7&quot;,
+      &quot;bytes&quot;: 7532
+    },
+    {
+      &quot;artifact_id&quot;: &quot;d1-receipt&quot;,
+      &quot;path&quot;: &quot;artifacts/f2_d1_scope_20261021/active_d1_scope.json&quot;,
+      &quot;raw_sha256&quot;: &quot;296f70855b26c1e6a33a830a3aab036d061f8582c86ca6b420eb9c6df1cd8db8&quot;,
+      &quot;bytes&quot;: 12550
+    },
+    {
+      &quot;artifact_id&quot;: &quot;d1-scope&quot;,
+      &quot;path&quot;: &quot;docs/surveys/g1_cce_20261018/F2_D1_SCOPE_CORRECTION_20261021_V1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;5ac371cd9e23d83e5f561849c197f2337302c498e23772d3c01733412a5afb62&quot;,
+      &quot;bytes&quot;: 3874
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-pilot&quot;,
+      &quot;path&quot;: &quot;docs/surveys/g1_cce_20261018/F2_R1_1_PILOT_REPORT_20261021_V1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;4c1e3102aa05429bf52639c2f9fdbe9402d0929c2db122d641b938314a539853&quot;,
+      &quot;bytes&quot;: 7692
+    },
+    {
+      &quot;artifact_id&quot;: &quot;f1-qc&quot;,
+      &quot;path&quot;: &quot;docs/surveys/g1_cce_20261018/F1_CODEX_REQC_REPORT_V1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;615d157e76fe0bf8ef358430e47417ac806f39998178d3f018fdafc3f98d0694&quot;,
+      &quot;bytes&quot;: 12274
+    },
+    {
+      &quot;artifact_id&quot;: &quot;f2-qc&quot;,
+      &quot;path&quot;: &quot;docs/surveys/g1_cce_20261018/F2_MIXED_ACCOUNTING_CODEX_REQC_REPORT_V1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;e26ab030b79b970e8786811aa79f27d86872cdbfdde35b75b1e2e8f1fbed163f&quot;,
+      &quot;bytes&quot;: 16056
+    },
+    {
+      &quot;artifact_id&quot;: &quot;g1-roadmap&quot;,
+      &quot;path&quot;: &quot;docs/surveys/g1_cce_20261018/FITECHML_G1_CCE_41_NODE_ROADMAP_V1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;ae8e9628ee95df0dcee59cb65b7a649229f1bf153de52e716126a31b3936dd91&quot;,
+      &quot;bytes&quot;: 43757
+    },
+    {
+      &quot;artifact_id&quot;: &quot;report.md&quot;,
+      &quot;path&quot;: &quot;docs/integrations/ml4t/ML4T_FITECHML_FUNCTION_COMPARISON_ROADMAP_20261018.md&quot;,
+      &quot;raw_sha256&quot;: &quot;54df6fa0b056a02bcc9517d71359e5d7668fbc8bfee8bca16c2eba505fd525c2&quot;,
+      &quot;bytes&quot;: 84090
+    },
+    {
+      &quot;artifact_id&quot;: &quot;report.docx&quot;,
+      &quot;path&quot;: &quot;docs/integrations/ml4t/ML4T_FITECHML_FUNCTION_COMPARISON_ROADMAP_20261018.docx&quot;,
+      &quot;raw_sha256&quot;: &quot;1b53e8f5f8f0e1f918e79c810cd829e96c9a48d963f10d64f155b414ff6038bf&quot;,
+      &quot;bytes&quot;: 75653
+    },
+    {
+      &quot;artifact_id&quot;: &quot;f1-report&quot;,
+      &quot;path&quot;: &quot;docs/milestones/F1/report/index_v1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;eb80353b30261ab0089564491bc3dfb17ccf098c173c8c298d99b08fbf514653&quot;,
+      &quot;bytes&quot;: 1613
+    },
+    {
+      &quot;artifact_id&quot;: &quot;f1-registration&quot;,
+      &quot;path&quot;: &quot;docs/milestones/F1/registration_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;0ca63606409f549815bdb41df9a75acf031428405a6613303911e3343e6ce3d0&quot;,
+      &quot;bytes&quot;: 1459
+    },
+    {
+      &quot;artifact_id&quot;: &quot;f2-report&quot;,
+      &quot;path&quot;: &quot;docs/milestones/F2/report/index_v1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;5645fa11d688b8c6ca70fd07c52a4daa98974332b77003c3799f8ac548944fd9&quot;,
+      &quot;bytes&quot;: 1630
+    },
+    {
+      &quot;artifact_id&quot;: &quot;f2-registration&quot;,
+      &quot;path&quot;: &quot;docs/milestones/F2/registration_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;acafecb0f742a17925e1455750d912a9b765d8d15324e03e7b1638d8831c3d58&quot;,
+      &quot;bytes&quot;: 1476
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r4-report&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R4/report/index_v1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;c01f01c93a301a2d7347312d7cdb38ce4af33abd5b194a9013a5454312999690&quot;,
+      &quot;bytes&quot;: 1675
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r4-registration&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R4/registration_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;30589788d916ac0d7bcab75db37f99df8497f6ed6ce3413bd335d5ab2f907706&quot;,
+      &quot;bytes&quot;: 1604
+    },
+    {
+      &quot;artifact_id&quot;: &quot;d1-report&quot;,
+      &quot;path&quot;: &quot;docs/milestones/D1/report/index_v1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;398b470d99f2037dd8d7a4313664e6c11573be3256a98017257512ebee19d31b&quot;,
+      &quot;bytes&quot;: 1621
+    },
+    {
+      &quot;artifact_id&quot;: &quot;d1-registration&quot;,
+      &quot;path&quot;: &quot;docs/milestones/D1/registration_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;f55a3996ff64f26c09774f05a9258ab5016c8aed619944a22634176bfd43d7fd&quot;,
+      &quot;bytes&quot;: 1457
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-1-report&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.1/report/index_v1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;381f25e784091f67169717772152086f2f7d9b38762c0c28de5a8eb6ba481c9b&quot;,
+      &quot;bytes&quot;: 3117
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-1-registration&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.1/registration_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;ad80828350948b03d7598afc6cc2999b63df244e6a2af5d5cfe140bff224f98b&quot;,
+      &quot;bytes&quot;: 1451
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-1-inputs&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.1/input_manifest_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;83f92ba72fad6e35012212f625e996756fda3511fab8e6cd82aad0c09aceab35&quot;,
+      &quot;bytes&quot;: 858
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-1-handoff&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.1/handoff_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;eba5cc02e0d588ff732fe29bc191e5fbfdae5bdf03fddb868e2161bde15953b9&quot;,
+      &quot;bytes&quot;: 1579
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-2-contract&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.2/contract_v1.md&quot;,
+      &quot;raw_sha256&quot;: &quot;8049c3c69b73c976ac65e9b0311cb1bea59fe755a9a9ba834ccac70cad8003fb&quot;,
+      &quot;bytes&quot;: 6865
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-2-inputs&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.2/input_manifest_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;2feedb819ef1d9571ee7f2a2b2fba24bc5d83aa52858782b3e1941f7f7b363fe&quot;,
+      &quot;bytes&quot;: 1184
+    },
+    {
+      &quot;artifact_id&quot;: &quot;r1-2-registration&quot;,
+      &quot;path&quot;: &quot;docs/milestones/R1.2/registration_v1.json&quot;,
+      &quot;raw_sha256&quot;: &quot;6ca200ce0475304cfac0de0d1a102c7524c02c468a55c855764ab64b60c301c5&quot;,
+      &quot;bytes&quot;: 1111
+    }
+  ]
+}
+</pre></article></body></html>

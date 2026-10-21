@@ -1,0 +1,237 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACCEPTANCE contract V5</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>ACCEPTANCE contract V5</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 741ba516940c5703a216e9a3306f37b81805329a509417af88dc2f15b7b08bfb</p><pre class="document-text"># R0 — Acceptance contract V5 (R0-BF-C1)
+
+&gt; Ký hiệu: `Dnnn` trong tài liệu này là quyết định của legacy G1 `docs/decisions.md` (snapshot sha256 `39b9fd31c1dd4ccd82bddb46a97e9b8a1d78e0522fa44c6d1a37b07bb16bf43f`), không phải ledger FiTechSNM. `R0` là node Param Opt V2; `R0` trong D385 là node RN V3 khác (homonym).
+
+contract_id: FITECHSNM.G1CCE.R0.ACCEPTANCE
+contract_version: 5.0.0-draft.1
+node_ref: {lineage: G1_CCE_INHERITED, workstream: PARAM_OPT_V2, node_id: R0} (implementation_order 1; sealed order 2; SP0/SP01)
+plane: DOCUMENTARY (không dataset; không OOS/holdout/paper/live)
+mode: BASELINE (overlay candidate-evolution D2 không áp dụng; INPUT V5 §10)
+STATUS=CONSOLIDATED_DRAFT_PENDING_OWNER_APPROVAL. Prospective: chỉ có hiệu lực khi có approval `PRE_FACT` HUMAN đúng bytes của file này (`CONTRACT_APPROVALS=0/5`). Thay thế (chưa hiệu lực) `ACCEPTANCE_CONTRACT_V4.md` 4.0.0-draft.1; V4, SCH V2 và các addendum MR3–MR6 giữ nguyên bytes.
+Schema và digest: `SCHEMA_AND_HASH_REFERENCE_MODEL_V2.md` (SCH; không đổi). Authority/disposition: `AUTHORITY_AND_FINDING_DISPOSITION_V2.md` (AUTH). Chuẩn: `docs/governance/NODE_CONTRACT_AND_HARNESS_STANDARD_V1.md`. Nội dung đầy đủ tự chứa; addendum chỉ là provenance.
+
+## 0. Hiệu lực, nguồn gộp và bảng clause V4 → V5
+
+**PREC-V5-1.** Mỗi clause hiệu lực là văn bản của V5 (prospective, từ lúc approval đúng bytes). Không đổi method/công thức/ngưỡng; không reset lineage/exposure/trial; không tự promote authority khoa học; UNKNOWN/PARTIAL/HOLD lịch sử không thành PASS. Nguồn đầy đủ (sid, version, sha256, bytes) cho SCH, CORR, MR3, MR4, MR5, MR6, OWN-PF, OWN-PLAN, SON-BD, OWN-BASE: bảng §0.2 của INPUT V5. Bổ sung cho contract này:
+
+| sid | tài liệu | version | sha256 | bytes |
+|---|---|---|---|---|
+| V4-ACC | `docs/nodes/01_R0/preparation_mr2/ACCEPTANCE_CONTRACT_V4.md` | 4.0.0-draft.1 | `106f13654870c907193d28a9e6ed65d16ef1c88bf0a5fb37896fbd6e1b768845` | 21080 |
+| MAND | `docs/decisions/G1_ALL_NODE_ACCEPTANCE_MANDATE_V1/G1_ALL_NODE_ACCEPTANCE_MANDATE_AND_R0_ERRATUM_V1.md` | 2026-10-09 | `4dd247297df498711fe76216245f254d34b2b70a195ae211dcc5cbe20929d844` | 5793 |
+| COORD-V3 | `docs/governance/RUNTIME_AILL_CC_COORDINATION_MODEL_V3.md` | V3 | `fa87d2cdc788a1c4d4f1b9acdd59faf5e3948e4219d02b8507da3daae6a405f3` | 6371 |
+
+| V4 § (dòng) | trạng thái | nguồn hiệu lực | lý do |
+|---|---|---|---|
+| header (L1–L10) | AMENDED | V5 header | version, mode, trạng thái |
+| §1 Verdict hiện tại (L11–L25) | AMENDED; §1.1 ADDED | V4-ACC L11–L25; OWN-PF §7 | cờ cập nhật; nhãn kết quả đầu |
+| §2 Chế độ phê duyệt (L27–L30) | UNCHANGED + §2.1, §2.2 ADDED | V4-ACC L27–L30; OWN-PF §3, §4 DSC02/DSC07; MR6 §3 | chuỗi ủy quyền; T1–T4 khác policy AUTO |
+| §3 Ma trận predicate (L32–L68) | UNCHANGED trừ P-11, P-12 (REPLACED), P-13, P-19 (AMENDED); P-30, P-31 ADDED | V4-ACC L32–L68; MR3 L416 (P-11/P-12), L515–L516 (P-13/P-19); SON-BD; OWN-PF §3; OWN-BASE; AILL-BF §2 | khớp boundary Son chọn, stable fact + occurrence, quyền Runtime, intake O/A |
+| §4 Negative controls (L70–L139) | UNCHANGED; §4.2 ADDED | V4-ACC L70–L139; MR3 §9; MR4 §7; MR5 §7 | thêm tham chiếu case kế hoạch đã chấp nhận |
+| §5 Độc lập và giới hạn (L141–L145) | UNCHANGED | V4-ACC L141–L145 | không đổi |
+| §6 Disposition và chuyển node (L147–L149) | UNCHANGED + ghi chú coordination V3 | V4-ACC L147–L149; COORD-V3 | Son gate giữ nguyên |
+| §7 Signature slots (L151–L163) | AMENDED | V4-ACC L151–L163; SON-BD | lựa chọn Son đã ghi; chữ ký vẫn MISSING |
+| §8 MISSING_BINDING (L165–L167) | AMENDED | V4-ACC L165–L167 | trạng thái hiện tại |
+
+## 1. Verdict hiện tại
+
+```
+CONTRACTS              = CONSOLIDATED_DRAFT_PENDING_OWNER_APPROVAL   (V5 drafts, 5.0.0-draft.1)
+CONTRACT_APPROVALS     = 0/5
+R0_IMPLEMENTATION      = NOT_STARTED
+NODE_PASS              = NOT_GRANTED
+SUCCESSOR_ADMISSION    = NOT_EXECUTED
+LEGACY_REUSE           = NOT_APPROVED
+SCIENTIFIC_EXECUTION   = NOT_EXECUTED_BY_FITECHSNM
+SON_GATE_BETWEEN_NODES = RETAINED
+NEXT_NODE              = NOT_OPENED
+AUTO_ACTIVE            = 0
+MODE                   = BASELINE
+BD_06                  = SELECTED_BY_SON: DOCUMENTARY_DELEGATION (packet có kiểu: MISSING_BINDING)
+BD_07                  = SELECTED_BY_SON: CUSTODY_ONLY_OPENING cho R1, R2, R5A_AUTH (packet có kiểu: MISSING_BINDING)
+EDGES E-R1 E-R2 E-R5A E-MKT = OPEN_UNBOUND
+R0_C1                  = NOT_OPENED
+```
+
+Không dùng `PASS_WITH_RESERVATION` thay `NODE_PASS`. Đủ chữ ký mà thiếu evidence thực thi thì chưa PASS. `ACCEPTED_FOR_DESIGN` không thay `NODE_PASS`. Hướng Owner A-1…A-6 là `ACCEPTED_FOR_DESIGN_DIRECTION_ONLY`: không phải approval, không phải effective policy.
+
+### 1.1 Nhãn kết quả đầu tiên (thêm ở V5; OWN-PF §7)
+
+Một kết quả R0 thật phải có: nguồn đã admission theo bundle pin; verifier mới chạy trên nguồn thật được cấp; run record và raw stream bền; verification report có verdict; package/manifest được publish bền và readback; custody ACK; observation tài liệu đúng package/verification refs; và mọi receipt mà phạm vi đã duyệt yêu cầu (gồm O/A của kết quả intake đầy đủ, P-31). Nhãn đúng cho artifact milestone khi chưa đủ nghiệm thu node: **&quot;R0 documentary verification published and observed — NODE_PASS NOT GRANTED&quot;**. `VERIFIED_MATCH` là positive verification; một refusal/finding được lưu/publish hợp lệ là evidence thật của kết quả âm, không phải thành công R0. Output chưa admission hoặc chưa published không đạt nhãn này. R0 không sinh kết quả thị trường, PnL hay chứng nhận chiến lược; 438 candidate, 254 ticker, 46 strategy và thống kê lịch sử là source claims, không phải phép đo mới của R0. Support engine C1-MR2 (accepted ở mức support synthetic) không phải verifier domain R0 và 142 test của nó không thay code verifier, instance, receipt hay run R0.
+
+## 2. Chế độ phê duyệt (design — chưa có effective policy)
+
+`approval_mode` chuẩn tắc ∈ {`AUTO_POLICY`, `HUMAN_AUTHORITY_REQUIRED`}. `AUTO_POLICY` nghĩa là predicate cơ học có thể được Python đánh giá và ghi approval record NẾU và CHỈ KHI một effective policy do người có thẩm quyền ban hành (policy id, version, hash, phạm vi, hết hạn, thu hồi). Hiện chưa có policy (`AUTO_ACTIVE=0`): mọi hàng `AUTO_POLICY` dưới đây là `DESIGNED_NOT_EFFECTIVE`, và phải được người duyệt cho tới khi policy hiệu lực. Thay đổi methodology, ánh xạ authority, ranh giới consumer/MKT_REGIME, CERT applicability, độc lập reviewer và chữ ký người LUÔN là `HUMAN_AUTHORITY_REQUIRED`; một slot chữ ký người không có nghĩa phải hỏi Son lặp lại mỗi cycle cho predicate cơ học đã được policy cấp.
+Mỗi approval record mang stage (`PRE_FACT`, `POST_PACKAGE`, `POST_NODE_PASS`, `POST_SUCCESSOR`), verifier id/version, evidence binding, policy ref/version, expiry, revocation check (SCH §9.1). HUMAN: verifier và policy_ref null; AUTO: cả hai đầy đủ non-null. Hết hạn/revoke/không khớp hash/sai stage ⇒ REFUSED. **Từ vựng**: `AUTO_APPROVABLE_WITHIN_POLICY` (đề xuất AILL) là nhãn tương thích eligibility, ánh xạ một chiều tới `AUTO_POLICY (eligibility)`; không phải giá trị field. `HOLD_MISSING_BINDING` là status của predicate/outcome, không phải mode. Roll-up/recording (NP, SA) cần exact effective grant và đủ nghĩa vụ người. **Đánh giá AUTO ở mức predicate** (P-04…P-29) không tạo approval độc lập có subject là control: kết quả được ghi thành `PredicateResult` trong `NodePassRecord` (mang `recorded_mode`, `policy_ref`, `verifier` của NP) hoặc là bằng chứng (`evidence_binding`) của một attestation `POST_PACKAGE` do `AUTO_POLICY` ký; approval có subject là control (contract, schema doc, policy, verifier, boundary) luôn là `HUMAN_AUTHORITY_REQUIRED`.
+
+### 2.1 Chuỗi ủy quyền và thứ tự (thêm ở V5; OWN-PF §4 DSC02 và DSC07; chi tiết INPUT V5 §2.7)
+
+(1) Owner chốt bundle V5, scope, registry, signer/delegation; (2) approval `PRE_FACT` HUMAN cho năm contract V5 và SCH V2 đúng bytes; (3) quyền coding riêng (chỉ code, không chạy thật); (4) coding, kiểm tổng hợp, QC code của Runtime và QC ngữ nghĩa của AILL, đóng băng code; (5) VerifierDefinition của bytes code cuối và approval PRE_FACT của nó, ENV_LOCK/CONFIG/IM, T1–T4 hiệu lực, quyền chạy thật pin đúng IM và code; (6) admission mới ⇒ chạy/publish/observe/(O/A); (7) QC kết quả và acceptance sau chạy ⇒ `NODE_PASS` nếu mọi predicate áp dụng đủ; (8) báo cáo khoa học đã verify/deliver ⇒ `WAIT_FOR_SON` ⇒ Son grant riêng ⇒ admission mới của successor (COORD-V3). Quyền coding không tự mở chạy thật; &quot;approvals/evidence/QC&quot; nằm sau chạy trong prose lịch sử được đọc là nghiệm thu bằng chứng sau chạy, không đảo thứ tự approval contract trước chạy.
+
+### 2.2 Quyền ghi của Runtime khác policy AUTO (thêm ở V5; OWN-PF §3, MR6 §3)
+
+Một approval HUMAN với `policy_ref = null` **không** miễn T3. `AUTO_APPROVAL_POLICY` có thể không dùng khi toàn bộ approval là HUMAN; policy ghi/attestation của Runtime (T3) cùng T1 (principal), T2 (trust), T4 (fence/thu hồi) là điều kiện bắt buộc trước mọi effect ở **cả** chế độ `TRUSTED_INTERNAL_CALL` và `SIGNED_ISSUER`; T5 chỉ cho `SIGNED_ISSUER` (PROGRAM V5 §3.5). Predicate P-30.
+
+## 3. Ma trận predicate
+
+Verifier logic: `R0_VERIFIER_P2` (version MISSING_BINDING cho tới R0-C1). `expiry`/`revocation`: theo approval record (`valid_from`, `expires_at`) và registry snapshot; không có phê duyệt vô thời hạn. Hàng đổi so với V4: P-11, P-12, P-13, P-19; hàng mới: P-30, P-31; các hàng còn lại giữ nguyên nội dung V4 (đổi tên tham chiếu V4→V5).
+
+| ID | Predicate | Evidence cần | approval_mode | Verifier | policy_ref | Trạng thái |
+|---|---|---|---|---|---|---|
+| P-01 | năm contract V5 + schema doc có approval stage `PRE_FACT` đúng bytes/owner | approval records (stage PRE_FACT) với `subject_raw_sha256` | HUMAN_AUTHORITY_REQUIRED | Owner/Reviewer (người) | null | NOT_STARTED |
+| P-02 | ánh xạ authority hiệu lực theo node/lineage được Owner review (AUTH §3.3) | review record | HUMAN_AUTHORITY_REQUIRED | Owner | null | PENDING |
+| P-03 | từng gap có disposition D377 theo scope (AUTH §4) | `r0_findings_disposition.json` + review | HUMAN_AUTHORITY_REQUIRED | Owner + Reviewer | null | PENDING |
+| P-04 | input admission hợp lệ (INPUT V5 §5–§6): closed schema, NFC, allowlist, pin, stage approval, registry | `AdmissionResult` + refusal codes (SCH §7.5.1) | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.admit` | MISSING_BINDING | NOT_STARTED |
+| P-05 | custody input materialized đúng CAS (INPUT V5 §7) | digest đọc lại | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.admit` | MISSING_BINDING | NOT_STARTED (MB-IN-01) |
+| P-06 | `method_hash` và 5 forward hash tính lại bằng executor thật qua harness, khớp | `r0_verification_result.json` + run envelope | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.execute/verify` | MISSING_BINDING | NOT_STARTED |
+| P-07 | vector SCH §6.13 đạt trước khi dùng trên dữ liệu thật | check `vectors_pass` | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.verify` | MISSING_BINDING | NOT_STARTED |
+| P-08 | raw slice 13 section V1 == `body_sha256` lịch sử; normalized là trường riêng | checks M6 | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.verify` | MISSING_BINDING | NOT_STARTED |
+| P-09 | coverage matrix và authority graph phát từ input đã bind; không hàng nào bị che | DR-2, DR-3 | AUTO_POLICY cho phát sinh; review nội dung HUMAN | verifier + Owner | MISSING_BINDING | NOT_STARTED |
+| P-10 | đồ thị tham chiếu hash acyclic trên TOÀN catalogue SCH §3.3 (mọi field REF), theo stage; không file tự chứa digest; NP/SA không nhúng approval của chính mình | check acyclic (NC-20, NC-37…NC-41) | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.verify` | MISSING_BINDING | NOT_STARTED |
+| P-11 | **ranh giới BD-06 (Son đã chọn `DOCUMENTARY_DELEGATION`) được chấp nhận: `BOUNDARY_PACKET` approved chứa nghĩa vụ opening và closure của từng edge, kể cả `BD06-MKT`/`BD06-PIT` với owner role và state `OPEN_OWNED_NOT_VERIFIED`; edge ở `OPEN_UNBOUND`/`OPEN_BOUND` được ghi sổ; không đòi closure hay evidence thực của MKT_REGIME/PIT_UNIV để R0 đạt NODE_PASS; không waiver** (thay P-11 của V4 theo MR3 và SON-BD) | quyết định ranh giới (`SON_SELECTION_RECORD_V1`) + `BOUNDARY_PACKET` approved + sổ edge mở; thiếu ⇒ HOLD | HUMAN_AUTHORITY_REQUIRED | Son + Master Owner | null | PENDING (lựa chọn đã ghi; packet có kiểu, approval và chữ ký MISSING_BINDING) |
+| P-12 | **consumer R1, R2, R5A_AUTH: custody-only opening (BD-07 Son đã chọn cho từng consumer) được duyệt trong boundary packet đã approved, với edge mở ghi sổ; opening record (OUTPUT V5 §7) chỉ sau boundary accepted, R0 `CUSTODY_ACK` và owner bound; closure chỉ ở gate sau thực thi được ủy quyền; không dùng mock/stub; không waive** (thay P-12 của V4 theo MR3 và SON-BD) | approval custody-only per-consumer trong packet + sổ edge mở; nghĩa vụ `BD07-R1/R2/R5A` | HUMAN_AUTHORITY_REQUIRED | Son | null | PENDING |
+| P-13 | output package đúng schema/identity; chín file, PM seal tám entry gồm hai stream; receipt nhiều mức; ledger chuỗi hợp lệ; **fact ổn định tách khỏi occurrence theo attempt (R-14, R-15, R-18)** | package + ledger + stable fact + occurrence | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.publish/verify` | MISSING_BINDING | NOT_STARTED (MB-OU-01) |
+| P-14 | CERT-C1…C10 áp dụng được duyệt; C6 giới hạn; DLG-01…DLG-08 được duyệt (BD-10) | bảng METHODOLOGY V5 §5–§6 + approval | HUMAN_AUTHORITY_REQUIRED | Reviewer độc lập + RN Method Owner | null | PENDING |
+| P-15 | negative controls (§4) đạt trên verifier thực | test evidence | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | harness | MISSING_BINDING | NOT_STARTED |
+| P-16 | replay/recovery/idempotence: crash giữa publish, restart, retry không nhân đôi | test evidence | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | harness | MISSING_BINDING | NOT_STARTED |
+| P-17 | firewall: không đọc ngoài allowlist; không ghi legacy; legacy bytes/HEAD/status không đổi bởi task | hash trước-sau + inventory digest | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.verify` | MISSING_BINDING | NOT_STARTED |
+| P-18 | tương đương Type C của P2 so với recipe legacy (METHODOLOGY V5 §8) | 5 tiêu chí | HUMAN_AUTHORITY_REQUIRED (xác nhận); đo AUTO | Reviewer | null | NOT_STARTED |
+| P-19 | fact `R0_DOCUMENTARY_OBSERVATION` (origin `R0_DOCUMENTARY_VERIFICATION`) tồn tại dưới dạng **stable fact + occurrence ASSOCIATED**; mức claim theo evidence (BD-14) | ledger event `FACT_OCCURRENCE_ASSOCIATED` + stable fact + occurrence | HUMAN_AUTHORITY_REQUIRED | AILL owner + Master | null | PENDING |
+| P-20 | Independent technical QC đủ evidence; reviewer cụ thể; defect xác nhận đóng root cause và forward replay | review record | HUMAN_AUTHORITY_REQUIRED | Reviewer | null | NOT_STARTED |
+| P-21 | tests/skips/mutations/limitations có disposition riêng | báo cáo | HUMAN_AUTHORITY_REQUIRED | Reviewer | null | NOT_STARTED |
+| P-22 | manifest cuối rehash; pins/report đồng bộ; mirror Son cùng hash | MANIFEST + mirror manifest | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | verifier | MISSING_BINDING | NOT_STARTED |
+| P-23 | verifier chuyển bước fail-closed được kiểm trong scope nghiệm thu (từ chối khi thiếu NODE_PASS, grant, dependency hoặc policy hết hạn/bị revoke), trước khi ghi NODE_PASS | test evidence + record từ chối | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_TRANSITION_VERIFIER` (version MISSING_BINDING) | MISSING_BINDING | NOT_STARTED |
+| P-24 | ghi `NODE_PASS_RECORD`: mọi predicate áp dụng đạt, approval PRE_FACT đúng bytes, attestation POST_PACKAGE, evidence thực thi, boundary packet đã chấp nhận (BD-06/BD-07), dependency hợp lệ; NP KHÔNG nhúng approval của chính nó | `NodePassRecord` (SCH §9.4) embed PM, approval PRE_FACT, attestation, boundary packet, đầu ledger | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) chỉ nếu policy cấp đúng roll-up và mọi signer/nghĩa vụ người đã đáp ứng; nếu không HUMAN_AUTHORITY_REQUIRED | `R0_TRANSITION_VERIFIER` | MISSING_BINDING | NOT_STARTED |
+| P-25 | `SUCCESSOR_ADMISSION` thật (SCH §9.5): sau NODE_PASS và approval POST_NODE_PASS của NP, sau grant successor mới và kiểm dependency mới; không suy từ báo cáo hay vị trí danh sách | admission record | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) trong effective policy đã bind; thay đổi method/ranh giới luôn HUMAN | `R0_TRANSITION_VERIFIER` | MISSING_BINDING | NOT_STARTED (nghiệm thu thuộc node kế; hiện `SUCCESSOR_ADMISSION=NOT_EXECUTED`) |
+| P-26 | phase-source custody: `execute_external_reads` = KNOWN 0 với `observation_method` ≠ NOT_OBSERVED; mọi root `read_sha256 == pin_sha256`; `post_read_status = MATCH` | `RunEnvelope.source_admission` (SCH §7.6) | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.verify` + RUNTIME_SUPERVISOR | MISSING_BINDING | NOT_STARTED |
+| P-27 | stream evidence: hai stream sealed trong PM; `closed_before_hash = true`; ghi-trước-hiển-thị; writer = RUNTIME_SUPERVISOR; không vòng tự-hash | RE + PM + kiểm thứ tự ghi | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | RUNTIME_SUPERVISOR + `R0_VERIFIER_P2.verify` | MISSING_BINDING | NOT_STARTED |
+| P-28 | typed counts: mọi ô `process_counts` là `Count` hợp lệ; UNKNOWN chỉ được chấp nhận ở ô mà predicate cho phép; attempt quan sát được là KNOWN | `RunEnvelope.process_counts` | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | `R0_VERIFIER_P2.verify` | MISSING_BINDING | NOT_STARTED |
+| P-29 | corpus ví dụ typed (SCH §10) chạy trên validator/graph checker THẬT của R0-C1 cho kết quả đúng expected (dương và âm); khác DOCUMENTARY_MODEL_CHECK của MR2 (không tính là bằng chứng này) | test evidence | AUTO_POLICY (DESIGNED_NOT_EFFECTIVE) | harness | MISSING_BINDING | NOT_STARTED |
+| P-30 | **quyền hiệu lực của Runtime trước effect: T1 principal, T2 trust, T3 policy ghi/attestation, T4 fence và thu hồi hiệu lực ở cả `TRUSTED_INTERNAL_CALL` và `SIGNED_ISSUER`; T5 chỉ cho `SIGNED_ISSUER`; internal call không miễn T1–T4; `policy_ref = null` của approval HUMAN không thay T3** (thêm ở V5; OWN-PF §3, MR6 §3; PROGRAM V5 §3.5) | instance đã bind của T1–T4 và kết quả kiểm trước mỗi effect (UR-01 ở bundle binding: record typed cho instance chưa có trong SCH V2) | HUMAN_AUTHORITY_REQUIRED | Runtime Owner + issuer có thẩm quyền | null | NOT_STARTED (MB-MR4-02, MB-MR5-02: HOLD) |
+| P-31 | **kết quả intake đầy đủ đầu tiên: fact `AILL_OBSERVATION` (outcome `OBSERVED_DOCUMENTARY`) và `AILL_INTAKE_ACK` (outcome `DURABLE_INTAKE_RECEIVED` hoặc `DURABLE_INTAKE_REJECTED`) thực, tạo qua `observe_r0_source_v2`/`ack_r0_observation_v2`, guard PROGRAM V5 §3.5 và `publish_fact`, kèm witness readback; rejection bền giữ nhãn rejected; không learning, impact hay gain** (thêm ở V5; OWN-PLAN, OWN-PF §3 và D06, AILL-BF §2) | ledger events + stable fact + occurrence O và A + `AdapterResult` | HUMAN_AUTHORITY_REQUIRED | AILL owner + Master | null | PENDING (instance AILL thực MISSING_BINDING; không có O/A thực thì kết quả intake đầy đủ không đạt, artifact publication+observation vẫn giữ nhãn §1.1) |
+
+Có HOLD ở P-02/03/11/12/14/19/30/31 thì không cấp NODE_PASS; phần độc lập vẫn tiếp tục.
+
+**Làm rõ P-06/P-08 (OWN-BASE):** so sánh tái hiện cục bộ với baseline RN V2 và verdict PASS/FAIL cục bộ phải thực hiện tại R0 theo METHODOLOGY V5 §3.1; kết quả là `PredicateResult` (`PASS`/`FAIL`/`HOLD_MISSING_BINDING`), không phải enum DR-1 mới; `HOLD`/`NOT_EXECUTED` không bị gộp thành mismatch; PASS đối chiếu khác `NODE_PASS`; BD-06/BD-07 không hoãn so sánh này; custody ACK, receipt O/A hay test xanh không thay verdict cục bộ.
+
+**Làm rõ P-12 (cách đọc cần Owner xác nhận, OQ-01 ở bundle binding):** opening record cần owner bound với delegation hiệu lực (OUTPUT V5 §7.2) và theo R-13 `NODE_PASS_RECORD` không cite opening; do đó contract này đọc P-12 ở `NODE_PASS` là: boundary packet đã approved với custody-only per-consumer và nghĩa vụ edge mở được ghi sổ trong packet; việc ghi opening record là điều kiện của admission của consumer (SA V3) và của closure, không là điều kiện nhúng vào NP. Nếu Owner đọc khác, cần version contract mới.
+
+## 4. Negative controls bắt buộc (chạy trên verifier thực; mỗi cái có red và green)
+
+NC đổi so với V3: NC-09, NC-20, NC-34; NC mới: NC-37…NC-62. Cột &quot;Kết quả mong đợi&quot; của NC mới trỏ ví dụ tài liệu tương ứng ở SCH §10 (bằng chứng DOCUMENTARY_MODEL_CHECK của MR2, không thay cho chạy trên verifier thực).
+
+### 4.1 Danh sách NC-01…NC-62
+
+| ID | Điều kiện | Kết quả mong đợi |
+|---|---|---|
+| NC-01 | `method_hash` ghi sai 1 ký tự | `HASH_MISMATCH` |
+| NC-02 | sửa 1 giá trị trong body manifest | `HASH_MISMATCH` |
+| NC-03 | giữ key tự-hash trong body khi băm (recipe sai) | digest khác; recipe bị từ chối |
+| NC-04 | đổi manifest CRLF↔LF | `method_hash` không đổi; raw sha đổi; xử lý theo SCH §2 |
+| NC-05 | đảo thứ tự key manifest | `method_hash` không đổi |
+| NC-06 | key trùng trong JSON | REFUSED |
+| NC-07 | thiếu / thừa / tráo record (path, oid, sha, parent) | REFUSED_INPUT |
+| NC-08 | bytes hoặc sha không khớp pin snapshot | REFUSED_INPUT |
+| NC-09 | `bytes` là boolean hoặc chuỗi; count UNKNOWN bị ép thành số `0` ở field `Count` | REFUSED (strict integer; Count kiểu) |
+| NC-10 | approval cũ (stale `subject_raw_sha256`), hết hạn hoặc revoke | REFUSED |
+| NC-11 | output bị sửa sau publish | verify fail, quarantine |
+| NC-12 | publish trùng / retry sau crash | idempotent theo `publish_key` |
+| NC-13 | ghi vào namespace sai hoặc vào cây legacy | REFUSED; legacy bytes không đổi |
+| NC-14 | đường dẫn mặc định lịch sử làm đích | REFUSED |
+| NC-15 | đọc ngoài allowlist (OHLCV, R2–R6, OOS, holdout, `fitechtrade*`) | REFUSED |
+| NC-16 | script không khớp manifest (AST literal khác) | `SCRIPT_MANIFEST_DIVERGENCE` |
+| NC-17 | manifest chứa số thực hoặc NaN | REFUSED |
+| NC-18 | thiếu consumer binding trong scope yêu cầu consumer thật | HOLD |
+| NC-19 | gap D377 chưa có disposition | HOLD |
+| NC-20 | IM embed digest của chính nó, hoặc PM liệt kê chính nó, hoặc tham chiếu ngược phase, hoặc một cạnh ngoài catalogue SCH §3.3 | REFUSED (chu trình / cạnh ngoài danh mục) |
+| NC-21 | dùng `normalized_lf_sha256` ở chỗ cần raw (và ngược lại) | mismatch với identity V1 |
+| NC-22 | offsets tính trên text đã decode (bỏ BOM) | mismatch; vector VEC-05 |
+| NC-23 | section cuối không terminator (EOF) | vector VEC-04 đạt |
+| NC-24 | hai TEXT_SECTION cùng parent, khác section_id/range | PASS (green control) |
+| NC-25 | nhầm kind: GIT_BLOB mang field SNAPSHOT_FILE, SNAPSHOT_FILE mang commit giả | REFUSED |
+| NC-26 | HEAD legacy đã di chuyển nhưng snapshot/blob khớp pin | PASS (green control) |
+| NC-27 | `source_invalidations` khác rỗng | REFUSED cho artifact liên quan |
+| NC-28 | DR chứa attempt/cycle/thời gian | REFUSED (xác định) |
+| NC-29 | ledger gãy chuỗi, `seq` hở hoặc epoch cũ | `QUARANTINED`, dừng ghi |
+| NC-30 | hash forward declared sai 1 ký tự | `HASH_MISMATCH` |
+| NC-31 | NFC thay NFD (hoặc ngược lại) | digest khác; không normalization |
+| NC-32 | consumer ghi `CONSUMER_PROCESSED` khi chưa được bind | REFUSED |
+| NC-33 | `REVOCATION_REGISTRY` thiếu, hoặc `registry_checked_through` cũ hơn `max_staleness_seconds` | HOLD (REFUSED cho admission) |
+| NC-34 | cùng `(node_ref, scope_digest, cycle_id, attempt_id)` nhưng `manifest_raw_sha256` khác | event `CONFLICT_REJECTED` rồi `QUARANTINED` (`REJECTED_SLOT_CONFLICT_PAYLOAD`); manifest đã có không đổi |
+| NC-35 | successor admission trước khi có NODE_PASS, hoặc với grant/dependency cũ | REFUSED |
+| NC-36 | revoke được ghi vào registry sau khi approval đã tồn tại (approval không bị sửa) | admission kế tiếp REFUSED; bytes approval không đổi |
+| NC-37 | NP chứa approval mà subject là chính NP (NP→AR_NP→NP) | REFUSED (chu trình); EX-N12 |
+| NC-38 | `evidence_binding` của approval PRE_FACT trỏ node tầng cao hơn (ví dụ PM) | REFUSED; EX-N13 |
+| NC-39 | thêm cạnh ngoài danh mục (`NODE_PASS_RECORD` → `APPROVAL_POST_NODE_PASS`) mà subgraph vẫn Kahn-xanh | graph check FAIL (kiểm trên toàn catalogue); EX-N14 |
+| NC-40 | approval cite registry snapshot có `checked_through` sau `issued_at`; hoặc approval cite snapshot chưa đóng băng | REFUSED; EX-N30 |
+| NC-41 | registry snapshot sai `prev_snapshot_raw_sha256`, hoặc bỏ entry thu hồi cũ (không tích lũy) | REFUSED/HOLD; EX-N31, EX-N32 |
+| NC-42 | HUMAN approval mang `verifier` hoặc `policy_ref` non-null | REFUSED; EX-N10 |
+| NC-43 | AUTO approval thiếu `verifier` hoặc `policy_ref` | REFUSED; EX-N11 |
+| NC-44 | approval có `expires_at` trước `issued_at` | REFUSED; EX-N29 |
+| NC-45 | định danh vận hành không NFC (`local_id`, `cycle_id`, `attempt_id`…) | REFUSED `ADM-NFC` (không normalize); EX-N03, EX-N24 |
+| NC-46 | `local_id` chứa `U+001F`, hoặc hai record cùng `record_key` | REFUSED; EX-N07, EX-N04 |
+| NC-47 | TEXT_SECTION có parent là CONTROL_FILE (hoặc parent không tồn tại) | REFUSED `ADM-PARENT`; EX-N05 |
+| NC-48 | `Count` UNKNOWN với reason rỗng; số trần ở field Count | REFUSED; EX-N17, EX-N18 |
+| NC-49 | DR-4: `UNKNOWN` thiếu `status_reason_code`; status thuộc họ khác `item_kind` | REFUSED; EX-N15, EX-N16 |
+| NC-50 | stream được RE tham chiếu nhưng không seal trong PM; PM liệt kê `MANIFEST.json` | REFUSED; EX-N19, EX-N20 |
+| NC-51 | verifier mở nguồn ngoài bundle trong PH-EXEC (quan sát được) | REFUSED `EXE-EXTERNAL-READ`; EX-N28 |
+| NC-52 | `observation_method = NOT_OBSERVED` nhưng `execute_external_reads` KNOWN 0 | REFUSED (không được ép 0); EX-N27 |
+| NC-53 | post-verify re-hash khác bytes đã admit | `SOURCE_DRIFT`; báo MATCH khi hash khác ⇒ REFUSED; EX-N25 |
+| NC-54 | verifier tự điền `post_read_*` trong spool (việc của supervisor) | REFUSED; EX-N26 |
+| NC-55 | evidence core có `attempt_id`; observation fact có `proposal_ref` | REFUSED; EX-N33, EX-N34 |
+| NC-56 | event ledger chưa khai báo, hoặc `detail.event` ≠ `event` | REFUSED; EX-N21, EX-N22 |
+| NC-57 | hiển thị nội dung stream trước khi stream đã close+băm, hoặc stream do writer khác ghi | REFUSED (kiểm thứ tự ghi/đọc); test thật ở R0-C1 |
+| NC-58 | (green) hai GIT_BLOB cùng `git_blob_oid` và `path` khác `pinned_tree_commit`/`local_id` | PASS; EX-P24 |
+| NC-59 | (green) HUMAN approval với verifier=null và policy_ref=null; AUTO đầy đủ | PASS; EX-P04, EX-P05 |
+| NC-60 | (green) count UNKNOWN có reason; `NOT_OBSERVED` với UNKNOWN | PASS; EX-P10, EX-P18 |
+| NC-62 | AUTO approval có subject là control (CONTRACT, SCHEMA_DOC, POLICY_RECORD, VERIFIER_DEFINITION, BOUNDARY_PACKET): policy tự duyệt chính nó | REFUSED; EX-N35 |
+| NC-61 | (green) revocation sau approval: snapshot mới, approval giữ nguyên, admission kế báo REVOKED | PASS; EX-P19 (khác NC-36 ở chỗ kiểm cả chuỗi snapshot) |
+
+Mutation chỉ cho predicate quan trọng, bounded, có valid controls và isolation; survivor `NOT_EXERCISED` không coi là ổn. Budget theo PROGRAM V5 §6 (typed missing cho tới preflight inventory).
+
+### 4.2 Case kế hoạch đã chấp nhận, tham chiếu (thêm ở V5; `PLANNED_NOT_RUN`, observed = null, không phải kết quả đo)
+
+ID case khác với test và subtest; các bộ ID dưới đây là bộ riêng, không trộn với `EX-*` (66) hay `NC-*`. Chúng là kế hoạch kiểm hành vi cho clause hiệu lực của V5 và chỉ trở thành bằng chứng khi chạy trên verifier/store thật dưới grant riêng.
+
+| bộ | nguồn | số ID | phủ clause V5 | predicate |
+|---|---|---|---|---|
+| `CE-F00…CE-F24` (fact stable/occurrence, crash CP0…CP5, R-18) | MR3 §9 | 25 | OUTPUT V5 §5.3 | P-13, P-16, P-19 |
+| `CE-E01…CE-E14` (edge opening/closure; CE-E01/CE-E02 đọc lại theo MR4 §4.4) | MR3 §9 | 14 | OUTPUT V5 §7 | P-11, P-12 |
+| `CE-C01…CE-C06` (đơn vị đếm, catalogue hợp nhất) | MR3 §9 | 6 | OUTPUT V5 §3 | P-10 |
+| `CE4-B01…CE4-B19` (opening ổn định, corrupt/witness, recovery, revision) | MR4 §7 | 19 | OUTPUT V5 §7.5–§7.7 | P-12, P-16 |
+| `CE4-O01…CE4-O13` (owner, delegation, shape/opening/SA) | MR4 §7 | 13 | OUTPUT V5 §7.2 | P-12 |
+| `CE4-A01…CE4-A18` (payload canonical, key Q/D/O/A/F, wrapper V3) | MR4 §7 | 18 | OUTPUT V5 §8.3 | P-19, P-31 |
+| `CE4-G01…CE4-G03` (tầng, acyclic, R-13) | MR4 §7 | 3 | OUTPUT V5 §3 | P-10 |
+| `MR5-F01…F10`, `MR5-S01…S23` (danh tính failure, attestation, guard; 33 ID: 5 positive, 28 negative) | MR5 §7 | 33 | PROGRAM V5 §3.5; OUTPUT V5 §8.3 | P-30, P-31 |
+| MR6 | MR6 §5 | 0 mới | không thêm case; `S10, S11, S13, S15, S17` chạm từng phần; ngữ nghĩa T1–T4 là `PLANNED_NOT_RUN` | P-30 |
+| `BC-*` (so sánh baseline cục bộ M3…M10) | `BASELINE_COMPARISON_AND_CASE_MAP_V1.json` | xem file | METHODOLOGY V5 §3.1 | P-06, P-07, P-08 |
+
+Overlay candidate-evolution D2 (`CE-P-01…14`, 218 case kế hoạch) **không áp dụng** ở mode BASELINE (INPUT V5 §10). Không case nào ở đây là criterion acceptance của Goal.
+
+## 5. Độc lập và giới hạn
+
+- Reviewer khác implementer trước independent PASS. Cùng Owner chain không là blind independent verification; ghi rõ mức độc lập và giới hạn.
+- Tính lại hash bằng cùng recipe (của preparer, của Owner, của verifier) là repeatability.
+- Không có blind independent verification rằng recipe đúng ý định lịch sử: ghi là limitation.
+
+## 6. Disposition và chuyển node
+
+PASS / HOLD / CHANGES_REQUIRED / FAILED / RECONCILIATION_REQUIRED có evidence; `N_A_APPROVED` chỉ khi authority cho phép và ghi riêng, không đếm EXECUTED. Node kế (MKT_REGIME) chỉ admit sau NODE_PASS hoặc `N_A_APPROVED` có authority; không tự chạy từ report; không tự mở R0-C1. Chuỗi hiện hành (COORD-V3): `NODE_PASS → SUCCESSOR_PRECHECK (read-only) → REPORT_VERIFIED_AND_DELIVERED → WAIT_FOR_SON → SON_GRANT → FRESH_ADMISSION → NEXT_NODE_EXECUTION`; Owner, Runtime, AILL và CC không tự bắt đầu task của node kế; thứ tự R0 → MKT_REGIME → R1 giữ nguyên.
+
+## 7. Signature slots (design; chưa có chữ ký nào)
+
+```
+Input Owner                 = PENDING
+RN Method Owner             = PENDING
+Runtime Owner               = PENDING   (Owner Codex thread 01a10f2e-406b-7862-8b82-2e8b8b5c24a5 là điều phối; ký thật chưa có)
+Output/Consumer Owner       = PENDING
+AILL intake owner           = MISSING   (identity logic AILL đã khai; machine principal và chữ ký MISSING)
+Independent Reviewer        = PENDING
+Son authority               = PENDING   (BD-06/BD-07 đã CHỌN bởi Son và ghi 2026-10-09; chữ ký/approval của boundary packet và thay đổi method nếu có vẫn PENDING)
+Human signatures / run signer key = MISSING
+approved_contract_sha256    = MISSING_BINDING
+```
+
+## 8. MISSING_BINDING
+
+MB-AC-01 danh tính người ký và delegation; MB-AC-02 phạm vi NODE_PASS khai trước (documentary; BD-06/BD-07: Son đã chọn, boundary packet có kiểu chưa có); MB-AC-03 bộ negative-control và mutation được duyệt; MB-AC-04 mô hình độc lập reviewer; MB-AC-05 effective policy (nếu muốn dùng AUTO_POLICY); MB-AC-06 `approved_contract_sha256`. Owner/gate: CORR §6. Trạng thái hiện tại (2026-10-09): tất cả MISSING_BINDING hoặc PENDING.
+</pre></article></body></html>

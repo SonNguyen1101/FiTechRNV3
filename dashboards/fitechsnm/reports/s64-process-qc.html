@@ -1,0 +1,43 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Slot64 Owner process QC / pending Fail</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>Slot64 Owner process QC / pending Fail</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: cae15d23372e1088acba5115741f4adc98534d0390669ebea666ff3ef04e686a</p><pre class="document-text"># Slot64 Owner process QC
+
+Kết luận: **STOP_REQUIRED_PENDING_CC_FAIL_RECEIPT**. Owner chọn đường Fail theo policy hiện hành, không cần Son quyết định lại việc có áp stop rule hay không. Chưa quan sát CC chạy Fail; controller vẫn stop=false tại lần đọc 2026-10-21T14:38:39.704090+00:00.
+
+## Năm hợp đồng tại checkpoint
+
+|Contract|Đăng ký|Quan sát|Kết luận|
+|---|---|---|---|
+|Input|Nguồn601pins; role/source closure đúngscope|601pinskhớp; F1currenttreechỉadapterdrift|Sourceintegritygiữ; candidatechưaadmit|
+|Methodology|18BMgiữ; kerneloracle ngoài sealedcall|Adaptercómãmới chưa test; NFC có counterexample helper U+0958|CHANGES_REQUIRED_STATIC; không khẳng định actual MISMATCH|
+|Program|Mọiwrite trongphase; freeze trước run|PhaseEnd11,Freeze12,RED13,Status14phase=null; adapter42→111962bytes|PROCESS_STOP_REQUIRED|
+|Output|Fullpackage,FINAL,mutation,childconsumer và7deliverables|ChỉQUAL/REDvàpartialcandidate, chưafinalfreeze/seal|INCOMPLETE; không nghiệmthu|
+|Acceptance|Owner/jointQC; noretroactivepermission|Failpending; zeroNODEPASScredit|Chưa đóng M2|
+
+Policy§2 yêu cầu mọi product/test/diagnostic Write/Edit trong explicit PhaseStart/PhaseEnd. §3 chỉ dung sai tối đa8 accidental read-only metadata calls; write không thuộc nhóm đó. Không có ngoại lệ cho write vô ý. Mở phase sau và chụp currentfile làm preimage sẽ không tái lập pre-write audit; không dùng cách đó để tiếp tục. Controller chưa flag không đồng nghĩa action hợp lệ. Owner cũng chịu trách nhiệm chuẩn bị kiểm soát: công cụ Write/Edit hiện chưa chặn write trước effect, vì vậy successor phải xử lý cơ chế này, không chỉ lặp câu nhắc.
+
+## Evidence và giới hạn
+
+F1sha64824ed4…fc25b; adapterfrozen42bytes/fa47ce4b…69c, hiện111962bytes/477fa781…02e. Chỉ một trong14filedrift. Giữ rawlog,phase/F1/grant/entry/state và bản copy14candidate ngoài namespaceCC. Không sửa source/controller/STOP hoặc gọi gate thay CC. CCtự khaiwriter; không có OSwriteaudit độc lập.
+
+Controller14PSgates/3Python/6childreserved; hai metadata calls doCCkhai không nằm trong controller.metadata_calls_declared=0. Ít nhất16PScalls trướcFail theo khai báo; không dựng raw output hoặc sửa budget để khớp. QUAL_F0exit0,RED_F0exit2lỗiHarness,RED_F1exit0 trênstub. Chúng không verify adapter mới. Không chạy candidate bởi Owner.
+
+Statichelper_nfc không bao phủ mọi canonical decomposition. StdlibNFC(U+0958)=U+0915 U+093C; các range/singleton hiện tại không chặn U+0958 và helper đi đến appendunchanged. Đây là helper-level counterexample; full adapterreachability và actual source mismatch NOT_TESTED. Successor phải dùng oracle gốc ngoài sealedcall và từ chối out-of-domain thật, không xấp xỉ. Không cần mở import allowlist hoặc sửahostđể chữaparser.
+
+STRONGEST_REJECTION_CASE: RED_F1 là trênstub42byte, không chứng minh implementation111962byte mới đã đúng; write ngoài phase làm thiếu chuỗi authorized preimage/freeze. REJECTION_CASE_STATUS=SUPPORTED. INDEPENDENCE_LIMITATION: Owner đã thấy CCselfreport; có hash và stdliboracle riêng, chưa blindpanel/fullproductverification.
+
+## Bốn mốc
+
+|Mốc|Trạng thái|Evidence/blocker|Chủ trì / tiếp|
+|---|---|---|---|
+|M1 Input/quyền|IN_PROGRESS|Nguồn thực/clock/registry/approvals thiếu|Master/Runtime chuẩn bị retained acts|
+|M2 Program/verification|IN_PROGRESS|Slot64 cầnSTOP; adapter mới chưaverified; Slot63 acceptedscoped giữ|CCghiFail, Ownerchuẩn bị recovery có pin|
+|M3 ActualR0|NOT_STARTED|Chưa actualgrant/admission/run|Runtime sau acceptedinstances|
+|M4 Acceptance/OUTPUT→R1|BLOCKED|Chưa actual/OA/OUTPUT/NodePass|Owners rồiSonnodegate|
+
+|Goal|Đóng góp|Còn thiếu|N/D;%|Trạng thái|
+|---|---|---|---|---|
+|1 Evidence loop|Giữ checkpoint và nghĩa của RED/freeze|Actualconsumer và acceptance|UNKNOWN/UNKNOWN;UNKNOWN%|NOT_ACHIEVED|
+|2 Pythontrongpolicy|Phát hiệnwritephaseviolation, yêu cầuSTOP|Mechanismprewrite/acceptedactualauthority|UNKNOWN/UNKNOWN;UNKNOWN%|NOT_ACHIEVED|
+|3 AILLcócăncứ|Không lấyengineeringtestlàgain|Actualtrial/evaluator/delta|UNKNOWN/UNKNOWN;UNKNOWN%|NOT_ACHIEVED|
+
+PromptcounterOwner64thựcthi theoCCentryreceipt. Không có Slot65grant/dispatch, actualR0/R1 hoặc approvals; NODE_PASS0/41giữ. Recoveryplan là điều kiện/dự toán, không quyền chạy. Relay fail chỉ để Son dán vào CC, không dán trực tiếp PowerShell terminal.
+</pre></article></body></html>

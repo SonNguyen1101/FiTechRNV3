@@ -1,0 +1,99 @@
+{
+  "schema": "RNV3_REPORTING_ACCEPTANCE_MATRIX_V1",
+  "milestone": "M1",
+  "rows": [
+    {
+      "criterion_id": "REPORTING/M1/C01",
+      "contract_type": "Input",
+      "observed": "Receipt Option A/time/recovery V2 đã có. Governor nhận ở phạm vi nguồn và quyền; recovery V3 chưa cấp.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "ACCEPTED_SCOPED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "release-receipt",
+        "release-wo",
+        "roster"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Pin work order, receipt, callable và roster; kiểm custody V1/V2. Quyền V2 đã dùng không được dùng lại cho V3."
+    },
+    {
+      "criterion_id": "REPORTING/M1/C02",
+      "contract_type": "Methodology",
+      "observed": "Quy tắc chỉ suppress t<30 đã được chọn; không ratify 31 thành warm-up khoa học.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "ACCEPTED_SCOPED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "release-receipt",
+        "release-wo",
+        "roster"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Đối chiếu authority với mã nguồn; phân biệt min_bars hiện hành với warm-up khoa học. Không chọn phương pháp hoặc criterion mới."
+    },
+    {
+      "criterion_id": "REPORTING/M1/C03",
+      "contract_type": "Technical / Engineering / Program",
+      "observed": "94 deploy source và 22 mirror đã recount; điều đó không chứng minh launchability.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "ACCEPTED_SCOPED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "release-receipt",
+        "release-wo",
+        "roster"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Kiểm native path/argv, pin membership, source bytes và writer trước entry theo một work order mới được cấp riêng."
+    },
+    {
+      "criterion_id": "REPORTING/M1/C04",
+      "contract_type": "Output",
+      "observed": "Có input/authority reference; chưa có đầu ra khoa học được phê chuẩn cho lượt phục hồi mới.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "ACCEPTED_SCOPED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "release-receipt",
+        "release-wo",
+        "roster"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Input manifest, bảng authority và blocker có hash; chỉ các scope đã nhận rõ ràng mới được chuyển tiếp."
+    },
+    {
+      "criterion_id": "REPORTING/M1/C05",
+      "contract_type": "Acceptance",
+      "observed": "ACCEPTED_SCOPED là scope của receipt cũ, không phải nghiệm thu hợp đồng mới này.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "ACCEPTED_SCOPED",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "release-receipt",
+        "release-wo",
+        "roster"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Nguồn, quyền, entry plan và phần thiếu được xác nhận đúng scope; hồ sơ này không tự xác nhận 5 hợp đồng."
+    }
+  ],
+  "interpretation": "Current observations are not tests under a retroactively preregistered contract",
+  "milestone_closed": false,
+  "scientific_acceptance_granted": false
+}

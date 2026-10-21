@@ -1,0 +1,3 @@
+Nguồn local: PF17 · contract_docx
+SHA256: d19fe33fd40ac6b25bd02404da047870d28ba2e097a9ea57b534a68c9b28ab1f
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

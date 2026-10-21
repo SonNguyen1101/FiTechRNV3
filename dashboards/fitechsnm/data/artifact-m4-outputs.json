@@ -1,0 +1,11 @@
+{
+  "id": "m4-outputs",
+  "title": "M4 · Manifest sản phẩm báo cáo",
+  "path": "reports/m4-outputs.html",
+  "text": "{\r\n  \"schema\": \"FITECHSNM_MILESTONE_REPORTING_OUTPUT_MANIFEST_V1\",\r\n  \"node\": \"R0\",\r\n  \"milestone\": \"M4\",\r\n  \"classification\": \"REPORTING_ARTIFACTS_ONLY_NOT_ACTUAL_R0_OUTPUT\",\r\n  \"at\": \"2026-10-21T09:34:40.555868+00:00\",\r\n  \"reporting_artifacts\": [\r\n    {\r\n      \"path\": \"docs/milestones/R0/M4/contract_v1.md\",\r\n      \"sha256\": \"a0114fce59e14b1c34dd867f91bc43f29f9a08aea796ed3e73524e308a707d99\",\r\n      \"bytes\": 2973\r\n    },\r\n    {\r\n      \"path\": \"docs/milestones/R0/M4/contract_v1.docx\",\r\n      \"sha256\": \"168c86d1ef5a9fbf26bc97f5fc34c4b4fa003654c24d5b78ba902a8aa6de724f\",\r\n      \"bytes\": 11992\r\n    },\r\n    {\r\n      \"path\": \"docs/milestones/R0/M4/report/M4_progress_report_v1.md\",\r\n      \"sha256\": \"9c01148e6d9b9158a19d5936dff63bf86bec90aa14cbe0204b7190da7783a54b\",\r\n      \"bytes\": 3459\r\n    },\r\n    {\r\n      \"path\": \"docs/milestones/R0/M4/report/M4_progress_report_v1.docx\",\r\n      \"sha256\": \"f945ef501fe6aa48b5e7de2c8ba553685de4c158018c7c1465993caad319408f\",\r\n      \"bytes\": 12482\r\n    },\r\n    {\r\n      \"path\": \"docs/milestones/R0/M4/input_manifest_v1.json\",\r\n      \"sha256\": \"fc56ecbea6638049ae43dfb2e614a11b92d5b0a4748f74ca3fe11ed3f6042195\",\r\n      \"bytes\": 2686\r\n    },\r\n    {\r\n      \"path\": \"docs/milestones/R0/M4/acceptance_matrix_v1.json\",\r\n      \"sha256\": \"770f652f78c5caccab2e898ccc760393f31514719fef9b565985bded317b500f\",\r\n      \"bytes\": 4037\r\n    }\r\n  ],\r\n  \"actual_outputs\": [],\r\n  \"actual_output_state\": \"NOT_EXECUTED\",\r\n  \"acceptance_ref\": null,\r\n  \"actual_R0_run_ref\": null,\r\n  \"reason\": \"No actual R0. Engineering source evidence is referenced by acceptance matrix, not relabelled actual output.\"\r\n}\r\n",
+  "sha256": "0c2fcac8de5c6d1fef4b14f875201dad261d2ff10f9bfe6fefd2f1ede43162ae",
+  "bytes": 1620,
+  "truncated": false,
+  "public_sanitized": true,
+  "source_sha256": "0c2fcac8de5c6d1fef4b14f875201dad261d2ff10f9bfe6fefd2f1ede43162ae"
+}

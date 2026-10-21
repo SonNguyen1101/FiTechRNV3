@@ -1,0 +1,43 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M2 · Báo cáo đối chiếu hiện tại</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>M2 · Báo cáo đối chiếu hiện tại</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 48aa81401db70588ea4074a9d4d0b06e57c8c2f8b8872fc3febda7543a5843c7</p><pre class="document-text"># M2 Báo cáo hiện trạng và đối chiếu
+
+FiTechSNM • R0 RN V2 gốc • Báo cáo cho Son • 2026-10-21.
+
+Kết luận: IN_PROGRESS. Slot64 RN construction, joint AILL QC và actual-capable receiver/store/deployment còn thiếu; không mở vòng host synthetic mới nếu không có defect thực. Đây là interim progress, chưa là báo cáo kết thúc hoặc nghiệm thu mốc.
+
+## Đối chiếu năm hợp đồng
+
+| Hợp đồng | Thực tế và giới hạn |
+| --- | --- |
+| Input | Slot63 đã seal và được Owner QC scoped; AILL result QC còn chờ. Slot64 mới là packet chưa Entry. [PARTIAL] |
+| Methodology | Host có kiểm chứng kỹ thuật; adapter/evaluator RN và AILL single-writer association vẫn đang chuẩn bị. [PARTIAL] |
+| Technical / Engineering / Program | Slot63 FINAL 328/328 và 8 controls; 96 mutant killed, 1 survivor đăng ký; 22/22 child thu hồi. Không phải actual R0. [ACCEPTED_SCOPED_PENDING_AILL] |
+| Output | Evidence và package construction plan đã có; actual RN programs/package, AILL receiver/store/deployment chưa hoàn chỉnh. [PARTIAL] |
+| Acceptance | Bốn S61 finding: RESOLVED_SCOPED_OWNER_QC_PENDING_AILL. Chưa joint closure hoặc đủ điều kiện đóng M2. [NOT_SATISFIED] |
+
+Bảng expected/observed đầy đủ và exact source refs: acceptance_matrix_v1.json. Kết quả trước ngày đăng ký là lịch sử có nguồn, không được gắn nhãn đã preregister bởi contract_v1 này.
+
+# M2 Bằng chứng giới hạn và bàn giao
+
+## Harness và phạm vi kiểm chứng
+
+| Khâu | Quan sát và giới hạn |
+| --- | --- |
+| Context / Entry | Nguồn milestone/QC hiện hành được pin. Không chạy CC hoặc actual R0 trong tác vụ báo cáo. |
+| Contract / Execution | Đăng ký reporting từ thời điểm này. M1/M2 đã có lịch sử; M3/M4 actual NOT_EXECUTED. |
+| Verification / QC | Hash/đối chiếu hồ sơ là kiểm chứng tài liệu. Slot63 Owner QC chỉ scoped và AILL result QC còn chờ. |
+| Evidence / Resume | Input/output manifests và handoff có refs; dữ liệu thực thiếu giữ UNKNOWN. Không tái dùng grant đã tiêu thụ hoặc sửa seal. |
+
+## Bàn giao sang M3
+
+Son tự dán relay Slot64 đã chuẩn bị khi muốn thực thi; Owner tiếp tục chốt AILL interface. Không cần duyệt lại vì đăng ký reporting. Handoff này có trạng thái PREPARED_NOT_ADMITTED; acceptance_ref, actual_run_ref và admission_ref hiện null. Báo cáo không thay actual OUTPUT.
+
+| Goal | Đóng góp hiện tại | Bằng chứng còn thiếu | N và D / % | Trạng thái |
+| --- | --- | --- | --- | --- |
+| Khép vòng evidence | Hồ sơ contract và trace nguồn | Actual consumer/intake; acceptance | UNKNOWN/UNKNOWN; UNKNOWN% | NOT_ACHIEVED |
+| Python trong policy | Phân biệt engineering và actual | Policy/principal/host hiệu lực; actual run | UNKNOWN/UNKNOWN; UNKNOWN% | NOT_ACHIEVED |
+| AILL có căn cứ | Nêu giới hạn claim và carry-forward | Baseline/evaluator/trial/delta thực | UNKNOWN/UNKNOWN; UNKNOWN% | NOT_ACHIEVED |
+
+Nguồn: input-contract, method-contract, program-contract, output-contract, acceptance-contract, s64-milestones, bindings, actions, s63-review, s64-spec, s63-reconciliation, aill-sequence, s63-findings. Đường dẫn/hash/bytes đầy đủ ở input_manifest_v1.json và SOURCE_REGISTER_V1.json; không dựng lại raw log thiếu. Áp dụng phạm vi riêng RN V2; RN V2.1 và RN V3 không được trộn vào.
+
+Approvals 0/5 và typed 0/19; NODE_PASS 0/41; actual R0 chưa chạy, R1 NOT_OPENED. Khi đóng mốc thật, phát hành report/handoff phiên bản mới có evidence và quyết định đúng authority; giữ bản interim này.
+</pre></article></body></html>

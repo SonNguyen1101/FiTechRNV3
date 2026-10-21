@@ -1,0 +1,3 @@
+Nguồn local: Snapshot bảo vệ V1: 8 file
+SHA256: acdeb69b58ec46a4db3980015d51dd719e087486a83938e56709ff082c45df73
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

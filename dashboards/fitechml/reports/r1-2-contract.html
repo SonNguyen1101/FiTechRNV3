@@ -1,0 +1,48 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>r1-2-contract</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>r1-2-contract</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 8049c3c69b73c976ac65e9b0311cb1bea59fe755a9a9ba834ccac70cad8003fb</p><pre class="document-text"># R1.2 — intake D1 theo universe đăng ký: năm hợp đồng v1
+
+**PREPARED_PENDING_USER_CONFIRMATION / NOT_EXECUTED**. Soạn21-10-2026, FTML ID01,06 (02 liên quan). Chưa được xác nhận năm hợp đồng, chưa source preflight R1.2, chưa input manifest đầy đủ dữ liệu thật. Không tự chạy bởi việc đăng ký hồ sơ.
+
+## 1. Input
+
+Tiền nhiệm R1.1: `../R1.1/handoff_v1.json`, cùng active D1 receipt và scope correction; hiện PENDING_USER_ACCEPTANCE. Chỉ sau chấp nhận có scope mới dùng làm input đã xác nhận. Receipt3file D1 là subset của run cũ, không nguồn đào tạo hay chứng nhận research-ready.
+
+Nguồn đề nghị: `[NATIVE_PATH_OMITTED]
+
+`input_manifest_v1.json` chỉ chứa references nội bộ FTML đã hash và mục DATA_SNAPSHOT=NOT_CAPTURED. Chưa dữ liệu CSV R1.2 nào được bind. Range và OOS fence cần người dùng xác nhận; cấm đọc OOS vẫn hiệu lực. Nếu việc tính full-file hash/scan chạm vùng bị cấm thì không mở file; cần snapshot đã được lọc phạm vi bởi nguồn có quyền, không suy “hash thôi” là miễn cấm đọc. Không FiTechTrade hoặc nguồn online trong contract này.
+
+## 2. Methodology
+
+Mục tiêu: kiểm tính toàn vẹn/khả dụng cấu trúc và coverage theo universe D1 được khóa; tạo receipt/accounting có lineage, không đo alpha. Nguyên mẫu: contracts F1, adapterF2 `local_price.intake_from_file`, `verify_intake_receipt`, `check_accounting`, safe_fs và phương pháp scan riêng trong pilot R1.1. N/A thuật toán nghiên cứu ML4T; chưa source/runtime/numeric parity mới.
+
+Đề nghị tuần tự: (a) preflight metadata và khóa snapshot/range đã được cấp; (b) từng file giữ raw identity, intake không sort/dedup/fill; (c) scan kiểm cấu trúc và row IDs/disposition bằng logic đối chiếu riêng; (d) đối chiếu input=retained+excluded+quarantined ở từngfile và tổng; (e) lưu rejectedfiles/reasons, zero-volume, duplicate/order anomalies, min/max quan sát và coverage; (f) đối chiếu source bytes trước/sau; (g) bàn giao limitation ledger. Không gọi scan cùng tác giả là independent reviewer.
+
+Không kết luận gap0 theo ngày lịch; thiếu lịch chuẩn thì session-gap NOT_VERIFIED. Giá/timekey/unit/adjustment/calendar/availability/license chưa bind phải giữ UNRESOLVED và chặn purpose liên quan. Không cần đoán để intake cấu trúc; không biến structural eligibility thành quyền feature/model. Count không đồng nghĩa independent sample/N_eff. Không feature/model/search/upstream G1.
+
+## 3. Technical / Engineering / Program
+
+Đề nghị dùng core nhẹ và runtime hiện có, không nâng theo ML4T. Mở rộng runner trong task implementation riêng sau xác nhận; đăng ký source/config hash, CLI entrypoint và read/write allowlist cụ thể. Outputworkspace mới theo runID, không ghi source/history. Runtime CPU/tuần tự; chưa có benchmark toànuniverse. Không tự đặt budget số; thời gian/sốfile/tài nguyên cần xác nhận cùng execution registration v2 sau preflight được cấp riêng.
+
+Log lệnh/exit/time/input/output/code/config; checkpoint chỉ resume khi cùng hash và scope, partial không công bố như complete. Dừng khi drift/mất source binding/non-D1/path escape/OOSfence thiếu/budget vượt hoặc outputdir tồn tại; lỗi file ghi disposition, không âm thầm bỏ. Nếu dự kiến&gt;10phút thì bật theo dõi tiến độ, không hiển thị metric nghiên cứu tạm để chọn dừng.
+
+## 4. Output
+
+Run manifest theo universe/range đã chấp nhận; receipts/digests và accountingperfile; source preservation log; quality/coverage table và rejected/quarantine ledger; assumptions/limitations ledger; technical verification và report nghiên cứu nối file chung MD/DOCX khi có kết quả thật; handoff với hash/schema/unit/purpose/qualityflags/acceptedoutputs. Row payload hoặc snapshot theo permission/scope/diskbudget, không copy OOS. Không model/trading metrics/giá trị dự đoán trong mốc này.
+
+## 5. Acceptance và điều kiện chuyển
+
+Tất cả AC hiện **NOT_EXECUTED**, không threshold alpha hoặc tỷ lệ giữ lại tùy ý. Phép kiểm số dòng/coverage không gán thành acceptance toànFTMLID.
+
+| AC | Điều kiện bắt buộc / evidence dự kiến |
+|---|---|
+| R12-AC01 | Input tiền nhiệm được chấp nhận đúng scope; contract/version/hash và execution được cấp; raw bindings không drift |
+| R12-AC02 | Danh sáchfile/instrument/range và OOS fence đầy đủ; non-D1/pathescape bị từ chối trước open; không resample |
+| R12-AC03 | Mỗi input row có identity/disposition/reason; cân bằng perfile/tổng; retained không có identity trùng trái schema |
+| R12-AC04 | Parser/receipt đối chiếu scan riêng; kiểm fixture OHLC lỗi/zero/missing/time duplicate/order; không sửa nguồn |
+| R12-AC05 | Mọi requestedfile có outcome kể cả reject; coverage dùng mẫu số universe khóa, không gọi thiếuHNX là toànthịtrường |
+| R12-AC06 | Sourcehash trước/sau không đổi; drift dừng; snapshot/resume cùng lineage; partial không coi complete |
+| R12-AC07 | Semantics/lịch/availability chưa rõ giữ UNRESOLVED/NOT_VERIFIED; purposegate liên quan không mở bởi structuralpass |
+| R12-AC08 | CLI thật/log/exit/version/hash và kiểm thích hợp có evidence; fullsuite nếu thay code; independentQC tách self-check |
+| R12-AC09 | Report phương pháp/kết quả/giới hạn/bước tiếp và checklist18ID; handoff có acceptedoutput/purpose/limitation; user quyết định |
+
+Gate R1.1→R1.2 đăng ký tại registry; chưa đạt vì thiếu acceptance tiền nhiệm, confirmation contract, data/range/OOS bindings, budget và execution authorization. Đề nghị xác nhận phần chuẩn bị/preflight riêng nếu cần hoàn tất registration v2; không mở preflight chỉ từ hồ sơ này. Sau khi R1.2 có kết quả, đề xuất contract bước feature D1 riêng; chưa chốt tên/method/policy hay mở R2/model/Autoresearch.
+</pre></article></body></html>

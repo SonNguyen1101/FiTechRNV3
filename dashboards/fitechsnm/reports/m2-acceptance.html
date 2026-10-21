@@ -1,0 +1,83 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M2 · Ma trận đối chiếu năm hợp đồng</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>M2 · Ma trận đối chiếu năm hợp đồng</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 16b8479cc12438835c56350facb5e7d8b2f7c6c6ae16f1ec9cf66cbb033581b1</p><pre class="document-text">{
+  &quot;schema&quot;: &quot;FITECHSNM_REPORTING_ACCEPTANCE_CROSSWALK_V1&quot;,
+  &quot;node&quot;: &quot;R0&quot;,
+  &quot;milestone&quot;: &quot;M2&quot;,
+  &quot;observed_at&quot;: &quot;2026-10-21T09:31:02.102851+00:00&quot;,
+  &quot;milestone_state&quot;: &quot;IN_PROGRESS&quot;,
+  &quot;criteria&quot;: [
+    {
+      &quot;id&quot;: &quot;M2-C01&quot;,
+      &quot;contract&quot;: &quot;Input&quot;,
+      &quot;expected&quot;: &quot;Nhận code/evidence Slot63 đúng pin, phạm vi Owner QC và phần AILL còn chờ; nhận source/spec/oracle Slot64.&quot;,
+      &quot;observed&quot;: &quot;Slot63 đã seal và được Owner QC scoped; AILL result QC còn chờ. Slot64 mới là packet chưa Entry.&quot;,
+      &quot;status&quot;: &quot;PARTIAL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;8e4c8eb93a0e000a6054ef597dc2b6129705178c6fa1a532789f6d660905ef21&quot;,
+        &quot;bytes&quot;: 7064
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M2-C02&quot;,
+      &quot;contract&quot;: &quot;Methodology&quot;,
+      &quot;expected&quot;: &quot;Adapter tái hiện từ input thật được cấp; evaluator độc lập đối chiếu expected. Giữ 18 BM, schema và các operational HOLD.&quot;,
+      &quot;observed&quot;: &quot;Host có kiểm chứng kỹ thuật; adapter/evaluator RN và AILL single-writer association vẫn đang chuẩn bị.&quot;,
+      &quot;status&quot;: &quot;PARTIAL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;fe28ae21b6d193dfb90e759ca5e1389c8b1e918680b16be356cde13433e2e4cd&quot;,
+        &quot;bytes&quot;: 9203
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M2-C03&quot;,
+      &quot;contract&quot;: &quot;Technical / Engineering / Program&quot;,
+      &quot;expected&quot;: &quot;Hai program khác vai trò qua loader/child/parent thật. Regression assertion, freeze, FINAL, mutation controls và source protection phù hợp.&quot;,
+      &quot;observed&quot;: &quot;Slot63 FINAL 328/328 và 8 controls; 96 mutant killed, 1 survivor đăng ký; 22/22 child thu hồi. Không phải actual R0.&quot;,
+      &quot;status&quot;: &quot;ACCEPTED_SCOPED_PENDING_AILL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;8576c44336fc1929e50d893c80ab3d4bceaf187525ebb8e8cb7b50b251cf15db&quot;,
+        &quot;bytes&quot;: 1908
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M2-C04&quot;,
+      &quot;contract&quot;: &quot;Output&quot;,
+      &quot;expected&quot;: &quot;Program package đúng bytes, conformance/capture/readback, receiver/store và chứng cứ consumer dùng thay đổi. Không dùng double làm actual host proof.&quot;,
+      &quot;observed&quot;: &quot;Evidence và package construction plan đã có; actual RN programs/package, AILL receiver/store/deployment chưa hoàn chỉnh.&quot;,
+      &quot;status&quot;: &quot;PARTIAL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;d193d516857966be041a88d7269252007c31b04a29c8db9050c8c6edb980d8c4&quot;,
+        &quot;bytes&quot;: 1599
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M2-C05&quot;,
+      &quot;contract&quot;: &quot;Acceptance&quot;,
+      &quot;expected&quot;: &quot;Owner và joint QC chấp nhận phạm vi áp dụng; Host acceptance chỉ là một phần. Còn actual deployment thì ghi riêng, không đóng M2 toàn bộ.&quot;,
+      &quot;observed&quot;: &quot;Bốn S61 finding: RESOLVED_SCOPED_OWNER_QC_PENDING_AILL. Chưa joint closure hoặc đủ điều kiện đóng M2.&quot;,
+      &quot;status&quot;: &quot;NOT_SATISFIED&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;32617a0070c8ed6060d6a1286708ed8c65e374519d305a4f130f3f58a073f41a&quot;,
+        &quot;bytes&quot;: 4777
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    }
+  ],
+  &quot;actual_run_ref&quot;: null,
+  &quot;closure_ref&quot;: null,
+  &quot;note&quot;: &quot;Statuses summarize retained evidence; no new executable predicate, business enum or acceptance grant.&quot;
+}
+</pre></article></body></html>

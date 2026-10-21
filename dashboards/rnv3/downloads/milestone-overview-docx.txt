@@ -1,0 +1,3 @@
+Nguồn local: Báo cáo tiến độ tổng hợp Word
+SHA256: 5bb2eacf34c8f246fa459ff2e400b29533a2f440149839ca8f977a22951df49c
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

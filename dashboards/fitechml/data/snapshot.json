@@ -1,0 +1,1312 @@
+{
+  "project": {
+    "name": "FiTechML",
+    "version": "UI V1",
+    "acceptance": "PENDING_USER_ACCEPTANCE",
+    "active_milestone": "R1.1 — intake D1 pilot",
+    "next_milestone": "R1.2 — intake D1 toàn universe, sau nghiệm thu",
+    "integration": "HOLD",
+    "passed_ids": 0,
+    "total_ids": 18,
+    "remaining_ids": 18
+  },
+  "capabilities": [
+    {
+      "id": "01",
+      "name": "Data quality và PIT",
+      "group": "Dữ liệu",
+      "state": "PARTIAL",
+      "scope": "Đã intake pilot 3 file D1; PIT, lịch và availability còn mở.",
+      "evidence": [
+        "d1-scope",
+        "r1-pilot"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "02",
+      "name": "Identity và nhãn",
+      "group": "Dữ liệu",
+      "state": "PARTIAL",
+      "scope": "Có contracts, join và accounting; chưa nhãn event đầu cuối.",
+      "evidence": [
+        "f1-qc"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "03",
+      "name": "Hình thái giá và volume",
+      "group": "Đặc trưng",
+      "state": "PARTIAL",
+      "scope": "Sáu feature đã kiểm trên synthetic; chưa tính feature thật.",
+      "evidence": [
+        "f2-qc"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "04",
+      "name": "Dữ liệu tổng hợp",
+      "group": "Dữ liệu",
+      "state": "PARTIAL",
+      "scope": "Có fixture kỹ thuật; chưa đủ toàn phạm vi simulation/event × variant × H.",
+      "evidence": [
+        "f2-qc"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "05",
+      "name": "Đặc trưng nâng cao",
+      "group": "Đặc trưng",
+      "state": "PLANNED",
+      "scope": "Chưa chạy Kalman, spectral, HMM hoặc fundamental features.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "06",
+      "name": "Nguồn dữ liệu và license",
+      "group": "Dữ liệu",
+      "state": "PARTIAL",
+      "scope": "Bind bytes và nguồn pilot; semantics và quyền sử dụng còn mở.",
+      "evidence": [
+        "d1-scope",
+        "r1-pilot"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "07",
+      "name": "Chronological validation",
+      "group": "Đánh giá",
+      "state": "PLANNED",
+      "scope": "Chưa splitter/evaluator đầu cuối; purge, maturity và embargo chưa chốt.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "08",
+      "name": "Baseline tuyến tính",
+      "group": "Mô hình",
+      "state": "PLANNED",
+      "scope": "Chưa huấn luyện baseline trên dataset nghiên cứu đã bind.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "09",
+      "name": "Gradient boosting",
+      "group": "Mô hình",
+      "state": "PLANNED",
+      "scope": "Chưa huấn luyện hoặc search; chưa cấp ngân sách thử nghiệm.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "10",
+      "name": "Return–risk và calibration",
+      "group": "Đánh giá",
+      "state": "PLANNED",
+      "scope": "Chưa có dự báo phân phối hoặc kết quả calibration.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "11",
+      "name": "Overlap và support",
+      "group": "Đánh giá",
+      "state": "PARTIAL",
+      "scope": "Đã tách count khỏi independence; grouping/N_eff còn mở.",
+      "evidence": [
+        "f1-qc"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "12",
+      "name": "Deep learning và causal",
+      "group": "Mô hình",
+      "state": "DEFERRED",
+      "scope": "Hoãn sau baseline và bằng chứng dữ liệu phù hợp.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "13",
+      "name": "Experiment registry",
+      "group": "Vận hành",
+      "state": "PARTIAL",
+      "scope": "Có receipt/digest kỹ thuật; chưa registry vòng đời model.",
+      "evidence": [
+        "r1-pilot"
+      ],
+      "acceptance": null
+    },
+    {
+      "id": "14",
+      "name": "Drift và observation",
+      "group": "Vận hành",
+      "state": "PLANNED",
+      "scope": "Chưa production-observation pipeline.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "15",
+      "name": "Backtest chi phí danh mục",
+      "group": "Đánh giá",
+      "state": "PLANNED",
+      "scope": "Chưa backtest Việt Nam được bind/đánh giá.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "16",
+      "name": "Rollout và governance",
+      "group": "Vận hành",
+      "state": "BOUNDARY",
+      "scope": "FiTechML không tự promote hoặc thay champion; chưa nghiệm thu toàn interface.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "17",
+      "name": "Text, RAG, LLM và G2/G3",
+      "group": "Mô hình",
+      "state": "DEFERRED",
+      "scope": "Daily inference LLM và G2/G3 tiếp tục hoãn.",
+      "evidence": [],
+      "acceptance": null
+    },
+    {
+      "id": "18",
+      "name": "RL, broker và live",
+      "group": "Vận hành",
+      "state": "BOUNDARY",
+      "scope": "Không gửi lệnh hoặc mở live connector để đủ số PASS.",
+      "evidence": [],
+      "acceptance": null
+    }
+  ],
+  "milestones": [
+    {
+      "id": "R1.1",
+      "title": "Intake dữ liệu local",
+      "date": "2026-10-21",
+      "state": "PENDING",
+      "kind": "Dữ liệu thật · D1",
+      "summary": "Phạm vi hiện hành là 3 file D1 từ receipt pilot; chờ chủ dự án nghiệm thu.",
+      "evidence": "d1-scope"
+    },
+    {
+      "id": "D1",
+      "title": "Khóa phạm vi chỉ D1",
+      "date": "2026-10-21",
+      "state": "APPLIED",
+      "kind": "Ràng buộc người dùng",
+      "summary": "Chặn H1, H4 và W1; không resample từ khung khác; giữ evidence lịch sử.",
+      "evidence": "d1-scope"
+    },
+    {
+      "id": "F2",
+      "title": "Adapter và sáu feature synthetic",
+      "date": "2026-10-20",
+      "state": "SCOPED_QC",
+      "kind": "Synthetic",
+      "summary": "635 tests và 114 probe tại lượt QC; chấp nhận trong scope engineering, có giới hạn.",
+      "evidence": "f2-qc"
+    },
+    {
+      "id": "F1",
+      "title": "Consumer contracts và validators",
+      "date": "2026-10-18",
+      "state": "SCOPED_QC",
+      "kind": "Synthetic",
+      "summary": "Đã được QC chấp nhận trong reviewed contract scope; không đóng I2 hoặc cả FTML ID.",
+      "evidence": "f1-qc"
+    },
+    {
+      "id": "R4",
+      "title": "Roadmap đủ 41 node G1 CCE",
+      "date": "2026-10-18",
+      "state": "PLANNING",
+      "kind": "Khảo sát tài liệu",
+      "summary": "Planning projection trong FiTechML, không phải 41 tích hợp đã chạy.",
+      "evidence": "g1-roadmap"
+    },
+    {
+      "id": "R1.2",
+      "title": "Intake D1 toàn universe",
+      "date": null,
+      "state": "NOT_RUN",
+      "kind": "Bước tiếp theo",
+      "summary": "Chưa chạy; dừng chờ nghiệm thu R1.1.",
+      "evidence": null
+    }
+  ],
+  "milestone_register": {
+    "available": true,
+    "binding_verified": true,
+    "records": [
+      {
+        "id": "F1",
+        "registration_mode": "RETROSPECTIVE_NOT_PREREGISTERED",
+        "ftml_ids": [
+          "01",
+          "02",
+          "06",
+          "07",
+          "11"
+        ],
+        "documents": [
+          "f1-registration",
+          "f1-report"
+        ],
+        "state": "SCOPED_QC_REPORTED"
+      },
+      {
+        "id": "F2",
+        "registration_mode": "RETROSPECTIVE_NOT_PREREGISTERED",
+        "ftml_ids": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "06"
+        ],
+        "documents": [
+          "f2-registration",
+          "f2-report"
+        ],
+        "state": "SCOPED_QC_REPORTED"
+      },
+      {
+        "id": "R4",
+        "registration_mode": "RETROSPECTIVE_NOT_PREREGISTERED",
+        "ftml_ids": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ],
+        "documents": [
+          "r4-registration",
+          "r4-report"
+        ],
+        "state": "PLANNING_REPORTED"
+      },
+      {
+        "id": "D1",
+        "registration_mode": "RETROSPECTIVE_NOT_PREREGISTERED",
+        "ftml_ids": [
+          "01",
+          "02",
+          "06"
+        ],
+        "documents": [
+          "d1-registration",
+          "d1-report"
+        ],
+        "state": "USER_CONSTRAINT_APPLIED"
+      },
+      {
+        "id": "R1.1",
+        "registration_mode": "RETROSPECTIVE_NOT_PREREGISTERED",
+        "ftml_ids": [
+          "01",
+          "06",
+          "02"
+        ],
+        "documents": [
+          "r1-1-registration",
+          "r1-1-report",
+          "r1-1-inputs",
+          "r1-1-handoff"
+        ],
+        "state": "PENDING_USER_ACCEPTANCE"
+      },
+      {
+        "id": "R1.2",
+        "registration_mode": "PROSPECTIVE_PROPOSED",
+        "ftml_ids": [
+          "01",
+          "06",
+          "02"
+        ],
+        "state": "PREPARED_PENDING_USER_CONFIRMATION",
+        "documents": [
+          "r1-2-registration",
+          "r1-2-contract",
+          "r1-2-inputs"
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "source": "R1.1",
+        "target": "R1.2",
+        "state": "HOLD_PENDING_ACCEPTANCE_AND_REGISTRATION",
+        "conditions": [
+          {
+            "id": "G01",
+            "title": "Phạm vi chỉ D1",
+            "mandatory": true,
+            "status": "OBSERVED_IN_EVIDENCE",
+            "responsible": "Codex kiểm bytes; chủ dự án giữ policy",
+            "verification": "Đối chiếu policy/active scope, hash và grain; không mở CSV"
+          },
+          {
+            "id": "G02",
+            "title": "Pilot có accounting và limitation ledger",
+            "mandatory": true,
+            "status": "REPORTED_SELF_VERIFIED",
+            "responsible": "Reviewer / chủ dự án",
+            "verification": "Đọc report và receipts; không coi historical tests là run mới hoặc independent QC"
+          },
+          {
+            "id": "G03",
+            "title": "Nghiệm thu đầu ra R1.1 đúng scope",
+            "mandatory": true,
+            "status": "PENDING_USER_ACCEPTANCE",
+            "responsible": "Chủ dự án",
+            "verification": "Quyết định có output ID/hash/purpose/hạn chế; hiện chưa có"
+          },
+          {
+            "id": "G04",
+            "title": "Xác nhận năm hợp đồng R1.2",
+            "mandatory": true,
+            "status": "PENDING_USER_CONFIRMATION",
+            "responsible": "Chủ dự án",
+            "verification": "Xác nhận version/hash; draft chưa khóa dữ liệu không được dùng như final run contract"
+          },
+          {
+            "id": "G05",
+            "title": "Khóa universe/source snapshot/range D1",
+            "mandatory": true,
+            "status": "NOT_REGISTERED",
+            "responsible": "Nguồn dữ liệu + Codex trong scope được cấp",
+            "verification": "Danh sáchfile/mã, schema/unit/grain/date/manifest/rawhash; coverage có mẫu số; không nhập dữ liệu Kronos"
+          },
+          {
+            "id": "G06",
+            "title": "Phạm vi ngày và OOS fence có binding",
+            "mandatory": true,
+            "status": "NOT_VERIFIED",
+            "responsible": "Chủ dự án / owner dữ liệu",
+            "verification": "Không mở file có vùng bị cấm; snapshot lọc phạm vi trước đọc/hash nếu cần"
+          },
+          {
+            "id": "G07",
+            "title": "Ngân sách, runtime, allowlist và stop/resume",
+            "mandatory": true,
+            "status": "PENDING_USER_CONFIRMATION",
+            "responsible": "Chủ dự án + implementer",
+            "verification": "Budget được chấp nhận, runner version/entrypoint, outputdir mới và stop khi drift"
+          },
+          {
+            "id": "G08",
+            "title": "Ủy quyền execution đúng contract",
+            "mandatory": true,
+            "status": "NOT_AUTHORIZED",
+            "responsible": "Chủ dự án",
+            "verification": "Ghi riêng authorization actor/date/scope/contract hash; không tự chạy khi checks xanh"
+          }
+        ],
+        "source_output_acceptance": null,
+        "target_contract_confirmation": null,
+        "execution_authorization": null,
+        "limits": "Đăng ký điều kiện chưa phải điều kiện đã đạt. Không có endpoint approve/run."
+      }
+    ],
+    "sources": [
+      {
+        "artifact_id": "milestone-protocol",
+        "path": "docs/milestones/PROTOCOL_V1.md",
+        "raw_sha256": "f6613109c2d1b37574929fdd09ed4e8a5416c25fd3e0ab6370415a87fe3339e7",
+        "bytes": 7532
+      },
+      {
+        "artifact_id": "d1-receipt",
+        "path": "artifacts/f2_d1_scope_20261021/active_d1_scope.json",
+        "raw_sha256": "296f70855b26c1e6a33a830a3aab036d061f8582c86ca6b420eb9c6df1cd8db8",
+        "bytes": 12550
+      },
+      {
+        "artifact_id": "d1-scope",
+        "path": "docs/surveys/g1_cce_20261018/F2_D1_SCOPE_CORRECTION_20261021_V1.md",
+        "raw_sha256": "5ac371cd9e23d83e5f561849c197f2337302c498e23772d3c01733412a5afb62",
+        "bytes": 3874
+      },
+      {
+        "artifact_id": "r1-pilot",
+        "path": "docs/surveys/g1_cce_20261018/F2_R1_1_PILOT_REPORT_20261021_V1.md",
+        "raw_sha256": "4c1e3102aa05429bf52639c2f9fdbe9402d0929c2db122d641b938314a539853",
+        "bytes": 7692
+      },
+      {
+        "artifact_id": "f1-qc",
+        "path": "docs/surveys/g1_cce_20261018/F1_CODEX_REQC_REPORT_V1.md",
+        "raw_sha256": "615d157e76fe0bf8ef358430e47417ac806f39998178d3f018fdafc3f98d0694",
+        "bytes": 12274
+      },
+      {
+        "artifact_id": "f2-qc",
+        "path": "docs/surveys/g1_cce_20261018/F2_MIXED_ACCOUNTING_CODEX_REQC_REPORT_V1.md",
+        "raw_sha256": "e26ab030b79b970e8786811aa79f27d86872cdbfdde35b75b1e2e8f1fbed163f",
+        "bytes": 16056
+      },
+      {
+        "artifact_id": "g1-roadmap",
+        "path": "docs/surveys/g1_cce_20261018/FITECHML_G1_CCE_41_NODE_ROADMAP_V1.md",
+        "raw_sha256": "ae8e9628ee95df0dcee59cb65b7a649229f1bf153de52e716126a31b3936dd91",
+        "bytes": 43757
+      },
+      {
+        "artifact_id": "report.md",
+        "path": "docs/integrations/ml4t/ML4T_FITECHML_FUNCTION_COMPARISON_ROADMAP_20261018.md",
+        "raw_sha256": "54df6fa0b056a02bcc9517d71359e5d7668fbc8bfee8bca16c2eba505fd525c2",
+        "bytes": 84090
+      },
+      {
+        "artifact_id": "report.docx",
+        "path": "docs/integrations/ml4t/ML4T_FITECHML_FUNCTION_COMPARISON_ROADMAP_20261018.docx",
+        "raw_sha256": "1b53e8f5f8f0e1f918e79c810cd829e96c9a48d963f10d64f155b414ff6038bf",
+        "bytes": 75653
+      },
+      {
+        "artifact_id": "f1-report",
+        "path": "docs/milestones/F1/report/index_v1.md",
+        "raw_sha256": "eb80353b30261ab0089564491bc3dfb17ccf098c173c8c298d99b08fbf514653",
+        "bytes": 1613
+      },
+      {
+        "artifact_id": "f1-registration",
+        "path": "docs/milestones/F1/registration_v1.json",
+        "raw_sha256": "0ca63606409f549815bdb41df9a75acf031428405a6613303911e3343e6ce3d0",
+        "bytes": 1459
+      },
+      {
+        "artifact_id": "f2-report",
+        "path": "docs/milestones/F2/report/index_v1.md",
+        "raw_sha256": "5645fa11d688b8c6ca70fd07c52a4daa98974332b77003c3799f8ac548944fd9",
+        "bytes": 1630
+      },
+      {
+        "artifact_id": "f2-registration",
+        "path": "docs/milestones/F2/registration_v1.json",
+        "raw_sha256": "acafecb0f742a17925e1455750d912a9b765d8d15324e03e7b1638d8831c3d58",
+        "bytes": 1476
+      },
+      {
+        "artifact_id": "r4-report",
+        "path": "docs/milestones/R4/report/index_v1.md",
+        "raw_sha256": "c01f01c93a301a2d7347312d7cdb38ce4af33abd5b194a9013a5454312999690",
+        "bytes": 1675
+      },
+      {
+        "artifact_id": "r4-registration",
+        "path": "docs/milestones/R4/registration_v1.json",
+        "raw_sha256": "30589788d916ac0d7bcab75db37f99df8497f6ed6ce3413bd335d5ab2f907706",
+        "bytes": 1604
+      },
+      {
+        "artifact_id": "d1-report",
+        "path": "docs/milestones/D1/report/index_v1.md",
+        "raw_sha256": "398b470d99f2037dd8d7a4313664e6c11573be3256a98017257512ebee19d31b",
+        "bytes": 1621
+      },
+      {
+        "artifact_id": "d1-registration",
+        "path": "docs/milestones/D1/registration_v1.json",
+        "raw_sha256": "f55a3996ff64f26c09774f05a9258ab5016c8aed619944a22634176bfd43d7fd",
+        "bytes": 1457
+      },
+      {
+        "artifact_id": "r1-1-report",
+        "path": "docs/milestones/R1.1/report/index_v1.md",
+        "raw_sha256": "381f25e784091f67169717772152086f2f7d9b38762c0c28de5a8eb6ba481c9b",
+        "bytes": 3117
+      },
+      {
+        "artifact_id": "r1-1-registration",
+        "path": "docs/milestones/R1.1/registration_v1.json",
+        "raw_sha256": "ad80828350948b03d7598afc6cc2999b63df244e6a2af5d5cfe140bff224f98b",
+        "bytes": 1451
+      },
+      {
+        "artifact_id": "r1-1-inputs",
+        "path": "docs/milestones/R1.1/input_manifest_v1.json",
+        "raw_sha256": "83f92ba72fad6e35012212f625e996756fda3511fab8e6cd82aad0c09aceab35",
+        "bytes": 858
+      },
+      {
+        "artifact_id": "r1-1-handoff",
+        "path": "docs/milestones/R1.1/handoff_v1.json",
+        "raw_sha256": "eba5cc02e0d588ff732fe29bc191e5fbfdae5bdf03fddb868e2161bde15953b9",
+        "bytes": 1579
+      },
+      {
+        "artifact_id": "r1-2-contract",
+        "path": "docs/milestones/R1.2/contract_v1.md",
+        "raw_sha256": "8049c3c69b73c976ac65e9b0311cb1bea59fe755a9a9ba834ccac70cad8003fb",
+        "bytes": 6865
+      },
+      {
+        "artifact_id": "r1-2-inputs",
+        "path": "docs/milestones/R1.2/input_manifest_v1.json",
+        "raw_sha256": "2feedb819ef1d9571ee7f2a2b2fba24bc5d83aa52858782b3e1941f7f7b363fe",
+        "bytes": 1184
+      },
+      {
+        "artifact_id": "r1-2-registration",
+        "path": "docs/milestones/R1.2/registration_v1.json",
+        "raw_sha256": "6ca200ce0475304cfac0de0d1a102c7524c02c468a55c855764ab64b60c301c5",
+        "bytes": 1111
+      }
+    ],
+    "contract_types": [
+      "Input",
+      "Methodology",
+      "Technical / Engineering / Program",
+      "Output",
+      "Acceptance"
+    ],
+    "warnings": [],
+    "authority": "DOCUMENTARY_PROJECTION_ONLY",
+    "execution_authorized": false
+  },
+  "data": {
+    "available": true,
+    "files": [
+      {
+        "relpath": "hose_ohlcv/AAA_1D.csv",
+        "dataset_id": "QRW_AAA_1D",
+        "grain": "1D",
+        "input_rows": 4052,
+        "retained": 4051,
+        "quarantined": 1,
+        "zero_volume_retained": 2,
+        "manifest_first_date": "2010-07-15",
+        "manifest_last_date": "2026-10-16",
+        "raw_sha256": "2a8ed6362b3f08b9f9036c84142b8501aa7efba55fb86b3a454a3b6daedb73cd",
+        "quarantine_log": [
+          [
+            732,
+            "E-08 close outside [low, high]"
+          ]
+        ],
+        "entry_assessment": {
+          "disposition": "UNRESOLVED",
+          "errors": [],
+          "unresolved": [
+            "price_unit semantics unresolved",
+            "volume_unit semantics unresolved",
+            "adjustment semantics unresolved",
+            "timezone semantics unresolved",
+            "session_calendar semantics unresolved",
+            "bar_availability_policy semantics unresolved"
+          ],
+          "quarantine_reasons": []
+        }
+      },
+      {
+        "relpath": "vnindex/VN30_1D.csv",
+        "dataset_id": "QRW_VN30_1D",
+        "grain": "1D",
+        "input_rows": 3518,
+        "retained": 3518,
+        "quarantined": 0,
+        "zero_volume_retained": 0,
+        "manifest_first_date": "2012-09-10",
+        "manifest_last_date": "2026-10-16",
+        "raw_sha256": "78392aac33afb6933f110b8d2281342b31e721333e3eb3d0f869309ff4b7a924",
+        "quarantine_log": [],
+        "entry_assessment": {
+          "disposition": "UNRESOLVED",
+          "errors": [],
+          "unresolved": [
+            "price_unit semantics unresolved",
+            "volume_unit semantics unresolved",
+            "adjustment semantics unresolved",
+            "timezone semantics unresolved",
+            "session_calendar semantics unresolved",
+            "bar_availability_policy semantics unresolved"
+          ],
+          "quarantine_reasons": []
+        }
+      },
+      {
+        "relpath": "vnindex/VNINDEX_1D.csv",
+        "dataset_id": "QRW_VNINDEX_1D",
+        "grain": "1D",
+        "input_rows": 6387,
+        "retained": 6387,
+        "quarantined": 0,
+        "zero_volume_retained": 0,
+        "manifest_first_date": "2000-07-28",
+        "manifest_last_date": "2026-10-16",
+        "raw_sha256": "6f873348fb497f30b338275f62bcdc3218a96f362a05fbc3c8b2cb061209b9f5",
+        "quarantine_log": [],
+        "entry_assessment": {
+          "disposition": "UNRESOLVED",
+          "errors": [],
+          "unresolved": [
+            "price_unit semantics unresolved",
+            "volume_unit semantics unresolved",
+            "adjustment semantics unresolved",
+            "timezone semantics unresolved",
+            "session_calendar semantics unresolved",
+            "bar_availability_policy semantics unresolved"
+          ],
+          "quarantine_reasons": []
+        }
+      }
+    ],
+    "totals": {
+      "input_rows": 13957,
+      "retained": 13956,
+      "excluded": 0,
+      "quarantined": 1,
+      "zero_volume_retained": 2,
+      "duplicate_rows": 0,
+      "order_rows": 0
+    },
+    "derived": true,
+    "source_result": "artifacts/f2_r1_1_20261021/run/result.json",
+    "research_ready": false,
+    "scope": "D1 pilot; chưa toàn universe",
+    "as_of": "2026-10-16",
+    "semantics": "UNRESOLVED",
+    "acceptance": "PENDING_USER_ACCEPTANCE"
+  },
+  "g1": {
+    "nodes": [
+      {
+        "canonical_order": "1",
+        "node_id": "MKT_REGIME",
+        "canonical_name": "Market Regime",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "Research (cross-cutting)",
+        "fitechml_package": "F2",
+        "fitechml_task_proposed": "Bind VNINDEX local và regime-method version; nghiên cứu causal regime features, Kalman/spectral/HMM trong namespace riêng.",
+        "fitechml_output_proposed": "RegimeFeatureSpec và feature receipt theo decision time.",
+        "fitechml_qc_proposed": "Không thay regime G1 bằng state ML; không dùng smoother hoặc toàn kỳ để gắn regime quá khứ.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "2",
+        "node_id": "R0",
+        "canonical_name": "Research Method Contract",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F1",
+        "fitechml_task_proposed": "Bind methodology và intended target; tách market-data, learning và governance contracts; giữ uncertainty policy refs.",
+        "fitechml_output_proposed": "LearningContractSpec có method/schema/hash/cutoff, mục đích và owner.",
+        "fitechml_qc_proposed": "Không biến policy ML4T hoặc report roadmap thành method authority G1; không tự chốt OQ/PQ.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "3",
+        "node_id": "R1",
+        "canonical_name": "Authorized Parameter Candidate Space",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F1",
+        "fitechml_task_proposed": "Đọc candidate/variant inventory được xuất hợp lệ; giữ 0/1/nhiều tuple và toàn bộ provenance.",
+        "fitechml_output_proposed": "CandidateIdentityAdapterSpec; candidate ↔ variant mapping có authority ref.",
+        "fitechml_qc_proposed": "Không chọn tuple đầu, winner hoặc code default; không mở thêm sweep/candidate từ model.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "4",
+        "node_id": "R2",
+        "canonical_name": "Evidence Cube",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F2",
+        "fitechml_task_proposed": "Đặc tả feature store causal từ OHLCV local và cube có grain/lineage riêng; phân tách features khỏi outcome.",
+        "fitechml_output_proposed": "FeaturePanelSpec event/lane/bar và manifest đơn vị, adjustment, calendar.",
+        "fitechml_qc_proposed": "Không giả định CSV giá là research cube; audit join keys, availability và toàn bộ denominator.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "5",
+        "node_id": "R3",
+        "canonical_name": "Sample Eligibility + Conditional Edge",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Nhận eligibility/edge như evidence có method version; đo coverage/missingness theo population.",
+        "fitechml_output_proposed": "EligibilityReceipt và support diagnostics theo grain gốc.",
+        "fitechml_qc_proposed": "Không thay ngưỡng eligibility/N_eff, dùng model filter candidate hoặc gọi unique count là độc lập.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "6",
+        "node_id": "R4",
+        "canonical_name": "Structural Robustness Readiness",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Nhận diagnostic flags và kiểm feature quality/drift; giữ diagnostic-only.",
+        "fitechml_output_proposed": "StructuralDiagnosticsAdapterSpec và disposition ledger.",
+        "fitechml_qc_proposed": "Không biến flag thành bộ lọc; input = retained + excluded + quarantined nếu có lọc được phép.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "7",
+        "node_id": "R5A_AUTH",
+        "canonical_name": "R5A Method / Multiplicity Authority",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Bind family/candidate universe, alpha/bootstrap/method và quyền của từng run.",
+        "fitechml_output_proposed": "MultiplicityAuthorityReference, chỉ đọc.",
+        "fitechml_qc_proposed": "Không chọn alpha/B từ kết quả ML hoặc tự cấp quyền MTP; population đổi phải được owner xem lại.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "8",
+        "node_id": "R5A",
+        "canonical_name": "Multiple Testing (MTP)",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Ingest MTP support/rejection có family/variant identity; giữ failed/rejected rows trong lineage.",
+        "fitechml_output_proposed": "MTPSupportAdapterSpec và population reconciliation.",
+        "fitechml_qc_proposed": "Không dùng p-value làm nhãn lợi nhuận event, không thay MTP bằng model score.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "9",
+        "node_id": "R5B",
+        "canonical_name": "Non-selective Characterization",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Nhận non-selective characterization làm context, tách khỏi predictive target.",
+        "fitechml_output_proposed": "CharacterizationContextSpec; không ranking/elimination.",
+        "fitechml_qc_proposed": "Không tạo Pareto/winner ngầm; metric mô tả không cấp quyền selection.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "10",
+        "node_id": "R5C",
+        "canonical_name": "Neighborhood Robustness Labeling",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Giữ branch conditional và trạng thái NOT_APPLICABLE/bypass theo authority được bind.",
+        "fitechml_output_proposed": "ConditionalBranchDisposition, không bắt chạy nhãn chưa có authority.",
+        "fitechml_qc_proposed": "Không ép R5C vào critical path hiện tại hoặc tự chọn margin để lấp đủ 6 trạng thái.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "11",
+        "node_id": "R6",
+        "canonical_name": "Supported Variant Set / Resolver Map",
+        "scientific_phase": "SP0",
+        "owner_track": "Param Opt V2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Bind supported variant set/resolver-map version; bảo toàn multi-variant và source lineage.",
+        "fitechml_output_proposed": "SupportedVariantSetReceipt; exact membership read-only.",
+        "fitechml_qc_proposed": "Không thêm/xóa variant nhờ prediction; research map không phải production membership.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "12",
+        "node_id": "RNV2_GATE",
+        "canonical_name": "RN V2 Activation Gate",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Nhận reconciliation của các prerequisites và scoped dispatch làm input kiểm quyền.",
+        "fitechml_output_proposed": "ActivationPrerequisiteReference, GO/HOLD chỉ từ owner.",
+        "fitechml_qc_proposed": "File tồn tại, certification PASS và entry_allowed không tự thành quyền chạy RN.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "13",
+        "node_id": "POLICY_V2",
+        "canonical_name": "TICKER_REGIME_PARAMETER_POLICY_V2",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "Param Opt V2 -> RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Bind policy object bytes, authority, effective version và lineage; giữ provenance chưa đủ ở HOLD.",
+        "fitechml_output_proposed": "PolicyBindingSpec liên kết policy ↔ parameter map ↔ run.",
+        "fitechml_qc_proposed": "Không gọi NOT_CREATED là fact hiện hành chỉ từ registry; artifact có mặt cũng chưa chứng minh approved.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "14",
+        "node_id": "R03_V2",
+        "canonical_name": "Full Alpha Matrix V2",
+        "scientific_phase": "SP0",
+        "owner_track": "RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Thiết kế event intake theo ticker/strategy/regime/variant và full event identity; nguồn G1 tạo signal.",
+        "fitechml_output_proposed": "ResearchEventAdapterSpec, không tự sinh signal canonical.",
+        "fitechml_qc_proposed": "Không collapse cross-variant cùng ngày; không coi phase2_event_id/lane_id là globally unique thiếu run binding.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "15",
+        "node_id": "RN01_V2",
+        "canonical_name": "Regime Alpha Matrix V2",
+        "scientific_phase": "SP0",
+        "owner_track": "RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Nhận event ledger và regime/lane context theo same lineage; tách aggregate view.",
+        "fitechml_output_proposed": "EventContextJoinSpec có declared cardinality.",
+        "fitechml_qc_proposed": "Không broadcast cell statistic thành event label; regime tại entry phải bind theo source.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "16",
+        "node_id": "RQ1_V2",
+        "canonical_name": "Alpha Horizon Decay V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Map horizon decay và event outcome cho H={5,10,20,40}; giữ toàn population.",
+        "fitechml_output_proposed": "HorizonPanelSpec và source-role classification.",
+        "fitechml_qc_proposed": "Top30 chỉ review shortlist; không cắt training universe từ shortlist, không chọn canonical H.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "17",
+        "node_id": "RQ2_V2",
+        "canonical_name": "Sample-Size Reliability V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Tách row occurrences, unique event, unique event×H và N_eff methodology; thiết kế dependency groups.",
+        "fitechml_output_proposed": "SupportAccountingSpec và dependency-policy reference.",
+        "fitechml_qc_proposed": "Khác key không chứng minh độc lập; không tự dùng N/H hoặc chọn group_by=ticker.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "18",
+        "node_id": "RQ3_V2",
+        "canonical_name": "Edge Mechanism Cohort V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F4",
+        "fitechml_task_proposed": "Dùng payoff/hit-rate/cohort evidence làm diagnostics và baseline comparison ở scope cho phép.",
+        "fitechml_output_proposed": "ReturnRiskBaselineDesign và metric definitions theo H/cohort.",
+        "fitechml_qc_proposed": "Không dùng full-period cohort metric làm feature cùng kỳ; không claim superiority từ count.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "19",
+        "node_id": "RQ3EXT_V2",
+        "canonical_name": "RQ3 Extension V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F4",
+        "fitechml_task_proposed": "Đặc tả heterogeneity/persistence diagnostics theo variant, regime, time và ticker.",
+        "fitechml_output_proposed": "ConditionalEvaluationSlices, denominator và lineage.",
+        "fitechml_qc_proposed": "Không lựa strata sau kết quả rồi coi preregistered; giữ search/exposure ledger theo owner.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "20",
+        "node_id": "RQ4_V2",
+        "canonical_name": "MFE/MAE Path and Exit Efficiency V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F3",
+        "fitechml_task_proposed": "Map event×H MFE/MAE/path labels và method lineage D380-corrected khi source được bind.",
+        "fitechml_output_proposed": "PathLabelAdapterSpec có horizon, valid/mature/censored, label-end và availability riêng.",
+        "fitechml_qc_proposed": "Không chuyển aggregate median/mean sang label event; không impute nhãn chưa mature bằng zero.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "21",
+        "node_id": "SHADOW_V2",
+        "canonical_name": "Shadow V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F4",
+        "fitechml_task_proposed": "Thiết kế so sánh baseline/model trong shadow riêng, không làm ảnh hưởng production.",
+        "fitechml_output_proposed": "ShadowEvaluationSpec và immutable prediction/outcome receipts.",
+        "fitechml_qc_proposed": "Không tự chạy canonical shadow executor; accepted output-path isolation là prerequisite trước execution.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "22",
+        "node_id": "SUPPORT_T10_V2",
+        "canonical_name": "Support/T10 V2",
+        "scientific_phase": "SP1",
+        "owner_track": "RN v2",
+        "fitechml_package": "F4",
+        "fitechml_task_proposed": "Nhận support-qualified set và comparison-grain authority; đánh giá calibration/coverage theo scope.",
+        "fitechml_output_proposed": "SupportGateInputReference và evaluation eligibility report.",
+        "fitechml_qc_proposed": "ML score không tự vượt T10; tách lane/event/cell comparison và không thêm gate khoa học mới.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "23",
+        "node_id": "PHASE2_V2",
+        "canonical_name": "Phase 2 V2 (incl Hold-Time/Signal-Success/QC)",
+        "scientific_phase": "SP2",
+        "owner_track": "RN v2",
+        "fitechml_package": "F4",
+        "fitechml_task_proposed": "Đặc tả label/probability/calibration, maturity và censoring intake; model phân phối return-risk là nghiên cứu riêng có evaluator.",
+        "fitechml_output_proposed": "Phase2LearningAdapterSpec và baseline evaluation protocol.",
+        "fitechml_qc_proposed": "P2-C1..C7, P2X-R1..R7 là nội bộ node 23; D388 yêu cầu một gate mỗi dispatch. Không đọc numeric comparator trước seal trong rerun.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "24",
+        "node_id": "COMPARE",
+        "canonical_name": "Compare RN V1 vs RN V2",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "RN",
+        "fitechml_package": "F4",
+        "fitechml_task_proposed": "Đặc tả comparison cùng population/key/H và non-comparability disposition; ML candidate thêm như phiên bản riêng.",
+        "fitechml_output_proposed": "LikeForLikeComparisonSpec, gaps và failure retained.",
+        "fitechml_qc_proposed": "RN V1/V2 comparison không tự là model evaluation hoặc promotion; không gộp variant thành winner.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "25",
+        "node_id": "PHASE3_GATE",
+        "canonical_name": "Phase 3 Authority Gate",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "RN",
+        "fitechml_package": "F5",
+        "fitechml_task_proposed": "Chuẩn bị model/data/method/evaluator evidence để owner đánh giá entry, không tự mở gate.",
+        "fitechml_output_proposed": "ValidationEntryEvidenceReference và unresolved prerequisites.",
+        "fitechml_qc_proposed": "Thiết kế P3.0 đã có không phải launch token; partition/OOS/candidate scope phải được authority bind.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "26",
+        "node_id": "PHASE3",
+        "canonical_name": "Phase 3 / Validation",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "RN",
+        "fitechml_package": "F5",
+        "fitechml_task_proposed": "Chỉ thiết kế external validation interface: frozen predictions, calibration/error slices và result receipt.",
+        "fitechml_output_proposed": "ValidationConsumerSpec; empirical run chờ protocol/partition riêng.",
+        "fitechml_qc_proposed": "Không mở OOS/Final Holdout, không tune từ validation và không tự đặt PASS threshold.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "27",
+        "node_id": "PROMOTION",
+        "canonical_name": "Promotion Authority",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "cross-cutting",
+        "fitechml_package": "F5",
+        "fitechml_task_proposed": "Cung cấp evidence summary và đọc quyết định của authority; model role trained/approved/champion-reference tách biệt.",
+        "fitechml_output_proposed": "PromotionDecisionReference, không ghi quyết định G1.",
+        "fitechml_qc_proposed": "Không promote model/challenger vì metric tốt hoặc chứng nhận kỹ thuật PASS.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "28",
+        "node_id": "PROD_ACTIVATION",
+        "canonical_name": "Production Activation",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "cross-cutting",
+        "fitechml_package": "F5",
+        "fitechml_task_proposed": "Bind approved inference version và activation receipt/rollback refs do owner phát hành.",
+        "fitechml_output_proposed": "InferenceActivationReference và compatibility checklist.",
+        "fitechml_qc_proposed": "FiTechML không kích hoạt/thay champion; không dựng executor hoặc controller cạnh tranh Runtime.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "29",
+        "node_id": "PIT_UNIV",
+        "canonical_name": "PIT Universe",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F1",
+        "fitechml_task_proposed": "Bind universe lịch sử theo ngày với local price manifest; đối chiếu delist/inactive/exemption scope.",
+        "fitechml_output_proposed": "MarketDatasetContract và UniverseAsOfSpec.",
+        "fitechml_qc_proposed": "718 file hôm nay không chứng minh membership lịch sử; không tự kế thừa gate QRW là PIT PASS.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "30",
+        "node_id": "SCREENER",
+        "canonical_name": "Daily Screener DS1-DS11",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Thiết kế nhận screened universe và feature snapshot tại decision time; inference chỉ advisory/shadow khi được phép.",
+        "fitechml_output_proposed": "ScreenObservationSpec và recommendation receipt.",
+        "fitechml_qc_proposed": "Không sửa screener filter/ranking bằng prediction trước approved production-policy change.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "31",
+        "node_id": "EXEC_UNIV",
+        "canonical_name": "Strategy Execution Universe",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Bind execution universe với candidate/parameter-map versions và exact identities.",
+        "fitechml_output_proposed": "ExecutionUniverseReference và identity bridge cần owner duyệt.",
+        "fitechml_qc_proposed": "Không dùng candidate_id ↔ parameter_set_id như tương đương nếu chưa có bridge authority.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "32",
+        "node_id": "REGIME_CUR",
+        "canonical_name": "Current Market Regime",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Nhận current regime đã versioned, so training/inference semantics và stale/missing state.",
+        "fitechml_output_proposed": "RegimeObservationSpec có cutoff/effective_time.",
+        "fitechml_qc_proposed": "Không thay regime production bằng HMM; regime research và live không mặc định cùng version.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "33",
+        "node_id": "ALPHA_RESOLVER",
+        "canonical_name": "Exact Alpha Resolver",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Nhận exact resolver outcome/coverage gaps để cung cấp advisory return-risk context.",
+        "fitechml_output_proposed": "ResolverObservationSpec giữ exact key và variant.",
+        "fitechml_qc_proposed": "Không biến forecast thành EXACT_ALPHA_FOUND hoặc fallback shadow/unresolved thành approved alpha.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "34",
+        "node_id": "CONSENSUS",
+        "canonical_name": "Alpha Consensus",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Nhận consensus reference và thiết kế diagnostic disagreement/correlation, không sửa công thức G1.",
+        "fitechml_output_proposed": "ConsensusObservationSpec, advisory uncertainty.",
+        "fitechml_qc_proposed": "Không dùng majority vote model/agent để tạo CONSENSUS_PASS hoặc đổi threshold.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "35",
+        "node_id": "REGISTRY",
+        "canonical_name": "Production Registry V2",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F5",
+        "fitechml_task_proposed": "Lookup/read approved identity/version khi được cấp; reconcile model eligibility với G1 authority reference.",
+        "fitechml_output_proposed": "RegistryMembershipReference read-only và audit receipt.",
+        "fitechml_qc_proposed": "Không ghi membership; artifact/model được trained không đồng nghĩa production-authorized.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "36",
+        "node_id": "TRADE_ELIG",
+        "canonical_name": "Trade Eligibility",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Quan sát eligibility và reasons; recommendation giữ quyền advisory, không nâng eligibility.",
+        "fitechml_output_proposed": "EligibilityObservationSpec và recommendation reason trace.",
+        "fitechml_qc_proposed": "CONSENSUS/REGISTRY checks vẫn do G1 sở hữu; không tự cho TRADE_ELIGIBLE.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "37",
+        "node_id": "SLTP",
+        "canonical_name": "SL/TP",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F7",
+        "fitechml_task_proposed": "Đặc tả return/path-risk advisory có thể cung cấp quantiles cho owner nghiên cứu khi SLTP được mở lại.",
+        "fitechml_output_proposed": "SLTPResearchAdvisorySpec theo H; chưa là live provider.",
+        "fitechml_qc_proposed": "SLTP vẫn PARKED theo snapshot được đọc; không tự resume hoặc dùng quantile làm lệnh stop/target.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "38",
+        "node_id": "RISK",
+        "canonical_name": "Risk",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F7",
+        "fitechml_task_proposed": "Đặc tả risk-distribution scenarios/uncertainty cho risk owner, tách khỏi position sizing.",
+        "fitechml_output_proposed": "RiskAdvisoryContract đề xuất; policy sizing chưa do FiTechML chọn.",
+        "fitechml_qc_proposed": "Không tạo risk-sized order, cap hay sizing threshold; cần risk-method authority và provider evidence.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "39",
+        "node_id": "CAPITAL",
+        "canonical_name": "Capital / Portfolio",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F7",
+        "fitechml_task_proposed": "Đặc tả correlation/concentration/scenario diagnostics để owner portfolio tham khảo.",
+        "fitechml_output_proposed": "PortfolioResearchAdvisorySpec; không phân bổ vốn.",
+        "fitechml_qc_proposed": "Không đặt weights/capital allocation từ model; topology RISK→CAPITAL→BUY_READY giữ nguyên, runtime data-flow chưa kiểm.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "40",
+        "node_id": "BUY_READY",
+        "canonical_name": "BUY_READY",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "LINE2",
+        "fitechml_package": "F7",
+        "fitechml_task_proposed": "Chỉ thiết kế quan sát kết quả G1 đã được authorize để đối chiếu recommendation/outcome.",
+        "fitechml_output_proposed": "ReadOnlyBuyReadyObservationSpec khi consumer path có quyền rõ.",
+        "fitechml_qc_proposed": "Không tạo BUY_READY, order hoặc gọi broker; không dùng callable đã báo tồn tại làm proof node đạt production gate.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      },
+      {
+        "canonical_order": "41",
+        "node_id": "PROD_OBS",
+        "canonical_name": "Production Observation / Monitoring",
+        "scientific_phase": "OUTSIDE_SP",
+        "owner_track": "cross-cutting",
+        "fitechml_package": "F6",
+        "fitechml_task_proposed": "Đặc tả immutable observation→drift/gap/opportunity→research-candidate evidence và gửi qua intake được owner bind.",
+        "fitechml_output_proposed": "ObservationFeedbackSpec, consumer receipt và candidate proposal.",
+        "fitechml_qc_proposed": "CHANGE_INTAKE là khái niệm handoff, không node 42; alert không tự retrain/replay/promote/dispatch.",
+        "fitechml_implementation_status": "NOT_IMPLEMENTED_BY_R4; PLANNING_ONLY"
+      }
+    ],
+    "authority": "PLANNING_ONLY",
+    "executed_nodes": null
+  },
+  "tests": {
+    "passed": 654,
+    "source": "docs/integrations/ml4t/evidence/F2_D1_SCOPE_20261021_RUN_TESTS.json",
+    "status": "SELF_VERIFIED",
+    "summary": "============================ 654 passed in 30.17s =============================",
+    "utc_start": "2026-10-21T08:06:49.596268+00:00"
+  },
+  "tools": [
+    {
+      "name": "Harness Engineering",
+      "state": "Evidence thủ công",
+      "scope": "Có contract, snapshot, run và preservation. Chưa chứng minh controller/enforcement toàn vòng đời."
+    },
+    {
+      "name": "Autoresearch",
+      "state": "Chưa cấp quyền",
+      "scope": "NOT_AUTHORIZED / NOT_RUN; không có trial hoặc training loop."
+    },
+    {
+      "name": "Codegraph",
+      "state": "Chưa kiểm freshness",
+      "scope": "Chỉ đối chiếu hash ở lần bàn giao; dashboard không sync/reindex và không suy coverage."
+    },
+    {
+      "name": "Memory",
+      "state": "Chỉ định tuyến",
+      "scope": "Ngữ cảnh hỗ trợ định tuyến; quyết định dựa nguồn hiện hành. Không hiển thị nội dung memory cá nhân."
+    }
+  ],
+  "sources": [
+    {
+      "key": "scope",
+      "path": "config/market_data_scope.json",
+      "raw_sha256": "66d7ad2f35859a3665b52a05e170391104572bb95eab48cb3b654ea71877d96a",
+      "modified_utc": "2026-10-21T08:05:50.042861+00:00"
+    },
+    {
+      "key": "data",
+      "path": "artifacts/f2_d1_scope_20261021/active_d1_scope.json",
+      "raw_sha256": "296f70855b26c1e6a33a830a3aab036d061f8582c86ca6b420eb9c6df1cd8db8",
+      "modified_utc": "2026-10-21T08:07:40.168979+00:00"
+    },
+    {
+      "key": "verification",
+      "path": "docs/integrations/ml4t/evidence/F2_D1_SCOPE_20261021_FINAL_MANIFEST.json",
+      "raw_sha256": "42e52c4a219be59939d6daa4a06cd748bd0a4cb538c77b0a620d7db5833459e0",
+      "modified_utc": "2026-10-21T08:09:11.403502+00:00"
+    },
+    {
+      "key": "tests",
+      "path": "docs/integrations/ml4t/evidence/F2_D1_SCOPE_20261021_RUN_TESTS.json",
+      "raw_sha256": "5c5777d9315d6a82ed2e1cad9eeb9c5ffc7f4d79b7c8e0bcfde0adf02aefc776",
+      "modified_utc": "2026-10-21T08:07:20.433232+00:00"
+    },
+    {
+      "key": "g1",
+      "path": "docs/surveys/g1_cce_20261018/FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv",
+      "raw_sha256": "6cc4268e6e0acc64084a6c2be3fac40d8fdc46fb1cad3f511df7694a6731a57e",
+      "modified_utc": "2026-10-18T10:11:00.534761+00:00"
+    },
+    {
+      "key": "milestones",
+      "path": "docs/milestones/registry_v1.json",
+      "raw_sha256": "7dff0cab80f84f19fe1c5051d116df81f16f06285fd55073704a43ecd92170bd",
+      "modified_utc": "2026-10-21T08:49:28.187195+00:00"
+    }
+  ],
+  "health": {
+    "read_only": true,
+    "loopback_only": false,
+    "auto_refresh_seconds": 0,
+    "warnings": [],
+    "public_snapshot": true
+  },
+  "generated_at": "2026-10-21T15:30:25.834710+00:00",
+  "scope": "D1_ONLY",
+  "artifact_links": {
+    "report.docx": null,
+    "report.md": "reports/report-md.html",
+    "d1-scope": "reports/d1-scope.html",
+    "r1-pilot": "reports/r1-pilot.html",
+    "f1-qc": "reports/f1-qc.html",
+    "f2-qc": "reports/f2-qc.html",
+    "g1-roadmap": "reports/g1-roadmap.html",
+    "d1-receipt": null,
+    "d1-verification": null,
+    "milestone-protocol": "reports/milestone-protocol.html",
+    "milestone-registry": "reports/milestone-registry.html",
+    "r1-1-inputs": "reports/r1-1-inputs.html",
+    "r1-1-handoff": "reports/r1-1-handoff.html",
+    "r1-2-contract": "reports/r1-2-contract.html",
+    "r1-2-inputs": "reports/r1-2-inputs.html",
+    "r1-2-registration": "reports/r1-2-registration.html",
+    "f1-registration": "reports/f1-registration.html",
+    "f1-report": "reports/f1-report.html",
+    "f2-registration": "reports/f2-registration.html",
+    "f2-report": "reports/f2-report.html",
+    "r4-registration": "reports/r4-registration.html",
+    "r4-report": "reports/r4-report.html",
+    "d1-registration": "reports/d1-registration.html",
+    "d1-report": "reports/d1-report.html",
+    "r1-1-registration": "reports/r1-1-registration.html",
+    "r1-1-report": "reports/r1-1-report.html"
+  },
+  "public_snapshot": {
+    "mode": "PUBLIC_READ_ONLY_SNAPSHOT",
+    "captured_at": "2026-10-21T15:30:25.803250+00:00",
+    "source_route": "/api/status",
+    "source_port": 8789,
+    "source_response_sha256": "45688164619702f336375651536150e9e1ef257df704ef5a6cb8f85f970ffd6c",
+    "read_only": true,
+    "live": false,
+    "scientific_acceptance": false,
+    "original_evidence_exported": false
+  },
+  "public_unavailable_reason": "Không xuất bản evidence gốc, cấu hình, prompt/relay hoặc Word chưa làm sạch. Báo cáo/contract đã làm sạch có trong các mục tương ứng; không có quyền chạy hoặc phê duyệt."
+}

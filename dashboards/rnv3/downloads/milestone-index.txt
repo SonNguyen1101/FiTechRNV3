@@ -1,0 +1,3 @@
+Nguồn local: Index hồ sơ 11 mốc
+SHA256: 02e10b05c42f12fa77d8492fabb0da70ebb6da1e97c48b4f242fce0e24930fea
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,0 +1,83 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M1 · Ma trận đối chiếu năm hợp đồng</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>M1 · Ma trận đối chiếu năm hợp đồng</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 1d892e24dd55e3a190d761a4a3f1a3914182deb948b5830b6383f663f0152026</p><pre class="document-text">{
+  &quot;schema&quot;: &quot;FITECHSNM_REPORTING_ACCEPTANCE_CROSSWALK_V1&quot;,
+  &quot;node&quot;: &quot;R0&quot;,
+  &quot;milestone&quot;: &quot;M1&quot;,
+  &quot;observed_at&quot;: &quot;2026-10-21T09:31:02.102851+00:00&quot;,
+  &quot;milestone_state&quot;: &quot;IN_PROGRESS&quot;,
+  &quot;criteria&quot;: [
+    {
+      &quot;id&quot;: &quot;M1-C01&quot;,
+      &quot;contract&quot;: &quot;Input&quot;,
+      &quot;expected&quot;: &quot;Nhận năm contract V5, source register và sổ binding B01–B11 trên đúng hash; nhận rõ phần nào mới là đề xuất.&quot;,
+      &quot;observed&quot;: &quot;Có tài liệu và source pins phục vụ construction; nguồn thực, principal, clock, registry và approval vẫn thiếu.&quot;,
+      &quot;status&quot;: &quot;PARTIAL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;e465bede803f4f640698e7357644d5668e5521a5ac8aaea6e8f05e411ab70de4&quot;,
+        &quot;bytes&quot;: 15038
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M1-C02&quot;,
+      &quot;contract&quot;: &quot;Methodology&quot;,
+      &quot;expected&quot;: &quot;Đối chiếu scope, precedence, node/lineage và từng nghĩa vụ. Không coi bytes đúng là authority hoặc nguồn hiện hành đã có hiệu lực.&quot;,
+      &quot;observed&quot;: &quot;Route/risk và phương pháp được dẫn chiếu từ hồ sơ hiện hành; chưa chốt toàn bộ instance/precedence cho actual run.&quot;,
+      &quot;status&quot;: &quot;PARTIAL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;2e0cf3415d45242262ca8c8b8f61d0d9ffa9bd78db6fa29f989ff325124f92ef&quot;,
+        &quot;bytes&quot;: 1054
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M1-C03&quot;,
+      &quot;contract&quot;: &quot;Technical / Engineering / Program&quot;,
+      &quot;expected&quot;: &quot;Tái dùng công cụ kiểm nguồn và qualification; chuẩn bị hồ sơ retained acts, issuer, domain, roots và clock. Quyền research tách go-live.&quot;,
+      &quot;observed&quot;: &quot;Host và công cụ engineering đã có bằng chứng riêng; chưa có issuance/registry/domain thực được báo cáo này cấp.&quot;,
+      &quot;status&quot;: &quot;PARTIAL&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;8e4c8eb93a0e000a6054ef597dc2b6129705178c6fa1a532789f6d660905ef21&quot;,
+        &quot;bytes&quot;: 7064
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M1-C04&quot;,
+      &quot;contract&quot;: &quot;Output&quot;,
+      &quot;expected&quot;: &quot;Bộ instance đã chấp nhận và approval đúng subject; phân loại đầy đủ binding còn thiếu. Không tạo ACTIVE registry từ một đề xuất.&quot;,
+      &quot;observed&quot;: &quot;Sổ 14 nhóm binding và action register có thật; accepted actual instance set chưa tồn tại.&quot;,
+      &quot;status&quot;: &quot;MISSING_BINDING&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;09e7ea2f751efaa480b33b2515c5b4d7b971bc17c66355946817574bdd8021c8&quot;,
+        &quot;bytes&quot;: 19837
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;M1-C05&quot;,
+      &quot;contract&quot;: &quot;Acceptance&quot;,
+      &quot;expected&quot;: &quot;Chỉ đóng theo scope khi có binding/authority thật và QC áp dụng; construction exception không thay actual-run authority.&quot;,
+      &quot;observed&quot;: &quot;Không đủ điều kiện đóng M1 cho actual R0. Approvals 0/5 và typed 0/19; không coi đăng ký này là approval.&quot;,
+      &quot;status&quot;: &quot;NOT_SATISFIED&quot;,
+      &quot;evidence_ref&quot;: {
+        &quot;path&quot;: &quot;[NATIVE_PATH_OMITTED]&quot;,
+        &quot;sha256&quot;: &quot;acfd28a57e03c5f82eab7d080e90817abdb01757bc5249d96901d4d8665331bc&quot;,
+        &quot;bytes&quot;: 2652
+      },
+      &quot;milestone_closure&quot;: false,
+      &quot;actual_run_credit&quot;: false
+    }
+  ],
+  &quot;actual_run_ref&quot;: null,
+  &quot;closure_ref&quot;: null,
+  &quot;note&quot;: &quot;Statuses summarize retained evidence; no new executable predicate, business enum or acceptance grant.&quot;
+}
+</pre></article></body></html>

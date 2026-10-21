@@ -1,0 +1,11 @@
+{
+  "id": "m1-handoff",
+  "title": "M1 · Handoff chưa admit",
+  "path": "reports/m1-handoff.html",
+  "text": "{\r\n  \"schema\": \"FITECHSNM_REPORTING_HANDOFF_V1\",\r\n  \"node\": \"R0\",\r\n  \"milestone\": \"M1\",\r\n  \"next\": \"M2\",\r\n  \"state\": \"PREPARED_NOT_ADMITTED\",\r\n  \"at\": \"2026-10-21T09:34:40.555868+00:00\",\r\n  \"milestone_closed\": false,\r\n  \"scope\": \"REPORTING_ONLY\",\r\n  \"contract_ref\": {\r\n    \"path\": \"docs/milestones/R0/M1/contract_v1.md\",\r\n    \"sha256\": \"5ec7c7497a9b9760e39e024daeed13fcb0719c5982353fb87b2b7f4cd8e15c29\",\r\n    \"bytes\": 3064\r\n  },\r\n  \"input_manifest_ref\": {\r\n    \"path\": \"docs/milestones/R0/M1/input_manifest_v1.json\",\r\n    \"sha256\": \"88057fe89b485e297112376bb507102b857a4f600f5265630880552c4fb0a045\",\r\n    \"bytes\": 3195\r\n  },\r\n  \"output_manifest_ref\": {\r\n    \"path\": \"docs/milestones/R0/M1/output_manifest_v1.json\",\r\n    \"sha256\": \"44b17c8a4faa0c844f5c1082733e9260cf62916a4456982faa603bf9327aab7d\",\r\n    \"bytes\": 1620\r\n  },\r\n  \"acceptance_matrix_ref\": {\r\n    \"path\": \"docs/milestones/R0/M1/acceptance_matrix_v1.json\",\r\n    \"sha256\": \"1d892e24dd55e3a190d761a4a3f1a3914182deb948b5830b6383f663f0152026\",\r\n    \"bytes\": 4265\r\n  },\r\n  \"report_ref\": {\r\n    \"path\": \"docs/milestones/R0/M1/report/M1_progress_report_v1.md\",\r\n    \"sha256\": \"9e2d2ce44a35b2b28d9e54af35745027ddf31b725f1892b0ad135428aca7e8e2\",\r\n    \"bytes\": 3747\r\n  },\r\n  \"actual_payload_refs\": [],\r\n  \"acceptance_ref\": null,\r\n  \"admission_ref\": null,\r\n  \"actual_run_ref\": null,\r\n  \"execution_authorized_by_this_file\": false,\r\n  \"R1_transition_authorized\": false,\r\n  \"carry_forward\": [\r\n    \"Preserve canonical milestone state and all unresolved bindings.\",\r\n    \"Reporting is not actual output or evidence of consumer admission.\",\r\n    \"M2 engineering exceptions remain scope-specific; M3 actual prerequisites and Son node gate unchanged.\"\r\n  ]\r\n}\r\n",
+  "sha256": "80ab9d17de4fd0b048ea78a3fe4f269cab0a2315bc0bf6dc13e74fad41a82696",
+  "bytes": 1703,
+  "truncated": false,
+  "public_sanitized": true,
+  "source_sha256": "80ab9d17de4fd0b048ea78a3fe4f269cab0a2315bc0bf6dc13e74fad41a82696"
+}

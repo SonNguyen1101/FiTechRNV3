@@ -1,0 +1,11 @@
+{
+  "id": "s64-io",
+  "title": "Đăng ký Input/Output Slot64",
+  "path": "reports/s64-io.html",
+  "text": "# Input / Output registration — Slot64 construction delta\n\nThis records construction lineage, not admission to R1 or new actual results. RN V2 original lineage retained; RN V2.1/V3 are not substituted. Input and output contract versions/baseline identities remain the pinned originals; program package is a proposed producer implementation.\n\n|Contract|Baseline R0|Baseline R1|Runtime R0|Runtime R1|AILL R0|AILL R1|\n|---|---|---|---|---|---|---|\n|INPUT|Pinned original RN V2 input/method sources; materialized exact roots; no new baseline|Existing RN V2 source topology only; current admitted successor input NOT_ESTABLISHED|Slot64 receives exact sources/selector/expected contracts as engineering inputs; actualIM NOT_FROZEN|NOT_OPENED; requires acceptedR0OUTPUT→INPUT mapping|Logical documentary O/A contracts retained; actual endpoint/authority MISSING_BINDING|NOT_OPENED; no accepted downstream input|\n|OUTPUT|Pinned baseline expectation/comparator rules; engineering16MATCH+2HOLD history not actual result|No current R1 result generated|Two program source controls + proposed package expected from Slot64; NOT_EXECUTED until CC; no actualDR|NOT_EXECUTED|Actual O/A NOT_EXECUTED; no candidate/trial/gain inferred|NOT_EXECUTED|\n\nAll measured actual Runtime MATCH/MISMATCH cells remain NOT_EXECUTED. No approval or Goal denominator is filled by construction metadata.\n",
+  "sha256": "b6cd6c25128ee571632c1c652d5decc1cb91d5e420f8854ce3185f591bb81123",
+  "bytes": 1373,
+  "truncated": false,
+  "public_sanitized": true,
+  "source_sha256": "b6cd6c25128ee571632c1c652d5decc1cb91d5e420f8854ce3185f591bb81123"
+}

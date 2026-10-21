@@ -1,0 +1,538 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>report.md</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>report.md</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 54df6fa0b056a02bcc9517d71359e5d7668fbc8bfee8bca16c2eba505fd525c2</p><pre class="document-text"># Đối chiếu chức năng ML4T và lộ trình FiTechML
+
+Báo cáo chung cho chủ dự án • R4 roadmap đủ 41 node G1 CCE • F1 chờ Codex QC • 18 tháng 10 năm 2026
+
+Báo cáo đối chiếu ML4T với FiTechML, kết quả cài đặt và dữ liệu local, kèm khảo sát mới G1 CCE và roadmap theo từng node trong đúng 41 node đã xác nhận. Roadmap R4 ở phần cuối là kế hoạch chi tiết hiện hành; B0–B11 phía trước giữ làm lịch sử đối chiếu. R4 đã làm tài liệu và kiểm source bindings, chưa triển khai 41 adapter hoặc chạy node G1.
+
+## Kết quả cài đặt và phạm vi bằng chứng
+
+| Hạng mục | Kết quả | Ý nghĩa |
+| --- | --- | --- |
+| WSL và hệ điều hành | WSL 3.0.3; Ubuntu 26.04.1; distro VERSION 2 | Đã kiểm thực tế; không tự khởi động lại Windows |
+| Runtime riêng | /home/nhs110174/ml4t_pinned/machine-learning-for-trading | Nằm trên filesystem Linux; core FiTechML không đổi |
+| Python và uv | 3.14.8; uv 0.13.1 (x86_64-unknown-linux-gnu) | Identity của môi trường vừa dựng |
+| Source | 16dbb8ce0abd358d6513d9cd697f45f650ad1f0b | 3rd Edition; tree và uv.lock khớp manifest |
+| Cài dependency | uv sync --frozen: exit 0 | Cài theo lock; không tải dataset nghiên cứu |
+| Kiểm tra upstream | 146/146 required đạt; exit 0 | Optional 9/14 đạt; 5 gói không bắt buộc chưa cài |
+| GPU được nhận diện | NVIDIA GeForce RTX 3060 12 GB; CUDA 12.8 | Chỉ kiểm nhận diện runtime; chưa benchmark hoặc train |
+| Integration và nghiên cứu | HOLD; I2 và synthetic slice chưa chạy | Không có bằng chứng hiệu quả trading Việt Nam |
+
+Cài đặt và import/runtime checks đã được xác minh. R3 đã kiểm kê/hash dữ liệu giá local và hai lớp fundamental trong phạm vi được cấp. Việc đó chưa xác minh thuật toán, notebook, model, PIT hoặc hiệu quả giao dịch. Các thư viện LLM/broker không được kích hoạt cho inference hay giao dịch.
+
+Khảo sát R2: core vẫn là legacy I1 v0.1.0; 10 file Python trong src, datasets/provenance là placeholder; chạy mới 23/23 tests PASS chỉ phủ I1. R3 xác minh bộ giá local: 718 mã, 2.377.346 dòng; index 47.780 dòng. Fundamental đã có snapshot và lớp live (xem R3). Thiếu adapter/learning contract và pipeline trong src không có nghĩa thiếu dữ liệu trên PC.
+
+Optional chưa cài: gensim, signatory, arcticdb, clickhouse-connect, influxdb-client. Dòng tổng kết upstream in 150/155 do công thức hiển thị; đếm độc lập từng dòng/category cho kết quả 146 required và 14 optional. Required failure count là 0; source upstream được giữ nguyên. Các SyntaxWarning/DeprecationWarning và cảnh báo LiteLLM thiếu botocore được giữ trong log; không kích hoạt dịch vụ LLM.
+
+## Đối chiếu dữ liệu và đặc trưng
+
+Bảng mô tả theo source/inventory ở pin đã khóa. Import smoke thành công không nâng mức đọc thuật toán; mọi cách dùng FiTechML dưới đây vẫn là đề xuất cho task sau.
+
+| ID | Chức năng nguyên gốc và nguồn | FiTechML sẽ dùng thế nào | Trạng thái |
+| --- | --- | --- | --- |
+| 01 | Data quality và PIT&lt;br&gt;OHLC, null/gap, signal lag, availability; utils/data_quality.py và 02/14_point_in_time_validation.py [S3]. | Tham khảo và viết adapter cho event/provenance/cutoff. Không dùng validator này thay contract I1. | OUTLINE; chưa test thuật toán |
+| 02 | Identity và nhãn&lt;br&gt;Panel symbol–timestamp, forward horizon, triple barrier, MFE/MAE; 07/03 và 07/04 [S3]. | Giữ full event key, variant và H=5/10/20/40. Nhãn/availability tách feature; không thay phương pháp G1. | ADAPTER đề xuất |
+| 03 | Hình thái giá và volume&lt;br&gt;Họ returns, trend, volatility, volume/liquidity trong 08/01_price_volume_features.py [S3]. | Ưu tiên feature số tại signal time. Hình thái nến/mẫu hình cần đặc tả thêm; chưa kết luận catalog không có. | OUTLINE; thiết kế riêng khi cần |
+| 04 | Dữ liệu tổng hợp&lt;br&gt;Chương 05 có simulation và các họ generative [S3]. | Lát cắt đầu dùng fixture tự sinh có seed, event×variant×H và leakage canaries; không cần chạy GAN. | REFERENCE; chưa chạy |
+| 05 | Đặc trưng nâng cao: microstructure, spectral/Kalman, regime/HMM, macro/fundamentals [S3,S7,S8] | Ưu tiên OHLCV local QRW cho Kalman/spectral/HMM; fundamental local có snapshot/live cần chọn/bind theo publication và revision. Tick/depth lịch sử chưa kiểm kê. | LOCAL DATA VERIFIED; feature/model NOT_EXECUTED |
+| 06 | Nguồn dữ liệu và license [S1,S3,S7,S8] | Đã xác minh 718 mã local và 47.780 dòng index khớp manifest. Fundamental local đã kiểm kê hai lớp. Pilot online R2 chỉ là evidence phụ. | LOCAL FIRST; chất lượng/PIT/quyền sử dụng còn QC |
+
+## Đối chiếu mô hình và đánh giá
+
+Bảng mô tả theo source/inventory ở pin đã khóa. Import smoke thành công không nâng mức đọc thuật toán; mọi cách dùng FiTechML dưới đây vẫn là đề xuất cho task sau.
+
+| ID | Chức năng nguyên gốc và nguồn | FiTechML sẽ dùng thế nào | Trạng thái |
+| --- | --- | --- | --- |
+| 07 | Chronological validation&lt;br&gt;utils/cv_splits.py: generated date-grid và precomputed; thư viện ml4t-diagnostic [S3,S4]. | Adapter kiểm độc lập overlap, maturity, nhóm phụ thuộc và mọi split. Embargo 40 phiên chưa phải policy đã duyệt. | Wrapper đã đọc; body thư viện chưa QC |
+| 08 | Baseline tuyến tính&lt;br&gt;OLS/Ridge/LASSO/Elastic Net và logistic trong Ch11, case-study linear [S3]. | Naive theo regime và baseline đơn giản trước mô hình phức tạp; cùng split/evaluator. | PROPOSED; chưa train |
+| 09 | Gradient boosting&lt;br&gt;LightGBM/XGBoost/CatBoost, Optuna và registry trong Ch12 [S3]. | Quantile boosting là phương án sau khi chốt dependency/search budget. Cần hơn baseline có kiểm soát. | ADAPTER; chưa train |
+| 10 | Return risk và calibration&lt;br&gt;Conformal/CQR/ACI, quantile và Platt; Ch11/06, Ch12/11, Ch11/03 [S3]. | Dự báo return và MAE theo H, quantile, P(success); đo pinball/coverage/Brier theo fold và regime. | Phạm vi đã đọc một phần |
+| 11 | Overlap và support&lt;br&gt;Uniqueness, effective_sample_size và metric diagnostics [S3,S5]. | Row occurrences, unique event, event×H và N_eff tách riêng; PQ-7 chưa chốt. Count không chứng minh độc lập. | Không dùng N/H mặc định |
+| 12 | Deep learning và causal&lt;br&gt;LSTM/TCN/transformer, latent factors và causal methods [S3]. | Chỉ xem xét sau baseline/GBM và evidence đủ; không chọn vì thư viện đã import được. | DEFERRED |
+
+## Đối chiếu vận hành và các chức năng hoãn
+
+Bảng mô tả theo source/inventory ở pin đã khóa. Import smoke thành công không nâng mức đọc thuật toán; mọi cách dùng FiTechML dưới đây vẫn là đề xuất cho task sau.
+
+| ID | Chức năng nguyên gốc và nguồn | FiTechML sẽ dùng thế nào | Trạng thái |
+| --- | --- | --- | --- |
+| 13 | Experiment registry&lt;br&gt;Content-addressed training identity, source/runtime provenance, SQLite registry [S3]. | Học pattern dataset→feature→model→evaluation, giữ failure. Tách trained/approved/champion reference. | REFERENCE; chưa triển khai registry |
+| 14 | Drift và observation&lt;br&gt;PSI/KS/Wasserstein, rolling IC, coverage monitoring; Ch19/07, Ch26/01 [S3]. | Đầu ra cảnh báo và evidence; cần Plane 2 contract. Không tự kích hoạt retrain/promote. | DEFERRED sau Plane 1 |
+| 15 | Backtest chi phí danh mục&lt;br&gt;Cost models, portfolio construction và evaluation; Ch16–19 [S3]. | Cần đặc tả VN về lịch, phí, lô, biên độ và settlement từ nguồn thẩm quyền. Không copy số Mỹ. | DEFERRED; không có kết quả VN |
+| 16 | Rollout và governance&lt;br&gt;Shadow/PromotionCriteria/circuit breaker; Ch26 [S3]. | Chỉ tham khảo an toàn. Authority validation/promote/champion thuộc governance G1. | REFERENCE ONLY |
+| 17 | Text RAG LLM và G2 G3&lt;br&gt;Ch10,22–24: embedding, RAG, knowledge graph và agents [S3]. | LLM daily inference, G2/G3 tiếp tục deferred; không API trả phí hoặc tự chọn provider. | DEFERRED |
+| 18 | RL broker và live&lt;br&gt;Ch21/25 và ml4t-live có phương pháp execution/broker [S3]. | FiTechML không gửi lệnh, tạo BUY_READY, thay champion hoặc promote. Không mở live connector. | Không thuộc phạm vi thực thi |
+
+## Lộ trình cụ thể từ cài đặt đến baseline
+
+Lộ trình theo dependency và cổng QC. Cài đặt, khảo sát core và kiểm kê local đã chạy; feature/model pipeline chưa chạy. R3 bổ sung thứ tự cụ thể cho dữ liệu local ở cuối báo cáo; không tự thay các policy OQ/PQ hoặc mở milestone nghiên cứu.
+
+| Bước | Việc làm | Điều kiện vào | Đầu ra | Tiêu chí đối chiếu | Trạng thái |
+| --- | --- | --- | --- | --- | --- |
+| B0 | Cài đặt và receipt runtime | Quyền cài đặt của chủ dự án | Runtime manifest, log sync và verification, SHA source/lock | Required checks exit 0; identity không đổi | Đã thực hiện; chờ review evidence |
+| B1 | Chốt vai trò và dependency | B0 evidence được review | OQ-ML4T-1..4: reference/library/vendoring, môi trường riêng | Giữ core contracts nhẹ; Python compatibility rõ; không tự nâng core | Chưa authorize |
+| B2 | Đặc tả synthetic và evaluation | B1; chốt PQ liên quan | Schema event/variant/H, availability, join grain, split/group/embargo và canaries | Case mature/unmature, overlap, duplicate, unmatched và precomputed có disposition | PROPOSED; policy còn mở |
+| B3 | Triển khai fixture và features | B2 được duyệt | Generator có seed; feature/label tách; lineage và accounting theo biến đổi | Canary future-outcome bị chặn; không mất/gộp variant; H đủ theo schema | Chưa triển khai |
+| B4 | Baseline phân phối và calibration | B3 QC; evaluator khóa | Naive + baseline tuyến tính/quantile; GBM nếu được phép; output theo H | Pinball/coverage/Brier trên chronological validation; fit cutoff đúng | Chưa train |
+| B5 | QC synthetic và reproducibility | B4 và search ledger đầy đủ | Báo cáo folds/regimes/variants, failure ledger, artifact hashes | Tái lập trong scope đã định; count ≠ N_eff; không tuyên bố hiệu quả VN | Chưa chạy |
+
+Lưu ý thứ tự: B2–B5 tương ứng lát cắt M-ML4T-2 sau khi chốt M-ML4T-1. I2 là milestone chính thức độc lập, phải hoàn tất trước khi nhận artifact G1 thật; synthetic fixture không tiền chiếm contract I2.
+
+## Lộ trình nối G1 và theo dõi dài hạn
+
+| Bước | Việc làm | Điều kiện vào | Đầu ra | Tiêu chí đối chiếu | Trạng thái |
+| --- | --- | --- | --- | --- | --- |
+| B6 | I2 Research Learning Contract | Task I2 riêng; không cần nối dữ liệu thật để thiết kế | Contract event-level variant-preserving, provenance/authority/cutoff/receipt | Không cell aggregate làm label; không chọn canonical H | Chưa bắt đầu |
+| B7 | Tiếp nhận artifact G1 được phép | I2 và B5 đạt QC; owner giải quyết arm/provisional/stamping/P75 | Receipt intake, dataset identity, availability và lineage | Không truy cập FiTechTrade nếu task chưa cho phép; thiếu binding thì HOLD | Chưa authorize |
+| B8 | Evaluation trên artifact được phép | B7; split/evaluator/search budget khóa | So sánh baseline, kết quả theo H/regime/variant và retained trials | OOS/final holdout ngoài feedback; không metric-driven policy rewrite | Chưa authorize |
+| B9 | Registry model và approval boundary | Có model/evaluation evidence và authority rõ | Identity chain, trained/approved_for_inference/champion_reference | Training không thay champion; approval không suy từ metric | PROPOSED |
+| B10 | Observation và recommendation | Plane 2/3 contracts, model được approve và task riêng | Shadow receipt, drift/gap/opportunity evidence | Cảnh báo không gửi lệnh/retrain/promote; outcome theo cutoff | DEFERRED |
+| B11 | Mở rộng có kiểm soát | Baseline/production evidence đủ; chủ dự án chọn phạm vi | DL/cost/portfolio nếu có lý do và dữ liệu phù hợp | Mỗi mở rộng có contract, budget và QC riêng | DEFERRED |
+
+B9 nên hình thành identity tối thiểu ngay từ B3–B4; registry đầy đủ có thể mở rộng sau. Đây là khuyến nghị kiến trúc của Codex để tránh model thiếu lineage, chưa phải thay đổi roadmap đã được duyệt.
+
+## Bảng theo dõi và nguồn đối chiếu
+
+| Nhóm câu hỏi | Cần quyết định hoặc evidence | Ai xử lý tiếp |
+| --- | --- | --- |
+| OQ-ML4T-1..4 | Vai trò ML4T, dependency/code reuse, runtime và nơi chạy slice. Đường WSL/uv đã dùng cho cài đặt; chưa chốt reuse thuật toán. | Chủ dự án phê duyệt; kiến trúc sư ghi scope |
+| PQ-1..4 | Nguồn availability, biên cutoff, timezone/lịch, scalar/event purge và embargo. | Phương pháp + owner trước evaluation |
+| PQ-5..8 | Dependency group, cross-asset task, N_eff và precomputed splits. | Phương pháp + QC trước claim |
+| Trạng thái theo bước | Dùng NOT_STARTED / IN_PROGRESS / BLOCKED / IMPLEMENTED_PENDING_QC / ACCEPTED_IN_SCOPE; kèm task, commit, artifact, ngày, reviewer. | Implementer ghi evidence; reviewer kết luận scope |
+| Memory Codegraph Harness | Context chỉ dẫn; graph đối chiếu source/freshness; contract/evidence/resume; self-check tách review độc lập. | Áp dụng docs/ENGINEERING_WORKFLOW.md |
+| Autoresearch | NOT_AUTHORIZED. Nếu mở: khóa evaluator/inputs/budget, giữ mọi trial và failure, không reset exposure. | Authorization riêng; metric tốt hơn chỉ là candidate |
+
+## Nguồn
+
+[S1] ML4T README.md và LICENSE tại pin 16dbb8ce0abd358d6513d9cd697f45f650ad1f0b; https://github.com/stefan-jansen/machine-learning-for-trading/tree/16dbb8ce0abd358d6513d9cd697f45f650ad1f0b
+
+[S2] docs/integrations/ml4t/evidence/ML4T_WSL_BOOTSTRAP_20261018.log; ML4T_WSL_SYNC_20261018.log; ML4T_WSL_VERIFY_20261018.log; ML4T_RUNTIME_RESULT_20261018.json. Evidence trực tiếp của milestone cài đặt.
+
+[S3] docs/integrations/ml4t/CAPABILITY_INVENTORY.md và FITECHML_INTEGRATION_MAP.md. FULL/OUTLINE/DOCUMENTED_ONLY được giữ đúng; catalog coverage không phải body coverage.
+
+[S4] docs/integrations/ml4t/QC_CORRECTION_V2.md và QC_CORRECTION_V3.md; đọc theo ghi chú superseded và erratum mới nhất.
+
+[S5] docs/integrations/ml4t/QC_V3_EVENT_COUNT_ERRATUM.md; PQ-7 chưa chốt. docs/ARCHITECTURE.md, DATA_CONTRACT.md, PROJECT_HANDOFF.md, decisions.md là nguồn kiến trúc/authority local.
+
+[S6] docs/integrations/ml4t/IMPLEMENTATION_ROADMAP.md, docs/roadmap.md, docs/ENGINEERING_WORKFLOW.md và docs/AUTORESEARCH_PROTOCOL.md. Lộ trình B0–B11 trong báo cáo là bản đối chiếu đề xuất, không tự authorize.
+
+R1/R2 không truy cập FiTechTrade. R3 được người dùng cấp ngoại lệ chỉ đọc fitechtrade/data để kiểm kê fundamental; không đọc code, OOS hay credentials. Không chạy model hoặc đánh giá trading. Mẫu online R2 giữ làm evidence phụ; dữ liệu giá local QRW là nguồn ưu tiên cho bước thiết kế tiếp theo.
+
+
+## R2 Giải đáp và khảo sát lại FiTechML
+
+R2 ghi lại khảo sát workspace và một lô pilot online. Erratum R3: suy từ phạm vi workspace sang nhu cầu tải giá online trước khi hỏi dữ liệu local là sai. Người dùng đã có bộ giá local; R3 kiểm chứng trực tiếp tại đường dẫn được cấp. Những số liệu pilot dưới đây là lịch sử intake, không thay dữ liệu local.
+
+| Câu hỏi | Kết luận dựa trên evidence hiện tại | Việc tiếp theo |
+| --- | --- | --- |
+| Source 3rd Edition có tự cập nhật | Không có cơ chế auto-update nào được thiết lập bởi các task này. Windows clone và WSL clone đều detached tại 16dbb8ce…; origin là nơi tham chiếu. uv sync --frozen không tự đổi source pin. Không xác minh mọi scheduled task ngoài workspace. | Theo dõi upstream và nâng version phải là task riêng: đọc diff/dependency, clone/version mới, smoke/QC rồi mới đổi pin; giữ runtime cũ để đối chiếu. |
+| Có đọc và chạy dữ liệu FiTechML trên PC | Có thể đọc local phù hợp schema qua ML4T_DATA_PATH/adapter. Đã kiểm dữ liệu local, chưa train/backtest trên bộ này. Việc dữ liệu có sẵn không đồng nghĩa ML4T tự nạp hoặc hệ thống đang dùng nó. | Bind manifest/schema với adapter và vùng runtime riêng; giữ nguyên nguồn. |
+| Consumer contract đã cũ | Đúng: code đang có là nền legacy I1 v0.1.0. Required-field validators chưa kiểm hash thực, timezone/calendar, event×variant×H, label maturity hoặc quyền sử dụng dữ liệu. Chưa tìm thấy implementation I2 trong core hiện tại. | Refresh contract dựa trên mission và schema dữ liệu thực; không gọi I1 là hợp đồng learning đầy đủ. |
+| Con số 23 tests và khảo sát hiện tại | R2 đã chạy mới python -B -m pytest -q -p no:cacheprovider: 23 passed, exit 0. Code core không đổi so với snapshot I1. Codegraph chỉ mục 17 file, đối chiếu source; không phải bằng chứng pipeline ML đã chạy. | Giữ rõ coverage: tests I1 kiểm contract cũ, không chứng minh PIT/leakage/model quality. |
+| Vì sao hoãn ID 05 | Hoãn chung vì thiếu dữ liệu VN là không có cơ sở. OHLCV local đã đầy đủ cho scope kiểm kê; fundamental cũng có hai lớp. Điều cần QC là units, adjustment, source seam, availability/revision và lựa chọn dataset. | Dùng local trước; đặc tả causal features; lấy thêm chỉ phần được chứng minh còn thiếu. |
+
+DEFERRED = chủ động xếp sau và phải nêu điều kiện mở lại; không đồng nghĩa không có hoặc không thể lấy dữ liệu. REFERENCE = tham khảo phương pháp/code và phải chỉ rõ phần nào dùng nguyên, adapter hay triển khai riêng; không tự chứng minh chạy được. Trạng thái dữ liệu và trạng thái code là hai cột khác nhau. G2/G3 và LLM daily inference vẫn deferred theo định hướng đã có; quyền broker/promote không mở.
+
+## R2 Lô online đã lấy — evidence phụ sau correction R3
+
+Lô pilot này đã lấy trước khi người dùng chỉ đường dẫn bộ local. Giữ raw/hash/receipt để truy vết, không dùng làm nguồn giá ưu tiên hay thay toàn bộ universe. Raw ở artifacts/vn_market_intake_20261018; chưa train hoặc chọn mô hình. Không tải thêm giá online trong khảo sát R3.
+
+| Dữ liệu | Nguồn và lượng đã nhận | Phạm vi thời gian | Kiểm tra và giới hạn |
+| --- | --- | --- | --- |
+| FPT daily | VCI; 300 bar | 04-08-2025 đến 16-10-2026 | 0 duplicate timestamp; 0 lỗi OHLCV cơ bản; đơn vị và điều chỉnh giá chưa QC |
+| HPG daily | VCI; 300 bar | 04-08-2025 đến 16-10-2026 | 0 duplicate timestamp; 0 lỗi OHLCV cơ bản; đơn vị và điều chỉnh giá chưa QC |
+| VCB daily | VCI; 300 bar | 04-08-2025 đến 16-10-2026 | 0 duplicate timestamp; 0 lỗi OHLCV cơ bản; đơn vị và điều chỉnh giá chưa QC |
+| VNINDEX daily | VCI; 300 bar | 04-08-2025 đến 16-10-2026 | 0 duplicate timestamp; 0 lỗi OHLCV cơ bản; đơn vị và điều chỉnh giá chưa QC |
+| FPT trades | VCI; 100 giao dịch gần nhất | 16-10-2026; snapshot lấy 18-10 | Dùng kiểm schema/microstructure pilot; không thay lịch sử tick dài hạn |
+| FPT orderbook | VCI; 1 snapshot, bid/ask 3 mức | 16-10-2026 14:45 GMT+7; session ENDED | Đã có depth snapshot; chưa có chuỗi cập nhật depth lịch sử |
+| FPT income statement | VCI; 8 năm, 34 quý | 2018Q1 đến 2026Q2 | 34/34 quý có publicDate/createDate/updateDate; vẫn cần kiểm công bố gốc và revision để dùng PIT |
+| GDP growth VNM | World Bank; 26 giá trị năm | 2000–2025 | Current vintage; chưa có release-time vintage để dùng như feature lịch sử |
+| CPI inflation VNM | World Bank; 26 giá trị năm | 2000–2025 | Current vintage; không mặc định biết từ đầu năm quan sát |
+| Exchange rate VNM | World Bank; 25 non-null / 26 năm | 2000–2024 có giá trị; 2025 null | Giữ null, không tự điền. Đây là annual official rate series, không phải spot intraday |
+
+Đã giữ lỗi KBS: request snapshot trả HTTP 200 nhưng JSON st=err, không tính là dữ liệu thành công. Sau khi đọc đúng source market-data, đã lấy được snapshot VCI. Không vượt challenge/authentication hoặc dùng credentials. Timestamp nến daily của provider là khóa bar, không phải bằng chứng nến đã biết lúc 07:00. Source request, payload, UTC retrieval time, hash và lỗi có trong intake_receipt.json / orderbook_receipt.json / quality_summary.json.
+
+## R2 Kế hoạch đặc trưng nâng cao theo dữ liệu thực
+
+| Nhóm | Dữ liệu đã có | Công việc cụ thể tiếp theo | Điều kiện đánh giá |
+| --- | --- | --- | --- |
+| Kalman | OHLCV local: 718 mã, 2.377.346 dòng; index 47.780 dòng (R3). | Chuẩn hóa giá/lịch; đặc tả state và observation; dùng filtering tại thời điểm quyết định. | Không dùng smoother có dữ liệu tương lai làm feature; tham số chỉ fit trên train. |
+| Spectral | OHLCV local: 718 mã, 2.377.346 dòng; index 47.780 dòng (R3). | Thiết kế cửa sổ trailing, detrending và band power; kiểm số bar tối thiểu và biên cửa sổ. | Không FFT toàn kỳ rồi phân bổ ngược; transform chỉ đọc quá khứ của từng decision. |
+| Regime HMM | OHLCV local: 718 mã, 2.377.346 dòng; index 47.780 dòng (R3). | Đặc tả covariates, số state và train window; đánh giá forward-filter regime probabilities. | Không dùng state smoothed toàn kỳ hoặc chọn số state theo holdout. |
+| Microstructure | 100 trades FPT và 1 orderbook snapshot 3 mức | Kiểm trade/quote timestamps, units và lag. Xác định độ sâu/lịch sử cần; thử provider archive hoặc quyền market-data riêng nếu cần. | Snapshot không đủ cho backtest intraday/orderbook dài hạn. Ghi chính xác range/depth/latency thiếu. |
+| Fundamentals | Fundamental local: snapshot 716 mã và live 718 mã cho 2 nhóm; live corporate actions 84 mã. Xem R3. | Đối chiếu snapshot/live, schema envelope/list và coverage; bind publication/revision trước as-of join. Không tự chọn live vì mtime mới. | Có publicDate là bước tiến, nhưng current revised values không tự trở thành historical PIT. |
+| Macro | GDP/CPI/exchange-rate annual VNM | Map frequency/units, release lags và nguồn vintage; lấy tần suất tháng/quý khi đặc trưng cần. | Không forward-fill từ thời điểm chưa công bố; không coi GDP năm là dữ liệu daily sẵn có. |
+
+Các đề xuất này chưa chạy feature/model. Từ R3, ưu tiên OHLCV local QRW và đối chiếu hai lớp fundamental sẵn có. Chỉ đề xuất bổ sung online sau khi xác định phần còn thiếu bằng kiểm kê; không gọi dữ liệu sẵn có là chưa có chỉ vì adapter chưa triển khai.
+
+Nguồn online kiểm trong R2: tài liệu Vnstock phân biệt các source VCI/KBS và trường hợp lệch giá điều chỉnh; source công khai chỉ được đọc tham chiếu, chưa cài Vnstock. Endpoint VCI trả dữ liệu trực tiếp; World Bank API V2 không yêu cầu key. SSI có API market-data theo quyền/key, tách khỏi trading; chưa truy cập tài khoản SSI.
+
+[S7] https://www.vnstocks.com/docs/vnstock/tham-khao/data-sources ; https://www.vnstocks.com/docs/vnstock/vnstock-data-v3/market-layer-v3 ; https://datahelpdesk.worldbank.org/knowledgebase/articles/889392 ; https://developers.ssi.com.vn/docs/getting-started/overview . Source reference và URL/payload thực tế trong artifacts/vn_market_intake_20261018/source_receipt*.json và intake_receipt.json. Quyền sử dụng dữ liệu production/tái phân phối chưa được xác minh bởi việc endpoint công khai trả JSON.
+
+## Nhật ký mốc và quy tắc báo cáo chung
+
+| Mốc | Kết quả thực hiện | Evidence và kết luận | Việc kế tiếp |
+| --- | --- | --- | --- |
+| R1 18-10-2026 | Cài WSL2/Ubuntu, uv, Python và ML4T pin; 491 packages; 146/146 required checks đạt. | Evidence installation giữ nguyên; bản báo cáo R1 đã lưu backup nội bộ theo hash. | Review runtime và xác định reuse/contract. |
+| R2 18-10-2026 | Khảo sát live core; 23/23 tests mới PASS; lấy pilot dữ liệu VN và kiểm schema; sửa cách hoãn ID05. | 10 core Python files; chưa thấy I2/model pipeline. Raw intake đã chạy ngoài core; 1.200 daily bars + trades/depth/financial/macro có receipt. | Correction R3 chuyển ưu tiên sang bộ local do người dùng cung cấp; không mở rộng pilot giá online. |
+| R3 18-10-2026 | Kiểm kê bộ giá local QRW và snapshot/live fundamental trong phạm vi được cấp. | 718 mã / 2.377.346 dòng; index 47.780; fundamental hai lớp; hash snapshot khớp. Gate/consumer binding/PIT chưa QC. | Bind dataset local và đặc tả adapter/contract; chỉ bổ sung phần thiếu đã xác định. |
+| R4 18-10-2026 | Khảo sát mới G1 current front door/registries/interfaces; roadmap đủ 41 node và contract refresh design. | 41/41 set và order; 27 nguồn hash-bound; Phase2 current-state conflict được giữ rõ. Producer bodies ngoài docs/g1 chưa kiểm. | Review design F1; prompt CC chuẩn bị sẵn, chưa dispatch; không tự mở G1 run. |
+| F1 18-10-2026 | Cài 5 module consumer-contract (policy_refs, market_data, research_learning, join_spec, research_validation) và 4 file test synthetic; I1 không đổi. | pytest 225 passed = 23 I1 + 202 F1 (Python 3.14.4, exit 0, không xfail/skip); mutation self-check 19/19; protected path không đổi hash; chưa QC độc lập, chưa commit. | Chờ Codex QC. Không tự mở F2/I2/Autoresearch; không dữ liệu thật; không đóng integration HOLD. |
+
+Theo chỉ đạo mới của chủ dự án, file DOCX này là report chung có đường dẫn ổn định. Mỗi mốc hoàn thành trong các phiên được thực hiện sẽ cập nhật tóm tắt hiện tại, bảng chức năng/trạng thái và thêm dòng nhật ký; không thay bằng một report mới tách rời. Markdown cùng tên được đồng bộ. Chỉ đạo này không tạo lịch chạy nền hoặc quyền tự thực thi milestone mới.
+
+Trước mỗi lần sửa lưu backup nội bộ theo hash ở artifacts/report_history; không yêu cầu người dùng quản lý nhiều bản. Evidence/log/package gốc giữ nguyên. Những kết luận cũ bị sửa phải ghi mốc và lý do. Sau khi sửa DOCX, render và kiểm bố cục trước bàn giao.
+
+Nguồn của R2: survey JSON và fresh test log trong docs/integrations/ml4t/evidence/FITECHML_CURRENT_SURVEY_20261018*; code src/fitechml/contracts, datasets và provenance; Codegraph local đọc-only; public-data receipts/quality_summary trong artifacts/vn_market_intake_20261018. Core contracts không được sửa trong mốc này. Báo cáo khảo sát workspace này không chứng minh toàn bộ PC không có bản FiTechML/dataset khác.
+
+
+## R3 Kiểm chứng dữ liệu giá local và correction
+
+Nguồn trực tiếp: [NATIVE_PATH_OMITTED]
+
+| Đối tượng | Đã kiểm chứng trực tiếp | Giới hạn |
+| --- | --- | --- |
+| OHLCV cổ phiếu | 718 CSV; 2.377.346 dòng; phạm vi tổng thể 04-01-2010–16-10-2026. 718/718 hash, số dòng, biên ngày khớp manifest. | Universe hai thư mục HOSE/HNX; chưa chứng minh bao phủ mọi chứng khoán/UPCoM hoặc tránh survivorship bias. |
+| OHLCV manifest | c17d7c5fd6505f9ac781d535a8bb081bce5b3e27d1536d83e2ce5faa96aa4f38 | Hash manifest khớp file hash đi kèm; không chứng minh nội dung kinh tế/PIT. |
+| VNINDEX / VN30 | 6 CSV 1D/1W/H1; 47.780 dòng; daily/H1 đến 16/10; weekly nhãn 12/10. 6/6 file khớp manifest. | Source seam metadata: TradingView đến tháng 8 rồi VCI; chưa audit continuity/adjustment. |
+| Index manifest | 9f12829342be5f687f6480c6d056651355f5a9f0968ffbb8ac850dc242346cde | Epoch đã parse đúng thành UTC cho kiểm biên ngày/thứ tự; đây không phải availability policy. |
+| Bar cuối từng mã | 554 file đến 16/10; 164 file kết thúc sớm hơn. Sáu mã CVT/DRH/GTA/MAS/NSC/STC khớp ngày người dùng nêu. | 164 file không đồng nghĩa 164 lỗi gate. Chưa kiểm active universe, ngưỡng, calendar, ngoại lệ và lý do miễn trừ. |
+| Metadata / integrity | File ổn định khi đọc; không thấy timestamp đảo thứ tự/trùng liền kề sau parse đúng. _manifest.csv cấp gốc còn mốc tháng 6. | Dùng snapshot tháng 10 để bind; không dùng metadata cũ thay hiện trạng. Chưa QC toàn bộ OHLC/units/calendar. |
+
+Gate READY, gap 0, miễn trừ đến 16-01-2027 và ý nghĩa EXTERNAL_REFRESH_REQUIRED: người dùng cung cấp; Codex chưa tái xác minh gate hoặc lý do sáu mã. Không suy freshness từ gate hoặc ngược lại. Số dòng và hash đã được đo trực tiếp là kết luận riêng.
+
+Inventory V1 có diagnostic sai do so epoch dạng chuỗi; V2 parse số giây UTC cho kết quả 0 lỗi thứ tự, 0 mismatch ngày. Giữ V1 lịch sử, chỉ dùng V2 để kết luận. Không sửa bất kỳ file QRW nào.
+
+## R3 Fundamental local: hai lớp và đường sử dụng
+
+Người dùng đã cấp ngoại lệ đọc riêng fitechtrade/data trong FiTechTrade Scoring System để kiểm kê fundamental. Không đọc code hay phần khác. Vì vậy số lượng/file có thể xác minh; kết luận hệ thống thực sự chọn snapshot 30-07 thay live vẫn là người dùng báo, chưa được Codex kiểm consumer binding.
+
+| Lớp | Nhóm | Lượng đo trực tiếp | Cấu trúc / dấu thời gian |
+| --- | --- | --- | --- |
+| Snapshot 30-07 | finance_indicator | 716 file; 34,320 records | envelope.data; hash/rows khớp manifest |
+| Snapshot 30-07 | stock_info | 716 file; 1,507,229 records | envelope.data; hash/rows khớp manifest |
+| Snapshot 30-07 | corporate_actions | 716 file; 17,019 records | envelope.data; hash/rows khớp manifest |
+| _live | finance_indicator | 718 file; 35,054 records | Bare JSON list; mtime 10-16T20:11 → 10-16T21:54 (GMT+7) |
+| _live | stock_info | 718 file; 1,537,755 records | Bare JSON list; mtime 10-16T20:11 → 10-17T01:50 (GMT+7) |
+| _live | corporate_actions | 84 file; 1,923 records | Bare JSON list; mtime 10-16T21:56 → 10-16T22:35 (GMT+7) |
+
+Live corporate_actions mới có AAA–CEO, 84/718 mã theo universe live của hai nhóm còn lại; 634 mã chưa có file ở nhóm này. Chưa xác minh lý do collector dừng hoặc nó đã từng retry hay chưa. File mtime không phải ngày công bố, không chứng minh mọi record mới hoặc historical PIT. Snapshot và live khác cấu trúc wrapper: không thể thay đường dẫn rồi mặc định adapter cũ đọc đúng.
+
+Sector GICS 703/716 tại 28-07 và index membership 03-08 là thông tin người dùng cung cấp, chưa audit coverage/nội dung trong mốc này. Không thay snapshot, không restart collector, không tải bù hoặc tự chọn nguồn fundamental.
+
+## Bước thực hiện tiếp theo để đối chiếu
+
+1. Bind nguồn giá local với manifest/universe; đối chiếu gate/ngoại lệ trong scope được cấp.
+
+2. Đặc tả market-data adapter: date/timezone/session, đơn vị, adjusted/raw và source seam.
+
+3. Refresh learning contract event×variant×H, availability/maturity và lineage.
+
+4. Dùng OHLCV local cho causal features và synthetic canaries; Kalman/spectral/HMM không bị hoãn chỉ vì thiếu giá VN.
+
+5. Reconcile hai lớp fundamental và publication/revision, xử lý thiếu corporate actions trước khi chọn dataset.
+
+6. Khóa chronological evaluator, rồi mới chạy baseline được phép. Các bước 2–6 là đề xuất, chưa triển khai trong mốc kiểm kê.
+
+Mốc R3: dữ liệu local được kiểm kê read-only; báo cáo chung được sửa và nối tiếp. Core contracts/model không sửa, không train, không tự chốt OQ/PQ hay mở Autoresearch. [S8] LOCAL_DATA_RECONCILIATION_20261018.md; evidence/QRW_LOCAL_PRICE_INVENTORY_20261018_V2.json; evidence/LOCAL_FUNDAMENTAL_INVENTORY_20261018.json. Mỗi mốc tiếp cập nhật chính file DOCX này và bản Markdown cùng tên.
+
+
+## R4 Khảo sát G1 CCE từ nguồn hiện hành
+
+Đã đối chiếu đúng 41 IDs và order trong registry với crosswalk, edge map, AILL matrix và Runtime M00 map. SP0 có 12 node; SP1 có 7; SP2 có 1; OUTSIDE_SP có 21. Đây là xác minh topology và tài liệu, không là nghiệm thu 41 thuật toán. G1 main HEAD 0e1a9547bf76660a279db7b14498b2b297eb6fee; working-tree hashes được ghi riêng vì có dirty/untracked work.
+
+| Finding | Evidence cụ thể | Ảnh hưởng và xử lý trong roadmap |
+| --- | --- | --- |
+| P1 R4-F01 | JSON current_research_state.PHASE2_V2 còn DESIGNED_NOT_IMPLEMENTED_HOLD; certification.SP2/CSV ghi PASS; master §52.1 giữ historical execution. Generator lines 233–245 có fallback và certified=False. | Giữ CONFLICT; không sửa G1 hoặc coi flag False là thu hồi certification; owner phải reconcile trước status-dependent binding. |
+| P1 R4-F02 | Header Phase2 36/95/19 cột; full arm/map/tuple/label-availability chưa nằm trong header theo các tên yêu cầu. I1 chỉ structural validators. | Thiết kế schema/bridge có unresolved/quarantine; không bịa fields, nhận PIT từ tên cột hoặc coi cell summary là target event. |
+| P1 R4-F03 | AILL INT02-G001/G011/G012/G013/G020 báo gaps consumer cluster/identity/receipts; producer bodies ngoài docs/g1 chưa đọc. | F6 shadow/F7 phụ thuộc owner binding. Không khẳng định đã tái hiện lỗi runtime từ tài liệu. |
+| P1 R4-F04 | Master §7–13 và §52; R5C conditional; P3 entry record là design/not-run token. | Không chạy thẳng 01→41; không add node 42; gate/authority/replay giữ scope riêng. |
+| P2 R4-F05/06 | Metadata inventory 23.857 files; 27 nguồn có coverage/hash và 3 header-only. Handoff FiTechML §E/G còn snapshot 16-09. | Bổ sung current overlay; chưa đọc toàn repo/body hoặc reverify scientific results, stamping, arm/P75. Không kết luận absence từ tài liệu cũ. |
+
+G1 canonical docs hiện báo certification SP0/X01/SP1/X12/SP2 PASS; R4 không chạy lại. Runtime/AILL readiness là facts do owner nguồn báo, không được biến thành integration-ready của FiTechML. Detailed numeric outcome rows, OOS/holdout và RN V3 worktree không mở. Nguồn là R4_G1_SOURCE_CAPTURE_20261018_V2.json và G1_CCE_FRESH_SURVEY_FINDINGS_V1.md.
+
+## R4 Thứ tự triển khai theo dependency
+
+Bảng 41 node sau đây giữ canonical registry order để đối chiếu. F0–F7 chỉ là gói công việc của FiTechML, không là node G1 mới hoặc dispatch standing. Node authority chỉ được FiTechML đọc/tham chiếu; output ML không thay quyền G1. R4 chưa triển khai code mới, training hoặc consumer integration.
+
+| Gói | Công việc cụ thể | Điều kiện để thực thi phần phụ thuộc | Đầu ra để đối chiếu |
+| --- | --- | --- | --- |
+| F0 | Survey và mapping 41 node | Đã có yêu cầu khảo sát/roadmap | Đã lập nguồn/hash/findings/41 rows; còn owner review |
+| F1 | Schemas/validators market-data + learning event×variant×H; R0/R1/PIT_UNIV | Review contract refresh design; giữ I1 compatible, không tự chốt policy | Synthetic positive/negative cases; new contracts; chưa real ingestion |
+| F2 | Local-price adapter và causal feature fixtures; MKT_REGIME/R2 | F1; explicit units/adjustment/calendar/availability | Read-only data receipt, feature lineage/canaries; không dùng forward labels |
+| F3 | Research-artifact adapters; R3..R6/gates/R03..RQ2/RQ4 | Source/lineage/exports/identity bridge và semantic policy được bind | Declared grains/joins, H panel, maturity/censoring và accounting |
+| F4 | Synthetic baseline return-risk và chronological evaluator trước; RQ3..COMPARE | F1/F2 + F3 synthetic-schema QC; real evaluation cần source binding và policies được duyệt | Distribution/calibration/coverage theo H; synthetic không chứng minh trading VN |
+| F5 | Validation/authority/version interfaces; PHASE3..activation/registry | Partition/model/evaluator/authority refs riêng; identity tối thiểu từ F1/F4 | Read-only authority receipts, compatibility và evidence package; không activation |
+| F6 | Observation/advisory shadow production + PROD_OBS | Plane2/3 contracts, owner chọn consumer path, approved inference model, receipts | Prediction→consumer→outcome→feedback trace; không tự retrain/promote |
+| F7 | SLTP/risk/capital/BUY_READY advisory research | Owner mở node và method/consumer path được authorize | Research interfaces theo node; không tạo lệnh hoặc phân bổ vốn |
+
+R5C giữ branch conditional, không ép chạy. RNV2_GATE/POLICY_V2 phải xét prerequisites chứ không coi row order là quyền. Production là nhánh riêng với các dependencies R1/R6; PROD_OBS đóng vòng qua change intake do owner bind. Nếu đổi node nào, impact analysis xác định earliest affected riêng; không dùng “khảo sát từ đầu” để buộc scientific rerun từ R0.
+
+F3 tách phần schema/fixtures khỏi phần bind artifact thật. F4 synthetic không chờ quyền export/ingest G1 thật; F4 trên dữ liệu thật mới cần source/lineage/arm và approved policies. Đây là chia scope công việc, không thêm node hoặc gate khoa học.
+
+## R4 Roadmap node 01 đến 05
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 01 MKT_REGIME&lt;br&gt;Market Regime&lt;br&gt;OUTSIDE_SP · F2 | VNINDEX D1 OHLCV → regime series&lt;br&gt;Upstream: edge map không ghi; vẫn phải kiểm gate/impact scope&lt;br&gt;G1 nguồn báo: seal-time: ACTIVE_UNAUDITED | Bind VNINDEX local và regime-method version; nghiên cứu causal regime features, Kalman/spectral/HMM trong namespace riêng.&lt;br&gt;Đầu ra: RegimeFeatureSpec và feature receipt theo decision time. | Không thay regime G1 bằng state ML; không dùng smoother hoặc toàn kỳ để gắn regime quá khứ. |
+| 02 R0&lt;br&gt;Research Method Contract&lt;br&gt;SP0 · F1 | none → method hash&lt;br&gt;Upstream: edge map không ghi; vẫn phải kiểm gate/impact scope&lt;br&gt;G1 nguồn báo: FROZEN | Bind methodology và intended target; tách market-data, learning và governance contracts; giữ uncertainty policy refs.&lt;br&gt;Đầu ra: LearningContractSpec có method/schema/hash/cutoff, mục đích và owner. | Không biến policy ML4T hoặc report roadmap thành method authority G1; không tự chốt OQ/PQ. |
+| 03 R1&lt;br&gt;Authorized Parameter Candidate Space&lt;br&gt;SP0 · F1 | R0 → 438 candidate rows&lt;br&gt;Upstream: R0&lt;br&gt;G1 nguồn báo: FROZEN | Đọc candidate/variant inventory được xuất hợp lệ; giữ 0/1/nhiều tuple và toàn bộ provenance.&lt;br&gt;Đầu ra: CandidateIdentityAdapterSpec; candidate ↔ variant mapping có authority ref. | Không chọn tuple đầu, winner hoặc code default; không mở thêm sweep/candidate từ model. |
+| 04 R2&lt;br&gt;Evidence Cube&lt;br&gt;SP0 · F2 | R0,R1 → 445008-slot primitives&lt;br&gt;Upstream: R0;R1&lt;br&gt;G1 nguồn báo: FROZEN | Đặc tả feature store causal từ OHLCV local và cube có grain/lineage riêng; phân tách features khỏi outcome.&lt;br&gt;Đầu ra: FeaturePanelSpec event/lane/bar và manifest đơn vị, adjustment, calendar. | Không giả định CSV giá là research cube; audit join keys, availability và toàn bộ denominator. |
+| 05 R3&lt;br&gt;Sample Eligibility + Conditional Edge&lt;br&gt;SP0 · F3 | R2 → eligible candidate ledger&lt;br&gt;Upstream: R2&lt;br&gt;G1 nguồn báo: V1_FROZEN_V2_AUDITED_NOT_ADOPTED | Nhận eligibility/edge như evidence có method version; đo coverage/missingness theo population.&lt;br&gt;Đầu ra: EligibilityReceipt và support diagnostics theo grain gốc. | Không thay ngưỡng eligibility/N_eff, dùng model filter candidate hoặc gọi unique count là độc lập. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 06 đến 10
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 06 R4&lt;br&gt;Structural Robustness Readiness&lt;br&gt;SP0 · F3 | R3 → diagnostic flags (0 filtered)&lt;br&gt;Upstream: R3&lt;br&gt;G1 nguồn báo: FROZEN_V1_PENDING_V2 | Nhận diagnostic flags và kiểm feature quality/drift; giữ diagnostic-only.&lt;br&gt;Đầu ra: StructuralDiagnosticsAdapterSpec và disposition ledger. | Không biến flag thành bộ lọc; input = retained + excluded + quarantined nếu có lọc được phép. |
+| 07 R5A_AUTH&lt;br&gt;R5A Method / Multiplicity Authority&lt;br&gt;SP0 · F3 | R0,R4 → alpha allocation + bootstrap design&lt;br&gt;Upstream: R0;R4&lt;br&gt;G1 nguồn báo: FROZEN_FOR_M6513_NEW_AUTHORITY_REQUIRED_FOR_M11064 | Bind family/candidate universe, alpha/bootstrap/method và quyền của từng run.&lt;br&gt;Đầu ra: MultiplicityAuthorityReference, chỉ đọc. | Không chọn alpha/B từ kết quả ML hoặc tự cấp quyền MTP; population đổi phải được owner xem lại. |
+| 08 R5A&lt;br&gt;Multiple Testing (MTP)&lt;br&gt;SP0 · F3 | R4,R5A_AUTH → supported/rejected candidates&lt;br&gt;Upstream: R4;R5A_AUTH&lt;br&gt;G1 nguồn báo: COMPLETE_V1_BLOCKED_V2 | Ingest MTP support/rejection có family/variant identity; giữ failed/rejected rows trong lineage.&lt;br&gt;Đầu ra: MTPSupportAdapterSpec và population reconciliation. | Không dùng p-value làm nhãn lợi nhuận event, không thay MTP bằng model score. |
+| 09 R5B&lt;br&gt;Non-selective Characterization&lt;br&gt;SP0 · F3 | R5A → proximity bands B0-B3/NhA/NhC&lt;br&gt;Upstream: R5A&lt;br&gt;G1 nguồn báo: COMPLETE_V1 | Nhận non-selective characterization làm context, tách khỏi predictive target.&lt;br&gt;Đầu ra: CharacterizationContextSpec; không ranking/elimination. | Không tạo Pareto/winner ngầm; metric mô tả không cấp quyền selection. |
+| 10 R5C&lt;br&gt;Neighborhood Robustness Labeling&lt;br&gt;SP0 · F3 | R5B (nominal) → 6-state label&lt;br&gt;Upstream: R5B&lt;br&gt;G1 nguồn báo: DESIGNED_NOT_IMPLEMENTED_SUPERSEDED_IN_PRACTICE | Giữ branch conditional và trạng thái NOT_APPLICABLE/bypass theo authority được bind.&lt;br&gt;Đầu ra: ConditionalBranchDisposition, không bắt chạy nhãn chưa có authority. | Không ép R5C vào critical path hiện tại hoặc tự chọn margin để lấp đủ 6 trạng thái. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 11 đến 15
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 11 R6&lt;br&gt;Supported Variant Set / Resolver Map&lt;br&gt;SP0 · F3 | R5A,R5B → supported variant set + resolver map&lt;br&gt;Upstream: R5A;R5B&lt;br&gt;G1 nguồn báo: COMPLETE_RESEARCH_ONLY_V1 | Bind supported variant set/resolver-map version; bảo toàn multi-variant và source lineage.&lt;br&gt;Đầu ra: SupportedVariantSetReceipt; exact membership read-only. | Không thêm/xóa variant nhờ prediction; research map không phải production membership. |
+| 12 RNV2_GATE&lt;br&gt;RN V2 Activation Gate&lt;br&gt;OUTSIDE_SP · F3 | R6 + 6 prerequisites → GO/HOLD&lt;br&gt;Upstream: R6&lt;br&gt;G1 nguồn báo: seal-time: BLOCKED_MULTIPLE_PREREQUISITES_OPEN | Nhận reconciliation của các prerequisites và scoped dispatch làm input kiểm quyền.&lt;br&gt;Đầu ra: ActivationPrerequisiteReference, GO/HOLD chỉ từ owner. | File tồn tại, certification PASS và entry_allowed không tự thành quyền chạy RN. |
+| 13 POLICY_V2&lt;br&gt;TICKER_REGIME_PARAMETER_POLICY_V2&lt;br&gt;OUTSIDE_SP · F3 | R6 → frozen policy object&lt;br&gt;Upstream: R6&lt;br&gt;G1 nguồn báo: seal-time: NOT_CREATED | Bind policy object bytes, authority, effective version và lineage; giữ provenance chưa đủ ở HOLD.&lt;br&gt;Đầu ra: PolicyBindingSpec liên kết policy ↔ parameter map ↔ run. | Không gọi NOT_CREATED là fact hiện hành chỉ từ registry; artifact có mặt cũng chưa chứng minh approved. |
+| 14 R03_V2&lt;br&gt;Full Alpha Matrix V2&lt;br&gt;SP0 · F3 | POLICY_V2 → signal/alpha events&lt;br&gt;Upstream: POLICY_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Thiết kế event intake theo ticker/strategy/regime/variant và full event identity; nguồn G1 tạo signal.&lt;br&gt;Đầu ra: ResearchEventAdapterSpec, không tự sinh signal canonical. | Không collapse cross-variant cùng ngày; không coi phase2_event_id/lane_id là globally unique thiếu run binding. |
+| 15 RN01_V2&lt;br&gt;Regime Alpha Matrix V2&lt;br&gt;SP0 · F3 | R03_V2 → regime alpha stats&lt;br&gt;Upstream: R03_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Nhận event ledger và regime/lane context theo same lineage; tách aggregate view.&lt;br&gt;Đầu ra: EventContextJoinSpec có declared cardinality. | Không broadcast cell statistic thành event label; regime tại entry phải bind theo source. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 16 đến 20
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 16 RQ1_V2&lt;br&gt;Alpha Horizon Decay V2&lt;br&gt;SP1 · F3 | RN01_V2 → horizon-decay profile&lt;br&gt;Upstream: RN01_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Map horizon decay và event outcome cho H={5,10,20,40}; giữ toàn population.&lt;br&gt;Đầu ra: HorizonPanelSpec và source-role classification. | Top30 chỉ review shortlist; không cắt training universe từ shortlist, không chọn canonical H. |
+| 17 RQ2_V2&lt;br&gt;Sample-Size Reliability V2&lt;br&gt;SP1 · F3 | RQ1_V2 → reliability class&lt;br&gt;Upstream: RQ1_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Tách row occurrences, unique event, unique event×H và N_eff methodology; thiết kế dependency groups.&lt;br&gt;Đầu ra: SupportAccountingSpec và dependency-policy reference. | Khác key không chứng minh độc lập; không tự dùng N/H hoặc chọn group_by=ticker. |
+| 18 RQ3_V2&lt;br&gt;Edge Mechanism Cohort V2&lt;br&gt;SP1 · F4 | RQ2_V2 → payoff/hit-rate profile&lt;br&gt;Upstream: RQ2_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Dùng payoff/hit-rate/cohort evidence làm diagnostics và baseline comparison ở scope cho phép.&lt;br&gt;Đầu ra: ReturnRiskBaselineDesign và metric definitions theo H/cohort. | Không dùng full-period cohort metric làm feature cùng kỳ; không claim superiority từ count. |
+| 19 RQ3EXT_V2&lt;br&gt;RQ3 Extension V2&lt;br&gt;SP1 · F4 | RQ2_V2,RQ3_V2 → extended cohort profile&lt;br&gt;Upstream: RQ2_V2;RQ3_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Đặc tả heterogeneity/persistence diagnostics theo variant, regime, time và ticker.&lt;br&gt;Đầu ra: ConditionalEvaluationSlices, denominator và lineage. | Không lựa strata sau kết quả rồi coi preregistered; giữ search/exposure ledger theo owner. |
+| 20 RQ4_V2&lt;br&gt;MFE/MAE Path and Exit Efficiency V2&lt;br&gt;SP1 · F3 | RQ3EXT_V2 → path metrics&lt;br&gt;Upstream: RQ3EXT_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Map event×H MFE/MAE/path labels và method lineage D380-corrected khi source được bind.&lt;br&gt;Đầu ra: PathLabelAdapterSpec có horizon, valid/mature/censored, label-end và availability riêng. | Không chuyển aggregate median/mean sang label event; không impute nhãn chưa mature bằng zero. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 21 đến 25
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 21 SHADOW_V2&lt;br&gt;Shadow V2&lt;br&gt;SP1 · F4 | RQ1-4_V2 → shadow support class&lt;br&gt;Upstream: RQ1_V2;RQ2_V2;RQ3_V2;RQ4_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Thiết kế so sánh baseline/model trong shadow riêng, không làm ảnh hưởng production.&lt;br&gt;Đầu ra: ShadowEvaluationSpec và immutable prediction/outcome receipts. | Không tự chạy canonical shadow executor; accepted output-path isolation là prerequisite trước execution. |
+| 22 SUPPORT_T10_V2&lt;br&gt;Support/T10 V2&lt;br&gt;SP1 · F4 | SHADOW_V2 → support-qualified set&lt;br&gt;Upstream: SHADOW_V2&lt;br&gt;G1 nguồn báo: EXECUTED_HISTORICALLY | Nhận support-qualified set và comparison-grain authority; đánh giá calibration/coverage theo scope.&lt;br&gt;Đầu ra: SupportGateInputReference và evaluation eligibility report. | ML score không tự vượt T10; tách lane/event/cell comparison và không thêm gate khoa học mới. |
+| 23 PHASE2_V2&lt;br&gt;Phase 2 V2 (incl Hold-Time/Signal-Success/QC)&lt;br&gt;SP2 · F4 | SUPPORT_T10_V2 → consolidated report&lt;br&gt;Upstream: SUPPORT_T10_V2&lt;br&gt;G1 nguồn báo: CONFLICT JSON execution / SP2 certification; xem R4-F01 | Đặc tả label/probability/calibration, maturity và censoring intake; model phân phối return-risk là nghiên cứu riêng có evaluator.&lt;br&gt;Đầu ra: Phase2LearningAdapterSpec và baseline evaluation protocol. | P2-C1..C7, P2X-R1..R7 là nội bộ node 23; D388 yêu cầu một gate mỗi dispatch. Không đọc numeric comparator trước seal trong rerun. |
+| 24 COMPARE&lt;br&gt;Compare RN V1 vs RN V2&lt;br&gt;OUTSIDE_SP · F4 | RN v1 [H] + RN v2 → stagewise comparison rows&lt;br&gt;Upstream: PHASE2_V2&lt;br&gt;G1 nguồn báo: seal-time: DESIGNED_NOT_STARTED | Đặc tả comparison cùng population/key/H và non-comparability disposition; ML candidate thêm như phiên bản riêng.&lt;br&gt;Đầu ra: LikeForLikeComparisonSpec, gaps và failure retained. | RN V1/V2 comparison không tự là model evaluation hoặc promotion; không gộp variant thành winner. |
+| 25 PHASE3_GATE&lt;br&gt;Phase 3 Authority Gate&lt;br&gt;OUTSIDE_SP · F5 | COMPARE → GO/HOLD&lt;br&gt;Upstream: COMPARE&lt;br&gt;G1 nguồn báo: seal-time: HOLD_NEVER_LIFTED | Chuẩn bị model/data/method/evaluator evidence để owner đánh giá entry, không tự mở gate.&lt;br&gt;Đầu ra: ValidationEntryEvidenceReference và unresolved prerequisites. | Thiết kế P3.0 đã có không phải launch token; partition/OOS/candidate scope phải được authority bind. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 26 đến 29
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 26 PHASE3&lt;br&gt;Phase 3 / Validation&lt;br&gt;OUTSIDE_SP · F5 | PHASE3_GATE → undefined (target role only)&lt;br&gt;Upstream: PHASE3_GATE&lt;br&gt;G1 nguồn báo: seal-time: NOT_ESTABLISHED | Chỉ thiết kế external validation interface: frozen predictions, calibration/error slices và result receipt.&lt;br&gt;Đầu ra: ValidationConsumerSpec; empirical run chờ protocol/partition riêng. | Không mở OOS/Final Holdout, không tune từ validation và không tự đặt PASS threshold. |
+| 27 PROMOTION&lt;br&gt;Promotion Authority&lt;br&gt;OUTSIDE_SP · F5 | Validation PASS → promotion event&lt;br&gt;Upstream: PHASE3&lt;br&gt;G1 nguồn báo: seal-time: PER_COMPONENT_AD_HOC | Cung cấp evidence summary và đọc quyết định của authority; model role trained/approved/champion-reference tách biệt.&lt;br&gt;Đầu ra: PromotionDecisionReference, không ghi quyết định G1. | Không promote model/challenger vì metric tốt hoặc chứng nhận kỹ thuật PASS. |
+| 28 PROD_ACTIVATION&lt;br&gt;Production Activation&lt;br&gt;OUTSIDE_SP · F5 | Promotion → new active version&lt;br&gt;Upstream: edge map không ghi; vẫn phải kiểm gate/impact scope&lt;br&gt;G1 nguồn báo: seal-time: PER_COMPONENT | Bind approved inference version và activation receipt/rollback refs do owner phát hành.&lt;br&gt;Đầu ra: InferenceActivationReference và compatibility checklist. | FiTechML không kích hoạt/thay champion; không dựng executor hoặc controller cạnh tranh Runtime. |
+| 29 PIT_UNIV&lt;br&gt;PIT Universe&lt;br&gt;OUTSIDE_SP · F1 | market data → universe&lt;br&gt;Upstream: edge map không ghi; vẫn phải kiểm gate/impact scope&lt;br&gt;G1 nguồn báo: ACTIVE | Bind universe lịch sử theo ngày với local price manifest; đối chiếu delist/inactive/exemption scope.&lt;br&gt;Đầu ra: MarketDatasetContract và UniverseAsOfSpec. | 718 file hôm nay không chứng minh membership lịch sử; không tự kế thừa gate QRW là PIT PASS. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 30 đến 33
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 30 SCREENER&lt;br&gt;Daily Screener DS1-DS11&lt;br&gt;OUTSIDE_SP · F6 | PIT_UNIV → screened universe&lt;br&gt;Upstream: PIT_UNIV&lt;br&gt;G1 nguồn báo: CLOSED_V1 | Thiết kế nhận screened universe và feature snapshot tại decision time; inference chỉ advisory/shadow khi được phép.&lt;br&gt;Đầu ra: ScreenObservationSpec và recommendation receipt. | Không sửa screener filter/ranking bằng prediction trước approved production-policy change. |
+| 31 EXEC_UNIV&lt;br&gt;Strategy Execution Universe&lt;br&gt;OUTSIDE_SP · F6 | R1 (438x46) → full execution universe&lt;br&gt;Upstream: SCREENER;R1&lt;br&gt;G1 nguồn báo: FROZEN | Bind execution universe với candidate/parameter-map versions và exact identities.&lt;br&gt;Đầu ra: ExecutionUniverseReference và identity bridge cần owner duyệt. | Không dùng candidate_id ↔ parameter_set_id như tương đương nếu chưa có bridge authority. |
+| 32 REGIME_CUR&lt;br&gt;Current Market Regime&lt;br&gt;OUTSIDE_SP · F6 | market data → current regime&lt;br&gt;Upstream: edge map không ghi; vẫn phải kiểm gate/impact scope&lt;br&gt;G1 nguồn báo: ACTIVE | Nhận current regime đã versioned, so training/inference semantics và stale/missing state.&lt;br&gt;Đầu ra: RegimeObservationSpec có cutoff/effective_time. | Không thay regime production bằng HMM; regime research và live không mặc định cùng version. |
+| 33 ALPHA_RESOLVER&lt;br&gt;Exact Alpha Resolver&lt;br&gt;OUTSIDE_SP · F6 | signals + R6 → EXACT_ALPHA_FOUND/SHADOW_ALPHA/etc.&lt;br&gt;Upstream: EXEC_UNIV;REGIME_CUR;R6&lt;br&gt;G1 nguồn báo: ACTIVE | Nhận exact resolver outcome/coverage gaps để cung cấp advisory return-risk context.&lt;br&gt;Đầu ra: ResolverObservationSpec giữ exact key và variant. | Không biến forecast thành EXACT_ALPHA_FOUND hoặc fallback shadow/unresolved thành approved alpha. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 34 đến 37
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 34 CONSENSUS&lt;br&gt;Alpha Consensus&lt;br&gt;OUTSIDE_SP · F6 | ALPHA_RESOLVER → CONSENSUS_PASS records&lt;br&gt;Upstream: ALPHA_RESOLVER&lt;br&gt;G1 nguồn báo: COMPLETE_PASS | Nhận consensus reference và thiết kế diagnostic disagreement/correlation, không sửa công thức G1.&lt;br&gt;Đầu ra: ConsensusObservationSpec, advisory uncertainty. | Không dùng majority vote model/agent để tạo CONSENSUS_PASS hoặc đổi threshold. |
+| 35 REGISTRY&lt;br&gt;Production Registry V2&lt;br&gt;OUTSIDE_SP · F5 | R6 (27 identities) → AUTHORIZED lookups&lt;br&gt;Upstream: R6&lt;br&gt;G1 nguồn báo: COMPLETE_PASS_FIRST_BASELINE_ONLY | Lookup/read approved identity/version khi được cấp; reconcile model eligibility với G1 authority reference.&lt;br&gt;Đầu ra: RegistryMembershipReference read-only và audit receipt. | Không ghi membership; artifact/model được trained không đồng nghĩa production-authorized. |
+| 36 TRADE_ELIG&lt;br&gt;Trade Eligibility&lt;br&gt;OUTSIDE_SP · F6 | CONSENSUS,REGISTRY → TRADE_ELIGIBLE records&lt;br&gt;Upstream: CONSENSUS;REGISTRY&lt;br&gt;G1 nguồn báo: COMPLETE_PASS | Quan sát eligibility và reasons; recommendation giữ quyền advisory, không nâng eligibility.&lt;br&gt;Đầu ra: EligibilityObservationSpec và recommendation reason trace. | CONSENSUS/REGISTRY checks vẫn do G1 sở hữu; không tự cho TRADE_ELIGIBLE. |
+| 37 SLTP&lt;br&gt;SL/TP&lt;br&gt;OUTSIDE_SP · F7 | TRADE_ELIG → LiveSLTPResult&lt;br&gt;Upstream: TRADE_ELIG&lt;br&gt;G1 nguồn báo: PARKED_BY_SON | Đặc tả return/path-risk advisory có thể cung cấp quantiles cho owner nghiên cứu khi SLTP được mở lại.&lt;br&gt;Đầu ra: SLTPResearchAdvisorySpec theo H; chưa là live provider. | SLTP vẫn PARKED theo snapshot được đọc; không tự resume hoặc dùng quantile làm lệnh stop/target. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Roadmap node 38 đến 41
+
+Mọi việc/output/QC FiTechML dưới đây là PROPOSED, chưa implementation. G1 topology và dependency là tài liệu đã đối chiếu; không là proof producer/consumer thực thi. Status/authority theo từng nguồn, chi tiết ở CSV đồng hành.
+
+| Node và gói | G1 input output và dependency | Việc FiTechML và đầu ra đề xuất | QC và ranh giới quyền |
+| --- | --- | --- | --- |
+| 38 RISK&lt;br&gt;Risk&lt;br&gt;OUTSIDE_SP · F7 | SLTP → risk-sized order&lt;br&gt;Upstream: SLTP&lt;br&gt;G1 nguồn báo: PENDING_NOT_BUILT | Đặc tả risk-distribution scenarios/uncertainty cho risk owner, tách khỏi position sizing.&lt;br&gt;Đầu ra: RiskAdvisoryContract đề xuất; policy sizing chưa do FiTechML chọn. | Không tạo risk-sized order, cap hay sizing threshold; cần risk-method authority và provider evidence. |
+| 39 CAPITAL&lt;br&gt;Capital / Portfolio&lt;br&gt;OUTSIDE_SP · F7 | RISK → allocated order&lt;br&gt;Upstream: RISK&lt;br&gt;G1 nguồn báo: PENDING_NOT_BUILT | Đặc tả correlation/concentration/scenario diagnostics để owner portfolio tham khảo.&lt;br&gt;Đầu ra: PortfolioResearchAdvisorySpec; không phân bổ vốn. | Không đặt weights/capital allocation từ model; topology RISK→CAPITAL→BUY_READY giữ nguyên, runtime data-flow chưa kiểm. |
+| 40 BUY_READY&lt;br&gt;BUY_READY&lt;br&gt;OUTSIDE_SP · F7 | CAPITAL → BuyReadyRecord&lt;br&gt;Upstream: CAPITAL&lt;br&gt;G1 nguồn báo: PENDING_NEVER_REACHED | Chỉ thiết kế quan sát kết quả G1 đã được authorize để đối chiếu recommendation/outcome.&lt;br&gt;Đầu ra: ReadOnlyBuyReadyObservationSpec khi consumer path có quyền rõ. | Không tạo BUY_READY, order hoặc gọi broker; không dùng callable đã báo tồn tại làm proof node đạt production gate. |
+| 41 PROD_OBS&lt;br&gt;Production Observation / Monitoring&lt;br&gt;OUTSIDE_SP · F6 | all production nodes → drift/gap/failure signals&lt;br&gt;Upstream: PIT_UNIV;SCREENER;EXEC_UNIV;REGIME_CUR;ALPHA_RESOLVER;CONSENSUS;REGISTRY;TRADE_ELIG;SLTP;RISK;CAPITAL;BUY_READY&lt;br&gt;G1 nguồn báo: ACTIVE_STRUCTURAL | Đặc tả immutable observation→drift/gap/opportunity→research-candidate evidence và gửi qua intake được owner bind.&lt;br&gt;Đầu ra: ObservationFeedbackSpec, consumer receipt và candidate proposal. | CHANGE_INTAKE là khái niệm handoff, không node 42; alert không tự retrain/replay/promote/dispatch. |
+
+Nguồn: registry row canonical_order+1, crosswalk/edge-map/AILL file17 cùng node_id; producer references và gaps trong FITECHML_G1_CCE_41_NODE_ROADMAP_V1.csv. Mỗi row có source capture/hash; không đổi seal-time owner/gate và không tự chọn earliest replay cho task material.
+
+## R4 Refresh contract dựa trên schema thực
+
+Thiết kế đầy đủ ở docs/surveys/g1_cce_20261018/FITECHML_CONTRACT_REFRESH_DESIGN_V1.md. Giữ I1 dataclasses/validators tương thích; không làm ArtifactReceipt thành scientific/PIT/approval authority. Chọn standard-library cho F1 là đề xuất Codex để core nhẹ; policy/reuse/dependency chưa được tự chốt.
+
+| Phần | Đầu ra đề xuất | Checks phải có và giới hạn |
+| --- | --- | --- |
+| Market dataset | Manifest/file hashes, units, adjustment/source seam, universe-as-of, calendar/session/time policy refs | Không lấy 718 file hiện tại làm PIT universe lịch sử; date/epoch key không phải availability |
+| Event identity | Full event/variant/lineage/run key + original IDs; bridge có authority | Thiếu arm/map/tuple bridge → unresolved/quarantine; không dùng tuple đầu hoặc globalize lane_id |
+| Feature/label | Feature available-at/decision cutoff tách label end/available-at; label grain event×H | Forward MFE/MAE/outcome label-only; immature/censored không điền zero; *_pit không là proof |
+| Join/accounting | Declared grain/cardinality/unmatched policy; expansion/filter lineage | 1:n event→event×H hợp lệ; không mất H/many-to-many ngầm; purge được giảm rows |
+| Evaluation refs | Availability boundary, purge/overlap/embargo, grouping/evaluator/budget refs | Policy unresolved không evaluation-ready; unique count không independent N hoặc N_eff |
+| Authority/observation | Separate version/model/decision/consumer receipt references | Không trained→champion, alert→retrain, recommendation→eligible/BUY_READY |
+
+Có 18 acceptance cases PROPOSED/NOT_EXECUTED trong design: I1 regression; missing binding; epoch parse; units; envelope/list; multi-variant/run identity; unresolved bridge; positive 1:n; negative H/many-to-many; unmatched; future canary; maturity/censoring; boundary policies; independent temporal checks; accounting; overlapping event independence; authority limits; source drift. Đây chưa phải fixture/test đã chạy.
+
+Fresh builder check đã đọc thiết kế/roadmap/findings và không nêu câu hỏi consequential còn thiếu cho F1 chỉ schemas/validators/synthetic cases. Scope đó không phải scientific/integration PASS hoặc quyền triển khai. Những lựa chọn method, arm, provisional, identity bridge, availability/grouping/N_eff và consumer binding vẫn giữ unresolved cho phần phụ thuộc.
+
+## R4 Bước tiếp theo và cách theo dõi 41 node
+
+Bước kế tiếp cụ thể là F1 consumer schemas/validators và synthetic tests trong FiTechML theo bản thiết kế reviewable, giữ I1 tương thích. Prompt CC đã soạn ở docs/surveys/g1_cce_20261018/PROMPT_CC_F1_CONTRACTS_SYNTHETIC_V1.md, trạng thái DRAFT_FOR_USER_REVIEW / NOT_DISPATCHED. Không chạy 41 node, không nối dữ liệu G1 thật, không train và không mở F2 từ roadmap này.
+
+Mỗi node có canonical_order/node_id, phase/owner, grain/input/output, upstream/downstream, next/gate/authority/replay hint seal-time, G1 source-reported status, producer-verification scope, AILL gap/binding refs, gói/task/output/QC FiTechML và implementation status. Bản CSV là checklist đầy đủ của projection này; cập nhật tiến độ từng row theo evidence task mới, không ghi ngược vào registry G1.
+
+Các câu hỏi còn mở được xử lý trước phần phụ thuộc: lineage/arm và export đầu tiên; provisional/frozen policy; source stamping/identity bridge; release/vintage/time/calendar; split/group/embargo/boundary/N_eff; consumer cluster, durable receipts và accepted Runtime pin. Không lấy một report hoặc certification PASS làm dispatch. G2/G3, RN V3 workspace, LLM daily inference và broker không nằm trong execution scope R4.
+
+Memory dùng routing và live evidence thắng; Codegraph status read-only 17 files/118 nodes/263 edges, 7 helper files pending, không sync/reindex hoặc index repo ngoài. Harness G1 standard được đọc làm process reference; chưa claim executable enforcement/autonomy. Autoresearch vẫn NOT_AUTHORIZED.
+
+Tài liệu đi kèm: G1_CCE_FRESH_SURVEY_FINDINGS_V1.md; FITECHML_G1_CCE_41_NODE_ROADMAP_V1.md/.csv; FITECHML_CONTRACT_REFRESH_DESIGN_V1.md; source capture V2 và final manifest. Roadmap node/state/producer evidence không phải facts có authority mới trong FiTechML. Không có commit hoặc push trong R4; giữ dirty/untracked work và historical packages.
+
+
+## F1 Consumer contracts và synthetic verification — chờ Codex QC
+
+Trạng thái F1_IMPLEMENTED_PENDING_CODEX_QC (2026-10-18, base HEAD 817993687dcab9c9a193f1f02cd9c9af912a6c0c). Người dùng chuyển prompt F1 cho phiên làm việc; phiên coi đó là dispatch. F1 thêm năm module trong src/fitechml/contracts và bốn file test synthetic; dataclass, validator và test I1 không đổi (kiểm bằng hash). Đây là self-check của người triển khai, chưa phải QC độc lập, và F1 không phải I2.
+
+Test đã chạy thật: python -m pytest -v, Python 3.14.4, exit 0, 225 passed = 23 test I1 + 202 test F1 (market-data 31, research-learning 73, join-spec 45, policy-reference 53); không xfail, skip hoặc ẩn lỗi. Mutation self-check trên bản sao scratch: 19/19 mutation bị test bắt; đây là 19 mutation chọn tay, không phải đo coverage. Cú pháp 5 module + 4 test parse được ở Python 3.10 (kiểm tĩnh), chưa chạy runtime 3.10–3.13. Evidence: docs/integrations/ml4t/evidence/F1_PYTEST_RUN_20261018.log, F1_VERIFICATION_20261018.txt, F1_MUTATION_SELFCHECK_20261018.txt, F1_MANIFEST_20261018.json; báo cáo chi tiết docs/surveys/g1_cce_20261018/F1_IMPLEMENTATION_REPORT_V1.md.
+
+| Phần | Đã có trong code và test synthetic | Chưa có / giới hạn |
+| --- | --- | --- |
+| Event identity và lineage | Full key 8 trường + lineage run/original IDs; thiếu core/lineage bị reject; thiếu arm/map-version/tuple-hash bị quarantine, không default; cùng ticker/ngày hai variant là hai key. | Không chọn arm hay mapping; chưa nối artifact G1 thật. |
+| Source binding | Hash, schema, producer, source, method, run, lineage, cutoff, effective time; thiếu binding → quarantine; hash sai dạng → reject. | Chỉ kiểm khai báo; không đọc file, không so hash với dữ liệu thật. |
+| Market data | Epoch số / date-only / ISO; chuỗi số không bị ép; snapshot envelope vs live list không fallback; units, adjustment, timezone, lịch, availability là tham chiếu, thiếu → unresolved/quarantine theo mục đích. | Không mặc định VND, lịch hay điều chỉnh giá; không collector; ngày không phải availability. |
+| Feature và label | Canary tên label-side; label tách label_end_time, label_available_at, maturity; immature/censored/invalid không thành failure/0; tên *_pit không là bằng chứng; panel H 5/10/20/40, không canonical H. | Canary chỉ bắt tên; thời gian là chuỗi, chỉ predicate availability nhận datetime có timezone. |
+| Join và accounting | event→event×H 1:n hợp lệ và giữ H; chặn join chỉ theo event key, mất H, many-to-many ngầm, aggregate-as-label, key trùng; unmatched với policy chưa chốt bị giữ, không inner join ngầm; accounting cân bằng theo từng phép biến đổi. | Executor chỉ in-memory cho synthetic; chưa có hàm xâu chuỗi nhiều bước accounting. |
+| Policy và độc lập | Predicate availability áp policy biên do caller bind (strict/inclusive), thiếu hoặc naive → unresolved; purge, maturity, embargo là ba tham chiếu riêng, chỉ có REFERENCES_PRESENT, không có giá trị ready; count tách occurrence / unique event / unique event×H; claim độc lập không có phương pháp N_eff bị reject. | Không có thuật toán purge, nhóm phụ thuộc, N_eff hay splitter; PQ-2 và PQ-7 vẫn chưa chốt. |
+| Authority và binding | Reference tới node/owner/gate chỉ là lineage, mọi dùng để thực thi quyền bị reject; drift version/hash/source buộc revalidation; binding bất biến. | Kiểm lời mô tả bằng regex heuristic (có false positive/negative, xem báo cáo F1 mục 5). |
+
+## Checklist FTML ID 01–18 sau F1
+
+Theo AGENTS.md mục 4: mỗi ID chỉ tính PASS sau khi trọn tiêu chí trong scope xác định có evidence và QC/acceptance tương ứng. Test xanh, mốc xong một phần hoặc số node G1 không thay thế điều đó. Cột nghiệm thu ghi người và ngày; F1 chưa có QC nên không ID nào được nâng.
+
+| FTML ID | Nhóm chức năng | F1 chạm tới | Trạng thái thực tế | Nghiệm thu (người, ngày) |
+| --- | --- | --- | --- | --- |
+| 01 | Data quality và PIT | Một phần: tham chiếu availability/timezone/calendar, predicate biên. Chưa có validator chất lượng dữ liệu hay PIT thật. | Chờ QC (một phần) | Chưa có |
+| 02 | Identity và nhãn | Một phần: full event key, lineage, panel H, label maturity/availability, canary feature. | Chờ QC (một phần) | Chưa có |
+| 03 | Hình thái giá và volume | Không. | Chưa thực thi | Chưa có |
+| 04 | Dữ liệu tổng hợp | Chỉ fixture viết tay trong test; chưa có generator có seed. | Chưa thực thi | Chưa có |
+| 05 | Đặc trưng nâng cao | Không. | Chưa thực thi | Chưa có |
+| 06 | Nguồn dữ liệu và license | Một phần: manifest/semantics market data (units, adjustment, lịch). Chưa chạm license/quyền sử dụng. | Chờ QC (một phần) | Chưa có |
+| 07 | Chronological validation | Một phần: tham chiếu policy purge/maturity/embargo, predicate availability, accounting. Chưa có splitter. | Chờ QC (một phần) | Chưa có |
+| 08 | Baseline tuyến tính | Không. | Chưa thực thi | Chưa có |
+| 09 | Gradient boosting | Không. | Chưa thực thi | Chưa có |
+| 10 | Return risk và calibration | Không. | Chưa thực thi | Chưa có |
+| 11 | Overlap và support | Một phần: tách ba loại count; reject claim độc lập thiếu N_eff. Chưa có N_eff (PQ-7 mở). | Chờ QC (một phần) | Chưa có |
+| 12 | Deep learning và causal | Không. | DEFERRED | Chưa có |
+| 13 | Experiment registry | Chỉ kiểm drift binding tối thiểu; không phải registry. | Chưa thực thi | Chưa có |
+| 14 | Drift và observation | Không. | DEFERRED | Chưa có |
+| 15 | Backtest chi phí danh mục | Không. | DEFERRED | Chưa có |
+| 16 | Rollout và governance | Chỉ chặn dùng reference làm grant; không có authority hay promote. | REFERENCE ONLY | Chưa có |
+| 17 | Text RAG LLM và G2 G3 | Không. | DEFERRED | Chưa có |
+| 18 | RL broker và live | Không. | Không thuộc phạm vi thực thi | Chưa có |
+
+FTML ID 01, 02, 06, 07, 11 | F1 — consumer contracts | Chờ QC (một phần mỗi ID; FTML ID 04 và 13 chỉ chạm ở mức fixture/kiểm drift tối thiểu, ghi Chưa thực thi).
+
+Tiến độ FTML: 0/18 ID PASS; còn 18 ID chưa PASS
+
+Cơ sở của con số 0: không có tài liệu repo nào ghi acceptance của chủ dự án hoặc Codex cho ID nào; addendum báo cáo R4 nêu rõ không ID nào được đánh giá hay đánh dấu PASS. Nếu có nghiệm thu ngoài tài liệu repo thì phiên này chưa xác minh được (NOT_VERIFIED) và con số cần chủ dự án đối chiếu.
+
+Bước kế tiếp: Codex QC cho F1. Không tự mở F2, I2, Autoresearch, đọc artifact G1 thật hay huấn luyện. Giữ nguyên INSTALLATION_BLOCKED (evidence lịch sử), SMOKE_TEST=NOT_RUN, integration HOLD, AUTORESEARCH_EXECUTION=NOT_AUTHORIZED; OQ-ML4T-1..4 và PQ-1..8 chưa chốt. Không commit hoặc push; cây làm việc còn dirty gồm cả việc trước đó của Codex. Codegraph chỉ đọc trạng thái, không sync, nên file F1 mới chưa nằm trong index.
+
+
+## R1.1 Khảo sát chất lượng dữ liệu local ngày 21 tháng 10 năm 2026
+
+Mục tiêu: kiểm tra dữ liệu giá thật có đi qua bước intake với định danh, kiểm cấu trúc và sổ sách đầy đủ hay không, trước khi mở rộng toàn bộ universe. Phạm vi FTML ID 01 và 06; ID 02 liên quan định danh. Codex trực tiếp thực hiện; kết quả đang chờ chủ dự án nghiệm thu.
+
+Phương pháp: chọn trước một file AAA ngày và toàn bộ sáu file VNINDEX/VN30 ngày, tuần, giờ; đọc chỉ từ QRW local, đối chiếu SHA256 với hai manifest ngày 17-10-2026, lưu bản sao cố định trong FiTechML. Adapter kiểm time key, số hữu hạn và quan hệ OHLC, gắn cờ volume bằng 0, cách ly dòng sai có lý do; phép quét CSV riêng đối chiếu lại nguồn dòng và số lượng. Không sửa, sort, dedup hoặc điền dữ liệu gốc.
+
+| File | Dòng đầu vào | Giữ lại | Cách ly | Volume bằng 0 |
+| --- | --- | --- | --- | --- |
+| AAA_1D | 4.052 | 4.051 | 1 | 2 |
+| VN30_1D | 3.518 | 3.518 | 0 | 0 |
+| VN30_1W | 729 | 729 | 0 | 0 |
+| VN30_H1 | 17.566 | 17.566 | 0 | 14.928 |
+| VNINDEX_1D | 6.387 | 6.387 | 0 | 0 |
+| VNINDEX_1W | 1.352 | 1.352 | 0 | 0 |
+| VNINDEX_H1 | 18.228 | 18.228 | 0 | 14.298 |
+| Tổng | 51.832 | 51.831 | 1 | 29.228 |
+
+Kết quả: 51.832 dòng đầu vào = 51.831 dòng giữ lại + 0 dòng loại + 1 dòng cách ly. Không thấy khóa trùng hoặc đảo thứ tự trong phạm vi này. Bảy receipt có checksum và sổ sách cân bằng; cả bảy CSV và hai manifest giữ nguyên hash trước/sau lần đọc.
+
+Dòng cách ly: AAA ngày 21-06-2013, dòng dữ liệu 732 (dòng vật lý 733), close 3,72 nằm ngoài low = high = 3,69. Đây là bất nhất OHLC quan sát được; chưa xác định nguyên nhân. Dòng gốc vẫn được giữ nguyên tại nguồn, không tự sửa theo một giả thuyết.
+
+## R1.1 Phân tích kết quả và bước nghiên cứu tiếp theo
+
+Kết quả cho thấy phương pháp intake phát hiện và giữ dấu vết được một bất nhất OHLC trên dữ liệu thật, thay vì làm biến mất quan sát. Tuy nhiên mẫu gồm một cổ phiếu và hai chỉ số không đại diện chất lượng của 718 mã đã kiểm kê. Intake đúng cấu trúc không chứng minh dữ liệu đúng kinh tế, point-in-time an toàn hoặc có khả năng dự báo.
+
+Volume bằng 0 xuất hiện ở 29.228 dòng giữ lại, chủ yếu VN30_H1 (14.928/17.566) và VNINDEX_H1 (14.298/18.228). Chưa xác định đây là thiếu thông tin từ nguồn, quy ước chỉ số hay khối lượng bằng 0 thực tế. Vì vậy chưa sử dụng volume này để nghiên cứu relative volume; giữ nguyên giá trị và cờ để khảo sát nguồn ở mốc phù hợp.
+
+Các file vẫn khớp snapshot ngày 17-10; AAA và index ngày có mốc cuối 16-10 theo manifest, file tuần có nhãn cuối 12-10. Không suy rằng đây là bản đã cập nhật tới 21-10. Chưa kiểm lịch giao dịch, số phiên thiếu hay ngoại lệ gate. Time key index giữ dạng số; chưa chọn đơn vị epoch, múi giờ hoặc thời điểm dữ liệu khả dụng.
+
+Giới hạn phương pháp: đơn vị giá/khối lượng, raw hay adjusted, phương pháp và vintage điều chỉnh, lịch phiên, availability, source seam, universe-as-of và quyền sử dụng vẫn chưa bind. Receipt chỉ xác nhận bytes, cấu trúc và lineage trong scope đã đọc; các gate phục vụ features và availability tiếp tục chặn khi thiếu semantics. Chưa tính feature thật, chưa huấn luyện, chưa đánh giá lợi nhuận hoặc rủi ro.
+
+Bước tiếp theo đề xuất sau nghiệm thu: R1.2 khóa danh sách file và manifest hiện hành của toàn universe local; intake tuần tự bằng cùng phương pháp, đối chiếu count và identity từng dòng, thống kê quarantine, zero volume và phạm vi ngày theo từng mã/nhóm dữ liệu. Nếu hash nguồn hoặc manifest thay đổi, báo drift và dừng để khóa lại snapshot có chủ ý; không tự chuyển sang dữ liệu online.
+
+Kết quả mong đợi ở R1.2: bộ receipt và bảng chất lượng đầy đủ của phạm vi đã khóa, danh sách bất nhất cần xử lý, cùng bằng chứng không mất dòng. Không kỳ vọng hay tuyên bố alpha. Sau đó mới xem xét bind semantics và thiết kế bước feature thật. R1.2 chưa chạy; Codex dừng tại R1.1 để chủ dự án nghiệm thu.
+
+Evidence dữ liệu: artifacts/f2_r1_1_20261021/run/result.json; input_manifest.json; source_snapshot; receipts. Đây là kết quả khảo sát và phương pháp của mốc, không thay cho nghiệm thu độc lập hoặc quyết định mở mốc tiếp theo.
+
+## Theo dõi 18 chức năng FTML sau mốc R1.1
+
+| PASS | FTML ID | Chức năng gốc | Phạm vi còn thiếu |
+| --- | --- | --- | --- |
+| [ ] | 01 | Data quality và PIT | Pilot 7 file có receipt; chưa đủ toàn scope PIT |
+| [ ] | 02 | Identity và nhãn | Có định danh/sổ sách; chưa nhãn event đầu cuối |
+| [ ] | 03 | Hình thái giá và volume | Chưa tính feature local ở R1.1 |
+| [ ] | 04 | Dữ liệu tổng hợp | Có fixture kỹ thuật; chưa đủ toàn scope |
+| [ ] | 05 | Đặc trưng nâng cao | Chưa nghiên cứu mô hình nâng cao |
+| [ ] | 06 | Nguồn dữ liệu và license | Đã bind bytes pilot; semantics/license còn mở |
+| [ ] | 07 | Chronological validation | Chưa evaluator/splitter đầu cuối |
+| [ ] | 08 | Baseline tuyến tính | Chưa train baseline |
+| [ ] | 09 | Gradient boosting | Chưa train hoặc search |
+| [ ] | 10 | Return risk và calibration | Chưa dự báo và đánh giá phân phối |
+| [ ] | 11 | Overlap và support | Count không phải N_eff; phương pháp còn mở |
+| [ ] | 12 | Deep learning và causal | Hoãn sau baseline |
+| [ ] | 13 | Experiment registry | Có receipts; chưa registry model đầu cuối |
+| [ ] | 14 | Drift và observation | Chưa observation/drift pipeline |
+| [ ] | 15 | Backtest chi phí danh mục | Chưa backtest VN |
+| [ ] | 16 | Rollout và governance | Giữ giới hạn quyền; chưa nghiệm thu toàn scope |
+| [ ] | 17 | Text RAG LLM và G2 G3 | Deferred |
+| [ ] | 18 | RL broker và live | Không mở broker/live để đủ số PASS |
+
+Tiến độ FTML: 0/18 ID PASS; còn 18 ID chưa PASS.
+
+FTML ID 01, 06 (02 liên quan) | R1.1 — local intake pilot | Đã thực thi, chờ người dùng nghiệm thu. Chưa có người/ngày nghiệm thu ID hoàn chỉnh; mỗi ID chỉ được đếm khi đủ tiêu chí của toàn scope và có evidence/acceptance tương ứng. Số dòng, test hoặc mốc không thay số ID PASS.
+
+</pre></article></body></html>

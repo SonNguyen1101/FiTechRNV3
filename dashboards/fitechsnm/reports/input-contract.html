@@ -1,0 +1,383 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INPUT contract V5</title><link rel="stylesheet" href="../app.css"></head><body><article class="public-report"><a href="../index.html#milestones">← Dashboard</a><h1>INPUT contract V5</h1><p>Bản công khai đã làm sạch · Snapshot 2026-10-21T15:30:25.803250+00:00 · Không phải evidence nguyên bytes hoặc nghiệm thu.</p><p>SHA-256 nguồn trước làm sạch: 9558667488a9f6524ab9882020b7e6b9e1ee103ede4b9c26b355b75c193684d0</p><pre class="document-text"># R0 — Input contract V5 (R0-BF-C1)
+
+&gt; Ký hiệu: `Dnnn` trong tài liệu này là quyết định của legacy G1 `docs/decisions.md` (snapshot sha256 `39b9fd31c1dd4ccd82bddb46a97e9b8a1d78e0522fa44c6d1a37b07bb16bf43f`), không phải ledger FiTechSNM. `R0` là node Param Opt V2; `R0` trong D385 là node RN V3 khác (homonym).
+
+contract_id: FITECHSNM.G1CCE.R0.INPUT
+contract_version: 5.0.0-draft.1
+node_ref: {lineage: G1_CCE_INHERITED, workstream: PARAM_OPT_V2, node_id: R0} (implementation_order 1; sealed order 2; SP0/SP01)
+plane: DOCUMENTARY (không dataset; không OOS/holdout/paper/live)
+mode: BASELINE (đúng V4 cộng các correction MR3–MR6 đã chấp nhận; overlay candidate-evolution D2 không áp dụng, xem §10)
+STATUS=CONSOLIDATED_DRAFT_PENDING_OWNER_APPROVAL. Prospective: chỉ có hiệu lực khi có approval `PRE_FACT` HUMAN đúng bytes của file này (hiện `CONTRACT_APPROVALS=0/5`). Thay thế (chưa hiệu lực) `INPUT_CONTRACT_V4.md` 4.0.0-draft.1; V4, SCH V2, các addendum MR3–MR6 và mọi package cũ giữ nguyên bytes.
+Schema và digest: `SCHEMA_AND_HASH_REFERENCE_MODEL_V2.md` (SCH; bytes và version không đổi; V5 không tạo enum `ADDENDUM`). Authority/disposition: `AUTHORITY_AND_FINDING_DISPOSITION_V2.md` (AUTH; MR1, không đổi). Chuẩn: `docs/governance/NODE_CONTRACT_AND_HARNESS_STANDARD_V1.md`. Đây là nội dung đầy đủ tự chứa: implementer không cần đọc thêm các addendum để biết clause hiệu lực; các addendum chỉ là provenance.
+
+## 0. Hiệu lực, nguồn gộp và bảng clause V4 → V5
+
+### 0.1 Quy tắc hợp nhất
+
+- **PREC-V5-1.** Với mỗi clause, văn bản của V5 là văn bản hiệu lực (prospective, từ lúc approval đúng bytes). Bảng 0.3 ghi mỗi khối của V4 được giữ, thay hay bổ sung và vì sao. Đây là PREC-1 (CORR §1) và PREC-ADD-1…4 (MR3, MR4, MR5, MR6) áp dụng một lần cho bản hợp nhất; không có quy tắc thứ hai.
+- **Không đổi khoa học.** Không công thức, ngưỡng, method, authority hiệu lực hay baseline mới; không reset lineage/exposure/trial; không tự promote authority khoa học; clause V4 không bị nêu là đổi được mang nguyên văn.
+- **Lịch sử không đổi thành PASS.** G-11 giữ `UNKNOWN`; Harness lịch sử `PARTIAL_WITH_RECORDED_DEVIATIONS` không retro-PASS; UNKNOWN/PARTIAL/HOLD không được ghi lại thành PASS.
+
+### 0.2 Nguồn gộp (hash đo lúc entry, 2026-10-09)
+
+| sid | tài liệu | version | sha256 | bytes |
+|---|---|---|---|---|
+| V4-INPUT | `docs/nodes/01_R0/preparation_mr2/INPUT_CONTRACT_V4.md` | 4.0.0-draft.1 | `8fd4638b1ee82fe40b67f0347c38bb418cfb0e7d98d7fea689521fe855aa7b84` | 43539 |
+| SCH | `docs/nodes/01_R0/preparation_mr2/SCHEMA_AND_HASH_REFERENCE_MODEL_V2.md` | V2 REMEDIATED_PENDING_OWNER_QC | `b9f54c2e6765f26fae0683985076c3f857366b444a604cd7fa20cb78800ea177` | 167254 |
+| CORR | `docs/nodes/01_R0/preparation_mr2/CORRECTION_AND_AILL_ALIGNMENT_V1.md` | V1 | `0c732db9ba3e2c5e3f422475ddb650c5d7006970c8bfd505d4f13871ca8e2289` | 35709 |
+| AUTH | `docs/nodes/01_R0/preparation_mr1/AUTHORITY_AND_FINDING_DISPOSITION_V2.md` | V2 (MR1) | `132a1b7e08ff5299fa45901d12c324e81e0fbb4db577786770c1a7e0222c9ede` | 42591 |
+| MR3 | `docs/nodes/01_R0/preparation_mr3/TARGETED_CORRECTION_ADDENDUM_V1.md` | 1.0.0-draft.1 | `e8e6915e6083e7e95a6c49a2f5b362c3c9b4e8e16d4d5debd4bb51bc0b2ef5b7` | 94542 |
+| MR4 | `docs/nodes/01_R0/preparation_mr4/TARGETED_CORRECTION_ADDENDUM_V1.md` | 1.0.0-draft.1 | `9cc878fb05fcdad98bb7a35b28d7a96fae9f17fc468f4b9ff0582ae42de08ba7` | 97365 |
+| MR5 | `docs/nodes/01_R0/preparation_mr5/RUNTIME_AILL_GUARD_BINDING_CORRECTION_V1.md` | 1.0.0-draft.1 | `eab5ed90caffa6a714538da158dadb7b0040d8429ad523397c5f5922954ccced` | 38664 |
+| MR6 | `docs/nodes/01_R0/preparation_mr6/TRUSTED_INTERNAL_CALL_BINDING_ERRATUM_V1.md` | 1.0.0-draft.1 | `88a1eb32681f5eec46b15642ebfb0ff67a114d12de64c90e4ce4f140000db32f` | 20645 |
+| OWN-PF | `docs/reviews/FTSNM_R0_FIRST_RUN_BINDING_PREFLIGHT_OWNER_QC_V1/OWNER_REVIEW_AND_PROGRESS_V1.md` | Owner QC 2026-10-09 | `7a380495e90cb664ad193b97596c725985b934889c020a7a23016465180c587e` | 17452 |
+| OWN-PLAN | `docs/reviews/R0_BINDING_FREEZE_PREPARATION_V1/OWNER_BINDING_AND_IMPLEMENTATION_PLAN_V1.md` | V1 | `20bae020be5475d76c409ed3b7b0e76cf06ec2394a1adacf920fe75f5b6f0b6e` | 10652 |
+| SON-BD | `docs/decisions/R0_SON_BOUNDARY_SELECTION_V1/SON_SELECTION_RECORD_V1.json` | V1 | `40fad56e07ce79afa420781af28b9bc09e4b989a2062409314898ee67b84941b` | 1515 |
+| OWN-BASE | `docs/decisions/R0_BASELINE_COMPARISON_CLARIFICATION_V1/OWNER_BASELINE_COMPARISON_CLARIFICATION_V1.md` | V1 | `091148f2cca1cc190889ce53674037a8e8099e79d41acc385883be4070b2b416` | 4154 |
+
+### 0.3 Bảng clause V4 → V5 (khối `##` / `###` của V4-INPUT)
+
+| V4 § (dòng) | trạng thái | nguồn hiệu lực (sid, vị trí) | lý do |
+|---|---|---|---|
+| tiêu đề, header (L1–L10) | AMENDED | V5 header; V4-INPUT L5–L10 | version 5.0.0-draft.1; trạng thái consolidated; mode BASELINE |
+| §1 Loại input (L12–L22) | UNCHANGED | V4-INPUT L12–L22 | không đổi |
+| §2 Population, §2.1 GIT_BLOB, §2.2 SNAPSHOT_FILE, §2.3 TEXT_SECTION, §2.4 ROW_REFERENCE (L24–L135) | UNCHANGED (bảng); ghi chú bytes AMENDED | V4-INPUT L24–L135; OWN-PF §4 DSC01 | dữ liệu input không đổi (cùng hash/bytes/range); ghi chú bytes theo erratum DSC01 (§2.1 ghi chú) |
+| §2.5 CONTROL_FILE (L137–L153) | AMENDED | V4-INPUT L139 (số tối thiểu); OWN-PF §4 DSC07, §5 D03/D04; SON-BD; MR3 L152 (BOUNDARY_PACKET mang nghĩa vụ opening/closure) | số tối thiểu tính lại từ thành phần bundle; verifier-definition approval; boundary packet theo lựa chọn Son; trạng thái hiện tại |
+| §2.6 Ví dụ typed (L155–L204) | UNCHANGED | V4-INPUT L155–L204 | không đổi |
+| §2.7 Thứ tự đóng băng control và IM | ADDED | OWN-PF §4 DSC02, §5 D02; OWN-PLAN &quot;Authority order&quot;; SCH §3.7 | thứ tự acyclic và thứ tự ủy quyền Owner đã chốt |
+| §3 Schema và ràng buộc (L206–L215) | UNCHANGED | V4-INPUT L206–L215 | không đổi |
+| §4 Identity và digest (L217–L229) | UNCHANGED | V4-INPUT L217–L229 | không đổi; key mới nằm ở OUTPUT V5 §3 |
+| §5 Phase, vòng đời, allowlist (L231–L275) | UNCHANGED, trừ §5.1 hàng PH-EVIDENCE-READ và §5.2 ghi chú chi phí Git (AMENDED) | MR3 L247 (NOTE đọc theo path chính xác); OWN-PF §4 DSC06 | đọc facts/edges theo path chính xác, không liệt kê; số child Git là thành phần ngân sách phải đếm |
+| §6 Hợp lệ nguồn và từ chối (L277–L282) | UNCHANGED | V4-INPUT L277–L282 | không đổi |
+| §7 Custody tương lai (L284–L286) | AMENDED | OWN-PF §5 D05; V4-INPUT L284–L286 | retention input được bind trước kết quả đầu; không hoãn ngầm P-05 |
+| §8 MISSING_BINDING (L288–L297) | AMENDED | V4-INPUT L288–L297; SON-BD | thêm cột trạng thái hiện tại; ID/owner/gate giữ nguyên |
+| §9 Approval (L299–L313) | AMENDED | V4-INPUT L299–L313; OWN-PF §4 DSC02/DSC07 | stage PRE_FACT; tách approval trước coding và approval verifier sau freeze code |
+| §10 Mode BASELINE và candidate-evolution (mới) | ADDED | D2 addendum (không áp dụng); Son DS-2026-10-08-RESEARCH-NODE-CANDIDATE-EVOLUTION-V1 | capability được giữ, không áp dụng ở baseline |
+
+## 1. Loại input
+
+```
+INPUT_KIND       = DOCUMENT_OR_AUTHORITY
+UPSTREAM_NODES   = none                (registry: root; edge map: không có direct_upstream)
+DATASET          = none                (không OHLCV, không R2–R6 artifact, không OOS/holdout)
+ROW_COUNT/GRAIN  = N/A                 (thay bằng số record theo kind và digest)
+TIMEZONE         = N/A cho nội dung; thời gian ghi RFC 3339 có offset
+```
+
+&quot;Input none&quot; của registry nghĩa là không có upstream node/dataset; không nghĩa là không có artifact cần bind. Tập đóng bên dưới là input thật của việc freeze.
+
+## 2. Population (instance của schema SCH §4)
+
+Phân tier và vai trò là phân loại authority/context/engineering/draft, không cho mọi file quyền ngang nhau (BD-02): T1 = lõi method freeze; T2 = hỗ trợ; T3 = ngữ cảnh/engineering/draft bị thay thế; FORWARD = authority tiếp nối có scope riêng (AUTH §3). Số lượng (RECIPE_COUNT): 22 GIT_BLOB; 12 SNAPSHOT_FILE; 26 TEXT_SECTION ràng buộc (trên 81 TEXT_SECTION trong index MR1); 23 ROW_REFERENCE; CONTROL_FILE xem §2.5.
+
+Mọi record có identity chung `(kind, parent_record_key, local_id) → record_key` (SCH §4.0). Trong các bảng dưới, cột `local_id` là phần cục bộ; `record_key` của record gốc bằng `local_id`, của section/row bằng `parent_record_key + U+001F + local_id` (hiển thị `␟`). Dữ liệu các bảng §2.1–§2.4 **không đổi so với MR1** (cùng hash/bytes/range); chỉ đổi biểu diễn khóa. Quan hệ này đã được đối chiếu từng hàng với `SOURCE_INDEX_V2.json` (MR1) bằng helper stdlib: 22/22 GIT_BLOB, 12/12 SNAPSHOT_FILE, 26/26 TEXT_SECTION, 23/23 ROW_REFERENCE khớp (SOURCE_INDEX_V3 `population_equivalence`).
+
+### 2.1 GIT_BLOB — `pinned_tree_commit` = `f3e545cfb49ee143b8b1a5edcf99538531051b1f`
+
+| local_id (= record_key) | role | tier | path | git_blob_oid | raw_sha256 | bytes | legacy_semantic_hash |
+|---|---|---|---|---|---|---|---|
+| `L-R0_METHOD_FREEZE_MANIFEST_V1` | METHOD_MANIFEST | T1 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_METHOD_FREEZE_MANIFEST_V1.json` | `f61adbf27898a3a90f163a20fbb843810dd30a86` | `ce56a5e0c9ffe71be7720464664bdd9e81770f43dbce8176724113ca5daebe4a` | 7045 | — |
+| `L-R0_RESEARCH_CONTRACT_V1` | METHOD_DOC | T1 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_RESEARCH_CONTRACT_V1.md` | `27185bbb8c002e0d63274c641fcb8a1a8d2950a8` | `d80e375c79234378447fb047491521e5f22e3d8b6b50584cc3d90c9dab01b0f2` | 19191 | — |
+| `L-R0_CONDITIONAL_EDGE_METHOD` | METHOD_DOC | T1 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_CONDITIONAL_EDGE_METHOD.md` | `d2d2b772c82b2062b321bb63be39aebbeaac2c6f` | `5fcb39ca03ef15b33cc41d42f3d2fd5cdcb1d88fd8d50aa3d0d00823e275688d` | 8329 | — |
+| `L-R0_SUPPORT_AND_EPISODE_METHOD` | METHOD_DOC | T1 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_SUPPORT_AND_EPISODE_METHOD.md` | `e09b8def7aaf1c41bffea665ffb7b76bcad9d717` | `be44fbd0d72b473abf2adf76bea85eb785a9a868feed0e8a465f09a9aaf38173` | 10007 | — |
+| `L-R0_WALK_FORWARD_DESIGN` | METHOD_DOC | T1 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_WALK_FORWARD_DESIGN.md` | `b24420cf75dc8f13dfc48bd7bf44b54f8c740eb5` | `2ab23106bda578e0ae51ca16ebb02ca84bd777731ce22a109004bcfb77d3afe3` | 10049 | — |
+| `L-R0_MULTIPLE_TESTING_AND_DOMINANCE_METHOD` | METHOD_DOC | T1 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_MULTIPLE_TESTING_AND_DOMINANCE_METHOD.md` | `7f1567186255e873f29a5c31c44b5d9755983bfd` | `d9c45e5915bd6c788689ae2dc8f47c774ffb542a6c318b0618910dc518c0b69e` | 14158 | — |
+| `L-R0_AUTHORITY_AND_LINEAGE` | METHOD_DOC | T2 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_AUTHORITY_AND_LINEAGE.md` | `fc238ffdd857d0f110052a0256f89521a82a85f8` | `718d6a85c23efa31c496e9a821ee73488b8a7863690d2e6d5e036b442c1798bc` | 6103 | — |
+| `L-R0_PARAMETER_SPACE_DESIGN_RULES` | METHOD_DOC | T2 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_PARAMETER_SPACE_DESIGN_RULES.md` | `927c2b053ada0a968c0d2ae2337a91ef6896d644` | `fb10d7fce57adfeb7880c1fbfd1ea83f2f20d7518832c8a77154dad05c5a126b` | 4923 | — |
+| `L-R0_REGIME_ENGINE_PIT_AUDIT` | METHOD_DOC | T2 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_REGIME_ENGINE_PIT_AUDIT.md` | `b665c959f11d22dce9992e470dfe02a598011e49` | `8efb6432319bc1968f7ae397495a5444bc4a00340ff3fc11c6d2a59c208516bb` | 7185 | — |
+| `L-R0_PRIOR_REGIME_SPECIALIZATION_ROADMAP_RECONCILIATION` | METHOD_DOC | T2 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_PRIOR_REGIME_SPECIALIZATION_ROADMAP_RECONCILIATION.md` | `d253375d41b9d465c6a78a33a4a38a779c72dac7` | `52536bbfcfa9146de1b161b63216db775bfadf16d6e880c76276b45b3e8eee02` | 5190 | — |
+| `L-R0_OPEN_QUESTIONS_AND_FREEZE_REQUIREMENTS` | METHOD_DOC | T2 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_OPEN_QUESTIONS_AND_FREEZE_REQUIREMENTS.md` | `d8173d6a0243019ec3ee0a1125d7b9ca25ac2ea3` | `e5cfdd007c4221ec387d38fb4e6160abdfa5fd31dae1da59929e8bd36e34ccbb` | 7408 | — |
+| `L-R0_FREEZE_READINESS_MATRIX` | CONTEXT | T3 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_FREEZE_READINESS_MATRIX.csv` | `138d7020d2b532c46dbe89a616a1f96b0b8713cc` | `eea7c5418fd8754d587632fb7c9f507a23bb474763a60b54f8c235f767b83baa` | 10335 | — |
+| `L-R0_COMPUTATIONAL_FEASIBILITY` | CONTEXT | T3 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_COMPUTATIONAL_FEASIBILITY.md` | `d396aef8cbda761fb378329013c7bd3e8b5f7d76` | `dd125d5404b359e92ac1cd243d3b79a6478ee81c84bd1549c4630cea6a576d7f` | 6083 | — |
+| `L-R0_RESEARCH_CONTRACT_DRAFT` | CONTEXT | T3 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_RESEARCH_CONTRACT_DRAFT.md` | `3d6cc76b15f0d14a9b5200e8a7d4eea63aab11dd` | `2c21982c92ca5631ecbdf8405f07b85466c0c8b909962e5d9af196d6877125b8` | 8331 | — |
+| `L-R0_EXECUTION_AND_RESOURCE_OPTIMIZATION_PLAN` | CONTEXT | T3 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R0_EXECUTION_AND_RESOURCE_OPTIMIZATION_PLAN.md` | `b57da5aa22c163c633125bbfb6fd3bccc8b42b26` | `600e17016596dc3a6b34bd9080c69554559e675ff39633a3f90c80946812cca8` | 23407 | — |
+| `L-g1_v5_ticker_regime_parameter_optimization_v2_r0_method_freeze` | METHOD_SCRIPT | T1 | `docs/research/g1_v5_ticker_regime_parameter_optimization_v2_r0_method_freeze.py` | `36f385d0e597cb2ae8ffff92b57ffbdba19cc424` | `32d3965427c6e946c527447b1ad7f5b6ee42668d9866fd008c2880e98108a35f` | 9855 | — |
+| `L-G1_V5_TICKER_REGIME_PARAMETER_OPTIMIZATION_V2_ARCHITECTURE` | CONTEXT_FORWARD_DOC | T2 | `docs/g1/v5_ticker_regime_parameter_optimization_v2/G1_V5_TICKER_REGIME_PARAMETER_OPTIMIZATION_V2_ARCHITECTURE.md` | `bb5596b02e50f277dd9e33234e71715ab566c609` | `5f1db002b46a8d9e0aa6e6ee20c4cd1b05d8a8d6e07e48f86d60d3c25a901340` | 103364 | — |
+| `L-METHOD_V1R1_MANIFEST` | FORWARD_METHOD_MANIFEST | FORWARD | `docs/g1/v5_ticker_regime_parameter_optimization_v2/METHOD_V1R1_MANIFEST.json` | `8e147d163516fd8518b7f744ef7ff15e42feaa77` | `9ac28c13bb8853a84e09c64994c3b21c4101cc143cadc640db64bb46c7bb8ec3` | 1175 | khớp (new_forward_method_hash) |
+| `L-R5A_MTP_PREREGISTRATION_V1` | FORWARD_METHOD_PREREGISTRATION | FORWARD | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R5A_MTP_PREREGISTRATION_V1.json` | `88665d2a3d794cf0d9173f7df6ab7299a97e003a` | `361dc70611cc40d89799927e5aab9b7cec1d77036e813a8321a1c806f8557eea` | 3421 | khớp (r5a_mtp_preregistration_hash) |
+| `L-SUPPORTED_VARIANT_PRESERVATION_ARCHITECTURE_V1` | FORWARD_ARCHITECTURE_AUTHORITY | FORWARD | `docs/g1/v5_ticker_regime_parameter_optimization_v2/SUPPORTED_VARIANT_PRESERVATION_ARCHITECTURE_V1.json` | `c3f8f93cd55a28e698f4c92921650949f4e99566` | `7c0a0d1ad17096d82d4000730d6c0a27c0ca0a61af5d96666ff9825f3f1024b9` | 5611 | khớp (forward_authority_hash) |
+| `L-R5B_SUPPORTED_VARIANT_CHARACTERIZATION_METHOD_V1` | FORWARD_METHOD_R5B | FORWARD | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R5B_SUPPORTED_VARIANT_CHARACTERIZATION_METHOD_V1.json` | `f8b1f4b79cc9a1652188f134e0b3ba2fc17306c8` | `72dcd8088197061d978fbe2c410d945e872ff83456d9c190600012d3ea95d96b` | 3211 | khớp (r5b_characterization_method_hash) |
+| `L-R5B_SUPPORTED_VARIANT_CHARACTERIZATION_METHOD_V1R1` | FORWARD_METHOD_R5B | FORWARD | `docs/g1/v5_ticker_regime_parameter_optimization_v2/R5B_SUPPORTED_VARIANT_CHARACTERIZATION_METHOD_V1R1.json` | `70a4fe00eb580bf4c17c04e25495228f0d60a085` | `17f94a39f95344f18c3513556674e24e5502cdabbff789ea8ccfd1f0ebc75dcb` | 3660 | khớp (r5b_characterization_method_hash_v1r1) |
+
+Ghi chú bytes (V5, thay ghi chú V4 L57 theo erratum DSC01 của Owner, OWN-PF §4 mục 1 và §5 D12): `raw_sha256` ở trên là hash bytes **blob** và là identity; định danh `GIT_BLOB` luôn lấy từ blob tại commit/path đã pin, **không** từ worktree. Quan sát worktree (`WorktreeObs`) không là identity. Worktree của `L-R0_METHOD_FREEZE_MANIFEST_V1` là CRLF, 7218 bytes, sha256 `f9a0c06edbbadaad6b02a28823d2beab7c41033154bbfd1e18d425c37f6a3b64` (Owner đọc, OWN-BASE); `method_hash` ghi trong file là `d7c8249d7660d9f3f98f96941ce11d9cc27184c77e1b11284acceda5732703e2`. Câu của V4 &quot;chỉ `L-R0_METHOD_FREEZE_MANIFEST_V1` có worktree khác blob&quot; được **đọc kèm** erratum: sáu JSON legacy có newline worktree khác blob (CRLF so với LF) và khớp pin blob chỉ sau chuẩn hóa newline; việc chuẩn hóa chỉ dùng để quan sát, không đổi identity. Việc tính lại OID git từ bytes khớp 22/22 là báo cáo của preparer (preflight), chưa là Owner chạy Git và chưa chứng minh path membership tại commit; membership được kiểm ở PH-ADMIT-SRC bằng `rev-parse &lt;commit&gt;:&lt;path&gt;`.
+
+### 2.2 SNAPSHOT_FILE — pin theo `docs/inherited/SOURCE_MANIFEST_V1.json`
+
+| local_id (= record_key) | path | raw_sha256 | bytes | pin | khớp pin |
+|---|---|---|---|---|---|
+| `SNAP_decisions` | `docs/inherited/g1/docs/decisions.md` | `39b9fd31c1dd4ccd82bddb46a97e9b8a1d78e0522fa44c6d1a37b07bb16bf43f` | 2769227 | entry 32 | có |
+| `SNAP_G1_CONTINUOUS_CONTROLLED_EVOLUTION_V1` | `docs/inherited/g1/docs/g1/G1_CONTINUOUS_CONTROLLED_EVOLUTION_V1.md` | `5bd9f2ff0e5ff0daff1aaf7a8ac5bdbaaf9d47b28a22c389542d7ea4939041d3` | 226914 | entry 0 | có |
+| `SNAP_G1_CCE_NODE_REGISTRY_V1` | `docs/inherited/g1/docs/g1/G1_CCE_NODE_REGISTRY_V1.csv` | `765e6ce50ecba49a0630c32f5f63e5005fb4e17b3d72db194fac3ca2ee361c7b` | 11111 | entry 1 | có |
+| `SNAP_G1_CCE_41_NODE_SCIENTIFIC_PHASE_CROSSWALK_V1` | `docs/inherited/g1/docs/g1/certification/G1_CCE_41_NODE_SCIENTIFIC_PHASE_CROSSWALK_V1.csv` | `ac09a4c1fcf5b109ebeeef8dfa2b3fc489b11f96f54795ce93bc541d1a13a035` | 76344 | entry 11 | có |
+| `SNAP_G1_CCE_41_NODE_DEPENDENCY_EDGE_MAP_V1` | `docs/inherited/g1/docs/g1/certification/G1_CCE_41_NODE_DEPENDENCY_EDGE_MAP_V1.csv` | `9ebd2fdb2ee05a79d6fe2c52aa36bc58a21667567c6f534b04e89f4fe63865a2` | 7762 | entry 12 | có |
+| `SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1` | `docs/inherited/g1/docs/g1/certification/G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1.csv` | `9a78751c09c2ca7b2baf8e3fd0087f39fa122d278573a88b2f3d1c3ac6213df6` | 3466 | entry 14 | có |
+| `SNAP_M00_MASTER_EXECUTOR_AND_CAPABILITY_MAP_V1` | `docs/inherited/g1/docs/g1/runtime_integration/m00/M00_MASTER_EXECUTOR_AND_CAPABILITY_MAP_V1.csv` | `3654b72707cf93733da3a199232dee7493f09a4f9907103fd9a4029068ed6231` | 32800 | entry 24 | có |
+| `SNAP_17_AILL_G1CCE_41_NODE_PRODUCER_ARTIFACT_CONSUMER_AUTHORITY_MATRIX_V1` | `docs/inherited/g1/docs/g1/AILL_integration/17_AILL_G1CCE_41_NODE_PRODUCER_ARTIFACT_CONSUMER_AUTHORITY_MATRIX_V1.csv` | `cdc94c7eb41dff15ee5f904d7d6a020dc8293f190b06ca7bbbec22126bdaac45` | 128892 | entry 20 | có |
+| `SNAP_18_AILL_G1CCE_41_NODE_AILL_JUNCTION_MAP_V1` | `docs/inherited/g1/docs/g1/AILL_integration/18_AILL_G1CCE_41_NODE_AILL_JUNCTION_MAP_V1.csv` | `21151a709dea5eda4cbdf0f5fe110c920eea697aa28f285a995b7ecfdf950853` | 156073 | entry 21 | có |
+| `SNAP_G1_CCE_CERTIFICATION_STATUS_V1` | `docs/inherited/g1/docs/g1/current/G1_CCE_CERTIFICATION_STATUS_V1.csv` | `79ef8392a11bdbd2818298a2eb590c052b253a742725cd908f60aca133d91809` | 4744 | entry 7 | có |
+| `SNAP_G1_CCE_EVIDENCE_SEMANTIC_REGISTRY_V1` | `docs/inherited/g1/docs/g1/current/G1_CCE_EVIDENCE_SEMANTIC_REGISTRY_V1.csv` | `8d67ff89f79e34dead9eac1c63baaffc054dda1175fdade775f61c44b6f7210f` | 18348 | entry 10 | có |
+| `SNAP_G1_CCE_DECISION_INDEX_V1` | `docs/inherited/g1/docs/g1/current/G1_CCE_DECISION_INDEX_V1.csv` | `bfd340ff51c6d1a36dc368b922a22dfed0d1a3808067adc42a361e88480baa0c` | 71116 | entry 8 | có |
+
+### 2.3 TEXT_SECTION — các section được nhận làm input ràng buộc (parent là SNAPSHOT_FILE)
+
+Binding role: BASE_AUTHORITY/BASE_CONTEXT, FORWARD (method hoặc architecture), GAP_RECONCILIATION, POPULATION_THRESHOLD_SCOPED, DOWNSTREAM_SCOPED_EVIDENCE, SCOPED_REGIME, GOVERNANCE_RULE. Section ở mức `HIT_CONTEXT`/`SEARCH_ONLY` nằm trong closure (AUTH §2) nhưng không phải input ràng buộc. `line_start..line_end` và offsets theo SCH §6.
+
+| local_id | parent_record_key | section_scheme | lines | byte range | raw_slice_sha256 | normalized_lf_sha256 | binding role |
+|---|---|---|---|---|---|---|---|
+| `D312` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 26189–26280 | 2122241–2128456 | `d1eed575616e24544bb02c0e07682b560302f27a6cf9701f364554e2307fef0e` | `445ebcdad2ee87f8c1d38fbaab7655c5934d66e1bf00dc28511c8171b5190cc4` | BASE_CONTEXT |
+| `D313` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 26281–26367 | 2128456–2134916 | `ad00ec5015d3c4f587a95267c36103eb0b2ee8fec775e4792e3bdcb2893ed6ad` | `20b74c62c3b641219bf50491260a9dfc71394fcd244bad840fdeef1414b42912` | BASE_AUTHORITY |
+| `D319` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 26715–26782 | 2161303–2166497 | `5fe3c4e1fc66b38d0e330144e79ba38c72afaf7848db1712af757116da51f28a` | `6243138a28da1377d20d4c5c7978ca11e334266e48b741ce5c9881ae0ced7b3e` | GAP_RECONCILIATION |
+| `D320` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 26783–26847 | 2166497–2171582 | `3c9ab688eb181a4db57a0b6d5469313810f4edf3f4e5f578a0ecf017cd645cb1` | `57ef519e4b47c0b38c79fbf816a1d68b51a739491e5ea5e417002e0f0ad71ab6` | GAP_RECONCILIATION |
+| `D321` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 26848–26924 | 2171582–2177510 | `cb3bda55c0712e5b09c70db2cc6371f06ff062a982ab19a57287a32969f04de6` | `23e444f062c36f461af47671973d0406a275c45a4546e18445b4ce00454ee6ce` | GAP_RECONCILIATION |
+| `D322` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 26925–27023 | 2177510–2184197 | `3dc77bf33a90c20f6ef3cf74ee4ab388d1b164b8cf313439d50ba81148cc364b` | `df8bc1da19a4ea136a355dc7d349e6aac3c2ac939868fbd87bd2aa795274509b` | GAP_RECONCILIATION |
+| `D323` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27024–27099 | 2184197–2190345 | `f5c743b1cbefcb992d5b5f332f0bd85ad6114c622efe878d05b5662d9d8a0898` | `cf047869802ce19b39282c38710f7942c5005a82648824aa25264796de9e0f86` | GAP_RECONCILIATION |
+| `D324` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27100–27172 | 2190345–2195785 | `7747dfc0cb682e199c2bb4039d9aaa13a7ef19b1b4431e4e427ca86cd86414a2` | `b28e89ea2e2932bb84fb4802ef625a5654e72fa427f6761d95fe1fa5516079ef` | GAP_RECONCILIATION |
+| `D325` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27173–27253 | 2195785–2202163 | `7d97763e44cb8654335c8005438599a517efa01dd9226100a89c832802585484` | `14610435186d454b22df98b93c7c2dab501477a54d0e1605edbfd7612c112336` | FORWARD |
+| `D331` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27631–27715 | 2229507–2235611 | `24a49c1d70af7c9b9abfdf1170838c2aa03c03ca7f2fd3154cd9ef090167d2d8` | `77afe57637b1e1a283318e12644a5ad1917fa361f79d6dddb5c14aadb818581c` | GAP_RECONCILIATION |
+| `D332` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27716–27799 | 2235611–2240939 | `c9735fb848383a337a81368ecdcb041524b6d6ea2f3f4dd8e949c983ca506bec` | `4731b4f32838545084e92d0d3f08cced849c3299621dbb5abe56175b26817ce5` | GAP_RECONCILIATION |
+| `D333` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27800–27896 | 2240939–2247007 | `c066b54b2718d33ed4b78e437d2ea1a5a4d722a0c50f88a8cd35b5ea0a12af91` | `338d7029dff2728b25b9b3c85f146f61e56feab0a5f3d638d5708cfdf5fdc01e` | FORWARD |
+| `D334` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27897–27972 | 2247007–2251823 | `82e017eadddc41791af5e06afbdbd8bb3fec93deb318b3b3197dad6f76684db0` | `7aa571dd96ff839bf9a8baf629438d5f0515682c3848be18bc1e810970bd8cf5` | FORWARD |
+| `D335` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 27973–28061 | 2251823–2257835 | `84413047e310ba5b8d9449074aae268fbf09bb3edd9096bc74eaa5bbf8f1168b` | `2e4ba6d806342c125df74c6fb0b85c6a87ef085663d78148bb2004818cc8dd6c` | FORWARD |
+| `D342` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 28720–28820 | 2301575–2309201 | `0782fee1655c4c99e7e48b30c0e2efa4f54f9fc4cf6749ba5176f0647dbcbaeb` | `991caaf7dd055b2c28610745b03a694145295b497eeef65d3d127b4ec9cdc5fd` | SCOPED_DOWNSTREAM |
+| `D343` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 28821–28936 | 2309201–2316490 | `6e25cc63726dccb1e71ea529540f6cc7d5be46cec919ff5fb796cfa9a21d3977` | `1a913ab166b73c85db2a466c498d0d523e8e4eedc5ddee4ed337bde629f5152b` | SCOPED_DOWNSTREAM |
+| `D347` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 29278–29385 | 2342456–2350837 | `75862eebb14a160354b6f21be806cc5b04c7ae4a4d167a803422d596188d6f7b` | `6fd818946649045af56cd5606c3d330961e36aa07c09899e279501d655b3ce3d` | SCOPED_REGIME |
+| `D356` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 30202–30310 | 2414178–2421707 | `b16041f8e3f4c001e280ed943e5e21ca9ae6e6d7bc205c663c6ba254e6875f07` | `a99ccd3a19bd5071fea4e76cd661efc37acfaa290a9ab425da6daca34ed75e09` | SCOPED_POPULATION |
+| `D368` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 31455–31542 | 2509845–2517387 | `911f0faccb2dce559e2dfd1c6a52f877c3a7573d623f322b5083d32ecce4fb33` | `030d473575289e250757db3a4cce3eb20a3a267cf4e9d050fc77494a5b854615` | SCOPED_POPULATION |
+| `D369` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 31543–31641 | 2517387–2525073 | `a65b7ac96a30e9d9abe599301a6fcf027af5515ef4d6d7cde6c8af9bcaebbdce` | `7af037b56e5adc61b2b384b8b4290de92c30627d1a4d73e7a0bd8db980be5739` | SCOPED_POPULATION |
+| `D370` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 31642–31704 | 2525073–2530048 | `570911e38aedae244d67dd4db05bbd6bda8e8f99517525dede40edb5d5f94291` | `d574fefecbbe5ffae7ca9966264ba2bb59a9f83475729171bc53672e66ac174a` | SCOPED_REGIME |
+| `D371` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 31705–31777 | 2530048–2536393 | `fc274f3db673c45cbcf326ecbc75542447b3ed66c719f247c4f1781e1d93bb5c` | `5257c749ff5930cfea7f561d4ec352c7cad922322ccafd665dec62d4a52d7cff` | SCOPED_REGIME |
+| `D375` | SNAP_decisions | DECISION_HEADING_BYTE_REGEX_V1 | 32154–32290 | 2573895–2585429 | `2b62a3c42d360be16fbc2ce830be13975f7a85e0475023e4c3cf4aeac1be4d79` | `b4d4c251263c1db53e1a6de34db4d14507b0497e9960f9593426a944b84337a7` | SCOPED_REGIME |
+| `D377#PRINCIPLE_BLOCK` | SNAP_decisions | LINE_RANGE_WITHIN_DECISION | 32771–32815 | 2626995–2631632 | `bc2db74645e378cd4b68f31b7ec2a5bfbcb357aeb1e0dc75044eaac97af0faa1` | `ed8f62374c98863537157159205872c387c129d3209d39198e14326c1bd1f59b` | RULE |
+| `D329#CONFIRMATION_WINDOW_CHOICE` | SNAP_decisions | LINE_RANGE_WITHIN_DECISION | 27506–27511 | 2220645–2221300 | `e16c1523f0f41ccb46d22ac44ed174b5f25f7d3a18aaa820c5746c7c8e8d1ace` | `9ae3601b89ea0185a253720d007e8c9db12f1c9f9f6e4a4925ccae7069e49567` | SCOPED_DOWNSTREAM |
+| `MASTER#S10` | SNAP_G1_CONTINUOUS_CONTROLLED_EVOLUTION_V1 | MARKDOWN_H2_TO_NEXT_H2 | 383–404 | 19250–21111 | `e242f198dde63097685ff04cfff88bf49f6bdf41b1aad1561be8007be537f632` | `d44cd01b91ef713d86d82a3507869bbe1dce761ab8a4b2af5c33c7636cddcc18` | RULE |
+
+### 2.4 ROW_REFERENCE — hàng của CSV snapshot
+
+| local_id (= row_id) | parent_record_key | lines | raw_record_sha256 (DATA) | row_canon_sha256 (member digest) |
+|---|---|---|---|---|
+| `G1_CCE_NODE_REGISTRY_V1.csv::R0` | SNAP_G1_CCE_NODE_REGISTRY_V1 | 3–3 | `1bf6e4d25e2d28e4c37833b2d79d9a2ff5b0d03b08e647329dcfb9bba1894248` | `18f743d13cda235a53b734ca37f230e29734a0a9f2d33cbb2bd2e3b05ef9ab2a` |
+| `G1_CCE_41_NODE_SCIENTIFIC_PHASE_CROSSWALK_V1.csv::R0` | SNAP_G1_CCE_41_NODE_SCIENTIFIC_PHASE_CROSSWALK_V1 | 3–3 | `1e4892744deb57c8b564d6859dcf124093fceed8ce571593f9b362b73544005c` | `148c31d9dc7d9602e8535c566d3ec59efc4ee23d167bd0f4709cfb6f45b15c84` |
+| `G1_CCE_41_NODE_SCIENTIFIC_PHASE_CROSSWALK_V1.csv::MKT_REGIME` | SNAP_G1_CCE_41_NODE_SCIENTIFIC_PHASE_CROSSWALK_V1 | 2–2 | `1bfd9265c3a070db8497d0f227aeb0f0d1b5ba4116b73ec10df506377b97a240` | `f32160daba6935d4e7adf51ef4d94660f1297f83aa739a45072bbf644f9821ec` |
+| `G1_CCE_41_NODE_DEPENDENCY_EDGE_MAP_V1.csv::R0` | SNAP_G1_CCE_41_NODE_DEPENDENCY_EDGE_MAP_V1 | 3–3 | `d96be8f08f3f0bb395b1b30c2aecae4626e113726129b6ca51181abc7af5a46b` | `020e644959a33fc6ab9d8d79c039606ed78c7ed3e040366bffbf789e776dadab` |
+| `G1_CCE_41_NODE_DEPENDENCY_EDGE_MAP_V1.csv::MKT_REGIME` | SNAP_G1_CCE_41_NODE_DEPENDENCY_EDGE_MAP_V1 | 2–2 | `e84d6491207a11e97e018c203436051ec94feaf9fe8e0d8ea620dd8045da69c4` | `5249e207cb2bab5a180d3a79c6574a183f46ae8bf163acabe3cd66bc088cbf16` |
+| `M00_MASTER_EXECUTOR_AND_CAPABILITY_MAP_V1.csv::R0` | SNAP_M00_MASTER_EXECUTOR_AND_CAPABILITY_MAP_V1 | 3–3 | `3e88d1abf0f100eb469c648fb3fd499deef587b1deeeb8ab33d945625defe5d1` | `ffe3ed69012b6ecbcaad0089b7272a3a67e256d5b6e793f59d0c6c7557d02b55` |
+| `17_AILL::R0` | SNAP_17_AILL_G1CCE_41_NODE_PRODUCER_ARTIFACT_CONSUMER_AUTHORITY_MATRIX_V1 | 3–3 | `ef3685bfbad6cac79f6db01456d18a6cfb9727de27809bf7e678745614517348` | `f04d29772198561ebc56d26e9066890940b9b835e45a96c7e435a9f63dd88bb8` |
+| `18_AILL::J18-002` | SNAP_18_AILL_G1CCE_41_NODE_AILL_JUNCTION_MAP_V1 | 3–3 | `8c03fab8bd98a4691896dfd9d27bab0daf41277607a33b10c7e086a1f40ae381` | `cfb4400654738db72c85655444a5272f13582d33d39e1ca7a88fde61af76110a` |
+| `18_AILL::J18-003` | SNAP_18_AILL_G1CCE_41_NODE_AILL_JUNCTION_MAP_V1 | 4–4 | `164ff1f8c3130e55d756575dd902e4a16ec5d042dbd8cf847a13ce19a0126269` | `a8bdb275c2a6891561dcd781935bf86bee406db293d1c2a0e4a3555e444c8514` |
+| `CERT_STATUS::SP0` | SNAP_G1_CCE_CERTIFICATION_STATUS_V1 | 2–2 | `733cbad5f7a87b84295ed0e7a6c8d8784abb0af5280b56094897d20b59ac5471` | `b8beaacb327118c2bba88b062f02d1f4fd475f8dbebf0ac16a847eecf1bd1cc6` |
+| `EVIDENCE_SEM::EVID_R0` | SNAP_G1_CCE_EVIDENCE_SEMANTIC_REGISTRY_V1 | 3–3 | `9bbdc07711f9df229097e3d3a7f8faa89d5828db184cbedff1578d10368a2849` | `269fb718e4b07027b6ca61b67228a47b7ec3cc9d92304f96d2d92e1de4473736` |
+| `DECISION_INDEX::D312` | SNAP_G1_CCE_DECISION_INDEX_V1 | 317–317 | `48ebf0ac572b559da9c309eb0388202eb36d578f737d7a8cdce14f82cfbf043a` | `bef961628c57f23911227274283c0459bcc8f1ac106a0a24f2e259ffd1511c9d` |
+| `DECISION_INDEX::D313` | SNAP_G1_CCE_DECISION_INDEX_V1 | 318–318 | `487fd16bc52190c116e41f9c6e3859cd1d06c697ee1dec194f8d1534bec0a351` | `0aae3c77508767a21ff5115cbb399910ee9e8a6a994a7e234deddb348a9aeaad` |
+| `DIM_REGISTRY::C1` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 2–2 | `17442aaa5d5a947dc192d3763bfb35d338ed3e3275d56b01174ec54aa79771f1` | `d22cb24a069374d3ec28baa2f2d71f26c7666255242c0be4c448c1dfe7afa4e7` |
+| `DIM_REGISTRY::C2` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 3–3 | `c56ce66652160ff95c9b8a03d65406b342830327611d77168deec906a4d70982` | `a5b6e637efe7411f80d3b830dc61dec0e80e1dad8237df4c458eace310d6f018` |
+| `DIM_REGISTRY::C3` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 4–4 | `dca7d2d9b0c470971edbd4ead9a4f7a73e48c78f41779cc0088fd97ba1bc30d4` | `17843385195e81a920f224275fd2cc1adebb47d6d3699f0e122bba1d296f9afc` |
+| `DIM_REGISTRY::C4` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 5–5 | `01c3adc53963b677dee3bd890e2fc6bee7ea1ddf703dfb3f070d285454ada43a` | `9a44d4f76891774aae127f15ce71f2c2446fd6ec2e49d3ffd21f6e661669f24a` |
+| `DIM_REGISTRY::C5` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 6–6 | `c9c456b557b3b57d41f5620b13464b162e615dabb56b224334ce4e30b52571a3` | `e5efe6bfcf00ca88df1534266421c75323dfcad32f25e0d29fef9e33120bb9c1` |
+| `DIM_REGISTRY::C6` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 7–7 | `80968106b4f2e040b76447073ca09f4e626e0c19adfc8de7db3ec81f261f1fe6` | `71dc277647927f0c870980e1c2e0b57950fa7c4ac3510f4ca1de062e74e0e3db` |
+| `DIM_REGISTRY::C7` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 8–8 | `3f3f6cc046b0807b9d805976a7ecdd7acfcbb52cfdca58c11321b87a57b31e73` | `95bb0c5b4f6b6c3386a987cd3aff9455579e6005550f5dd9a399ee9ea7805a47` |
+| `DIM_REGISTRY::C8` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 9–9 | `10dfba07725c8a9230949b0674713a0c6026a9cb4129c5acdf41823680bd637e` | `2a660b2f615e3e5c4fcfa0598bf7eafcd97a00d94c0e261fe83dda5312126bda` |
+| `DIM_REGISTRY::C9` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 10–10 | `7a34c55000564377ab82dae2a3caa405e40c1aed8d33b03765aa4d2577329612` | `83d389b86f0ea7f2cf7799897213953087f92af266ac4ab5061afa9c8d94bd89` |
+| `DIM_REGISTRY::C10` | SNAP_G1_CCE_CERTIFICATION_DIMENSION_REGISTRY_C1_C10_V1 | 11–11 | `bb91aa2fb9840d27e66d8114255c8d3f07f48d135abc1b0bc0f31fe3272ef919` | `5b70455592d21bfb13c3d33960706f71ed1cf35289279b0c1ed9c8ecbabd8846` |
+
+### 2.5 CONTROL_FILE (xuất hiện lúc admission; chưa tồn tại)
+
+Mỗi hàng là một record `CONTROL_FILE` với `control_role` (SCH §4.5); `raw_sha256` trỏ node đích theo role. **Số tối thiểu (V5; tính từ thành phần bundle, thay cho 17 của V4; không phải số đo):** 1 SCOPE_BINDING + 5 CONTRACT + 1 SCHEMA_DOC + 1 REVOCATION_REGISTRY + 1 VERIFIER_DEFINITION + ≥1 CODE_FILE + 1 ENV_LOCK + 1 BOUNDARY_PACKET + 8 APPROVAL_RECORD PRE_FACT (năm contract, schema doc, verifier definition, boundary packet) + 1 CONFIG = **21**; thêm 2 (một POLICY_RECORD và approval của nó) chỉ khi dùng predicate `AUTO_POLICY` (⇒ 23). Căn cứ: OWN-PF §4 DSC07 và §5 D03 (approval verifier definition của bytes cuối trước run), SON-BD (boundary đã chọn; NP đòi `boundary_packet_raw_sha256` non-null, SCH §9.4), PROGRAM V5 §5–§6 (version Git và gốc vật lý chỉ mang được trong CONFIG nên CONFIG là bắt buộc cho lần chạy thật đầu). V5 đặt mặc định `boundary_packet_key` non-null cho lần chạy documentary đầu (packet được admit cùng IM); một `boundary_packet_key = null` vẫn đúng schema nhưng khi đó packet không nằm trong tập admitted của lần chạy và P-11/P-12 chỉ đạt được bằng packet approved do NP cite riêng (SCH §9.4) — cách đọc đó cần Owner xác nhận (OQ-02 ở bundle binding). Số cuối cùng được tính lại từ bundle thật lúc đóng băng IM.
+
+| control_role | Cần có lúc admission | Internal schema | Trạng thái hiện tại |
+|---|---|---|---|
+| SCOPE_BINDING | một record; nguồn của `scope_digest` | leaf; MB-SC-01 | MISSING_BINDING |
+| CONTRACT | năm contract V5 đã approved (bytes UTF-8 LF không BOM) | markdown | MISSING_BINDING (0/5 approved) |
+| SCHEMA_DOC | `SCHEMA_AND_HASH_REFERENCE_MODEL_V2.md` đã approved | markdown | MISSING_BINDING |
+| APPROVAL_RECORD | approval PRE_FACT cho từng contract/schema doc/verifier/boundary/(policy); subject là control nên luôn HUMAN (approval AUTO chỉ ở stage POST_*, không nằm trong IM) | `ApprovalRecord` SCH §9.1 (stage PRE_FACT, `HUMAN_AUTHORITY_REQUIRED`: verifier và policy_ref null) | MISSING_BINDING |
+| POLICY_RECORD | bắt buộc nếu có predicate `AUTO_POLICY` được dùng; null nếu toàn HUMAN. Đây là policy tự động hóa approval/roll-up, **không** thay chính sách ghi/attestation của Runtime (T3, PROGRAM V5 §3.5) | `PolicyRecord` SCH §9.3 | MISSING_BINDING (effective policy chưa ban hành) |
+| REVOCATION_REGISTRY | snapshot đóng băng trước mọi approval cite nó; admission dùng snapshot mới nhất (có thể rỗng nhưng phải tồn tại) | `RevocationRegistry` SCH §9.2 | MISSING_BINDING |
+| VERIFIER_DEFINITION | định nghĩa verifier + version + code hash; được approval PRE_FACT cho đúng bytes code cuối sau khi code đã QC và đóng băng (§2.7) | `VerifierDefinition` SCH §9.3 | MISSING_BINDING |
+| CODE_FILE | từng file code của verifier P2 | bytes file | MISSING_BINDING (chưa có code) |
+| ENV_LOCK | khóa môi trường | leaf; MB-SC-03 | MISSING_BINDING |
+| BOUNDARY_PACKET | gói ranh giới BD-06/07 được chấp nhận, mang nghĩa vụ opening và closure từng edge (MR3 L152); null khi chưa có (NP bắt buộc non-null) | leaf; MB-SC-02 | MISSING_BINDING: Son đã **chọn** BD06=DOCUMENTARY_DELEGATION và BD07=CUSTODY_ONLY_OPENING cho R1/R2/R5A_AUTH (SON-BD, `SELECTED_BY_SON_PENDING_RUNTIME_BINDING`); packet có kiểu, chữ ký và approval chưa có |
+| CONFIG | cấu hình chạy, gồm gốc vật lý của repo legacy và phiên bản git | leaf | MISSING_BINDING |
+
+### 2.6 Ví dụ typed (đối chứng counterexample của Owner)
+
+Hai TEXT_SECTION cùng parent `SNAP_decisions`, khác `local_id` và khác `(byte_start, byte_end_exclusive)`: hợp lệ, và có đủ field của closed schema (không key lạ như `artifact_id`). `record_key` chứa dấu `U+001F` (JSON hiển thị `\u001f`). Giá trị lấy từ MR1, được dựng bằng helper rồi kiểm bằng validator (SCH §10, EX-P01…P03).
+
+```json
+[
+  {
+    &quot;kind&quot;: &quot;TEXT_SECTION&quot;,
+    &quot;local_id&quot;: &quot;D312&quot;,
+    &quot;parent_record_key&quot;: &quot;SNAP_decisions&quot;,
+    &quot;record_key&quot;: &quot;SNAP_decisions\u001fD312&quot;,
+    &quot;section_scheme&quot;: &quot;DECISION_HEADING_BYTE_REGEX_V1&quot;,
+    &quot;line_start&quot;: 26189,
+    &quot;line_end&quot;: 26280,
+    &quot;byte_start&quot;: 2122241,
+    &quot;byte_end_exclusive&quot;: 2128456,
+    &quot;raw_slice_sha256&quot;: &quot;d1eed575616e24544bb02c0e07682b560302f27a6cf9701f364554e2307fef0e&quot;,
+    &quot;normalized_lf_sha256&quot;: &quot;445ebcdad2ee87f8c1d38fbaab7655c5934d66e1bf00dc28511c8171b5190cc4&quot;,
+    &quot;v1_legacy_raw_identity&quot;: {
+      &quot;body_sha256&quot;: &quot;d1eed575616e24544bb02c0e07682b560302f27a6cf9701f364554e2307fef0e&quot;,
+      &quot;equals_raw_slice_sha256&quot;: true,
+      &quot;line_start&quot;: 26189,
+      &quot;line_end&quot;: 26280
+    },
+    &quot;nested_in_local_id&quot;: null
+  },
+  {
+    &quot;kind&quot;: &quot;TEXT_SECTION&quot;,
+    &quot;local_id&quot;: &quot;D313&quot;,
+    &quot;parent_record_key&quot;: &quot;SNAP_decisions&quot;,
+    &quot;record_key&quot;: &quot;SNAP_decisions\u001fD313&quot;,
+    &quot;section_scheme&quot;: &quot;DECISION_HEADING_BYTE_REGEX_V1&quot;,
+    &quot;line_start&quot;: 26281,
+    &quot;line_end&quot;: 26367,
+    &quot;byte_start&quot;: 2128456,
+    &quot;byte_end_exclusive&quot;: 2134916,
+    &quot;raw_slice_sha256&quot;: &quot;ad00ec5015d3c4f587a95267c36103eb0b2ee8fec775e4792e3bdcb2893ed6ad&quot;,
+    &quot;normalized_lf_sha256&quot;: &quot;20b74c62c3b641219bf50491260a9dfc71394fcd244bad840fdeef1414b42912&quot;,
+    &quot;v1_legacy_raw_identity&quot;: {
+      &quot;body_sha256&quot;: &quot;ad00ec5015d3c4f587a95267c36103eb0b2ee8fec775e4792e3bdcb2893ed6ad&quot;,
+      &quot;equals_raw_slice_sha256&quot;: true,
+      &quot;line_start&quot;: 26281,
+      &quot;line_end&quot;: 26367
+    },
+    &quot;nested_in_local_id&quot;: null
+  }
+]
+```
+
+Phản ví dụ bị từ chối: (a) thêm key `artifact_id` vào record (EX-N01); (b) `local_id` chứa `U+001F` (EX-N07); (c) hai record cùng `record_key` (EX-N04); (d) section có parent là CONTROL_FILE (EX-N05); (e) `bytes` là boolean (EX-N02); (f) `local_id` không NFC (EX-N03). Không có OID/commit giả cho section; không đòi OID/path duy nhất toàn cục (EX-P24).
+
+### 2.7 Thứ tự đóng băng control và IM (stage PRE_FACT; thêm ở V5)
+
+Thứ tự ủy quyền Owner đã chốt (OWN-PF §4 DSC02; OWN-PLAN &quot;Authority order&quot;) và thứ tự acyclic của SCH §3.7 được đọc cùng nhau như sau. Mỗi bước chỉ bắt đầu khi bước trước có bằng chứng; thiếu ⇒ HOLD cho hoạt động phụ thuộc, không điền mặc định.
+
+| bước | nội dung | actor | bản ghi |
+|---|---|---|---|
+| 1 | chốt bundle V5, scope, registry snapshot, danh tính signer/delegation | Owner (Master/Runtime/RN) | SCOPE_BINDING, REVOCATION_REGISTRY n; signer/delegation: MISSING_BINDING |
+| 2 | approval PRE_FACT HUMAN cho năm contract V5 và SCH V2 đúng bytes | người có thẩm quyền (chưa bind) | `APPROVAL_RECORD` ×6 |
+| 3 | quyền coding riêng, chỉ code, không chạy thật | Owner/issuer (chưa bind) | grant coding (không là grant chạy) |
+| 4 | coding, kiểm tổng hợp bằng synthetic, QC code của Runtime và QC ngữ nghĩa của AILL, đóng băng code | CC (implementer) + reviewer khác | CODE_FILE |
+| 5 | VerifierDefinition cho bytes code cuối; approval PRE_FACT của nó; ENV_LOCK, CONFIG; BOUNDARY_PACKET và approval (nếu chưa có); T1–T4 hiệu lực | Owner/Runtime | VERIFIER_DEFINITION, ENV_LOCK, CONFIG, BOUNDARY_PACKET, `APPROVAL_RECORD` |
+| 6 | đóng băng IM (cite control, approval PRE_FACT, registry, nguồn); quyền chạy thật pin đúng IM và code | Input Owner/Runtime | IM; grant chạy |
+| 7 | admission mới, chạy, publish, observe, receipt | Runtime | OUTPUT V5 |
+| 8 | QC kết quả, acceptance sau chạy, NODE_PASS nếu đủ | reviewer + Owner | ACCEPTANCE V5 |
+
+Quy tắc kèm theo: (a) IM không tồn tại ở bước 2–4; test ở bước 4 dùng IM tổng hợp trong test double, không thay IM thật; (b) approval của verifier definition không thể đứng trước code cuối vì định nghĩa embed hash code (SCH §3.6 R-12); (c) grant coding không mở chạy thật; (d) approval chỉ trỏ tầng thấp hơn (SCH §3.1).
+
+## 3. Schema và ràng buộc
+
+Schema field-level từng kind: SCH §4.0–§4.5. Ràng buộc toàn manifest: SCH §4.6. Điểm chính:
+- identity chung `(kind, parent_record_key, local_id) → record_key`; thứ tự chuẩn = `record_key` bytes UTF-8; resolution parent là lượt thứ hai, tách khỏi ordering (SCH §4.0);
+- discriminated theo `kind`; closed schema; mỗi field có `req`/`null`; `bool` bị từ chối ở field integer; định danh vận hành NFC không rỗng (`ADM-NFC`);
+- duy nhất theo `record_key` và `(parent_record_key, byte range)`; KHÔNG duy nhất OID/path toàn cục;
+- parent cross-reference và kiểm digest tính lại; kiểm role/path theo allowlist phase (§5);
+- `SNAPSHOT_FILE` không có commit; chỉ `GIT_BLOB` có `pinned_tree_commit`;
+- `doc_set_digest` (DOC_SET_DIGEST_V2) tính trên cả năm kind; không phải digest của file IM; IM không chứa digest của chính nó;
+- IM mang các key tham chiếu control (`scope_binding_key`, `contract_keys`, `schema_doc_key`, `approval_keys`, `policy_key`, `verifier_definition_key`, `revocation_registry_key`, `code_file_keys`, `env_lock_key`, `boundary_packet_key`), `dependency_refs` (R0: rỗng) và `source_invalidations` (SCH §4.7).
+
+## 4. Identity và digest
+
+| Cần | Dùng |
+|---|---|
+| file/blob/manifest/approval/control | `raw_sha256` (RAW_FILE_SHA256_V1); file JSON: core + LF (SCH §1.6) |
+| object JSON, định danh ngữ nghĩa | `core_sha256` (CORE_SHA256_V1; không LF) |
+| method freeze legacy | `legacy_semantic_hash` giữ riêng: `d7c8249d7660d9f3f98f96941ce11d9cc27184c77e1b11284acceda5732703e2` (chỉ được tính lại, không thay) |
+| section | `raw_slice_sha256` (= `body_sha256` của V1 cho 13 section); `normalized_lf_sha256` là trường riêng |
+| CSV row | `raw_record_sha256` (DATA) và `row_canon_sha256` (member digest) |
+| tập đóng | `doc_set_digest` (DOC_SET_DIGEST_V2) |
+| bundle đã admit | `admitted_bundle_digest` (ADMITTED_BUNDLE_DIGEST_V1) |
+
+Recipe bytes-lịch-sử và recipe vận hành tách riêng: bytes lịch sử không normalize; định danh vận hành NFC (SCH §1.8). Runtime object-domain recipe và AILL list-domain recipe là hai recipe có pin riêng (SCH §1.10).
+
+## 5. Phase, vòng đời source→execute và allowlist đọc (R0-D1-MR1-QC01)
+
+Nguyên tắc: nguồn được đọc **một lần** vào một **AdmittedBundle bất biến trong bộ nhớ** tại phase admit; `execute` chỉ nhận bundle đó và không mở nguồn ngoài. Phương án &quot;private snapshot được allowlist&quot; **không được dùng** ở phiên bản này (không có private snapshot nào được tạo); nếu sau này Owner chọn, phải đặt allowlist từng path theo cùng cú pháp §5.2 và đổi version contract.
+
+### 5.1 Bảng phase (đóng; đọc/ghi ngoài bảng = REFUSED)
+
+| Phase | Actor | Đọc được (chính xác) | Ghi được | Cấm |
+|---|---|---|---|---|
+| PH-MR2 | preparer documentary (task này, đã diễn ra) | Owner packet; MR1; AILL received; controls/standards; snapshot có pin; GIT_BLOB đã khai (git read-only `--no-optional-locks`) | đúng mười file mới của MR2 | code `fitechtrade*`, OHLCV, R2–R6, OOS, holdout; chạy/import code project |
+| PH-IM-FREEZE | Input Owner/Runtime (work order riêng; MISSING) | control đã approved, nguồn đã pin | IM (một lần) | — (ngoài phạm vi verifier P2) |
+| PH-ADMIT-CTRL | verifier `admit` (child process) | (1) IM tại đúng một path do supervisor cấp; (2) đúng `A_CTRL` (§5.2) | không | mọi path ngoài `A_CTRL`; liệt kê thư mục; glob |
+| PH-ADMIT-SRC | verifier `admit` | đúng `A_BLOB` và `A_SNAP` (§5.2), mỗi path đúng **một lần**; child process chỉ `git` subcommand trong §5.2 | không | đọc lần hai; mọi path ngoài allowlist |
+| PH-EXEC | verifier `execute`/`verify` | **không có filesystem/git read**; chỉ `AdmittedBundle` (§5.3) | spool: đúng năm file, exclusive-create (SCH §7.9) | mở bất kỳ path nào của `A_CTRL`/`A_BLOB`/`A_SNAP`; child process; network; ghi ngoài spool |
+| PH-POST-VERIFY | RUNTIME_SUPERVISOR (sau khi verifier thoát) | đúng `A_IM`, `A_CTRL`, `A_BLOB`, `A_SNAP` lần nữa (re-hash); đúng năm file spool; stream do chính supervisor ghi | thư mục payload tạm | đọc ngoài các tập này |
+| PH-PUBLISH | RUNTIME_SUPERVISOR / Runtime custody writer | spool; payload tạm; ledger để append | payload tạm, ledger, facts (OUTPUT V5 §5–§6) | ghi vào legacy, vào input, vào contract/approval, vào payload đã seal |
+| PH-CUSTODY-READBACK | Runtime custody | đúng chín file của payload đã publish | ledger (`CUSTODY_ACK`) | — |
+| PH-EVIDENCE-READ | reviewer/consumer/AILL | payload đã seal, ledger, facts, edge records: chỉ đọc, **theo path chính xác** (payload; `facts/&lt;fact_type&gt;/&lt;fact_key&gt;/stable.json`; `facts/&lt;fact_type&gt;/&lt;fact_key&gt;/occurrences/&lt;occurrence_key&gt;.json`; `edges/&lt;edge_id&gt;/&lt;edge_obligation_id&gt;/rev-&lt;n&gt;/stable.json` và `occurrences/&lt;occurrence_key&gt;.json`); occurrence và edge được khám phá qua event ledger, không liệt kê thư mục | không | ghi/xóa; liệt kê thư mục; liệt kê ngoài namespace R0 |
+
+**Cửa sổ cấm đọc nguồn ngoài (forbidden window)** = từ khi `AdmittedBundle` được niêm phong (kết thúc PH-ADMIT-SRC) tới khi supervisor bắt đầu PH-POST-VERIFY. Trong cửa sổ này verifier không được mở nguồn ngoài; supervisor cũng không đọc nguồn (chỉ đợi tiến trình). Vi phạm quan sát được ⇒ `EXE-EXTERNAL-READ` (SCH §7.5.1).
+
+### 5.2 Allowlist theo phase — tập tường minh, dẫn xuất từ IM
+
+Allowlist **không** là &quot;toàn repo&quot; hay &quot;temp root&quot;; mỗi tập được dẫn xuất từ `records` của IM đã đóng băng và so khớp bằng bằng-nhau chuỗi chính xác (không glob, không prefix, không `..`, không liệt kê thư mục):
+
+- `A_IM = { im_path }` (đúng một path do supervisor cấp; IM không nằm trong `records` của chính nó)
+- `A_CTRL = { r.path : r ∈ IM.records, r.kind = CONTROL_FILE }`
+- `A_BLOB = { (r.pinned_tree_commit, r.path, r.git_blob_oid) : r ∈ IM.records, r.kind = GIT_BLOB }` — đọc bằng `git --no-optional-locks` với đúng các subcommand: `rev-parse &lt;commit&gt;:&lt;path&gt;` (kiểm membership, so với `git_blob_oid`), `cat-file blob &lt;git_blob_oid&gt;` (lấy bytes). Không `status`, `log`, `ls-files`, `checkout`, ghi bất kỳ. Phiên bản git pin trong work order (CONFIG; MISSING). Mỗi lần gọi là một child process, được đếm. **Chi phí kế hoạch (V5):** 22 GIT_BLOB × 2 lần gọi = **44 child process Git dự kiến** cho một admission theo recipe này; đây là số kế hoạch, không là số quan sát, không gồm post-verify, control, recovery, test hay lần khởi chạy lỗi. Ngân sách phải tính con số này (PROGRAM V5 §6); không sao chép trần &quot;zero child&quot; của support.
+- `A_SNAP = { r.path : r ∈ IM.records, r.kind = SNAPSHOT_FILE }`
+- TEXT_SECTION và ROW_REFERENCE **không có read riêng**: chúng là lát cắt/hàng của bytes parent đã admit.
+- CAS `_inputs/&lt;raw_sha256&gt;/&lt;basename&gt;` (khi được materialize ở R0-C1) chỉ resolve tới các `raw_sha256` có trong IM; không liệt kê `_inputs`.
+- Gốc vật lý của repo legacy và của FiTechSNM, cùng path của IM/spool/payload, do supervisor cấp qua CONFIG: `MissingBinding` cho tới khi Runtime Owner bind (MB-SC-04). Tài liệu này không bịa giá trị.
+
+### 5.3 Verifier `execute` nhận gì (và không nhận gì)
+
+`execute` nhận một đối tượng `AdmittedBundle` (PROGRAM V5 §3) gồm: (a) `im`: IM đã parse, bất biến (deep-frozen); (b) `im_raw_sha256`; (c) `roots`: ánh xạ `record_key → bytes` của mọi record gốc nguồn (GIT_BLOB, SNAPSHOT_FILE) — kiểu `bytes` bất biến; (d) `controls`: ánh xạ `record_key → bytes` của mọi CONTROL_FILE; (e) `bundle_digest`. TEXT_SECTION = `roots[parent][byte_start:byte_end_exclusive]`; ROW_REFERENCE đọc từ `roots[parent]`. Path chuỗi có thể có mặt như **nhãn** (để báo lỗi), nhưng không được truyền cho bất kỳ hàm mở file nào. `execute` KHÔNG nhận: file handle, thư mục, biến môi trường dẫn tới nguồn, socket, hay hàm đọc ngoài bundle. Điều này làm preload hợp lệ (đọc trong PH-ADMIT) phân biệt rõ với vi phạm (mở trong PH-EXEC).
+
+### 5.4 Hash trước/sau và giới hạn TOCTOU
+
+- **Pre**: `RootRead.read_sha256` = SHA-256 bytes đã đọc vào buffer; phải bằng `pin_sha256` của IM, ngược lại `ADM-PIN`/`ADM-BLOB`, REFUSED.
+- **Post**: supervisor đọc lại đúng `A_IM`/`A_CTRL`/`A_BLOB`/`A_SNAP` ở PH-POST-VERIFY và ghi `post_read_sha256`; khác pre ⇒ `post_read_status = MISMATCH` ⇒ outcome `SOURCE_DRIFT` (`POST-SOURCE-DRIFT`).
+- **Giới hạn đã khai**: hai thời điểm không là quan sát liên tục: đổi-rồi-khôi-phục giữa hai lần không bị phát hiện; blob git bất biến theo OID nên post-read của blob chủ yếu kiểm toàn vẹn kho và membership; file snapshot trong FiTechSNM có thể bị actor khác sửa, nên được bảo vệ bằng pin + inventory baseline, không bằng khóa OS (không có, MISSING); không phải ranh giới bảo mật chống người dùng cục bộ thù địch. `execute_external_reads` do verifier tự báo bằng audit hook Python (không phủ C-extension/SQLite) — `CHILD_AUDIT_HOOK_SELF_REPORTED`; không quan sát được thì `NOT_OBSERVED` và count UNKNOWN (không ép 0).
+
+### 5.5 Đọc lại bằng chứng (evidence reread)
+
+Stream và payload là bằng chứng bất biến (OUTPUT V5 §5): trước khi seal chỉ supervisor đọc/ghi stream; sau khi seal ai cũng chỉ đọc, theo path chính xác trong §5.1; verifier không bao giờ đọc stream hay payload của chính nó; không ai đọc lại payload để &quot;sửa&quot; nó. Mọi lần đọc lại ngoài bảng là vi phạm allowlist và bị ghi nhận.
+
+## 6. Hợp lệ nguồn và từ chối
+
+Hợp lệ: SNAPSHOT_FILE hợp lệ khi bytes khớp pin; HEAD legacy di chuyển, hay working tree legacy đổi, KHÔNG là lý do từ chối khi snapshot/blob đã pin vẫn khớp. GIT_BLOB hợp lệ khi blob tại `pinned_tree_commit` có đúng `git_blob_oid` và `raw_sha256`.
+Từ chối (fail-closed, mã riêng, bảng đầy đủ ở SCH §7.5.1): thiếu/lạ key (`ADM-SCHEMA-KEY`); sai kiểu (`ADM-TYPE`); định danh không NFC (`ADM-NFC`); key JSON trùng/số thực (`ADM-DUP-KEY`); trùng `record_key`/range (`ADM-DUP-RECORD`); parent sai (`ADM-PARENT`); sai thứ tự hoặc `record_key` (`ADM-ORDER`); counts/doc_set (`ADM-COUNTS`); snapshot không khớp pin (`ADM-PIN`); blob (`ADM-BLOB`); path ngoài allowlist (`ADM-PATH`); kind/role (`ADM-KIND-ROLE`); `source_invalidations` (`ADM-INVALIDATED`); `node_ref`/`INPUT_KIND` (`ADM-NODE-REF`); approval thiếu/sai subject/hết hạn/bị revoke/sai stage hoặc sai HUMAN-AUTO (`ADM-APPROVAL-*`); registry thiếu hoặc cũ (`ADM-REGISTRY`, HOLD); binding thiếu (`ADM-MISSING-BINDING`, HOLD).
+`UNKNOWN`/`MISSING_BINDING` trong phạm vi acceptance ⇒ HOLD, không điền mặc định.
+Thứ tự kiểm: lượt cú pháp → lượt resolution → control/approval/registry → nguồn (pin) → bundle digest (SCH §4.0).
+
+## 7. Custody và retention input (BD-05; V5 bind điều kiện trước kết quả đầu)
+
+Snapshot exact Git blob bytes vào namespace input logical `fitechsnm/&lt;lineage&gt;/&lt;workstream&gt;/R0/&lt;scope_digest&gt;/_inputs/&lt;raw_sha256&gt;/&lt;basename&gt;` (content-addressed, SCH §8.11), ghi kèm provenance `{legacy_repo, pinned_tree_commit, path, git_blob_oid, raw_sha256, bytes}`; bytes không normalize; section/row là record riêng trỏ parent đã snapshot, không có bản sao. Việc tạo custody artifact thuộc work order riêng (RN/Input Owner), cần authority riêng, không dùng generator synthetic CONSENSUS làm input R0. Gốc vật lý, backend, principal: MissingBinding (MB-SC-04). Vùng `FITECHSNM_AILL` do Son tạo chỉ là nơi bàn giao tài liệu, không phải writer grant.
+
+V5 (OWN-PF §5 D05): admission Git chính xác (§5.2) và **retention input bất biến** (CAS ở trên) là điều kiện phải được bind trong bundle và work order **trước** kết quả đầu; P-05 không bị hoãn ngầm. Lựa chọn kỹ thuật và instance (thời điểm materialize trước hay trong run, writer, retention) là binding của Runtime/Input Owner (MB-IN-01); contract này không chọn thay.
+
+## 8. MISSING_BINDING (owner và gate)
+
+| ID | Nội dung | Owner (vai trò; identity = MISSING) | Gate | Trạng thái hiện tại (2026-10-09) |
+|---|---|---|---|---|
+| MB-IN-01 | materialization custody (CAS) | RN/Input Owner + Runtime Owner | work order riêng sau design accepted | MISSING_BINDING |
+| MB-IN-02 | CONTROL_FILE §2.5 (contracts approved, approvals PRE_FACT, policy, verifier, config, scope) | Owner/Reviewer; Runtime Owner | sau Owner QC; cần approval | MISSING_BINDING (0/5 approved) |
+| MB-IN-03 | tier cuối cùng của từng nguồn do Owner QC | Owner QC | đề xuất ở §2.1 | PENDING |
+| MB-IN-04 | Input Owner cụ thể, chữ ký người, AILL actor | Master; Son cho chữ ký | §9 | MISSING_BINDING |
+| MB-IN-05 | `approved_contract_sha256` | Owner/Reviewer | `CONTRACT_APPROVALS=0/5` | MISSING_BINDING |
+| MB-IN-06 | gốc vật lý repo legacy và FiTechSNM, phiên bản git pin, path IM/spool/payload | Runtime Owner | work order triển khai Runtime | MISSING_BINDING |
+
+## 9. Approval (design; không có effective policy)
+
+```
+approval_mode            = HUMAN_AUTHORITY_REQUIRED   (ý nghĩa contract; policy không ký thay)
+verifier / policy_ref    = null                        (HUMAN hợp lệ; không có effective policy)
+stage                    = PRE_FACT                    (approval của contract này nằm trước mọi sự kiện thực thi)
+evidence_binding         = raw_sha256 của file contract này + của SCH (target_type ∈ bảng stage PRE_FACT, SCH §9.1)
+revocation_check         = snapshot registry đóng băng trước approval (SCH §9.2); revoke sau = snapshot mới, approval giữ nguyên
+expiry                   = bắt buộc trong approval record
+ordering                 = approval contract/schema trước quyền coding; approval verifier definition sau khi code đóng băng (§2.7)
+INPUT_OWNER              = PENDING
+RUNTIME_BINDING_REVIEW   = PENDING
+approved_contract_sha256 = MISSING_BINDING
+AILL actor / human signature / run signer key = MISSING
+```
+Từ vựng: `approval_mode` chuẩn tắc chỉ `AUTO_POLICY`/`HUMAN_AUTHORITY_REQUIRED`; `AUTO_APPROVABLE_WITHIN_POLICY` chỉ là nhãn tương thích eligibility; `HOLD_MISSING_BINDING` là status (SCH §9.1). `AUTO_ACTIVE=0`. Approval HUMAN với `policy_ref = null` **không** miễn chính sách ghi/attestation hiệu lực của Runtime (T3; PROGRAM V5 §3.5).
+
+## 10. Mode BASELINE và capability candidate-evolution (giữ, không áp dụng)
+
+R0 chạy ở mode `BASELINE`: đúng các clause của V5. Quyết định Son `DS-2026-10-08-RESEARCH-NODE-CANDIDATE-EVOLUTION-V1` (design requirement; nội dung ở `docs/governance/RESEARCH_NODE_CANDIDATE_EVOLUTION_DECISION_V1.md`) cho phép đổi input, bộ chiến lược, method, tham số hay chương trình ở node nghiên cứu; overlay D2 `R0_FIVE_CONTRACT_CANDIDATE_EVOLUTION_ADDENDUM_V1.md` (1.0.0-draft.1, sha256 `5a4795d51dd384d977eed4611e137ec8e7aaa2e5c198023e3dbc1f2fcf83711b`, 33517 bytes) định nghĩa mode `CANDIDATE` (nhãn `4.1.0-ce.draft.1`). V5 **giữ** capability và delegation đã chấp nhận, **không** áp dụng overlay: không `ChangeRequest`/`CandidateLineage`/`ResearchInputContext` nào là điều kiện của lần chạy baseline; không yêu cầu verifier candidate hay baseline challenger ở run documentary đầu; không import predicate tương lai (CE-P-*, 218 case D2 `PLANNED_NOT_RUN`) làm điều kiện của baseline. Approval của V5 không tự áp dụng sang overlay; overlay cần approval riêng bind cả hash V5 và hash addendum. Baseline và PASS lịch sử bất biến.
+</pre></article></body></html>

@@ -1,0 +1,17 @@
+{
+  "project": "Stock Monitor",
+  "source_url": "http://127.0.0.1:8765/finpath_dashboard.html",
+  "captured_at": "2026-10-21T15:27:09.668093+00:00",
+  "source_sha256": "77644ce9e26da74d8fb9a4cbd905c8d3ab36a0beaf5e0a210a43fd2fccecd0d8",
+  "embedded_records": 43501,
+  "embedded_data_sha256": "53fa721487b0778fd4fdcf4d290d1d6f7bee50473837a47c6f06383015918b7d",
+  "scope": "Existing public-article recommendation snapshot; not a raw market time series",
+  "modifications": [
+    "FiTechHub return link and public snapshot notice",
+    "Local updater instructions replaced with read-only online notice"
+  ],
+  "limitations": [
+    "Snapshot, not live updates",
+    "Source header/footer counts differ and are not silently reconciled"
+  ]
+}
