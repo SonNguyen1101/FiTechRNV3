@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-21T14:59:28.488598+00:00",
+  "observed_at": "2026-10-21T15:07:54.485153+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -19,7 +19,7 @@
       "connected": true,
       "stale": false,
       "response_sha256": "3fd4e984c0869b4bcd7f1e27026e888dfb39e273dc64572ba64de5301e71d65b",
-      "checked_at": "2026-10-21T14:59:26.197335+00:00",
+      "checked_at": "2026-10-21T15:07:51.857415+00:00",
       "milestones": [],
       "facts": [
         {
@@ -61,8 +61,8 @@
       "public_url": null,
       "connected": true,
       "stale": false,
-      "response_sha256": "d5a447213fca12fc0af94800b80fb06f706bbc43f0f65545233cd103cbba42fb",
-      "checked_at": "2026-10-21T14:59:26.202337+00:00",
+      "response_sha256": "5d80738340cf312bf5fa216bf3e24b625b5707fc7afdbd0fd348f28dcb3011f4",
+      "checked_at": "2026-10-21T15:07:51.862541+00:00",
       "milestones": [
         {
           "key": "fitechml:R1.1",
@@ -164,7 +164,7 @@
       "status_label": "Chờ nghiệm thu",
       "status_tone": "amber",
       "next_action": "R1.2 — intake D1 toàn universe, sau nghiệm thu",
-      "reported_at": "2026-10-21T14:59:26.200650+00:00"
+      "reported_at": "2026-10-21T15:07:51.861220+00:00"
     },
     {
       "id": "fitechsnm",
@@ -180,8 +180,8 @@
       "public_url": null,
       "connected": true,
       "stale": false,
-      "response_sha256": "3ec954000396e77bef1524444a66c30547f6398b3b508c37721395bc1c2a3049",
-      "checked_at": "2026-10-21T14:59:26.420237+00:00",
+      "response_sha256": "2134a7ed06115eafb1f373c08ac8e96500470a9b9db195419cc5f5da23a2b830",
+      "checked_at": "2026-10-21T15:07:51.853916+00:00",
       "milestones": [
         {
           "key": "fitechsnm:M1",
@@ -261,7 +261,7 @@
       "status_label": "Đang hoàn thiện",
       "status_tone": "violet",
       "next_action": "Hoàn thiện program control và các binding đầu vào đúng phạm vi.",
-      "reported_at": "2026-10-21T14:59:26.415968+00:00"
+      "reported_at": "2026-10-21T15:07:49.912315+00:00"
     },
     {
       "id": "rnv3",
@@ -277,8 +277,8 @@
       "public_url": null,
       "connected": true,
       "stale": false,
-      "response_sha256": "59a65c56a8c43039465237a545dfa8e3bf5ec43b986041985cad41ff8f6957d4",
-      "checked_at": "2026-10-21T14:59:28.488598+00:00",
+      "response_sha256": "ca1a0b5216946a4516593058f3d049bbb23477794bdcd281bff64567a2c8dfd4",
+      "checked_at": "2026-10-21T15:07:54.484154+00:00",
       "milestones": [
         {
           "key": "rnv3:M1",
@@ -357,7 +357,7 @@
       "status_literal": "NOT_COMPLETE",
       "status_label": "Cần xử lý blocker",
       "status_tone": "amber",
-      "reported_at": "2026-10-21T14:59:28.101547+00:00",
+      "reported_at": "2026-10-21T15:07:54.055923+00:00",
       "evidence_as_of": "2026-10-21T06:16:02.618182+00:00",
       "next_action": "Xử lý binding bootstrap IND061 trước qualification và replay."
     },
@@ -377,7 +377,7 @@
       "connected": true,
       "stale": false,
       "response_sha256": "77644ce9e26da74d8fb9a4cbd905c8d3ab36a0beaf5e0a210a43fd2fccecd0d8",
-      "checked_at": "2026-10-21T14:59:26.292980+00:00",
+      "checked_at": "2026-10-21T15:07:51.955030+00:00",
       "milestones": [],
       "facts": [
         {
@@ -421,7 +421,7 @@
       "connected": true,
       "stale": false,
       "response_sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603",
-      "checked_at": "2026-10-21T14:59:26.381073+00:00",
+      "checked_at": "2026-10-21T15:07:52.079364+00:00",
       "milestones": [],
       "facts": [
         {
@@ -457,7 +457,7 @@
       "status_tone": "violet",
       "phase_basis": "Công cụ bộ lọc; không tạo milestone hoặc nghiệm thu từ kết nối API.",
       "next_action": "Mở bộ lọc để khám phá giao diện; dữ liệu minh hoạ không dùng làm kết quả thị trường.",
-      "page_sha256": "47d4d29119082a72d892391152b7933374e02d305625edf2158f8a642fcc23c6"
+      "page_sha256": "acf3c925dcdf8c70e8a2591826df2e46bc199a6ee1a878617331a8af8e1d73f9"
     }
   ],
   "connected": 6,

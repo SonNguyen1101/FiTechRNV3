@@ -1,6 +1,6 @@
 {
   "schema": "FITECHHUB_PUBLIC_SNAPSHOT_V1",
-  "observed_at": "2026-10-21T14:59:28.488598+00:00",
+  "observed_at": "2026-10-21T15:07:54.485153+00:00",
   "projects": 6,
   "milestones": 14,
   "scientific_acceptance": false,
@@ -12,7 +12,7 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "app.js",
+      "path": "app.2bae7d54c201.js",
       "bytes": 23070,
       "sha256": "2bae7d54c201efee605d72cc7d8345e1199a64bc95ed3709576daa2ffeb3c96d"
     },
@@ -59,12 +59,12 @@
     {
       "path": "data/portfolio.json",
       "bytes": 16341,
-      "sha256": "e19b8859dcc2b797718e5ebe1101ed775571c45063edb96be4d96a944b3a1705"
+      "sha256": "8570a1490c4de7c8dbeed8a34fabdff60f70d3e2f5e15a006867798ac6b720f1"
     },
     {
       "path": "index.html",
-      "bytes": 4432,
-      "sha256": "37ba0c5793be46b441bd29f5401bde39207b51e95bc48cd9320b6777ced8336b"
+      "bytes": 4458,
+      "sha256": "2eb1ef45f1f55502072b2d368a617dde85833de813679834d86b16396aa886cc"
     },
     {
       "path": "README.md",
@@ -72,7 +72,7 @@
       "sha256": "79a2fd0b076816bade84cac2c82bad2cf6379d47bd6749ce1ceb789a9b15df52"
     },
     {
-      "path": "styles.css",
+      "path": "styles.18f0b57e94b6.css",
       "bytes": 24161,
       "sha256": "18f0b57e94b6ef18e146da754055f565b366163fcfc191783accfa4fa57490c3"
     }
