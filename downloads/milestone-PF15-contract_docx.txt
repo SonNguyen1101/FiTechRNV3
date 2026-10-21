@@ -1,0 +1,3 @@
+Nguồn local: PF15 · contract_docx
+SHA256: 0508a93f87d774d2fa78269b75a9ea4e944a94a234e9481d523666d2090ae162
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,0 +1,3 @@
+Nguồn local: PF16 · registration
+SHA256: cd13a502d583f657d24e94de4b4d738aca00ae44e4ea8e4c00b864c720a4702f
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

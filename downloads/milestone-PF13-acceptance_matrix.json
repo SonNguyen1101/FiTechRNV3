@@ -1,0 +1,99 @@
+{
+  "schema": "RNV3_REPORTING_ACCEPTANCE_MATRIX_V1",
+  "milestone": "PF13",
+  "rows": [
+    {
+      "criterion_id": "REPORTING/PF13/C01",
+      "contract_type": "Input",
+      "observed": "Đã có snapshot N09 100×17, T03 static audit và các evidence remediation có giới hạn; PF13 chưa hoàn tất.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_COMPLETE",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "n09-result",
+        "t03-qc",
+        "finite30-qc"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Snapshot assessment/ledger và nợ đã đăng ký; authority receipts, source code, evidence và lineage đúng version."
+    },
+    {
+      "criterion_id": "REPORTING/PF13/C02",
+      "contract_type": "Methodology",
+      "observed": "59 source-audit rows được nhận ở scope tĩnh; không suy runtime completion hoặc declaration hoàn chỉnh.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_COMPLETE",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "n09-result",
+        "t03-qc",
+        "finite30-qc"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Phân loại A documentary/B parameter authority/C scientific defect. Thay input vật chất tạo successor snapshot; replay đúng affected scope hoặc mở rộng có căn cứ."
+    },
+    {
+      "criterion_id": "REPORTING/PF13/C03",
+      "contract_type": "Technical / Engineering / Program",
+      "observed": "Recovery IND061 V2 lỗi phase 1, replay 0/32; Harness hiện tại NOT_VERIFIED. Các NOT_PASS lịch sử giữ nguyên.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_COMPLETE",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "n09-result",
+        "t03-qc",
+        "finite30-qc"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Thực thi theo work order được cấp, giữ bytes/pins/capture/failure; không sửa frozen snapshot hoặc root cũ."
+    },
+    {
+      "criterion_id": "REPORTING/PF13/C04",
+      "contract_type": "Output",
+      "observed": "Ma trận N09 có 1700 ô documentary chưa seal/chưa ratified. Chưa có final POP100 freeze.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_COMPLETE",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "n09-result",
+        "t03-qc",
+        "finite30-qc"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Remediation phân loại, snapshot successor và replay rationale/evidence; projection chỉ cập nhật ô có binding."
+    },
+    {
+      "criterion_id": "REPORTING/PF13/C05",
+      "contract_type": "Acceptance",
+      "observed": "NOT_COMPLETE; không đóng nợ hoặc grant successor/adoption/gate bằng báo cáo này.",
+      "status": "NOT_TESTED_AGAINST_NEW_CONTRACT",
+      "historical_scoped_state": "NOT_COMPLETE",
+      "sources": [
+        "qc",
+        "readback",
+        "roadmap",
+        "time-receipt",
+        "n09-result",
+        "t03-qc",
+        "finite30-qc"
+      ],
+      "scientific_pass_granted": false,
+      "expected": "Mỗi remediation được phân loại, có version và replay scope hợp lý; Owner Son/G1 CCE quyết định theo roadmap."
+    }
+  ],
+  "interpretation": "Current observations are not tests under a retroactively preregistered contract",
+  "milestone_closed": false,
+  "scientific_acceptance_granted": false
+}

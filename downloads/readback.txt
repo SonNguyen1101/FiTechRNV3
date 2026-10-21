@@ -1,0 +1,3 @@
+Nguồn local: Recount V2: 0/32 replay và chưa qualification
+SHA256: e2d5ff3fdf63ef905ab74aad12b8fe4b3b968820e337977865ace0a1ccbaa9f0
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

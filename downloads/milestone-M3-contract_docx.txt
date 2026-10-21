@@ -1,0 +1,3 @@
+Nguồn local: M3 · contract_docx
+SHA256: 4205566f03cdc24d213a6d9a52e3c9531bc4d2897c69b0958023b8129a8adffc
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

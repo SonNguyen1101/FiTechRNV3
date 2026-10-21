@@ -1,0 +1,3 @@
+Nguồn local: M2 · report_docx
+SHA256: 72a3ee6743e35ff83ad0b96481cd1d58595aea21bbc1d2ae585dd62ec2158153
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

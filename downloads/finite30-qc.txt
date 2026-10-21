@@ -1,0 +1,3 @@
+Nguồn local: Finite30: diagnostic giữ lại, Harness NOT_PASS
+SHA256: 8e8757736d214eaec297f928f124ad9ee4155c93acf8194b7662242bbd5650b1
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

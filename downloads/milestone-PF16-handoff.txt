@@ -1,0 +1,3 @@
+Nguồn local: PF16 · handoff
+SHA256: c18654c6992bfdc5fb507995ea1fab0eb32b16aa7730f68f23db834821068280
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

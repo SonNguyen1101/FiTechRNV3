@@ -1,0 +1,3 @@
+Nguồn local: PF13 · report_docx
+SHA256: 31f20a032d80228b4cf8e23d5e52bcfecac0eff534100c872e52151107355e6b
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

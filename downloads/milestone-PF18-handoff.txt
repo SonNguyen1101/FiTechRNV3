@@ -1,0 +1,3 @@
+Nguồn local: PF18 · handoff
+SHA256: 85068c45e39a997cb871b9ea557c95f5ec87e90efcb6c9a95310d8065316b3bb
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

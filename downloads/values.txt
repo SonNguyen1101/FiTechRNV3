@@ -1,0 +1,3 @@
+Nguồn local: Giá trị 100×17 · N09 V2
+SHA256: 7b988b041b9c9fd6c724740d83d2e635742655efbb60a0debaa26508ffe12c79
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

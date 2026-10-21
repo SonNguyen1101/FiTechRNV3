@@ -1,0 +1,3 @@
+Nguồn local: M4 · output_manifest
+SHA256: ae0e24e0a478238f6705f2d8cab126f8e0a55a731e5a54b58029df143fab811d
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

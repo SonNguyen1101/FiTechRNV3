@@ -1,0 +1,3 @@
+Nguồn local: PF19 · contract_docx
+SHA256: ce823d3f51f285537699175d9977a6329830c4fbc838d25212aa94f3616ee7d9
+Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.
