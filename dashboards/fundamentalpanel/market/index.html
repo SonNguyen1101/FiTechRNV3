@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thị trường — Fundamental_Panel</title>
+
+
+
+<link rel="stylesheet" href="../shared/reader-from-reference.css">
+<link rel="stylesheet" href="../shared/panel.css">
+<link rel="stylesheet" href="./market.css">
+<link rel="stylesheet" href="../snapshot.css"><script src="../read-only.js"></script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"></head>
+<body><aside class="snapshot-banner"><a href="../../../#overview">← FiTechHub</a> · <a href="../panel/">Cửa vào</a><b>PUBLIC_STATIC_SNAPSHOT · Chỉ đọc</b><span>Chụp 2026-10-21T15:52:05.956791+00:00 · Không đồng bộ trực tiếp. Khung nguồn: 1/15 mục hoàn chỉnh; không phải nghiệm thu hoặc xác minh model.</span><span>Không xuất chuỗi giá đầy đủ, lịch sử finance thô, PDF, tài khoản hoặc dữ liệu cá nhân. Biểu đồ cần chuỗi giá và điều khiển PHP đã khóa; chỉ số tổng hợp đang hiển thị được giữ.</span><a href="../provenance.json">Nguồn / hash / giới hạn</a></aside>
+<div id="root"><div class="wrap"><p class="hint">Đang tải bảng thị trường…</p></div></div>
+<script type="module">
+import { renderTopbar, dataKindBanner } from '../shared/topbar.mjs';
+import { renderMarket } from './render.mjs';
+const root = document.getElementById('root');
+const wrap = document.createElement('div'); wrap.className = 'wrap mk-wrap';
+const head = (t) => { const header = document.createElement('header'); header.className = 'head'; const e = document.createElement('div'); e.className = 'eyebrow'; e.textContent = 'Fundamental_Panel · thị trường'; const h1 = document.createElement('h1'); h1.textContent = 'Thị trường'; const p = document.createElement('p'); p.className = 'lede'; p.textContent = t; const box = document.createElement('div'); box.append(e, h1, p); header.append(box); return header; };
+const get = (n) => fetch(`../qrw/data/${n}.json`, { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error(`${n}.json: HTTP ${r.status}`); return r.json(); });
+root.replaceChildren(renderTopbar('market'), wrap);
+try {
+  const [screener, manifest] = await Promise.all([get('screener'), get('manifest')]);
+  const banner = dataKindBanner(manifest); if (banner) wrap.append(banner);
+  wrap.append(head(`Mọi mã trong danh sách (${screener.rows.length}): giá cuối kèm ngày, hiệu suất so VN-Index, vị trí trong biên 12 tháng, vùng giá và chỉ số SSI. Bấm tên cột để sắp xếp, bấm mã để mở hồ sơ.`));
+  window.__market = renderMarket(wrap, screener, { manifest });
+  document.body.dataset.ready = '1';
+} catch (e) {
+  wrap.append(head('Không tải được dữ liệu thị trường.'));
+  const n = document.createElement('div'); n.className = 'todo'; n.setAttribute('role', 'alert');
+  const b = document.createElement('b'); b.textContent = 'Chưa có screener.json. '; n.append(b, document.createTextNode(`Chạy node scripts/build-screener.mjs sau khi đã export dữ liệu (${e.message}).`)); wrap.append(n);
+}
+</script>
+</body>
+</html>

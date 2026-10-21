@@ -1,0 +1,54 @@
+/* Market page. Only tokens from reader-from-reference.css are used. The table scrolls inside .mk-scroll (never the page); the ticker column stays visible. */
+.mk-filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 12px;align-items:end;margin-top:16px}
+.mk-f{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--mute);min-width:0}
+.mk-f select,.mk-f input{font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:0;width:100%}
+.mk-actions{justify-content:flex-end}
+.mk-actions button,.mk-pager button{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);color:var(--ink);cursor:pointer}
+.mk-actions button:hover,.mk-pager button:hover:not(:disabled){border-color:var(--urea);color:var(--urea)}
+.mk-caption{margin:12px 0 8px;font-size:13px;color:var(--ink2)}
+.mk-scroll{overflow-x:auto;overscroll-behavior-x:contain;background:var(--surface)}
+.mk-scroll:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.mk-table{border-collapse:separate;border-spacing:0;width:100%;min-width:1180px;font-size:13px}
+.mk-table th,.mk-table td{padding:6px 10px;border-bottom:1px solid var(--line2);text-align:left;vertical-align:top;background:var(--surface)}
+.mk-table th{background:var(--surface2);font-weight:600;color:var(--ink2);white-space:nowrap}
+.mk-table td.num,.mk-table th.num{text-align:right}
+.mk-table .n{white-space:nowrap}
+.mk-table .sub{display:block;font-size:11px;color:var(--mute);white-space:nowrap}
+.mk-table td.c-zone .sub,.mk-table td.c-zone .n{white-space:normal}
+.mk-table .stale,.mk-table .sub.stale{color:var(--warn)}
+.mk-table .qa{color:var(--warn);cursor:help;white-space:nowrap}
+.mk-table .sticky{position:sticky;left:0;z-index:2;box-shadow:1px 0 0 var(--line)}
+.mk-table th.sticky{z-index:3}
+.mk-table td.sticky a{color:var(--urea);font-weight:600;text-decoration:none}
+.mk-table td.sticky a:hover,.mk-table td.sticky a:focus-visible{text-decoration:underline}
+.mk-table td.c-name{min-width:220px;max-width:320px;white-space:normal;overflow-wrap:anywhere}
+.mk-table td.c-sector{min-width:150px;white-space:normal;overflow-wrap:anywhere}
+.mk-table td.c-zone{min-width:210px}
+.mk-table tbody tr:hover td{background:var(--urea-soft)}
+.sortbtn{all:unset;cursor:pointer;display:inline-block;white-space:nowrap}
+.sortbtn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.mk-pager{display:flex;gap:12px;align-items:center;justify-content:center;margin:14px 0 4px}
+.mk-pager button:disabled{opacity:.5;cursor:default}
+.mk-pageinfo{font-size:13px;color:var(--ink2)}
+.mk-notes{margin-top:14px}
+@media (max-width:820px){.mk-table{min-width:1100px}}
+/* the table has twelve columns: give this page a wider column than the 1140px reading width of the other pages */
+.mk-wrap{max-width:1560px}
+.mk-table td.c-name{min-width:200px;max-width:260px}
+.mk-table td.c-name .n,.mk-table td.c-sector .n{white-space:normal;overflow-wrap:anywhere}
+.mk-table th{white-space:normal}
+.sortbtn{white-space:normal;text-align:inherit}
+.mk-wrap .head h1{margin-top:2px}
+.badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap;vertical-align:baseline;border:1px solid transparent}
+.badge.stopped{background:var(--badbg);color:var(--bad)}
+.badge.lag,.badge.weak{background:var(--warnbg);color:var(--warn)}
+.badge.weak{cursor:help}
+.weak-reason{display:block;font-size:11px;color:var(--warn)}
+.mk-cov{margin-top:28px}
+.mk-cov-table{min-width:880px}
+.mk-cov-table th.cov-name,.mk-cov-table thead th:first-child{text-align:left;white-space:normal}
+.mk-cov-table th.cov-name{background:var(--surface);font-weight:500;color:var(--ink);text-transform:none;letter-spacing:0;font-size:13px}
+.mk-cov-table th.cov-name a{color:var(--urea);text-decoration:none}
+.mk-cov-table th.cov-name a:hover,.mk-cov-table th.cov-name a:focus-visible{text-decoration:underline}
+.mk-cov-table tfoot th,.mk-cov-table tfoot td{font-weight:600;background:var(--surface2)}
+.mk-cov-table .sub{display:block}

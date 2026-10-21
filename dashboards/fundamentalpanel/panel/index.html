@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cửa vào — Fundamental_Panel</title>
+
+
+
+<link rel="stylesheet" href="../shared/reader-from-reference.css">
+<link rel="stylesheet" href="../shared/panel.css">
+<link rel="stylesheet" href="../snapshot.css"><script src="../read-only.js"></script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"></head>
+<body><aside class="snapshot-banner"><a href="../../../#overview">← FiTechHub</a> · <a href="../panel/">Cửa vào</a><b>PUBLIC_STATIC_SNAPSHOT · Chỉ đọc</b><span>Chụp 2026-10-21T15:52:05.956791+00:00 · Không đồng bộ trực tiếp. Khung nguồn: 1/15 mục hoàn chỉnh; không phải nghiệm thu hoặc xác minh model.</span><span>Không xuất chuỗi giá đầy đủ, lịch sử finance thô, PDF, tài khoản hoặc dữ liệu cá nhân. Biểu đồ cần chuỗi giá và điều khiển PHP đã khóa; chỉ số tổng hợp đang hiển thị được giữ.</span><a href="../provenance.json">Nguồn / hash / giới hạn</a></aside>
+<div id="root"></div>
+<script type="module">
+import { renderTopbar, dataKindBanner } from '../shared/topbar.mjs';
+import { SECTIONS, STATUS_LABEL, coverageSummary } from '../dossier/sections.mjs';
+const h = (tag, attrs = {}, ...kids) => { const n = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === 'text') n.textContent = v; else n.setAttribute(k, v); } for (const k of kids) if (k !== null && k !== undefined) n.append(k); return n; };
+const root = document.getElementById('root');
+root.append(renderTopbar('panel'));
+const wrap = h('div', { class: 'wrap' }); root.append(wrap);
+const cs = coverageSummary();
+
+let universe = null, manifest = null;
+try { [universe, manifest] = await Promise.all(['universe', 'manifest'].map((n) => fetch(`../qrw/data/${n}.json`, { cache: 'no-store' }).then((r) => { if (!r.ok) throw new Error(`${n}.json: HTTP ${r.status}`); return r.json(); }))); } catch (e) { universe = null; }
+const banner = dataKindBanner(manifest); if (banner) wrap.append(banner);
+
+wrap.append(h('header', { class: 'head' }, h('div', {}, h('div', { class: 'eyebrow', text: 'Fundamental_Panel · cửa vào' }), h('h1', { text: 'Panel phân tích cổ phiếu' }),
+  h('p', { class: 'lede', text: 'Ba thứ khác nhau cùng nằm trong dự án. Chỉ "Hồ sơ doanh nghiệp" là sản phẩm đọc cho từng mã; bản PHP là một bản chụp riêng, còn bộ kiểm tra dữ liệu là công cụ kỹ thuật, không phải Panel.' }))));
+
+const ticker = h('input', { id: 'tk', type: 'search', list: 'tks', placeholder: 'VD: FPT', maxlength: '10', 'aria-label': 'Mã cổ phiếu', autocomplete: 'off' });
+const dl = h('datalist', { id: 'tks' });
+const go = h('a', { class: 'go', id: 'openDossier', href: '../dossier/', text: 'Mở hồ sơ doanh nghiệp →' });
+const sync = () => { const v = ticker.value.trim().toUpperCase(); go.href = /^[A-Z0-9]{2,10}$/.test(v) ? `../dossier/?ticker=${v}` : '../dossier/'; };
+ticker.addEventListener('input', sync);
+if (universe) for (const r of universe.records) dl.append(h('option', { value: r.ticker }));
+
+wrap.append(h('div', { class: 'banner-info', id: 'market-link' }, h('b', { text: 'Thị trường: ' }), document.createTextNode('bảng toàn bộ mã (giá kèm ngày, hiệu suất so VN-Index, vùng giá, chỉ số SSI), có lọc và sắp xếp. '), h('a', { id: 'openMarket', href: '../market/', text: 'Mở bảng thị trường →' })));
+wrap.append(h('div', { class: 'cards' },
+  h('div', { class: 'card', id: 'card-php' }, h('span', { class: 'st IMPLEMENTED', text: 'Đã đối chiếu với bản gốc (render cục bộ)' }), h('h3', { text: 'Bản PHP tham chiếu' }),
+    h('p', { text: 'Ảnh chụp 09/10/2026 của bản phân tích Cảng Hải Phòng: đủ 14 mục, 3 kịch bản, 9 thanh trượt. Độc lập với danh sách mã và với dữ liệu QRW/SSI; không áp giả định của PHP cho mã khác.' }),
+    h('a', { class: 'go', href: '../php-reference/', text: 'Mở bản PHP →' })),
+  h('div', { class: 'card primary', id: 'card-dossier' }, h('span', { class: 'st PARTIAL', text: `Khung dựng: ${cs.delivered_complete}/${cs.total} mục hoàn chỉnh, ${cs.source_driven} mục chờ facts có nguồn của từng mã, ${cs.partial} có một phần` }), h('h3', { text: 'Hồ sơ doanh nghiệp' }),
+    h('p', { text: 'Bố cục lấy từ bản PHP, áp cho từng mã QRW với giá, ngành, so sánh cùng ngành và kết quả theo kỳ. Các mục cần nguồn công bố của doanh nghiệp hoặc mô hình được duyệt đang ở trạng thái chưa có, nêu rõ lý do ở ma trận bên dưới.' }),
+    h('label', { for: 'tk', class: 'hint', text: 'Mã cổ phiếu' }), ticker, dl, go),
+  h('div', { class: 'card', id: 'card-inspector' }, h('span', { class: 'st', text: 'Công cụ kỹ thuật' }), h('h3', { text: 'Kiểm tra dữ liệu' }),
+    h('p', { text: 'Xem nguồn, băm tệp, cờ chất lượng và dòng finance-indicator thô của từng mã. Dùng để kiểm tra dữ liệu, không phải để đọc phân tích. Không phải Panel.' }),
+    h('a', { class: 'go', href: '../qrw/', text: 'Mở bộ kiểm tra →' }))));
+
+// ---- matrix of the 14 original areas
+const mt = h('table', { class: 'mtx', id: 'matrix-table' }, h('thead', {}, h('tr', {}, h('th', { text: '#' }), h('th', { text: 'Mục (theo bản gốc)' }), h('th', { text: 'Bản PHP tham chiếu' }), h('th', { text: 'Hồ sơ doanh nghiệp' }), h('th', { text: 'Còn thiếu để hoàn chỉnh' }))));
+const mb = h('tbody');
+SECTIONS.forEach((s, i) => mb.append(h('tr', { 'data-section': s.id }, h('td', { text: String(i + 1) }), h('td', {}, h('a', { href: `../dossier/#${s.id}`, text: s.nav })), h('td', { text: i < 14 ? 'Có (chỉ cho PHP)' : 'Có' }),
+  h('td', {}, h('span', { class: `st ${s.status}`, text: STATUS_LABEL[s.status] })), h('td', { text: s.status === 'IMPLEMENTED' ? '—' : s.blocker }))));
+mt.append(mb);
+wrap.append(h('section', { id: 'matrix' }, h('div', { class: 'sechead' }, h('div', {}, h('h2', { text: 'Ma trận nội dung: 14 mục của bản gốc' }), h('p', { text: 'Cột "Bản PHP" nói về bản chụp riêng của PHP. Cột "Hồ sơ doanh nghiệp" nói về sản phẩm áp cho mã khác; chưa mục nào hoàn chỉnh chừng nào đơn vị, ý nghĩa kỳ và công thức chưa được xác minh.' }))), h('div', { class: 'panel scroll' }, mt)));
+
+// ---- coverage by ICB level 1 (route count is NOT content completeness)
+const cov = h('section', { id: 'coverage' }, h('div', { class: 'sechead' }, h('div', {}, h('h2', { text: 'Độ phủ dữ liệu theo ngành ICB cấp 1' }), h('p', { text: 'Số mã có route không phải là độ đầy đủ nội dung. Cột cuối cho biết mô hình ngành có được bật hay chưa: hiện chưa ngành nào.' }))));
+if (!universe) cov.append(h('div', { class: 'todo' }, h('b', { text: 'Chưa có dữ liệu export. ' }), document.createTextNode('Chạy node scripts/export-qrw.mjs với --source, --fitechtrade-root và --price-bars (xem docs/CC-03D-WINDOWS-RECHECK.md).')));
+else {
+  const by = new Map();
+  for (const r of universe.records) {
+    const k = (r.sector && r.sector.icb && r.sector.icb.level1) || 'Chưa có ICB';
+    if (!by.has(k)) by.set(k, { n: 0, price: 0, fin: 0 });
+    const x = by.get(k); x.n++; if (r.bar && r.bar.latest) x.price++; if (r.financials && r.financials.history_file) x.fin++;
+  }
+  const t = h('table', { class: 'mtx', id: 'coverage-table' }, h('thead', {}, h('tr', {}, h('th', { text: 'ICB cấp 1' }), h('th', { class: 'num', text: 'Số mã' }), h('th', { class: 'num', text: 'Có giá hợp lệ' }), h('th', { class: 'num', text: 'Có finance-indicator' }), h('th', { text: 'Mô hình ngành' }))));
+  const tb = h('tbody'); let tot = { n: 0, price: 0, fin: 0 };
+  for (const [k, x] of [...by.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1))) { tb.append(h('tr', {}, h('td', { text: k }), h('td', { class: 'num', text: String(x.n) }), h('td', { class: 'num', text: String(x.price) }), h('td', { class: 'num', text: String(x.fin) }), h('td', { text: 'Chưa bật' }))); tot.n += x.n; tot.price += x.price; tot.fin += x.fin; }
+  tb.append(h('tr', { class: 'me' }, h('td', { text: 'Tổng' }), h('td', { class: 'num', text: String(tot.n) }), h('td', { class: 'num', text: String(tot.price) }), h('td', { class: 'num', text: String(tot.fin) }), h('td', { text: 'Chưa bật' })));
+  t.append(tb); cov.append(h('div', { class: 'panel scroll' }, t));
+}
+wrap.append(cov);
+wrap.append(h('p', { class: 'hint', text: 'Công cụ tra cứu cá nhân, không phải tư vấn đầu tư. Kết quả kiểm tra Linux không thay thế nghiệm thu của người dùng trên máy Windows.' }));
+</script>
+</body>
+</html>

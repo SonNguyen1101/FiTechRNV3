@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hồ sơ doanh nghiệp — Fundamental_Panel</title>
+
+
+
+<link rel="stylesheet" href="../shared/reader-from-reference.css">
+<link rel="stylesheet" href="../shared/reader-sections-from-reference.css">
+<link rel="stylesheet" href="../shared/panel.css">
+<link rel="stylesheet" href="../snapshot.css"><script src="../read-only.js"></script><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"></head>
+<body><aside class="snapshot-banner"><a href="../../../#overview">← FiTechHub</a> · <a href="../panel/">Cửa vào</a><b>PUBLIC_STATIC_SNAPSHOT · Chỉ đọc</b><span>Chụp 2026-10-21T15:52:05.956791+00:00 · Không đồng bộ trực tiếp. Khung nguồn: 1/15 mục hoàn chỉnh; không phải nghiệm thu hoặc xác minh model.</span><span>Không xuất chuỗi giá đầy đủ, lịch sử finance thô, PDF, tài khoản hoặc dữ liệu cá nhân. Biểu đồ cần chuỗi giá và điều khiển PHP đã khóa; chỉ số tổng hợp đang hiển thị được giữ.</span><a href="../provenance.json">Nguồn / hash / giới hạn</a></aside>
+<div id="root"><div class="wrap"><p class="hint">Đang tải hồ sơ…</p></div></div>
+<script type="module">
+import { loadDossierData } from './data.mjs';
+import { renderDossier } from './render.mjs';
+import { renderTopbar } from '../shared/topbar.mjs';
+const root = document.getElementById('root');
+const param = new URLSearchParams(location.search).get('ticker');
+const msg = (t) => { root.replaceChildren(renderTopbar('dossier'), Object.assign(document.createElement('div'), { className: 'wrap' })); const w = root.querySelector('.wrap'); const n = document.createElement('div'); n.className = 'note'; n.setAttribute('role', 'alert'); n.textContent = t; const a = document.createElement('a'); a.href = '../panel/'; a.textContent = '← Về cửa vào để chọn mã'; w.append(n, document.createElement('br'), a); };
+if (param === null) msg('Chọn một mã ở cửa vào, hoặc dùng đường dẫn ?ticker=MÃ.');
+else if (!/^[A-Z0-9]{2,10}$/.test(param)) msg('Tham số ticker không hợp lệ (chỉ chấp nhận 2–10 ký tự A–Z, 0–9 viết hoa). Không có dữ liệu nào được tải.');
+else {
+  try {
+    const data = await loadDossierData(param, { base: '../qrw/data' });
+    if (data.record) { const u = await fetch('../qrw/data/universe.json', { cache: 'no-store' }).then((r) => r.json()); data.universeRecords = u.records; }
+    renderDossier(root, data);
+    if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+  } catch (e) { msg(`Không dựng được hồ sơ: ${e.message}`); }
+}
+</script>
+</body>
+</html>

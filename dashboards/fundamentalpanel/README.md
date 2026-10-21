@@ -1,0 +1,11 @@
+# Fundamental Panel — PUBLIC_STATIC_SNAPSHOT
+
+Entry: `./panel/` (root `index.html` redirects there). Original source UI is retained for panel entry, market sorting/filtering, ticker dossier navigation, peer comparison and source coverage/limitations. `summary.json` is the sanitized metadata summary for FiTechHub. All assets and product links are relative and support nested GitHub Pages hosting.
+
+Source build reports 718 ticker routes (416 HOSE / 302 HNX), as-of 2026-10-16; price status 551 OK, 163 STALE, 4 INCONSISTENT. Route count is not content completeness. Source section registry reports 1/15 sections complete. Finance source rows exist for 716 tickers; verified financials remain 0. Served facts and approved-statements indexes are empty. These are source declarations, not new scientific validation or user acceptance.
+
+Only displayed public-company aggregate metrics are exported: last close/date, market return windows, aggregate zone levels, source SSI indicators and company/sector metadata. Full OHLCV/benchmark series, raw financial histories, PDFs, calibration/execution artifacts, local paths, personal data and private configuration are omitted. Dossier adds an explicitly labelled card from the actual existing market screener. Historical charts and history-driven features state their omission. The technical raw inspector is unavailable with a reason.
+
+The PHP reference retains original rendered markup for its 14 sections as a fixed independent snapshot. Its embedded scripts and remote connectors are removed, and sliders/presets are disabled. It does not compute new values. It is specific to PHP and does not supply assumptions for other tickers. Google Fonts was removed for offline portability; system fallbacks can change typography.
+
+`provenance.json` records capture time, relative source file pins, source URLs, exported SHA-256 hashes and limitations. Refresh helper and QA stay outside `public/`. Maintainer runs `python export_snapshot.py` from staging; it reads static source bytes only, never runs source code, data exports or research jobs. Source changes containing populated facts/statements require another explicit field review. The coordinator owns mother integration, browser QA, Git and publishing. No child acceptance or research milestone changes.

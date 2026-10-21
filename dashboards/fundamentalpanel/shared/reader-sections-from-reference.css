@@ -1,0 +1,45 @@
+/* Section styles copied VERBATIM from app/php-reference/index.html (lines 202-208 #dhcd KPI strip, 227-248 #mang, 259-273 #ruiro). Do not edit: tests/reader-css.test.mjs compares every line with the reference. */
+#dhcd .agm-k{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line2,#e2e2dd);border:1px solid var(--line2,#e2e2dd);margin-bottom:12px}
+#dhcd .agm-k>div{background:var(--surface,#fff);padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+#dhcd .agm-k .l{font-size:12px;color:var(--mute,#6a6f76)}
+#dhcd .agm-k .v{font-size:20px;font-weight:600;line-height:1.2;color:var(--ink,#1b1d20);font-variant-numeric:tabular-nums}
+#dhcd .agm-k .s{font-size:12px;color:var(--ink2,#44484e)}
+#dhcd .agm-pct{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:600;margin-left:4px;vertical-align:2px}
+#dhcd .agm-pct.ok{background:var(--goodbg,#ddeedf);color:var(--good,#2d7a3e)} #dhcd .agm-pct.mid{background:var(--warnbg,#f6e9ce);color:var(--warn,#9a6200)} #dhcd .agm-pct.low{background:var(--badbg,#f5dcd8);color:var(--bad,#b03a2e)}
+#mang .segper{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+#mang .segper button{font:inherit;font-size:12.5px;padding:4px 12px;border:1px solid var(--line2);background:var(--surface);color:var(--ink2);cursor:pointer;border-radius:999px}
+#mang .segper button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+#mang .segt{min-width:760px}
+#mang .segt th:first-child,#mang .segt td:first-child{text-align:left;white-space:normal;min-width:150px}
+#mang .segt th small{display:block;text-transform:none;letter-spacing:0;font-weight:400;font-size:10.5px}
+#mang .segt td small{display:block;color:var(--mute);font-weight:400;font-size:11px}
+#mang .segt tr.sub td{color:var(--ink2);font-style:italic}
+#mang .segt tr.tot td{font-weight:700;border-top:2px solid var(--line)}
+#mang .segt td.neg{color:var(--bad)}
+#mang .segt td.est{color:var(--ink)}
+#mang .segt td.est.neg,#mang .segt td.neg{color:var(--bad)}
+#mang .segt tr.once td{color:var(--warn)}
+#mang .segbars{margin-top:14px}
+#mang .sbrow{display:grid;grid-template-columns:150px 1fr 70px;gap:10px;align-items:center;margin:6px 0;font-size:12.5px}
+#mang .sbrow .lb{color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mang .sbrow .tr{position:relative;height:14px;background:var(--line2)}
+#mang .sbrow .fl{position:absolute;top:0;bottom:0}
+#mang .sbrow .zero{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--ink)}
+#mang .sbrow .vl{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+#mang .segwarn{padding:8px 12px;border-left:4px solid var(--warn);background:var(--surface);color:var(--ink2);font-size:12.5px;margin-top:10px}
+@media(max-width:520px){#mang .sbrow{grid-template-columns:96px 1fr 58px}}
+#ruiro .rlv{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600;white-space:nowrap}
+#ruiro .rlv.cao{background:var(--badbg);color:var(--bad)} #ruiro .rlv.vua{background:var(--warnbg);color:var(--warn)} #ruiro .rlv.thap{background:var(--goodbg);color:var(--good)}
+#riskBar .rlv{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:600}
+#riskBar .rlv.cao{background:var(--badbg);color:var(--bad)} #riskBar .rlv.vua{background:var(--warnbg);color:var(--warn)}
+#ruiro .rgrp{margin:16px 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:600}
+#ruiro .rgrp:first-of-type{margin-top:0}
+#ruiro .ritem{display:grid;grid-template-columns:64px 1fr;gap:4px 12px;padding:10px 0;border-bottom:1px dotted var(--line)}
+#ruiro .ritem:last-child{border-bottom:0}
+#ruiro .ritem .rt{font-weight:600;color:var(--ink);font-size:13.5px}
+#ruiro .ritem .rd{color:var(--ink2);font-size:13px;line-height:1.5;grid-column:2}
+#ruiro .ritem .rw{color:var(--ink2);font-size:12.5px;grid-column:2}
+#ruiro .ritem .rw b{color:var(--ink)}
+#ruiro .ritem .rs{color:var(--mute);font-size:11.5px;grid-column:2}
+#ruiro .ritem .auto{font-size:10.5px;color:var(--mute);border:1px solid var(--line);border-radius:3px;padding:0 4px;margin-left:6px;font-weight:500}
+@media(max-width:520px){#ruiro .ritem{grid-template-columns:1fr}#ruiro .ritem .rd,#ruiro .ritem .rw,#ruiro .ritem .rs{grid-column:1}}

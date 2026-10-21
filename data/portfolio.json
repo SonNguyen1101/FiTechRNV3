@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-21T15:41:01.677980+00:00",
+  "observed_at": "2026-10-21T15:53:40.127842+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -19,7 +19,7 @@
       "connected": true,
       "stale": false,
       "response_sha256": "3fd4e984c0869b4bcd7f1e27026e888dfb39e273dc64572ba64de5301e71d65b",
-      "checked_at": "2026-10-21T15:40:58.843570+00:00",
+      "checked_at": "2026-10-21T15:53:37.652783+00:00",
       "milestones": [],
       "facts": [
         {
@@ -62,8 +62,8 @@
       "public_url": "./dashboards/fitechml/",
       "connected": true,
       "stale": false,
-      "response_sha256": "8d3d8b4f6556b4aa415fe049784a5d0026e39c6a6bf7b8d74643ada1db166265",
-      "checked_at": "2026-10-21T15:40:58.848569+00:00",
+      "response_sha256": "a0161492d0cbb9964e7bd8417fbb8426fa8603c89813a840e68d3665392132d5",
+      "checked_at": "2026-10-21T15:53:37.656790+00:00",
       "milestones": [
         {
           "key": "fitechml:R1.1",
@@ -165,7 +165,7 @@
       "status_label": "Chờ nghiệm thu",
       "status_tone": "amber",
       "next_action": "R1.2 — intake D1 toàn universe, sau nghiệm thu",
-      "reported_at": "2026-10-21T15:40:58.847312+00:00",
+      "reported_at": "2026-10-21T15:53:37.654659+00:00",
       "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
@@ -182,8 +182,8 @@
       "public_url": "./dashboards/fitechsnm/",
       "connected": true,
       "stale": false,
-      "response_sha256": "70f800dffea2316eeb1526698cdc88703450f9356047e8b12b4ce18ee33f0799",
-      "checked_at": "2026-10-21T15:40:58.952950+00:00",
+      "response_sha256": "826c77958ba318c75a1b76520a60c8488835d25bceef7a74571290cd6f2108cd",
+      "checked_at": "2026-10-21T15:53:37.922847+00:00",
       "milestones": [
         {
           "key": "fitechsnm:M1",
@@ -263,7 +263,7 @@
       "status_label": "Đang hoàn thiện",
       "status_tone": "violet",
       "next_action": "Hoàn thiện program control và các binding đầu vào đúng phạm vi.",
-      "reported_at": "2026-10-21T15:40:58.926129+00:00",
+      "reported_at": "2026-10-21T15:53:37.917837+00:00",
       "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
@@ -280,8 +280,8 @@
       "public_url": "./dashboards/rnv3/",
       "connected": true,
       "stale": false,
-      "response_sha256": "904ec0b8c7c80518720d431a7ee417cf12e0cc048e88e19fb4be60aaf07ba98e",
-      "checked_at": "2026-10-21T15:41:01.677980+00:00",
+      "response_sha256": "e616e24e8707a16b49e8ae61180d1335986b062b8434129d03f2654c046e2556",
+      "checked_at": "2026-10-21T15:53:40.127842+00:00",
       "milestones": [
         {
           "key": "rnv3:M1",
@@ -360,7 +360,7 @@
       "status_literal": "NOT_COMPLETE",
       "status_label": "Cần xử lý blocker",
       "status_tone": "amber",
-      "reported_at": "2026-10-21T15:41:01.125475+00:00",
+      "reported_at": "2026-10-21T15:53:39.677329+00:00",
       "evidence_as_of": "2026-10-21T06:16:02.618182+00:00",
       "next_action": "Xử lý binding bootstrap IND061 trước qualification và replay.",
       "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
@@ -381,7 +381,7 @@
       "connected": true,
       "stale": false,
       "response_sha256": "77644ce9e26da74d8fb9a4cbd905c8d3ab36a0beaf5e0a210a43fd2fccecd0d8",
-      "checked_at": "2026-10-21T15:40:58.944951+00:00",
+      "checked_at": "2026-10-21T15:53:37.750994+00:00",
       "milestones": [],
       "facts": [
         {
@@ -426,7 +426,7 @@
       "connected": true,
       "stale": false,
       "response_sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603",
-      "checked_at": "2026-10-21T15:40:59.206483+00:00",
+      "checked_at": "2026-10-21T15:53:37.887180+00:00",
       "milestones": [],
       "facts": [
         {
@@ -462,12 +462,57 @@
       "status_tone": "violet",
       "phase_basis": "Công cụ bộ lọc; không tạo milestone hoặc nghiệm thu từ kết nối API.",
       "next_action": "Mở bộ lọc để khám phá giao diện; dữ liệu minh hoạ không dùng làm kết quả thị trường.",
-      "page_sha256": "3d896eb21438a82992807c7ea1988755cafa5a701c1c37edcbf25d1a6a660030",
+      "page_sha256": "ab58c10c084b43e865d546df6f28212e8b02c830f3d1279192dae7c4c03e32f1",
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
+    },
+    {
+      "id": "fundamentalpanel",
+      "name": "Fundamental Panel",
+      "suffix": "",
+      "port": 4173,
+      "endpoint": "/panel/",
+      "color": "blue",
+      "mark": "P",
+      "category": "Công cụ thị trường · Doanh nghiệp",
+      "group": "tools",
+      "description": "Bảng thị trường, hồ sơ doanh nghiệp và bản PHP tham chiếu. Giữ rõ nội dung đã có và đầu vào còn thiếu.",
+      "local_route": "panel/",
+      "public_url": "./dashboards/fundamentalpanel/",
+      "connected": true,
+      "stale": false,
+      "response_sha256": "d4cf01788e2c491cbf4f338fc660efc722877972d08d8fd2ac6bff754b31144f",
+      "checked_at": "2026-10-21T15:53:37.647724+00:00",
+      "milestones": [],
+      "facts": [
+        {
+          "label": "Phạm vi",
+          "value": "Hồ sơ & thị trường"
+        },
+        {
+          "label": "Nghiệm thu nội dung",
+          "value": "Chưa xác nhận"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Giữ rõ phạm vi từng sản phẩm",
+          "detail": "Bản PHP tham chiếu là snapshot riêng; hồ sơ doanh nghiệp còn các mục thiếu nguồn. Kết nối không xác nhận nội dung phân tích đã đầy đủ.",
+          "tone": "amber"
+        }
+      ],
+      "documents": [],
+      "phase": "READER",
+      "phase_title": "Hồ sơ doanh nghiệp & bảng thị trường",
+      "status_literal": "ENTRY_AVAILABLE_CONTENT_NOT_CERTIFIED",
+      "status_label": "Nội dung đang hoàn thiện",
+      "status_tone": "amber",
+      "phase_basis": "Chỉ xác minh trang cửa vào; không suy độ phủ hay nghiệm thu nội dung từ kết nối.",
+      "next_action": "Mở Panel, kiểm nguồn và điều kiện còn thiếu của từng mã trước khi sử dụng.",
       "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     }
   ],
-  "connected": 6,
-  "total": 6,
+  "connected": 7,
+  "total": 7,
   "execution_supported": false,
   "authority_supported": false,
   "auto_refresh_seconds": 30
