@@ -1,3 +1,0 @@
-Nguồn local: PF14 · output_manifest
-SHA256: 3d6e0ec9ad421a1bd580b6e739d7e1923b448e84da6d96206844be6d00628596
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

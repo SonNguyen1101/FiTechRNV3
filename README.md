@@ -1,9 +1,7 @@
-# FiTechRNV3
+# FiTechHub
 
-Public read-only project dashboard. Open index.html using an HTTP server or GitHub Pages.
+A read-only mother dashboard for Kronos VN v2, FiTechML, FiTechSNM, FiTechRNV3, Stock Monitor and LunaVN.
 
-This is a static documentary snapshot, not a scientific acceptance or runtime service. PF13 NOT_COMPLETE; PF14 NOT_STARTED; R1 NOT_GRANTED. The matrix is N09 V2, not final or ratified.
+Public mode uses a selected metadata snapshot. It cannot read the Windows machine or run jobs. Child dashboards without a verified public URL remain local; their public links are intentionally unavailable until actually published. FiTechHub replaces the former FiTechRNV3 website at the same Pages address. Child workspaces remain available as summaries; full child public URLs are not registered. This dashboard does not grant scientific acceptance or execution.
 
-Exported at: 2026-10-21T13:25:14.284175+00:00
-
-Reporting copies remove native local paths. Raw execution evidence and Word binaries are not published. Source hashes describe local originals; PUBLIC_MANIFEST_V1.json hashes the published files.
+Font: Manrope, SIL Open Font License; license included in assets/fonts/OFL.txt.

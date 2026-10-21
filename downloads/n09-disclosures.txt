@@ -1,3 +1,0 @@
-Nguồn local: N09: lý do chưa seal và disclosure
-SHA256: 5b4fafbde3cd6312412568ae4037af0d570082523d71c080d862d712a1ddcbd5
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

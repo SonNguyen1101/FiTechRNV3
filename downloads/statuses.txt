@@ -1,3 +1,0 @@
-Nguồn local: Trạng thái 100×17 · N09 V2
-SHA256: 5cad89df7c69de9dcde2db8095fddd848c91e4fbcfd3492cf1cce350aaf2970a
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,3 +1,0 @@
-Nguồn local: QA 23 Word / 48 trang
-SHA256: 528b0bdf791a21d15e7e48f376a14484fd2bb903b1d53591136cea22af1926b5
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

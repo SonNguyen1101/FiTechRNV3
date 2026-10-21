@@ -1,3 +1,0 @@
-Nguồn local: M3 · registration
-SHA256: c75f796db5de6c75b7a4c707efb9e138d4e7005928eb74de023d5f1167e4015e
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

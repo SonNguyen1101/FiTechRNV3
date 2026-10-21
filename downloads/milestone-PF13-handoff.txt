@@ -1,3 +1,0 @@
-Nguồn local: PF13 · handoff
-SHA256: cc9fcfe76b32071e3ba778c0437b75a71b8ef325abfe021739c138a35014cc8d
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

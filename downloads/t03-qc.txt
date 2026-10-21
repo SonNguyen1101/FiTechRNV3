@@ -1,3 +1,0 @@
-Nguồn local: T03: nhận static audit với giới hạn
-SHA256: dc4f654c261a6ef2be4b281c8fa15c41dfdc95ead1bd550738e71934d6d258ca
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,3 +1,0 @@
-Nguồn local: Báo cáo tiến độ tổng hợp Markdown
-SHA256: 19f53f507bea09254d20d76f6130e1da9a18e4f63fbd73bc4578db0d41bfb9e8
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

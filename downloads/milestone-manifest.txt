@@ -1,3 +1,0 @@
-Nguồn local: Manifest bộ hồ sơ documentary · không phải scientific seal
-SHA256: bc495cfa04531f300e4e9765eb4598d197e452413850a6355bcf6f1bf372346a
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

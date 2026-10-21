@@ -1,3 +1,0 @@
-Nguồn local: Hiệu chỉnh Markdown tổng hợp v2
-SHA256: 46f90319fa684b75a84fa5de695bbc4bbf520689aab0493ea68b980d05679a2e
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

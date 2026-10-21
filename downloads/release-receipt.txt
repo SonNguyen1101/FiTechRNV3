@@ -1,3 +1,0 @@
-Nguồn local: Receipt Son cho một recovery V2
-SHA256: bbc47088cb542486a0699afb354435bc130192177d09bd0e57d56445028a8df8
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

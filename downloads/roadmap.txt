@@ -1,3 +1,0 @@
-Nguồn local: Roadmap gốc PF00–PF19
-SHA256: ff814319ac758e8c76640f068e9d51f98954f2b6a1b8a1354b00d416b816b60f
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

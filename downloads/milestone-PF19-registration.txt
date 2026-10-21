@@ -1,3 +1,0 @@
-Nguồn local: PF19 · registration
-SHA256: ae51043553e8d2ae5b15ffdd4a6fc33c5c5b24dfdefe5be06adb217f12bed077
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

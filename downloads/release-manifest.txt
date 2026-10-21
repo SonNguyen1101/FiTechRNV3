@@ -1,3 +1,0 @@
-Nguồn local: Manifest release recovery V2
-SHA256: ef1739d9ea465489563876678a8af5cd40b9da86037cd9dba08c3fc2f213c7bc
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

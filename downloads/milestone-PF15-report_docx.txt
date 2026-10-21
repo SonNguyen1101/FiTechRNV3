@@ -1,3 +1,0 @@
-Nguồn local: PF15 · report_docx
-SHA256: 1288d4553ebc48425efb9a83714841d170c60f3ac3b08642fd25f911129185fd
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

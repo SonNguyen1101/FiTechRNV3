@@ -1,3 +1,0 @@
-Nguồn local: Work order recovery V2 đã được cấp
-SHA256: c622c4a1bfd113fd89aaf0bae98d95ccb10c5f3486894847889685d7237e9270
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

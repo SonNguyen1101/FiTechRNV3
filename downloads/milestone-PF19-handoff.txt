@@ -1,3 +1,0 @@
-Nguồn local: PF19 · handoff
-SHA256: 492e54f8a85c8a9a179d680f61bca2a5d68e38198c1763976b4058a99a3f9901
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

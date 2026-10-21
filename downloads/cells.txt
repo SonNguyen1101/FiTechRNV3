@@ -1,3 +1,0 @@
-Nguồn local: Ma trận long 1700 ô · N09 V2 chưa seal
-SHA256: ce5c091bcdea961e109064df9eab5d507d6e18d66d332e9fc1f649b4b0ac40ea
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

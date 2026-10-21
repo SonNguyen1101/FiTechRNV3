@@ -1,3 +1,0 @@
-Nguồn local: Manifest gói Governor QC hiện tại
-SHA256: b719f569df694724502e88f65b9386a113a0212289d39d34e97b05f2f99deef5
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,3 +1,0 @@
-Nguồn local: M4 · registration
-SHA256: 978bbcb8ff5ed7778a19973112f3032caa568e2b6581c27b60c660847f6e0e76
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

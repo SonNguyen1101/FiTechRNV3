@@ -1,0 +1,468 @@
+{
+  "schema": "FITECHHUB_PORTFOLIO_V1",
+  "title": "FiTechHub",
+  "observed_at": "2026-10-21T14:59:28.488598+00:00",
+  "mode": "PUBLIC_STATIC_SNAPSHOT",
+  "projects": [
+    {
+      "id": "kronos",
+      "name": "Kronos VN",
+      "suffix": "v2",
+      "port": 8788,
+      "endpoint": "/api/v2/readiness",
+      "color": "coral",
+      "mark": "K",
+      "category": "Nghiên cứu thị trường",
+      "description": "Nền nghiên cứu thị trường Việt Nam, dữ liệu và bộ lọc theo ngành.",
+      "local_route": "#overview",
+      "public_url": null,
+      "connected": true,
+      "stale": false,
+      "response_sha256": "3fd4e984c0869b4bcd7f1e27026e888dfb39e273dc64572ba64de5301e71d65b",
+      "checked_at": "2026-10-21T14:59:26.197335+00:00",
+      "milestones": [],
+      "facts": [
+        {
+          "label": "Cơ sở dữ liệu",
+          "value": "ok"
+        },
+        {
+          "label": "Worker",
+          "value": "ready"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Nguồn hiện chỉ xác nhận hạ tầng",
+          "detail": "Chưa có API milestone trong phạm vi tích hợp. Không suy nghiệm thu, dự báo hoặc huấn luyện từ readiness.",
+          "tone": "info"
+        }
+      ],
+      "documents": [],
+      "phase": "P2",
+      "phase_title": "Bộ lọc & phân ngành",
+      "phase_basis": "Banner giao diện quan sát ngày 21/10/2026; readiness không khai báo tiến độ khoa học.",
+      "status_literal": "INFRASTRUCTURE_READY",
+      "status_label": "Hạ tầng sẵn sàng",
+      "status_tone": "neutral",
+      "next_action": "Tiếp tục hồ sơ P2 theo dashboard gốc."
+    },
+    {
+      "id": "fitechml",
+      "name": "FiTechML",
+      "suffix": "",
+      "port": 8789,
+      "endpoint": "/api/status",
+      "color": "teal",
+      "mark": "M",
+      "category": "Machine learning",
+      "description": "Dữ liệu D1, đặc trưng và quy trình nghiên cứu mô hình có kiểm chứng.",
+      "local_route": "#milestones",
+      "public_url": null,
+      "connected": true,
+      "stale": false,
+      "response_sha256": "d5a447213fca12fc0af94800b80fb06f706bbc43f0f65545233cd103cbba42fb",
+      "checked_at": "2026-10-21T14:59:26.202337+00:00",
+      "milestones": [
+        {
+          "key": "fitechml:R1.1",
+          "id": "R1.1",
+          "project_id": "fitechml",
+          "title": "Intake dữ liệu local",
+          "state": "PENDING",
+          "label": "",
+          "detail": "Phạm vi hiện hành là 3 file D1 từ receipt pilot; chờ chủ dự án nghiệm thu.",
+          "scope": "Dữ liệu thật · D1",
+          "date": "2026-10-21"
+        },
+        {
+          "key": "fitechml:D1",
+          "id": "D1",
+          "project_id": "fitechml",
+          "title": "Khóa phạm vi chỉ D1",
+          "state": "APPLIED",
+          "label": "",
+          "detail": "Chặn H1, H4 và W1; không resample từ khung khác; giữ evidence lịch sử.",
+          "scope": "Ràng buộc người dùng",
+          "date": "2026-10-21"
+        },
+        {
+          "key": "fitechml:F2",
+          "id": "F2",
+          "project_id": "fitechml",
+          "title": "Adapter và sáu feature synthetic",
+          "state": "SCOPED_QC",
+          "label": "",
+          "detail": "635 tests và 114 probe tại lượt QC; chấp nhận trong scope engineering, có giới hạn.",
+          "scope": "Synthetic",
+          "date": "2026-10-20"
+        },
+        {
+          "key": "fitechml:F1",
+          "id": "F1",
+          "project_id": "fitechml",
+          "title": "Consumer contracts và validators",
+          "state": "SCOPED_QC",
+          "label": "",
+          "detail": "Đã được QC chấp nhận trong reviewed contract scope; không đóng I2 hoặc cả FTML ID.",
+          "scope": "Synthetic",
+          "date": "2026-10-18"
+        },
+        {
+          "key": "fitechml:R4",
+          "id": "R4",
+          "project_id": "fitechml",
+          "title": "Roadmap đủ 41 node G1 CCE",
+          "state": "PLANNING",
+          "label": "",
+          "detail": "Planning projection trong FiTechML, không phải 41 tích hợp đã chạy.",
+          "scope": "Khảo sát tài liệu",
+          "date": "2026-10-18"
+        },
+        {
+          "key": "fitechml:R1.2",
+          "id": "R1.2",
+          "project_id": "fitechml",
+          "title": "Intake D1 toàn universe",
+          "state": "NOT_RUN",
+          "label": "",
+          "detail": "Chưa chạy; dừng chờ nghiệm thu R1.1.",
+          "scope": "Bước tiếp theo",
+          "date": null
+        }
+      ],
+      "facts": [
+        {
+          "label": "Phạm vi",
+          "value": "D1_ONLY"
+        },
+        {
+          "label": "Tích hợp",
+          "value": "HOLD"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Nghiệm thu đầu ra R1.1",
+          "detail": "R1.2 chỉ mở sau nghiệm thu và đăng ký đủ điều kiện chuyển mốc.",
+          "tone": "amber"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Hồ sơ và báo cáo",
+          "route": "#evidence"
+        },
+        {
+          "title": "Mốc & hợp đồng",
+          "route": "#milestones"
+        }
+      ],
+      "phase": "R1.1",
+      "phase_title": "Intake dữ liệu D1",
+      "status_literal": "PENDING_USER_ACCEPTANCE",
+      "status_label": "Chờ nghiệm thu",
+      "status_tone": "amber",
+      "next_action": "R1.2 — intake D1 toàn universe, sau nghiệm thu",
+      "reported_at": "2026-10-21T14:59:26.200650+00:00"
+    },
+    {
+      "id": "fitechsnm",
+      "name": "FiTechSNM",
+      "suffix": "",
+      "port": 8790,
+      "endpoint": "/api/state",
+      "color": "violet",
+      "mark": "S",
+      "category": "RN V2 · Điều phối",
+      "description": "Kết nối RN, Runtime và AILL theo các mốc và hợp đồng riêng.",
+      "local_route": "#overview",
+      "public_url": null,
+      "connected": true,
+      "stale": false,
+      "response_sha256": "3ec954000396e77bef1524444a66c30547f6398b3b508c37721395bc1c2a3049",
+      "checked_at": "2026-10-21T14:59:26.420237+00:00",
+      "milestones": [
+        {
+          "key": "fitechsnm:M1",
+          "id": "M1",
+          "project_id": "fitechsnm",
+          "title": "Input và quyền nghiên cứu",
+          "state": "IN_PROGRESS",
+          "label": "Đang hoàn thiện",
+          "detail": "Actual input/authority/clock/registry/approval bindings incomplete",
+          "scope": "",
+          "date": null
+        },
+        {
+          "key": "fitechsnm:M2",
+          "id": "M2",
+          "project_id": "fitechsnm",
+          "title": "Chương trình và kiểm chứng",
+          "state": "IN_PROGRESS",
+          "label": "Đang hoàn thiện",
+          "detail": "Slot63 scoped acceptance retained; Slot64 STOP_FAIL verified; Slot65 controlled-write recovery qualified/prepared, not executed",
+          "scope": "",
+          "date": null
+        },
+        {
+          "key": "fitechsnm:M3",
+          "id": "M3",
+          "project_id": "fitechsnm",
+          "title": "Chạy offline R0",
+          "state": "NOT_STARTED",
+          "label": "Chưa bắt đầu",
+          "detail": "No actual R0 admission/run",
+          "scope": "",
+          "date": null
+        },
+        {
+          "key": "fitechsnm:M4",
+          "id": "M4",
+          "project_id": "fitechsnm",
+          "title": "Nghiệm thu và OUTPUT → R1",
+          "state": "BLOCKED",
+          "label": "Đang bị chặn",
+          "detail": "No actual comparison,accepted OUTPUT or NODE_PASS",
+          "scope": "",
+          "date": null
+        }
+      ],
+      "facts": [
+        {
+          "label": "Node hiện tại",
+          "value": "R0"
+        },
+        {
+          "label": "Node tiếp theo",
+          "value": "R1"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Bổ sung đầu vào và program control",
+          "detail": "Các binding và mốc R0 còn mở. Không coi engineering evidence là kết quả R0 thực.",
+          "tone": "violet"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Hồ sơ và hợp đồng",
+          "route": "#reports"
+        },
+        {
+          "title": "Điều kiện còn thiếu",
+          "route": "#bindings"
+        }
+      ],
+      "phase": "R0",
+      "phase_title": "Chương trình & đầu vào",
+      "status_literal": "IN_PROGRESS",
+      "status_label": "Đang hoàn thiện",
+      "status_tone": "violet",
+      "next_action": "Hoàn thiện program control và các binding đầu vào đúng phạm vi.",
+      "reported_at": "2026-10-21T14:59:26.415968+00:00"
+    },
+    {
+      "id": "rnv3",
+      "name": "FiTechRNV3",
+      "suffix": "",
+      "port": 8791,
+      "endpoint": "/api/state",
+      "color": "blue",
+      "mark": "R",
+      "category": "RN V3 · POP100",
+      "description": "Hoàn thiện R0, ma trận 100 × 17 và lộ trình bàn giao R1.",
+      "local_route": "#overview",
+      "public_url": null,
+      "connected": true,
+      "stale": false,
+      "response_sha256": "59a65c56a8c43039465237a545dfa8e3bf5ec43b986041985cad41ff8f6957d4",
+      "checked_at": "2026-10-21T14:59:28.488598+00:00",
+      "milestones": [
+        {
+          "key": "rnv3:M1",
+          "id": "M1",
+          "project_id": "rnv3",
+          "title": "Input và quyền",
+          "state": "ACCEPTED_SCOPED",
+          "label": "",
+          "detail": "Option A, time mode và recovery V2 đã có receipt. Không bao gồm V3 hoặc acceptance khoa học.",
+          "scope": "",
+          "date": null
+        },
+        {
+          "key": "rnv3:M2",
+          "id": "M2",
+          "project_id": "rnv3",
+          "title": "Engineering và kiểm chứng",
+          "state": "BOOTSTRAP_FAILED_PHASE1_NOT_QUALIFIED",
+          "label": "",
+          "detail": "Có engineering execution; binding argv thất bại trước SCRIPT_START. Chưa qualification A1–A7.",
+          "scope": "",
+          "date": null
+        },
+        {
+          "key": "rnv3:M3",
+          "id": "M3",
+          "project_id": "rnv3",
+          "title": "Thực thi khoa học",
+          "state": "NOT_EXECUTED",
+          "label": "",
+          "detail": "IND061: 0/32 replay. Toy và control cũng chưa thực thi trong lượt này.",
+          "scope": "",
+          "date": null
+        },
+        {
+          "key": "rnv3:M4",
+          "id": "M4",
+          "project_id": "rnv3",
+          "title": "Nghiệm thu và bàn giao",
+          "state": "BLOCKED_PENDING_OWNER_DECISION_EXECUTION_AND_QC",
+          "label": "",
+          "detail": "Chờ quyết định phục hồi, bằng chứng thực thi và Governor QC; chưa adoption/gate.",
+          "scope": "",
+          "date": null
+        }
+      ],
+      "facts": [
+        {
+          "label": "Ma trận",
+          "value": "100 × 17"
+        },
+        {
+          "label": "Replay IND061",
+          "value": "0 / 32"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Phục hồi bootstrap IND061",
+          "detail": "PF13 chưa hoàn tất. Qualification và replay chờ phạm vi được cấp; PF14 chưa bắt đầu.",
+          "tone": "amber"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Ma trận 100 × 17",
+          "route": "#matrix"
+        },
+        {
+          "title": "Hợp đồng và báo cáo",
+          "route": "#reports"
+        }
+      ],
+      "phase": "PF13",
+      "phase_title": "Remediation POP100",
+      "status_literal": "NOT_COMPLETE",
+      "status_label": "Cần xử lý blocker",
+      "status_tone": "amber",
+      "reported_at": "2026-10-21T14:59:28.101547+00:00",
+      "evidence_as_of": "2026-10-21T06:16:02.618182+00:00",
+      "next_action": "Xử lý binding bootstrap IND061 trước qualification và replay."
+    },
+    {
+      "id": "stockmonitor",
+      "name": "Stock Monitor",
+      "suffix": "",
+      "port": 8765,
+      "endpoint": "/finpath_dashboard.html",
+      "color": "coral",
+      "mark": "S",
+      "category": "Công cụ thị trường · Lượt nhắc",
+      "group": "tools",
+      "description": "Theo dõi lượt nhắc cổ phiếu từ tin tổng hợp và báo cáo công ty chứng khoán.",
+      "local_route": "finpath_dashboard.html",
+      "public_url": null,
+      "connected": true,
+      "stale": false,
+      "response_sha256": "77644ce9e26da74d8fb9a4cbd905c8d3ab36a0beaf5e0a210a43fd2fccecd0d8",
+      "checked_at": "2026-10-21T14:59:26.292980+00:00",
+      "milestones": [],
+      "facts": [
+        {
+          "label": "Snapshot nguồn",
+          "value": "2026-09-10"
+        },
+        {
+          "label": "Loại dữ liệu",
+          "value": "Snapshot tĩnh"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Snapshot và số tổng cần đối chiếu",
+          "detail": "Footer công bố 43501 lượt nhắc / 770 mã. Khảo sát UI ngày 21/10/2026 phát hiện số đầu trang khác footer; adapter tĩnh chưa đối soát bộ đếm chạy JavaScript. Snapshot 2026-09-10; cache tối đa 5 phút, không tự cập nhật nguồn.",
+          "tone": "amber"
+        }
+      ],
+      "documents": [],
+      "phase": "SNAPSHOT",
+      "phase_title": "Tin tổng hợp & báo cáo CTCK",
+      "status_literal": "STATIC_SNAPSHOT_COUNTS_UNRECONCILED",
+      "status_label": "Snapshot · cần đối chiếu",
+      "status_tone": "amber",
+      "phase_basis": "Công cụ dữ liệu snapshot; không có milestone nghiên cứu trong kết nối này.",
+      "next_action": "Mở bảng gốc để tra cứu; đối chiếu số tổng trước khi dùng thống kê."
+    },
+    {
+      "id": "lunavn",
+      "name": "LunaVN",
+      "suffix": "",
+      "port": 3100,
+      "endpoint": "/api/momentum",
+      "color": "teal",
+      "mark": "L",
+      "category": "Công cụ thị trường · Bộ lọc",
+      "group": "tools",
+      "description": "Bộ lọc động lượng, tăng trưởng, chủ đề và ETF. Hiện dùng dữ liệu minh hoạ.",
+      "local_route": "",
+      "public_url": null,
+      "connected": true,
+      "stale": false,
+      "response_sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603",
+      "checked_at": "2026-10-21T14:59:26.381073+00:00",
+      "milestones": [],
+      "facts": [
+        {
+          "label": "Ngày snapshot",
+          "value": "2026-10-19"
+        },
+        {
+          "label": "Dòng trong bộ lọc",
+          "value": "65"
+        }
+      ],
+      "attention": [
+        {
+          "title": "Giữ rõ chế độ dữ liệu",
+          "detail": "Nguồn đang công bố chỉ số minh hoạ, không phải số liệu thị trường.",
+          "tone": "violet"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Nghiên cứu sâu",
+          "route": "learn"
+        },
+        {
+          "title": "Giới thiệu LunaVN",
+          "route": "about"
+        }
+      ],
+      "phase": "DEMO",
+      "phase_title": "Bộ lọc động lượng & tăng trưởng",
+      "status_literal": "DEMO_NOT_MARKET_DATA",
+      "status_label": "Dữ liệu minh hoạ",
+      "status_tone": "violet",
+      "phase_basis": "Công cụ bộ lọc; không tạo milestone hoặc nghiệm thu từ kết nối API.",
+      "next_action": "Mở bộ lọc để khám phá giao diện; dữ liệu minh hoạ không dùng làm kết quả thị trường.",
+      "page_sha256": "47d4d29119082a72d892391152b7933374e02d305625edf2158f8a642fcc23c6"
+    }
+  ],
+  "connected": 6,
+  "total": 6,
+  "execution_supported": false,
+  "authority_supported": false,
+  "auto_refresh_seconds": 30
+}

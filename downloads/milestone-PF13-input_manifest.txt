@@ -1,3 +1,0 @@
-Nguồn local: PF13 · input_manifest
-SHA256: f55e7d98b73776b2c9729a82c4b36fcefeb4e35cfcbe88ce0830347b38947ebd
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

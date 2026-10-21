@@ -1,3 +1,0 @@
-Nguồn local: PF15 · registration
-SHA256: e51391426f382023a3d02d96c1137e6197d8f2f3f131a509ff9fbea1ebb4ebd8
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

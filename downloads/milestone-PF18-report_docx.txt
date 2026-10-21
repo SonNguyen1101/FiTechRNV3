@@ -1,3 +1,0 @@
-Nguồn local: PF18 · report_docx
-SHA256: 602eee440642059de31050a1ba8d72a94523b1e7e1d305e8ad13cf9f86bb3042
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

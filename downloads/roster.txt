@@ -1,3 +1,0 @@
-Nguồn local: Roster replay đã đăng ký: 8 cặp / 16 frame
-SHA256: f0fd2e9f72d3817a6e67a9c1d382d65ef1627195615ec00541df7d67ee6711e9
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

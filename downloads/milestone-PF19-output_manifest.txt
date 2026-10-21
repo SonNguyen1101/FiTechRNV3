@@ -1,3 +1,0 @@
-Nguồn local: PF19 · output_manifest
-SHA256: 3070d6319687526d8271b97241de53c8fdc60fff8801d406a68f38aa80151d15
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

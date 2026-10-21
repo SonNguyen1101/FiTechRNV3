@@ -1,3 +1,0 @@
-Nguồn local: PF17 · handoff
-SHA256: 1a807b19f62dbd3531e5a5dd03e588901256e6d098e2455de1b48ff7c69c8291
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

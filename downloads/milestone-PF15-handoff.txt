@@ -1,3 +1,0 @@
-Nguồn local: PF15 · handoff
-SHA256: 426b85233e4e23d8cc2b54d51d54768e48b54d46f00ff588f543ac5636296aad
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

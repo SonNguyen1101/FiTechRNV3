@@ -1,3 +1,0 @@
-Nguồn local: Manifest bổ sung Markdown v2
-SHA256: 8739cb46722d3bb9799838b0001279e8dc5f88fbc673922a839c78ab898149c2
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

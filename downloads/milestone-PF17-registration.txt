@@ -1,3 +1,0 @@
-Nguồn local: PF17 · registration
-SHA256: edd848162a6fc93aab5854d312fb2aba3b21cb12e41c82d5b083755ee411b27d
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.

@@ -1,3 +1,0 @@
-Nguồn local: PF13 · registration
-SHA256: fc56e1b6934d1f4e2bfba5b6420d53d801af0105b3452d66f3358208170cbcad
-Bản công khai chỉ chia sẻ danh mục nguồn. Hồ sơ gốc được giữ tại máy Governor.
