@@ -27,3 +27,5 @@ dialog{border:1px solid var(--line);background:var(--paper);color:var(--ink);pad
 .mini-avatar,.avatar{background:#0878f9;color:#fff;box-shadow:0 3px 12px #0878f938;font-weight:800}
 .mini-avatar{width:30px;height:30px;line-height:30px;border-radius:9px;font-size:15px;flex-shrink:0}
 @media(max-width:740px){.workspace-label{display:flex;width:fit-content;max-width:100%;padding:8px 10px;margin-top:14px;color:var(--ink);background:var(--brand-soft);border-radius:10px;font-size:12px;gap:14px}.workspace-label .mini-avatar{width:27px;height:27px;line-height:27px;font-size:14px}}
+
+.dashboard-action{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:16px 0 18px}.button.dashboard-open{background:#0878f9;color:#fff;border-color:#0878f9;font-size:12px;padding:10px 15px}.button.dashboard-open:hover{background:#0568da}.button.dashboard-open:disabled{background:var(--canvas);border-color:var(--line);color:var(--muted);opacity:1;cursor:not-allowed}.dashboard-availability{font-size:10px;color:var(--muted);line-height:1.6;flex:1;min-width:120px}

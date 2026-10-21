@@ -1,6 +1,6 @@
 {
   "schema": "FITECHHUB_PUBLIC_SNAPSHOT_V1",
-  "observed_at": "2026-10-21T15:07:54.485153+00:00",
+  "observed_at": "2026-10-21T15:21:10.086485+00:00",
   "projects": 6,
   "milestones": 14,
   "scientific_acceptance": false,
@@ -12,9 +12,9 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "app.2bae7d54c201.js",
-      "bytes": 23070,
-      "sha256": "2bae7d54c201efee605d72cc7d8345e1199a64bc95ed3709576daa2ffeb3c96d"
+      "path": "app.41191e7be96f.js",
+      "bytes": 23726,
+      "sha256": "41191e7be96f1189259b398cd3cedcdc5ab0dbde0593874d31ba6be9c9d6c049"
     },
     {
       "path": "assets/fonts/fonts.css",
@@ -59,12 +59,12 @@
     {
       "path": "data/portfolio.json",
       "bytes": 16341,
-      "sha256": "8570a1490c4de7c8dbeed8a34fabdff60f70d3e2f5e15a006867798ac6b720f1"
+      "sha256": "d2a876ced7e2e48ed2f7ac9427ccc347e321779dc17388e1a93ba8d9674d56f3"
     },
     {
       "path": "index.html",
       "bytes": 4458,
-      "sha256": "2eb1ef45f1f55502072b2d368a617dde85833de813679834d86b16396aa886cc"
+      "sha256": "b7cc88727692260e623540da1a6e64c14989819be2430c483bbee2e558ff6d1e"
     },
     {
       "path": "README.md",
@@ -72,9 +72,9 @@
       "sha256": "79a2fd0b076816bade84cac2c82bad2cf6379d47bd6749ce1ceb789a9b15df52"
     },
     {
-      "path": "styles.18f0b57e94b6.css",
-      "bytes": 24161,
-      "sha256": "18f0b57e94b6ef18e146da754055f565b366163fcfc191783accfa4fa57490c3"
+      "path": "styles.dab6747022a5.css",
+      "bytes": 24639,
+      "sha256": "dab6747022a5eb4c8995bdd57e7b737154f0c37565fd80c0ea126e89681ae06f"
     }
   ]
 }
