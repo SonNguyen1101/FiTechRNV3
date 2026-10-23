@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-23T04:42:32.175658+00:00",
+  "observed_at": "2026-10-23T05:07:34.969386+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -722,7 +722,9 @@
       "owner_accepted": 0,
       "registered_packages": 12,
       "cutover_count": 0,
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
+      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
+      "metadata_origin_release": "V9"
     }
   ],
   "connected": 8,
@@ -730,6 +732,6 @@
   "execution_supported": false,
   "authority_supported": false,
   "auto_refresh_seconds": 30,
-  "snapshot_assembly_note": "Seven module metadata captures reused unchanged in meaning from V8; QRW newly observed. Individual checked_at dates remain their original source observation times.",
-  "prior_snapshot_manifest_sha256": "3c585f993b2399f5ac96703d1687f25029d4eed391f8ca0e4d8204318248057d"
+  "snapshot_assembly_note": "Dashboard metadata captures reused from V9 with individual observation dates unchanged. Source-reviewed mission content has a separate review date; it does not refresh dashboard execution/acceptance states.",
+  "prior_snapshot_manifest_sha256": "d0c03847c4a680146c31075318311e176e2bdd36bb2c3c05c1894c20469c8f60"
 }

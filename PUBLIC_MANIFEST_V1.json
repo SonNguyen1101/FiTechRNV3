@@ -1,6 +1,6 @@
 {
   "schema": "FITECHHUB_PUBLIC_SNAPSHOT_V1",
-  "observed_at": "2026-10-23T04:42:32.175658+00:00",
+  "observed_at": "2026-10-23T05:07:34.969386+00:00",
   "projects": 8,
   "milestones": 26,
   "scientific_acceptance": false,
@@ -15,9 +15,9 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "app.be4a3690394d.js",
-      "bytes": 25483,
-      "sha256": "be4a3690394df9204815f30e98dc0ee2c82eb1aa506013e7f9b39eb725635571"
+      "path": "app.9ef3a4e24949.js",
+      "bytes": 26569,
+      "sha256": "9ef3a4e2494962d7ae80653256b55810c75170ddeadbd6f8f6f610e827b10376"
     },
     {
       "path": "assets/fonts/fonts.css",
@@ -3015,14 +3015,24 @@
       "sha256": "cbafbb2cefd4b98328907ce291099f1c79880b976881e50a06d8e3b826f9c03a"
     },
     {
+      "path": "data/missions.json",
+      "bytes": 50125,
+      "sha256": "56930eeffceae7cf99b9f5a7fd48e665358a1051b3c4c981cf61258ce27d23c4"
+    },
+    {
       "path": "data/portfolio.json",
-      "bytes": 27294,
-      "sha256": "e25f6ddfb42844fdea2c230c62eeeb9423840f4902dcace440e8d32f23095924"
+      "bytes": 27437,
+      "sha256": "f630bfd716dfe519c7e29d9303aadba526f1e64fb89e76009dc2ee2aaa7c47d7"
     },
     {
       "path": "index.html",
-      "bytes": 4848,
-      "sha256": "3de25febefbb6447eac9b1a99599f0234a4a87d0660a13269d26bdea3a777988"
+      "bytes": 5003,
+      "sha256": "5f004bfd1bb41c02dda839dcb6d225719f45d556d256db2d569c0d3699b8e511"
+    },
+    {
+      "path": "missions.5f46134c9e4e.js",
+      "bytes": 10870,
+      "sha256": "5f46134c9e4ee12bf6014a6ff61c0d419ef0cbaf78e6a338771e36fbd330c221"
     },
     {
       "path": "README.md",
@@ -3030,9 +3040,9 @@
       "sha256": "f5e480d0a75837083d9cbfe6889679753b06c98aae24cb4af8aa4d5a5a9ab350"
     },
     {
-      "path": "styles.bb6f32ab8e8b.css",
-      "bytes": 31919,
-      "sha256": "bb6f32ab8e8b25c9ebee72a10f21fbce7136de80c1829acb6d319c0890641777"
+      "path": "styles.d5b54e744fb7.css",
+      "bytes": 38820,
+      "sha256": "d5b54e744fb7b2c3197b9a0fb9c68384b6e05e5f0ca5c96c3c4c169c5c1f0e35"
     }
   ]
 }

@@ -1,0 +1,672 @@
+{
+  "schema": "FITECHHUB_MISSIONS_V1",
+  "review_date": "2026-10-23",
+  "review_timezone": "Asia/Saigon",
+  "review_scope": "SOURCE_DOCUMENT_REVIEW_WITH_USER_DEFINED_RNV3_PURPOSE_NOT_SCIENTIFIC_ACCEPTANCE",
+  "missions": [
+    {
+      "id": "qrw",
+      "headline": "Nền dữ liệu chung có nguồn gốc, phiên bản và kiểm soát chất lượng",
+      "objective": {
+        "summary": "Xây QRW V2 thành nền lưu trữ và phân phối dữ liệu chung cho bảy module; bảo toàn dữ liệu và quyền nghiên cứu đã khóa.",
+        "points": [
+          "Quản lý market/universe, chỉ số, foreign flow, macro, thông tin doanh nghiệp, tài chính, sự kiện quyền, ngành và tin/báo cáo bằng hợp đồng dữ liệu rõ ràng.",
+          "Cho phép truy ngược mỗi bản phát hành tới nguồn, thời điểm khả dụng, phép biến đổi và người chịu trách nhiệm.",
+          "Mục tiêu sau chuyển đổi: không còn dependency dữ liệu vận hành ngoài QRW trong phạm vi kiểm kê; không xóa archive nghiên cứu để đạt chỉ tiêu."
+        ]
+      },
+      "method": {
+        "summary": "Phương pháp quản trị và kiểm chứng dữ liệu: capture bất biến → chuẩn hóa → phiên bản/lineage → kiểm tra chất lượng và as-of → đối chiếu độc lập → chuyển nguồn có nghiệm thu.",
+        "points": [
+          "Giữ raw bytes/hash; tách raw, normalized, curated và features/labels; ghi schema, đơn vị, lịch, price basis, transform version và manifest pin.",
+          "Phân biệt event/effective/published/first_seen/ingested/available và lịch sử revision; truy vấn theo cutoff, không hồi tố latest thành dữ liệu được biết trong quá khứ.",
+          "Kiểm riêng exact-byte legacy parity, semantic normalized parity và SSI/iBoard adjustment parity; thiếu raw/factor/oracle hoặc availability thì giữ BLOCKED/PARTIAL, không tự cấp PIT_STRICT.",
+          "Giữ legacy immutable lane; shadow adapter và QC độc lập trước owner acceptance, chỉ định tuyến run mới; job đang chạy giữ pin cũ và có rollback."
+        ]
+      },
+      "application": {
+        "target": "Cung cấp release có hợp đồng cho RN2/FiTechSNM, RN3, FiTechML, KronosVN, Fipath_News, LunaVN và Fundamental Panel; Database Studio giúp tra cứu chất lượng, lineage, PIT và consumer binding.",
+        "current": "Đã có hồ sơ kiến trúc/lộ trình và monitor tiến độ đọc file. State nguồn ghi P01 VERIFIED_ENGINEERING nhưng acceptance PENDING; P02–P11 NOT_STARTED; cutover_count=0. Đây là sản phẩm chuẩn bị, chưa phải data foundation V2 vận hành.",
+        "limitations": [
+          "Chưa nhập dữ liệu thật vào V2, chưa chuyển nguồn module; real_import_authorized=false và consumer_cutover_authorized=false trong state nguồn.",
+          "P10 Hub integration vẫn NOT_STARTED; bản đồ sứ mệnh trên Hub không đồng nghĩa connector dữ liệu đã được nghiệm thu.",
+          "Monitor không đọc DB nghiên cứu, không tự dispatch worker và không mở quyền OOS/holdout.",
+          "QRW kiểm soát đầu vào và provenance; không tự chứng minh alpha, hiệu quả model hoặc quyết định khoa học của module."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "QRW V2/docs/01_DATA_MASTER_ARCHITECTURE_V2.md",
+          "sha256": "3513f440bbfb00390ef25db85d8d127b3effecc3ee56c6b5c6833afdbdd79114",
+          "line_start": 3,
+          "line_end": 90,
+          "claim_scope": "Mục tiêu bảy module, raw/normalized/curated, metadata/PIT/lineage, consumer contracts và Studio dự kiến; DESIGN V2."
+        },
+        {
+          "relative_display_path": "QRW V2/docs/05_RESEARCH_AND_CUTOVER_V1.md",
+          "sha256": "5505fddc30b3296a124046efacc85010349d2b140be145c15984f43c7eddc066",
+          "line_start": 13,
+          "line_end": 45,
+          "claim_scope": "Quyền nghiên cứu, legacy/candidate lanes, SSI parity chưa xác minh và cutover theo module/run."
+        },
+        {
+          "relative_display_path": "QRW V2/docs/02_ROADMAP_V1.md",
+          "sha256": "70e2fe9fb957a6433815724890cc4906eea17de8253459642a1f3f5e695196d2",
+          "line_start": 5,
+          "line_end": 35,
+          "claim_scope": "P00–P11, independent QC, P10 sau Studio/cutover và các gate; roadmap không phải execution."
+        },
+        {
+          "relative_display_path": "QRW V2/README.md",
+          "sha256": "4c3565880dca101977a816d4bc998a489b8810bcc2f18818cff73fea5e13acf5",
+          "line_start": 18,
+          "line_end": 38,
+          "claim_scope": "Hồ sơ chuẩn bị, monitor chỉ đọc file, chưa import/cutover/Hub và fixture tests không chứng minh PIT."
+        },
+        {
+          "relative_display_path": "QRW V2/monitor/state.json",
+          "sha256": "15b2e3e9810e426e6c3d6ecdfbc35566d764616f48b98896a1d6fd21e3d1b69e",
+          "line_start": 1,
+          "line_end": 212,
+          "claim_scope": "Source progress record updated 2026-10-23: cutover 0, quyền import/cutover false; P01 technical verified pending acceptance; P02–P11 NOT_STARTED. Đọc state, không xác minh runtime."
+        }
+      ]
+    },
+    {
+      "id": "rnv3",
+      "headline": "Chuẩn hóa bộ chỉ báo và chiến lược chuẩn làm đầu vào cho RN V2",
+      "objective": {
+        "summary": "RN V3 xây dựng quy trình chuẩn hóa bộ chỉ báo và chiến lược chuẩn; cung cấp bộ chỉ báo chuẩn làm đầu vào cho RN V2.",
+        "points": [
+          "Xây một quy trình chuẩn hóa có thể tái lập từ nguồn, đặc tả và tham số tới implementation, kiểm chứng và gói bàn giao.",
+          "Làm rõ identity, công thức, dữ liệu vào/ra, validity, warm-up và ngữ nghĩa tín hiệu của từng chỉ báo/chiến lược; tránh RN V2 nhận đầu vào chưa rõ nghĩa.",
+          "RN V3 đảm nhiệm lớp chuẩn hóa; RN V2 sử dụng bộ chỉ báo chuẩn để nghiên cứu và đánh giá chiến lược theo quy trình của RN V2."
+        ]
+      },
+      "method": {
+        "summary": "Đối chiếu nguồn → đặc tả/hợp đồng chuẩn → kiểm implementation và oracle/consumer → replay phạm vi ảnh hưởng → QC và bàn giao phiên bản có truy nguyên.",
+        "points": [
+          "Hồ sơ POP100/R0 rà soát identity, công thức, tham số, dữ liệu vào/ra và ngữ nghĩa event; dùng ma trận chi tiết để ghi bằng chứng và nợ còn mở.",
+          "Phân biệt thiếu dữ liệu, warm-up, giá trị hợp lệ và không có tín hiệu; kiểm nhân quả, timing và hồi quy theo tiêu chí đã được phê duyệt.",
+          "Chỉ gọi một gói là bộ chuẩn đã bàn giao khi đủ nguồn, kiểm chứng, hợp đồng consumer và nghiệm thu đúng thẩm quyền; mission không tự cấp acceptance.",
+          "Tài liệu cũ về phối hợp chỉ báo/Signal Window là bối cảnh kỹ thuật liên quan. Theo định nghĩa mới của Sơn, chúng không thay thế mission chuẩn hóa và hướng đầu vào RN V3 → RN V2."
+        ]
+      },
+      "application": {
+        "target": "Một bộ chỉ báo và chiến lược chuẩn có đặc tả, implementation/phiên bản, bằng chứng kiểm chứng và hợp đồng đầu vào để RN V2 sử dụng; ma trận R0 100 × 17 ghi rõ từng khía cạnh, kết quả và giới hạn.",
+        "current": "Snapshot công bố21/10 ghi PF13 NOT_COMPLETE, PF14 NOT_STARTED và R1 NOT_GRANTED; chưa thể coi POP100 hoàn tất hoặc R1-ready.",
+        "limitations": [
+          "Mission do Sơn xác định không làm bộ chuẩn hiện tại tự được chứng nhận; hướng RN V3 → RN V2 là đích bàn giao, chưa phải kết nối thực thi đã được xác minh.",
+          "Ma trận 100 × 17 hiện chưa final/chưa phê chuẩn (NOT_FINAL_NOT_RATIFIED), chưa phải bộ chỉ báo chuẩn đã bàn giao cho RN V2.",
+          "Current là trạng thái snapshot có ngày; trạng thái sau snapshot NOT_VERIFIED trong audit mission này.",
+          "R1PREP còn proposal; xung đột R1 không gian ứng viên với ma trận tương quan thuộc R3 chưa được audit này giải quyết.",
+          "Adjusted diagnostic không tự là PIT strict; không kết luận hiệu quả đầu tư, không kế thừa PASS RN V2 và không tự mở OOS/promotion."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "Son / RN V3 mission definition / 23-10-2026",
+          "sha256": "3572faf792bd8a8d5d2be73375d306102e69753c2d780ed8ee9f0f7893dd8892",
+          "line_start": 1,
+          "line_end": 7,
+          "claim_scope": "Mục tiêu và hướng đầu vào RN V3 → RN V2 do người dùng xác định trực tiếp; không phải nghiệm thu khoa học hay bằng chứng đã handoff."
+        },
+        {
+          "relative_display_path": "FiTechTrade_G1_RN_V3/docs/g1/rnv3/r0/G1_RNV3_INDICATOR100_R0_METHOD_CONTRACT_V1.md",
+          "sha256": "932e32062a9ebf6043d39547607b9fdb45f7db0d277023c73cf8561a5cd42f6c",
+          "line_start": 14,
+          "line_end": 161,
+          "claim_scope": "Inventory, audit tín hiệu, ontology cặp, SignalWindow, validity/PIT và diagnostic; không dùng số đếm lịch sử đã có correction.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "932e32062a9ebf6043d39547607b9fdb45f7db0d277023c73cf8561a5cd42f6c"
+        },
+        {
+          "relative_display_path": "FiTechTrade_G1_RN_V3/docs/g1/rnv3/G1_RNV3_MASTER_ARCHITECTURE_ALIGNMENT_AND_CLOSED_LOOP_CONTRACT_V1.md",
+          "sha256": "4c14ebdf050782fd39d916175df8720cc4faa38bc0b0c95bf3bfee40775f867f",
+          "line_start": 28,
+          "line_end": 154,
+          "claim_scope": "Closedloop, authority, comparisonbridge và phân biệt research/evidence/compute/investment efficacy.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "4c14ebdf050782fd39d916175df8720cc4faa38bc0b0c95bf3bfee40775f867f"
+        },
+        {
+          "relative_display_path": "FiTechTrade_G1_RN_V3/docs/g1/rnv3/G1_RNV3_NODE_CANONICAL_ALIGNMENT_V1.csv",
+          "sha256": "475a88c6a16851388729057b9aaa3727590d4823332f43d5c23b32339dba81d2",
+          "line_start": 1,
+          "line_end": 23,
+          "claim_scope": "Chuỗi chức năng RN V3 so với RN V2 và specification gaps; không lấy status cũ làm current.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "475a88c6a16851388729057b9aaa3727590d4823332f43d5c23b32339dba81d2"
+        },
+        {
+          "relative_display_path": "FiTechTrade_G1_RN_V3/docs/g1/rnv3/r1prep/R1PREP_03_R1_METHOD_PREREGISTRATION_PROPOSAL_V1.md",
+          "sha256": "20ea8f5742bbc02e0eb3a9323abdb2824365d46bb627745de431134f4c738c32",
+          "line_start": 1,
+          "line_end": 42,
+          "claim_scope": "Proposal tỷ lệ/null dịch vòng và xung đột scopeR1/R3; không phải authorized/executed.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "20ea8f5742bbc02e0eb3a9323abdb2824365d46bb627745de431134f4c738c32"
+        },
+        {
+          "relative_display_path": "FiTechHub/children_stage_v1/rnv3/SNAPSHOT_PROVENANCE_V1.json",
+          "sha256": "fd360a843ac73514cd6b1e557a53529ef7ff770c8acd99a5ffd87f4bcd152fb5",
+          "line_start": 1,
+          "line_end": 16,
+          "claim_scope": "Snapshot21Oct dùng cho current códate; không là live executionstate hoặc scientificacceptance.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "fd360a843ac73514cd6b1e557a53529ef7ff770c8acd99a5ffd87f4bcd152fb5"
+        }
+      ],
+      "conflicts": [
+        "README gốc của worktree là scoring/ranking đời cũ, không dùng làm mission RN V3.",
+        "CURRENT_STATE_V1.json thuộc node-level cũ, không đủ đại diện tiến trình PF13; current dùng snapshot có ngày và ghi giới hạn.",
+        "Counts17/81/103 trong R1PREP là tập nghiên cứu diagnostic lịch sử, không đại diện POP100; card không dùng."
+      ],
+      "owner_definition": "RN V3 xây dựng quy trình chuẩn hóa bộ chỉ báo và chiến lược chuẩn; cung cấp bộ chỉ báo chuẩn làm đầu vào cho RN V2."
+    },
+    {
+      "id": "fitechsnm",
+      "headline": "Kiểm chứng chiến lược và khép vòng nghiên cứu RN V2",
+      "objective": {
+        "summary": "Kế thừa phương pháp G1 CCE/RN V2 để xác định tín hiệu và biến thể chiến lược có bằng chứng hỗ trợ, rồi nối nghiên cứu với quan sát và cải tiến có kiểm soát.",
+        "points": [
+          "Theo định nghĩa mission của Sơn: nhận bộ chỉ báo chuẩn từ RN V3 làm đầu vào nghiên cứu RN V2, sau hợp đồng và kiểm chứng bàn giao; không kế thừa PASS hoặc tự đổi nguồn của run đang khóa.",
+          "Trả lời chiến lược nào phù hợp với mã cổ phiếu, trạng thái thị trường và bộ tham số nào; giữ bằng chứng và độ bất định của từng kết luận.",
+          "Đích dài hạn gồm vòng nghiên cứu–ứng dụng–quan sát–nghiên cứu, vận hành Python theo chính sách và AILL cải tiến có căn cứ."
+        ]
+      },
+      "method": {
+        "summary": "Audit và triển khai lại từng node của chuỗi RN V2; kiểm tính áp dụng trước khi tái sử dụng kết quả lịch sử.",
+        "points": [
+          "Đóng băng phương pháp và không gian tham số → tạo khối bằng chứng theo mã/regime/chiến lược/biến thể → xét đủ mẫu và độ bền cấu trúc.",
+          "Kiểm định đa giả thuyết → mô tả ứng viên và tập biến thể được hỗ trợ → phân tích alpha theo regime, suy giảm theo thời gian, độ tin cậy mẫu và đường MFE/MAE.",
+          "Shadow, support và tổng hợp Phase 2 nối tới so sánh/validation theo thẩm quyền; năm hợp đồng mỗi node và kiểm chứng độc lập giữ kết luận truy nguyên được."
+        ]
+      },
+      "application": {
+        "target": "Cung cấp bản đồ tín hiệu/biến thể có bằng chứng để hỗ trợ sàng lọc và đánh giá cơ hội cổ phiếu VN; quan sát sai lệch và quay về đúng bước nghiên cứu bị ảnh hưởng.",
+        "current": "Theo progress ngày 23/10, 05:03 UTC: Slot67 QC ACCEPTED_SCOPED_POST_ADMISSION_ENGINEERING_WITH_RESERVATIONS; M2 IN_PROGRESS vì admission→RN→Runtime chưa khép xuyên suốt. Actual R0 NO_GO/NOT_EXECUTED (M3 NOT_STARTED); M4 OUTPUT→R1 BLOCKED. Chưa mở Slot68 hoặc actual R1.",
+        "limitations": [
+          "Vai trò trong registry kế thừa mô tả phương pháp và trạng thái lịch sử, không phải PASS của FiTechSNM.",
+          "Chưa có bằng chứng nghiệm thu vòng khoa học hoàn chỉnh hoặc hiệu quả đầu tư.",
+          "41 node gồm nghiên cứu, quản trị và ứng dụng; không phải 41 phép kiểm định thống kê."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "Son / RN V3 mission definition / 23-10-2026",
+          "sha256": "3572faf792bd8a8d5d2be73375d306102e69753c2d780ed8ee9f0f7893dd8892",
+          "line_start": 1,
+          "line_end": 7,
+          "claim_scope": "Mục tiêu và hướng đầu vào RN V3 → RN V2 do người dùng xác định trực tiếp; không phải nghiệm thu khoa học hay bằng chứng đã handoff."
+        },
+        {
+          "relative_display_path": "FiTechSNM/docs/ARCHITECTURE.md",
+          "sha256": "35ab0065e89efc765113b906ce4ae557062781ce7e5031ce0c0a91eeca2d13f6",
+          "line_start": 26,
+          "line_end": 97,
+          "claim_scope": "Mục tiêu dài hạn, kế thừa G1, Python, ownership và tiêu chí khép vòng; không xác nhận kết quả đã đạt.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "35ab0065e89efc765113b906ce4ae557062781ce7e5031ce0c0a91eeca2d13f6"
+        },
+        {
+          "relative_display_path": "FiTechSNM/docs/inherited/g1/docs/g1/G1_CCE_NODE_REGISTRY_V1.csv",
+          "sha256": "765e6ce50ecba49a0630c32f5f63e5005fb4e17b3d72db194fac3ca2ee361c7b",
+          "line_start": 1,
+          "line_end": 42,
+          "claim_scope": "Snapshot phương pháp RN V2 và chức năng41node; trạng thái/count là lịch sử, không dùng làm current.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "765e6ce50ecba49a0630c32f5f63e5005fb4e17b3d72db194fac3ca2ee361c7b"
+        },
+        {
+          "relative_display_path": "FiTechSNM/docs/nodes/03_R1/METHODOLOGY_CONTRACT.md",
+          "sha256": "452fe76d18573391222a01dad52a5ccb09c099554c1f5bbd109102403448e871",
+          "line_start": 1,
+          "line_end": 21,
+          "claim_scope": "Audit SPEC–function–run–consumer, applicability và approval trước reuse; contract còn draft.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "452fe76d18573391222a01dad52a5ccb09c099554c1f5bbd109102403448e871"
+        },
+        {
+          "relative_display_path": "FiTechSNM/docs/progress.md",
+          "sha256": "36b191350b54270cf27dfcbc8c3378a0b79168069648d983c09b785d05902a38",
+          "line_start": 1,
+          "line_end": 16,
+          "claim_scope": "Current23Oct05:03UTC Owner QC recording: Slot67 post-admission engineering accepted with reservations; admission end-to-end incomplete; actualR0 NO_GO/NOT_EXECUTED, M3NOT_STARTED, M4BLOCKED; noSlot68/R1/approval.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "30496231d955f9f1c8590245c3ccf68e7f1d47f0a7a1ddf0c19d771d27a28fb7"
+        }
+      ],
+      "conflicts": [
+        "ARCHITECTURE và contracts còn trạng thái khởi tạo cũ; current lấy từ progress 23/10.",
+        "RN2 là nhãn Hub; FiTechSNM là repo kế thừa full G1 CCE với phương pháp RN V2, không chỉ một thuật toán RN2.",
+        "Cập nhật V2: progress thêm khối Slot67 QC mới phía trên khối prepared. PREPARED_NOT_EXECUTED chỉ còn là trạng thái lịch sử; scoped post-admission engineering đã được ghi nhận nhưng actual R0 và M4 vẫn chưa mở/đóng."
+      ]
+    },
+    {
+      "id": "fitechml",
+      "headline": "Học hình thái giá và phân phối lợi nhuận–rủi ro",
+      "objective": {
+        "summary": "Xây lớp ML xuyên chu trình G1 để học từ bằng chứng nghiên cứu, định lượng cơ hội và rủi ro có điều kiện, phát hiện drift/gap/opportunity.",
+        "points": [
+          "Nghiên cứu theo ticker, regime, strategy và variant; đầu ra kỳ vọng là phân phối, xác suất, support và độ bất định.",
+          "Kết hợp research learning với production observation trong kiến trúc dài hạn; trả evidence/đề xuất về đúng cổng nghiên cứu."
+        ]
+      },
+      "method": {
+        "summary": "Học trên sự kiện có identity/provenance, chỉ dùng đặc trưng đã biết tại thời điểm tín hiệu; đánh giá theo thời gian và đối chiếu baseline.",
+        "points": [
+          "Tách research learning, production observation và governance feedback; giữ event-level label, variant/regime, panel 5/10/20/40 phiên. Phạm vi hiện hành D1-only.",
+          "Định hướng ML4T: validation theo thời gian, tách purge chồng lấn nhãn với maturity/availability và embargo; tránh dùng thống kê gộp làm nhãn sự kiện.",
+          "Baseline, mô hình phân phối/quantile, calibration, conformal và drift là phương pháp reference/adapter theo roadmap; phải chứng minh tương thích và đánh giá trước khi áp dụng."
+        ]
+      },
+      "application": {
+        "target": "Bổ sung phân phối lợi nhuận–rủi ro, xác suất, support và cảnh báo drift cho người nghiên cứu; tạo evidence cho candidate/challenger và khuyến nghị có độ bất định khi đủ điều kiện.",
+        "current": "R1.1 pilot intake được báo cáo COMPLETED_PENDING_USER_ACCEPTANCE; D1-only. Ngày23/10 R1.2 PREPARED_BLOCKED_IS_ONLY_SOURCE, integration HOLD và 0/18 FTML ID PASS. Chưa feature/model thật trong scope current được đọc.",
+        "limitations": [
+          "Realtime/recommendation là TARGET_ARCHITECTURE, không phải chức năng production đã có.",
+          "ML4T là EXTERNAL_METHOD_SOURCE, không phải upstream producer hoặc bằng chứng hiệu quả thị trườngVN.",
+          "Không tự promote, thay champion, tạo BUY_READY hoặc gửi lệnh.",
+          "R1.1 đã đọc dữ liệu thật trong scope được cấp; không lặp lời cũ rằng repo chưa từng đọc dữ liệu thật."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "FiTechML/docs/ARCHITECTURE.md",
+          "sha256": "c4ada77a3fa6b0aea6cbcc315e81e9b0c5e269d80588b235669d24644c27e0ae",
+          "line_start": 12,
+          "line_end": 165,
+          "claim_scope": "Mission dài hạn,3planes, observer/proposer và authority.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "c4ada77a3fa6b0aea6cbcc315e81e9b0c5e269d80588b235669d24644c27e0ae"
+        },
+        {
+          "relative_display_path": "FiTechML/docs/METHODOLOGY.md",
+          "sha256": "05e0b8773a8a2280217ba4b2e9d96a5ae8ee753dcd1929c56d7a1aac4f97a885",
+          "line_start": 1,
+          "line_end": 47,
+          "claim_scope": "D1-only, return/risk theo ticker/regime/strategy, eventlevel và horizon; phương pháp PROPOSED.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "05e0b8773a8a2280217ba4b2e9d96a5ae8ee753dcd1929c56d7a1aac4f97a885"
+        },
+        {
+          "relative_display_path": "FiTechML/docs/integrations/ml4t/FITECHML_INTEGRATION_MAP.md",
+          "sha256": "e816ce678e0d773dbeb88b3e96bfaad71e40d52f69eec87d3f44ace43a161294",
+          "line_start": 1,
+          "line_end": 86,
+          "claim_scope": "ML4T external method source, proposed CV/calibration/conformal/drift và adapterlimits; không parityclaim.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "e816ce678e0d773dbeb88b3e96bfaad71e40d52f69eec87d3f44ace43a161294"
+        },
+        {
+          "relative_display_path": "FiTechML/docs/progress.md",
+          "sha256": "e8e209e345947aa4bbf61369ce1ea6217a6b3d08dd87be253574390866f06fd0",
+          "line_start": 1,
+          "line_end": 26,
+          "claim_scope": "Current 23/10 R1.2 blocked IS-onlysource; pilotR1.1 pendingacceptance và D1restriction.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "e8e209e345947aa4bbf61369ce1ea6217a6b3d08dd87be253574390866f06fd0"
+        },
+        {
+          "relative_display_path": "FiTechML/README.md",
+          "sha256": "0f4cac825a97b900d96f8df0eed27a3a31939b87d3894f08a25ea3cd3b1bc891",
+          "line_start": 1,
+          "line_end": 60,
+          "claim_scope": "Mission và I1foundation cũ; dùng phát hiện conflict, không ưu tiên hơn currentprogress.",
+          "captured_at_utc": "2026-10-23T05:06:04.714290+00:00",
+          "previous_audit_sha256": "0f4cac825a97b900d96f8df0eed27a3a31939b87d3894f08a25ea3cd3b1bc891"
+        }
+      ],
+      "conflicts": [
+        "README và đoạnI1 nói chưa ingestion/dữliệu thật; progress 23/10 và architectureheader21Oct ghi R1.1 đã chạy. Current ưu tiên phần cóngày mới, giữ scope pendingacceptance.",
+        "INTEGRATION_MAP/roadmap cònproposal; audit này không kiểm source ML4T gốc và không kết luận implementđúng hoặc efficacy."
+      ]
+    },
+    {
+      "id": "kronos",
+      "headline": "Kiểm chứng dự báo lợi suất cổ phiếu theo kỳ hạn và nhóm ngành",
+      "objective": {
+        "summary": "Nghiên cứu khả năng dự báo và xếp hạng cổ phiếu HOSE/HNX bằng Kronos, đối chiếu kết quả theo kỳ hạn và ngành trước khi đánh giá khả năng sử dụng sau chi phí.",
+        "points": [
+          "Dự kiến tạo hướng giá, lợi suất trung vị và dải phân vị ở H5/H10/H20/H40 phiên; mỗi kỳ hạn có bảng xếp hạng riêng.",
+          "So sánh naive/drift, Kronos-small zero-shot và ứng viên fine-tune dùng model pooled đa mã; báo cáo theo ngành/sàn/thanh khoản.",
+          "Tách dự báo nghiên cứu, độ chính xác/khả năng xếp hạng và khả năng giao dịch sau chi phí; không suy alpha từ biểu đồ hoặc token loss."
+        ]
+      },
+      "method": {
+        "summary": "Thiết kế nghiên cứu theo thời gian với dữ liệu có nguồn, chống leakage, baseline và ngân sách thử nghiệm; đánh giá riêng từng horizon và phân nhóm.",
+        "points": [
+          "Input OHLCVA sáu kênh, đơn vị rõ; normalize chỉ context; không nội suy thiếu phiên hoặc dùng lịch sử UPCoM để bù lookback HOSE/HNX.",
+          "Khóa split/target/metric/trial budget trước study; purging/embargo theo Hmax; holdout exposure UNKNOWN không được gọi clean OOS.",
+          "Sinh cùng tập trajectory đến Hmax40, lấy return P10/P50/P90 tại từng horizon; xếp riêng theo signed return P50, cùng cutoff/model/basis/QC.",
+          "Dự kiến đánh giá return-MAE, direction, interval coverage, daily IC/RankIC và phân nhóm; block bootstrap/HAC cho overlap, Holm cho family đã đăng ký; đánh giá thực thi có phí/thanh khoản/settlement. Đây là protocol thiết kế, chưa có kết quả model v2."
+        ]
+      },
+      "application": {
+        "target": "Bàn nghiên cứu local cho người phân tích: chọn universe và phiên chốt, xem bảng dự báo bốn horizon, bất định và provenance, rồi đối chiếu actual để quyết định có đủ bằng chứng sử dụng hay không.",
+        "current": "Đã có importer/catalog/QC local P1 và công cụ kiểm chứng P2a. Checkpoint mới ghi P2a IN_PROGRESS: ledger 718 mã tại origin 16/06/2026, L256 có 430 mã đủ context; đây chưa phải eligibility hoặc tập học. ICB cấp2 nguồn SSI là mặc định; chưa chạy forecast/fine-tune hoặc mở P3/P5/P6.",
+        "limitations": [
+          "430 mã đủ context không chứng minh dữ liệu đủ điều kiện model, ngành/sàn đúng lịch sử hoặc PIT.",
+          "Lịch sử ngành/sàn toàn bộ và giá điều chỉnh/PIT chưa xác minh; policy còn DRAFT, chưa có nghiệm thu toàn P2a.",
+          "P50 là dự báo nghiên cứu, tỷ lệ mẫu tăng không phải xác suất thắng được hiệu chuẩn; chưa có bằng chứng alpha hoặc hiệu quả model v2.",
+          "README còn ghi P2–P8 chưa thực thi và một dòng importer P1 chưa triển khai; CURRENT_P2_STATUS và execution_v4_evidence ghi P2a đã IN_PROGRESS. Hai nhóm tài liệu khác độ cập nhật; không dùng dòng README cũ để kết luận trạng thái hiện tại."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "Kronos VN v2/README.md",
+          "sha256": "c55155a2d45c0a80cc9b8a8cc7f040f8baec4f101205a37db07841e6f0b1eb35",
+          "line_start": 1,
+          "line_end": 48,
+          "claim_scope": "Mục tiêu HOSE/HNX, P1 local outputs và giới hạn chưa model; status P2 trong README mâu thuẫn checkpoint mới, không coi là current authority."
+        },
+        {
+          "relative_display_path": "Kronos VN v2/docs/MODEL_SPEC.md",
+          "sha256": "d143838dfb416ac3910b71ad6cff096506781979f89c72b0025a9b79ecae2b89",
+          "line_start": 1,
+          "line_end": 86,
+          "claim_scope": "DESIGN_ONLY: baselines/pooled model, chống leakage, split/holdout, budget, trajectory và đánh giá theo horizon/ngành; chưa là execution."
+        },
+        {
+          "relative_display_path": "Kronos VN v2/docs/FORECAST_RESULTS_SPEC.md",
+          "sha256": "76b9fbe92c987eb77d9c3d38d19d0675d684afd7338fdc72a3885feef3bb22d9",
+          "line_start": 1,
+          "line_end": 76,
+          "claim_scope": "Mục tiêu bảng H5/H10/H20/H40, signed return P50, shared trajectories, bất định, đối chiếu actual và đánh giá theo ngành; engine chưa triển khai theo spec."
+        },
+        {
+          "relative_display_path": "Kronos VN v2/CURRENT_P2_STATUS.md",
+          "sha256": "cb4549b6ecb46e524a922aec84cea72a3af64d4ca971cca0ce5a1070faf42933",
+          "line_start": 1,
+          "line_end": 7,
+          "claim_scope": "Checkpoint P2a IN_PROGRESS, 430 context không eligibility, policy DRAFT, PIT/history còn chưa xác minh và chưa model/P3/P5/P6."
+        },
+        {
+          "relative_display_path": "Kronos VN v2/docs/milestones/P2/execution_v4_evidence/progress_v1.md",
+          "sha256": "c46834fcfb4ea5c0d3b5b07dafe43a40ed68f48bf6ec15853f6de5f06dfa51df",
+          "line_start": 1,
+          "line_end": 11,
+          "claim_scope": "718-code context ledger, 430 đủ context; giới hạn sáu exchange boundaries, ICB mặc định, archive khác biệt chưa rõ nguyên nhân; checkpoint chưa đóng/nhận nghiệm thu."
+        }
+      ]
+    },
+    {
+      "id": "stockmonitor",
+      "headline": "Biết thị trường đang nhắc đến mã nào, từ nguồn nào và vào lúc nào.",
+      "objective": {
+        "summary": "Tập hợp tin, thảo luận và báo cáo công ty chứng khoán thành một màn hình theo dõi sự chú ý dành cho cổ phiếu.",
+        "points": [
+          "Giúp người đọc tìm mã/đối tượng được nhắc nhiều và mở lại nội dung, tác giả, ngày cùng nguồn gốc.",
+          "Phân biệt tin tổng hợp với báo cáo CTCK; giữ nhãn nguồn cụ thể và tác giả của khuyến nghị consensus đa CTCK."
+        ]
+      },
+      "method": {
+        "summary": "Phương pháp đang triển khai là tổng hợp và thống kê mô tả lượt nhắc theo nguồn, thời gian và nhãn hành động.",
+        "points": [
+          "Chuẩn hoá bản ghi về mã/đối tượng, nguồn, nhãn mua/bán/chờ/khác, thời điểm, tác giả, nội dung và liên kết khi có.",
+          "Áp bộ lọc rồi nhóm theo mã/đối tượng; đếm lượt nhắc, số tác giả, phân bố hành động và nguồn, thời điểm đầu/cuối.",
+          "Đây là thước đo mức độ được nhắc trong tập nguồn đã thu; chưa có bằng chứng tại các nguồn đã đọc rằng tần suất nhắc dự báo lợi nhuận."
+        ]
+      },
+      "application": {
+        "target": "Tạo danh sách cần đọc thêm và đối chiếu các quan điểm trước khi phân tích kỹ thuật hoặc doanh nghiệp.",
+        "current": "Bản trên Hub là snapshot có tìm kiếm, bộ lọc và chi tiết ngay trong trình duyệt; ngày dữ liệu hiển thị 10/09/2026, không tự cập nhật online.",
+        "limitations": [
+          "Tổng số ở đầu trang và footer đang lệch; chưa xác định số tổng chuẩn và không âm thầm sửa lại.",
+          "Nhiều lượt nhắc không đồng nghĩa nhiều quan điểm độc lập; nguồn consensus và nguồn trực tiếp có thể khác bản chất.",
+          "Nhãn hành động được phân nhóm để đọc; không phải lệnh mua/bán hay kết quả kiểm chứng chiến lược."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "FiTechTrade/scripts/build_finpath_dashboard.py",
+          "sha256": "b78f65af00fa27570a35e2a6324a8ca47a86707d743930f2b56bd405b6b3b7d9",
+          "line_start": 1,
+          "line_end": 26,
+          "claim_scope": "Mục tiêu tổng hợp; hai nhóm tin/báo cáo; bản chất consensus khác báo cáo riêng CTCK."
+        },
+        {
+          "relative_display_path": "FiTechTrade/scripts/build_finpath_dashboard.py",
+          "sha256": "b78f65af00fa27570a35e2a6324a8ca47a86707d743930f2b56bd405b6b3b7d9",
+          "line_start": 119,
+          "line_end": 200,
+          "claim_scope": "Trường chuẩn hoá, đọc từng nguồn và gộp bản ghi; mã không chứng minh hiệu quả dự báo."
+        },
+        {
+          "relative_display_path": "FiTechTrade/scripts/finpath_dashboard_template.html",
+          "sha256": "d40b45332ca2fc55f223df9cbb72397589f902330c439429c32238a0dec37b45",
+          "line_start": 349,
+          "line_end": 438,
+          "claim_scope": "Phân nhóm nhãn hành động, lọc, nhóm đối tượng, đếm lượt/tác giả/thời điểm/nguồn."
+        },
+        {
+          "relative_display_path": "FiTechHub/children_stage_v1/stockmonitor/SNAPSHOT_PROVENANCE_V1.json",
+          "sha256": "cbafbb2cefd4b98328907ce291099f1c79880b976881e50a06d8e3b826f9c03a",
+          "line_start": 2,
+          "line_end": 16,
+          "claim_scope": "Identity snapshot cổng8765, provenance và xung đột tổng chưa đối soát."
+        },
+        {
+          "relative_display_path": "FiTechHub/docs/ADDITIONAL_DASHBOARDS_SURVEY_V1.md",
+          "sha256": "1f0fedad3a19abcc4a0ec880d2a69cbd60b7e680968067d044b8e483a27ed09f",
+          "line_start": 9,
+          "line_end": 14,
+          "claim_scope": "Quan sát ngày21/10: ngày dữ liệu10/09 và xung đột header/footer; không phải kiểm mới tình trạng server."
+        }
+      ]
+    },
+    {
+      "id": "fundamentalpanel",
+      "headline": "Hiểu doanh nghiệp bằng nguồn đã đối chiếu và mô hình phù hợp từng ngành.",
+      "objective": {
+        "summary": "Mở rộng khung đọc 14 vùng phân tích của mẫu PHP sang mọi mã QRW, đồng thời thay nội dung và mô hình theo ngành thực tế.",
+        "points": [
+          "Nối giá, đối thủ cùng ngành, tài sản/mảng kinh doanh, BCTC, rủi ro và kế hoạch doanh nghiệp trong một hồ sơ.",
+          "Hướng tới dự phóng, định giá, kịch bản và độ nhạy có dữ liệu đầu vào cùng nguồn gốc rõ ràng."
+        ]
+      },
+      "method": {
+        "summary": "Kết hợp đối chiếu tài liệu doanh nghiệp với mô hình tài chính theo ngành; tách thực tế đã công bố, giả định và kết quả tính.",
+        "points": [
+          "Kiểm kỳ, đơn vị, phạm vi hợp nhất, cổ phần thuộc công ty mẹ và ngày giá/số cổ phiếu trước khi tính; số nguồn SSI chưa rõ nghĩa không tự thành BCTC đã xác minh.",
+          "Đặc tả hiện có mô hình SOTP và phương pháp EV cho doanh nghiệp, P/B hoặc P/E cho ngành tài chính; thiếu đầu vào thì nêu rõ thay vì điền số của mã khác.",
+          "Vùng giá thay thế được đề xuất phải ghi ESTIMATED_METHOD; chưa khôi phục được thuật toán Chặt gốc và không chuyển hằng số PHP sang mọi mã.",
+          "Kiểm phép tính bằng fixture có đáp án tính tay và kiểm hiển thị là các lớp kỹ thuật riêng; chúng không thay thế đối chiếu báo cáo, kiểm định dự báo hoặc nghiệm thu người dùng."
+        ]
+      },
+      "application": {
+        "target": "Hỗ trợ đọc doanh nghiệp, so sánh peer và xem tác động của giả định kinh doanh lên định giá khi đủ đầu vào hợp lệ.",
+        "current": "Snapshot Hub cho phép vào bảng thị trường và hồ sơ 718 mã theo bản chụp 16/10/2026. Metadata của bản đó ghi 1/15 mục hoàn chỉnh, facts và approved-statements rỗng; đây là trạng thái bản chụp, chưa phải kết luận kiểm mới toàn repo.",
+        "limitations": [
+          "Đủ đường dẫn mã không đồng nghĩa đủ nội dung hoặc đủ tài chính; nguồn snapshot ghi verified financials=0.",
+          "Bản công khai lược bỏ chuỗi lịch sử, raw finance, PDF và artifact hiệu chuẩn; nhiều chức năng phụ thuộc lịch sử không có trên bản này.",
+          "Bản PHP là tham chiếu độc lập; preset/slider bị tắt ở snapshot công khai và không cung cấp giả định cho doanh nghiệp khác.",
+          "USER_ACCEPTANCE_PENDING; đặc tả mô hình/triển khai fixture không tự chứng minh mô hình đã được chấp thuận hoặc chạy trên mọi mã thật."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "Fundamental_Panel/README.md",
+          "sha256": "4ac332b7a7ca8e844f47eb79ec4da2a0074ef99a113e5d2e1a993bb1df8782bb",
+          "line_start": 1,
+          "line_end": 7,
+          "claim_scope": "Mục tiêu mọi mã QRW, mô hình theo ngành và tách QRW chỉ đọc."
+        },
+        {
+          "relative_display_path": "Fundamental_Panel/docs/FULL-PANEL-DELIVERY.md",
+          "sha256": "96ab674075e37b3b32280734308f3c1f828a8e0a5d7a9d97c13af6796ed5b590",
+          "line_start": 18,
+          "line_end": 71,
+          "claim_scope": "14 vùng yêu cầu, nguyên tắc hiệu chuẩn thay thế và ngữ nghĩa financial/model; đây là yêu cầu chứ không phải nghiệm thu."
+        },
+        {
+          "relative_display_path": "Fundamental_Panel/docs/SECTOR-MODEL-SPEC.md",
+          "sha256": "756f1dffa0d6c4b19a50d87649effe1d4b1245b65eddbad40223c3a36d3e7a57",
+          "line_start": 56,
+          "line_end": 63,
+          "claim_scope": "Đặc tả CC-03G có engine định giá theo ngành, giả định chưa duyệt, tách facts/assumptions/outputs và null-input; không bật cầu nối mảng cũ."
+        },
+        {
+          "relative_display_path": "FiTechHub/children_stage_v1/fundamentalpanel/public/README.md",
+          "sha256": "8eb6e1a7857c8588d791100505d03c74171a8b4d829bbe3541ce91ed8ff92c15",
+          "line_start": 3,
+          "line_end": 11,
+          "claim_scope": "Phạm vi snapshot đã ghim, route/content tách biệt, facts/statements rỗng, dữ liệu bị lược và PHP tham chiếu."
+        },
+        {
+          "relative_display_path": "Fundamental_Panel/docs/CC-03G-WINDOWS-RECHECK.md",
+          "sha256": "d09e72cdafaa46319e05f0d15213dd8a3d2b6d8caa1bbc7aaa5bfffd897cdbf9",
+          "line_start": 1,
+          "line_end": 20,
+          "claim_scope": "USER_ACCEPTANCE_PENDING; hiệu chuẩn ESTIMATED_METHOD và statements cần ánh xạ/duyệt; chỉ đọc lệnh, không thực thi."
+        }
+      ]
+    },
+    {
+      "id": "lunavn",
+      "headline": "Sàng lọc động lượng và tăng trưởng để tổ chức danh sách cổ phiếu cần nghiên cứu.",
+      "objective": {
+        "summary": "Xây bộ lọc cho thị trường Việt Nam với bảng cổ phiếu, biểu đồ và góc nhìn bối cảnh thị trường.",
+        "points": [
+          "Đọc nhanh động lượng, độ chặt quanh đường trung bình, độ rộng và nhóm cổ phiếu qua cùng một giao diện.",
+          "Cung cấp thao tác lọc/sắp xếp, mở biểu đồ và bài giải thích phương pháp để người đọc tự kiểm tra giả thuyết."
+        ]
+      },
+      "method": {
+        "summary": "Dùng chỉ báo định lượng có công thức và đối chiếu cách tính với nguồn tham chiếu; trạng thái dữ liệu phải đi kèm từng phép đọc.",
+        "points": [
+          "Độ chặt được phân loại từ khoảng cách giá so với SMA, độ tản các SMA và quan hệ nến với SMA20; file phương pháp hiện tại khớp SHA-256 đã ghim trong snapshot Hub.",
+          "Độ rộng SMA50 mô tả tỷ lệ mã trên đường trung bình; bảng và biểu đồ cho phép lọc/sắp xếp để xem cùng tiêu chí trên nhiều mã.",
+          "Bài nghiên cứu tham chiếu và việc khớp công thức/giao diện chưa chứng minh hiệu quả tại Việt Nam; ngưỡng hoặc điểm số chưa hiệu chỉnh phải giữ nhãn của nguồn."
+        ]
+      },
+      "application": {
+        "target": "Hỗ trợ xây watchlist, kiểm tra bối cảnh và chuẩn bị câu hỏi để kiểm định hoặc phân tích doanh nghiệp sâu hơn.",
+        "current": "Bản đang ghim trên Hub là DEMO / SEEDED_SYNTHETIC / NOT_REAL_MARKET_DATA, phiên minh hoạ 19/10/2026; dùng để khám phá bộ lọc, biểu đồ và cách đọc, không đại diện trạng thái thị trường hiện tại.",
+        "limitations": [
+          "Mã và sàn có thể là thật nhưng chỉ số, nến, khối lượng, tin và độ rộng của snapshot là minh hoạ.",
+          "README repo LunaVN hiện có phần real/mixed cập nhật22/10; đó là checkout khác thời điểm, chưa có bằng chứng được đưa vào bản Hub đang ghim.",
+          "Không suy từ kiểm công thức hoặc thao tác UI thành alpha, nghiệm thu khoa học hay khả năng giao dịch tự động."
+        ]
+      },
+      "sources": [
+        {
+          "relative_display_path": "LunaVN/lunavn/README.md",
+          "sha256": "a13709146dac29c3bcab669e11695ab47678f3c3f62af2c580e6d229cb4d6fea",
+          "line_start": 1,
+          "line_end": 7,
+          "claim_scope": "Mục tiêu bộ lọc VN; bản tương đương bố cục/hành vi với thương hiệu, văn bản và dữ liệu riêng."
+        },
+        {
+          "relative_display_path": "LunaVN/lunavn/lib/tightness.ts",
+          "sha256": "ad8a51fcc3e633e5956aafec324387e70d0d25071dff2e9b0fc9a9078c7dbdd9",
+          "line_start": 3,
+          "line_end": 16,
+          "claim_scope": "Phương pháp phân loại độ chặt đã triển khai; hash khớp source_inputs của snapshot Hub."
+        },
+        {
+          "relative_display_path": "LunaVN/lunavn/README.md",
+          "sha256": "a13709146dac29c3bcab669e11695ab47678f3c3f62af2c580e6d229cb4d6fea",
+          "line_start": 86,
+          "line_end": 125,
+          "claim_scope": "Lịch sử demo; độ rộng SMA50; công thức và điều chưa kiểm chứng; không dùng đoạn lịch sử này để phủ nhận phần real/mixed mới."
+        },
+        {
+          "relative_display_path": "FiTechHub/children_stage_v1/lunavn/public/README.md",
+          "sha256": "1a8b5b57186cb76521c36007aecac67e8d7a2daad355760ed7187c8318e4de37",
+          "line_start": 3,
+          "line_end": 13,
+          "claim_scope": "Scope hiện hành của snapshot Hub: demo seeded, ngày19/10, thao tác, nội dung tham chiếu và giới hạn nghiệm thu."
+        },
+        {
+          "relative_display_path": "LunaVN/lunavn/README.md",
+          "sha256": "a13709146dac29c3bcab669e11695ab47678f3c3f62af2c580e6d229cb4d6fea",
+          "line_start": 43,
+          "line_end": 65,
+          "claim_scope": "Checkout mô tả trạng thái nguồn real/mixed ngày22/10; khác với bản Hub demo và không tự động thay thế nó."
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "M01",
+      "from": "rnv3",
+      "to": "fitechsnm",
+      "purpose": "Bộ chỉ báo chuẩn là đầu vào cho RN V2",
+      "deliverable": "RN V3 chuẩn hóa chỉ báo/chiến lược, xuất đặc tả, phiên bản, ngữ nghĩa tín hiệu và bằng chứng để RN V2 tiếp nhận.",
+      "condition": "Phải có bộ chuẩn được nghiệm thu và hợp đồng consumer đúng phạm vi. Không coi ma trận chưa phê chuẩn là gói đã bàn giao, không tự đổi đầu vào hoặc version pin của RN V2.",
+      "status": "USER_DEFINED_TARGET_RELATION",
+      "basis": "USER_DEFINED_RNV3_MISSION",
+      "execution_verified": false
+    },
+    {
+      "id": "M02",
+      "from": "stockmonitor",
+      "to": "fundamentalpanel",
+      "purpose": "Từ sự chú ý thị trường đến kiểm tra doanh nghiệp",
+      "deliverable": "Mã, nguồn tin/báo cáo, thời điểm và ngữ cảnh lượt nhắc gợi ra doanh nghiệp cần đối chiếu bằng hồ sơ có nguồn.",
+      "condition": "Lượt nhắc không phải alpha hay khuyến nghị mua. Giữ nguồn/thời điểm và loại trùng, đối chiếu facts doanh nghiệp trước khi diễn giải.",
+      "status": "PROPOSED_MISSION_RELATION",
+      "basis": "COORDINATOR_SYNTHESIS_FROM_REVIEWED_MISSIONS",
+      "execution_verified": false
+    },
+    {
+      "id": "M03",
+      "from": "fundamentalpanel",
+      "to": "lunavn",
+      "purpose": "Bổ sung bối cảnh doanh nghiệp cho danh sách sàng lọc",
+      "deliverable": "Thông tin ngành, kỳ báo cáo và chỉ tiêu có nguồn giúp đọc watchlist kỹ thuật trong bối cảnh doanh nghiệp.",
+      "condition": "Facts, giả định định giá và điểm sàng lọc phải tách riêng; kỳ công bố/đơn vị cần xác minh. Không tự ghép mô hình ngành chưa được duyệt; LunaVN trên Hub vẫn là DEMO.",
+      "status": "PROPOSED_MISSION_RELATION",
+      "basis": "COORDINATOR_SYNTHESIS_FROM_REVIEWED_MISSIONS",
+      "execution_verified": false
+    },
+    {
+      "id": "M04",
+      "from": "lunavn",
+      "to": "fitechsnm",
+      "purpose": "Biến ý tưởng từ bộ lọc thành câu hỏi nghiên cứu",
+      "deliverable": "Watchlist và mô tả điều kiện định lượng đề xuất mã hoặc giả thuyết để RN V2 nghiên cứu bằng bộ chỉ báo chuẩn.",
+      "condition": "Chỉ dùng dữ liệu có nguồn và quyền phù hợp cho run mới. Không dùng số DEMO để suy kết quả nghiên cứu, không thay universe hoặc bộ tham số đã đóng băng.",
+      "status": "PROPOSED_MISSION_RELATION",
+      "basis": "COORDINATOR_SYNTHESIS_FROM_REVIEWED_MISSIONS",
+      "execution_verified": false
+    },
+    {
+      "id": "M05",
+      "from": "fitechsnm",
+      "to": "fitechml",
+      "purpose": "Từ bằng chứng chiến lược tới học lợi nhuận–rủi ro",
+      "deliverable": "Artifact event-level đã nghiệm thu, identity tín hiệu/variant/regime và nhãn theo thời gian có thể cung cấp đầu vào cho lớp ML.",
+      "condition": "Cần contract/schema và semantic binding; đặc trưng chỉ biết tại thời điểm tín hiệu. Tách tập học/đánh giá và quyền IS/OOS/holdout; không lấy thống kê gộp làm nhãn sự kiện.",
+      "status": "PROPOSED_MISSION_RELATION",
+      "basis": "COORDINATOR_SYNTHESIS_FROM_REVIEWED_MISSIONS",
+      "execution_verified": false
+    },
+    {
+      "id": "M06",
+      "from": "kronos",
+      "to": "fitechml",
+      "purpose": "Đối chiếu nghiên cứu dự báo chuỗi thời gian với ML",
+      "deliverable": "Dự báo lợi suất, horizon, bất định và baseline của Kronos có thể là artifact đối chiếu hoặc giả thuyết độc lập cho FiTechML.",
+      "condition": "Kronos chưa chạy model trong checkpoint được rà soát. Chỉ dùng artifact hợp lệ theo hợp đồng, giữ cùng mốc thời gian và split; không tự ghép score hoặc coi hai mô hình là xác nhận độc lập.",
+      "status": "PROPOSED_MISSION_RELATION",
+      "basis": "COORDINATOR_SYNTHESIS_FROM_REVIEWED_MISSIONS",
+      "execution_verified": false
+    },
+    {
+      "id": "M07",
+      "from": "fitechml",
+      "to": "lunavn",
+      "purpose": "Đưa kết quả đã kiểm định về công cụ đọc và sàng lọc",
+      "deliverable": "Phân phối cơ hội–rủi ro, support và cảnh báo drift đã được chấp thuận có thể hiển thị cùng watchlist để người nghiên cứu xem xét.",
+      "condition": "Đây là đích ứng dụng, chưa có pipeline được chứng minh. Cần kiểm ngoài mẫu, calibration và nghiệm thu trước hiển thị như kết quả thật; không tự tạo BUY_READY, gộp điểm, đổi champion hoặc gửi lệnh.",
+      "status": "PROPOSED_MISSION_RELATION",
+      "basis": "COORDINATOR_SYNTHESIS_FROM_REVIEWED_MISSIONS",
+      "execution_verified": false
+    }
+  ],
+  "relationship_scope": "Mission-level relationships only. RN V3 → RN V2 is user-defined; the other routes are coordinator proposals. None is claimed as execution-verified. QRW remains a separate shared foundation."
+}
