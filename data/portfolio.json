@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-23T13:07:50.866229+00:00",
+  "observed_at": "2026-10-23T13:41:12.442108+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -18,8 +18,8 @@
       "public_url": "./dashboards/kronos/",
       "connected": true,
       "stale": false,
-      "response_sha256": "3fd4e984c0869b4bcd7f1e27026e888dfb39e273dc64572ba64de5301e71d65b",
-      "checked_at": "2026-10-21T15:53:37.652783+00:00",
+      "response_sha256": "affa41c6be35878a589af3d9c7a8a400b2d21f28314f4fedef6ea40decd47406",
+      "checked_at": "2026-10-23T13:37:23.518067+00:00",
       "milestones": [],
       "facts": [
         {
@@ -28,7 +28,7 @@
         },
         {
           "label": "Worker",
-          "value": "ready"
+          "value": "unavailable"
         }
       ],
       "attention": [
@@ -42,13 +42,17 @@
       "phase": "P2",
       "phase_title": "Bộ lọc & phân ngành",
       "phase_basis": "Banner giao diện quan sát ngày 21/10/2026; readiness không khai báo tiến độ khoa học.",
-      "status_literal": "INFRASTRUCTURE_READY",
-      "status_label": "Hạ tầng sẵn sàng",
+      "status_literal": "INFRASTRUCTURE_NOT_READY",
+      "status_label": "Hạ tầng cần kiểm tra",
       "status_tone": "neutral",
       "next_action": "Tiếp tục hồ sơ P2 theo dashboard gốc.",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/kronos/snapshot.json",
+        "sha256": "e6c2e81f54e77fdcbbdbe37a13678cfc455a9645310f43dcd0312daa93abc00d",
+        "captured_at": "2026-10-23T13:37:23.518067+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "fitechml",
@@ -64,8 +68,8 @@
       "public_url": "./dashboards/fitechml/",
       "connected": true,
       "stale": false,
-      "response_sha256": "a0161492d0cbb9964e7bd8417fbb8426fa8603c89813a840e68d3665392132d5",
-      "checked_at": "2026-10-21T15:53:37.656790+00:00",
+      "response_sha256": "86eb98c9894e16a0536e6f54317b48c490d1e055c230e3d361ff1e5e0de54de5",
+      "checked_at": "2026-10-23T13:37:21.189744+00:00",
       "milestones": [
         {
           "key": "fitechml:R1.1",
@@ -167,10 +171,14 @@
       "status_label": "Chờ nghiệm thu",
       "status_tone": "amber",
       "next_action": "R1.2 — intake D1 toàn universe, sau nghiệm thu",
-      "reported_at": "2026-10-21T15:53:37.654659+00:00",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "reported_at": "2026-10-23T13:37:21.219381+00:00",
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/fitechml/data/snapshot.json",
+        "sha256": "26e153b2013f3508914d294760a3beb020e9d5fc2d15dc92cc52ada9a704eca4",
+        "captured_at": "2026-10-23T13:37:21.189744+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "fitechsnm",
@@ -186,8 +194,8 @@
       "public_url": "./dashboards/fitechsnm/",
       "connected": true,
       "stale": false,
-      "response_sha256": "826c77958ba318c75a1b76520a60c8488835d25bceef7a74571290cd6f2108cd",
-      "checked_at": "2026-10-21T15:53:37.922847+00:00",
+      "response_sha256": "b056a67c1c355a58dfc73ace2053f6a678ae0e46b17a32430dbd4c3addb2ca24",
+      "checked_at": "2026-10-23T13:37:21.189744+00:00",
       "milestones": [
         {
           "key": "fitechsnm:M1",
@@ -196,7 +204,7 @@
           "title": "Input và quyền nghiên cứu",
           "state": "IN_PROGRESS",
           "label": "Đang hoàn thiện",
-          "detail": "Actual input/authority/clock/registry/approval bindings incomplete",
+          "detail": "13documentary refs pinned; authority/currentness/approval/actual composition open",
           "scope": "",
           "date": null
         },
@@ -205,9 +213,9 @@
           "id": "M2",
           "project_id": "fitechsnm",
           "title": "Chương trình và kiểm chứng",
-          "state": "IN_PROGRESS",
-          "label": "Đang hoàn thiện",
-          "detail": "Slot63 scoped acceptance retained; Slot64 STOP_FAIL verified; Slot65 controlled-write recovery qualified/prepared, not executed",
+          "state": "ACCEPTED_SCOPED",
+          "label": "Chấp nhận trong scope",
+          "detail": "Slot68 strictSUPPORT accepted scoped; Slot69 bridge packet/control qualified, product not implemented",
           "scope": "",
           "date": null
         },
@@ -218,7 +226,7 @@
           "title": "Chạy offline R0",
           "state": "NOT_STARTED",
           "label": "Chưa bắt đầu",
-          "detail": "No actual R0 admission/run",
+          "detail": "No actual R0 grant/run",
           "scope": "",
           "date": null
         },
@@ -229,7 +237,7 @@
           "title": "Nghiệm thu và OUTPUT → R1",
           "state": "BLOCKED",
           "label": "Đang bị chặn",
-          "detail": "No actual comparison,accepted OUTPUT or NODE_PASS",
+          "detail": "No actual measured OUTPUT→R1",
           "scope": "",
           "date": null
         }
@@ -267,10 +275,14 @@
       "status_label": "Đang hoàn thiện",
       "status_tone": "violet",
       "next_action": "Hoàn thiện program control và các binding đầu vào đúng phạm vi.",
-      "reported_at": "2026-10-21T15:53:37.917837+00:00",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "reported_at": "2026-10-23T13:37:21.871477+00:00",
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/fitechsnm/data/snapshot.json",
+        "sha256": "a7b84017a53a026aaad36bc84d2241d989ea9b4823328ea044270e2654b44824",
+        "captured_at": "2026-10-23T13:37:21.189744+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "rnv3",
@@ -286,8 +298,8 @@
       "public_url": "./dashboards/rnv3/",
       "connected": true,
       "stale": false,
-      "response_sha256": "e616e24e8707a16b49e8ae61180d1335986b062b8434129d03f2654c046e2556",
-      "checked_at": "2026-10-21T15:53:40.127842+00:00",
+      "response_sha256": "c6519178846e0099706c366f624c18d7d9f6b6a1bb54f12a52ec693e4198bf41",
+      "checked_at": "2026-10-23T13:38:25.439159+00:00",
       "milestones": [
         {
           "key": "rnv3:M1",
@@ -366,12 +378,16 @@
       "status_literal": "NOT_COMPLETE",
       "status_label": "Cần xử lý blocker",
       "status_tone": "amber",
-      "reported_at": "2026-10-21T15:53:39.677329+00:00",
+      "reported_at": "2026-10-23T13:38:22.115156+00:00",
       "evidence_as_of": "2026-10-21T06:16:02.618182+00:00",
       "next_action": "Xử lý binding bootstrap IND061 trước qualification và replay.",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/rnv3/data/state.json",
+        "sha256": "c6519178846e0099706c366f624c18d7d9f6b6a1bb54f12a52ec693e4198bf41",
+        "captured_at": "2026-10-23T13:38:25.439159+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "stockmonitor",
@@ -388,13 +404,13 @@
       "public_url": "./dashboards/stockmonitor/",
       "connected": true,
       "stale": false,
-      "response_sha256": "77644ce9e26da74d8fb9a4cbd905c8d3ab36a0beaf5e0a210a43fd2fccecd0d8",
-      "checked_at": "2026-10-21T15:53:37.750994+00:00",
+      "response_sha256": "7ccf53a8278ac89f441fd6e5ecba7acdd01568ac6abc6fda98b0fe6dd9f352e9",
+      "checked_at": "2026-10-23T13:38:36.725517+00:00",
       "milestones": [],
       "facts": [
         {
           "label": "Snapshot nguồn",
-          "value": "2026-09-10"
+          "value": "2026-10-21"
         },
         {
           "label": "Loại dữ liệu",
@@ -404,7 +420,7 @@
       "attention": [
         {
           "title": "Snapshot và số tổng cần đối chiếu",
-          "detail": "Footer công bố 43501 lượt nhắc / 770 mã. Khảo sát UI ngày 21/10/2026 phát hiện số đầu trang khác footer; adapter tĩnh chưa đối soát bộ đếm chạy JavaScript. Snapshot 2026-09-10; cache tối đa 5 phút, không tự cập nhật nguồn.",
+          "detail": "Footer công bố 45889 lượt nhắc / 770 mã. Khảo sát UI ngày 21/10/2026 phát hiện số đầu trang khác footer; adapter tĩnh chưa đối soát bộ đếm chạy JavaScript. Snapshot 2026-10-21; cache tối đa 5 phút, không tự cập nhật nguồn.",
           "tone": "amber"
         }
       ],
@@ -416,9 +432,13 @@
       "status_tone": "amber",
       "phase_basis": "Công cụ dữ liệu snapshot; không có milestone nghiên cứu trong kết nối này.",
       "next_action": "Mở bảng gốc để tra cứu; đối chiếu số tổng trước khi dùng thống kê.",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/stockmonitor/index.html",
+        "sha256": "ff2343e690cd834c249656fe9c41cd6ca3fbf8c9adce57820f843d0040d7ec80",
+        "captured_at": "2026-10-23T13:38:36.725517+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "lunavn",
@@ -430,29 +450,29 @@
       "mark": "L",
       "category": "Công cụ thị trường · Bộ lọc",
       "group": "tools",
-      "description": "Bộ lọc động lượng, tăng trưởng, chủ đề và ETF. Hiện dùng dữ liệu minh hoạ.",
+      "description": "Bộ lọc động lượng, ngành và ETF. Phân loại nguồn dữ liệu theo từng phần.",
       "local_route": "",
       "public_url": "./dashboards/lunavn/",
       "connected": true,
       "stale": false,
-      "response_sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603",
-      "checked_at": "2026-10-21T15:53:37.887180+00:00",
+      "response_sha256": "e68dbab1bdede6bc2248f9f4233610e60945c2103b426545f9bdf13fc01e912b",
+      "checked_at": "2026-10-23T13:38:20.095436+00:00",
       "milestones": [],
       "facts": [
         {
           "label": "Ngày snapshot",
-          "value": "2026-10-19"
+          "value": "2026-10-16"
         },
         {
           "label": "Dòng trong bộ lọc",
-          "value": "65"
+          "value": "127"
         }
       ],
       "attention": [
         {
           "title": "Giữ rõ chế độ dữ liệu",
-          "detail": "Nguồn đang công bố chỉ số minh hoạ, không phải số liệu thị trường.",
-          "tone": "violet"
+          "detail": "API động lượng công bố mock=false, source=QRW. Những phần khác có thể còn demo; đây không phải chứng nhận nội dung.",
+          "tone": "amber"
         }
       ],
       "documents": [
@@ -465,17 +485,21 @@
           "route": "#/about"
         }
       ],
-      "phase": "DEMO",
+      "phase": "QRW",
       "phase_title": "Bộ lọc động lượng & tăng trưởng",
-      "status_literal": "DEMO_NOT_MARKET_DATA",
-      "status_label": "Dữ liệu minh hoạ",
-      "status_tone": "violet",
+      "status_literal": "QRW_SOURCE_REPORTED_NOT_CERTIFIED",
+      "status_label": "Nguồn QRW · chưa chứng nhận",
+      "status_tone": "amber",
       "phase_basis": "Công cụ bộ lọc; không tạo milestone hoặc nghiệm thu từ kết nối API.",
-      "next_action": "Mở bộ lọc để khám phá giao diện; dữ liệu minh hoạ không dùng làm kết quả thị trường.",
-      "page_sha256": "ab58c10c084b43e865d546df6f28212e8b02c830f3d1279192dae7c4c03e32f1",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "next_action": "Mở bộ lọc; kiểm nguồn và ngày dữ liệu riêng của từng phần trước khi dùng.",
+      "page_sha256": null,
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/lunavn/data/momentum.json",
+        "sha256": "6cc67fd52f71ca034aaef2b2cbecda17d54c1212b6b0e500f965ab775253ee27",
+        "captured_at": "2026-10-23T13:38:20.095436+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "fundamentalpanel",
@@ -492,8 +516,8 @@
       "public_url": "./dashboards/fundamentalpanel/",
       "connected": true,
       "stale": false,
-      "response_sha256": "d4cf01788e2c491cbf4f338fc660efc722877972d08d8fd2ac6bff754b31144f",
-      "checked_at": "2026-10-21T15:53:37.647724+00:00",
+      "response_sha256": "b2dd985a32c71189a9667dc3f4fc1aefcbfb03560bda27cf9394024157cb3dc0",
+      "checked_at": "2026-10-23T13:37:23.079645+00:00",
       "milestones": [],
       "facts": [
         {
@@ -520,9 +544,13 @@
       "status_tone": "amber",
       "phase_basis": "Chỉ xác minh trang cửa vào; không suy độ phủ hay nghiệm thu nội dung từ kết nối.",
       "next_action": "Mở Panel, kiểm nguồn và điều kiện còn thiếu của từng mã trước khi sử dụng.",
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V8"
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/fundamentalpanel/summary.json",
+        "sha256": "b2dd985a32c71189a9667dc3f4fc1aefcbfb03560bda27cf9394024157cb3dc0",
+        "captured_at": "2026-10-23T13:37:23.079645+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     },
     {
       "id": "qrw",
@@ -539,8 +567,8 @@
       "public_url": "./dashboards/qrw/",
       "connected": true,
       "stale": false,
-      "response_sha256": "817f91bde1aab0360182d74a2cf952b8262182d520f1720692373dedcc870d78",
-      "checked_at": "2026-10-23T04:42:32.174657+00:00",
+      "response_sha256": "3ca8f9710359c268d03d82b1a35fcfb364053010b5c3b0bb89b26daa5c022868",
+      "checked_at": "2026-10-23T13:37:05.487039+00:00",
       "milestones": [
         {
           "key": "qrw:P00",
@@ -569,10 +597,10 @@
           "id": "P02",
           "project_id": "qrw",
           "title": "Catalog và input contracts",
-          "state": "NOT_STARTED",
-          "label": "NOT_STARTED",
-          "detail": "Anh chuyển prompt CC01; chưa dispatch",
-          "scope": "SYNTHETIC_CATALOG_CONTRACTS_ONLY · acceptance=NOT_REQUESTED",
+          "state": "VERIFIED_ENGINEERING",
+          "label": "VERIFIED_ENGINEERING",
+          "detail": "CC01 v003 technical QC verified; user acceptance/CC02 transition still pending.",
+          "scope": "SYNTHETIC_CATALOG_CONTRACTS_ONLY · acceptance=PENDING",
           "date": null
         },
         {
@@ -580,9 +608,9 @@
           "id": "P03",
           "project_id": "qrw",
           "title": "Ingestion engine bất biến",
-          "state": "NOT_STARTED",
-          "label": "NOT_STARTED",
-          "detail": "Chờ CC01 QC và scope CC02 được chấp nhận",
+          "state": "BLOCKED",
+          "label": "BLOCKED",
+          "detail": "Chờ anh duyệt CC02 fixture-only:3workorders,8–16giờ estimate; chưa capture data thật.",
           "scope": "SYNTHETIC_CAPTURE_ENGINE_ONLY · acceptance=NOT_REQUESTED",
           "date": null
         },
@@ -678,7 +706,7 @@
       "facts": [
         {
           "label": "Kỹ thuật / gói",
-          "value": "1 / 12"
+          "value": "2 / 12"
         },
         {
           "label": "Owner nghiệm thu",
@@ -715,23 +743,26 @@
       "status_literal": "PROJECT_MONITOR_ONLY_NOT_DATA_INTEGRATION",
       "status_label": "Đang xây dựng nền tảng",
       "status_tone": "blue",
-      "reported_at": "2026-10-23T04:23:43.602145+00:00",
+      "reported_at": "2026-10-23T20:33:55.882502+07:00",
       "phase_basis": "Vai trò nền tảng theo yêu cầu Son; kết nối monitor chỉ đọc không hoàn tất P10/Studio hoặc cutover dữ liệu.",
       "next_action": "Chưa nhập dữ liệu thật · chưa cutover",
-      "technical_verified": 1,
+      "technical_verified": 2,
       "owner_accepted": 0,
       "registered_packages": 12,
       "cutover_count": 0,
-      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT",
-      "metadata_origin": "PRIOR_APPROVED_SNAPSHOT_REUSED",
-      "metadata_origin_release": "V9"
+      "metadata_origin": "CURRENT_CHILD_SNAPSHOT",
+      "snapshot_binding": {
+        "path": "dashboards/qrw/snapshot.json",
+        "sha256": "a9ed986acf9e26a9e4475afa61ea1acd4b7362bb4ec6388fa4b50cc7bf9418c4",
+        "captured_at": "2026-10-23T13:37:05.487039+00:00"
+      },
+      "online_scope": "PUBLIC_READ_ONLY_SNAPSHOT"
     }
   ],
   "connected": 8,
   "total": 8,
   "execution_supported": false,
   "authority_supported": false,
-  "auto_refresh_seconds": 30,
-  "snapshot_assembly_note": "Dashboard metadata captures reused from V11 with individual observation dates unchanged. Source-reviewed mission content has a separate review date; it does not refresh dashboard execution/acceptance states.",
-  "prior_snapshot_manifest_sha256": "1a54805148290f2a863da2b91c87bee872ef3b8067ead1eb5f66ba09ce9f0ba8"
+  "auto_refresh_seconds": 0,
+  "snapshot_assembly_note": "All eight dashboard snapshots captured again on 2026-10-23. Source data dates and scientific states are unchanged except as reported by each source. Mission definitions retain their separate source-review date."
 }

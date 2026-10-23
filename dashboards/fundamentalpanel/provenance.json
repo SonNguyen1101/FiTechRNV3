@@ -1,1 +1,602 @@
-{"mode":"PUBLIC_STATIC_SNAPSHOT","captured_at":"2026-10-21T15:52:05.956791+00:00","source_app":"http://127.0.0.1:4173/panel/","capture_method":"Read-only static source bytes verified against sampled live served bytes. No source application scripts executed.","source_pins":[{"source_url":"http://127.0.0.1:4173/shared/panel.css","source_relative_path":"app/shared/panel.css","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"8a60a99779939203f34354acff9fe54ec64f25128de3ab2aa28abc058baa4896","bytes":8265},{"source_url":"http://127.0.0.1:4173/shared/reader-from-reference.css","source_relative_path":"app/shared/reader-from-reference.css","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"2a7572a95b36dedafaac1cc53134a31b98ca98dae7ed40a8adaab4fab75fee9f","bytes":15175},{"source_url":"http://127.0.0.1:4173/shared/reader-sections-from-reference.css","source_relative_path":"app/shared/reader-sections-from-reference.css","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"fed7c95fd704cb3f010bbf49f767133fdbd9ff8c62e7af675ef4caab3a0079cf","bytes":4359},{"source_url":"http://127.0.0.1:4173/shared/topbar.mjs","source_relative_path":"app/shared/topbar.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"f3c50b2c6bff499a40a6dffc1e714991cf8a9d75b03e7ae1a9d05403155aa751","bytes":1905},{"source_url":"http://127.0.0.1:4173/dossier/analysis.mjs","source_relative_path":"app/dossier/analysis.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"b3cceae5a5386441b7f92833e27462826bc53ee9a3f36d3c413385b0e1945d9a","bytes":16032},{"source_url":"http://127.0.0.1:4173/dossier/charts.mjs","source_relative_path":"app/dossier/charts.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"c09d349bdf18a5cad90e92540c042d65fb25cdec78f5d29affa469871e277227","bytes":12592},{"source_url":"http://127.0.0.1:4173/dossier/data.mjs","source_relative_path":"app/dossier/data.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"58363e09c106f1809c4e3de09ec06023e10562652946971c0dc0fda4e9129249","bytes":4183},{"source_url":"http://127.0.0.1:4173/dossier/facts.mjs","source_relative_path":"app/dossier/facts.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"15ee415224bd99d0e3218acec1f28996a0d7a744cb1db33e1e4fbe051c4d89c3","bytes":19110},{"source_url":"http://127.0.0.1:4173/dossier/format.mjs","source_relative_path":"app/dossier/format.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"d1d9289f8969a14edf4b606d57778ea9b73383e221ac9eb503ce4fbc6815c482","bytes":3047},{"source_url":"http://127.0.0.1:4173/dossier/index.html","source_relative_path":"app/dossier/index.html","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"1bab73ea8eac826ba517d32868c07e3368687013b20a9c798f5c2853531c5fed","bytes":2284},{"source_url":"http://127.0.0.1:4173/dossier/model-defaults.mjs","source_relative_path":"app/dossier/model-defaults.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"a552e4e50f16de06343f1564043d0c831a264194a8b9ca57d48d1b6f046651d0","bytes":2815},{"source_url":"http://127.0.0.1:4173/dossier/model-inputs.mjs","source_relative_path":"app/dossier/model-inputs.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"cc708bc308c43fd4c84ee9bb7b933ba6c21cc0a95510cb1ae3d10580f6297130","bytes":7126},{"source_url":"http://127.0.0.1:4173/dossier/model-setup.mjs","source_relative_path":"app/dossier/model-setup.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"211468fffc1da358ddc2ef9c5664d1f67cf99a86edda19d0b6fc58426e5247fd","bytes":7476},{"source_url":"http://127.0.0.1:4173/dossier/model.mjs","source_relative_path":"app/dossier/model.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"57df3b4420ee149f68c2fb3bc0731166077bd2687e4e7c1579ec75b2fced9e55","bytes":8560},{"source_url":"http://127.0.0.1:4173/dossier/models.mjs","source_relative_path":"app/dossier/models.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"3bcead78be3d5d9557aa66a1ac11f2949ac5eb43988512c2c667b9c0d4da4607","bytes":15532},{"source_url":"http://127.0.0.1:4173/dossier/peers.mjs","source_relative_path":"app/dossier/peers.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"857c6f58e8d6315c0d9e5bc6d6e62b374b44f46f305beb7358dd81de765e5e8a","bytes":5489},{"source_url":"http://127.0.0.1:4173/dossier/php-oracle.mjs","source_relative_path":"app/dossier/php-oracle.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"cc10a2fd8f3ae643d56639ba8c255745f46bacdabb3f71c0d26dee6b196603b3","bytes":773},{"source_url":"http://127.0.0.1:4173/dossier/profit-bridge.mjs","source_relative_path":"app/dossier/profit-bridge.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"46c77ae89a1b322cf35ef483a8be6f3ea47915f97e4d8a0cd06beebf415f7c5c","bytes":5068},{"source_url":"http://127.0.0.1:4173/dossier/projection.mjs","source_relative_path":"app/dossier/projection.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"d09c0c00efdcc62febeee62f0a13a64e46b957d3ee298ce36be41382b83b055d","bytes":2991},{"source_url":"http://127.0.0.1:4173/dossier/reconcile.mjs","source_relative_path":"app/dossier/reconcile.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"fef6c7b2f0b13fc4bb46916fa35b76e4f88bd2d6bcedb59b39a8c234afbb39ca","bytes":3308},{"source_url":"http://127.0.0.1:4173/dossier/render-analysis.mjs","source_relative_path":"app/dossier/render-analysis.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"aebfc60339b41f748be992d703e39b0562e104b01f31a339341fc2bf316f5ad2","bytes":47223},{"source_url":"http://127.0.0.1:4173/dossier/render-blocks.mjs","source_relative_path":"app/dossier/render-blocks.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"33ac849dc72a8eb618ae4358bfa622afd29dfa7f3d7c3cbda3cd2b315402b0a4","bytes":11978},{"source_url":"http://127.0.0.1:4173/dossier/render.mjs","source_relative_path":"app/dossier/render.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"27d640dfaac3cbbb08c30c31b958940b20f27326fa8071195e203a55f1a52fef","bytes":43803},{"source_url":"http://127.0.0.1:4173/dossier/sections.mjs","source_relative_path":"app/dossier/sections.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"9e08e771cef6728cd11e22e3d9d411f6e0c39a039aeac81da5dd0d3c522bd43b","bytes":10825},{"source_url":"http://127.0.0.1:4173/dossier/sector-model.mjs","source_relative_path":"app/dossier/sector-model.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"d910ee3449f44700ac1f518245262c3f57f166bc6c56df19137a4ff406df0076","bytes":4343},{"source_url":"http://127.0.0.1:4173/dossier/segments-view.mjs","source_relative_path":"app/dossier/segments-view.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"085a38c4e66a0e65de25ecc02a6b61d2f4216a3c093f51b4db588755a1cad34a","bytes":6973},{"source_url":"http://127.0.0.1:4173/dossier/segments.mjs","source_relative_path":"app/dossier/segments.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"378b85340c105b432201144f9dfedeff042ec72da0927724066759a2d949a505","bytes":3518},{"source_url":"http://127.0.0.1:4173/dossier/statements.mjs","source_relative_path":"app/dossier/statements.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"c9e2fc0aec8d85bdf9d6030722cf397779982505495b5b62e45863389370d8fb","bytes":8987},{"source_url":"http://127.0.0.1:4173/dossier/valuation.mjs","source_relative_path":"app/dossier/valuation.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"0e39c7ce88aa4c3c587d7f5886c755b27d561fbb8fbeaa3e22b4b2d392c4aa05","bytes":8560},{"source_url":"http://127.0.0.1:4173/dossier/zone-calibration.mjs","source_relative_path":"app/dossier/zone-calibration.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"dde70faeba1d644497470bd478c02009ec4b68982137fb383c4cc461a1db5cac","bytes":10455},{"source_url":"http://127.0.0.1:4173/dossier/zones.mjs","source_relative_path":"app/dossier/zones.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"8de0224328c553d4f080597e93feaecd587e3780d2da67be690371334841e4f6","bytes":13294},{"source_url":"http://127.0.0.1:4173/market/index.html","source_relative_path":"app/market/index.html","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"12ff303f07ef78b67c7a49169957d7df5f346365972964dffb3ed142a5d55b20","bytes":2695},{"source_url":"http://127.0.0.1:4173/market/market.css","source_relative_path":"app/market/market.css","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"68c853c669f4a04ecb350abbb2249b120143d026cfe239ee8f8febb044f7b8f1","bytes":4168},{"source_url":"http://127.0.0.1:4173/market/market.mjs","source_relative_path":"app/market/market.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"1669ec47eadd76d20cdbff1a1f50d489cd6a98c334021d4791424c09dd9bc703","bytes":13628},{"source_url":"http://127.0.0.1:4173/market/render.mjs","source_relative_path":"app/market/render.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"15596a4e160163d3faa07d12b199966119a4b3c477581ffa0edb021893960747","bytes":12388},{"source_url":"http://127.0.0.1:4173/market/screener.mjs","source_relative_path":"app/market/screener.mjs","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"69759cbe9e34f03d8559938758cf45f1608b4851331aa85f6c7f4d8a3bb12aec","bytes":9398},{"source_url":"http://127.0.0.1:4173/panel/index.html","source_relative_path":"app/panel/index.html","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"d4cf01788e2c491cbf4f338fc660efc722877972d08d8fd2ac6bff754b31144f","bytes":8440},{"source_url":"http://127.0.0.1:4173/php-reference/index.html","source_relative_path":"app/php-reference/index.html","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"e40e06c9b7e52ab1e760f6e877f240821996291c5ade1ff4a21028b56ed8f23f","bytes":268335},{"source_url":"http://127.0.0.1:4173/qrw/data/universe.json","source_relative_path":"app/qrw/data/universe.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"9fdfa5c3e2a3bfc2f065827d908b223d633a799587eabeb6bf9522ddd792dbf1","bytes":2317142},{"source_url":"http://127.0.0.1:4173/qrw/data/manifest.json","source_relative_path":"app/qrw/data/manifest.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"d68bffd29eacb4ee94e36997519564693aefdb907cc6144bf79671d0399b689f","bytes":103733},{"source_url":"http://127.0.0.1:4173/qrw/data/screener.json","source_relative_path":"app/qrw/data/screener.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"15d9bf743e512b0a1607107aaea8b7a7361535f70cccc3a2c917bbd3701b3a94","bytes":1665481},{"source_url":"http://127.0.0.1:4173/qrw/data/market.json","source_relative_path":"app/qrw/data/market.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"03380c699383efb27ab88f730773a51a56c37a833f510765ec730156dbdd345c","bytes":527264},{"source_url":"http://127.0.0.1:4173/qrw/data/peers.json","source_relative_path":"app/qrw/data/peers.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"f1d831674ebbfe70c8a937ad09988252f96dcf777456de65a2ab16232fd0d97f","bytes":486254},{"source_url":"http://127.0.0.1:4173/qrw/data/facts/index.json","source_relative_path":"app/qrw/data/facts/index.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"8e41f3216fe349b382fa58f6914f44e515cb262d99abef1f33ba159c00869298","bytes":46},{"source_url":"http://127.0.0.1:4173/qrw/data/statements/index.json","source_relative_path":"app/qrw/data/statements/index.json","read_at":"2026-10-21T15:52:05.956791+00:00","sha256":"5ddb89dc0bf6691a1c1dfd1ffb48932b99376fbd53884a2b17b62e59e87a90e6","bytes":51}],"sanitization":"Allowlisted source folders; recursive native-path/private-field removal from aggregate JSON; universe latest bars reduced to displayed date/close; no history/series/PDF/calibration artifacts.","limitations":["Captured static build; no runtime synchronization or model/sector acceptance.","718 ticker routes and 1/15 complete sections are separate measures.","No full raw OHLCV, price/benchmark series, raw finance histories, PDF, private inputs or execution artifacts.","Dossier historical-price charts and source financial-history controls unavailable; explicit public aggregate card added from existing screener.","PHP original rendered snapshot only: scripts, remote connectors, presets and sliders disabled.","Raw inspector replaced with explicit omission page.","Facts and approved statements indexes actually empty in this served build.","External Google Fonts removed; system font fallback."],"files":[{"path":"dossier/analysis.mjs","sha256":"f68a13a11ab49534cee825720663b87e1ed70395674d2e9b528e785c607ef20b","bytes":16181},{"path":"dossier/charts.mjs","sha256":"c7ae715c208594c17436ac6f11ec1c1ba421fa24728fb89494b458f3cfd9f43f","bytes":12730},{"path":"dossier/data.mjs","sha256":"9a88bcf7b412b3e4b01bcae0d28068a42cde35569a9f27398f31efb714f76a83","bytes":3238},{"path":"dossier/facts.mjs","sha256":"ee5df976323c9a8007aca3e21f05898807b4738d2e7252a72e03b8473e9adbf4","bytes":19342},{"path":"dossier/format.mjs","sha256":"9bad8e95643b0c72c3c8c26f02d8ba00a596bcafbe3612cb60d34e1c641ec611","bytes":3078},{"path":"dossier/index.html","sha256":"e500231a92c9ca371b711414ab604337594e24df52d6610904969d60d8a544a4","bytes":3014},{"path":"dossier/model-defaults.mjs","sha256":"414997e263321cf8d6d0a5dc7df5691ea1c8feb546f7c04a1a7fa5b3b19732fe","bytes":2831},{"path":"dossier/model-inputs.mjs","sha256":"7093a910feec21a7a2ea33932438e495d435d0c2c386e8f367cd3ec2db8d4f1a","bytes":7200},{"path":"dossier/model-setup.mjs","sha256":"87e3bafaeeb1b5f42d24d27a64495369ed3f5d20d276cb19ae0adc113acad690","bytes":7543},{"path":"dossier/model.mjs","sha256":"85ae9422eaf062bae1a3a7ce30914c1c73a3791202d96fb8c96d9a876c010ccb","bytes":8673},{"path":"dossier/models.mjs","sha256":"b84255c04882b95e2124702a61e2292f994ba1943fca7b3814c0cbf92368171d","bytes":15668},{"path":"dossier/peers.mjs","sha256":"65e22fc7393df0b5694ab5c0372ac6121adbcf748cfd7d0e0c328732acab13d5","bytes":5543},{"path":"dossier/php-oracle.mjs","sha256":"595dc5abc10b0f40932950ae3ebe2723c787560cfdaa4e05d79b5e3e83e3cd62","bytes":784},{"path":"dossier/profit-bridge.mjs","sha256":"9238cffa7cc92f36edfa88af9ee1124741af8f28ffe34ddcf12d34cc05db35eb","bytes":5124},{"path":"dossier/projection.mjs","sha256":"c65024512d449ebcc6fc2260fe80335c0dd9e67eaf0944cdbe05e936b3b6c10c","bytes":3023},{"path":"dossier/reconcile.mjs","sha256":"6b436f5972d2713227054e97cdcdba5010320671c9472f6cb9cbc009e99949e1","bytes":3346},{"path":"dossier/render-analysis.mjs","sha256":"c0980e2ac4f5dc3894981803ed23ef6d0c7f42b9208e364ba2942648bbde69e1","bytes":47553},{"path":"dossier/render-blocks.mjs","sha256":"763b261b8f34c7418fb45e8153baf5d1e4bbf95cda11ce9425227998fe28362f","bytes":12072},{"path":"dossier/render.mjs","sha256":"3a33b84b3f07bd8364022191386633cec29837e4c7e479e173f899f0e0f1a347","bytes":45527},{"path":"dossier/sections.mjs","sha256":"00997271d8231a074c0b5cb788d587dc808bb3ae0018fa344aec36de4ec055c1","bytes":10882},{"path":"dossier/sector-model.mjs","sha256":"5d7c331bb3d598609e189624e3d40fa91b6e9274ad2dce2f2e23057f21ed7f55","bytes":4391},{"path":"dossier/segments-view.mjs","sha256":"af498120a7652eaf5e6ad8403fb85b9a910372a0c2320bb03b4bdfe4db796b61","bytes":7038},{"path":"dossier/segments.mjs","sha256":"4ab4ed601faa3392f781a31876ecffbb4874275c03ea364241f2a78fdaa731af","bytes":3563},{"path":"dossier/statements.mjs","sha256":"c337b6748ddf8c93cb592af8e38462ae578ea33a7d0c34c73c6ce41aadb74d5b","bytes":9099},{"path":"dossier/valuation.mjs","sha256":"5d7202ff4cce2471461c2e7fe2c79aad210a4f3de0870607f541442f48231248","bytes":8657},{"path":"dossier/zone-calibration.mjs","sha256":"49e8cf7854aa1d50220726e682aa8efc7afef5dc5654c8b2bcdd4e309ba3ec0b","bytes":10570},{"path":"dossier/zones.mjs","sha256":"3a1ffae7d3c7517fa921261f996b6e7a4258ba6e9304f7b33afce23f8177b496","bytes":13436},{"path":"index.html","sha256":"be910bcfcf12c17685d8e6665de5dc6e7cca3426f4251f476157d98c45e39d71","bytes":1271},{"path":"market/index.html","sha256":"99fe406fe9b2edc07d9e38ded5aff1dc708b87762b9118c2391409323039362c","bytes":3427},{"path":"market/market.css","sha256":"52a8c751001329c7b05581238cc5c8b0795abbb9d72a94d2c39af646247c1302","bytes":4222},{"path":"market/market.mjs","sha256":"8667dabbf8b59f9f04be6ef5c55ef801b977d5c441fc54ca5e215571ff57ca17","bytes":13784},{"path":"market/render.mjs","sha256":"a651d21c693699d4a10bc8184184701bc48d92c0fa480d16034c37a3661847d0","bytes":12489},{"path":"market/screener.mjs","sha256":"94b8f56cb09a7e8e211da61b4d74eb8cc806f5bdae204a98462c2d4bbfbd963b","bytes":9514},{"path":"panel/index.html","sha256":"c1b8d812cb4e0252664cefd70f3f26015a393ca7f81a349fc3a8209e404808ec","bytes":9213},{"path":"php-reference/index.html","sha256":"c68ab3f7839a4fbd830b6ecda665aa3f1f83db7885621d7c9634c2e019e1ce7c","bytes":144502},{"path":"qrw/data/facts/index.json","sha256":"a3a895837dc90b8a228953a5fa408196148c2b8845e68d3fb5a3915f97219da3","bytes":45},{"path":"qrw/data/manifest.json","sha256":"33fbabfbba6280519f2579c5fe4ff19a348c5455eda62cb3dde8d917f05c0928","bytes":58665},{"path":"qrw/data/market.json","sha256":"c7ef7ceaf03f52ec4e984da1b28078c9ff820c1b0cecabedc8b9b4354ff41bf7","bytes":527250},{"path":"qrw/data/peers.json","sha256":"b75ca36284253fc3570c20026a322eb52aac4b35e9edcb13219796faedeeae55","bytes":474079},{"path":"qrw/data/screener.json","sha256":"c24953d0a755ab04282ee528d6cf927ca731fad5753024ab2680e394f2e2d3f1","bytes":1664646},{"path":"qrw/data/statements/index.json","sha256":"174aa1a4cdcdaf2c4a064e89ea70fd8ee96a67ddc1b9f5b2d7415141b5579ab6","bytes":50},{"path":"qrw/data/universe.json","sha256":"c595b496c6fbf655b42064917272a51e8a294e059928e4d0d6d312c89be70041","bytes":1946655},{"path":"qrw/data/zones/index.json","sha256":"0f2070f824808815f4087e7c4dd4e85607460438b1c72c691524ad4308499f7b","bytes":159},{"path":"qrw/index.html","sha256":"a3ac9e41f0622c264aa389ec42d31e3716c9887961d3803f4dbe285b5243c2f5","bytes":1663},{"path":"read-only.js","sha256":"8272de07019e1d418cc89caf3467ba103d5175affce8cf8a8790d82ca03e610c","bytes":490},{"path":"README.md","sha256":"8eb6e1a7857c8588d791100505d03c74171a8b4d829bbe3541ce91ed8ff92c15","bytes":2302},{"path":"shared/panel.css","sha256":"564993afe319b285cbf59e8e8e04e20db5bcd01079a0fdb8f3d83f20f0793c11","bytes":8362},{"path":"shared/reader-from-reference.css","sha256":"876606f06134fe9b578fee2c163ed7fb030d7e85113d94913ca96c4f86eb7d5c","bytes":15390},{"path":"shared/reader-sections-from-reference.css","sha256":"e00654eec6761ef265d833050bd3cd4123804b30b1bdeb2d0764ad5ff46395f6","bytes":4404},{"path":"shared/topbar.mjs","sha256":"b0ad410bd028245270e2fd518c94dac3ca27311d8f0093a422d55835cd68f9d3","bytes":1930},{"path":"snapshot.css","sha256":"e352e7dc71e2f9251389333ad466ac8fb0d53527007721c36a4fce230f80997e","bytes":556},{"path":"summary.json","sha256":"bd401ff0d7768521e72d95093d07f9fb3a4121ccbfff073db9b31c8bd440aa8f","bytes":2176}]}
+{
+  "mode": "PUBLIC_STATIC_SNAPSHOT",
+  "captured_at": "2026-10-23T13:37:23.079645+00:00",
+  "source_app": "http://127.0.0.1:4173/panel/",
+  "capture_method": "Read-only static source bytes verified against sampled live served bytes. No source application scripts executed.",
+  "source_pins": [
+    {
+      "source_url": "http://127.0.0.1:4173/shared/panel.css",
+      "source_relative_path": "app/shared/panel.css",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "8a60a99779939203f34354acff9fe54ec64f25128de3ab2aa28abc058baa4896",
+      "bytes": 8265
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/shared/reader-from-reference.css",
+      "source_relative_path": "app/shared/reader-from-reference.css",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "2a7572a95b36dedafaac1cc53134a31b98ca98dae7ed40a8adaab4fab75fee9f",
+      "bytes": 15175
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/shared/reader-sections-from-reference.css",
+      "source_relative_path": "app/shared/reader-sections-from-reference.css",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "fed7c95fd704cb3f010bbf49f767133fdbd9ff8c62e7af675ef4caab3a0079cf",
+      "bytes": 4359
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/shared/topbar.mjs",
+      "source_relative_path": "app/shared/topbar.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "f3c50b2c6bff499a40a6dffc1e714991cf8a9d75b03e7ae1a9d05403155aa751",
+      "bytes": 1905
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/analysis.mjs",
+      "source_relative_path": "app/dossier/analysis.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "b3cceae5a5386441b7f92833e27462826bc53ee9a3f36d3c413385b0e1945d9a",
+      "bytes": 16032
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/charts.mjs",
+      "source_relative_path": "app/dossier/charts.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "c09d349bdf18a5cad90e92540c042d65fb25cdec78f5d29affa469871e277227",
+      "bytes": 12592
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/data.mjs",
+      "source_relative_path": "app/dossier/data.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "58363e09c106f1809c4e3de09ec06023e10562652946971c0dc0fda4e9129249",
+      "bytes": 4183
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/facts.mjs",
+      "source_relative_path": "app/dossier/facts.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "15ee415224bd99d0e3218acec1f28996a0d7a744cb1db33e1e4fbe051c4d89c3",
+      "bytes": 19110
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/format.mjs",
+      "source_relative_path": "app/dossier/format.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "d1d9289f8969a14edf4b606d57778ea9b73383e221ac9eb503ce4fbc6815c482",
+      "bytes": 3047
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/index.html",
+      "source_relative_path": "app/dossier/index.html",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "1bab73ea8eac826ba517d32868c07e3368687013b20a9c798f5c2853531c5fed",
+      "bytes": 2284
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/model-defaults.mjs",
+      "source_relative_path": "app/dossier/model-defaults.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "a552e4e50f16de06343f1564043d0c831a264194a8b9ca57d48d1b6f046651d0",
+      "bytes": 2815
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/model-inputs.mjs",
+      "source_relative_path": "app/dossier/model-inputs.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "cc708bc308c43fd4c84ee9bb7b933ba6c21cc0a95510cb1ae3d10580f6297130",
+      "bytes": 7126
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/model-setup.mjs",
+      "source_relative_path": "app/dossier/model-setup.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "211468fffc1da358ddc2ef9c5664d1f67cf99a86edda19d0b6fc58426e5247fd",
+      "bytes": 7476
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/model.mjs",
+      "source_relative_path": "app/dossier/model.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "57df3b4420ee149f68c2fb3bc0731166077bd2687e4e7c1579ec75b2fced9e55",
+      "bytes": 8560
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/models.mjs",
+      "source_relative_path": "app/dossier/models.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "3bcead78be3d5d9557aa66a1ac11f2949ac5eb43988512c2c667b9c0d4da4607",
+      "bytes": 15532
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/peers.mjs",
+      "source_relative_path": "app/dossier/peers.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "857c6f58e8d6315c0d9e5bc6d6e62b374b44f46f305beb7358dd81de765e5e8a",
+      "bytes": 5489
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/php-oracle.mjs",
+      "source_relative_path": "app/dossier/php-oracle.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "cc10a2fd8f3ae643d56639ba8c255745f46bacdabb3f71c0d26dee6b196603b3",
+      "bytes": 773
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/profit-bridge.mjs",
+      "source_relative_path": "app/dossier/profit-bridge.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "46c77ae89a1b322cf35ef483a8be6f3ea47915f97e4d8a0cd06beebf415f7c5c",
+      "bytes": 5068
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/projection.mjs",
+      "source_relative_path": "app/dossier/projection.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "d09c0c00efdcc62febeee62f0a13a64e46b957d3ee298ce36be41382b83b055d",
+      "bytes": 2991
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/reconcile.mjs",
+      "source_relative_path": "app/dossier/reconcile.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "fef6c7b2f0b13fc4bb46916fa35b76e4f88bd2d6bcedb59b39a8c234afbb39ca",
+      "bytes": 3308
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/render-analysis.mjs",
+      "source_relative_path": "app/dossier/render-analysis.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "aebfc60339b41f748be992d703e39b0562e104b01f31a339341fc2bf316f5ad2",
+      "bytes": 47223
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/render-blocks.mjs",
+      "source_relative_path": "app/dossier/render-blocks.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "33ac849dc72a8eb618ae4358bfa622afd29dfa7f3d7c3cbda3cd2b315402b0a4",
+      "bytes": 11978
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/render.mjs",
+      "source_relative_path": "app/dossier/render.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "27d640dfaac3cbbb08c30c31b958940b20f27326fa8071195e203a55f1a52fef",
+      "bytes": 43803
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/sections.mjs",
+      "source_relative_path": "app/dossier/sections.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "9e08e771cef6728cd11e22e3d9d411f6e0c39a039aeac81da5dd0d3c522bd43b",
+      "bytes": 10825
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/sector-model.mjs",
+      "source_relative_path": "app/dossier/sector-model.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "d910ee3449f44700ac1f518245262c3f57f166bc6c56df19137a4ff406df0076",
+      "bytes": 4343
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/segments-view.mjs",
+      "source_relative_path": "app/dossier/segments-view.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "085a38c4e66a0e65de25ecc02a6b61d2f4216a3c093f51b4db588755a1cad34a",
+      "bytes": 6973
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/segments.mjs",
+      "source_relative_path": "app/dossier/segments.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "378b85340c105b432201144f9dfedeff042ec72da0927724066759a2d949a505",
+      "bytes": 3518
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/statements.mjs",
+      "source_relative_path": "app/dossier/statements.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "c9e2fc0aec8d85bdf9d6030722cf397779982505495b5b62e45863389370d8fb",
+      "bytes": 8987
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/valuation.mjs",
+      "source_relative_path": "app/dossier/valuation.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "0e39c7ce88aa4c3c587d7f5886c755b27d561fbb8fbeaa3e22b4b2d392c4aa05",
+      "bytes": 8560
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/zone-calibration.mjs",
+      "source_relative_path": "app/dossier/zone-calibration.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "dde70faeba1d644497470bd478c02009ec4b68982137fb383c4cc461a1db5cac",
+      "bytes": 10455
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/dossier/zones.mjs",
+      "source_relative_path": "app/dossier/zones.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "8de0224328c553d4f080597e93feaecd587e3780d2da67be690371334841e4f6",
+      "bytes": 13294
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/market/index.html",
+      "source_relative_path": "app/market/index.html",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "12ff303f07ef78b67c7a49169957d7df5f346365972964dffb3ed142a5d55b20",
+      "bytes": 2695
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/market/market.css",
+      "source_relative_path": "app/market/market.css",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "68c853c669f4a04ecb350abbb2249b120143d026cfe239ee8f8febb044f7b8f1",
+      "bytes": 4168
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/market/market.mjs",
+      "source_relative_path": "app/market/market.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "1669ec47eadd76d20cdbff1a1f50d489cd6a98c334021d4791424c09dd9bc703",
+      "bytes": 13628
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/market/render.mjs",
+      "source_relative_path": "app/market/render.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "15596a4e160163d3faa07d12b199966119a4b3c477581ffa0edb021893960747",
+      "bytes": 12388
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/market/screener.mjs",
+      "source_relative_path": "app/market/screener.mjs",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "69759cbe9e34f03d8559938758cf45f1608b4851331aa85f6c7f4d8a3bb12aec",
+      "bytes": 9398
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/panel/index.html",
+      "source_relative_path": "app/panel/index.html",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "d4cf01788e2c491cbf4f338fc660efc722877972d08d8fd2ac6bff754b31144f",
+      "bytes": 8440
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/php-reference/index.html",
+      "source_relative_path": "app/php-reference/index.html",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "e40e06c9b7e52ab1e760f6e877f240821996291c5ade1ff4a21028b56ed8f23f",
+      "bytes": 268335
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/universe.json",
+      "source_relative_path": "app/qrw/data/universe.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "9fdfa5c3e2a3bfc2f065827d908b223d633a799587eabeb6bf9522ddd792dbf1",
+      "bytes": 2317142
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/manifest.json",
+      "source_relative_path": "app/qrw/data/manifest.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "d68bffd29eacb4ee94e36997519564693aefdb907cc6144bf79671d0399b689f",
+      "bytes": 103733
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/screener.json",
+      "source_relative_path": "app/qrw/data/screener.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "15d9bf743e512b0a1607107aaea8b7a7361535f70cccc3a2c917bbd3701b3a94",
+      "bytes": 1665481
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/market.json",
+      "source_relative_path": "app/qrw/data/market.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "03380c699383efb27ab88f730773a51a56c37a833f510765ec730156dbdd345c",
+      "bytes": 527264
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/peers.json",
+      "source_relative_path": "app/qrw/data/peers.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "f1d831674ebbfe70c8a937ad09988252f96dcf777456de65a2ab16232fd0d97f",
+      "bytes": 486254
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/facts/index.json",
+      "source_relative_path": "app/qrw/data/facts/index.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "8e41f3216fe349b382fa58f6914f44e515cb262d99abef1f33ba159c00869298",
+      "bytes": 46
+    },
+    {
+      "source_url": "http://127.0.0.1:4173/qrw/data/statements/index.json",
+      "source_relative_path": "app/qrw/data/statements/index.json",
+      "read_at": "2026-10-23T13:37:23.079645+00:00",
+      "sha256": "5ddb89dc0bf6691a1c1dfd1ffb48932b99376fbd53884a2b17b62e59e87a90e6",
+      "bytes": 51
+    }
+  ],
+  "sanitization": "Allowlisted source folders; recursive native-path/private-field removal from aggregate JSON; universe latest bars reduced to displayed date/close; no history/series/PDF/calibration artifacts.",
+  "limitations": [
+    "Captured static build; no runtime synchronization or model/sector acceptance.",
+    "718 ticker routes and 1/15 complete sections are separate measures.",
+    "No full raw OHLCV, price/benchmark series, raw finance histories, PDF, private inputs or execution artifacts.",
+    "Dossier historical-price charts and source financial-history controls unavailable; explicit public aggregate card added from existing screener.",
+    "PHP original rendered snapshot only: scripts, remote connectors, presets and sliders disabled.",
+    "Raw inspector replaced with explicit omission page.",
+    "Facts and approved statements indexes actually empty in this served build.",
+    "External Google Fonts removed; system font fallback."
+  ],
+  "files": [
+    {
+      "path": "dossier/analysis.mjs",
+      "bytes": 16181,
+      "sha256": "f68a13a11ab49534cee825720663b87e1ed70395674d2e9b528e785c607ef20b"
+    },
+    {
+      "path": "dossier/charts.mjs",
+      "bytes": 12730,
+      "sha256": "c7ae715c208594c17436ac6f11ec1c1ba421fa24728fb89494b458f3cfd9f43f"
+    },
+    {
+      "path": "dossier/data.mjs",
+      "bytes": 3238,
+      "sha256": "9a88bcf7b412b3e4b01bcae0d28068a42cde35569a9f27398f31efb714f76a83"
+    },
+    {
+      "path": "dossier/facts.mjs",
+      "bytes": 19342,
+      "sha256": "ee5df976323c9a8007aca3e21f05898807b4738d2e7252a72e03b8473e9adbf4"
+    },
+    {
+      "path": "dossier/format.mjs",
+      "bytes": 3078,
+      "sha256": "9bad8e95643b0c72c3c8c26f02d8ba00a596bcafbe3612cb60d34e1c641ec611"
+    },
+    {
+      "path": "dossier/index.html",
+      "bytes": 3079,
+      "sha256": "4fb4cdff45cdfb27bf2639fe5d06d7219b9f19f90de3b30080a52da6898ec3cd"
+    },
+    {
+      "path": "dossier/model-defaults.mjs",
+      "bytes": 2831,
+      "sha256": "414997e263321cf8d6d0a5dc7df5691ea1c8feb546f7c04a1a7fa5b3b19732fe"
+    },
+    {
+      "path": "dossier/model-inputs.mjs",
+      "bytes": 7200,
+      "sha256": "7093a910feec21a7a2ea33932438e495d435d0c2c386e8f367cd3ec2db8d4f1a"
+    },
+    {
+      "path": "dossier/model-setup.mjs",
+      "bytes": 7543,
+      "sha256": "87e3bafaeeb1b5f42d24d27a64495369ed3f5d20d276cb19ae0adc113acad690"
+    },
+    {
+      "path": "dossier/model.mjs",
+      "bytes": 8673,
+      "sha256": "85ae9422eaf062bae1a3a7ce30914c1c73a3791202d96fb8c96d9a876c010ccb"
+    },
+    {
+      "path": "dossier/models.mjs",
+      "bytes": 15668,
+      "sha256": "b84255c04882b95e2124702a61e2292f994ba1943fca7b3814c0cbf92368171d"
+    },
+    {
+      "path": "dossier/peers.mjs",
+      "bytes": 5543,
+      "sha256": "65e22fc7393df0b5694ab5c0372ac6121adbcf748cfd7d0e0c328732acab13d5"
+    },
+    {
+      "path": "dossier/php-oracle.mjs",
+      "bytes": 784,
+      "sha256": "595dc5abc10b0f40932950ae3ebe2723c787560cfdaa4e05d79b5e3e83e3cd62"
+    },
+    {
+      "path": "dossier/profit-bridge.mjs",
+      "bytes": 5124,
+      "sha256": "9238cffa7cc92f36edfa88af9ee1124741af8f28ffe34ddcf12d34cc05db35eb"
+    },
+    {
+      "path": "dossier/projection.mjs",
+      "bytes": 3023,
+      "sha256": "c65024512d449ebcc6fc2260fe80335c0dd9e67eaf0944cdbe05e936b3b6c10c"
+    },
+    {
+      "path": "dossier/reconcile.mjs",
+      "bytes": 3346,
+      "sha256": "6b436f5972d2713227054e97cdcdba5010320671c9472f6cb9cbc009e99949e1"
+    },
+    {
+      "path": "dossier/render-analysis.mjs",
+      "bytes": 47553,
+      "sha256": "c0980e2ac4f5dc3894981803ed23ef6d0c7f42b9208e364ba2942648bbde69e1"
+    },
+    {
+      "path": "dossier/render-blocks.mjs",
+      "bytes": 12072,
+      "sha256": "763b261b8f34c7418fb45e8153baf5d1e4bbf95cda11ce9425227998fe28362f"
+    },
+    {
+      "path": "dossier/render.mjs",
+      "bytes": 45527,
+      "sha256": "3a33b84b3f07bd8364022191386633cec29837e4c7e479e173f899f0e0f1a347"
+    },
+    {
+      "path": "dossier/sections.mjs",
+      "bytes": 10882,
+      "sha256": "00997271d8231a074c0b5cb788d587dc808bb3ae0018fa344aec36de4ec055c1"
+    },
+    {
+      "path": "dossier/sector-model.mjs",
+      "bytes": 4391,
+      "sha256": "5d7c331bb3d598609e189624e3d40fa91b6e9274ad2dce2f2e23057f21ed7f55"
+    },
+    {
+      "path": "dossier/segments-view.mjs",
+      "bytes": 7038,
+      "sha256": "af498120a7652eaf5e6ad8403fb85b9a910372a0c2320bb03b4bdfe4db796b61"
+    },
+    {
+      "path": "dossier/segments.mjs",
+      "bytes": 3563,
+      "sha256": "4ab4ed601faa3392f781a31876ecffbb4874275c03ea364241f2a78fdaa731af"
+    },
+    {
+      "path": "dossier/statements.mjs",
+      "bytes": 9099,
+      "sha256": "c337b6748ddf8c93cb592af8e38462ae578ea33a7d0c34c73c6ce41aadb74d5b"
+    },
+    {
+      "path": "dossier/valuation.mjs",
+      "bytes": 8657,
+      "sha256": "5d7202ff4cce2471461c2e7fe2c79aad210a4f3de0870607f541442f48231248"
+    },
+    {
+      "path": "dossier/zone-calibration.mjs",
+      "bytes": 10570,
+      "sha256": "49e8cf7854aa1d50220726e682aa8efc7afef5dc5654c8b2bcdd4e309ba3ec0b"
+    },
+    {
+      "path": "dossier/zones.mjs",
+      "bytes": 13436,
+      "sha256": "3a1ffae7d3c7517fa921261f996b6e7a4258ba6e9304f7b33afce23f8177b496"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1297,
+      "sha256": "3decdf26d962d64afa08c9cdac791897d6cc6c4095f8ea3badd83e9008e74ec6"
+    },
+    {
+      "path": "market/index.html",
+      "bytes": 3492,
+      "sha256": "b91547936940c60fb11a7cfbc44b56e6da2ff183d39c700c9e67148bfa588742"
+    },
+    {
+      "path": "market/market.css",
+      "bytes": 4222,
+      "sha256": "52a8c751001329c7b05581238cc5c8b0795abbb9d72a94d2c39af646247c1302"
+    },
+    {
+      "path": "market/market.mjs",
+      "bytes": 13784,
+      "sha256": "8667dabbf8b59f9f04be6ef5c55ef801b977d5c441fc54ca5e215571ff57ca17"
+    },
+    {
+      "path": "market/render.mjs",
+      "bytes": 12489,
+      "sha256": "a651d21c693699d4a10bc8184184701bc48d92c0fa480d16034c37a3661847d0"
+    },
+    {
+      "path": "market/screener.mjs",
+      "bytes": 9514,
+      "sha256": "94b8f56cb09a7e8e211da61b4d74eb8cc806f5bdae204a98462c2d4bbfbd963b"
+    },
+    {
+      "path": "panel/index.html",
+      "bytes": 9265,
+      "sha256": "6921d2667d886cfc99f675522e985a5dd90001646ce839ab8f4d169259f87ad8"
+    },
+    {
+      "path": "php-reference/index.html",
+      "bytes": 144528,
+      "sha256": "fc22b4504983401c5ba197b3efe7ebe464d358aeccd95ee490f65f86188d80ce"
+    },
+    {
+      "path": "qrw/data/facts/index.json",
+      "bytes": 45,
+      "sha256": "a3a895837dc90b8a228953a5fa408196148c2b8845e68d3fb5a3915f97219da3"
+    },
+    {
+      "path": "qrw/data/manifest.json",
+      "bytes": 58665,
+      "sha256": "33fbabfbba6280519f2579c5fe4ff19a348c5455eda62cb3dde8d917f05c0928"
+    },
+    {
+      "path": "qrw/data/market.json",
+      "bytes": 527250,
+      "sha256": "c7ef7ceaf03f52ec4e984da1b28078c9ff820c1b0cecabedc8b9b4354ff41bf7"
+    },
+    {
+      "path": "qrw/data/peers.json",
+      "bytes": 474079,
+      "sha256": "b75ca36284253fc3570c20026a322eb52aac4b35e9edcb13219796faedeeae55"
+    },
+    {
+      "path": "qrw/data/screener.json",
+      "bytes": 1664646,
+      "sha256": "c24953d0a755ab04282ee528d6cf927ca731fad5753024ab2680e394f2e2d3f1"
+    },
+    {
+      "path": "qrw/data/statements/index.json",
+      "bytes": 50,
+      "sha256": "174aa1a4cdcdaf2c4a064e89ea70fd8ee96a67ddc1b9f5b2d7415141b5579ab6"
+    },
+    {
+      "path": "qrw/data/universe.json",
+      "bytes": 1946655,
+      "sha256": "c595b496c6fbf655b42064917272a51e8a294e059928e4d0d6d312c89be70041"
+    },
+    {
+      "path": "qrw/data/zones/index.json",
+      "bytes": 159,
+      "sha256": "0f2070f824808815f4087e7c4dd4e85607460438b1c72c691524ad4308499f7b"
+    },
+    {
+      "path": "qrw/index.html",
+      "bytes": 1689,
+      "sha256": "85671d7365c21840b27fd94d48496e4819f456ee5c2744b8427b405964b6f5b8"
+    },
+    {
+      "path": "read-only.js",
+      "bytes": 490,
+      "sha256": "8272de07019e1d418cc89caf3467ba103d5175affce8cf8a8790d82ca03e610c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2302,
+      "sha256": "8eb6e1a7857c8588d791100505d03c74171a8b4d829bbe3541ce91ed8ff92c15"
+    },
+    {
+      "path": "shared/panel.css",
+      "bytes": 8362,
+      "sha256": "564993afe319b285cbf59e8e8e04e20db5bcd01079a0fdb8f3d83f20f0793c11"
+    },
+    {
+      "path": "shared/reader-from-reference.css",
+      "bytes": 15390,
+      "sha256": "876606f06134fe9b578fee2c163ed7fb030d7e85113d94913ca96c4f86eb7d5c"
+    },
+    {
+      "path": "shared/reader-sections-from-reference.css",
+      "bytes": 4404,
+      "sha256": "e00654eec6761ef265d833050bd3cd4123804b30b1bdeb2d0764ad5ff46395f6"
+    },
+    {
+      "path": "shared/topbar.mjs",
+      "bytes": 1930,
+      "sha256": "b0ad410bd028245270e2fd518c94dac3ca27311d8f0093a422d55835cd68f9d3"
+    },
+    {
+      "path": "snapshot.css",
+      "bytes": 556,
+      "sha256": "e352e7dc71e2f9251389333ad466ac8fb0d53527007721c36a4fce230f80997e"
+    },
+    {
+      "path": "SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 424,
+      "sha256": "7891f3c410ffa8759d1fab1f040715c73f63e51c4ad6047df99fa686dd9639f4"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 2176,
+      "sha256": "b2dd985a32c71189a9667dc3f4fc1aefcbfb03560bda27cf9394024157cb3dc0"
+    }
+  ],
+  "packaging_release": "V15"
+}

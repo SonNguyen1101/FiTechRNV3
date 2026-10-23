@@ -3,7 +3,7 @@
 :root {
   --bg: #ffffff; --fg: #111111; --muted: #666666; --border: #e5e7eb; --panel: #fafafa; --surface: #ffffff;
   --accent: #111111; --hover-bg: #eeeeee; --shadow: rgba(0, 0, 0, 0.1);
-  --pos: #7fa98f; --neg: #c79088; --dot: #111111; --dot-off: #d4d4d8; --skeleton-a: #eeeeee; --skeleton-b: #f6f6f6; --overlay-soft: rgba(255,255,255,0.6);
+  --pos: #7fa98f; --neg: #c79088; --pos-text: #3a7050; --neg-text: #a1534a; --dot: #111111; --dot-off: #d4d4d8; --skeleton-a: #eeeeee; --skeleton-b: #f6f6f6; --overlay-soft: rgba(255,255,255,0.6);
   --logo-moon: #111111; --logo-candle: #2f9e66; --brand-red: #d3261c;
   --font: "Inconsolata Variable", "Inconsolata", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --container: 1200px; --gutter: 16px; --radius: 8px;
@@ -12,7 +12,7 @@
 :root[data-theme="dark"] {
   --bg: #0b0d10; --fg: #e8e8e8; --muted: #98a0a6; --border: #2b2f34; --panel: #14171a; --surface: #121417;
   --accent: #f2f2f2; --hover-bg: #1d2226; --shadow: rgba(0, 0, 0, 0.55);
-  --dot: #f2f2f2; --dot-off: #3a3f45; --skeleton-a: #1d2226; --skeleton-b: #262c31; --overlay-soft: rgba(11,13,16,0.6);
+  --pos-text: #7fa98f; --neg-text: #c79088; --dot: #f2f2f2; --dot-off: #3a3f45; --skeleton-a: #1d2226; --skeleton-b: #262c31; --overlay-soft: rgba(11,13,16,0.6);
   --logo-moon: #f2f2f2; --logo-candle: #5fc28f; --brand-red: #ff5a50;
   color-scheme: dark;
 }
@@ -24,6 +24,7 @@ a { color: inherit; }
 button { font: inherit; color: inherit; }
 .srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
+/* Màu chữ tăng/giảm: bản sáng dùng tông đậm hơn (--pos-text/--neg-text, tương phản ≥ 4,5:1); --pos/--neg gốc của nguồn (≈2,6:1 trên nền trắng) chỉ còn cho nến, viền và hình. GĐ9 Phase 2. */
 /* khung trang */
 .container { display: flex; flex-direction: column; width: 100%; max-width: var(--container); min-height: 100vh; margin: 0 auto; padding: var(--gutter); }
 .siteMain { flex: 1 0 auto; min-width: 0; }
@@ -105,13 +106,13 @@ button { font: inherit; color: inherit; }
 .regimeChips { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 0; list-style: none; }
 .regimeChip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
 .regimeVal { font-weight: 600; }
-.regimeUp .regimeVal { color: var(--pos); }
-.regimeDown .regimeVal { color: var(--neg); }
+.regimeUp .regimeVal { color: var(--pos-text); }
+.regimeDown .regimeVal { color: var(--neg-text); }
 .marketMeta { font-size: 12px; color: var(--muted); }
 .tabExplain { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; margin-bottom: 12px; }
 .tabExplainText { flex: 1 1 220px; min-width: 0; margin: 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
 .mockBadge { display: inline-block; padding: 1px 6px; border: 1px solid var(--border); border-radius: 4px; font-size: 11px; font-weight: 600; color: var(--fg); background: var(--panel); }
-.tabRow { display: flex; gap: 8px; flex: 0 0 auto; }
+.tabRow { display: flex; flex-wrap: wrap; gap: 8px; flex: 0 1 auto; }
 .tabButton { font: inherit; font-size: 13px; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--fg); cursor: pointer; }
 .tabButton:hover { background: var(--hover-bg); }
 .tabButtonActive { border-color: var(--accent); }
@@ -152,8 +153,8 @@ button { font: inherit; color: inherit; }
 .filterClear { margin-top: 6px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 11px; color: var(--muted); text-decoration: underline; cursor: pointer; }
 
 .symbolCell { text-decoration: underline; font-weight: 600; }
-.pos { color: var(--pos); }
-.neg { color: var(--neg); }
+.pos { color: var(--pos-text); }
+.neg { color: var(--neg-text); }
 .tightness { display: inline-flex; gap: 3px; align-items: center; }
 .tightnessDot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--dot); background: transparent; }
 .tightnessDotOn { background: var(--dot); }
@@ -167,7 +168,7 @@ button { font: inherit; color: inherit; }
 .breadthChip { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; font: inherit; font-size: 12px; line-height: 12.68px; color: var(--muted); cursor: pointer; }
 .breadthChip:hover:not(:disabled) { color: var(--fg); text-decoration: underline; }
 .breadthChip:disabled { cursor: default; }
-.breadthSkip .regimeVal, .breadthFlag { color: var(--neg); }
+.breadthSkip .regimeVal, .breadthFlag { color: var(--neg-text); }
 .exportMenus { display: inline-flex; align-items: center; gap: 14px; }
 .menuAnchor { position: relative; display: inline-flex; }
 .dropdownMenu { position: absolute; right: 0; top: 18px; z-index: 30; min-width: 220px; padding: 6px; border-radius: 10px; background: var(--surface); box-shadow: 0 10px 30px var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; }
@@ -242,3 +243,234 @@ button { font: inherit; color: inherit; }
   .chartsPanelSymbolBtn { flex-direction: row; align-items: baseline; gap: 6px; padding: 6px 8px; }
   .chartsPanelChart { height: 480px; flex: none; }
 }
+
+/* GĐ8: nhãn nguồn dữ liệu và nút làm mới */
+.dataStatus { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; min-width: 0; font-size: 12px; color: var(--muted); }
+.dataStatusLabel { line-height: 12.68px; }
+.refreshBtn { font: inherit; font-size: 12px; line-height: 14px; padding: 5px 9px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--fg); cursor: pointer; }
+.refreshBtn:hover:not(:disabled) { border-color: var(--accent); }
+.refreshBtn:disabled { color: var(--muted); cursor: default; }
+.refreshBtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dataNote { font-size: 12px; line-height: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.dataNoteOk { color: var(--pos-text); }
+.dataNoteErr { color: var(--neg-text); }
+.mockTag { display: inline-block; margin-left: 5px; padding: 0 4px; border: 1px solid var(--border); border-radius: 3px; font-size: 10px; font-weight: 600; line-height: 13px; color: var(--muted); vertical-align: 1px; }
+.seamMark { margin-left: 4px; font-size: 11px; line-height: 1; color: var(--neg-text); cursor: help; }
+.chartsSeamNote { margin: 4px 0 0; font-size: 12px; line-height: 1.4; color: var(--neg-text); }
+
+/* GĐ9 S1: khoá nội dung. Nội dung vẫn dựng nhưng mờ, inert, aria-hidden; thẻ phủ có biểu tượng khoá, thông điệp và nút đăng nhập (vô hiệu). */
+.lockedSection { position: relative; }
+.lockedSectionBlur { filter: blur(5px); pointer-events: none; user-select: none; }
+.lockedSectionOverlay { position: absolute; inset: 0; z-index: 4; display: flex; align-items: center; justify-content: center; padding: 12px; }
+.lockedSectionCard { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 320px; padding: 16px 18px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); box-shadow: 0 8px 24px var(--shadow); text-align: center; }
+.lockedSectionIcon { color: var(--muted); }
+.lockedSectionMsg { margin: 0; font-size: 13px; line-height: 1.5; }
+.lockedSectionBtn { font: inherit; font-size: 12px; line-height: 14px; padding: 6px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--muted); cursor: default; }
+.briefTag { display: inline-block; margin-left: 8px; padding: 1px 6px; border: 1px solid var(--border); border-radius: 4px; font-size: 11px; font-weight: 600; color: var(--muted); background: var(--panel); white-space: nowrap; }
+
+/* GĐ9 S3: tab Ngành kinh tế (thanh bên nhóm ngành + bảng). Cấu trúc theo thanh bên Thematic của nguồn: bên trái 320px, bên phải bảng. */
+.industryLayout { display: flex; gap: 12px; align-items: flex-start; min-width: 0; }
+.industryMain { flex: 1 1; min-width: 0; }
+.industryListTitle { margin: 0 0 8px; font-size: 14px; font-weight: 600; }
+.industrySidebar { flex: 0 0 320px; width: 320px; max-height: 76vh; overflow-y: auto; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.industrySidebarCollapsed { flex: 0 0 36px; width: 36px; padding: 6px 4px; overflow: visible; }
+.industryHead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.industryHeading { margin: 0; font-size: 14px; font-weight: 600; }
+.industryToggle { width: 28px; height: 28px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: 16px; line-height: 1; cursor: pointer; }
+.industryToggle:hover { background: var(--hover-bg); color: var(--fg); }
+.industryToggle:focus-visible, .industryAll:focus-visible, .industryBoxToggle:focus-visible, .industryBoxTitle:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.industryMeta { margin: 8px 0 0; font-size: 11px; line-height: 1.5; color: var(--muted); }
+.industryList { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.industryAll { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; background: transparent; font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
+.industryAllActive, .industryBoxActive { border-color: var(--accent); }
+.industryBox { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.industryBoxHead { display: flex; align-items: stretch; }
+.industryBoxToggle { flex: 0 0 30px; border: 0; border-radius: 8px 0 0 8px; background: transparent; color: var(--muted); font-size: 14px; cursor: pointer; }
+.industryBoxToggle:hover { background: var(--hover-bg); color: var(--fg); }
+.industryBoxTitle { flex: 1 1; min-width: 0; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px 8px 2px; border: 0; border-radius: 0 8px 8px 0; background: transparent; font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
+.industryBoxTitle:hover { background: var(--hover-bg); }
+.industryBoxLabel { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.industryCount { flex: none; font-size: 11px; font-weight: 400; color: var(--muted); }
+.industryBoxActive .industryBoxTitle { background: rgba(37, 99, 235, 0.1); }
+.industryBoxBody { padding: 6px 10px 10px 32px; border-top: 1px solid var(--border); font-size: 12px; }
+.industryStats { margin: 6px 0; display: grid; gap: 2px; }
+.industryStats div { display: flex; justify-content: space-between; gap: 8px; }
+.industryStats dt { color: var(--muted); }
+.industryStats dd { margin: 0; font-variant-numeric: tabular-nums; }
+.industryNote { margin: 8px 0 0; line-height: 1.5; color: var(--muted); overflow-wrap: anywhere; }
+.industryNote strong { color: var(--fg); font-weight: 600; }
+@media (max-width: 700px) {
+  .industryLayout { flex-direction: column; align-items: stretch; }
+  .industrySidebar, .industrySidebarCollapsed { flex: none; width: 100%; max-height: 300px; }
+  .industrySidebarCollapsed { max-height: none; padding: 4px 8px; }
+  .industryMain { width: 100%; }
+}
+
+/* GĐ9 S4: tab Phái sinh Việt Nam (VN30F). */
+.derivPanel { min-width: 0; }
+.derivHead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
+.derivHeading { margin: 0; font-size: 15px; font-weight: 600; }
+.derivIndex { font-size: 12px; color: var(--muted); }
+.derivIndex strong { color: var(--fg); }
+.derivNote { margin: 4px 0 8px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.derivTableWrap { max-height: none; overflow-y: auto; container-type: inline-size; }
+.derivTable td, .derivTable th { vertical-align: top; }
+.derivTable .num { text-align: right; font-variant-numeric: tabular-nums; }
+.derivSub { font-size: 11px; color: var(--muted); }
+.derivToggle { display: inline-flex; align-items: center; gap: 6px; padding: 0; border: 0; background: transparent; font: inherit; font-weight: 600; cursor: pointer; }
+.derivToggle:hover .derivName { text-decoration: underline; }
+.derivToggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.derivInfo { color: var(--muted); font-weight: 400; cursor: help; }
+.derivDetailRow td { white-space: normal; background: var(--panel); }
+.derivDetail { position: sticky; left: 0; width: calc(100cqw - 24px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 24px; padding: 6px 4px 10px; font-size: 12px; }
+.derivDetailHeading { margin: 10px 0 4px; font-size: 12px; font-weight: 600; }
+.derivDetail .derivDetailHeading:first-child, .derivDetail > div > .derivDetailHeading:first-child { margin-top: 0; }
+.derivSpec { margin: 0; display: grid; gap: 2px; }
+.derivSpec div { display: flex; justify-content: space-between; gap: 12px; }
+.derivSpec dt { color: var(--muted); }
+.derivSpec dd { margin: 0; text-align: right; }
+.derivBars { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.derivBars th, .derivBars td { padding: 3px 6px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+.derivBars th:first-child, .derivBars td:first-child { text-align: left; }
+.derivDisc { margin: 0; padding-left: 16px; color: var(--muted); line-height: 1.5; }
+.derivMuted { margin: 0; color: var(--muted); }
+.derivWarn { margin-top: 14px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); font-size: 12px; }
+.derivWarn ul { margin: 4px 0 8px; padding-left: 18px; line-height: 1.6; color: var(--muted); }
+
+/* GĐ9 S5: chip và hộp thoại Macro (cấu trúc gốc 5 phần/18 dòng; không có thang điểm/ngưỡng cho Việt Nam). */
+.dialogWide { width: min(1100px, 100%); }
+.macroScoreNone { margin-left: 8px; font-size: 12px; font-weight: 400; color: var(--muted); }
+.macroMeta { margin: 6px 0 0; }
+.macroTableWrap { margin-top: 12px; overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+.macroTable { width: 100%; border-collapse: collapse; font-size: 12px; }
+.macroTable thead th { position: sticky; top: 0; z-index: 2; padding: 8px 10px; text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border); background: var(--surface); }
+.macroTable td, .macroTable tbody th.macroItem { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.macroTable tbody th.macroItem { font-weight: 600; width: 30%; }
+.macroSection th { padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted); background: var(--panel); border-bottom: 1px solid var(--border); }
+.macroValue { width: 36%; }
+.macroValueText { display: block; line-height: 1.5; overflow-wrap: anywhere; }
+.macroMockText { color: var(--muted); }
+.macroRule, .macroResult { color: var(--muted); line-height: 1.5; }
+.macroTag { display: inline-block; margin: 4px 6px 0 0; padding: 0 5px; border: 1px solid var(--border); border-radius: 3px; font-size: 10px; font-weight: 600; line-height: 14px; color: var(--muted); }
+.macroTag-real { color: var(--pos-text); border-color: var(--pos); }
+.macroTag-mock { color: var(--fg); background: var(--panel); }
+.macroSpark { display: inline-block; vertical-align: middle; margin-top: 4px; color: var(--muted); }
+@media (max-width: 700px) {
+  .macroTable { min-width: 640px; }
+  .macroTableWrap { overflow-x: auto; }
+}
+
+/* GĐ9 S6: ô UB Score trong bảng và hộp thoại 11 yếu tố. */
+.ubCellBtn { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; padding: 2px 6px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
+.ubCellBtn:hover { color: var(--fg); border-color: var(--accent); }
+.ubCellBtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ubCellLocked { color: var(--muted); }
+.ubScoreVal { margin-left: 8px; font-size: 12px; font-weight: 400; color: var(--muted); }
+.ubTableWrap { margin-top: 12px; overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+.ubTable { width: 100%; border-collapse: collapse; font-size: 12px; }
+.ubTable thead th { padding: 8px 10px; text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border); background: var(--surface); }
+.ubTable td, .ubTable tbody th { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.ubTable tbody th { font-weight: 600; width: 28%; }
+.ubRule { display: block; margin-top: 2px; font-weight: 400; color: var(--muted); font-size: 11px; line-height: 1.45; }
+.ubNa { color: var(--muted); }
+.ubVote { text-align: center; font-variant-numeric: tabular-nums; }
+.ubTotalRow th, .ubTotalRow td { border-bottom: 0; font-weight: 600; }
+.ubMarket { margin-top: 14px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); font-size: 12px; }
+.ubMarket h3 { margin: 0 0 4px; font-size: 12px; font-weight: 600; }
+.ubMarket ul { margin: 4px 0 0; padding-left: 18px; line-height: 1.6; color: var(--muted); }
+.ubSkipOn { color: var(--neg-text); font-weight: 600; }
+@media (max-width: 700px) { .ubTable { min-width: 560px; } }
+
+/* GĐ9 S7: popover biểu đồ khi rê chuột/focus vào mã. */
+.symbolHover { position: fixed; z-index: 900; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35); font-size: 12px; }
+.symbolHoverHead { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.symbolHoverSub { color: var(--muted); font-size: 11px; }
+.symbolHoverMetrics { display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 6px 8px; margin-bottom: 6px; border: 1px solid var(--border); border-radius: 8px; }
+.hoverChart { width: 100%; height: 170px; }
+.symbolHoverMsg { padding: 24px 0; text-align: center; color: var(--muted); }
+.symbolHoverFoot { margin-top: 4px; }
+.symbolCell:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* GĐ10 B: lý do n/a và nhãn "số thật SSI" trong hộp thoại UB Score. */
+.ubReason { display: block; margin-top: 2px; font-size: 11px; line-height: 1.45; color: var(--muted); }
+.ubReal { color: var(--pos-text); }
+
+/* trang Owner (hướng dẫn cho chủ sở hữu) */
+.legalWide { max-width: 860px; }
+.ownerToc { margin: 0 0 20px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); }
+.ownerTocH { margin: 0 0 8px !important; font-size: 0.95rem !important; }
+.ownerTocList { margin: 0; padding: 0 0 0 20px; columns: 2 260px; column-gap: 28px; font-size: 13px; line-height: 1.8; }
+.ownerTocList a { color: inherit; text-underline-offset: 3px; }
+.ownerStatus { margin: 0 0 8px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.ownerStatusH { margin: 0 0 8px !important; font-size: 0.95rem !important; }
+.ownerStatusMsg { margin: 0 !important; color: var(--muted); font-size: 13px; }
+.ownerStatusList { margin: 0; display: grid; gap: 4px; font-size: 13px; }
+.ownerStatusRow { display: grid; grid-template-columns: minmax(130px, 200px) 1fr; gap: 12px; }
+.ownerStatusRow dt { color: var(--muted); }
+.ownerStatusRow dd { margin: 0; overflow-wrap: anywhere; }
+.ownerSection { scroll-margin-top: 12px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+.ownerSection:last-child { border-bottom: 0; }
+.ownerItems { margin: 0 0 8px; }
+.ownerItem { display: grid; grid-template-columns: minmax(130px, 210px) 1fr; gap: 4px 16px; padding: 7px 0; border-top: 1px solid var(--border); }
+.ownerItem:first-child { border-top: 0; }
+.ownerItem dt { font-weight: 600; }
+.ownerItem dd { margin: 0; overflow-wrap: anywhere; }
+.ownerSteps { margin: 0 0 12px; padding: 0 0 0 22px; }
+.ownerSteps li { margin: 0 0 6px; }
+.ownerNote { color: var(--muted); font-size: 13px; }
+.ownerTop { margin: 6px 0 14px !important; font-size: 12px; text-align: right; }
+.ownerTop a { color: var(--muted); }
+.ownerCode { margin: 0 0 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); overflow: hidden; }
+.ownerCodeHead { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 6px 10px; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+.ownerCodeHead > span:first-child { flex: 1 1 220px; }
+.ownerCopyState { min-width: 0; font-size: 12px; color: var(--muted); }
+.ownerPre { margin: 0; padding: 10px 12px; overflow-x: auto; font-size: 12.5px; line-height: 1.6; }
+.ownerPre code { font-family: inherit; white-space: pre; }
+@media (max-width: 600px) {
+  .ownerItem, .ownerStatusRow { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* Owner: rà soát tham số */
+.ownerCallout { margin: 0 0 12px !important; padding: 10px 14px; border: 1px solid var(--border); border-left: 3px solid var(--fg); border-radius: 8px; background: var(--panel); font-size: 13px; }
+.ownerCallout a { color: inherit; text-underline-offset: 3px; font-weight: 600; }
+.paramBar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 16px; margin: 4px 0 8px; }
+.paramField { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); }
+.paramField select, .paramField input, .paramField textarea { font: inherit; font-size: 13px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; max-width: 100%; }
+.paramField textarea { width: 100%; box-sizing: border-box; line-height: 1.5; resize: vertical; }
+.paramProgress { font-size: 13px; font-weight: 600; padding-bottom: 5px; }
+.paramGroup { margin: 18px 0 0; }
+.paramGroupH { margin: 0 0 4px !important; font-size: 1rem; font-weight: 600; }
+.paramCount { font-size: 12px; font-weight: 400; color: var(--muted); }
+.paramRow { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 8px 18px; padding: 12px 0; border-top: 1px solid var(--border); }
+.paramRow[data-decision="keep"] { background: color-mix(in srgb, var(--panel) 70%, transparent); }
+.paramRow[data-decision="change"], .paramRow[data-decision="research"] { background: var(--panel); }
+.paramInfo p { margin: 0 0 6px; font-size: 13px; line-height: 1.6; }
+.paramName { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+.paramId { font-size: 11px; font-weight: 400; color: var(--muted); }
+.paramLabel { color: var(--muted); }
+.paramValue strong { font-weight: 600; overflow-wrap: anywhere; }
+.paramOrigin { display: inline-block; padding: 1px 7px; border: 1px solid var(--border); border-radius: 4px; font-size: 11px; font-weight: 600; background: var(--surface); }
+.paramOriginTag-tam, .paramOriginTag-us { border-color: var(--fg); }
+.paramAsk { color: var(--fg); }
+.paramDecide { display: flex; flex-direction: column; gap: 8px; align-self: start; }
+.paramActions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 16px 0 8px; }
+.paramSummary { margin-top: 8px; }
+@media (max-width: 700px) {
+  .paramRow { grid-template-columns: 1fr; }
+}
+
+.paramBar .paramField { flex: 1 1 220px; min-width: 0; }
+.paramBar .paramField select { width: 100%; text-overflow: ellipsis; }
+.paramRow > * { min-width: 0; }
+.paramInfo code { overflow-wrap: anywhere; }
+
+/* Owner: nhãn phiên bản của bảng tham số */
+.paramMeta { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 6px; padding: 8px 12px; border: 1px solid var(--fg); border-radius: 8px; background: var(--panel); font-size: 12px; }
+.paramMetaItem { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: baseline; }
+.paramMetaLabel { color: var(--muted); }
+.paramMetaVersion strong { padding: 0 6px; border: 1px solid var(--fg); border-radius: 4px; }
+.paramStale { margin: 0 0 10px; padding: 8px 12px; border: 1px solid var(--fg); border-left-width: 4px; border-radius: 8px; background: var(--panel); font-size: 13px; }
+
+/* nhãn phiên bản của bản đang chạy (cạnh nhãn dữ liệu) */
+.buildTag { display: inline-flex; flex-wrap: wrap; gap: 0 2px; margin-left: 4px; cursor: help; border-bottom: 1px dotted var(--muted); }
+.buildTag > span + span { margin-left: 0.6ch; white-space: pre-wrap; }

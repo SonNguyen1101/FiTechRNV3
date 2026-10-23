@@ -1,414 +1,414 @@
 {
   "mode": "PUBLIC_STATIC_SNAPSHOT",
-  "captured_at": "2026-10-21T15:31:51.300391+00:00",
+  "captured_at": "2026-10-23T13:37:23.518067+00:00",
   "source_app": "http://127.0.0.1:8788/#overview",
   "source_label": "Actual served frontend and explicitly allowlisted GET metadata. No source-repository execution.",
   "sources": [
     {
       "url": "http://127.0.0.1:8788/api/v2/readiness",
-      "captured_at": "2026-10-21T15:31:51.309749+00:00",
-      "sha256": "3fd4e984c0869b4bcd7f1e27026e888dfb39e273dc64572ba64de5301e71d65b",
-      "bytes": 47
+      "captured_at": "2026-10-23T13:37:23.527503+00:00",
+      "sha256": "affa41c6be35878a589af3d9c7a8a400b2d21f28314f4fedef6ea40decd47406",
+      "bytes": 54
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/health",
-      "captured_at": "2026-10-21T15:31:51.311830+00:00",
+      "captured_at": "2026-10-23T13:37:23.529502+00:00",
       "sha256": "02c10185e817853110a424f2051a020f9968271e5364e3891f689357802ae088",
       "bytes": 58
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/capabilities",
-      "captured_at": "2026-10-21T15:31:51.313205+00:00",
+      "captured_at": "2026-10-23T13:37:23.531503+00:00",
       "sha256": "62f4c73901519e5d34e00e5fcb4a27e8e6cf4713878bc25631f2dd690cc3e461",
       "bytes": 314
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/settings",
-      "captured_at": "2026-10-21T15:31:51.314506+00:00",
+      "captured_at": "2026-10-23T13:37:23.532505+00:00",
       "sha256": "c211bf9dfb2dc967d7ef69f717d5d90c6409c6cbb1b7f0e597debeaf2013a744",
       "bytes": 206
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots",
-      "captured_at": "2026-10-21T15:31:51.382268+00:00",
+      "captured_at": "2026-10-23T13:37:23.627610+00:00",
       "sha256": "a4f50987f30867cae0098ee4c61bd14dfd551ec32edfb6fce4c58e6030e057d3",
       "bytes": 1786
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries",
-      "captured_at": "2026-10-21T15:31:51.496583+00:00",
+      "captured_at": "2026-10-23T13:37:23.795948+00:00",
       "sha256": "26e0a7d4246738b5ec7c8ec2524b90ce2bd8e1856c34326eb097096dd728b3b4",
       "bytes": 2012
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/policies",
-      "captured_at": "2026-10-21T15:31:51.500431+00:00",
+      "captured_at": "2026-10-23T13:37:23.823130+00:00",
       "sha256": "3c6da8012b84e7b1e0b671976853bf51895e319acd3068a506a6046af07c3431",
       "bytes": 2825
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/schema",
-      "captured_at": "2026-10-21T15:31:51.502155+00:00",
+      "captured_at": "2026-10-23T13:37:23.844115+00:00",
       "sha256": "376befd7a9166ca4e141678dd6e469bd3af476b57977b0b9dec771ee243a9d8b",
       "bytes": 2704
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs",
-      "captured_at": "2026-10-21T15:31:51.505011+00:00",
+      "captured_at": "2026-10-23T13:37:23.872646+00:00",
       "sha256": "7c99cb566389856448992ee35055429a5a9e2ec9acd32d3ddf7ef0d5b70b13df",
       "bytes": 2169
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/jobs",
-      "captured_at": "2026-10-21T15:31:51.508330+00:00",
+      "captured_at": "2026-10-23T13:37:23.883157+00:00",
       "sha256": "5384e874d0857f35cef9a9e8c839cb8a7382ed7cb58ad181d51bf2997669f55b",
       "bytes": 3217
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/621936f590eac781af8f4936c9c43a9d380c9a56a3018d10a960ac4c15fa7dce/instruments?limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:51.826775+00:00",
+      "captured_at": "2026-10-23T13:37:24.187488+00:00",
       "sha256": "973f277ed9476f7c41990f8764d7006230f91dc45c6ffafb75b776dd08fe16b2",
       "bytes": 907274
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/621936f590eac781af8f4936c9c43a9d380c9a56a3018d10a960ac4c15fa7dce/instruments?limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:52.166928+00:00",
+      "captured_at": "2026-10-23T13:37:24.483114+00:00",
       "sha256": "1b3d88f9888bc0c2669d7f4fac0c81ad6177784f917c2d4d6269d79a01170d12",
       "bytes": 905890
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/621936f590eac781af8f4936c9c43a9d380c9a56a3018d10a960ac4c15fa7dce/instruments?limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:52.488681+00:00",
+      "captured_at": "2026-10-23T13:37:24.790506+00:00",
       "sha256": "aef9d38c473a97a930109ddd6785af6f37ee29d3db2f439cac18f9bdeb7b113d",
       "bytes": 914251
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/621936f590eac781af8f4936c9c43a9d380c9a56a3018d10a960ac4c15fa7dce/instruments?limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:52.907662+00:00",
+      "captured_at": "2026-10-23T13:37:25.023092+00:00",
       "sha256": "83b49a0cb95eaaad9f9b3ad5bab13bf1fa7a8c82cdcca46bf3e277d93c27a6de",
       "bytes": 536944
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4c580d27afc875b4f790b0dbcc2e0b73760530147a2baf8af89b4fb9a69db421/instruments?limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:53.176604+00:00",
+      "captured_at": "2026-10-23T13:37:25.251846+00:00",
       "sha256": "a3185f10d67826e23d4504dd366a9b0c7018c77c48ed0195f8649f0ee042d7aa",
       "bytes": 474629
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4c580d27afc875b4f790b0dbcc2e0b73760530147a2baf8af89b4fb9a69db421/instruments?limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:53.522440+00:00",
+      "captured_at": "2026-10-23T13:37:25.521435+00:00",
       "sha256": "f82b13901101b67d1553ffd6c4e4e46912e47ee25509f464e2369d41afdd246e",
       "bytes": 474796
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4c580d27afc875b4f790b0dbcc2e0b73760530147a2baf8af89b4fb9a69db421/instruments?limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:53.777365+00:00",
+      "captured_at": "2026-10-23T13:37:25.779240+00:00",
       "sha256": "77e01be8c882aea372aa46312c398f85263c49d75c7d9f68b48e22da76955b9c",
       "bytes": 478301
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4c580d27afc875b4f790b0dbcc2e0b73760530147a2baf8af89b4fb9a69db421/instruments?limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:54.199275+00:00",
+      "captured_at": "2026-10-23T13:37:26.042194+00:00",
       "sha256": "3fd39c6ceb50b527d58d55e3fb8f5b1c7e27a6ad245e13931cba3a5a1af3e9d2",
       "bytes": 281961
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4ddcf59dc449d254d58d624eaae463982e0986ccdafec49570f361ad53b5a697/instruments?limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:54.425653+00:00",
+      "captured_at": "2026-10-23T13:37:26.248247+00:00",
       "sha256": "eea5444874cc7ef6a39479a7ae31603227d237627618d2f73c6dcefee46a8f65",
       "bytes": 361495
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4ddcf59dc449d254d58d624eaae463982e0986ccdafec49570f361ad53b5a697/instruments?limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:54.681105+00:00",
+      "captured_at": "2026-10-23T13:37:26.441294+00:00",
       "sha256": "2efc390ebbbc2e98b7361e659d5059e3ff721d49d778f8932cd59bfafeb314d5",
       "bytes": 324362
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4ddcf59dc449d254d58d624eaae463982e0986ccdafec49570f361ad53b5a697/instruments?limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:54.979566+00:00",
+      "captured_at": "2026-10-23T13:37:26.669639+00:00",
       "sha256": "2a1f0857b44b3e84c2bb626b5b7c1a8d3ef1e4f2a0f951a1e77c335dc5e4770a",
       "bytes": 325472
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/4ddcf59dc449d254d58d624eaae463982e0986ccdafec49570f361ad53b5a697/instruments?limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:55.192958+00:00",
+      "captured_at": "2026-10-23T13:37:26.896473+00:00",
       "sha256": "a26f5e3a5bee99d7d32dfe25f1255ed883b3150b5612a21cdb0625e927996c51",
       "bytes": 191113
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/41e1b2fa66a1f81825679cb96d7101fe144c15780ecb22931e0096fb63950289/instruments?limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:55.502518+00:00",
+      "captured_at": "2026-10-23T13:37:27.114469+00:00",
       "sha256": "88594808635eb33ddf5beba938956455267fa4fd10131b634ea812cbb816e4cd",
       "bytes": 325624
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/41e1b2fa66a1f81825679cb96d7101fe144c15780ecb22931e0096fb63950289/instruments?limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:55.765628+00:00",
+      "captured_at": "2026-10-23T13:37:27.301263+00:00",
       "sha256": "2efc390ebbbc2e98b7361e659d5059e3ff721d49d778f8932cd59bfafeb314d5",
       "bytes": 324362
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/41e1b2fa66a1f81825679cb96d7101fe144c15780ecb22931e0096fb63950289/instruments?limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:55.999886+00:00",
+      "captured_at": "2026-10-23T13:37:27.511185+00:00",
       "sha256": "2a1f0857b44b3e84c2bb626b5b7c1a8d3ef1e4f2a0f951a1e77c335dc5e4770a",
       "bytes": 325472
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/snapshots/41e1b2fa66a1f81825679cb96d7101fe144c15780ecb22931e0096fb63950289/instruments?limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:56.224829+00:00",
+      "captured_at": "2026-10-23T13:37:27.731510+00:00",
       "sha256": "a26f5e3a5bee99d7d32dfe25f1255ed883b3150b5612a21cdb0625e927996c51",
       "bytes": 191113
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff",
-      "captured_at": "2026-10-21T15:31:56.261486+00:00",
-      "sha256": "eeef05c8f3727f03d51264f2130cd3811d220934814154def515f2d8bc9abdc8",
+      "captured_at": "2026-10-23T13:37:27.799052+00:00",
+      "sha256": "2c312f9a100c2bcacb696f9cf23f4fc31a84e8d0a018a690954aec8857514999",
       "bytes": 37823
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:56.403599+00:00",
+      "captured_at": "2026-10-23T13:37:27.888332+00:00",
       "sha256": "1230f03287d25d16be78fe38bc63be11b92533f7ef176a181525d73a66d766bd",
       "bytes": 335259
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:56.505584+00:00",
+      "captured_at": "2026-10-23T13:37:27.955459+00:00",
       "sha256": "20d7ca7641db9fabd296a24e896b2c1e71500359bbede897a06ad160d3cc1f90",
       "bytes": 341979
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:56.612575+00:00",
+      "captured_at": "2026-10-23T13:37:28.061711+00:00",
       "sha256": "f96fa88a62d3da1678a17d1d44c7c132a0a16164debab56cba4032217fe3c3c1",
       "bytes": 325528
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:56.684050+00:00",
+      "captured_at": "2026-10-23T13:37:28.130716+00:00",
       "sha256": "e34fa67258680a2ee0b4dc3bcb54d79c58d60104ad33d1f6eaf1b7f43d81b668",
       "bytes": 333219
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=800",
-      "captured_at": "2026-10-21T15:31:56.780564+00:00",
+      "captured_at": "2026-10-23T13:37:28.209784+00:00",
       "sha256": "77c515c7caea54568adfe62a7304a6f968a0ac3227d49a003dfb8faa47ea0fa4",
       "bytes": 336952
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=1000",
-      "captured_at": "2026-10-21T15:31:56.850987+00:00",
+      "captured_at": "2026-10-23T13:37:28.275136+00:00",
       "sha256": "27b20be5e136c0b048f547c48b4084dccd0feea23124fe4c9107e4de10707c13",
       "bytes": 341140
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=1200",
-      "captured_at": "2026-10-21T15:31:56.941908+00:00",
+      "captured_at": "2026-10-23T13:37:28.357706+00:00",
       "sha256": "b2bfd7d2a9d7b3e203fcb1c4fdf02a5acbfb00c0bec196405bab88c0b78d91d1",
       "bytes": 356249
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=1400",
-      "captured_at": "2026-10-21T15:31:57.120324+00:00",
+      "captured_at": "2026-10-23T13:37:28.445025+00:00",
       "sha256": "f397da507fd1021683fe69ba057686ed22c87e0466178e5c57a2c9f7c924727b",
       "bytes": 352486
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=1600",
-      "captured_at": "2026-10-21T15:31:57.233091+00:00",
+      "captured_at": "2026-10-23T13:37:28.510330+00:00",
       "sha256": "829a9537fd02539b7263eced5713df32eb9f88a3d674e56770d0c9654473ad8c",
       "bytes": 360216
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/0bef34d8b0f6b1884185c2b3df08c33c1f66d44a12864a2fe1fab2c29b7f4aff/sectors?scope=ssi&level=2&limit=200&offset=1800",
-      "captured_at": "2026-10-21T15:31:57.337566+00:00",
+      "captured_at": "2026-10-23T13:37:28.587445+00:00",
       "sha256": "9b8626a4a7e486adef56f67039994a4e3302092b15bf35a017bfb541f50cd62d",
       "bytes": 346749
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735",
-      "captured_at": "2026-10-21T15:31:57.386920+00:00",
-      "sha256": "d5750eb2834b5d9a434be60c2baaa0c36d681fccf1c4aa57b153efd9b0fa4ef5",
+      "captured_at": "2026-10-23T13:37:28.622533+00:00",
+      "sha256": "6e034df04acc8d4437cf1a8c4187f44e1bab12db69b9a1602acc1d6757ece592",
       "bytes": 37602
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:57.462696+00:00",
+      "captured_at": "2026-10-23T13:37:28.706011+00:00",
       "sha256": "38f47f0242abb62a8f625a7dc4ae52fd6424b7addf03acaa359dcf30b2bd7cb3",
       "bytes": 335259
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:57.529430+00:00",
+      "captured_at": "2026-10-23T13:37:28.798365+00:00",
       "sha256": "d5e92af363c6f68964404e2c4a1943e33b5d1049566375343ee3af7611f73065",
       "bytes": 341979
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:57.607112+00:00",
+      "captured_at": "2026-10-23T13:37:28.892384+00:00",
       "sha256": "75a59bc23e7123601bba3fc5d17c0dd2fb588c89899ccbaff56c236d0ef4f9f7",
       "bytes": 325528
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:57.682884+00:00",
+      "captured_at": "2026-10-23T13:37:28.958047+00:00",
       "sha256": "02422cc2340e254733eff545e38d2b9b6613e9a62eede63bfda497434e87c0df",
       "bytes": 333219
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=800",
-      "captured_at": "2026-10-21T15:31:57.765136+00:00",
+      "captured_at": "2026-10-23T13:37:29.023552+00:00",
       "sha256": "d7a8f85ecd352946cfa2701965d54f84d4ba19dfdb5e06e6b01fc9e019c8675b",
       "bytes": 336952
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=1000",
-      "captured_at": "2026-10-21T15:31:57.896689+00:00",
+      "captured_at": "2026-10-23T13:37:29.113980+00:00",
       "sha256": "c5175009dcd80b98a774facc5278161ef4ecc3b6566650aeb2af4e973734ec74",
       "bytes": 341140
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=1200",
-      "captured_at": "2026-10-21T15:31:57.962999+00:00",
+      "captured_at": "2026-10-23T13:37:29.193145+00:00",
       "sha256": "2142bfe5e9188ff0c595ba13ba61136f540a49f87a45f8886c01e74b1f69b732",
       "bytes": 356249
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=1400",
-      "captured_at": "2026-10-21T15:31:58.053736+00:00",
+      "captured_at": "2026-10-23T13:37:29.283681+00:00",
       "sha256": "0353f918958cdd8d3faa57639f70ce04a685e2334ced0434a6f35fc26e07c20e",
       "bytes": 352486
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=1600",
-      "captured_at": "2026-10-21T15:31:58.123508+00:00",
+      "captured_at": "2026-10-23T13:37:29.348777+00:00",
       "sha256": "de3cd0a5b1b7e5009e6a29c467066913f2b3c612f1711be07233eb66774eda0d",
       "bytes": 360216
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/bf0438c729090b89b42c1794719d440e326b3fd4663764eccc61e2455fc5c735/sectors?scope=ssi&level=2&limit=200&offset=1800",
-      "captured_at": "2026-10-21T15:31:58.217854+00:00",
+      "captured_at": "2026-10-23T13:37:29.441201+00:00",
       "sha256": "27facc57ad012b929f5941da75137a2505a9117d65ef1178654c0cc5e3c1315f",
       "bytes": 346749
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/f1c3dec161121ea60f9b537d16d810ab1dc4c209be09f4c1eeddfc2448206c2b",
-      "captured_at": "2026-10-21T15:31:58.257107+00:00",
-      "sha256": "2e7df7ccab661ccb4ae365baceb8e80d6513ff8e1c750bcd0ae8c0eaca365768",
+      "captured_at": "2026-10-23T13:37:29.479577+00:00",
+      "sha256": "ee514e0eafb03b9dc559a32bbbf94168eacf27455c9eb03dcae80c3b895d990a",
       "bytes": 37170
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/f1c3dec161121ea60f9b537d16d810ab1dc4c209be09f4c1eeddfc2448206c2b/sectors?scope=ssi&level=2&limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:58.317617+00:00",
+      "captured_at": "2026-10-23T13:37:29.538641+00:00",
       "sha256": "a1ed8582539c7c9d0bbd0b4eb75adb7ece31c52f453e2a5d1c0c770b82dc5dfc",
       "bytes": 519339
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/f1c3dec161121ea60f9b537d16d810ab1dc4c209be09f4c1eeddfc2448206c2b/sectors?scope=ssi&level=2&limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:58.383011+00:00",
+      "captured_at": "2026-10-23T13:37:29.627231+00:00",
       "sha256": "064ec2bea2b656f6b1b8dd8077c2ee376d5de484ef64861999376f19abf0b905",
       "bytes": 517934
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/f1c3dec161121ea60f9b537d16d810ab1dc4c209be09f4c1eeddfc2448206c2b/sectors?scope=ssi&level=2&limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:58.517838+00:00",
+      "captured_at": "2026-10-23T13:37:29.708725+00:00",
       "sha256": "d5f417388539d84827ca079d00ec23d4577c704dc098d021599b7b883f1fb9a4",
       "bytes": 523412
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/f1c3dec161121ea60f9b537d16d810ab1dc4c209be09f4c1eeddfc2448206c2b/sectors?scope=ssi&level=2&limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:58.637322+00:00",
+      "captured_at": "2026-10-23T13:37:29.778067+00:00",
       "sha256": "c85986b56d53777f356826b534ad9a379c984f8461ffeae05d64ac8608ad5d41",
       "bytes": 317654
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/936766be1cc19a56c5e4fa92eb01df854126cd434bed96af483a003f82ad8381",
-      "captured_at": "2026-10-21T15:31:58.659137+00:00",
-      "sha256": "f5d02d7e627da0aa8614ff8ca0240b12d0a6f21b6b9040273f2c398b10f9e29c",
+      "captured_at": "2026-10-23T13:37:29.791603+00:00",
+      "sha256": "a94aea161f59ab2443002b0eeae389e395e969698f6f1a58d14b9ea6420f1044",
       "bytes": 9855
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/fb264db794a1c0520a273cd926957411e2168ed1e1f9de881a54e221671e7ce3",
-      "captured_at": "2026-10-21T15:31:58.665178+00:00",
-      "sha256": "e446e3230a4a36bb0c5746143f280a0faf74300099676bb1e66331710b94000b",
+      "captured_at": "2026-10-23T13:37:29.796607+00:00",
+      "sha256": "fd7f9d6289eac9e1ca1cc4180e73acebe3cc7056d0c86f6517b01b5a17af3e2d",
       "bytes": 9030
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/3209d1fdc1b2b798868ec59607d42161f551a906a12a57ed27f098c9efb7c554",
-      "captured_at": "2026-10-21T15:31:58.670683+00:00",
-      "sha256": "654ee0171328fd4466ade2b3d91f97322a60d2b3f9c40b4946b5280ad689b41d",
+      "captured_at": "2026-10-23T13:37:29.800605+00:00",
+      "sha256": "c8b05f299f4e0619a9ea876025b2e7617fcd14efb706e53460f4cd093a82d788",
       "bytes": 6421
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/registries/75a1d7dadd1744e09815a9b2817fec2646e4f5ff14e2706322ffbe1d51c9e99e",
-      "captured_at": "2026-10-21T15:31:58.686388+00:00",
-      "sha256": "f64c15fc4ad04a1beac98e7817cb398adb4ac1a95791c29d48d1a82a2f181f2d",
+      "captured_at": "2026-10-23T13:37:29.826130+00:00",
+      "sha256": "3ff0bc2fc44e8342a09db8d953a26576283c8b0740850ea3f768580d436efb21",
       "bytes": 919
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/b239e064c260072857aecb3488e11a9438ef6b955e574ce741147cc0590eb07c?limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:58.775439+00:00",
+      "captured_at": "2026-10-23T13:37:29.905923+00:00",
       "sha256": "5d6784809d9f74f88f2d75d5a4be3f715d1671a68b8b14acc524aff1e022b4b2",
       "bytes": 741102
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/b239e064c260072857aecb3488e11a9438ef6b955e574ce741147cc0590eb07c?limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:58.860593+00:00",
+      "captured_at": "2026-10-23T13:37:29.971864+00:00",
       "sha256": "a82a5b05afd3874aa306de3cfcce8c648851cf5b1d08192a8d92c8a8f20148cd",
       "bytes": 739991
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/b239e064c260072857aecb3488e11a9438ef6b955e574ce741147cc0590eb07c?limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:58.945042+00:00",
+      "captured_at": "2026-10-23T13:37:30.033917+00:00",
       "sha256": "42b1907b8549fe83212c290ff069d8fc7ff1a06068fe2379fba030975e990a34",
       "bytes": 747511
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/b239e064c260072857aecb3488e11a9438ef6b955e574ce741147cc0590eb07c?limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:58.997693+00:00",
+      "captured_at": "2026-10-23T13:37:30.086407+00:00",
       "sha256": "f462ae7dc5b48c04157fdd01862dc1051b083569100429a542943205428709da",
       "bytes": 438355
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/ecdcc4732bb6cedb0b9ff41c340194c1942d232c77f5a456cfe828088166398f?limit=200&offset=0",
-      "captured_at": "2026-10-21T15:31:59.053834+00:00",
+      "captured_at": "2026-10-23T13:37:30.162540+00:00",
       "sha256": "415749aa1de85ab9b67e75297fc80bd4a43ce4682b5fcbd7bcff60039cdb307e",
       "bytes": 509013
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/ecdcc4732bb6cedb0b9ff41c340194c1942d232c77f5a456cfe828088166398f?limit=200&offset=200",
-      "captured_at": "2026-10-21T15:31:59.100147+00:00",
+      "captured_at": "2026-10-23T13:37:30.215830+00:00",
       "sha256": "d43ceb1661be234cf9468881f47fbccf8cfa86257b61b7bbd16cd401880016ed",
       "bytes": 507766
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/ecdcc4732bb6cedb0b9ff41c340194c1942d232c77f5a456cfe828088166398f?limit=200&offset=400",
-      "captured_at": "2026-10-21T15:31:59.158160+00:00",
+      "captured_at": "2026-10-23T13:37:30.264999+00:00",
       "sha256": "42ef61dc93bd04429e6ebc8c86b00e7e3f2a810c0440d42df21a65b4a8074d3e",
       "bytes": 513141
     },
     {
       "url": "http://127.0.0.1:8788/api/v2/filters/runs/ecdcc4732bb6cedb0b9ff41c340194c1942d232c77f5a456cfe828088166398f?limit=200&offset=600",
-      "captured_at": "2026-10-21T15:31:59.193740+00:00",
+      "captured_at": "2026-10-23T13:37:30.299053+00:00",
       "sha256": "94657425aba8052910866cb5a257cd35b8e0880f496c8631813b5fe5383b029d",
       "bytes": 301481
     },
     {
       "url": "http://127.0.0.1:8788/",
-      "captured_at": "2026-10-21T15:31:59.424249+00:00",
+      "captured_at": "2026-10-23T13:37:30.596694+00:00",
       "sha256": "49c402b0cb3d3b94e348a88f26fee1979b63e8b74ebe3a645b79037d171dc275",
       "bytes": 355
     },
     {
       "url": "http://127.0.0.1:8788/assets/index-rz-MlUQ8.js",
-      "captured_at": "2026-10-21T15:31:59.451773+00:00",
+      "captured_at": "2026-10-23T13:37:30.679915+00:00",
       "sha256": "912f9f0cd85f434683648b27fa201624c6f1e61cb89878dcec0b0e8661191a07",
       "bytes": 285004
     },
     {
       "url": "http://127.0.0.1:8788/assets/index-d0xId-8Q.css",
-      "captured_at": "2026-10-21T15:31:59.464191+00:00",
+      "captured_at": "2026-10-23T13:37:30.698439+00:00",
       "sha256": "e866dc2e156d646987de519eb71a37914273bf16ee86a6adec0d7c8d35f9993c",
       "bytes": 17506
     }
@@ -436,8 +436,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 1241,
-      "sha256": "4932789e50614d21d3ce76671212301fe9e1af3cbed84e7ba4e3e36ab0260d78"
+      "bytes": 1293,
+      "sha256": "f653ba15d512cffcde269b817cafb8a3910060c607affc0643ae0a7f9b758e2b"
     },
     {
       "path": "README.md",
@@ -451,13 +451,19 @@
     },
     {
       "path": "snapshot.json",
-      "bytes": 6169447,
-      "sha256": "285b1116739c1e0a71ce37a71bcc661bd7efb3ef016fa80bc3b67b344cc6f2eb"
+      "bytes": 6169454,
+      "sha256": "e6c2e81f54e77fdcbbdbe37a13678cfc455a9645310f43dcd0312daa93abc00d"
+    },
+    {
+      "path": "SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 414,
+      "sha256": "a144251c63322e8ff4ee72f54f3e584e65ab8ad3064915d5efb6a7b9201a0946"
     },
     {
       "path": "static-client.js",
-      "bytes": 6582,
-      "sha256": "406f0b6bb0d05d988b8f4fd514a9e8cefd39c77276421cf5ac58b529a9c08c10"
+      "bytes": 6688,
+      "sha256": "f54529931d09f997f0880fb93e7e0d9a552368ff13b6a6509ac5127c9a5becc0"
     }
-  ]
+  ],
+  "packaging_release": "V15"
 }

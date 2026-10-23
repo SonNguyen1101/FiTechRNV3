@@ -1267,7 +1267,7 @@
     "warnings": [],
     "public_snapshot": true
   },
-  "generated_at": "2026-10-21T15:30:25.834710+00:00",
+  "generated_at": "2026-10-23T13:37:21.219381+00:00",
   "scope": "D1_ONLY",
   "artifact_links": {
     "report.docx": null,
@@ -1299,10 +1299,10 @@
   },
   "public_snapshot": {
     "mode": "PUBLIC_READ_ONLY_SNAPSHOT",
-    "captured_at": "2026-10-21T15:30:25.803250+00:00",
+    "captured_at": "2026-10-23T13:37:21.189744+00:00",
     "source_route": "/api/status",
     "source_port": 8789,
-    "source_response_sha256": "45688164619702f336375651536150e9e1ef257df704ef5a6cb8f85f970ffd6c",
+    "source_response_sha256": "86eb98c9894e16a0536e6f54317b48c490d1e055c230e3d361ff1e5e0de54de5",
     "read_only": true,
     "live": false,
     "scientific_acceptance": false,

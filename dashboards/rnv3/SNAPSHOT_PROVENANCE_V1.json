@@ -1,16 +1,8 @@
 {
   "project": "FiTechRNV3",
-  "source": "Previously user-approved public V2 documentary export",
-  "approved_manifest_sha256": "873fa969e8d87cf4e455c3fe2b025509f67a73910c789dc33e2a1c3922b318ad",
-  "exported_at": "2026-10-21T13:25:14.284175+00:00",
-  "files_in_approved_payload": 243,
-  "cells": 1700,
-  "candidates": 100,
-  "added": "FiTechHub return link only; source data and downloads unchanged",
-  "scientific_acceptance": false,
-  "status": "PF13 NOT_COMPLETE; PF14 NOT_STARTED; R1 NOT_GRANTED",
-  "limitations": [
-    "Frozen documentary snapshot",
-    "Original execution evidence/Word binaries remain local"
-  ]
+  "captured_at": "2026-10-23T13:38:20.095436+00:00",
+  "source": "Current registered RN V3 evidence projection; sanitized documentary export",
+  "source_manifest_sha256": "aac8282a25636f638ef91f7ea392a2d7e25bb0a89c823f637cb0a09071f3484f",
+  "added": "Mother return link; all matrix data unchanged from current registered source",
+  "scientific_acceptance": false
 }

@@ -1,0 +1,10 @@
+{
+  "module": "qrw",
+  "release": "V15",
+  "capture_date": "2026-10-23",
+  "mode": "PUBLIC_READ_ONLY_SNAPSHOT",
+  "data_as_of": "Use the original per-file source date; capture time is not data freshness",
+  "presentation": "Original current UI adapted for offline nested hosting; cache-versioned script/style references",
+  "scientific_acceptance_granted": false,
+  "prior_release_preserved": "V13"
+}

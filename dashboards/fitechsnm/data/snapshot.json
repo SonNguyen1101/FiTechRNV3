@@ -1,15 +1,15 @@
 {
   "schema": "FITECHSNM_READONLY_UI_PROJECTION_V1",
-  "observed_at": "2026-10-21T15:30:26.318086+00:00",
+  "observed_at": "2026-10-23T13:37:21.871477+00:00",
   "stale": false,
   "error": null,
   "source": {
     "path": "state/plan_state_v1.json",
-    "sha256": "f4cab54614a314692b8fc5dd9630c9c219815014924a6e6df88bcd14a5f5b473",
-    "bytes": 304296,
-    "mtime": "2026-10-21T14:57:41.481196+00:00",
-    "milestone_path": "docs/reviews/R0_SLOT65_RN_PROGRAM_RECOVERY_WORK_ORDER_V1/FOUR_MILESTONE_PROGRESS_V1.json",
-    "milestone_sha256": "ab7471baae75ba3a167c50ef72568043f854f018bcf33747bb40fbb87cdb5aff"
+    "sha256": "6408f7b372a7ed7a178b8ff09ae0e08e9258728a6b05e9aaae4949516af73aee",
+    "bytes": 329224,
+    "mtime": "2026-10-23T11:50:29.572929+00:00",
+    "milestone_path": "docs/reviews/R0_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_WORK_ORDER_V1/FOUR_MILESTONE_PROGRESS_V1.json",
+    "milestone_sha256": "8c47b6732442c66149ed5c06ecd6102b06c79ea231ccda994c14b06fb3b76ef3"
   },
   "project": "FiTechSNM",
   "baseline": "RN V2 gốc · 46 chiến lược",
@@ -21,38 +21,38 @@
       "name": "Input và quyền nghiên cứu",
       "state": "IN_PROGRESS",
       "label": "Đang hoàn thiện",
-      "evidence": "Actual input/authority/clock/registry/approval bindings incomplete",
-      "next": "Complete exact source/approval/actual-binding subjects"
+      "evidence": "13documentary refs pinned; authority/currentness/approval/actual composition open",
+      "next": "Complete prospective OA engineering then exact actual subject/source/commissioning bindings"
     },
     {
       "id": "M2",
       "name": "Chương trình và kiểm chứng",
-      "state": "IN_PROGRESS",
-      "label": "Đang hoàn thiện",
-      "evidence": "Slot63 scoped acceptance retained; Slot64 STOP_FAIL verified; Slot65 controlled-write recovery qualified/prepared, not executed",
-      "next": "User manual launch/paste; differential/loader/consumer and same-freeze final verification"
+      "state": "ACCEPTED_SCOPED",
+      "label": "Chấp nhận trong scope",
+      "evidence": "Slot68 strictSUPPORT accepted scoped; Slot69 bridge packet/control qualified, product not implemented",
+      "next": "One bounded engineering integration task and scoped QC"
     },
     {
       "id": "M3",
       "name": "Chạy offline R0",
       "state": "NOT_STARTED",
       "label": "Chưa bắt đầu",
-      "evidence": "No actual R0 admission/run",
-      "next": "Accepted instances/IM/commissioning and distinct actual run grant"
+      "evidence": "No actual R0 grant/run",
+      "next": "After M1/M2actual applicability and run grant"
     },
     {
       "id": "M4",
       "name": "Nghiệm thu và OUTPUT → R1",
       "state": "BLOCKED",
       "label": "Đang bị chặn",
-      "evidence": "No actual comparison,accepted OUTPUT or NODE_PASS",
-      "next": "Accept actual evidence and OUTPUT→INPUT mapping; Son R1 gate"
+      "evidence": "No actual measured OUTPUT→R1",
+      "next": "Actual comparison and acceptance; Son node gate"
     }
   ],
-  "counter": 64,
+  "counter": 68,
   "cap": null,
   "prompt_cap_mode": "NO_PROSPECTIVE_R0_PROMPT_COUNT_LIMIT_BY_DIRECT_SON_INSTRUCTION",
-  "prepared_slot": 65,
+  "prepared_slot": 69,
   "slot64": {
     "status": "STOP_FAIL_INCOMPLETE",
     "label": "Đã dừng · chưa hoàn tất",
@@ -150,208 +150,335 @@
     {
       "id": "B01",
       "binding": "Authority origin / publisher",
-      "owner_proposal_or_rule": "Son as proposed human root for the fresh R0 research source; Owner prepares records",
-      "state": "HUMAN_ROOT_ACT_REQUIRED",
+      "owner_proposal_or_rule": "Son is the retained human root; no new key/account.",
+      "state": "MISSING_BINDING",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Son (constitutive source root)",
+      "accountable_owner": "Son retained source act after Owner prepares exact profile",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Authority origin / publisher — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Exact source/publisher declaration under research profile; cannot infer ACTIVITY or historical no-revocation.",
       "dependencies": [
         "S01",
         "S03"
       ],
-      "acceptance": "Root declaration + issuer/scope/ingress act from authorized human, no global historical absence claim",
+      "acceptance": "Exact source/publisher declaration under research profile; cannot infer ACTIVITY or historical no-revocation.",
       "stage": "S06",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "a6cb16e715689170b82133a9fd3e4debf25053e95663f2d7b4409b4d03450ac2",
+          "bytes": 780
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "d17a608c393bb1b8d079234d59ed103a6680f758fe64d6d1ff07786f5e9c1ab5",
+          "bytes": 2885
+        }
+      ]
     },
     {
       "id": "B02",
       "binding": "Human acts and issuance time",
-      "owner_proposal_or_rule": "Record a real controlled issuance event; never substitute a later tool time for unknown chat-response time",
-      "state": "HUMAN_ACT_REQUIRED",
+      "owner_proposal_or_rule": "Direct Son receipts can be reused for their exact scope.",
+      "state": "MISSING_BINDING",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (issuance evidence)",
+      "accountable_owner": "Owner prepares; authorized human issuer attests only known facts",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Human acts and issuance time — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Current issuance/coverage/validity record; no invented human reply timestamp.",
       "dependencies": [
         "S01"
       ],
-      "acceptance": "Controlled issuance event with observed/issued timestamps distinguished; raw act and custody receipt retained",
+      "acceptance": "Current issuance/coverage/validity record; no invented human reply timestamp.",
       "stage": "S06",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "4add7e499f8e485814bf1955c608c0e4c4fbcecf84e4c56f14f50d3c49967a0c",
+          "bytes": 2964
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "bff29b76abad10da66e7bdb34ee778fc2e99f4e56e6c80f07d9284df95f61b1b",
+          "bytes": 2230
+        }
+      ]
     },
     {
       "id": "B03",
       "binding": "Principal and profile",
-      "owner_proposal_or_rule": "Reuse candidate FTSNM.R0.OFFLINE.RUNTIME.001; node G1_CCE_INHERITED/PARAM_OPT_V2/R0; observed old account is not current mapping",
-      "state": "REGISTRATION_AND_SCOPE_ACT_REQUIRED",
+      "owner_proposal_or_rule": "A1 principal/source IDs are proposals, not a registered principal.",
+      "state": "MISSING_BINDING",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (principal mapping)",
+      "accountable_owner": "Owner/Runtime mapping, retained issuer",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Principal and profile — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Bind exact current actor, role, node, scope and policy; OS account name alone is not authority.",
       "dependencies": [
         "S06"
       ],
-      "acceptance": "Current principal/OS mapping evidence + constitutive registration in exact scope; never inferred from old account read",
+      "acceptance": "Bind exact current actor, role, node, scope and policy; OS account name alone is not authority.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "d17a608c393bb1b8d079234d59ed103a6680f758fe64d6d1ff07786f5e9c1ab5",
+          "bytes": 2885
+        }
+      ]
     },
     {
       "id": "B04",
       "binding": "Writer / custody / domain",
-      "owner_proposal_or_rule": "Single research writer and exact new source/domain/objects/reports/intake roots; no new go-live account",
-      "state": "PROPOSED_NOT_ADOPTED",
+      "owner_proposal_or_rule": "Selected Route V has one domain writer; local store code exists.",
+      "state": "PARTIAL_ENGINEERING_ONLY",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (writer/custody/domain)",
+      "accountable_owner": "Runtime composition owner",
       "human_act_owner": "N/A for technical evidence itself; no human attestation fabricated",
-      "deliverable": "Writer / custody / domain — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Actual root/writer/domain and lease; do not replace fresh authority history with a new empty DB.",
       "dependencies": [
         "S03",
         "S06"
       ],
-      "acceptance": "Actual roots/writer/domain control and qualification tied to exact implementation, no fixture root used as actual",
+      "acceptance": "Actual root/writer/domain and lease; do not replace fresh authority history with a new empty DB.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "4add7e499f8e485814bf1955c608c0e4c4fbcecf84e4c56f14f50d3c49967a0c",
+          "bytes": 2964
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "e4292bb37fbc72e72e6aca77111b5b2d45c436dee55d1c3ccdc29c8151e0a2d6",
+          "bytes": 68684
+        }
+      ]
     },
     {
       "id": "B05",
       "binding": "Trust / ingress",
-      "owner_proposal_or_rule": "TRUSTED_INTERNAL_CALL only under a real accepted source/root act; preserve T1-T4, no fictitious certificate",
-      "state": "ACCEPTANCE_ACT_REQUIRED",
+      "owner_proposal_or_rule": "UnavailableOrigin and UnavailableIngress deliberately fail closed.",
+      "state": "MISSING_BINDING",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Master Owner (trust/ingress scope)",
+      "accountable_owner": "Owner/Runtime under retained source authority",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Trust / ingress — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Trusted internal source implementation and accepted ingress/profile; no FixtureIngress relabel.",
       "dependencies": [
         "S06"
       ],
-      "acceptance": "Installed origin/acceptance refs and trust actor verified; no arbitrary caller flag",
+      "acceptance": "Trusted internal source implementation and accepted ingress/profile; no FixtureIngress relabel.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "e4292bb37fbc72e72e6aca77111b5b2d45c436dee55d1c3ccdc29c8151e0a2d6",
+          "bytes": 68684
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "b367f13fc5a04e097a48d9bb6d87eebdfd107bb54d4ebf0bd38720670ab27e35",
+          "bytes": 4159
+        }
+      ]
     },
     {
       "id": "B06",
       "binding": "Status history / cut",
-      "owner_proposal_or_rule": "Fresh scoped genesis may start after its registration act; no claims of no revocation in unknown historical/global sources",
-      "state": "GENESIS_NOT_CREATED",
+      "owner_proposal_or_rule": "No actual current head established in inspected intake sources.",
+      "state": "MISSING_BINDING",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (status publisher/history)",
+      "accountable_owner": "Source publisher and Runtime current reader",
       "human_act_owner": "N/A for technical evidence itself; no human attestation fabricated",
-      "deliverable": "Status history / cut — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Source head, coverage, historical acts and revocation sequence; unknown is not empty.",
       "dependencies": [
         "S06"
       ],
-      "acceptance": "Scoped genesis and complete suffix/current status cut from its publisher; no default empty historical state",
+      "acceptance": "Source head, coverage, historical acts and revocation sequence; unknown is not empty.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "d17a608c393bb1b8d079234d59ed103a6680f758fe64d6d1ff07786f5e9c1ab5",
+          "bytes": 2885
+        }
+      ]
     },
     {
       "id": "B07",
       "binding": "Physical roots / reparse",
-      "owner_proposal_or_rule": "Verify actual paths and reparse behavior during qualification; proposal paths are not physical custody proof",
-      "state": "QUALIFICATION_REQUIRED",
+      "owner_proposal_or_rule": "Bounded filesystem/host mechanisms have engineering evidence.",
+      "state": "PARTIAL_ENGINEERING_ONLY",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (storage qualification)",
+      "accountable_owner": "Runtime deployment owner",
       "human_act_owner": "N/A for technical evidence itself; no human attestation fabricated",
-      "deliverable": "Physical roots / reparse — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Exact physical runtime/source/report/intake roots and accepted instance qualification.",
       "dependencies": [
         "S03",
         "S06"
       ],
-      "acceptance": "Physical path/reparse/write containment and durable readback for the actual storage model, or explicit scope limitation",
+      "acceptance": "Exact physical runtime/source/report/intake roots and accepted instance qualification.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "e4292bb37fbc72e72e6aca77111b5b2d45c436dee55d1c3ccdc29c8151e0a2d6",
+          "bytes": 68684
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "4da6c568749089e506ccc281200ccfad0808839a40324e364774358029ca27c2",
+          "bytes": 3886
+        }
+      ]
     },
     {
       "id": "B08",
       "binding": "Current read / sequencing",
-      "owner_proposal_or_rule": "SOURCE_PUBLICATION_PROFILE_V2, pinned checkpoint/head hash chain; current source port must reread current head",
-      "state": "IMPLEMENTATION_AND_ACCEPTED_INSTANCE_REQUIRED",
+      "owner_proposal_or_rule": "Public entry reads source twice and refuses a changed head.",
+      "state": "PARTIAL_ENGINEERING_ONLY",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (current-read/sequencer)",
+      "accountable_owner": "Runtime composition owner",
       "human_act_owner": "N/A for technical evidence itself; no human attestation fabricated",
-      "deliverable": "Current read / sequencing — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Bind real reader/provider/read_entry_seed/read_run_inputs; code API is not a live provider.",
       "dependencies": [
         "S03",
         "S06"
       ],
-      "acceptance": "Head/checkpoint/history chain and current-read provenance/sequence join with real source/reader",
+      "acceptance": "Bind real reader/provider/read_entry_seed/read_run_inputs; code API is not a live provider.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "9521cc9285307444ae5790cf445c0b0a43baa0b8b69dc6079d05f952d7c2fdc1",
+          "bytes": 6761
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "3b305dbb0ccc48666b5e26e8fb8e52f5a522f86c461f987feeb2a78c4cc371f9",
+          "bytes": 10108
+        }
+      ]
     },
     {
       "id": "B09",
       "binding": "Clock",
-      "owner_proposal_or_rule": "Local UTC + monotonic/high-water research policy is a proposal for human acceptance, not independent clock certification; expiry/revocation checks retained",
-      "state": "CLOCK_POLICY_ACCEPTANCE_REQUIRED",
+      "owner_proposal_or_rule": "No workflow calendar deadline; local UTC/monotonic/high-water candidate remains research-only.",
+      "state": "POLICY_AND_INSTANCE_UNBOUND",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (clock qualification)",
+      "accountable_owner": "Owner proposes concrete values; retained policy issuer accepts",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Clock — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Actual clock identity/window/max-age/lease and accepted clock policy; strict PT-1 remains false.",
       "dependencies": [
         "S03",
         "S06"
       ],
-      "acceptance": "Measured clock mechanics + accepted research clock policy/high-water/currentness limits; host observation not independent UTC certificate",
+      "acceptance": "Actual clock identity/window/max-age/lease and accepted clock policy; strict PT-1 remains false.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "d17a608c393bb1b8d079234d59ed103a6680f758fe64d6d1ff07786f5e9c1ab5",
+          "bytes": 2885
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "bff29b76abad10da66e7bdb34ee778fc2e99f4e56e6c80f07d9284df95f61b1b",
+          "bytes": 2230
+        }
+      ]
     },
     {
       "id": "B10",
       "binding": "Registry / roles / delegation",
-      "owner_proposal_or_rule": "Covered machine principal, exact scope, fresh complete status; empty entries only from explicit scoped known state",
-      "state": "REGISTRY_NOT_CREATED",
+      "owner_proposal_or_rule": "Registry/currentness interfaces exist; fixture registry is not actual.",
+      "state": "MISSING_BINDING",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (registry/roles)",
+      "accountable_owner": "Source issuer and Runtime registry owner",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Registry / roles / delegation — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Actual role/delegation/status source with fresh coverage and revocation check.",
       "dependencies": [
         "S06"
       ],
-      "acceptance": "Fresh covered principal/status/roles/delegation records; unknown uncovered principal holds",
+      "acceptance": "Actual role/delegation/status source with fresh coverage and revocation check.",
       "stage": "S07",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "bff29b76abad10da66e7bdb34ee778fc2e99f4e56e6c80f07d9284df95f61b1b",
+          "bytes": 2230
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "9521cc9285307444ae5790cf445c0b0a43baa0b8b69dc6079d05f952d7c2fdc1",
+          "bytes": 6761
+        }
+      ]
     },
     {
       "id": "B11",
       "binding": "Bundle / schema / approvals",
-      "owner_proposal_or_rule": "12 exact pre-code subjects inventoried; seven final instances after code; AS09/11/12 still candidate, not approved",
-      "state": "HUMAN_APPROVAL_REQUIRED",
+      "owner_proposal_or_rule": "Documentary normalization adopted prospectively; Slot68 fixture has 19 synthetic approvals.",
+      "state": "ACTUAL_SUBJECT_SET_AND_APPROVALS_UNBOUND",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Master Owner (subject/precedence register)",
+      "accountable_owner": "Owner/RN/AILL prepare exact subjects; Son or delegated issuer acts",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Bundle / schema / approvals — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Freeze current 12 pre-code + 7 post-code subjects and obtain effective approvals; 5 contracts are a subset, not 5 extra approvals.",
       "dependencies": [
         "S03",
         "S04",
         "S05",
         "S07"
       ],
-      "acceptance": "Twelve candidate control bytes semantic-reviewed and approved exact; seven final instances materialized and approved exact at their required stage; five contracts subset",
+      "acceptance": "Freeze current 12 pre-code + 7 post-code subjects and obtain effective approvals; 5 contracts are a subset, not 5 extra approvals.",
       "stage": "S08",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "3e831adec0683356971e39aa07f69051b5f736cea7710bab990a06b7b826fb37",
+          "bytes": 3751
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "f2687aa2a5dd9a501a6e0e226eb9e9a5299a336c06d4b72a9e7bfbf1fef45be2",
+          "bytes": 41392
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "4da6c568749089e506ccc281200ccfad0808839a40324e364774358029ca27c2",
+          "bytes": 3886
+        }
+      ]
     },
     {
       "id": "B12",
       "binding": "Runtime commissioning / run grant",
-      "owner_proposal_or_rule": "Exact final code/package/IM/root/source/clock/lease; issue a distinct fresh actual grant, keep one-attempt/revocation bounds",
+      "owner_proposal_or_rule": "No commissioning or actual run granted in this intake.",
       "state": "NOT_GRANTED",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "Runtime Owner (commissioning/run package)",
+      "accountable_owner": "Runtime commissioning + retained grant issuer",
       "human_act_owner": "Son or explicitly delegated human issuer",
-      "deliverable": "Runtime commissioning / run grant — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Accepted installed composition/qualification then final IM freeze then exact attempt-specific run grant.",
       "dependencies": [
         "S03",
         "S04",
@@ -359,46 +486,102 @@
         "S07",
         "S09"
       ],
-      "acceptance": "Commissioning/root/issuer/context/code/package/IM exact; separate fresh actual grant and one-attempt bound; no actual output required as precondition",
+      "acceptance": "Accepted installed composition/qualification then final IM freeze then exact attempt-specific run grant.",
       "stage": "S10",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "9521cc9285307444ae5790cf445c0b0a43baa0b8b69dc6079d05f952d7c2fdc1",
+          "bytes": 6761
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "bff29b76abad10da66e7bdb34ee778fc2e99f4e56e6c80f07d9284df95f61b1b",
+          "bytes": 2230
+        }
+      ]
     },
     {
       "id": "B13",
       "binding": "RN application programs / package",
-      "owner_proposal_or_rule": "18BM data+pure recompute is reusable; REAL adapter/evaluator program instances must be built/pinned, never a SUPPORT literal program",
-      "state": "FINAL_INSTANCE_REQUIRED",
+      "owner_proposal_or_rule": "RN programs/builder reusable; exact13 OD49 documentary input refs rehashed; separate34 legacy assets retained.",
+      "state": "RN_ENGINEERING_ACCEPTED_13_DOCUMENTARY_REFS_PINNED_ACTUAL_AUTHORITY_UNBOUND",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "RN Owner (application programs/package)",
+      "accountable_owner": "Owner/RN construction; Runtime admission validates",
       "human_act_owner": "N/A for technical evidence itself; no human attestation fabricated",
-      "deliverable": "RN application programs / package — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Bind remaining actual control/authority/subject/instance/IM; do not rewrite RN or copy SUPPORT approvals.",
       "dependencies": [
         "S01",
         "S02",
         "S03"
       ],
-      "acceptance": "Build/pin two real distinct RN adapter/evaluator programs and package, loader conformance and18BM replay; accepted adoption at S08, execution only S11",
+      "acceptance": "Map exact 13 documentary members, all controls, expected derivation, package/version/node/scope and no-AUTO context into a DRAFT actual candidate. Never copy SUPPORT approvals/authority or regenerate truth from expected.",
       "stage": "S04",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "b444bef742c3b4ed97a43bc25517e4b63fc804efd4637aa0477222d3c24e6a2e",
+          "bytes": 18254
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "5327a627c507cae6a245337f53eae36d2962f52a0458ca0672eeefd7fbfae034",
+          "bytes": 227924
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "4894ab360c2bf9190002e55177a9caeb65451776f7e2c50a873fa3eb6cf7f32e",
+          "bytes": 16183
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "4da6c568749089e506ccc281200ccfad0808839a40324e364774358029ca27c2",
+          "bytes": 3886
+        }
+      ]
     },
     {
       "id": "B14",
       "binding": "AILL O/A receiver / facts / reader-store",
-      "owner_proposal_or_rule": "Documentary observation and durable intake required for selected full-intake closure; no trial or gain requirement",
-      "state": "ACTUAL_ENDPOINT_BINDING_REQUIRED",
+      "owner_proposal_or_rule": "Single Runtime writer design is accepted for engineering construction; scoped Slot69 packet/controller ready, product not yet implemented.",
+      "state": "ENGINEERING_OA_DESIGN_ACCEPTED_PACKET_QUALIFIED_ACTUAL_ENDPOINT_OPEN",
       "actual_ref": null,
       "status": "OPEN",
-      "accountable_owner": "AILL Owner (semantic adapter/receiver/store)",
+      "accountable_owner": "Owner/AILL semantic protocol + Runtime custody",
       "human_act_owner": "N/A for technical evidence itself; no human attestation fabricated",
-      "deliverable": "AILL O/A receiver / facts / reader-store — exact version/hash/size/context, technical evidence and source/issuer or explicit missing reason",
+      "deliverable": "Implement/verify the exact O/A integration under manual Slot69 grant, then bind actual source/authority/reader/composition separately.",
       "dependencies": [
         "S01",
         "S02"
       ],
-      "acceptance": "Construct/register adapter+authoritative reader/store and conformance first; bind accepted instance at S08/S10; create real O/A facts only S12 after output",
+      "acceptance": "Map MR5/MR6 prepare/retain/attest/associate/final result to current single-writer route. No second receiver ledger or invented durable ref. Primary exact protocol review/implementation still open.",
       "stage": "S05",
-      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority"
+      "construction_authority": "Only exact engineering grant S02 permits code/fixture/mechanism execution; actual effects require later accepted authority",
+      "current_source_refs": [
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "5c2683daea8a062c0d2845b02751a6a6f25895e82bc5f70aef8e70c2fa85c10a",
+          "bytes": 1609
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "10136038675d82a8b2e67abe236fb645e696ba9f3d578992a06e6757feec39bf",
+          "bytes": 100744
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "e4292bb37fbc72e72e6aca77111b5b2d45c436dee55d1c3ccdc29c8151e0a2d6",
+          "bytes": 68684
+        },
+        {
+          "path": "[NATIVE_PATH_OMITTED]",
+          "sha256": "f9fddd56abebd36ac29d6b48ec25556af8cba779fba873a14626aa1a432ba95e",
+          "bytes": 919
+        }
+      ]
     }
   ],
   "actions": [
@@ -583,10 +766,10 @@
     },
     {
       "id": "bindings",
-      "title": "Sổ 14 nhóm binding hiện hành",
-      "path": "docs/reviews/R0_SLOT63_CHECKPOINT_HOST_CONFORMANCE_RECOVERY_WORK_ORDER_V1/owner_spec/CURRENT_RESEARCH_BINDING_REGISTER_V1.json",
-      "bytes": 15038,
-      "sha256": "e465bede803f4f640698e7357644d5668e5521a5ac8aaea6e8f05e411ab70de4",
+      "title": "Binding actual hiện hành — reporting projection",
+      "path": "docs/governance/R0_CURRENT_ACTUAL_BINDING_PROJECTION_V1.json",
+      "bytes": 24818,
+      "sha256": "14229e69741d72d070ae15e2886bd83b1321f85f753797c7e66d7eac46f700f1",
       "binding": "MATCH_REGISTERED_BYTES",
       "available": true,
       "source_available_at_capture": true,
@@ -1306,9 +1489,913 @@
       "available": true,
       "source_available_at_capture": true,
       "public_export_available": false
+    },
+    {
+      "id": "s65-owner-review",
+      "title": "Owner QC Slot65 — two targeted findings",
+      "path": "docs/reviews/R0_SLOT65_OWNER_RESULT_QC_V1/OWNER_RESULT_QC_V1.md",
+      "bytes": 6893,
+      "sha256": "f0bd06685511924d5223eb17967f50aa6c388d39a0723c967e7a158e63c39533",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s65-owner-findings",
+      "title": "Slot65 confirmed VEC11 and DR4 findings",
+      "path": "docs/reviews/R0_SLOT65_OWNER_RESULT_QC_V1/FINDINGS_V1.json",
+      "bytes": 5153,
+      "sha256": "c5f3ff4988f0102421ef20b653410f9a72fbe8eed62fe906b3ce17c2247ec32c",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s65-nfc-disposition",
+      "title": "Slot65 Unicode / full profile disposition",
+      "path": "docs/reviews/R0_SLOT65_OWNER_RESULT_QC_V1/NFC_AND_FULL_PROFILE_DISPOSITION_V1.json",
+      "bytes": 1670,
+      "sha256": "ea01ce9b2ae9a5f6b428d53ac78acbe91622bad0feb169910ffe482235e60e11",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s65-next-scope",
+      "title": "Targeted next engineering scope (not dispatched)",
+      "path": "docs/reviews/R0_SLOT65_OWNER_RESULT_QC_V1/NEXT_TARGETED_REMEDIATION_SCOPE_V1.md",
+      "bytes": 3184,
+      "sha256": "d083ce55ce2900c4266704cc09c90b08e6bd2454d39edf72f994fd655c8b380f",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-prompt",
+      "title": "Slot66 targeted integration prompt",
+      "path": "docs/reviews/R0_SLOT66_RN_EVALUATOR_AND_DR4_INTEGRATION_WORK_ORDER_V1/PROMPT_CC_SLOT66_RN_EVALUATOR_AND_DR4_INTEGRATION_V1.md",
+      "bytes": 3615,
+      "sha256": "e8f0d925b21de44dd91c99b8281d50046327b207ccae5b13479b8f6fd51b3b0d",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-qualification",
+      "title": "Slot66 controller qualification127/127",
+      "path": "docs/reviews/R0_SLOT66_RN_EVALUATOR_AND_DR4_INTEGRATION_WORK_ORDER_V1/OWNER_CONTROLLER_QUALIFICATION_V1.json",
+      "bytes": 1312,
+      "sha256": "be10cfbe52a584cd8850504f3521af7ae551f3d1cfada0123b494418821082db",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-source-dr4",
+      "title": "Source-defined DR4 table / required reasons",
+      "path": "docs/reviews/R0_SLOT66_RN_EVALUATOR_AND_DR4_INTEGRATION_WORK_ORDER_V1/SOURCE_DEFINED_DR4_CONSTRAINTS_V1.json",
+      "bytes": 1953,
+      "sha256": "92528b93fbe24820c953851f177d893954e2177a1948c3f618f5bd3a9f52e08e",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-quick-start",
+      "title": "Slot66 manual fresh-session launch",
+      "path": "docs/reviews/R0_SLOT66_RN_EVALUATOR_AND_DR4_INTEGRATION_WORK_ORDER_V1/QUICK_START_V1.md",
+      "bytes": 1220,
+      "sha256": "c7b1c90146a88e14cd4c55b6279910291b8a120022ff3e7222f3679a710c04f7",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-owner-review",
+      "title": "Slot66 Owner QC / actual GO–NO-GO",
+      "path": "docs/reviews/R0_SLOT66_OWNER_RESULT_QC_AND_ACTUAL_GO_NO_GO_V1/SON_QUICK_DECISION_V1.md",
+      "bytes": 1674,
+      "sha256": "3e8aa9b000211789cbeeaf9a4efed759245301a4e9c8c45bddd81baa29e38950",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-owner-findings",
+      "title": "Slot66 two targeted findings — Owner disposition",
+      "path": "docs/reviews/R0_SLOT66_OWNER_RESULT_QC_AND_ACTUAL_GO_NO_GO_V1/FINDING_AND_TEST_EDIT_DISPOSITION_V1.json",
+      "bytes": 2608,
+      "sha256": "9413e285f0384cc26512ded3f18861fdf284938add00be235ce6aca73abfd2d7",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-actual-readiness",
+      "title": "Actual binding reconciliation — NO GO",
+      "path": "docs/reviews/R0_SLOT66_OWNER_RESULT_QC_AND_ACTUAL_GO_NO_GO_V1/ACTUAL_BINDING_RECONCILIATION_AND_GO_NO_GO_V1.json",
+      "bytes": 8578,
+      "sha256": "a8bc7322b5e49b267872826df4b1dd6bf102593be7a0df5ded54c42e1edc033c",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s66-next-slice",
+      "title": "One actual vertical slice — not dispatched",
+      "path": "docs/reviews/R0_SLOT66_OWNER_RESULT_QC_AND_ACTUAL_GO_NO_GO_V1/NEXT_ACTUAL_VERTICAL_SLICE_PLAN_V1.md",
+      "bytes": 4370,
+      "sha256": "4fd4ee0f25a277d7ce89bf2afcfcccc622980cf10a27fd1b3d076691df6b5ee4",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-quick-start",
+      "title": "Slot67 manual launcher and relay",
+      "path": "docs/reviews/R0_SLOT67_RUNTIME_OPERATIONAL_BRIDGE_WORK_ORDER_V1/QUICK_START_V1.md",
+      "bytes": 769,
+      "sha256": "7f6f0c417b083d64d15395316f21596ff45e643a3fb1cf95680c1c06784688b7",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-prompt",
+      "title": "Slot67 exact operational bridge work order",
+      "path": "docs/reviews/R0_SLOT67_RUNTIME_OPERATIONAL_BRIDGE_WORK_ORDER_V1/PROMPT_CC_SLOT67_RUNTIME_OPERATIONAL_BRIDGE_V1.md",
+      "bytes": 2283,
+      "sha256": "c5953be78a3a8f8de0a0f02234070a588add54c5096231b5409f96f830d931e2",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-contract",
+      "title": "Slot67 operational delegation / Runtime proof contract",
+      "path": "docs/reviews/R0_SLOT67_RUNTIME_OPERATIONAL_BRIDGE_WORK_ORDER_V1/OWNER_OPERATIONAL_BRIDGE_SPEC_V1.md",
+      "bytes": 9417,
+      "sha256": "efbdd351bf9a51220d29b116c076824d60d726de31b9bd71c016fc7895f3ff53",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-qualification",
+      "title": "Slot67 controller and host qualification",
+      "path": "docs/reviews/R0_SLOT67_RUNTIME_OPERATIONAL_BRIDGE_WORK_ORDER_V1/OWNER_CONTROLLER_AND_HOST_QUALIFICATION_V1.json",
+      "bytes": 1334,
+      "sha256": "4699a9236ab282b479fcc54f66695557236e030decb2a0c2b09243b3a01de229",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-owner-result",
+      "title": "Slot67 — Owner QC và phạm vi nghiệm thu",
+      "path": "docs/reviews/R0_SLOT67_OWNER_RESULT_QC_RECORDING_V1/OWNER_QC_REPORT_V1.md",
+      "bytes": 9602,
+      "sha256": "656c0b3fc57b353a3fab841ed2e594404f579ddddc8de30e5b7386af466ca4ed",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-owner-findings",
+      "title": "Slot67 — admission gap và nợ driver",
+      "path": "docs/reviews/R0_SLOT67_OWNER_RESULT_QC_RECORDING_V1/FINDING_STATUS_V1.json",
+      "bytes": 1012,
+      "sha256": "2e9e12409ab42e2883fc396ccd2baf65b3d241c4cda9f1ddac355eaa274269e4",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s67-recording",
+      "title": "Slot67 — ghi nhận theo duyệt Son",
+      "path": "docs/reviews/R0_SLOT67_OWNER_RESULT_QC_RECORDING_V1/RECORDING_ADDENDUM_V1.md",
+      "bytes": 1394,
+      "sha256": "ec976893bd8a30f499f3da8ac48475b91d0f8fe852c4d05506911df2729c8340",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-quick-start",
+      "title": "Slot68 — mở task thủ công",
+      "path": "docs/reviews/R0_SLOT68_STRICT_ADMISSION_INTEGRATION_WORK_ORDER_V1/QUICK_START_V1.md",
+      "bytes": 969,
+      "sha256": "a96722e9331820fdd72c4c3847eaa3ebd864e343d250d26bfd8530eba5f4692f",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-prompt",
+      "title": "Slot68 — prompt strict admission",
+      "path": "docs/reviews/R0_SLOT68_STRICT_ADMISSION_INTEGRATION_WORK_ORDER_V1/PROMPT_CC_SLOT68_STRICT_ADMISSION_INTEGRATION_V1.md",
+      "bytes": 2224,
+      "sha256": "ff6d2bb32285f86aea2ed2bce7615679f85cdbbb14ba141924a601dd21d14f1e",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-design",
+      "title": "Slot68 — input/admission/RN design",
+      "path": "docs/reviews/R0_SLOT68_STRICT_ADMISSION_INTEGRATION_WORK_ORDER_V1/OWNER_STRICT_ADMISSION_DESIGN_V1.md",
+      "bytes": 12094,
+      "sha256": "57ba5bb62f14215bbe54db0ae3ccc9c771059cefb35fe42c56a9a3b19d6a3a42",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-qualification",
+      "title": "Slot68 — 99 controller controls",
+      "path": "docs/reviews/R0_SLOT68_STRICT_ADMISSION_INTEGRATION_WORK_ORDER_V1/OWNER_CONTROLLER_QUALIFICATION_V1.json",
+      "bytes": 1940,
+      "sha256": "fa46b66f4639d1a42076bc6f5e1b3d0ecb90af605bd9c298e88bd6626594b31b",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-storage-relay",
+      "title": "Slot68 — tiếp tục sau duyệt dung lượng",
+      "path": "docs/reviews/R0_SLOT68_APPROVED_STORAGE_CONTINUATION_V3/RELAY_CC_SLOT68_STORAGE_CONTINUATION_V1.txt",
+      "bytes": 1937,
+      "sha256": "b6f62f68beb8c7d4c3b24ce5e0738e110e8eaf93f981d83a998d13cff66ff0ab",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-storage-receipt",
+      "title": "Slot68 — duyệt cap2GiB",
+      "path": "docs/reviews/R0_SLOT68_APPROVED_STORAGE_CONTINUATION_V3/SON_STORAGE_CONTINUATION_RECEIPT_V1.json",
+      "bytes": 7791,
+      "sha256": "842c5debd56e20cfc0929cc536b60099ab443e37266509a22ac1cbaba9582978",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-storage-qualification",
+      "title": "Slot68 — 33kiểm tra continuation",
+      "path": "docs/reviews/R0_SLOT68_APPROVED_STORAGE_CONTINUATION_V3/OWNER_SUMMARY_V1.json",
+      "bytes": 739,
+      "sha256": "2fa9cdceafc3d7af16ae8a44266553221e3a55ecba341f24bace2a34be21c557",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "r1-reuse-checklist",
+      "title": "R1 — checklist tái dùng engine",
+      "path": "docs/governance/R0_TO_R1_ENGINE_REUSE_CHECKLIST_V1.json",
+      "bytes": 20860,
+      "sha256": "a037263f5172f92df3799f74cadb4af7c16443aa69248ddd6c6ade1c02942d45",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "r1-reuse-note",
+      "title": "R1 — quy tắc tái dùng trước khi viết mới",
+      "path": "docs/governance/R0_TO_R1_ENGINE_REUSE_CHECKLIST_V1.md",
+      "bytes": 4125,
+      "sha256": "df93f1555adb000930bfae9045f595a02e0c1952839bff73ab2fb5fd5a9a016a",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-owner-qc",
+      "title": "Slot68 — Owner QC kỹ thuật và quy trình",
+      "path": "docs/reviews/R0_SLOT68_OWNER_RESULT_QC_AND_ACTUAL_INTAKE_V1/OWNER_QC_REPORT_V1.md",
+      "bytes": 3886,
+      "sha256": "4da6c568749089e506ccc281200ccfad0808839a40324e364774358029ca27c2",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-process-disposition",
+      "title": "Slot68 — vượt cap lệnh đọc, không miễn trừ",
+      "path": "docs/reviews/R0_SLOT68_OWNER_RESULT_QC_AND_ACTUAL_INTAKE_V1/PROCESS_ACCOUNTING_DISPOSITION_V1.json",
+      "bytes": 7133,
+      "sha256": "9a52ee512edf3dd9bdc8db8be58ebf8ea0e747c98754d07deb8c91ffb737f9d5",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s68-next-actual-intake",
+      "title": "R0 — bước tiếp: actual-instance intake",
+      "path": "docs/reviews/R0_SLOT68_OWNER_RESULT_QC_AND_ACTUAL_INTAKE_V1/NEXT_STEP_ACTUAL_INSTANCE_INTAKE_V1.md",
+      "bytes": 1702,
+      "sha256": "31e9ebac5169aab5d4039ac5ae5b7fc46a0132fba59dc40a6ae198d15c6fa9e0",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "post68-actual-intake",
+      "title": "R0: kết luận binding actual sau Slot68",
+      "path": "docs/reviews/R0_POST_SLOT68_ACTUAL_INSTANCE_INTAKE_AND_EXECUTION_PATH_V1/OWNER_INTAKE_CONCLUSION_V1.md",
+      "bytes": 3268,
+      "sha256": "4b3faa99d8d24aa99ee9d6300a388f10aa85305650a91313dd11ddf1cf503a1a",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "post68-binding-register",
+      "title": "14 nhóm binding actual hiện hành",
+      "path": "docs/reviews/R0_POST_SLOT68_ACTUAL_INSTANCE_INTAKE_AND_EXECUTION_PATH_V1/ACTUAL_BINDING_INTAKE_REGISTER_V1.json",
+      "bytes": 21108,
+      "sha256": "cb784e4a0132253d07433761e8333d86bbca5702dff990cf13a016d3dd597943",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "post68-oa-boundary",
+      "title": "Ranh giới phản hồi AILL trước actual",
+      "path": "docs/reviews/R0_POST_SLOT68_ACTUAL_INSTANCE_INTAKE_AND_EXECUTION_PATH_V1/OA_PROTOCOL_BOUNDARY_AND_FINITE_ACCEPTANCE_V1.md",
+      "bytes": 2984,
+      "sha256": "ab355f03712ca428b334457d06d642507b2b83632d1e09598b121140b70d166c",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "post68-oa-design",
+      "title": "Thiết kế Runtime single-writer O/A",
+      "path": "docs/reviews/R0_POST68_AILL_SINGLE_WRITER_DESIGN_AND_ACTUAL_INPUT_MAP_V1/SINGLE_WRITER_OA_SEQUENCE_DESIGN_V1.md",
+      "bytes": 10314,
+      "sha256": "8dda90892fc23b74b99f645f603c7cb6f048832650d61c43f9760434fcf3c997",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "post68-input-map",
+      "title": "13 input documentary đã ghim",
+      "path": "docs/reviews/R0_POST68_AILL_SINGLE_WRITER_DESIGN_AND_ACTUAL_INPUT_MAP_V1/PINNED_ACTUAL_DOCUMENTARY_INPUT_MAP_V1.json",
+      "bytes": 9330,
+      "sha256": "68a0cb4e7e03a095d84b6bac4576ebe8234cd348a35ac4dbac57a4976759c8be",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "post68-integration-plan",
+      "title": "Kế hoạch tích hợp tối thiểu trước actual",
+      "path": "docs/reviews/R0_POST68_AILL_SINGLE_WRITER_DESIGN_AND_ACTUAL_INPUT_MAP_V1/IMPLEMENTATION_PLAN_V1.md",
+      "bytes": 6262,
+      "sha256": "ac221508422bede3977254bfdf120bbd052399da2e57ea816544454d6bfece29",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s69-work-order",
+      "title": "Slot69: work order tích hợp O/A",
+      "path": "docs/reviews/R0_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_WORK_ORDER_V1/PROMPT_CC_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_V1.md",
+      "bytes": 4564,
+      "sha256": "587b2ebe64f7f47b236dc3068aa7fa5e6c2be039821faf35aa7b25ceeefa5210",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s69-relay",
+      "title": "Slot69: nội dung dán vào Claude",
+      "path": "docs/reviews/R0_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_WORK_ORDER_V1/RELAY_CC_SLOT69_V1.txt",
+      "bytes": 719,
+      "sha256": "afd726dd398446e12f02a7f4638970165ba72066e9ce21ffef082e38db4deb8b",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s69-quick-start",
+      "title": "Slot69: mở terminal và dán prompt",
+      "path": "docs/reviews/R0_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_WORK_ORDER_V1/QUICK_START_V1.md",
+      "bytes": 791,
+      "sha256": "dd1f23db9d7575bb7a3c4aa36dc7581441e9be087950adadb5c0300dde6a6a9a",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s69-control-qualification",
+      "title": "Slot69: qualification controller",
+      "path": "docs/reviews/R0_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_WORK_ORDER_V1/OWNER_CONTROL_QUALIFICATION_V1.json",
+      "bytes": 2672,
+      "sha256": "4bea038003843c2f10e8ef0c0f00cf12d1344780025f4135d46508338a17194c",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
+    },
+    {
+      "id": "s69-budget",
+      "title": "Slot69: ngân sách prompt/thời lượng",
+      "path": "docs/reviews/R0_SLOT69_AILL_SINGLE_WRITER_INTEGRATION_WORK_ORDER_V1/ROLE_AND_BUDGET_PLAN_V1.json",
+      "bytes": 973,
+      "sha256": "46db2ec63b3a4fa40bb11d3ea2adf1eb63ad4b66164ffc46adcba7474eaabec6",
+      "binding": "MATCH_REGISTERED_BYTES",
+      "available": true,
+      "source_available_at_capture": true,
+      "public_export_available": false
     }
   ],
   "warnings": [],
+  "reuse_checklist": {
+    "schema": "FITECHSNM_R0_TO_R1_REUSE_CHECKLIST_V1",
+    "recorded_at_utc": "2026-10-23T06:34:44.490125+00:00",
+    "authority": "DIRECT_SON_REQUEST_TO_REGISTER_REUSE_PREPARATION",
+    "intent": "Tái dùng engine đã nghiệm thu; chỉ cấu hình/sửa phần không tương thích hoặc viết nghiệp vụ R1 còn thiếu.",
+    "scope": "R1_PREPARATION_ONLY_NOT_IMPLEMENTATION_OR_TRANSITION_GRANT",
+    "current_node": "R0",
+    "target_node": "R1",
+    "R1_opened": false,
+    "actual_run_grant": false,
+    "compatibility_verified": false,
+    "accepted_reuse_count": 0,
+    "source_status": "CANDIDATE_LOCATORS_MEASURED_NOW_NOT_AN_ACCEPTED_R1_BASELINE",
+    "items": [
+      {
+        "id": "RU01",
+        "component": "Admission, schema và hash",
+        "approach": "REUSE_CANDIDATE",
+        "approach_label": "Ưu tiên dùng chung",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/admission.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 14912,
+            "sha256": "eb0e2f37552fd0fd4e258a4a9a136a193d621f7159821aa454884487414e34c2"
+          },
+          {
+            "relative_path": "scripts/r0_engine_v1/admission.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 29587,
+            "sha256": "e4ca3ca55109e5d55226848154a789a228baa376d7b6a243d14f483ea7f91bcd"
+          },
+          {
+            "relative_path": "scripts/r0_engine_v1/schema.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 8391,
+            "sha256": "bbbab53693621ef750edac8a8acf3ea3e581bcb1e75cb833117edc28df6ee730"
+          },
+          {
+            "relative_path": "scripts/r0_engine_v1/jsonrules.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 5922,
+            "sha256": "f87f5daaabd2572225efd203e4e1b8eac711c5b4cc12d34d5aeac9e564c00d25"
+          }
+        ],
+        "owner": "Runtime",
+        "acceptance": "Đối chiếu schema và discriminator R1; thử input hợp lệ, thiếu binding và sai node qua API admission gốc.",
+        "limitation": "Không sao chép approval hoặc proof R0 sang R1.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU02",
+        "component": "Loader và package chương trình",
+        "approach": "REUSE_CANDIDATE",
+        "approach_label": "Ưu tiên dùng chung",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_engine_v1/loader.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 10971,
+            "sha256": "27e7cbeedd368a7efd55e0d668b6c9cb318fe7a4ec23b96547a7675ed5f32087"
+          },
+          {
+            "relative_path": "scripts/r0_engine_v1/package.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 8214,
+            "sha256": "afa95f02299a440b5d79020c5e917437e6914c64252a7c3a3df954083b73789c"
+          }
+        ],
+        "owner": "Runtime",
+        "acceptance": "Nạp đúng adapter/evaluator R1 qua loader công khai; kiểm hash, isolation và module allowlist.",
+        "limitation": "Không coi loader là sandbox OS; không tự nới module allowlist.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU03",
+        "component": "Host, process và capture",
+        "approach": "REUSE_CANDIDATE",
+        "approach_label": "Ưu tiên dùng chung",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/capture_host.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 38252,
+            "sha256": "a0a724ab71a6f2237f0f96995a37635d5b432e5db26b08b690a9b82641d7338d"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/supervisor.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 37011,
+            "sha256": "49b5050df118831bee5357bbc1544242db86e9c84f66c3f779e8f941315b4768"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/verifier_worker.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 12850,
+            "sha256": "11763ab20de27390d88e2fe2e98d6c8eca2c456e352f94af0b59ae6f33c9a908"
+          }
+        ],
+        "owner": "Runtime",
+        "acceptance": "Chạy qualification host với chương trình R1, deadline/output cap và kill/reap đúng profile.",
+        "limitation": "Tái dùng conformance còn áp dụng; chỉ bổ sung probe cho phần giao diện thay đổi.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU04",
+        "component": "Điều phối và đường chạy công khai",
+        "approach": "CONFIGURE_CANDIDATE",
+        "approach_label": "Cấu hình lại theo node",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/entry.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 6761,
+            "sha256": "9521cc9285307444ae5790cf445c0b0a43baa0b8b69dc6079d05f952d7c2fdc1"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/pipeline.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 26264,
+            "sha256": "2002b55cd8bdb8edbcb62a9c9998278c3bcd533f15567872a709b0fc98228baa"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/execution.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 100744,
+            "sha256": "10136038675d82a8b2e67abe236fb645e696ba9f3d578992a06e6757feec39bf"
+          }
+        ],
+        "owner": "Runtime",
+        "acceptance": "Chứng minh entry R1 gọi đúng chương trình R1, trả đúng DR và đi hết đường consumer; chặn nhầm node/package.",
+        "limitation": "Không chạy nguyên entry mang authority hoặc namespace R0 như quyền R1.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU05",
+        "component": "Ledger, clock, recovery và publication",
+        "approach": "REUSE_CANDIDATE",
+        "approach_label": "Ưu tiên dùng chung",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/ledger.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 36795,
+            "sha256": "cb548d3c5bf87b119560d57f81f3b0de4a5b4a2746b3be4405305feecdf02224"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/clock.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 10091,
+            "sha256": "736a9a16e3943c061b9a6a8ca9ccc98d9152a68068bb7c08069ee58766379a93"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/policy.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 10888,
+            "sha256": "e3c7b961f6ac39ac4a482e4e6f64f26c22d08454944995462f1dd9e6cbaa6bcf"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/local_ports.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 68684,
+            "sha256": "e4292bb37fbc72e72e6aca77111b5b2d45c436dee55d1c3ccdc29c8151e0a2d6"
+          }
+        ],
+        "owner": "Runtime",
+        "acceptance": "Kiểm context R1, append/readback, mất acknowledgement và recovery không lặp effect.",
+        "limitation": "Giữ reservation temporal hiện hành; không biến Route V thành strict PT-1.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU06",
+        "component": "O/A và bàn giao consumer",
+        "approach": "CONFIGURE_CANDIDATE",
+        "approach_label": "Cấu hình reader và context",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/receipts.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 7136,
+            "sha256": "95aaf7b0942a78d37cf17f6fd399bf22611440867f209bd2c553a9c9695a5425"
+          },
+          {
+            "relative_path": "scripts/r0_research_integration_v1_2/receipts.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 17177,
+            "sha256": "060e46585ab315f6a95514556f71be4dda1b29dcd5bb5f442a3a68f120daed1d"
+          }
+        ],
+        "owner": "Runtime / AILL",
+        "acceptance": "Bind reader và payload R1; kiểm node/cycle/attempt/package/IM và consumer thực sự đọc OUTPUT đúng phạm vi.",
+        "limitation": "Không dùng ACK giả hoặc component receipt để suy complete.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU07",
+        "component": "Nguồn, authority và instance dữ liệu",
+        "approach": "ADAPT_REQUIRED",
+        "approach_label": "Tái dùng interface, bind lại",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/source_reader.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 18823,
+            "sha256": "32abed78bb7fc3c7dd76cf7d6db05fbb74a53d4b2bb4ac6937f33498b7714605"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/actual_inputs.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 10108,
+            "sha256": "3b305dbb0ccc48666b5e26e8fb8e52f5a522f86c461f987feeb2a78c4cc371f9"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/authority.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 18250,
+            "sha256": "2d4b527009992117e28a89fa291f797339583321199d972e2c71fbd864d6d77f"
+          },
+          {
+            "relative_path": "scripts/r0_actual_research_runtime_v1_10/commissioning.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 25880,
+            "sha256": "34378efe089538d039a531bbf2940cd5cefbdb991b99a40c5a6a951e3c81d958"
+          },
+          {
+            "relative_path": "scripts/r0_rn_v2_programs_v1_4/instance_builder.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 18254,
+            "sha256": "b444bef742c3b4ed97a43bc25517e4b63fc804efd4637aa0477222d3c24e6a2e"
+          }
+        ],
+        "owner": "Owner / Runtime",
+        "acceptance": "Tạo INPUT R1 từ OUTPUT R0 đã nghiệm thu, kiểm nguồn và bindings thật; ghi rõ phần chỉ có SUPPORT fixture.",
+        "limitation": "Không tái dùng grant/approval/commissioning R0 làm quyền R1.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU08",
+        "component": "Controller, evidence, manifest và handoff",
+        "approach": "CONFIGURE_CANDIDATE",
+        "approach_label": "Tái dùng mẫu kiểm soát",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "docs/reviews/R0_SLOT68_STRICT_ADMISSION_INTEGRATION_WORK_ORDER_V1/SUPERVISOR_V1.ps1",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 44002,
+            "sha256": "983aaef9a1763b9bc424314fbbd41af6ab1ea34944af853ea9fb4bc2eef6f6b6"
+          }
+        ],
+        "owner": "Owner / CC",
+        "acceptance": "Tạo cấu hình R1 có node/roster/root/cap đúng task, qualify entry/logging/storage trước dispatch; tái dùng cách ghi evidence.",
+        "limitation": "Controller hiện mang Slot68: không chạy nguyên như controller R1; không tái dùng state hoặc reset counter.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU09",
+        "component": "Adapter, evaluator và phương pháp R1",
+        "approach": "R1_SPECIFIC",
+        "approach_label": "Viết phần nghiệp vụ còn thiếu",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "scripts/r0_rn_v2_programs_v1_4/adapter_program.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 116914,
+            "sha256": "6b8cf16a4d2ee49b9134dad3ee66454332561a21d390f310c96c314c41400b64"
+          },
+          {
+            "relative_path": "scripts/r0_rn_v2_programs_v1_4/evaluator_program.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 25929,
+            "sha256": "be16ff5cbdad6bb49364e9aad3fcc0c7eed0bac9fbf19e9c5f5a63c375e2b71c"
+          },
+          {
+            "relative_path": "scripts/r0_rn_v2_programs_v1_4/source_map.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 10313,
+            "sha256": "0cc805adf6d7f563994d2e30d166bb7f4b9ef7dd39d55aad51d943d01bed181b"
+          }
+        ],
+        "owner": "RN / AILL",
+        "acceptance": "Chốt methodology R1, expected và evaluator độc lập; tận dụng interface và parsing phù hợp sau khi chứng minh tương thích.",
+        "limitation": "Logic 18 BM documentary R0 không mặc nhiên là logic nghiên cứu R1.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU10",
+        "component": "Contract, baseline và bộ kiểm chứng R1",
+        "approach": "R1_SPECIFIC",
+        "approach_label": "Đăng ký riêng cho R1",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "tests/r0_rn_v2_admission_v1/test_admission.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 28265,
+            "sha256": "4f643c69a575d759f04cd373aed9dd989a4d1ce74e9b692c916194a07da98292"
+          },
+          {
+            "relative_path": "tests/r0_rn_v2_admission_v1/test_integration.py",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 31840,
+            "sha256": "2f81952ebb37e075afe555b7f30d97c7a76197aba67dc3d1e402b55f0de88be4"
+          }
+        ],
+        "owner": "Owner / RN / Runtime / AILL",
+        "acceptance": "Đăng ký năm contract, ma trận Baseline–Runtime–AILL và oracle R1; chọn regression nền còn hiệu lực và thêm case cho delta R1.",
+        "limitation": "Không copy nguyên số case/mutant R0 hay ép expected để MATCH.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU11",
+        "component": "OUTPUT R0 → INPUT R1",
+        "approach": "R1_SPECIFIC",
+        "approach_label": "Bàn giao artifact đã nghiệm thu",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "docs/milestones/MILESTONE_REPORTING_PROTOCOL_V1.md",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 3436,
+            "sha256": "83307e6c8a2010ed063470905f09627c589857878cb5c4792e1acfe085d98879"
+          }
+        ],
+        "owner": "Owner / RN / AILL",
+        "acceptance": "Ghim OUTPUT R0 đã nghiệm thu, schema/hash/scope; map vào INPUT R1 và có consumer readback.",
+        "limitation": "Chưa có OUTPUT actual được nghiệm thu thì giữ BLOCKED; báo cáo partial không tự thành INPUT admitted.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      },
+      {
+        "id": "RU12",
+        "component": "Ngân sách và cổng mở R1",
+        "approach": "R1_SPECIFIC",
+        "approach_label": "Lập ngân sách theo delta",
+        "status": "NOT_VERIFIED_FOR_R1",
+        "status_label": "Chưa xác minh cho R1",
+        "checked": false,
+        "source_candidates": [
+          {
+            "relative_path": "docs/governance/R0_FOUR_MILESTONE_QC_REPORTING_RULE_V1.md",
+            "path": "[NATIVE_PATH_OMITTED]",
+            "bytes": 1655,
+            "sha256": "3c6c9c3df27811e33f6e6c26bb83ff56ffb2d69a892584c8fb12230c89f5a2d2"
+          }
+        ],
+        "owner": "Owner / Son",
+        "acceptance": "Lập số prompt, thời lượng dự kiến, dự phòng và chi phí chờ sau khi chốt reuse matrix; trình Son duyệt ngân sách và chuyển node.",
+        "limitation": "Owner tự điều phối trong R1 đã được giao; không mở R1 từ checklist này.",
+        "R0_acceptance_ref": null,
+        "R1_verification_ref": null,
+        "disposition": null,
+        "gap_or_rewrite_rationale": null
+      }
+    ],
+    "reuse_before_rewrite_rule": "Trước khi đề xuất viết lại, phải trỏ module hiện có, ghi gap cụ thể và chứng minh vì sao cấu hình hoặc sửa hẹp không đủ. Ghi disposition cùng evidence khi Owner QC chốt.",
+    "completion_rule": "Chỉ checked=true khi có R0 acceptance ref còn áp dụng, disposition R1 và evidence R1 compatibility/consumer cùng scope. N/A cần lý do; không đánh dấu từ test R0 hoặc hash đơn thuần.",
+    "budget": {
+      "prompt_count": null,
+      "estimated_duration_minutes": null,
+      "status": "TO_BE_ESTIMATED_AT_R1_PLANNING",
+      "basis": "Delta được xác nhận sau reuse review; không tính lại phần đã nghiệm thu và không tự coi chi phí R0 là chi phí R1."
+    },
+    "milestones": {
+      "M1": "OUTPUT R0 đã nghiệm thu → INPUT R1; authority/budget/context",
+      "M2": "Reuse matrix → cấu hình/adapt → kiểm chứng delta và public consumer",
+      "M3": "Chạy R1 đúng scope/grant đã có",
+      "M4": "Nghiệm thu/OUTPUT R1 → INPUT node kế; giữ cổng Son"
+    }
+  },
+  "current_followup": {
+    "title": "Slot69 sẵn sàng để anh mở CC",
+    "status": "READY_FOR_MANUAL_ENGINEERING_LAUNCH",
+    "note": "Tích hợp O/A một Runtime writer, giữ nguyên RN và Baseline. Controller/launcher đã kiểm trên fixture riêng và CheckOnly; anh tự mở terminal/dán relay, Owner không gửi tự động.",
+    "owner_minutes": "QC sau CC:45–90 phút, ước lượng",
+    "CC_prompts_requested": 1,
+    "actual_R0_PASS_ETA": "UNKNOWN",
+    "artifact": "s69-quick-start",
+    "phase_label": "Packet đã qualification"
+  },
   "reported": {
     "node_pass": 0,
     "total_nodes": 41,
@@ -1385,6 +2472,15 @@
     }
   ],
   "slots": [
+    {
+      "number": 68,
+      "title": "Strict admission RN/Runtime",
+      "label": "QC kỹ thuật trong scope; quy trình không tuân thủ",
+      "state": "OWNER_ACCEPTED_SCOPED_STRICT_SUPPORT_ENGINEERING_WITH_PROCESS_NONCOMPLIANCE",
+      "color": "blue",
+      "note": "Strict SUPPORT admission→realRN→Runtime đã kiểm. 14 lần thử đọc ngoài gate vượt cap8; không miễn trừ. Chưa actual R0.",
+      "artifact": "s68-owner-qc"
+    },
     {
       "number": 64,
       "title": "Hai chương trình RN V2 và package nạp",
@@ -1700,10 +2796,10 @@
   ],
   "public_snapshot": {
     "mode": "PUBLIC_READ_ONLY_SNAPSHOT",
-    "captured_at": "2026-10-21T15:30:25.803250+00:00",
+    "captured_at": "2026-10-23T13:37:21.189744+00:00",
     "source_route": "/api/state",
     "source_port": 8790,
-    "source_response_sha256": "03de86972ca83c9107979b7397c3fa16142577a740ad47895e9ee77a0d15a24c",
+    "source_response_sha256": "b056a67c1c355a58dfc73ace2053f6a678ae0e46b17a32430dbd4c3addb2ca24",
     "read_only": true,
     "live": false,
     "scientific_acceptance": false,

@@ -1,757 +1,118 @@
 {
-  "captured_at_utc": "2026-10-21T15:26:57.9762952Z",
-  "classification": "DEMO / SEEDED_SYNTHETIC / NOT_REAL_MARKET_DATA",
-  "source": "LunaVN running demo GET responses",
+  "captured_at_utc": "2026-10-23T13:38:20.095436+00:00",
+  "classification": "MIXED_SOURCE_PER_ENDPOINT_QRW_AND_DEMO_NOT_CERTIFIED",
+  "source": "Current LunaVN GET aggregate responses",
   "row_counts": {
-    "momentum": 65,
-    "thematic": 43,
+    "momentum": 127,
+    "industry": 127,
     "etf": 10
+  },
+  "classification_by_endpoint": {
+    "momentum": {
+      "mock": false,
+      "source": "QRW",
+      "as_of": "2026-10-16"
+    },
+    "industry": {
+      "mock": false,
+      "source": "QRW",
+      "as_of": "2026-10-16"
+    },
+    "etf": {
+      "mock": true,
+      "source": "MOCK",
+      "as_of": "2026-10-19"
+    },
+    "regime": {
+      "mock": false,
+      "source": "QRW",
+      "as_of": "2026-10-16"
+    },
+    "breadth": {
+      "mock": false,
+      "source": "QRW",
+      "as_of": "2026-10-16"
+    },
+    "ewcw": {
+      "mock": true,
+      "source": "MOCK",
+      "as_of": "2026-10-19"
+    },
+    "data/status": {
+      "mock": false,
+      "source": "QRW",
+      "as_of": "2026-10-16"
+    }
   },
   "records": [
     {
       "endpoint": "/api/momentum",
       "file": "data/momentum.json",
-      "sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603",
-      "bytes": 27400
-    },
-    {
-      "endpoint": "/api/charts?symbol=ACB&list=momentum",
-      "file": "data/charts/momentum-ACB.json",
-      "sha256": "c4696c51eededd5cd769dc2fda53cc4d9b248321c99b97cfee8d0f3250b00634",
-      "bytes": 24042
-    },
-    {
-      "endpoint": "/api/charts?symbol=ACV&list=momentum",
-      "file": "data/charts/momentum-ACV.json",
-      "sha256": "99db649c5e11619960b35b680922278b72bea3cc2a697bee7bc36f7f4a838e20",
-      "bytes": 25310
-    },
-    {
-      "endpoint": "/api/charts?symbol=ANV&list=momentum",
-      "file": "data/charts/momentum-ANV.json",
-      "sha256": "598fbe4546f76a3dade46bae27fc686f5f6865d2f1425b9d62f4a9028f7deeca",
-      "bytes": 24843
-    },
-    {
-      "endpoint": "/api/charts?symbol=BID&list=momentum",
-      "file": "data/charts/momentum-BID.json",
-      "sha256": "ff2cf29a95175c7f8217fc1d8750adbce612e2a5c1231a5d9182f578e7ef8203",
-      "bytes": 24902
-    },
-    {
-      "endpoint": "/api/charts?symbol=BMP&list=momentum",
-      "file": "data/charts/momentum-BMP.json",
-      "sha256": "7e34e3f2a7a58330f190658f57db7bea89dbee7091dafe0320cbdc54345b81fb",
-      "bytes": 24412
-    },
-    {
-      "endpoint": "/api/charts?symbol=BSR&list=momentum",
-      "file": "data/charts/momentum-BSR.json",
-      "sha256": "8fbe095e986c207735626a8c0fa21468d9c869dc1d34ae0fda318e6b48c5fd0d",
-      "bytes": 24318
-    },
-    {
-      "endpoint": "/api/charts?symbol=CEO&list=momentum",
-      "file": "data/charts/momentum-CEO.json",
-      "sha256": "3d3bf36ccfdb17e07a0534b010b950df7d1dff1c91e81ea349cdcbf27b03b5bc",
-      "bytes": 24930
-    },
-    {
-      "endpoint": "/api/charts?symbol=CII&list=momentum",
-      "file": "data/charts/momentum-CII.json",
-      "sha256": "1dcb032940964dea5725e411aedce290e7f0b86e3a31b85abd20e47b0ab028d8",
-      "bytes": 24394
-    },
-    {
-      "endpoint": "/api/charts?symbol=CMG&list=momentum",
-      "file": "data/charts/momentum-CMG.json",
-      "sha256": "a015e14e65d47d2cf8c0541a6f19490b5b99fada85ae150dd069684dcaee6d50",
-      "bytes": 25978
-    },
-    {
-      "endpoint": "/api/charts?symbol=CTG&list=momentum",
-      "file": "data/charts/momentum-CTG.json",
-      "sha256": "92f75cdbc39803958fc22dc5f5f6ab62637fd22eeb22517312de7e601fe6b31d",
-      "bytes": 25415
-    },
-    {
-      "endpoint": "/api/charts?symbol=DCM&list=momentum",
-      "file": "data/charts/momentum-DCM.json",
-      "sha256": "7d41e7093263c055a2c8ae7371a8b5ee9bd70abe6db2eae69d54ee7125b1e753",
-      "bytes": 24901
-    },
-    {
-      "endpoint": "/api/charts?symbol=DGC&list=momentum",
-      "file": "data/charts/momentum-DGC.json",
-      "sha256": "3da61aced512b2327b05ad6e80976444cb0948cd5a4b6964a70c36b57bc7d02a",
-      "bytes": 24279
-    },
-    {
-      "endpoint": "/api/charts?symbol=DGW&list=momentum",
-      "file": "data/charts/momentum-DGW.json",
-      "sha256": "021cdf5cb3d86816fd9fdd67b8d2c39e6131273fc0c5d6640a422ed81d8487b7",
-      "bytes": 25524
-    },
-    {
-      "endpoint": "/api/charts?symbol=DIG&list=momentum",
-      "file": "data/charts/momentum-DIG.json",
-      "sha256": "5f8516ded580a3137e90d63040c6f9145d40873e1c49493d50017220864b60cf",
-      "bytes": 24728
-    },
-    {
-      "endpoint": "/api/charts?symbol=DPM&list=momentum",
-      "file": "data/charts/momentum-DPM.json",
-      "sha256": "cc9af9b975f3c005269f06cdf4088a1fe4b87b1c1d45584be39348b3a462d9df",
-      "bytes": 24914
-    },
-    {
-      "endpoint": "/api/charts?symbol=DXG&list=momentum",
-      "file": "data/charts/momentum-DXG.json",
-      "sha256": "3b0b59d1fc79019080cca7a435b80c0c0112468acbadcc73b949278bf8d7d8a4",
-      "bytes": 24976
-    },
-    {
-      "endpoint": "/api/charts?symbol=FPT&list=momentum",
-      "file": "data/charts/momentum-FPT.json",
-      "sha256": "be9d0607514dd816c8da089cfa2a26af2d2225176e9b4a31915a1a0a324c0cd2",
-      "bytes": 24908
-    },
-    {
-      "endpoint": "/api/charts?symbol=FRT&list=momentum",
-      "file": "data/charts/momentum-FRT.json",
-      "sha256": "87cfc6bcbc0fad61caf1d5bd567ae274c2adb8b61f1fac9b49b35a1ec98907f5",
-      "bytes": 24566
-    },
-    {
-      "endpoint": "/api/charts?symbol=GAS&list=momentum",
-      "file": "data/charts/momentum-GAS.json",
-      "sha256": "d02d99ba789d3ed0f17f33d30707665cdefbfb8c11b2ca979bd7b5ed2281d4ab",
-      "bytes": 24157
-    },
-    {
-      "endpoint": "/api/charts?symbol=GEX&list=momentum",
-      "file": "data/charts/momentum-GEX.json",
-      "sha256": "183c3f7cc079e0496f512d2fbfeaaf41b1103822aa32f5778f42b76c3536ce38",
-      "bytes": 24331
-    },
-    {
-      "endpoint": "/api/charts?symbol=GMD&list=momentum",
-      "file": "data/charts/momentum-GMD.json",
-      "sha256": "f5bdab461cb4049513b79c18664321de4005765bac1a069480a8f2a46bfef2fe",
-      "bytes": 24796
-    },
-    {
-      "endpoint": "/api/charts?symbol=GVR&list=momentum",
-      "file": "data/charts/momentum-GVR.json",
-      "sha256": "6621af13106ebce612363ce4721c6886f874f2276a4947c81da1eb604d631a41",
-      "bytes": 24747
-    },
-    {
-      "endpoint": "/api/charts?symbol=HAH&list=momentum",
-      "file": "data/charts/momentum-HAH.json",
-      "sha256": "d6c5258f2c5e5f1886fcd1469d989abe34f68410a31335f4bf25cdfa764c8e82",
-      "bytes": 25287
-    },
-    {
-      "endpoint": "/api/charts?symbol=HCM&list=momentum",
-      "file": "data/charts/momentum-HCM.json",
-      "sha256": "9fff5c8ff6f005bc6a808b99b0d058f49b1d5892a8897901cc04159606787996",
-      "bytes": 25165
-    },
-    {
-      "endpoint": "/api/charts?symbol=HDB&list=momentum",
-      "file": "data/charts/momentum-HDB.json",
-      "sha256": "0cfc4a357e6df6657254f42afdd2c2bac4151e4ea56b099b91eb6557676822cf",
-      "bytes": 24946
-    },
-    {
-      "endpoint": "/api/charts?symbol=HPG&list=momentum",
-      "file": "data/charts/momentum-HPG.json",
-      "sha256": "0ce246ae88449e58d05cb3b858168dd9653992b3bba22fbf625cc99c99e96b2f",
-      "bytes": 24839
-    },
-    {
-      "endpoint": "/api/charts?symbol=HSG&list=momentum",
-      "file": "data/charts/momentum-HSG.json",
-      "sha256": "aa0d8fc29f53e3a429acc160c8276e4f6908412582e4675402a2f34b5b1977d4",
-      "bytes": 25637
-    },
-    {
-      "endpoint": "/api/charts?symbol=IDC&list=momentum",
-      "file": "data/charts/momentum-IDC.json",
-      "sha256": "d4903f9e9c1aaf3cb17824efd601afbf506c3917b037bc314348598b20e7e888",
-      "bytes": 24688
-    },
-    {
-      "endpoint": "/api/charts?symbol=KBC&list=momentum",
-      "file": "data/charts/momentum-KBC.json",
-      "sha256": "c9e0e284731527d2f1be13608f3678595f2a4f054d30e3106f352bc294d0e3fc",
-      "bytes": 24792
-    },
-    {
-      "endpoint": "/api/charts?symbol=KDH&list=momentum",
-      "file": "data/charts/momentum-KDH.json",
-      "sha256": "d904b36a71c6865520ab7933e56a47cc12b9b096b18070081ef145a288d12354",
-      "bytes": 25084
-    },
-    {
-      "endpoint": "/api/charts?symbol=MBB&list=momentum",
-      "file": "data/charts/momentum-MBB.json",
-      "sha256": "0f2a6b9770b263976036db9d18e58117849d89956d214f413c5e46da9b2441d0",
-      "bytes": 24032
-    },
-    {
-      "endpoint": "/api/charts?symbol=MCH&list=momentum",
-      "file": "data/charts/momentum-MCH.json",
-      "sha256": "6dd6b27e4e50cb3938a4d1e4ce6d11c97e831ecdf5a8dd31b51d7a4f1613876d",
-      "bytes": 24562
-    },
-    {
-      "endpoint": "/api/charts?symbol=MSN&list=momentum",
-      "file": "data/charts/momentum-MSN.json",
-      "sha256": "c2fef024534e7f19e9e01e7c82fb831ac14d114a3bdac6bae1cadfed540afcb9",
-      "bytes": 25702
-    },
-    {
-      "endpoint": "/api/charts?symbol=MWG&list=momentum",
-      "file": "data/charts/momentum-MWG.json",
-      "sha256": "33b235824f830715819988416f36d98488fd2341e217e323834a60afc6f3f944",
-      "bytes": 23875
-    },
-    {
-      "endpoint": "/api/charts?symbol=NKG&list=momentum",
-      "file": "data/charts/momentum-NKG.json",
-      "sha256": "08f3fa961be5abecdb546810a197ec24c53dfeeaf3b833ed631a8e4d5b557ebb",
-      "bytes": 25683
-    },
-    {
-      "endpoint": "/api/charts?symbol=NLG&list=momentum",
-      "file": "data/charts/momentum-NLG.json",
-      "sha256": "820d129437a60e69c7b185d1802966f4d9ab3f71d6eb55d1550207622e61d3bd",
-      "bytes": 24434
-    },
-    {
-      "endpoint": "/api/charts?symbol=NVL&list=momentum",
-      "file": "data/charts/momentum-NVL.json",
-      "sha256": "1d702aef29572ddbe9a4321f12a2cf0e58c22ed4a602140f3a1435420193b98c",
-      "bytes": 24423
-    },
-    {
-      "endpoint": "/api/charts?symbol=PC1&list=momentum",
-      "file": "data/charts/momentum-PC1.json",
-      "sha256": "c14fdcd836d0070947ffae2110d6582f232f470fda146ccba9370a1b0894485d",
-      "bytes": 24710
-    },
-    {
-      "endpoint": "/api/charts?symbol=PDR&list=momentum",
-      "file": "data/charts/momentum-PDR.json",
-      "sha256": "d4d53559c9a27508f160f87abb60b77e86a4f63800991cdb759a6c5227c12815",
-      "bytes": 24923
-    },
-    {
-      "endpoint": "/api/charts?symbol=PLX&list=momentum",
-      "file": "data/charts/momentum-PLX.json",
-      "sha256": "c072bab1ca73a5cd88f32511241d2fcf2d2be9c94b8faef4b3a28d29f083ce3c",
-      "bytes": 25760
-    },
-    {
-      "endpoint": "/api/charts?symbol=PNJ&list=momentum",
-      "file": "data/charts/momentum-PNJ.json",
-      "sha256": "389dda2dcffdaab0599a78d1dfb24018b9f18266cab8583b962baffaca52f2bf",
-      "bytes": 25162
-    },
-    {
-      "endpoint": "/api/charts?symbol=POW&list=momentum",
-      "file": "data/charts/momentum-POW.json",
-      "sha256": "6c74df7946271c2c2d4691e04d7de9090cce9e53c3c909b4536a75244ca80baa",
-      "bytes": 24669
-    },
-    {
-      "endpoint": "/api/charts?symbol=PVD&list=momentum",
-      "file": "data/charts/momentum-PVD.json",
-      "sha256": "7fa00cb0fac7cf486604c727b49b276ebf654fde4a89561bc6faa0de9617360e",
-      "bytes": 25199
-    },
-    {
-      "endpoint": "/api/charts?symbol=PVS&list=momentum",
-      "file": "data/charts/momentum-PVS.json",
-      "sha256": "08c40be15a375848dcac7de067ed58031db4013d9905e9e293d81eab0e68fb13",
-      "bytes": 25372
-    },
-    {
-      "endpoint": "/api/charts?symbol=QNS&list=momentum",
-      "file": "data/charts/momentum-QNS.json",
-      "sha256": "50ebb7ec6d2a8b59ac5cade2bfe88025b658bdfe5985cc7e5fa6ebd226938640",
-      "bytes": 24017
-    },
-    {
-      "endpoint": "/api/charts?symbol=REE&list=momentum",
-      "file": "data/charts/momentum-REE.json",
-      "sha256": "4d635e38c792a2ac1311c6ce80c18ee40bbbb5ce17ca1777f5155a9c08712815",
-      "bytes": 25849
-    },
-    {
-      "endpoint": "/api/charts?symbol=SAB&list=momentum",
-      "file": "data/charts/momentum-SAB.json",
-      "sha256": "a6a2dd31431dacab79bc6777f40e1225cd0cbc9262883abc524d87eaf4c5e9e1",
-      "bytes": 24034
-    },
-    {
-      "endpoint": "/api/charts?symbol=SHS&list=momentum",
-      "file": "data/charts/momentum-SHS.json",
-      "sha256": "543d1984628494ada34a2c47bab718850f938dc1b74201447ef3d04ba6398af0",
-      "bytes": 24863
-    },
-    {
-      "endpoint": "/api/charts?symbol=SIP&list=momentum",
-      "file": "data/charts/momentum-SIP.json",
-      "sha256": "1a491beaad1123c7ce7ca57b8dea496dc4a9a1dfa31280b90e7cd20d48ebcceb",
-      "bytes": 25057
-    },
-    {
-      "endpoint": "/api/charts?symbol=SSI&list=momentum",
-      "file": "data/charts/momentum-SSI.json",
-      "sha256": "ea3d5f22e1ea1023522dc5c0fe1ef396632949e46c02da0b011eb9fe87d88187",
-      "bytes": 24447
-    },
-    {
-      "endpoint": "/api/charts?symbol=STB&list=momentum",
-      "file": "data/charts/momentum-STB.json",
-      "sha256": "fde930cec3713b6ee449bb2fa996b6f43e63b05afc3d24e50e7576f18d3d9db1",
-      "bytes": 25137
-    },
-    {
-      "endpoint": "/api/charts?symbol=TCB&list=momentum",
-      "file": "data/charts/momentum-TCB.json",
-      "sha256": "450c3a2d4ea33e70d178a048e206bafea471b218bc485556d05e4dbb330887a0",
-      "bytes": 23660
-    },
-    {
-      "endpoint": "/api/charts?symbol=TPB&list=momentum",
-      "file": "data/charts/momentum-TPB.json",
-      "sha256": "892ff36d5b926a311b8c6b01cb6fb47f1dc4dd949a10ad2e27d14782dd0af270",
-      "bytes": 24323
-    },
-    {
-      "endpoint": "/api/charts?symbol=VCB&list=momentum",
-      "file": "data/charts/momentum-VCB.json",
-      "sha256": "82d2cbfd5e0240a5a8235dad19a48e5fdb730fb1cc213f03cb8b98dd4fb3ff0e",
-      "bytes": 25856
-    },
-    {
-      "endpoint": "/api/charts?symbol=VCG&list=momentum",
-      "file": "data/charts/momentum-VCG.json",
-      "sha256": "f234a3783a56b687c0434543e0eb3e4334ef2a6b749c9fd67c4b5f5791cf54ca",
-      "bytes": 25711
-    },
-    {
-      "endpoint": "/api/charts?symbol=VCI&list=momentum",
-      "file": "data/charts/momentum-VCI.json",
-      "sha256": "d78e159efd0da63edd216e799b50b12f9cbfd70260d7de44aece4666392ef3b4",
-      "bytes": 25078
-    },
-    {
-      "endpoint": "/api/charts?symbol=VGI&list=momentum",
-      "file": "data/charts/momentum-VGI.json",
-      "sha256": "9898c5f343f3abeae6905cd7e4bbbf5464273037bb292cf4543bf636a814dee3",
-      "bytes": 25228
-    },
-    {
-      "endpoint": "/api/charts?symbol=VHC&list=momentum",
-      "file": "data/charts/momentum-VHC.json",
-      "sha256": "4c6373b76b6e48e3cfe2d3a33b50020ee6a76f63e20ce783f1c98c0dd7ed709e",
-      "bytes": 25197
-    },
-    {
-      "endpoint": "/api/charts?symbol=VHM&list=momentum",
-      "file": "data/charts/momentum-VHM.json",
-      "sha256": "a7ce46c04669f31abc24c46928ffe83f08274e69c1c55a9b360fcabc6b65cb17",
-      "bytes": 24569
-    },
-    {
-      "endpoint": "/api/charts?symbol=VIC&list=momentum",
-      "file": "data/charts/momentum-VIC.json",
-      "sha256": "68ede74df8dbecc41d3bb563c8f387560c8b30a22d6fb42058a55ba823ad3443",
-      "bytes": 24935
-    },
-    {
-      "endpoint": "/api/charts?symbol=VJC&list=momentum",
-      "file": "data/charts/momentum-VJC.json",
-      "sha256": "4f4a54167ab6958a5cfbfe4eb49ad5a4cb0933b2b951f696fa24455a45bf7c2c",
-      "bytes": 24067
-    },
-    {
-      "endpoint": "/api/charts?symbol=VND&list=momentum",
-      "file": "data/charts/momentum-VND.json",
-      "sha256": "2e99e9dad15eb918d50a3f4661bfd4bacb1deaacf6ba1d89782d543287276ecf",
-      "bytes": 24817
-    },
-    {
-      "endpoint": "/api/charts?symbol=VNM&list=momentum",
-      "file": "data/charts/momentum-VNM.json",
-      "sha256": "60e8fc6733d0617662c5d051c8a2ff67fcb17c4fc6c523db03fde2e26cf913b7",
-      "bytes": 25215
-    },
-    {
-      "endpoint": "/api/charts?symbol=VPB&list=momentum",
-      "file": "data/charts/momentum-VPB.json",
-      "sha256": "b104fd8149ce4a02e8a1513cd86a480f4b19e5e29b6a7a5221e8ce3b1486f786",
-      "bytes": 25077
-    },
-    {
-      "endpoint": "/api/charts?symbol=VRE&list=momentum",
-      "file": "data/charts/momentum-VRE.json",
-      "sha256": "82c2ec9ffae0084b90b7bd70cda5c200e8c4013ea4a8d377a2fa524a988518ae",
-      "bytes": 24536
-    },
-    {
-      "endpoint": "/api/thematic",
-      "file": "data/thematic.json",
-      "sha256": "18b3b99407cba08f4afc388bbb04427afea83fb38b6dfa044bf0db389449ffcd",
-      "bytes": 16960
-    },
-    {
-      "endpoint": "/api/charts?symbol=ACB&list=thematic",
-      "file": "data/charts/thematic-ACB.json",
-      "sha256": "e69de86da5d2c6ee2224210cbcea2dee287485d6adb8b26e64f1ec349fc8c4c2",
-      "bytes": 24085
-    },
-    {
-      "endpoint": "/api/charts?symbol=ANV&list=thematic",
-      "file": "data/charts/thematic-ANV.json",
-      "sha256": "5d1cbcc74f5d015f4d1b97d668cce71e072ca96e43b87915e454f6c2a34d61b5",
-      "bytes": 24694
-    },
-    {
-      "endpoint": "/api/charts?symbol=CII&list=thematic",
-      "file": "data/charts/thematic-CII.json",
-      "sha256": "b371f13cca89a12e0da63b4e530123d5b00e93c989876a1ac0fd42ea3ad0aeea",
-      "bytes": 24668
-    },
-    {
-      "endpoint": "/api/charts?symbol=CMG&list=thematic",
-      "file": "data/charts/thematic-CMG.json",
-      "sha256": "30a1a9414cc6b5f0e1f8eccb58dab82dd560b07ce40095674856028da34f23d4",
-      "bytes": 24890
-    },
-    {
-      "endpoint": "/api/charts?symbol=CTG&list=thematic",
-      "file": "data/charts/thematic-CTG.json",
-      "sha256": "33f50edd45548d10b9f44c4134f8546c2705d7acbf073757cdcfa41a2d4ad0e7",
-      "bytes": 24504
-    },
-    {
-      "endpoint": "/api/charts?symbol=DGC&list=thematic",
-      "file": "data/charts/thematic-DGC.json",
-      "sha256": "5448ffef07128c1c9d6a1fa3c63595c4dcf37be8437520af973c9e1a48fcad5d",
-      "bytes": 24928
-    },
-    {
-      "endpoint": "/api/charts?symbol=DGW&list=thematic",
-      "file": "data/charts/thematic-DGW.json",
-      "sha256": "08aead012cb6eeeedaf3ed62727076ac78a8527f5c4b0587aafc22bd9fd121d7",
-      "bytes": 23861
-    },
-    {
-      "endpoint": "/api/charts?symbol=DIG&list=thematic",
-      "file": "data/charts/thematic-DIG.json",
-      "sha256": "68049700e77eec549ce816eeb4fe540d3dcc0c6ff2219e9ad636f36fa98d2616",
-      "bytes": 24938
-    },
-    {
-      "endpoint": "/api/charts?symbol=DPM&list=thematic",
-      "file": "data/charts/thematic-DPM.json",
-      "sha256": "dfc3a0c28c2c356cc639e9ed5889a56542b6894c1567971c24fe0b48a8d9f67c",
-      "bytes": 24099
-    },
-    {
-      "endpoint": "/api/charts?symbol=DXG&list=thematic",
-      "file": "data/charts/thematic-DXG.json",
-      "sha256": "c863513ff27a38031559db9b610556a3838815111bf90257fa4d1ff8fc46be25",
-      "bytes": 24981
-    },
-    {
-      "endpoint": "/api/charts?symbol=GAS&list=thematic",
-      "file": "data/charts/thematic-GAS.json",
-      "sha256": "370075874949f5bd573fcd9a0432363cb418dff7e820d470abd8cd09c11c8717",
-      "bytes": 24608
-    },
-    {
-      "endpoint": "/api/charts?symbol=GEX&list=thematic",
-      "file": "data/charts/thematic-GEX.json",
-      "sha256": "d1ab034d54c3bf9ad3bbcf49137349ae2d83a49746f06101093e458e490b1260",
-      "bytes": 24893
-    },
-    {
-      "endpoint": "/api/charts?symbol=GMD&list=thematic",
-      "file": "data/charts/thematic-GMD.json",
-      "sha256": "6afc096c545256d2ef421e4968d3f2a0a09b10284d67396fd7da301814acd742",
-      "bytes": 24970
-    },
-    {
-      "endpoint": "/api/charts?symbol=GVR&list=thematic",
-      "file": "data/charts/thematic-GVR.json",
-      "sha256": "01ab2ad020bc0debf452f4a1f777f267c71ceb055ed843ee1f5dbaf6dba57883",
-      "bytes": 25402
-    },
-    {
-      "endpoint": "/api/charts?symbol=HCM&list=thematic",
-      "file": "data/charts/thematic-HCM.json",
-      "sha256": "d4521cd1674b8cd140bc8ad144484e14146c5d7e4092e68e0aa0018b381f2ab6",
-      "bytes": 24101
-    },
-    {
-      "endpoint": "/api/charts?symbol=HDB&list=thematic",
-      "file": "data/charts/thematic-HDB.json",
-      "sha256": "5e3987daa442e75f2a0189268475ca5799c6aca98cdd4f50efe1e57e6a05bed5",
-      "bytes": 25049
-    },
-    {
-      "endpoint": "/api/charts?symbol=HSG&list=thematic",
-      "file": "data/charts/thematic-HSG.json",
-      "sha256": "9996a0ea512be27c39fcf97d0b42c3112c87e65c236e4f16d930c477cb9e4006",
-      "bytes": 24902
-    },
-    {
-      "endpoint": "/api/charts?symbol=IDC&list=thematic",
-      "file": "data/charts/thematic-IDC.json",
-      "sha256": "a4f8fd90d34241532a75e0c3a8d159d107f22b12f8620980c676376f21d17712",
-      "bytes": 24625
-    },
-    {
-      "endpoint": "/api/charts?symbol=KBC&list=thematic",
-      "file": "data/charts/thematic-KBC.json",
-      "sha256": "fb9e2b351e6a2edfab0ccc0f3917e3b6a3f828ac4f6060c0ca51ff5ce0068349",
-      "bytes": 24916
-    },
-    {
-      "endpoint": "/api/charts?symbol=MCH&list=thematic",
-      "file": "data/charts/thematic-MCH.json",
-      "sha256": "fca5d0b2a9984588084005d6c670b85c1270d8805138976b796c65246e3359dc",
-      "bytes": 25042
-    },
-    {
-      "endpoint": "/api/charts?symbol=MWG&list=thematic",
-      "file": "data/charts/thematic-MWG.json",
-      "sha256": "8655d94ad806359e78b71885de5a4bbddd782f40b37dab10c8b734fae7178f07",
-      "bytes": 24783
-    },
-    {
-      "endpoint": "/api/charts?symbol=NKG&list=thematic",
-      "file": "data/charts/thematic-NKG.json",
-      "sha256": "9064b6cad92257937460c2bc7359527fc92795dd6d1a5b92297ac79fef5e66a6",
-      "bytes": 24399
-    },
-    {
-      "endpoint": "/api/charts?symbol=NLG&list=thematic",
-      "file": "data/charts/thematic-NLG.json",
-      "sha256": "72cb9c58bc917e43df4f7fa25588069e5b08ab71084dd6f280742896b385d1a9",
-      "bytes": 24865
-    },
-    {
-      "endpoint": "/api/charts?symbol=NVL&list=thematic",
-      "file": "data/charts/thematic-NVL.json",
-      "sha256": "b9ec4a924219010e4ff5eedac712fa9d63e349c27340c0ae2fcadcfb2afdb3a4",
-      "bytes": 24651
-    },
-    {
-      "endpoint": "/api/charts?symbol=PC1&list=thematic",
-      "file": "data/charts/thematic-PC1.json",
-      "sha256": "03efdb796869ef4d7b427d5b2f2936d1f19a35048ca8688c9d5bf02396566dbb",
-      "bytes": 25780
-    },
-    {
-      "endpoint": "/api/charts?symbol=PNJ&list=thematic",
-      "file": "data/charts/thematic-PNJ.json",
-      "sha256": "cd829b2b9da071f999a6744b2d8d0c122cf65ab3446d68365431e1fb26f8dc03",
-      "bytes": 25515
-    },
-    {
-      "endpoint": "/api/charts?symbol=POW&list=thematic",
-      "file": "data/charts/thematic-POW.json",
-      "sha256": "735950f8f02696044fc244c41ada92a906914b373879074d914908a3ca39a8fe",
-      "bytes": 25656
-    },
-    {
-      "endpoint": "/api/charts?symbol=PVD&list=thematic",
-      "file": "data/charts/thematic-PVD.json",
-      "sha256": "4344bfe4a0c2d22cf7aa0f369cab2b1cd5b0dc44ded44e14fe61499bbef724eb",
-      "bytes": 24912
-    },
-    {
-      "endpoint": "/api/charts?symbol=PVS&list=thematic",
-      "file": "data/charts/thematic-PVS.json",
-      "sha256": "4bdf401e1b045a8add48adff81c9f157cf2395fdb11cb99eb88e0a9ae19e37f7",
-      "bytes": 25067
-    },
-    {
-      "endpoint": "/api/charts?symbol=SAB&list=thematic",
-      "file": "data/charts/thematic-SAB.json",
-      "sha256": "854c6dffedc6cccede711395b39e0581547b7e428480ff28a57b2d40b538a9ea",
-      "bytes": 25249
-    },
-    {
-      "endpoint": "/api/charts?symbol=SSI&list=thematic",
-      "file": "data/charts/thematic-SSI.json",
-      "sha256": "db1b83094f388483f07e45da5c85a528ab9e8b408c0cc97394813e8611e885ab",
-      "bytes": 24391
-    },
-    {
-      "endpoint": "/api/charts?symbol=TCB&list=thematic",
-      "file": "data/charts/thematic-TCB.json",
-      "sha256": "aa73550d19d483ea900f3d42866c30741d313a31ebb45c24db1d69a978320cd7",
-      "bytes": 24335
-    },
-    {
-      "endpoint": "/api/charts?symbol=TPB&list=thematic",
-      "file": "data/charts/thematic-TPB.json",
-      "sha256": "a007fb444ad2e8c60bd0d11e511cc6e359e3ce7f8663e46b053f325a4ad5e7bc",
-      "bytes": 24475
-    },
-    {
-      "endpoint": "/api/charts?symbol=VCB&list=thematic",
-      "file": "data/charts/thematic-VCB.json",
-      "sha256": "70433381328d1dc061d4972be37bbf44cd39f6cfa9cf91c4da59aa16a719b340",
-      "bytes": 24800
-    },
-    {
-      "endpoint": "/api/charts?symbol=VCG&list=thematic",
-      "file": "data/charts/thematic-VCG.json",
-      "sha256": "5d9fd125b43e55f16fffa2357f715b33c011401426e294045471a129ffbd1ecb",
-      "bytes": 24664
-    },
-    {
-      "endpoint": "/api/charts?symbol=VCI&list=thematic",
-      "file": "data/charts/thematic-VCI.json",
-      "sha256": "94d74357095df853ab1431a1c31fe591bd3b571d2c1484ec3a73cae2d0168485",
-      "bytes": 25056
-    },
-    {
-      "endpoint": "/api/charts?symbol=VGI&list=thematic",
-      "file": "data/charts/thematic-VGI.json",
-      "sha256": "db6d4d478d7d11231859cd9d0d2c833d2ed9a5948c359d639817af068f4119b4",
-      "bytes": 24810
-    },
-    {
-      "endpoint": "/api/charts?symbol=VHC&list=thematic",
-      "file": "data/charts/thematic-VHC.json",
-      "sha256": "90acf151e48dc4a19986515908a920b1ca3222cca9022a17d9f8429b33cd3625",
-      "bytes": 25336
-    },
-    {
-      "endpoint": "/api/charts?symbol=VHM&list=thematic",
-      "file": "data/charts/thematic-VHM.json",
-      "sha256": "31df687e7e22ab440544c1db1fd282eaf9d864d309ac2e3a0ae3977605c89cc8",
-      "bytes": 24946
-    },
-    {
-      "endpoint": "/api/charts?symbol=VJC&list=thematic",
-      "file": "data/charts/thematic-VJC.json",
-      "sha256": "e7dae29ad7ece2bc4bbadbe5e4233d991212db669950576fe6975eb5ecf93bfe",
-      "bytes": 24803
-    },
-    {
-      "endpoint": "/api/charts?symbol=VNM&list=thematic",
-      "file": "data/charts/thematic-VNM.json",
-      "sha256": "3a53f2986e147de68da8be0e8712e7cd53e2903cd3d5c3a498b386038ffd4b93",
-      "bytes": 24608
-    },
-    {
-      "endpoint": "/api/charts?symbol=VPB&list=thematic",
-      "file": "data/charts/thematic-VPB.json",
-      "sha256": "983b452997931ee85b9b03ae7ab2b926cc702d2cbc653bc076fd7eb87e4eb17b",
-      "bytes": 25504
-    },
-    {
-      "endpoint": "/api/charts?symbol=VRE&list=thematic",
-      "file": "data/charts/thematic-VRE.json",
-      "sha256": "6d361ff7db8fcd7e2ddd7ec21b45a55ca94f2c71ef7c26f690706d83a718a567",
-      "bytes": 24906
+      "source_sha256": "e68dbab1bdede6bc2248f9f4233610e60945c2103b426545f9bdf13fc01e912b",
+      "sha256": "6cc67fd52f71ca034aaef2b2cbecda17d54c1212b6b0e500f965ab775253ee27",
+      "bytes": 106017,
+      "omitted_fields": []
+    },
+    {
+      "endpoint": "/api/industry",
+      "file": "data/industry.json",
+      "source_sha256": "846da9b037a09135242b342dc6a3a4b0bf1a12d08c7f6a0b1b9c23111a00516c",
+      "sha256": "fdd6fcea28fc7a95417737fc6ba01426ef58a024eea31d0d1724054f03bec193",
+      "bytes": 110156,
+      "omitted_fields": []
     },
     {
       "endpoint": "/api/etf",
       "file": "data/etf.json",
-      "sha256": "2505124c3e4471213ff3527e00cb47e7dc2a8d7d3c00f100be8470d8f43aa885",
-      "bytes": 4173
-    },
-    {
-      "endpoint": "/api/charts?symbol=E1VFVN30&list=etf",
-      "file": "data/charts/etf-E1VFVN30.json",
-      "sha256": "5348a791ab8d67f32efc19a4a2160077c1b206ef5c2e3510b92f7869228d46ab",
-      "bytes": 25450
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEBFVND&list=etf",
-      "file": "data/charts/etf-FUEBFVND.json",
-      "sha256": "eb8f3ee2b26bc0099535f60fcd0e8a82770f653e144c96164f0a85df8622f5ac",
-      "bytes": 24921
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEDCMID&list=etf",
-      "file": "data/charts/etf-FUEDCMID.json",
-      "sha256": "567f44e6be46c536ced13b2a089d5428a0b4d3d5beff235234e1faf72d1c0fcf",
-      "bytes": 24841
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEIP100&list=etf",
-      "file": "data/charts/etf-FUEIP100.json",
-      "sha256": "e4ee5e7f7c47cbaf8c677b0797d98e0300a0735ff7072903e21b109e17e4304e",
-      "bytes": 24767
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEKIV30&list=etf",
-      "file": "data/charts/etf-FUEKIV30.json",
-      "sha256": "8efc411f4782df1a83250298d42ebc3c0c7cb7568115331246dc343e8cd97d4d",
-      "bytes": 24674
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEMAV30&list=etf",
-      "file": "data/charts/etf-FUEMAV30.json",
-      "sha256": "6f09afe5122537fd9b78883186c1a10023b7924ec8794f9a5fe19983a2fce8d4",
-      "bytes": 24431
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUESSV50&list=etf",
-      "file": "data/charts/etf-FUESSV50.json",
-      "sha256": "f28f46b9151e830899832e3976d2e76b394afb03dafe59c01550de97241a65e0",
-      "bytes": 24141
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUESSVFL&list=etf",
-      "file": "data/charts/etf-FUESSVFL.json",
-      "sha256": "be266d5e8c5373546eee0ae88fb07e6a9f2ed5bade327505c9b770cb054a1fa9",
-      "bytes": 24410
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEVFVND&list=etf",
-      "file": "data/charts/etf-FUEVFVND.json",
-      "sha256": "351bee20e0731c77ec42edd483721d43c0b857807fa35f1567242b5dff666fdd",
-      "bytes": 24794
-    },
-    {
-      "endpoint": "/api/charts?symbol=FUEVN100&list=etf",
-      "file": "data/charts/etf-FUEVN100.json",
-      "sha256": "4c8a4de0b136188e65182bf1f62e20b32731f0d18a3364df3e4eb817fccfea9b",
-      "bytes": 24664
+      "source_sha256": "5a302e4ae08f19cbf03a386a3201bd760b7761842e3d5bbbaf1afe673c41cb8f",
+      "sha256": "a89c1d579836596f12cf7d9d87a9debf1311de3f367b1cba111acd799c349b27",
+      "bytes": 6467,
+      "omitted_fields": []
     },
     {
       "endpoint": "/api/regime",
       "file": "data/regime.json",
-      "sha256": "989212a2bf191c39169008ef3557e19719b71ad0791df1218fdd36dc0241ed64",
-      "bytes": 112
+      "source_sha256": "ad3e2a497d93769322b6e7f51063a48d5f542032df0f3071c49fdb5ac1ada48a",
+      "sha256": "ef7862db04d25a812a87e1956634c22c76e1d76a07bac0e6c4a89800f31c0bc1",
+      "bytes": 400,
+      "omitted_fields": []
     },
     {
       "endpoint": "/api/breadth",
       "file": "data/breadth.json",
-      "sha256": "88605cb8eb022fb044705d07d5da93aa8df92d38e588308da8cd11238bef3aab",
-      "bytes": 18193
+      "source_sha256": "2958a2d7c2eeeeecb9197fa1ccea70dfea5297a88605ecbf8e68b7dfcd1ccb2f",
+      "sha256": "0fb8d80e6e2fee14d1d3ccf9972dd8101c540ee85a9541221f5d1ead8c81de66",
+      "bytes": 383,
+      "omitted_fields": [
+        "history"
+      ]
     },
     {
       "endpoint": "/api/ewcw",
       "file": "data/ewcw.json",
-      "sha256": "e4f150d1659d1c9f512dd6b66f47bb4d806e7d26d81d3e1e688e2c2d94069e7b",
-      "bytes": 17872
+      "source_sha256": "4218d00881275a23333616b234d1f683ac6d488190e352d9420fd41f7b9b3360",
+      "sha256": "38197ec19b382544fa22f4c686dcff020346fdda891a991925233dc562d02e55",
+      "bytes": 405,
+      "omitted_fields": [
+        "history"
+      ]
+    },
+    {
+      "endpoint": "/api/data/status",
+      "file": "data/data/status.json",
+      "source_sha256": "c67901901503d523edcfc5ef32e317aa169b55d0d21818c20711b22d0657cfd2",
+      "sha256": "a48f7534aa690bbef76e944d232837051103ea9ab363c81bde1b278d8022ae40",
+      "bytes": 699,
+      "omitted_fields": [
+        "last_error"
+      ]
     }
+  ],
+  "limitations": [
+    "Raw price history, charts, personal data and server refresh jobs excluded.",
+    "QRW source reported by original application, not independently certified.",
+    "ETF and EW/CW remain demo; classifications copied per endpoint.",
+    "Macro, derivatives and other backend-only endpoints unavailable in this public snapshot."
   ],
   "source_inputs": [
     {
@@ -759,56 +120,104 @@
       "sha256": "a51bd45d93d7bacd9455c373e4818ae02304644b07745f7e4c3b565b8a78c120"
     },
     {
+      "file": "components/CopyCode.tsx",
+      "sha256": "ef7c1fc8d21c53f8f089365a4d689c6cf0fdbeaf9c6b51a166aeb35939961972"
+    },
+    {
       "file": "components/Footer.tsx",
-      "sha256": "d82cec9d662a4f02f9fd84a253b46f6b5c909f2c831c657c672260531f77a4b7"
+      "sha256": "3ab14d76b0c505104bb9652cfe2e59a74d4408f21f304d54ae902372960a682b"
     },
     {
       "file": "components/LegalPage.tsx",
-      "sha256": "70b2b32037961cb31a501e13cea57b5e7de25a2519e6a2aa9c0eb705e0d138d9"
+      "sha256": "1aeac689035c302cdf9d14eba0c4a4c23f24f4411852df5a143ffbc66b2c2d26"
+    },
+    {
+      "file": "components/LockedOverlay.tsx",
+      "sha256": "57a36854e2fbb11ae36565ea2bdf5b415be796a5de6f2d653f9a7b2caa6a2fa6"
     },
     {
       "file": "components/Logo.tsx",
       "sha256": "a3c3f268ef030626ddbfbfcab67a7c86c38018c838a67476fb6ad96ccc970156"
     },
     {
+      "file": "components/OwnerStatus.tsx",
+      "sha256": "c1894d9ff0f7748a1cd7e6813ee4a03bd65e853d8710150c2f029136fe7382e9"
+    },
+    {
+      "file": "components/ParamReview.tsx",
+      "sha256": "3e133576ef13025f2b0d6c6812d611badcf9f21923b4d710664b69cb166c36d3"
+    },
+    {
       "file": "components/screener/ChartsPanel.tsx",
-      "sha256": "c692b938ee3215ed150f35c37f52a0b2e10a5ce0ccca0ba69ad9d96246ff1b2b"
+      "sha256": "72f3fc228579e36f405d0749bdedcf51577f57960bd9fc995dba5d05155d40f8"
+    },
+    {
+      "file": "components/screener/DataStatusBar.tsx",
+      "sha256": "d4c148ace55ae759d05b2f603e489405c8b1d6e515c62674160e6583282c8296"
     },
     {
       "file": "components/screener/DataTable.tsx",
       "sha256": "9963d4bd687d309dcf911c2f89789e06c034faf3fcc94b43e70196f785791b3f"
     },
     {
+      "file": "components/screener/DerivativesPanel.tsx",
+      "sha256": "0d4c7f2ca2fcf3d7d46a76e4d2e61298b037f8f84f31c27034b36f70a35228fc"
+    },
+    {
       "file": "components/screener/DrawingLayer.ts",
-      "sha256": "a6afac500860af4ea952a91faf4e03fc568ca85fa53a2d2ecca75e89772b816c"
+      "sha256": "f896612ed7ec8f444259399615b4445d7a755f1f8c835009700bbb57d7998d2c"
     },
     {
       "file": "components/screener/ExportMenus.tsx",
-      "sha256": "d251ab2730e6b17b503f92c7b4de7bb632fde5e213cda99924691a75b4f25fe4"
+      "sha256": "91efa68f527aa64efbb759b9e3947919d00a4d17b6b7116a3e2292e106fa1e74"
     },
     {
       "file": "components/screener/FilterPopover.tsx",
       "sha256": "14e5183ea53007d6c36bc5c9aee601d3feab317479cde8a73dc5fab7da208fcd"
     },
     {
+      "file": "components/screener/IndustrySidebar.tsx",
+      "sha256": "56e22ba27d4012c5e442b17a622510a560a007945b2917b23bcb754af093237c"
+    },
+    {
       "file": "components/screener/LineChartDialog.tsx",
-      "sha256": "91fd88da487d4b34a5455d156b61ed4a71d3e86856b09e963ba5879e5f993966"
+      "sha256": "49bfeb7d580af2526daa98a385b74efa9c0b24def3cd0a9442f6ca74f4b20712"
+    },
+    {
+      "file": "components/screener/MacroDialog.tsx",
+      "sha256": "90a06d2b5f4918eaba17d5b31bbbe5be96d899650cb1a478432cb62cc1a2d054"
     },
     {
       "file": "components/screener/MarketBar.tsx",
-      "sha256": "d1a60b026263a8f65aa1acfcefc873eff68bdbc569c22751523018ff0ff235c1"
+      "sha256": "617472e843061cc2c4782bb4712f42c2487bb732d632460388b3efb8abf16fb0"
     },
     {
       "file": "components/screener/Screener.tsx",
-      "sha256": "a88ebbefb2c3740a186c60d339b33e659f41519e2f75d6a01e42a820ad6d53d9"
+      "sha256": "cd73c169e2963b2c125a3198c45887e67d9536e1044f225377e08c5d27cd434e"
     },
     {
       "file": "components/screener/StockChart.tsx",
       "sha256": "25df9faa34b9741d5360856cd32cebffa866dc3d05810bbaf8a5aae11448824c"
     },
     {
+      "file": "components/screener/SymbolHover.tsx",
+      "sha256": "20e76ffabf47d7602239505d24d9737edf38ef647c15a8984dd0b65984c5f209"
+    },
+    {
+      "file": "components/screener/UbDialog.tsx",
+      "sha256": "29a580a041cd845db80cdd5f9fc9460e21dd11bc04d758e8d93bc8207471cdfa"
+    },
+    {
+      "file": "components/screener/useDataStatus.ts",
+      "sha256": "99d760773f6763d971856489968e4fecb6acbb9d9ee6d158083d289935ba5d45"
+    },
+    {
       "file": "components/screener/useDismiss.ts",
       "sha256": "ebed195a4b977971a94602cd189f6509c56890f7bee7a1160d0e76ceac4b4e79"
+    },
+    {
+      "file": "components/screener/useModal.ts",
+      "sha256": "ec92bd50c4faa78601a2fa0711dc8a70f390a1ab84e3c768d83d82eee307f62d"
     },
     {
       "file": "components/ThemeToggle.tsx",
@@ -820,7 +229,11 @@
     },
     {
       "file": "lib/breadth.ts",
-      "sha256": "40596a713ff4f50cda20d3c595c7caccd02f17c909ee299ad672fe9d0335e77c"
+      "sha256": "3b6745a9cf34c8f9da4c0ea5b48ac5abe6c938e706cfad24872fdafe1eb96369"
+    },
+    {
+      "file": "lib/buildInfo.ts",
+      "sha256": "aed4aaa810103fa00150464f8d4928325add326e8924be6fe46f6de81f126b7c"
     },
     {
       "file": "lib/candles.ts",
@@ -831,8 +244,24 @@
       "sha256": "2bf408fa91c0377c10781175832beebae3cc1d678ac528deae6314903daac229"
     },
     {
+      "file": "lib/chartRange.ts",
+      "sha256": "82c460f138d902afb43b2826e7e755eb291d84969b8f07c3ae55515cac170f46"
+    },
+    {
       "file": "lib/columns.tsx",
-      "sha256": "c2d582b50126ff222a6cb8193fb90d878b03b845a91d638cb35d04702730ba0c"
+      "sha256": "622abe7a71ca027f820804e16a5bb284837406a0de2c7ae19f99fe23e4f80ee3"
+    },
+    {
+      "file": "lib/dataStatus.ts",
+      "sha256": "c9897bfd8a252ec236c46ee4214b8930b9604085aae1f1302ee945972daef346"
+    },
+    {
+      "file": "lib/derivatives.ts",
+      "sha256": "136a55142da8b051443b74f7d45777787c342542259beaf49db887e9489035cf"
+    },
+    {
+      "file": "lib/derivativesSource.ts",
+      "sha256": "3e3bea0d10ef6a93c58db8d33d1898d570cb17c4c4757795e5cd8e43cd661e77"
     },
     {
       "file": "lib/download.ts",
@@ -844,7 +273,7 @@
     },
     {
       "file": "lib/ewcw.ts",
-      "sha256": "6a7a598012e0cd80a2c12c1e4d13e6729ff1433cb3d2d405b038075cf4896a17"
+      "sha256": "57286edb065d269c114a172f0393f9ee2794ad9cd3712b24e13fd9756577f8d5"
     },
     {
       "file": "lib/export.ts",
@@ -852,7 +281,23 @@
     },
     {
       "file": "lib/format.ts",
-      "sha256": "b4d60c672178e0161feb327de2f90d3e7188145d328c594856e4a7e0dd3d0700"
+      "sha256": "9e29ca09c66f95e02e8411b6e3105aabf215aa228a658fbb07fb6974653d1746"
+    },
+    {
+      "file": "lib/fundamentalsStore.ts",
+      "sha256": "c112556e805a591dc4f7e776db46cd5aa7d78b2d4083e54831d84ed813987496"
+    },
+    {
+      "file": "lib/hoverIntent.ts",
+      "sha256": "c8edc29c66a3b257f7d5eaf562ac91c1f0e9a7f5c944574f24afb68db0789724"
+    },
+    {
+      "file": "lib/industry.ts",
+      "sha256": "d895aff38b15996a604e0d058062bdb985811bdc2b1093d2529eb4bf5622fbab"
+    },
+    {
+      "file": "lib/industryStore.ts",
+      "sha256": "6737c2f8e7f5c6863ef090d4a927fcc1fa3268f033512ae24247a19a5a6894a0"
     },
     {
       "file": "lib/learn-briefs.ts",
@@ -863,16 +308,76 @@
       "sha256": "350e816ae528920e3a71174f04dbb4acd3856c9353f75d52d0d740fcb94ee2be"
     },
     {
+      "file": "lib/locking.ts",
+      "sha256": "69ce5e1466b160006d9a8e7478fad7c7c66a32707b092a2cd5a4f167684208f3"
+    },
+    {
+      "file": "lib/lockStore.ts",
+      "sha256": "f9b33fded86c7effa1214464bc07f333faf401dc09bda32556a17187d6fbe25a"
+    },
+    {
+      "file": "lib/macro.ts",
+      "sha256": "0e25cce5cad71dc3d8e7e2e3b0dbc9bd24d276fa41c153838c79ca29683e46b3"
+    },
+    {
+      "file": "lib/macroMock.ts",
+      "sha256": "54ad59b4671a2e60d572de01f556f38fe9a7dc7efd27a334850f968dc2e2874e"
+    },
+    {
+      "file": "lib/macroScale.ts",
+      "sha256": "fc388df8ef28f1c4d7eff1f156b4ba79300076c5cc9a8d74a437df6c9016f1b8"
+    },
+    {
+      "file": "lib/macroScaleStore.ts",
+      "sha256": "f8091e258dd64a9fa82a49d30e3bb7d731af08b410c656ebdfd37dfd13a73a10"
+    },
+    {
+      "file": "lib/macroSeries.ts",
+      "sha256": "c879d3aa58553ea4cd079ff87493b13bdf8d3a131c1ebeb2e3b62eb3456d65ef"
+    },
+    {
       "file": "lib/market-vn.ts",
       "sha256": "d9fa5f6e031dae7468eedbdec8e5aa4fba24411cbea6bbe43cebbf6e545ffa51"
     },
     {
       "file": "lib/mock.ts",
-      "sha256": "98e3fa94cf468149a4dc719603b0413541631da2ef2237ec4a8be6b900003332"
+      "sha256": "e7937435f7b702784c3ff874f2b0dcba334f6eab89c89968f5d821f468316343"
     },
     {
       "file": "lib/mockUtil.ts",
       "sha256": "d5e7d8fb6a8684eeb1990e50e9fd30eb50c9bb906a547d4bc294e2f2078403ec"
+    },
+    {
+      "file": "lib/ownerParams.ts",
+      "sha256": "df4c5a0c1b9681e6b9ac3f2a448897fa547bf8de63d18f97db1b7cf127352996"
+    },
+    {
+      "file": "lib/ownerParamsStore.ts",
+      "sha256": "6deca725d85cb9878714e330fe53bdec1a007e66fb1e118bf6236b8aa5f61de1"
+    },
+    {
+      "file": "lib/ownerParamTypes.ts",
+      "sha256": "d195c31c0ebbc4ead50bf98ea28cbba73d76526eb6824b167272a86cd685a1f9"
+    },
+    {
+      "file": "lib/ownerReview.ts",
+      "sha256": "cb09a6a8d9cfb106facfc48a7413fdf1c24dca96243d95209ec25941cfa0b121"
+    },
+    {
+      "file": "lib/qrwStore.ts",
+      "sha256": "ec99fc8857d7f12389e0a76ccf731c27f7e0db1b2b4d5631b4c0a71580e9a9dd"
+    },
+    {
+      "file": "lib/refreshGuard.ts",
+      "sha256": "8d4d3229c3ddfa70055e6c07026b813f130165618d857ddf01e9d01eaef7a9d6"
+    },
+    {
+      "file": "lib/refreshRunner.ts",
+      "sha256": "31369938394ce521158bb75a61857c163720db95a73937cf090e13d5d41d02fd"
+    },
+    {
+      "file": "lib/seam.ts",
+      "sha256": "d13cc2b3d21799bd909ffeb13ba5e7f2ff8cabd8d8dd8a94a7b39ac095c27942"
     },
     {
       "file": "lib/shareImage.ts",
@@ -880,7 +385,7 @@
     },
     {
       "file": "lib/strings.ts",
-      "sha256": "0617b8411e85facd9cb0ff842d3c4e503ce379f808bcb7a6176c74ee25168652"
+      "sha256": "09092e7e4cb96c5f0aed002ca2eb4215c37a6ec82223f442c18ccaf8d94990aa"
     },
     {
       "file": "lib/table.ts",
@@ -892,7 +397,15 @@
     },
     {
       "file": "lib/types.ts",
-      "sha256": "93f1b2bf33c5fcede4c353e3f3e06d300702307fc4f1a50d42c5c7aeb823ebbf"
+      "sha256": "92faee46b23fc4fb8d03d13bf9f843c824d9c5f38cf8ebee51dd131478e3c60e"
+    },
+    {
+      "file": "lib/ubFundamentals.ts",
+      "sha256": "bcd7209b54f8b6acc0632239efec94c0b94d498c57c795613d9ae7792f87b795"
+    },
+    {
+      "file": "lib/ubScore.ts",
+      "sha256": "cba1d44f90ed13785bf71116b356b7ec2205293dbc5e810ef382d93ff3602d64"
     },
     {
       "file": "lib/xlsx.ts",
@@ -904,11 +417,11 @@
     },
     {
       "file": "app/learn/page.tsx",
-      "sha256": "86e25131bc03091454335c0e4ff33d9d11b6885b7a8b36d6390a32402025544d"
+      "sha256": "56abfd7765d10bdaacf4ea45875ca6b11825420aff88c70d0ea6088847532576"
     },
     {
       "file": "app/learn/[slug]/page.tsx",
-      "sha256": "a84ab130985bf8e34988efd1c09bf08f89781be92c8849e83cd8ad0e29d3485d"
+      "sha256": "b87c903a3fe9d4886df47680337456543518720d4517feecf45485f058e62b56"
     },
     {
       "file": "app/about/page.tsx",
@@ -924,14 +437,14 @@
     },
     {
       "file": "app/globals.css",
-      "sha256": "10f7c3b3db92000542104d406cf3d8990ea4302424b3ba6ee492c5ac4af169fd"
+      "sha256": "6ea3b26a2b022ea930b3ae65c6fe6463dbeeb17d27dbae8ea7af11dc4a969f24"
     }
   ],
   "adaptations": [
     "Production React bundle from existing LunaVN UI components; Next server runtime excluded.",
     "API calls replaced with relative immutable demo JSON; no source generation or market download.",
     "Next links mapped to hash routes; article page made synchronous for client routing.",
-    "Persistent DEMO/static notice; namespaced local preferences; sign-in remains disabled.",
-    "Exported chart/share images include explicit DEMO captions."
-  ]
+    "Persistent DEMO/static notice; namespaced local preferences; sign-in remains disabled."
+  ],
+  "packaging_release": "V15"
 }

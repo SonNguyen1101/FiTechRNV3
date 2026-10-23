@@ -13,9 +13,15 @@ function route(){active=location.hash.slice(1);if(!names[active])active='overvie
 function selectCurrent(p){
   const running=p.tasks.find(t=>t.status==='IN_PROGRESS');
   if(running)return {id:running.id,title:running.title,text:running.next_action,prompt:null};
+  const blocked=p.tasks.find(t=>t.status==='BLOCKED');
+  if(blocked){
+    const owner=p.workers.find(w=>w.id===blocked.worker_id);
+    const prompt=owner&&(p.artifacts||[]).some(a=>a.path===owner.prompt)?owner.prompt:null;
+    return {id:blocked.worker_id||blocked.id,title:blocked.title,text:blocked.next_action,prompt};
+  }
   const worker=p.workers.find(w=>w.status==='PREPARED'&&p.tasks.some(t=>t.worker_id===w.id&&t.status==='NOT_STARTED'));
   if(worker)return {id:worker.id,title:worker.title,text:worker.gate,prompt:null};
-  const waiting=p.tasks.find(t=>t.status==='READY_FOR_REVIEW'||t.status==='BLOCKED'||t.acceptance==='PENDING');
+  const waiting=p.tasks.find(t=>t.status==='READY_FOR_REVIEW'||t.acceptance==='PENDING');
   if(waiting)return {id:waiting.id,title:waiting.title,text:waiting.next_action,prompt:null};
   const future=p.tasks.find(t=>t.status==='NOT_STARTED');
   if(future)return {id:future.id,title:future.title,text:'Chưa có prompt được mở gate. '+future.next_action,prompt:null};
@@ -34,5 +40,5 @@ function render(data){const p=data.project,s=data.summary;$('updated').textConte
   $('worker-list').replaceChildren(...p.workers.map(w=>{const box=node('article',undefined,'worker'),desc=node('div');desc.append(node('h3',w.title),node('p',w.gate),unavailable('Prompt không xuất bản · payload thực thi chỉ lưu local. Trạng thái nguồn: '+w.status));box.append(node('div',w.id,'worker-id'),desc,badge(w.status==='PREPARED'?'Sẵn để anh giao':'Chờ gate',w.status==='PREPARED'?'pending':'blocked'));return box;}));
   $('document-list').replaceChildren(...p.artifacts.filter(a=>a.group==='document').map(a=>{const box=node('div',undefined,'document'),body=node('div');body.append(a.href?link(a.title,a.href):node('strong',a.title),node('span',a.href?'Governance document · sanitized':a.reason));box.append(body,node('span',a.href?'↗':'KHÔNG XUẤT BẢN'));return box;}));
 }
-async function loadSnapshot(){try{const response=await fetch('./snapshot.json');if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();if(data.snapshot_scope!=='OBSERVATION_OF_MONITOR_ONLY'||data.project.project_id!=='qrw-v2')throw new Error('Invalid snapshot');render(data);$('error').hidden=true;}catch(e){$('error').textContent='Không đọc được bản chụp đã lọc. '+e.message;$('error').hidden=false;$('connection').textContent='Snapshot unavailable';document.body.classList.add('stale');}}
+async function loadSnapshot(){try{const response=await fetch('./snapshot.json',{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();if(data.snapshot_scope!=='OBSERVATION_OF_MONITOR_ONLY'||data.project.project_id!=='qrw-v2')throw new Error('Invalid snapshot');render(data);$('error').hidden=true;}catch(e){$('error').textContent='Không đọc được bản chụp đã lọc. '+e.message;$('error').hidden=false;$('connection').textContent='Snapshot unavailable';document.body.classList.add('stale');}}
 window.addEventListener('hashchange',route);route();loadSnapshot();

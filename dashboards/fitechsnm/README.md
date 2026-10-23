@@ -1,8 +1,8 @@
 # fitechsnm public dashboard snapshot
 
-Captured 2026-10-21T15:30:25.803250+00:00. Exact original served HTML/CSS/JS adapted for static nested deployment at `/FiTechRNV3/dashboards/fitechsnm/`.
+Captured 2026-10-23T13:37:21.189744+00:00. Exact original served HTML/CSS/JS adapted for static nested deployment at `/FiTechRNV3/dashboards/fitechsnm/`.
 
-Source GET /api/state on loopback port 8790; response SHA256 03de86972ca83c9107979b7397c3fa16142577a740ad47895e9ee77a0d15a24c. Asset hashes and sanitized document bindings: `PROVENANCE.json`.
+Source GET /api/state on loopback port 8790; response SHA256 b056a67c1c355a58dfc73ace2053f6a678ae0e46b17a32430dbd4c3addb2ca24. Asset hashes and sanitized document bindings: `PROVENANCE.json`.
 
 - Fixed snapshot; refresh rereads the same JSON, not source PC.
 - Source statuses and source stale/warning flags preserved; hashes/UI metadata do not establish execution, acceptance, or PASS.

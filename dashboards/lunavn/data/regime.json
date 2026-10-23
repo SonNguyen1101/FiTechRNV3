@@ -1,1 +1,18 @@
-{"bar_date":"2026-10-19","index":"VN-Index","above_200":false,"above_50":true,"above_20":false,"above_10":false}
+{
+  "bar_date": "2026-10-16",
+  "index": "VN-Index",
+  "above_200": false,
+  "above_50": false,
+  "above_20": false,
+  "above_10": false,
+  "mock": false,
+  "as_of": "2026-10-16",
+  "source": "QRW",
+  "exported_at": "2026-10-22T14:58:09Z",
+  "public_snapshot": {
+    "captured_at": "2026-10-23T13:38:20.095436+00:00",
+    "read_only": true,
+    "omitted_fields": [],
+    "no_live_source": true
+  }
+}

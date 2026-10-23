@@ -1,0 +1,32 @@
+{
+  "mock": false,
+  "as_of": "2026-10-16",
+  "exported_at": "2026-10-22T14:58:09Z",
+  "source": "QRW",
+  "qrw_latest": "2026-10-16",
+  "newer_available": false,
+  "refreshing": false,
+  "last_error": null,
+  "last_refresh_at": "2026-10-23T05:20:09Z",
+  "counts": {
+    "active": 689,
+    "read": 689,
+    "stale": 135,
+    "momentum": 127,
+    "excluded": {
+      "dưới ngưỡng": 427,
+      "stale": 135
+    },
+    "breadth_universe": 553,
+    "bars_files": 127
+  },
+  "universe_version": "B-nhe-2026-10-22",
+  "public_snapshot": {
+    "captured_at": "2026-10-23T13:38:20.095436+00:00",
+    "read_only": true,
+    "omitted_fields": [
+      "last_error"
+    ],
+    "no_live_source": true
+  }
+}

@@ -3,11 +3,12 @@
     "schema_version": "qrw-project-monitor/1",
     "project_id": "qrw-v2",
     "title": "QRW V2 Data Foundation",
-    "updated_at": "2026-10-23T04:23:43.602145+00:00",
+    "updated_at": "2026-10-23T20:33:55.882502+07:00",
     "scope": "PROJECT_DELIVERY_ONLY",
     "cutover_count": 0,
     "data_stage": "Chưa nhập dữ liệu thật · chưa cutover",
     "notices": [
+      "CC01 v003 QC VERIFIED_ENGINEERING_WITH_RESERVATIONS; QC01–QC05 đã xử lý. Đã áp dụng ft-autonomous,ft-review,ft-red-team đúng scope; CC02 chờ anh duyệt,không auto-dispatch.",
       "Chưa nhập dữ liệu thật, chưa chuyển nguồn module và chưa kết nối FiTech Hub.",
       "Nghiên cứu RN2/RN3/ML giữ nguyên bytes, universe, version pin và quyền IS/OOS/holdout.",
       "SSI/iBoard chart parity và historical availability còn NOT_VERIFIED; không gọi candidate là PIT_STRICT.",
@@ -25,6 +26,18 @@
       {
         "at": "2026-10-23T04:23:43.602145+00:00",
         "text": "Monitor đã kiểm tra kỹ thuật bằng fixture và UI; dark theme nhớ lựa chọn đã xác minh. Owner acceptance còn PENDING; CC01 chưa dispatch."
+      },
+      {
+        "at": "2026-10-23T17:44:21.846302+07:00",
+        "text": "QC CC01 v001: seal167files khớp;68tests/116fixtures/18probes/32mutations tái hiện. Phản ví dụ độc lập phát hiện4finding; NEEDS_REWORK, CC02HOLD; v001 không sửa."
+      },
+      {
+        "at": "2026-10-23T19:14:04.182827+07:00",
+        "text": "QC CC01 v002: seal386files và v001167files nguyên vẹn;153tests/264fixtures trên3.12+3.14,18probes và66mutations tái hiện. QC01–04 fix verified trong scope; QC05 P1 mới cần v003, CC02HOLD."
+      },
+      {
+        "at": "2026-10-23T20:33:55.882502+07:00",
+        "text": "CC01 v003: technical QC verified với209tests/298fixtures trên3Python và QC05 API/CLI. Áp dụng ft-autonomous4mốc,ft-review/red-team scoped. Gói CC02 fixture được chuẩn bị, chờ user approval; chưa dispatch."
       }
     ],
     "tasks": [
@@ -88,12 +101,23 @@
         "depends_on": [
           "P00"
         ],
-        "status": "NOT_STARTED",
-        "acceptance": "NOT_REQUESTED",
+        "status": "VERIFIED_ENGINEERING",
+        "acceptance": "PENDING",
         "scope": "SYNTHETIC_CATALOG_CONTRACTS_ONLY",
-        "next_action": "Anh chuyển prompt CC01; chưa dispatch",
+        "next_action": "CC01 v003 technical QC verified; user acceptance/CC02 transition still pending.",
         "worker_id": "CC01",
-        "evidence": []
+        "evidence": [
+          {
+            "href": null,
+            "label": "Bằng chứng local không xuất bản",
+            "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+          },
+          {
+            "href": null,
+            "label": "Bằng chứng local không xuất bản",
+            "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+          }
+        ]
       },
       {
         "id": "P03",
@@ -102,12 +126,18 @@
         "depends_on": [
           "P02"
         ],
-        "status": "NOT_STARTED",
+        "status": "BLOCKED",
         "acceptance": "NOT_REQUESTED",
         "scope": "SYNTHETIC_CAPTURE_ENGINE_ONLY",
-        "next_action": "Chờ CC01 QC và scope CC02 được chấp nhận",
+        "next_action": "Chờ anh duyệt CC02 fixture-only:3workorders,8–16giờ estimate; chưa capture data thật.",
         "worker_id": "CC02",
-        "evidence": []
+        "evidence": [
+          {
+            "href": null,
+            "label": "Bằng chứng local không xuất bản",
+            "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+          }
+        ]
       },
       {
         "id": "P04",
@@ -289,14 +319,14 @@
       {
         "id": "CC01",
         "title": "Catalog, registry và contracts",
-        "status": "PREPARED",
-        "gate": "Fixture trước; chưa sửa QRW V1 hoặc capture data thật."
+        "status": "QC_VERIFIED",
+        "gate": "v003 QC01–QC05 verified engineering with reservations; owner acceptance pending."
       },
       {
         "id": "CC02",
         "title": "Immutable ingestion engine",
         "status": "HOLD",
-        "gate": "Chờ CC01 QC. Engine fixture; real capture cần allowlist riêng."
+        "gate": "CC01 technical QC đạt; chờ user duyệt CC02 scope/budget. Chỉ engine fixture,không actual capture."
       },
       {
         "id": "CC03",
@@ -425,20 +455,86 @@
         "group": "document",
         "href": null,
         "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      },
+      {
+        "title": "CC01 v001 · Báo cáo QC",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 v002 · Prompt sửa theo QC",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 · Phản ví dụ độc lập",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 v002 · Báo cáo QC",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 v003 · Prompt sửa identity",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 v002 · Phản ví dụ feature/history",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 v003 · Báo cáo QC",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01 v003 · Red-team scope",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "ft-autonomous · Checklist4mốc",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "CC01→CC02 · Handoff,scope và budget",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "ft-autonomous · Control pack",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
       }
     ]
   },
   "summary": {
     "total": 12,
-    "technical_verified": 1,
+    "technical_verified": 2,
     "accepted": 0,
-    "blocked": 0,
+    "blocked": 1,
     "eta_seconds": null,
     "registered_workers_running": 0
   },
-  "read_at": "2026-10-23T11:34:40.804296+07:00",
+  "read_at": "2026-10-23T13:37:05.487039+00:00",
   "logic_hash": "97cc2b06641c6752c2fec966fca7cc22406ddac3e91f0c5f1552dfb9a31bcf5f",
-  "source_full_hash": "7f0c4ec84b974723751696e40624e849dd270a240fe1a8f9bb64c60712e33199",
+  "source_full_hash": "3ca8f9710359c268d03d82b1a35fcfb364053010b5c3b0bb89b26daa5c022868",
   "snapshot_scope": "OBSERVATION_OF_MONITOR_ONLY",
   "source_observation": "GET /api/status · HTTP 200",
   "offline": true

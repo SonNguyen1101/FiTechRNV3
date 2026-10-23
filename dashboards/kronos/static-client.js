@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const load = window.fetch.bind(window);
-  const data = load(new URL('./snapshot.json', document.currentScript.src)).then(r => {
+  const data = load(new URL('./snapshot.json', document.currentScript.src),{cache:'no-store'}).then(r => {
     if (!r.ok) throw new Error('Snapshot unavailable');
     return r.json();
   });

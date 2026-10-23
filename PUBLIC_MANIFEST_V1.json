@@ -1,6 +1,6 @@
 {
   "schema": "FITECHHUB_PUBLIC_SNAPSHOT_V1",
-  "observed_at": "2026-10-23T13:07:50.866229+00:00",
+  "observed_at": "2026-10-23T13:41:12.442108+00:00",
   "projects": 8,
   "milestones": 26,
   "scientific_acceptance": false,
@@ -72,142 +72,142 @@
     {
       "path": "dashboards/fitechml/data/snapshot.json",
       "bytes": 57151,
-      "sha256": "6c104a466be2516161dc7da7c0570a4eb90c39682bd2f3f64c411bac5b1bc4ac"
+      "sha256": "26e153b2013f3508914d294760a3beb020e9d5fc2d15dc92cc52ada9a704eca4"
     },
     {
       "path": "dashboards/fitechml/index.html",
-      "bytes": 4302,
-      "sha256": "24af0af1cd3881bec76f8e3c0e5c934139209f9b22ecc8663d1872fc09b5dfb0"
+      "bytes": 4328,
+      "sha256": "b30648a17aea65399de175bca65504defb742570f5611f0b5f0c503d85f85aea"
     },
     {
       "path": "dashboards/fitechml/PROVENANCE.json",
-      "bytes": 8400,
-      "sha256": "689d70b0704b27474b832e5a8b8ac685a19b959e6f601d499f681948417eb1be"
-    },
-    {
-      "path": "dashboards/fitechml/PUBLISH_MANIFEST_V1.json",
-      "bytes": 4916,
-      "sha256": "1b8e0710ea138ccd386eb9d2b8142d5b8fe667d3f8931121e2a1ea949cee2831"
+      "bytes": 8239,
+      "sha256": "e94b06b6fa6a0529f2f0be494029ccd89eb864639e5d35ddd6dcf64d7ee7f8fd"
     },
     {
       "path": "dashboards/fitechml/README.md",
       "bytes": 1170,
-      "sha256": "6ba448613714a0c594eed8d60d063a8a871c874d9f087b6849d053d5d7193b35"
+      "sha256": "eb97ef06a88028cdec502799458c0b0c894a2ef5e3702d20e1f994ce022defc7"
     },
     {
       "path": "dashboards/fitechml/reports/d1-registration.html",
-      "bytes": 2598,
-      "sha256": "0c1c4561eef1c9da60235d06e1d1dceb72f741d58a74446936d9a0ddd9e4dc91"
+      "bytes": 2611,
+      "sha256": "f5cd77f19828fb4263a8c95ffc900bfc6320f8ae39145c15e5307d5ac88116c8"
     },
     {
       "path": "dashboards/fitechml/reports/d1-report.html",
-      "bytes": 2251,
-      "sha256": "aeab4f795bd29a5bdf06a5a1bd49da899b6f148497ddba8c632e2ef6f29529ba"
+      "bytes": 2264,
+      "sha256": "ccf35fa976f69ed23847117817515d0aef48d0fc44f52b5151d722b4e3adcd6d"
     },
     {
       "path": "dashboards/fitechml/reports/d1-scope.html",
-      "bytes": 4520,
-      "sha256": "f814a207fd901d3cbb7f5c2a6d48b2f70b1b15c9e74448a945bf8c78125f45ed"
+      "bytes": 4533,
+      "sha256": "18c55747f52aa4a8ea2bb0bb2da40bffa834333b138e629e882d389cc8f77cc5"
     },
     {
       "path": "dashboards/fitechml/reports/f1-qc.html",
-      "bytes": 12979,
-      "sha256": "dc6d5c274f60e83ff9724f3ada6324c0f259512948ff9a9b765cf83914446238"
+      "bytes": 12992,
+      "sha256": "eed781f529617373f1cc90da8f9f8e9c7593878433e34aff4923c9030b7429f2"
     },
     {
       "path": "dashboards/fitechml/reports/f1-registration.html",
-      "bytes": 2622,
-      "sha256": "83dda483da7934b4d3e075459aac43f49a5bcc5962b7ee6ad30965ce7399c174"
+      "bytes": 2635,
+      "sha256": "adcef5e1adb814102f88a9d268abbd2cf9064c0ada477a99249275bb16787bbb"
     },
     {
       "path": "dashboards/fitechml/reports/f1-report.html",
-      "bytes": 2243,
-      "sha256": "9626dfb8bef426bee770c0b3c02d92377d07262e934fd5f92d255571b100d173"
+      "bytes": 2256,
+      "sha256": "c07a64c29346172a196878e89c8bdc9e1ca0ac57d0760ddbb9923e6f31debd76"
     },
     {
       "path": "dashboards/fitechml/reports/f2-qc.html",
-      "bytes": 16453,
-      "sha256": "ba7cd15ebe0e89863c9c07ace0e38fdae7c19a22996acf7c59577d19f5672633"
+      "bytes": 16466,
+      "sha256": "0aa22dc30213e2a30f921b417898f484d3b393a5feef4d1b050d9f1853bb971d"
     },
     {
       "path": "dashboards/fitechml/reports/f2-registration.html",
-      "bytes": 2639,
-      "sha256": "a99996f093925fce44e4c82d6210198080c56eef1feff41d6a31213920eee4b0"
+      "bytes": 2652,
+      "sha256": "e3a8c3d568856b8566a3ab0af32f813e89e3eb98e61e36d4c43c99ecb4ec3fda"
     },
     {
       "path": "dashboards/fitechml/reports/f2-report.html",
-      "bytes": 2260,
-      "sha256": "0f6067a325b25c215d902383596bb81a1abf26f974e0a29da81a8ca884d7886d"
+      "bytes": 2273,
+      "sha256": "289408af2520652881a011ca7fe3e900f860dd7bde8d66dde8948bdcbba8e45b"
     },
     {
       "path": "dashboards/fitechml/reports/g1-roadmap.html",
-      "bytes": 44829,
-      "sha256": "f4bc0a4dac168b3a650bd861450247937ba1c000e948931282d8a25b354f0c50"
+      "bytes": 44842,
+      "sha256": "1b0002a07d9132d1d7b4d65f12b48cb2c684cb094369707efb84fc5c0acc8d3b"
     },
     {
       "path": "dashboards/fitechml/reports/milestone-protocol.html",
-      "bytes": 8216,
-      "sha256": "38a8fc5b03e965bb41c747fad408a76368472d8441f38bf9e6fe0fecca5a5b9b"
+      "bytes": 8229,
+      "sha256": "28c52de54a2fe84271fcf12824031b1c58fbc8a6db136f9a043cde82adce7d9b"
     },
     {
       "path": "dashboards/fitechml/reports/milestone-registry.html",
-      "bytes": 15788,
-      "sha256": "93465d7f6b07c5816e648e8b39b00d7e06fd08a6b228e6e28294cf7359c9ef5d"
+      "bytes": 15801,
+      "sha256": "ea3829c78f7cf5dd70682b6c03ec06044f2f7896a2c717314633e9f03642f60c"
     },
     {
       "path": "dashboards/fitechml/reports/r1-1-handoff.html",
-      "bytes": 2727,
-      "sha256": "f1c264f625309ca7e6be3c16c0ffbce1a2982e465f96b4d1a5c204809ce237b6"
+      "bytes": 2740,
+      "sha256": "5e7491cefeeef18aba4314af4b3f3add8cfaa3f8e80ddf3355beb766875663c9"
     },
     {
       "path": "dashboards/fitechml/reports/r1-1-inputs.html",
-      "bytes": 1785,
-      "sha256": "6f1d4a0058c41c32e2d9ccb27805e86c0c5bea69fa08cfedf9dc62543fec712a"
+      "bytes": 1798,
+      "sha256": "8c511b80617d4af9aab1e7bc7ffbcb0ec31254b9f91eedc2e8f5517b8ca32363"
     },
     {
       "path": "dashboards/fitechml/reports/r1-1-registration.html",
-      "bytes": 2596,
-      "sha256": "0eb69a9b81ddb3ebd4b8af936fc558d3ad53f24a9f81636a632b2e65a3488d50"
+      "bytes": 2609,
+      "sha256": "09a57591f6d5e84ac5d64e80a9f86f596b126b750a0b1ce0cd01548d52a2cb88"
     },
     {
       "path": "dashboards/fitechml/reports/r1-1-report.html",
-      "bytes": 3761,
-      "sha256": "ceff5af8f7f891cec7406e85205382fe8be934a08c8e4f20f1c6cc19e57d4a22"
+      "bytes": 3774,
+      "sha256": "eef07b3de971d818edce6ec352bb3e99c1a7bedfaf8a86ee3eb6e26c5ab58f73"
     },
     {
       "path": "dashboards/fitechml/reports/r1-2-contract.html",
-      "bytes": 6967,
-      "sha256": "3061cfb382b8075b591b457fb77dbfb1754ab0f89c99951d1a0c553026fba532"
+      "bytes": 6980,
+      "sha256": "81f7e6dcad30f793398edc86175a728f75b2adde034f323c8bc89c2e5a20dad9"
     },
     {
       "path": "dashboards/fitechml/reports/r1-2-inputs.html",
-      "bytes": 2271,
-      "sha256": "6a80163c287e5f6c4903b20bd4bc5a14329c166d1c0082be044a2634558a4f0f"
+      "bytes": 2284,
+      "sha256": "6c81ed2f3ffc2e8fc9f94b387998e6443c5bca5c5afa58575f6eead1a91a79a9"
     },
     {
       "path": "dashboards/fitechml/reports/r1-2-registration.html",
-      "bytes": 2169,
-      "sha256": "8a77559fa8a3d8f65d3333eaa38ef1fb062e85ad4b36ddc029c74deabd285085"
+      "bytes": 2182,
+      "sha256": "fe3b3136d4d80f3bf0860836997ba193eb3027d0b3d3d83f0b04ea1deb8ff017"
     },
     {
       "path": "dashboards/fitechml/reports/r1-pilot.html",
-      "bytes": 8215,
-      "sha256": "0f99be85713ec0f98b056348540be6dfa6050f7cb5b7ea3606c51ee0c8e2d29a"
+      "bytes": 8228,
+      "sha256": "afd9afac8235c73a6caf03b6e621d46311b7ab326d3ad6a6dbde012ea74be7a0"
     },
     {
       "path": "dashboards/fitechml/reports/r4-registration.html",
-      "bytes": 2910,
-      "sha256": "956dab778163739c34f2afc000179616a4a5c174fea0f6830f37855ddac96284"
+      "bytes": 2923,
+      "sha256": "ac070daff5097724e000ec37c2a1be53be2623e636e518af6deceecdc5225b9c"
     },
     {
       "path": "dashboards/fitechml/reports/r4-report.html",
-      "bytes": 2305,
-      "sha256": "8dd918345efd0a7af3e1bbf6285e7af1498449e0c2041b49f29b24f39f79abca"
+      "bytes": 2318,
+      "sha256": "b72cf14ed0801152dec35af32feb741804d78f8b4332c3a37f8f77615426b709"
     },
     {
       "path": "dashboards/fitechml/reports/report-md.html",
-      "bytes": 86220,
-      "sha256": "8a8f7b14b3cc6d3c8e400448d1384d5fe60bb40401bf8eba3bae4d13a61b8473"
+      "bytes": 86233,
+      "sha256": "26cdcc3fdd18dbbf72d4ed4366bf952620349c81dbbd666fd494ce7fcc87018e"
+    },
+    {
+      "path": "dashboards/fitechml/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 416,
+      "sha256": "451158b2e48402721b3a83b4f7fcb3bb6eb175c1e50ffb9f20386a08904b1423"
     },
     {
       "path": "dashboards/fitechsnm/app.css",
@@ -216,13 +216,8 @@
     },
     {
       "path": "dashboards/fitechsnm/app.js",
-      "bytes": 29249,
-      "sha256": "53bd15327ec5514e212fcba3691838d9e8687a2a7997c3b50d33e3b682cf6d9a"
-    },
-    {
-      "path": "dashboards/fitechsnm/BRANDING_OVERLAY_V1.json",
-      "bytes": 506,
-      "sha256": "593d5b14cd952841e851a74dbb45600942f4d074389c9e4591c420cb3676ec7e"
+      "bytes": 31662,
+      "sha256": "918500298fd48bcfbc6a03d256d1fda78e0370b8909115b3095e3e41209769fe"
     },
     {
       "path": "dashboards/fitechsnm/data/artifact-acceptance-contract.json",
@@ -466,268 +461,268 @@
     },
     {
       "path": "dashboards/fitechsnm/data/snapshot.json",
-      "bytes": 510403,
-      "sha256": "10d7238405244509d905044b972ae4c0d25022f9f7e27997c10c1d64c287d951"
+      "bytes": 556894,
+      "sha256": "a7b84017a53a026aaad36bc84d2241d989ea9b4823328ea044270e2654b44824"
     },
     {
       "path": "dashboards/fitechsnm/index.html",
-      "bytes": 3857,
-      "sha256": "f7bc9d61c349aa88098d731ff4fd027db50dc209f6776917b4fce2f05fbe8b28"
+      "bytes": 3978,
+      "sha256": "eea61d0b18ad33a63f1b8a66d506c547154b727e16f886ae38d6e54fb90b8a42"
     },
     {
       "path": "dashboards/fitechsnm/PROVENANCE.json",
-      "bytes": 15928,
-      "sha256": "dabc2e5be0db2f36e4c1511a82f92993f654686753db5899fe6b94d734d3a947"
-    },
-    {
-      "path": "dashboards/fitechsnm/PUBLISH_MANIFEST_V1.json",
-      "bytes": 17331,
-      "sha256": "8d5125749391de637dee3670c9f0bcc2e38b1f09490e9b7af59b3747e1d18c2b"
+      "bytes": 15592,
+      "sha256": "856748845e8e3e785e785c4c9336025d67727dd29c897540469a531540b223f8"
     },
     {
       "path": "dashboards/fitechsnm/README.md",
       "bytes": 1171,
-      "sha256": "121735d2cd16eda9963609d9fe69c04bbc2a6f651c7f5b842fcaa35e348993cb"
+      "sha256": "da817edf3003b6ec4b8b981c63afc0ec0acd7b996e109b7dd0cb17bf5f9b39ca"
     },
     {
       "path": "dashboards/fitechsnm/reports/acceptance-contract.html",
-      "bytes": 34263,
-      "sha256": "202ba51493c3dc503b8c81876d3f5091955e84397577f55a798010b6f3641e10"
+      "bytes": 34276,
+      "sha256": "78bf4a75c7ec50cb130c3d1f77b9ec1dbb15e41d52864f42a925955f979bc6d5"
     },
     {
       "path": "dashboards/fitechsnm/reports/aill-sequence.html",
-      "bytes": 2271,
-      "sha256": "56a661ce624f12f66646f234a7e26c505db9b290d1faf639ced8730e025e9248"
+      "bytes": 2284,
+      "sha256": "aac562df81ea281ebee7fe5e02ee1bc9f0177cb25a4e65a8f312d75d577d84b7"
     },
     {
       "path": "dashboards/fitechsnm/reports/input-contract.html",
-      "bytes": 58993,
-      "sha256": "930b81351a0d9fb7cf3ab7b28627347bc3880f18b263be27bc3eaeea4386470f"
+      "bytes": 59006,
+      "sha256": "8e173d9f1b1accf15cef3e1dade4bdc64f56a28e901f69068157590738385298"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-acceptance.html",
-      "bytes": 5539,
-      "sha256": "2658e62fc3106bced62a36c64e1ee9bc496f7d40df09ade5eba4d8fc71fddbf6"
+      "bytes": 5552,
+      "sha256": "10ddd2b5bcf6bc9c64abccfaf437e0e3d8bbc99129f189b1c1e2273bbe797742"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-contract.html",
-      "bytes": 3785,
-      "sha256": "c65c5d4e6efd7d564db05a8726a172091218b335a8122b8d588fb706ab683544"
+      "bytes": 3798,
+      "sha256": "cfe696c07dea9d5b62c1124ff6db9cae5470e3aa2116b43b2afa312c9370692f"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-handoff.html",
-      "bytes": 2948,
-      "sha256": "c8ee1b394207f7b7053b26ebb38af468fc9e10c6f3ae31cfabc45fbec7180664"
+      "bytes": 2961,
+      "sha256": "22ae07f6e98c8a49d66d7094256f5f412db0400675b32c80d6c552807f568b2e"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-inputs.html",
-      "bytes": 3574,
-      "sha256": "78591ba3dbd7955aea56f457972ca2bef073e1454bc1317e6cc05d35974873ad"
+      "bytes": 3587,
+      "sha256": "0b628bbaf66c03ad0ab1c1c9284d25cfeca073a5cc2bc7998e7d5d14d3cf0e6a"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-outputs.html",
-      "bytes": 2817,
-      "sha256": "723cceb3607836007a4d06bf2813efa2bebee94be54cecd30d9cbe1f4f8616cc"
+      "bytes": 2830,
+      "sha256": "ad6476bce29cc8a56344734405212e75df514fe7bc820066c2e738de2114b0e0"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-registration.html",
-      "bytes": 4719,
-      "sha256": "e9916276eed81e31d4b5a0dca77bebacbc8e6d5eceb2af067e39b42dd3a50c68"
+      "bytes": 4732,
+      "sha256": "c03aab46aaa6d38a95f31fa9d4c3479a766aaa14ceb063e796751b62606d689b"
     },
     {
       "path": "dashboards/fitechsnm/reports/m1-report.html",
-      "bytes": 4474,
-      "sha256": "ecd14bd2d1ab564fe7f4a9e96012d99b078566839a29609f5cb4fd40889d1fae"
+      "bytes": 4487,
+      "sha256": "b4415340f611906128e8981908145397d6f48d5ae28e0fd07b7f2b74cb1e07b2"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-acceptance.html",
-      "bytes": 5517,
-      "sha256": "2db36a9d42b7011915aefa262431b21e94127c8d940e931df5758ec7b602764b"
+      "bytes": 5530,
+      "sha256": "3d29e4dc7cc899fde7202a6e3072fba65a6d66bc1cb805487f1a23951aaea35e"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-contract.html",
-      "bytes": 3799,
-      "sha256": "977086c5260baad502b4f993d3f794962355cb29c6a25d03628f531a93feff69"
+      "bytes": 3812,
+      "sha256": "8583cadbfcf6fa1ba83aa8310cb68c3d423fe99ae033e1bae48fafd8a88337c9"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-handoff.html",
-      "bytes": 2948,
-      "sha256": "432370778b7cbe09c4223f10d33a7626286a2e7b5104b6185f074ea5b3aca9f6"
+      "bytes": 2961,
+      "sha256": "534ec38444b3425dd9ef4dcf8b18c99cc4c37929c7627ba3e9d298be466b523f"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-inputs.html",
-      "bytes": 4207,
-      "sha256": "8ff3ed62a0514fbff8a3c5cc06c737f08187bc63502a24f984ea4d00f5feb271"
+      "bytes": 4220,
+      "sha256": "15c1ba1be1804cfccdb9b93bcdf17b3dde96afe57932b0a9b388488a2a5fa771"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-outputs.html",
-      "bytes": 2817,
-      "sha256": "e804ee8ef268d8aba9d323011ed735f21d34f69bccacc4f1cf725642c197eb4b"
+      "bytes": 2830,
+      "sha256": "99434da72a511e5a8c0c0da8898f416b7ff86b07cadfe62b2d99ba8fa2ead2ff"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-registration.html",
-      "bytes": 4576,
-      "sha256": "95e0c2f60c8d775be5de1b20075c4b05cf7b46c40172522a44530e62e249d784"
+      "bytes": 4589,
+      "sha256": "22d22e2b4c0730a10eb90a959be62c9d4aa78dbfa10245ec1073826a7377cb46"
     },
     {
       "path": "dashboards/fitechsnm/reports/m2-report.html",
-      "bytes": 4564,
-      "sha256": "4d9ec9f1d71a87717764f781d85d6f05be1465c21f23e639ff116065b08f5caa"
+      "bytes": 4577,
+      "sha256": "3c8d31d392e2a91bcc24932bd57e37e11499b86f1be7ffd1beb39c1b5ef869e1"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-acceptance.html",
-      "bytes": 5239,
-      "sha256": "56765f4d1b1bbe16d09f88199d9b7ffe9a7d8eb256b85955ecc1f9f5c6230ca7"
+      "bytes": 5252,
+      "sha256": "f10c5465c38522bea10695ec98083d9b0aab575d8beb6f6411bfb79408ade3b8"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-contract.html",
-      "bytes": 3749,
-      "sha256": "5cbdf487a687d37ab1d2e2243a139024b4370f23b6c85f678fdf4683a5e3e608"
+      "bytes": 3762,
+      "sha256": "c2b1a01219ad3fe9fe62e96f3f83387b1def77e55ca4ac501532f67c0759968b"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-handoff.html",
-      "bytes": 2948,
-      "sha256": "2f69e657f6825347dc4c7a4f88fccdfafa307fef3d6fb7668f8c4edc1570d220"
+      "bytes": 2961,
+      "sha256": "65ad851948fd1bceb88c2fc0320d3f2b6b9e20557da0c289a6ad86030964b068"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-inputs.html",
-      "bytes": 3133,
-      "sha256": "9c6ee80514c07c1c296c56154afde2489385e0b707f8114aa51d45be0ff41ab9"
+      "bytes": 3146,
+      "sha256": "cfddfff10d801db47cbc8e5b084c942d5294905bcf6c78d3d413e3e25868ed34"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-outputs.html",
-      "bytes": 2817,
-      "sha256": "0b918bd90d6b8d4b1f65b039190f039fcb9901774fc1f10d699fac102a9e872f"
+      "bytes": 2830,
+      "sha256": "03c8ff4c8d9491d5d7ea0ab296911ef07280a6c09377e71b575b72a293a2cecf"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-registration.html",
-      "bytes": 4790,
-      "sha256": "9e42897e5f32c1f5a4a65c289d7d5549999b835e3c2158051e1525931c29a434"
+      "bytes": 4803,
+      "sha256": "1ad8c29030dd2814a1a5f6711ec1b623ee737c706da6d001bf6ed47b4e9cdd85"
     },
     {
       "path": "dashboards/fitechsnm/reports/m3-report.html",
-      "bytes": 4117,
-      "sha256": "235b55536857fd5c60f0df5014cae5563d79ae4338cefc5dbd3f983e8b76146f"
+      "bytes": 4130,
+      "sha256": "06ccd6f20bbf7aa167fe933b7b24e07586cb33ae67f8bef35c9e85a56e00902a"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-acceptance.html",
-      "bytes": 5261,
-      "sha256": "b7bb40212a237f03c8839fc3c07980ffdcb6147b25d3dadba5df856d16fc521a"
+      "bytes": 5274,
+      "sha256": "11cbc99341db8e794904415c4d1631073d9401d8bfe755b36d7b0b1dda725899"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-contract.html",
-      "bytes": 3694,
-      "sha256": "1b302ef7ee6aafba46c974fe9a0f298b538e7c2c205f68b171d012b470be8fb6"
+      "bytes": 3707,
+      "sha256": "5e5d12eb8b35d413d5147103ddd73d1900ecf298118e5277dafb0581e0d39307"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-handoff.html",
-      "bytes": 2948,
-      "sha256": "33f2d589ea8e16619eeb84d08dce15e179779afa0c415222cad6ae5af8c90408"
+      "bytes": 2961,
+      "sha256": "5d51e717ef74085237c4aa2f4a5a4b0cd80f9c72c73e3d58a34a4d9172ddaec8"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-inputs.html",
-      "bytes": 3133,
-      "sha256": "b14b5c3471599956d6e618b1453d827dd763e643776faad8b70771809fe12318"
+      "bytes": 3146,
+      "sha256": "7b6e9d2c2567df48aea27521b056e7beff5f471edbf1766ff8e12f915b384eb2"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-outputs.html",
-      "bytes": 2817,
-      "sha256": "28ee84a14578f372747148f84595877274e2679fef509b776c39c485dcfc71ee"
+      "bytes": 2830,
+      "sha256": "482e10c26348785042ddd22ee3a55775f913611f8b6b288ad517895ae51ff74b"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-registration.html",
-      "bytes": 4556,
-      "sha256": "b2a7332a2d5e31247a9e1effac6dfeaaccca37f0385a2d64d05181f653ec03a3"
+      "bytes": 4569,
+      "sha256": "ec68614b0d0b227c17ec6c95e3a822e62a97348bc1ade538801fc7d9da5656c3"
     },
     {
       "path": "dashboards/fitechsnm/reports/m4-report.html",
-      "bytes": 4186,
-      "sha256": "57bd4817f461febd49014378cd7f8ffcad1861360a234a348f35cab6e460e2e5"
+      "bytes": 4199,
+      "sha256": "fb300251ffc7c20568b686e4b39c51d45a42c9225ede44eaa9740d3638967002"
     },
     {
       "path": "dashboards/fitechsnm/reports/method-contract.html",
-      "bytes": 30473,
-      "sha256": "b28cf02b21c212d3763610029272abb3f9d2698ab74c072ae2ddd6278e8b76b6"
+      "bytes": 30486,
+      "sha256": "1c281246200f70feb038e322132c8aba6acf8fcfb55c9a18227a57acf1f8a415"
     },
     {
       "path": "dashboards/fitechsnm/reports/milestone-contract-register.html",
-      "bytes": 44455,
-      "sha256": "42c95d81f24a065abc8d9c23335fa715c7efcc19dee6b105b702729bc9692976"
+      "bytes": 44468,
+      "sha256": "41be735bf41411ec42afd411d09870b59cc23addd655030150eb0169a55b299a"
     },
     {
       "path": "dashboards/fitechsnm/reports/milestone-protocol.html",
-      "bytes": 4124,
-      "sha256": "2bbd2b211233dd475309e0505d0413117342dad616d2353127887d3d3e289f7f"
+      "bytes": 4137,
+      "sha256": "38a62eddfa26e10f67c347fa819f410e1ac2b5466d06a5e411e16a25b0acead5"
     },
     {
       "path": "dashboards/fitechsnm/reports/milestone-report-index.html",
-      "bytes": 13973,
-      "sha256": "8568090b95305d763ece01971d34dc1e85f51a2c81919e413b2dfb4da1fd940e"
+      "bytes": 13986,
+      "sha256": "5174903c8c0723e43b1f1a828a85916698eec36c5559d805beb429f32f0fd534"
     },
     {
       "path": "dashboards/fitechsnm/reports/milestone-source-register.html",
-      "bytes": 9812,
-      "sha256": "368d090fff5e4b8ee307fcd7925db35f40de9b1c658d82d206f02a8816488d33"
+      "bytes": 9825,
+      "sha256": "ad37dc781cce137d5b55de144505ffd4dc6ffedc60117a28e904f46528d9ff87"
     },
     {
       "path": "dashboards/fitechsnm/reports/output-contract.html",
-      "bytes": 75146,
-      "sha256": "759d7a2a27e2cbf263b4771f912916d17827b973726ad5671ad611e2dae81e60"
+      "bytes": 75159,
+      "sha256": "67dce65e36897695ae693aa734dda29b896d81a833324af7f819d30201c9f80c"
     },
     {
       "path": "dashboards/fitechsnm/reports/program-contract.html",
-      "bytes": 41795,
-      "sha256": "5a56333e0e63cc4aaa5cb4b4c7301b96faa359abc3e3a73476c1363db12aab5c"
+      "bytes": 41808,
+      "sha256": "cd9fff906b64dd217448076527a95f6e57954e97c43ba0813fd316253e2afba9"
     },
     {
       "path": "dashboards/fitechsnm/reports/s62-hold.html",
-      "bytes": 4387,
-      "sha256": "83bed5def60c8ef40a4ecec731633c9070961fa2d634d2155dac37adecdef13b"
+      "bytes": 4400,
+      "sha256": "df4ee0742a1fec0299277b5f2a786b2ac89b7dd97f1dbedae9b3e3bc614394ca"
     },
     {
       "path": "dashboards/fitechsnm/reports/s63-redteam.html",
-      "bytes": 3033,
-      "sha256": "e9afdf542b466b988c474e0d3e6f8dca5f4e2571cbefc9be332d5d57e4c324de"
+      "bytes": 3046,
+      "sha256": "de93f08947e93f0113fc78f95bd988c883f565c16e4d4357d9bb35b71fde7f6d"
     },
     {
       "path": "dashboards/fitechsnm/reports/s63-review.html",
-      "bytes": 7458,
-      "sha256": "f7b3d5555f099c2a11fa314426e18e79e42c3db3cdfdf2e9f59fc17c98c2fbab"
+      "bytes": 7471,
+      "sha256": "8f67345a838b8ea7d7efda82589137446488a3294155dcb10c60390319ac1d27"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-conditional-recovery.html",
-      "bytes": 3385,
-      "sha256": "d34ac764c6fe96881fbf267dcf357cd92104ec8dd309be30c45200fca6f3e8df"
+      "bytes": 3398,
+      "sha256": "d1cd2ea4c1e352ead0c02695090181fb1b3ed363d38d0910572c8415d6128d4e"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-fail-verified.html",
-      "bytes": 3816,
-      "sha256": "e1b2220a235ae4b5aec2e1e29f55dde01213352205b33324125bfcffe6dfc026"
+      "bytes": 3829,
+      "sha256": "a2a815fde8f7bca21771131ed636abb9748107811b52edb5af7d7127253b216c"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-io.html",
-      "bytes": 2042,
-      "sha256": "f9c336339ebfd6ed2b759639f9fa52a1ec0e92868e923184d80397195f4a3fb5"
+      "bytes": 2055,
+      "sha256": "4b7a2d822f80a15c8aeea5bca11ffa6ea1323b87c42e262219df86b6bb764d4a"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-plan.html",
-      "bytes": 5109,
-      "sha256": "65271809e375babe2bfbeb23cad4fc9c76a6c360bd57ac8bef656ddf41e6e3b8"
+      "bytes": 5122,
+      "sha256": "9cc29b6fc04b84381dd4c17e654a6e36ec65dee910b53ab5a20aa580f7041c9e"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-process-qc.html",
-      "bytes": 5412,
-      "sha256": "9668d451ce2c95e245aa582fd06b205301544f5bd9bf815c452edf38a7eb9edc"
+      "bytes": 5425,
+      "sha256": "50c395848a302c6467b7a4b2ff02126b263519d1d4d9b6f8d54d73680104c6ff"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-review.html",
-      "bytes": 3996,
-      "sha256": "906a7dd1de9f1094d22b4aa0ed0f3c202b3093f8fbef7efacd1ab41103ecccb5"
+      "bytes": 4009,
+      "sha256": "110e1c03d2a2ee0b293d2d73206d9a87e26f4d12934eb53844bff1ed3e4df888"
     },
     {
       "path": "dashboards/fitechsnm/reports/s64-spec.html",
-      "bytes": 9949,
-      "sha256": "d87c23f6ef0635f86d37c13a5d922ed9e8bb76c876584bbef282c4665b9d3157"
+      "bytes": 9962,
+      "sha256": "28e4e69f464adaee39560d1c3bbfa72247bc8b22a965aaf302a7b40ef09dfca4"
+    },
+    {
+      "path": "dashboards/fitechsnm/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 417,
+      "sha256": "f06308e7fb9832bf55b0d661ae2d24ccc82af8a4d92eb2bc7ce667c5ba58a3a7"
     },
     {
       "path": "dashboards/fundamentalpanel/dossier/analysis.mjs",
@@ -756,8 +751,8 @@
     },
     {
       "path": "dashboards/fundamentalpanel/dossier/index.html",
-      "bytes": 3014,
-      "sha256": "e500231a92c9ca371b711414ab604337594e24df52d6610904969d60d8a544a4"
+      "bytes": 3079,
+      "sha256": "4fb4cdff45cdfb27bf2639fe5d06d7219b9f19f90de3b30080a52da6898ec3cd"
     },
     {
       "path": "dashboards/fundamentalpanel/dossier/model-defaults.mjs",
@@ -866,13 +861,13 @@
     },
     {
       "path": "dashboards/fundamentalpanel/index.html",
-      "bytes": 1271,
-      "sha256": "be910bcfcf12c17685d8e6665de5dc6e7cca3426f4251f476157d98c45e39d71"
+      "bytes": 1297,
+      "sha256": "3decdf26d962d64afa08c9cdac791897d6cc6c4095f8ea3badd83e9008e74ec6"
     },
     {
       "path": "dashboards/fundamentalpanel/market/index.html",
-      "bytes": 3427,
-      "sha256": "99fe406fe9b2edc07d9e38ded5aff1dc708b87762b9118c2391409323039362c"
+      "bytes": 3492,
+      "sha256": "b91547936940c60fb11a7cfbc44b56e6da2ff183d39c700c9e67148bfa588742"
     },
     {
       "path": "dashboards/fundamentalpanel/market/market.css",
@@ -896,18 +891,18 @@
     },
     {
       "path": "dashboards/fundamentalpanel/panel/index.html",
-      "bytes": 9213,
-      "sha256": "c1b8d812cb4e0252664cefd70f3f26015a393ca7f81a349fc3a8209e404808ec"
+      "bytes": 9265,
+      "sha256": "6921d2667d886cfc99f675522e985a5dd90001646ce839ab8f4d169259f87ad8"
     },
     {
       "path": "dashboards/fundamentalpanel/php-reference/index.html",
-      "bytes": 144502,
-      "sha256": "c68ab3f7839a4fbd830b6ecda665aa3f1f83db7885621d7c9634c2e019e1ce7c"
+      "bytes": 144528,
+      "sha256": "fc22b4504983401c5ba197b3efe7ebe464d358aeccd95ee490f65f86188d80ce"
     },
     {
       "path": "dashboards/fundamentalpanel/provenance.json",
-      "bytes": 18653,
-      "sha256": "ecf75dbba395e2fd9a384ae2411d7ef1e3d716e4c8227dfdcde84d5ced7fb2da"
+      "bytes": 23546,
+      "sha256": "94160a35eff31b804d60128547287380559588e2f6dff540e9b538b6757756bc"
     },
     {
       "path": "dashboards/fundamentalpanel/qrw/data/facts/index.json",
@@ -951,8 +946,8 @@
     },
     {
       "path": "dashboards/fundamentalpanel/qrw/index.html",
-      "bytes": 1663,
-      "sha256": "a3ac9e41f0622c264aa389ec42d31e3716c9887961d3803f4dbe285b5243c2f5"
+      "bytes": 1689,
+      "sha256": "85671d7365c21840b27fd94d48496e4819f456ee5c2744b8427b405964b6f5b8"
     },
     {
       "path": "dashboards/fundamentalpanel/read-only.js",
@@ -990,9 +985,14 @@
       "sha256": "e352e7dc71e2f9251389333ad466ac8fb0d53527007721c36a4fce230f80997e"
     },
     {
+      "path": "dashboards/fundamentalpanel/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 424,
+      "sha256": "7891f3c410ffa8759d1fab1f040715c73f63e51c4ad6047df99fa686dd9639f4"
+    },
+    {
       "path": "dashboards/fundamentalpanel/summary.json",
       "bytes": 2176,
-      "sha256": "bd401ff0d7768521e72d95093d07f9fb3a4121ccbfff073db9b31c8bd440aa8f"
+      "sha256": "b2dd985a32c71189a9667dc3f4fc1aefcbfb03560bda27cf9394024157cb3dc0"
     },
     {
       "path": "dashboards/kronos/assets/index-d0xId-8Q.css",
@@ -1006,13 +1006,13 @@
     },
     {
       "path": "dashboards/kronos/index.html",
-      "bytes": 1241,
-      "sha256": "4932789e50614d21d3ce76671212301fe9e1af3cbed84e7ba4e3e36ab0260d78"
+      "bytes": 1293,
+      "sha256": "f653ba15d512cffcde269b817cafb8a3910060c607affc0643ae0a7f9b758e2b"
     },
     {
       "path": "dashboards/kronos/provenance.json",
-      "bytes": 24029,
-      "sha256": "b171d091a9abab87ae7724abd9e4fd968fb1b1ea649656fd165d0abf9f0b639f"
+      "bytes": 24227,
+      "sha256": "3d10dc225377400f04db668da1a75ef8fe346e09a6d55094d7ff20ad339fb06d"
     },
     {
       "path": "dashboards/kronos/README.md",
@@ -1026,18 +1026,23 @@
     },
     {
       "path": "dashboards/kronos/snapshot.json",
-      "bytes": 6169447,
-      "sha256": "285b1116739c1e0a71ce37a71bcc661bd7efb3ef016fa80bc3b67b344cc6f2eb"
+      "bytes": 6169454,
+      "sha256": "e6c2e81f54e77fdcbbdbe37a13678cfc455a9645310f43dcd0312daa93abc00d"
+    },
+    {
+      "path": "dashboards/kronos/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 414,
+      "sha256": "a144251c63322e8ff4ee72f54f3e584e65ab8ad3064915d5efb6a7b9201a0946"
     },
     {
       "path": "dashboards/kronos/static-client.js",
-      "bytes": 6582,
-      "sha256": "406f0b6bb0d05d988b8f4fd514a9e8cefd39c77276421cf5ac58b529a9c08c10"
+      "bytes": 6688,
+      "sha256": "f54529931d09f997f0880fb93e7e0d9a552368ff13b6a6509ac5127c9a5becc0"
     },
     {
-      "path": "dashboards/lunavn/assets/708.ea023a107ff1.js",
+      "path": "dashboards/lunavn/assets/910.a8ab1a4b5a9b.js",
       "bytes": 943361,
-      "sha256": "02ff71c15854c22dc40b863a7c7518228ec2e605f395cf62924c7dd82466516a"
+      "sha256": "1babe14a885637a01cfdbc5a5cca8fc6472f429769e38a817afd5ebd2b2f4c56"
     },
     {
       "path": "dashboards/lunavn/assets/font.css",
@@ -1066,8 +1071,8 @@
     },
     {
       "path": "dashboards/lunavn/assets/lunavn.js",
-      "bytes": 509339,
-      "sha256": "0862f897f6268ec4d6fcec20b703ae4e58e2f951fa2010320f3ffe3f25d29997"
+      "bytes": 627867,
+      "sha256": "cca419eebfc43fd31b582fd5001f35ab7226f4bde0cd455d957421c25d042226"
     },
     {
       "path": "dashboards/lunavn/assets/snapshot.css",
@@ -1076,648 +1081,58 @@
     },
     {
       "path": "dashboards/lunavn/assets/style.css",
-      "bytes": 21564,
-      "sha256": "10f7c3b3db92000542104d406cf3d8990ea4302424b3ba6ee492c5ac4af169fd"
+      "bytes": 41026,
+      "sha256": "6ea3b26a2b022ea930b3ae65c6fe6463dbeeb17d27dbae8ea7af11dc4a969f24"
     },
     {
       "path": "dashboards/lunavn/data/breadth.json",
-      "bytes": 18193,
-      "sha256": "88605cb8eb022fb044705d07d5da93aa8df92d38e588308da8cd11238bef3aab"
+      "bytes": 383,
+      "sha256": "0fb8d80e6e2fee14d1d3ccf9972dd8101c540ee85a9541221f5d1ead8c81de66"
     },
     {
-      "path": "dashboards/lunavn/data/charts/etf-E1VFVN30.json",
-      "bytes": 25450,
-      "sha256": "5348a791ab8d67f32efc19a4a2160077c1b206ef5c2e3510b92f7869228d46ab"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEBFVND.json",
-      "bytes": 24921,
-      "sha256": "eb8f3ee2b26bc0099535f60fcd0e8a82770f653e144c96164f0a85df8622f5ac"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEDCMID.json",
-      "bytes": 24841,
-      "sha256": "567f44e6be46c536ced13b2a089d5428a0b4d3d5beff235234e1faf72d1c0fcf"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEIP100.json",
-      "bytes": 24767,
-      "sha256": "e4ee5e7f7c47cbaf8c677b0797d98e0300a0735ff7072903e21b109e17e4304e"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEKIV30.json",
-      "bytes": 24674,
-      "sha256": "8efc411f4782df1a83250298d42ebc3c0c7cb7568115331246dc343e8cd97d4d"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEMAV30.json",
-      "bytes": 24431,
-      "sha256": "6f09afe5122537fd9b78883186c1a10023b7924ec8794f9a5fe19983a2fce8d4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUESSV50.json",
-      "bytes": 24141,
-      "sha256": "f28f46b9151e830899832e3976d2e76b394afb03dafe59c01550de97241a65e0"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUESSVFL.json",
-      "bytes": 24410,
-      "sha256": "be266d5e8c5373546eee0ae88fb07e6a9f2ed5bade327505c9b770cb054a1fa9"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEVFVND.json",
-      "bytes": 24794,
-      "sha256": "351bee20e0731c77ec42edd483721d43c0b857807fa35f1567242b5dff666fdd"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/etf-FUEVN100.json",
-      "bytes": 24664,
-      "sha256": "4c8a4de0b136188e65182bf1f62e20b32731f0d18a3364df3e4eb817fccfea9b"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-ACB.json",
-      "bytes": 24042,
-      "sha256": "c4696c51eededd5cd769dc2fda53cc4d9b248321c99b97cfee8d0f3250b00634"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-ACV.json",
-      "bytes": 25310,
-      "sha256": "99db649c5e11619960b35b680922278b72bea3cc2a697bee7bc36f7f4a838e20"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-ANV.json",
-      "bytes": 24843,
-      "sha256": "598fbe4546f76a3dade46bae27fc686f5f6865d2f1425b9d62f4a9028f7deeca"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-BID.json",
-      "bytes": 24902,
-      "sha256": "ff2cf29a95175c7f8217fc1d8750adbce612e2a5c1231a5d9182f578e7ef8203"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-BMP.json",
-      "bytes": 24412,
-      "sha256": "7e34e3f2a7a58330f190658f57db7bea89dbee7091dafe0320cbdc54345b81fb"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-BSR.json",
-      "bytes": 24318,
-      "sha256": "8fbe095e986c207735626a8c0fa21468d9c869dc1d34ae0fda318e6b48c5fd0d"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-CEO.json",
-      "bytes": 24930,
-      "sha256": "3d3bf36ccfdb17e07a0534b010b950df7d1dff1c91e81ea349cdcbf27b03b5bc"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-CII.json",
-      "bytes": 24394,
-      "sha256": "1dcb032940964dea5725e411aedce290e7f0b86e3a31b85abd20e47b0ab028d8"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-CMG.json",
-      "bytes": 25978,
-      "sha256": "a015e14e65d47d2cf8c0541a6f19490b5b99fada85ae150dd069684dcaee6d50"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-CTG.json",
-      "bytes": 25415,
-      "sha256": "92f75cdbc39803958fc22dc5f5f6ab62637fd22eeb22517312de7e601fe6b31d"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-DCM.json",
-      "bytes": 24901,
-      "sha256": "7d41e7093263c055a2c8ae7371a8b5ee9bd70abe6db2eae69d54ee7125b1e753"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-DGC.json",
-      "bytes": 24279,
-      "sha256": "3da61aced512b2327b05ad6e80976444cb0948cd5a4b6964a70c36b57bc7d02a"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-DGW.json",
-      "bytes": 25524,
-      "sha256": "021cdf5cb3d86816fd9fdd67b8d2c39e6131273fc0c5d6640a422ed81d8487b7"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-DIG.json",
-      "bytes": 24728,
-      "sha256": "5f8516ded580a3137e90d63040c6f9145d40873e1c49493d50017220864b60cf"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-DPM.json",
-      "bytes": 24914,
-      "sha256": "cc9af9b975f3c005269f06cdf4088a1fe4b87b1c1d45584be39348b3a462d9df"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-DXG.json",
-      "bytes": 24976,
-      "sha256": "3b0b59d1fc79019080cca7a435b80c0c0112468acbadcc73b949278bf8d7d8a4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-FPT.json",
-      "bytes": 24908,
-      "sha256": "be9d0607514dd816c8da089cfa2a26af2d2225176e9b4a31915a1a0a324c0cd2"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-FRT.json",
-      "bytes": 24566,
-      "sha256": "87cfc6bcbc0fad61caf1d5bd567ae274c2adb8b61f1fac9b49b35a1ec98907f5"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-GAS.json",
-      "bytes": 24157,
-      "sha256": "d02d99ba789d3ed0f17f33d30707665cdefbfb8c11b2ca979bd7b5ed2281d4ab"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-GEX.json",
-      "bytes": 24331,
-      "sha256": "183c3f7cc079e0496f512d2fbfeaaf41b1103822aa32f5778f42b76c3536ce38"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-GMD.json",
-      "bytes": 24796,
-      "sha256": "f5bdab461cb4049513b79c18664321de4005765bac1a069480a8f2a46bfef2fe"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-GVR.json",
-      "bytes": 24747,
-      "sha256": "6621af13106ebce612363ce4721c6886f874f2276a4947c81da1eb604d631a41"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-HAH.json",
-      "bytes": 25287,
-      "sha256": "d6c5258f2c5e5f1886fcd1469d989abe34f68410a31335f4bf25cdfa764c8e82"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-HCM.json",
-      "bytes": 25165,
-      "sha256": "9fff5c8ff6f005bc6a808b99b0d058f49b1d5892a8897901cc04159606787996"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-HDB.json",
-      "bytes": 24946,
-      "sha256": "0cfc4a357e6df6657254f42afdd2c2bac4151e4ea56b099b91eb6557676822cf"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-HPG.json",
-      "bytes": 24839,
-      "sha256": "0ce246ae88449e58d05cb3b858168dd9653992b3bba22fbf625cc99c99e96b2f"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-HSG.json",
-      "bytes": 25637,
-      "sha256": "aa0d8fc29f53e3a429acc160c8276e4f6908412582e4675402a2f34b5b1977d4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-IDC.json",
-      "bytes": 24688,
-      "sha256": "d4903f9e9c1aaf3cb17824efd601afbf506c3917b037bc314348598b20e7e888"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-KBC.json",
-      "bytes": 24792,
-      "sha256": "c9e0e284731527d2f1be13608f3678595f2a4f054d30e3106f352bc294d0e3fc"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-KDH.json",
-      "bytes": 25084,
-      "sha256": "d904b36a71c6865520ab7933e56a47cc12b9b096b18070081ef145a288d12354"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-MBB.json",
-      "bytes": 24032,
-      "sha256": "0f2a6b9770b263976036db9d18e58117849d89956d214f413c5e46da9b2441d0"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-MCH.json",
-      "bytes": 24562,
-      "sha256": "6dd6b27e4e50cb3938a4d1e4ce6d11c97e831ecdf5a8dd31b51d7a4f1613876d"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-MSN.json",
-      "bytes": 25702,
-      "sha256": "c2fef024534e7f19e9e01e7c82fb831ac14d114a3bdac6bae1cadfed540afcb9"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-MWG.json",
-      "bytes": 23875,
-      "sha256": "33b235824f830715819988416f36d98488fd2341e217e323834a60afc6f3f944"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-NKG.json",
-      "bytes": 25683,
-      "sha256": "08f3fa961be5abecdb546810a197ec24c53dfeeaf3b833ed631a8e4d5b557ebb"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-NLG.json",
-      "bytes": 24434,
-      "sha256": "820d129437a60e69c7b185d1802966f4d9ab3f71d6eb55d1550207622e61d3bd"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-NVL.json",
-      "bytes": 24423,
-      "sha256": "1d702aef29572ddbe9a4321f12a2cf0e58c22ed4a602140f3a1435420193b98c"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-PC1.json",
-      "bytes": 24710,
-      "sha256": "c14fdcd836d0070947ffae2110d6582f232f470fda146ccba9370a1b0894485d"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-PDR.json",
-      "bytes": 24923,
-      "sha256": "d4d53559c9a27508f160f87abb60b77e86a4f63800991cdb759a6c5227c12815"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-PLX.json",
-      "bytes": 25760,
-      "sha256": "c072bab1ca73a5cd88f32511241d2fcf2d2be9c94b8faef4b3a28d29f083ce3c"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-PNJ.json",
-      "bytes": 25162,
-      "sha256": "389dda2dcffdaab0599a78d1dfb24018b9f18266cab8583b962baffaca52f2bf"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-POW.json",
-      "bytes": 24669,
-      "sha256": "6c74df7946271c2c2d4691e04d7de9090cce9e53c3c909b4536a75244ca80baa"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-PVD.json",
-      "bytes": 25199,
-      "sha256": "7fa00cb0fac7cf486604c727b49b276ebf654fde4a89561bc6faa0de9617360e"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-PVS.json",
-      "bytes": 25372,
-      "sha256": "08c40be15a375848dcac7de067ed58031db4013d9905e9e293d81eab0e68fb13"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-QNS.json",
-      "bytes": 24017,
-      "sha256": "50ebb7ec6d2a8b59ac5cade2bfe88025b658bdfe5985cc7e5fa6ebd226938640"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-REE.json",
-      "bytes": 25849,
-      "sha256": "4d635e38c792a2ac1311c6ce80c18ee40bbbb5ce17ca1777f5155a9c08712815"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-SAB.json",
-      "bytes": 24034,
-      "sha256": "a6a2dd31431dacab79bc6777f40e1225cd0cbc9262883abc524d87eaf4c5e9e1"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-SHS.json",
-      "bytes": 24863,
-      "sha256": "543d1984628494ada34a2c47bab718850f938dc1b74201447ef3d04ba6398af0"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-SIP.json",
-      "bytes": 25057,
-      "sha256": "1a491beaad1123c7ce7ca57b8dea496dc4a9a1dfa31280b90e7cd20d48ebcceb"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-SSI.json",
-      "bytes": 24447,
-      "sha256": "ea3d5f22e1ea1023522dc5c0fe1ef396632949e46c02da0b011eb9fe87d88187"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-STB.json",
-      "bytes": 25137,
-      "sha256": "fde930cec3713b6ee449bb2fa996b6f43e63b05afc3d24e50e7576f18d3d9db1"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-TCB.json",
-      "bytes": 23660,
-      "sha256": "450c3a2d4ea33e70d178a048e206bafea471b218bc485556d05e4dbb330887a0"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-TPB.json",
-      "bytes": 24323,
-      "sha256": "892ff36d5b926a311b8c6b01cb6fb47f1dc4dd949a10ad2e27d14782dd0af270"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VCB.json",
-      "bytes": 25856,
-      "sha256": "82d2cbfd5e0240a5a8235dad19a48e5fdb730fb1cc213f03cb8b98dd4fb3ff0e"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VCG.json",
-      "bytes": 25711,
-      "sha256": "f234a3783a56b687c0434543e0eb3e4334ef2a6b749c9fd67c4b5f5791cf54ca"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VCI.json",
-      "bytes": 25078,
-      "sha256": "d78e159efd0da63edd216e799b50b12f9cbfd70260d7de44aece4666392ef3b4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VGI.json",
-      "bytes": 25228,
-      "sha256": "9898c5f343f3abeae6905cd7e4bbbf5464273037bb292cf4543bf636a814dee3"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VHC.json",
-      "bytes": 25197,
-      "sha256": "4c6373b76b6e48e3cfe2d3a33b50020ee6a76f63e20ce783f1c98c0dd7ed709e"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VHM.json",
-      "bytes": 24569,
-      "sha256": "a7ce46c04669f31abc24c46928ffe83f08274e69c1c55a9b360fcabc6b65cb17"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VIC.json",
-      "bytes": 24935,
-      "sha256": "68ede74df8dbecc41d3bb563c8f387560c8b30a22d6fb42058a55ba823ad3443"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VJC.json",
-      "bytes": 24067,
-      "sha256": "4f4a54167ab6958a5cfbfe4eb49ad5a4cb0933b2b951f696fa24455a45bf7c2c"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VND.json",
-      "bytes": 24817,
-      "sha256": "2e99e9dad15eb918d50a3f4661bfd4bacb1deaacf6ba1d89782d543287276ecf"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VNM.json",
-      "bytes": 25215,
-      "sha256": "60e8fc6733d0617662c5d051c8a2ff67fcb17c4fc6c523db03fde2e26cf913b7"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VPB.json",
-      "bytes": 25077,
-      "sha256": "b104fd8149ce4a02e8a1513cd86a480f4b19e5e29b6a7a5221e8ce3b1486f786"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/momentum-VRE.json",
-      "bytes": 24536,
-      "sha256": "82c2ec9ffae0084b90b7bd70cda5c200e8c4013ea4a8d377a2fa524a988518ae"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-ACB.json",
-      "bytes": 24085,
-      "sha256": "e69de86da5d2c6ee2224210cbcea2dee287485d6adb8b26e64f1ec349fc8c4c2"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-ANV.json",
-      "bytes": 24694,
-      "sha256": "5d1cbcc74f5d015f4d1b97d668cce71e072ca96e43b87915e454f6c2a34d61b5"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-CII.json",
-      "bytes": 24668,
-      "sha256": "b371f13cca89a12e0da63b4e530123d5b00e93c989876a1ac0fd42ea3ad0aeea"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-CMG.json",
-      "bytes": 24890,
-      "sha256": "30a1a9414cc6b5f0e1f8eccb58dab82dd560b07ce40095674856028da34f23d4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-CTG.json",
-      "bytes": 24504,
-      "sha256": "33f50edd45548d10b9f44c4134f8546c2705d7acbf073757cdcfa41a2d4ad0e7"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-DGC.json",
-      "bytes": 24928,
-      "sha256": "5448ffef07128c1c9d6a1fa3c63595c4dcf37be8437520af973c9e1a48fcad5d"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-DGW.json",
-      "bytes": 23861,
-      "sha256": "08aead012cb6eeeedaf3ed62727076ac78a8527f5c4b0587aafc22bd9fd121d7"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-DIG.json",
-      "bytes": 24938,
-      "sha256": "68049700e77eec549ce816eeb4fe540d3dcc0c6ff2219e9ad636f36fa98d2616"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-DPM.json",
-      "bytes": 24099,
-      "sha256": "dfc3a0c28c2c356cc639e9ed5889a56542b6894c1567971c24fe0b48a8d9f67c"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-DXG.json",
-      "bytes": 24981,
-      "sha256": "c863513ff27a38031559db9b610556a3838815111bf90257fa4d1ff8fc46be25"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-GAS.json",
-      "bytes": 24608,
-      "sha256": "370075874949f5bd573fcd9a0432363cb418dff7e820d470abd8cd09c11c8717"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-GEX.json",
-      "bytes": 24893,
-      "sha256": "d1ab034d54c3bf9ad3bbcf49137349ae2d83a49746f06101093e458e490b1260"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-GMD.json",
-      "bytes": 24970,
-      "sha256": "6afc096c545256d2ef421e4968d3f2a0a09b10284d67396fd7da301814acd742"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-GVR.json",
-      "bytes": 25402,
-      "sha256": "01ab2ad020bc0debf452f4a1f777f267c71ceb055ed843ee1f5dbaf6dba57883"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-HCM.json",
-      "bytes": 24101,
-      "sha256": "d4521cd1674b8cd140bc8ad144484e14146c5d7e4092e68e0aa0018b381f2ab6"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-HDB.json",
-      "bytes": 25049,
-      "sha256": "5e3987daa442e75f2a0189268475ca5799c6aca98cdd4f50efe1e57e6a05bed5"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-HSG.json",
-      "bytes": 24902,
-      "sha256": "9996a0ea512be27c39fcf97d0b42c3112c87e65c236e4f16d930c477cb9e4006"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-IDC.json",
-      "bytes": 24625,
-      "sha256": "a4f8fd90d34241532a75e0c3a8d159d107f22b12f8620980c676376f21d17712"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-KBC.json",
-      "bytes": 24916,
-      "sha256": "fb9e2b351e6a2edfab0ccc0f3917e3b6a3f828ac4f6060c0ca51ff5ce0068349"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-MCH.json",
-      "bytes": 25042,
-      "sha256": "fca5d0b2a9984588084005d6c670b85c1270d8805138976b796c65246e3359dc"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-MWG.json",
-      "bytes": 24783,
-      "sha256": "8655d94ad806359e78b71885de5a4bbddd782f40b37dab10c8b734fae7178f07"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-NKG.json",
-      "bytes": 24399,
-      "sha256": "9064b6cad92257937460c2bc7359527fc92795dd6d1a5b92297ac79fef5e66a6"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-NLG.json",
-      "bytes": 24865,
-      "sha256": "72cb9c58bc917e43df4f7fa25588069e5b08ab71084dd6f280742896b385d1a9"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-NVL.json",
-      "bytes": 24651,
-      "sha256": "b9ec4a924219010e4ff5eedac712fa9d63e349c27340c0ae2fcadcfb2afdb3a4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-PC1.json",
-      "bytes": 25780,
-      "sha256": "03efdb796869ef4d7b427d5b2f2936d1f19a35048ca8688c9d5bf02396566dbb"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-PNJ.json",
-      "bytes": 25515,
-      "sha256": "cd829b2b9da071f999a6744b2d8d0c122cf65ab3446d68365431e1fb26f8dc03"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-POW.json",
-      "bytes": 25656,
-      "sha256": "735950f8f02696044fc244c41ada92a906914b373879074d914908a3ca39a8fe"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-PVD.json",
-      "bytes": 24912,
-      "sha256": "4344bfe4a0c2d22cf7aa0f369cab2b1cd5b0dc44ded44e14fe61499bbef724eb"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-PVS.json",
-      "bytes": 25067,
-      "sha256": "4bdf401e1b045a8add48adff81c9f157cf2395fdb11cb99eb88e0a9ae19e37f7"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-SAB.json",
-      "bytes": 25249,
-      "sha256": "854c6dffedc6cccede711395b39e0581547b7e428480ff28a57b2d40b538a9ea"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-SSI.json",
-      "bytes": 24391,
-      "sha256": "db1b83094f388483f07e45da5c85a528ab9e8b408c0cc97394813e8611e885ab"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-TCB.json",
-      "bytes": 24335,
-      "sha256": "aa73550d19d483ea900f3d42866c30741d313a31ebb45c24db1d69a978320cd7"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-TPB.json",
-      "bytes": 24475,
-      "sha256": "a007fb444ad2e8c60bd0d11e511cc6e359e3ce7f8663e46b053f325a4ad5e7bc"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VCB.json",
-      "bytes": 24800,
-      "sha256": "70433381328d1dc061d4972be37bbf44cd39f6cfa9cf91c4da59aa16a719b340"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VCG.json",
-      "bytes": 24664,
-      "sha256": "5d9fd125b43e55f16fffa2357f715b33c011401426e294045471a129ffbd1ecb"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VCI.json",
-      "bytes": 25056,
-      "sha256": "94d74357095df853ab1431a1c31fe591bd3b571d2c1484ec3a73cae2d0168485"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VGI.json",
-      "bytes": 24810,
-      "sha256": "db6d4d478d7d11231859cd9d0d2c833d2ed9a5948c359d639817af068f4119b4"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VHC.json",
-      "bytes": 25336,
-      "sha256": "90acf151e48dc4a19986515908a920b1ca3222cca9022a17d9f8429b33cd3625"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VHM.json",
-      "bytes": 24946,
-      "sha256": "31df687e7e22ab440544c1db1fd282eaf9d864d309ac2e3a0ae3977605c89cc8"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VJC.json",
-      "bytes": 24803,
-      "sha256": "e7dae29ad7ece2bc4bbadbe5e4233d991212db669950576fe6975eb5ecf93bfe"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VNM.json",
-      "bytes": 24608,
-      "sha256": "3a53f2986e147de68da8be0e8712e7cd53e2903cd3d5c3a498b386038ffd4b93"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VPB.json",
-      "bytes": 25504,
-      "sha256": "983b452997931ee85b9b03ae7ab2b926cc702d2cbc653bc076fd7eb87e4eb17b"
-    },
-    {
-      "path": "dashboards/lunavn/data/charts/thematic-VRE.json",
-      "bytes": 24906,
-      "sha256": "6d361ff7db8fcd7e2ddd7ec21b45a55ca94f2c71ef7c26f690706d83a718a567"
+      "path": "dashboards/lunavn/data/data/status.json",
+      "bytes": 699,
+      "sha256": "a48f7534aa690bbef76e944d232837051103ea9ab363c81bde1b278d8022ae40"
     },
     {
       "path": "dashboards/lunavn/data/etf.json",
-      "bytes": 4173,
-      "sha256": "2505124c3e4471213ff3527e00cb47e7dc2a8d7d3c00f100be8470d8f43aa885"
+      "bytes": 6467,
+      "sha256": "a89c1d579836596f12cf7d9d87a9debf1311de3f367b1cba111acd799c349b27"
     },
     {
       "path": "dashboards/lunavn/data/ewcw.json",
-      "bytes": 17872,
-      "sha256": "e4f150d1659d1c9f512dd6b66f47bb4d806e7d26d81d3e1e688e2c2d94069e7b"
+      "bytes": 405,
+      "sha256": "38197ec19b382544fa22f4c686dcff020346fdda891a991925233dc562d02e55"
+    },
+    {
+      "path": "dashboards/lunavn/data/industry.json",
+      "bytes": 110156,
+      "sha256": "fdd6fcea28fc7a95417737fc6ba01426ef58a024eea31d0d1724054f03bec193"
     },
     {
       "path": "dashboards/lunavn/data/momentum.json",
-      "bytes": 27400,
-      "sha256": "7075784717a400d0ce1031832738fa83e6782ae17e9edfd50080c5119220b603"
+      "bytes": 106017,
+      "sha256": "6cc67fd52f71ca034aaef2b2cbecda17d54c1212b6b0e500f965ab775253ee27"
     },
     {
       "path": "dashboards/lunavn/data/regime.json",
-      "bytes": 112,
-      "sha256": "989212a2bf191c39169008ef3557e19719b71ad0791df1218fdd36dc0241ed64"
-    },
-    {
-      "path": "dashboards/lunavn/data/thematic.json",
-      "bytes": 16960,
-      "sha256": "18b3b99407cba08f4afc388bbb04427afea83fb38b6dfa044bf0db389449ffcd"
+      "bytes": 400,
+      "sha256": "ef7862db04d25a812a87e1956634c22c76e1d76a07bac0e6c4a89800f31c0bc1"
     },
     {
       "path": "dashboards/lunavn/index.html",
-      "bytes": 989,
-      "sha256": "432d9b25e7f77ece8a4ce4954c8d83b3fdc6fcd134dc3540aa17bb2ea54c242d"
+      "bytes": 1009,
+      "sha256": "7dd1719f03ea22eac1300044d62fac6dcba29b9627f03915ef07f280064971b2"
     },
     {
       "path": "dashboards/lunavn/provenance.json",
-      "bytes": 34921,
-      "sha256": "87aefcef11f831beea2afacd1cd1e4ae427835dd7c8c1bb228a26baf9b47e965"
+      "bytes": 15448,
+      "sha256": "a143e87dfd5be55dc57b87cd0011e2cb797d6ccc850e597aab9d5f1fd56e5410"
     },
     {
-      "path": "dashboards/lunavn/README.md",
-      "bytes": 2711,
-      "sha256": "1a8b5b57186cb76521c36007aecac67e8d7a2daad355760ed7187c8318e4de37"
-    },
-    {
-      "path": "dashboards/lunavn/SNAPSHOT_FILES.sha256",
-      "bytes": 13079,
-      "sha256": "8d4b5d4c5a0299071b6eb54b03892e2ef006055cc9b1eeb544503f672614938c"
+      "path": "dashboards/lunavn/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 414,
+      "sha256": "7aa5ad16bcba211225f1241b2c08e259ed018b98fd2aa5250e88a7cbbd89a9a0"
     },
     {
       "path": "dashboards/lunavn/THIRD_PARTY_LICENSES.txt",
@@ -1725,54 +1140,49 @@
       "sha256": "ceb7b6b80dc7f8b02bc8fb4d549e26866399d8deecca520af31b1da555ec132a"
     },
     {
-      "path": "dashboards/lunavn/validation.json",
-      "bytes": 1041,
-      "sha256": "6b8496886bb42452875198eb82ca0a05aa445baf33bc92bc29a3e1f3b24666bb"
-    },
-    {
       "path": "dashboards/qrw/app.js",
-      "bytes": 7497,
-      "sha256": "03ff083cb7dccb1ca01ea542f0855dba50b685151bcc58489e62cb608c214826"
-    },
-    {
-      "path": "dashboards/qrw/BRANDING_OVERLAY_V1.json",
-      "bytes": 503,
-      "sha256": "8019eb38cc7cb57d49b0f7ae841b5e71866182b79b70db5141ecee6d9b0b9bd8"
+      "bytes": 7826,
+      "sha256": "fdff5890c42210d45e9a7cfd2a0d1d77d52ee1239ba6d4deb6df5090f1ecb7bc"
     },
     {
       "path": "dashboards/qrw/documents/01_DATA_MASTER_ARCHITECTURE_V2.html",
-      "bytes": 11532,
-      "sha256": "8fbd63301bfd75bc269afd778911e1784ca2371e32cd36e463673ccbe512d3a6"
+      "bytes": 11564,
+      "sha256": "9efcff1ec580f79715701a393dbd234264d9f7e644f18deb9156fafdc1f2936e"
     },
     {
       "path": "dashboards/qrw/documents/02_ROADMAP_V1.html",
-      "bytes": 4959,
-      "sha256": "d73c10ff06651a4be25b3683c3c9f671420216b19bd517c4c24a75060f8e53f0"
+      "bytes": 4991,
+      "sha256": "43072ad2466b74c940849c833b4d728cf32a9301c50b4670bf345e600f7ca55b"
     },
     {
       "path": "dashboards/qrw/documents/03_PROCESS_V1.html",
-      "bytes": 5761,
-      "sha256": "0e9a6d3602082bc6ca3fe783bcf00be19a4e1f09f3756b05d59e325c93d62eae"
+      "bytes": 5793,
+      "sha256": "cac090e07f77464427c60e908a585f84fae363f0f7e68f9cabaeff76eb637dac"
     },
     {
       "path": "dashboards/qrw/documents/05_RESEARCH_AND_CUTOVER_V1.html",
-      "bytes": 5839,
-      "sha256": "91f7919324c7a04dcc5de2210e88867b19cd6f14d0676e9978b1e4a0c7c1743d"
+      "bytes": 5871,
+      "sha256": "eaa5483e7d7a935be4f3501d64f44b6b147cf1d8621a31f070dcdf00cbb202a9"
     },
     {
       "path": "dashboards/qrw/documents/06_TABLE_UNIFICATION_V1.html",
-      "bytes": 2966,
-      "sha256": "de9d23f7746eb1138a07afeab2d3f4750887ca4f480219704cfa740fb62a2841"
+      "bytes": 2998,
+      "sha256": "24a1a81151f7f4af5c191ca176e230358641ab30c510aaa4f2ca010018504596"
     },
     {
       "path": "dashboards/qrw/index.html",
-      "bytes": 5836,
-      "sha256": "a1fa8c3fb188dd11d9ee908fa61889687c8e147682831bb897fdea1441138123"
+      "bytes": 5881,
+      "sha256": "aacb95685b0204524897ac92ac736d010089badc715e525a93a3cadb1bda894e"
     },
     {
       "path": "dashboards/qrw/snapshot.json",
-      "bytes": 16171,
-      "sha256": "639c983b7270f6421fb1b4182a84752ee2a83c6c73ccef590412bdf0a9d63055"
+      "bytes": 20371,
+      "sha256": "a9ed986acf9e26a9e4475afa61ea1acd4b7362bb4ec6388fa4b50cc7bf9418c4"
+    },
+    {
+      "path": "dashboards/qrw/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 411,
+      "sha256": "b1d874790ba9902f0c09d358f79e2f52bf2a8571c5aae71649f000dca56842cb"
     },
     {
       "path": "dashboards/qrw/styles.css",
@@ -2312,7 +1722,7 @@
     {
       "path": "dashboards/rnv3/data/state.json",
       "bytes": 67550,
-      "sha256": "db6595d2732395b948a04a2eff260af13c097d610be08dafb893e593d0028dbf"
+      "sha256": "c6519178846e0099706c366f624c18d7d9f6b6a1bb54f12a52ec693e4198bf41"
     },
     {
       "path": "dashboards/rnv3/downloads/cells.txt",
@@ -2986,8 +2396,13 @@
     },
     {
       "path": "dashboards/rnv3/index.html",
-      "bytes": 3649,
-      "sha256": "27c84baec98e425a11f9ce06745e3df1a79c047ea217e900ca9237b57c31c521"
+      "bytes": 3688,
+      "sha256": "523d38e139dc331fa42ebd16a033fb2d21355072611369db9462d40d45356302"
+    },
+    {
+      "path": "dashboards/rnv3/PUBLIC_MANIFEST_V1.json",
+      "bytes": 42796,
+      "sha256": "f4d7da31849bb2f94d5f0bdf05e7c955779bb905238ec0b0eb8db8f5d8bc0ff3"
     },
     {
       "path": "dashboards/rnv3/public_transport.js",
@@ -2996,23 +2411,23 @@
     },
     {
       "path": "dashboards/rnv3/README.md",
-      "bytes": 779,
-      "sha256": "03431a2c116d053012a612bf094aa57fef930e394cd4a90dc1322ccfdcb99c7b"
+      "bytes": 534,
+      "sha256": "59b0dc0933100a08384ddf251d04474727887ed880be3e729f6921db4de1eb0d"
+    },
+    {
+      "path": "dashboards/rnv3/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 412,
+      "sha256": "a8e976d643d197d1d6cdc80e94e3f1e95e7c53851efb58c9a9eec68dacc5a819"
     },
     {
       "path": "dashboards/rnv3/SNAPSHOT_PROVENANCE_V1.json",
-      "bytes": 623,
-      "sha256": "fd360a843ac73514cd6b1e557a53529ef7ff770c8acd99a5ffd87f4bcd152fb5"
-    },
-    {
-      "path": "dashboards/rnv3/SOURCE_PUBLIC_MANIFEST_V2.json",
-      "bytes": 32792,
-      "sha256": "873fa969e8d87cf4e455c3fe2b025509f67a73910c789dc33e2a1c3922b318ad"
+      "bytes": 394,
+      "sha256": "63817ce49ac501cc6ffbbccebc32a34329ce86903a0ee686c900d9bfb6c32ede"
     },
     {
       "path": "dashboards/stockmonitor/index.html",
-      "bytes": 16673966,
-      "sha256": "a4ffe2543256d2cc0e08ff2143189be155172bde8ee39226dc4e68a70d4fc3e9"
+      "bytes": 17721269,
+      "sha256": "ff2343e690cd834c249656fe9c41cd6ca3fbf8c9adce57820f843d0040d7ec80"
     },
     {
       "path": "dashboards/stockmonitor/README.md",
@@ -3020,9 +2435,19 @@
       "sha256": "4d2f7e6e1e20f440db0a88111d21cb7b5f10332f599ffeb7e0e1243255741bb1"
     },
     {
+      "path": "dashboards/stockmonitor/REFRESH_OBSERVATION_V1.json",
+      "bytes": 203,
+      "sha256": "bc40e20b4199f3fb0ea05e1c244a848a7985d1abc62a2458f3244ce7ef36a87b"
+    },
+    {
+      "path": "dashboards/stockmonitor/SNAPSHOT_DELIVERY_V14.json",
+      "bytes": 420,
+      "sha256": "9d11c69594c02f37607d5633610d54af71905c84bb36fbf15f9a28225c5768bd"
+    },
+    {
       "path": "dashboards/stockmonitor/SNAPSHOT_PROVENANCE_V1.json",
       "bytes": 736,
-      "sha256": "cbafbb2cefd4b98328907ce291099f1c79880b976881e50a06d8e3b826f9c03a"
+      "sha256": "9bfae461f0d3df65fa029228a4946befb4b2d81eee55dba67b8666eec70caad9"
     },
     {
       "path": "data/missions.json",
@@ -3031,8 +2456,8 @@
     },
     {
       "path": "data/portfolio.json",
-      "bytes": 27438,
-      "sha256": "2f764bca50fb217ccf9c8607a238d7e6a3c5ff61dc5b7bf9505a467d0bf932b8"
+      "bytes": 28950,
+      "sha256": "350e741ae566c478def7fdb821254238ecfeb09aa96c175f27e57255380e4ed7"
     },
     {
       "path": "index.html",
