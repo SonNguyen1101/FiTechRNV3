@@ -1,0 +1,11 @@
+{
+  "scope": "PRESENTATION_LOGO_ONLY",
+  "observed_date": "2026-10-23",
+  "source_port": 8790,
+  "source_index_sha256": "c10aa9c8fc27efb670aefc88f7c390940120031a377e29522ee949d73e5a9203",
+  "glyph": "N↗",
+  "previous_public_index_sha256": "336f9448b57d64bf9cec23d2992ff6fd63c37defec0a5f863357e52087384613",
+  "current_public_index_sha256": "f7bc9d61c349aa88098d731ff4fd027db50dc209f6776917b4fce2f05fbe8b28",
+  "data_snapshots_refreshed": false,
+  "original_source_provenance_retained": true
+}

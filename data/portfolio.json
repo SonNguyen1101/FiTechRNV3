@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-23T12:53:20.201326+00:00",
+  "observed_at": "2026-10-23T13:07:50.866229+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -179,7 +179,7 @@
       "port": 8790,
       "endpoint": "/api/state",
       "color": "violet",
-      "mark": "S",
+      "mark": "N",
       "category": "RN V2 · Điều phối",
       "description": "Kết nối RN, Runtime và AILL theo các mốc và hợp đồng riêng.",
       "local_route": "#overview",
@@ -531,7 +531,7 @@
       "port": 8796,
       "endpoint": "/api/status",
       "color": "blue",
-      "mark": "Q",
+      "mark": "S",
       "category": "Nền tảng · Quản trị dữ liệu",
       "group": "foundation",
       "description": "Lớp nền dữ liệu chung cho bảy module: quản trị nguồn, hợp đồng, phiên bản và lineage. QRW V2 đang chuẩn bị triển khai; chưa cutover.",
@@ -732,6 +732,6 @@
   "execution_supported": false,
   "authority_supported": false,
   "auto_refresh_seconds": 30,
-  "snapshot_assembly_note": "Dashboard metadata captures reused from V10 with individual observation dates unchanged. Source-reviewed mission content has a separate review date; it does not refresh dashboard execution/acceptance states.",
-  "prior_snapshot_manifest_sha256": "85e0a00322862f7bb9282fa0261fe46538bcd38eb7c00fb0b12bb34fa4a62ebc"
+  "snapshot_assembly_note": "Dashboard metadata captures reused from V11 with individual observation dates unchanged. Source-reviewed mission content has a separate review date; it does not refresh dashboard execution/acceptance states.",
+  "prior_snapshot_manifest_sha256": "1a54805148290f2a863da2b91c87bee872ef3b8067ead1eb5f66ba09ce9f0ba8"
 }

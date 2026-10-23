@@ -1,6 +1,6 @@
 {
   "schema": "FITECHHUB_PUBLIC_SNAPSHOT_V1",
-  "observed_at": "2026-10-23T12:53:20.201326+00:00",
+  "observed_at": "2026-10-23T13:07:50.866229+00:00",
   "projects": 8,
   "milestones": 26,
   "scientific_acceptance": false,
@@ -15,9 +15,9 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "app.518442f52acc.js",
-      "bytes": 26618,
-      "sha256": "518442f52accbea8c5895429795454e6d2ce86a589465622a8b408da293b9d73"
+      "path": "app.1c00585e77fd.js",
+      "bytes": 26910,
+      "sha256": "1c00585e77fda738860975cda9e3c7c3aefb742295b7d621cada78fc350dd430"
     },
     {
       "path": "assets/fonts/fonts.css",
@@ -218,6 +218,11 @@
       "path": "dashboards/fitechsnm/app.js",
       "bytes": 29249,
       "sha256": "53bd15327ec5514e212fcba3691838d9e8687a2a7997c3b50d33e3b682cf6d9a"
+    },
+    {
+      "path": "dashboards/fitechsnm/BRANDING_OVERLAY_V1.json",
+      "bytes": 506,
+      "sha256": "593d5b14cd952841e851a74dbb45600942f4d074389c9e4591c420cb3676ec7e"
     },
     {
       "path": "dashboards/fitechsnm/data/artifact-acceptance-contract.json",
@@ -467,7 +472,7 @@
     {
       "path": "dashboards/fitechsnm/index.html",
       "bytes": 3857,
-      "sha256": "336f9448b57d64bf9cec23d2992ff6fd63c37defec0a5f863357e52087384613"
+      "sha256": "f7bc9d61c349aa88098d731ff4fd027db50dc209f6776917b4fce2f05fbe8b28"
     },
     {
       "path": "dashboards/fitechsnm/PROVENANCE.json",
@@ -1730,6 +1735,11 @@
       "sha256": "03ff083cb7dccb1ca01ea542f0855dba50b685151bcc58489e62cb608c214826"
     },
     {
+      "path": "dashboards/qrw/BRANDING_OVERLAY_V1.json",
+      "bytes": 503,
+      "sha256": "8019eb38cc7cb57d49b0f7ae841b5e71866182b79b70db5141ecee6d9b0b9bd8"
+    },
+    {
       "path": "dashboards/qrw/documents/01_DATA_MASTER_ARCHITECTURE_V2.html",
       "bytes": 11532,
       "sha256": "8fbd63301bfd75bc269afd778911e1784ca2371e32cd36e463673ccbe512d3a6"
@@ -1757,7 +1767,7 @@
     {
       "path": "dashboards/qrw/index.html",
       "bytes": 5836,
-      "sha256": "93cf3b7b27cd02c213c8f0a6f564cc9b41751eb0aec79bc459f6b25374f78efb"
+      "sha256": "a1fa8c3fb188dd11d9ee908fa61889687c8e147682831bb897fdea1441138123"
     },
     {
       "path": "dashboards/qrw/snapshot.json",
@@ -3022,12 +3032,12 @@
     {
       "path": "data/portfolio.json",
       "bytes": 27438,
-      "sha256": "64312647d1ce388c89de80c92d24db7e5b76d35cce3ee321cfe764329bd33cd3"
+      "sha256": "2f764bca50fb217ccf9c8607a238d7e6a3c5ff61dc5b7bf9505a467d0bf932b8"
     },
     {
       "path": "index.html",
       "bytes": 5003,
-      "sha256": "0d59ca6457d4d34744ad1172af271d94a229cff844ed24731d49dcf5e490c370"
+      "sha256": "1bab1164ad06524099bd8bf577c5e994a1e7889cc0a6f49d2744b084984c40ed"
     },
     {
       "path": "missions.5f46134c9e4e.js",
@@ -3040,9 +3050,9 @@
       "sha256": "f5e480d0a75837083d9cbfe6889679753b06c98aae24cb4af8aa4d5a5a9ab350"
     },
     {
-      "path": "styles.d5b54e744fb7.css",
-      "bytes": 38820,
-      "sha256": "d5b54e744fb7b2c3197b9a0fb9c68384b6e05e5f0ca5c96c3c4c169c5c1f0e35"
+      "path": "styles.e4607805265b.css",
+      "bytes": 39008,
+      "sha256": "e4607805265b533f03323ada7ffd2df9013bb1383e70a908d94e3374a9bbda50"
     }
   ]
 }
