@@ -1,0 +1,28 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QRW · Hồ sơ quản trị</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script></head><body><main class="document-page"><div class="snapshot-banner"><a href="../#documents">← Hồ sơ QRW</a> · <a href="../../../../">← FiTechHub</a><p>BẢN ĐÓNG BĂNG · OFFLINE · Chỉ quan sát hồ sơ monitor. Không cấp quyền thực thi, nhập dữ liệu, cutover hay hoàn tất P10.</p><button id="theme-toggle" type="button">Đổi giao diện</button></div><h1>Roadmap và dependency</h1>
+<p>Các khoảng thời gian là ước lượng công sức, không phải lịch cam kết. Chưa có benchmark capture hay worker đang chạy nên ETA toàn dự án = UNKNOWN. Không cộng số ngày song song thành deadline.</p>
+<div class="table-wrap"><table>
+<tr><th>ID</th><th>Gói việc</th><th>Phụ thuộc</th><th>Gate kết thúc / bằng chứng</th><th>Công sức ước lượng</th></tr>
+<tr><td>P00</td><td>Master docs và scope</td><td>—</td><td>Tài liệu + baseline; owner review riêng</td><td>1–2 ngày</td></tr>
+<tr><td>P01</td><td>Monitor dự án local</td><td>P00</td><td>Fixture, read-only HTTP, UI smoke; không phải nghiệm thu data</td><td>1 ngày</td></tr>
+<tr><td>P02</td><td>Catalog/contracts bằng fixture</td><td>P00</td><td>Schema + 7 binding records; missing giữ UNKNOWN; regression không import QRW</td><td>2–4 ngày</td></tr>
+<tr><td>P03</td><td>Ingestion engine bất biến, fixture trước</td><td>P02</td><td>Copy/resume/hash/seal/disk/concurrent-writer tests; ingestion thật còn gate riêng</td><td>3–5 ngày</td></tr>
+<tr><td>P04</td><td>Capture nguồn thực toàn scope</td><td>P03</td><td>Owner xác nhận allowlist từng batch; stable source, dung lượng, raw receipts, không external active source bị bỏ sót</td><td>Chưa ước lượng</td></tr>
+<tr><td>P05</td><td>SSI adjustment + security lifecycle</td><td>P04</td><td>Raw/factor basis + SSI chart oracle + cases; universe history không survivorship</td><td>4–8 ngày, chưa tính chờ nguồn</td></tr>
+<tr><td>P06</td><td>PIT/version/lineage/DQ độc lập</td><td>P04,P05</td><td>Negative as-of tests, publication coverage, hash manifests, exception register; không tự PASS</td><td>3–5 ngày</td></tr>
+<tr><td>P07</td><td>Database Studio riêng</td><td>P02,P06</td><td>Explorer/lineage/versions/consumers/QC/audit có dữ liệu thật có quyền; read-only trước</td><td>4–7 ngày</td></tr>
+<tr><td>P08</td><td>7 adapter shadow và compatibility</td><td>P06,P07</td><td>Exact byte hoặc semantic parity đúng loại; không đổi run pin</td><td>3–6 ngày</td></tr>
+<tr><td>P09</td><td>Cutover theo module/run</td><td>P08</td><td>Owner từng module chấp nhận; old jobs giữ pin; rollback rehearsal</td><td>Chưa ước lượng</td></tr>
+<tr><td>P10</td><td>Hub integration</td><td>P07,P09</td><td>Studio hoạt động độc lập trước; connector read-only và source status</td><td>1–2 ngày</td></tr>
+<tr><td>P11</td><td>Hợp nhất bảng, retirement</td><td>P09,P10</td><td>Definition parity, active external dependencies=0, archive plan riêng</td><td>2–4 ngày + thời gian quan sát</td></tr>
+</table></div>
+<h2>Gate chặn bắt buộc</h2>
+<p>1. Catalog engineering không cấp quyền đọc real data của FTML hay nghiên cứu khác.</p>
+<p>2. Ingestion engine đã test không cấp quyền capture mọi thư mục. Owner chốt exact source/destination, quota và thời điểm trước mỗi batch.</p>
+<p>3. Giá đã normalize không chứng minh SSI/iBoard parity. Không có raw/factor/oracle phù hợp thì giữ BLOCKED; không dùng adjusted close cũ làm raw.</p>
+<p>4. Snapshot đọc được không chứng minh PIT: thiếu historical availability thì PARTIAL, không PIT_STRICT.</p>
+<p>5. Shadow parity không cấp quyền cutover. Chỉ run mới có pin được owner chấp nhận mới dùng normalized V2.</p>
+<p>6. Không xóa archive, đổi pin job cũ, commit hay push theo roadmap này.</p>
+<h2>Song song có giới hạn</h2>
+<p>Sau P02 có thể thiết kế UI fixture của P07 đồng thời làm P03. Không cần worker riêng trước khi contract ổn định. Không có 2 writer trên cùng partition/release. Mỗi CC01–05 là prompt người dùng chuyển tiếp, không phải đã dispatch.</p>
+<h2>Việc đầu tiên</h2>
+<p>Chuyển prompt CC01: catalog/contracts fixture, ghi namespace riêng. Sau receipt, Codex review đối chiếu bằng chứng rồi mới xác định allowlist P03/P04. Lộ trình không cho phép tự chuyển từ fixture sang full-history fetch.</p><footer>Governance document sanitized for public snapshot · captured 2026-10-23T11:34:40.804296+07:00</footer></main></body></html>

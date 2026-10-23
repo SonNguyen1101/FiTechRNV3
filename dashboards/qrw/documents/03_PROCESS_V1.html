@@ -1,0 +1,31 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QRW · Hồ sơ quản trị</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script></head><body><main class="document-page"><div class="snapshot-banner"><a href="../#documents">← Hồ sơ QRW</a> · <a href="../../../../">← FiTechHub</a><p>BẢN ĐÓNG BĂNG · OFFLINE · Chỉ quan sát hồ sơ monitor. Không cấp quyền thực thi, nhập dữ liệu, cutover hay hoàn tất P10.</p><button id="theme-toggle" type="button">Đổi giao diện</button></div><h1>Quy trình triển khai, quyền hạn và QC</h1>
+<h2>Vòng đời một work package</h2>
+<p><code>PREPARED → USER_RELAYED → PREFLIGHT → EXECUTING_IN_ALLOWLIST → RECEIPT_PENDING_QC → VERIFIED_ENGINEERING → OWNER_ACCEPTED</code>.</p>
+<p><code>BLOCKED</code> có thể xảy ra ở mọi bước; không đoán tiếp hoặc tự mở scope. Test xanh/hash đúng không thay thế owner acceptance, Runtime custody, scientific gate hay production promotion.</p>
+<p>1. Đọc tài liệu hiện hành và AGENTS/SKILL phù hợp. Ghi repo tuyệt đối, branch, HEAD, worktree, tracked/untracked status, source pins. Nếu khác prompt: dừng mutation và trả discrepancy.</p>
+<p>2. Xác nhận exact read/write allowlist, no-go, input contract, output contract và quota. Kiểm tra đường dẫn resolve không thoát namespace/symlink.</p>
+<p>3. Làm fixture/synthetic trước. Source readers dùng giới hạn hàng/file, chỉ đọc, không gọi import có initializer, fetcher hay app route có side effect.</p>
+<p>4. Đối với capture thật: cần grant riêng; nguồn đang ghi phải có snapshot stable/quiescence hoặc protocol consistent-read. Metadata SQLite chỉ mở read-only với policy WAL/snapshot rõ ràng; không dùng immutable=1 cho DB đang đổi. Không copy trần SQLite bỏ WAL rồi coi consistent.</p>
+<p>5. Ghi staging riêng, không ghi release đã seal. Source bytes hash trước/sau capture, manifest per-object, row counts nguồn thật, resume checkpoint logic hash. Nếu bytes đổi, quarantine candidate và receipt lỗi; không lặng lẽ retry vô hạn.</p>
+<p>6. QC độc lập: so hợp đồng, source binding, negative tests và bằng chứng. Worker tự báo thành công vẫn <code>RECEIPT_PENDING_QC</code>.</p>
+<p>7. Seal manifest cuối. Owner chấp nhận việc kỹ thuật riêng; không cấp scientific PASS hay mở split từ receipt kỹ thuật.</p>
+<p>8. Theo dõi kỹ thuật, ghi rollback reference. Không chuyển nguồn job đang chạy.</p>
+<h2>Phân vai</h2>
+<div class="table-wrap"><table>
+<tr><th>Vai trò</th><th>Quyền và trách nhiệm</th></tr>
+<tr><td>Người dùng</td><td>Chấp nhận kiến trúc/allowlist real capture/cutover/retirement và policy còn mở</td></tr>
+<tr><td>QRW data owner</td><td>Custody raw/release, chất lượng/lineage, schema và serving contracts</td></tr>
+<tr><td>7 module owner</td><td>Input definitions, công thức/analysis, run pin và acceptance module</td></tr>
+<tr><td>Runtime/controller</td><td>Job custody, locks, runtime authority; monitor không thay thế</td></tr>
+<tr><td>CC worker</td><td>Thực thi đúng prompt; không tự mở gate hoặc dispatch kế tiếp</td></tr>
+<tr><td>Codex reviewer</td><td>Đối chiếu receipt/code/evidence; không tự chấp nhận nghiên cứu</td></tr>
+</table></div>
+<h2>Receipt CC bắt buộc</h2>
+<p>Package ID; trạng thái thực; absolute paths; branch/HEAD/dirty baseline/end; files changed và SHA256; input source pins; exact commands đã chạy; kiểm tra đã/không chạy; synthetic vs real; lỗi/limitations; write boundary; parent receipt; next gate. Không in credentials/raw confidential payload. Không ghi đè receipt cũ; nếu seal thì correction bằng phiên bản mới.</p>
+<h2>Checkpoint và monitor</h2>
+<p>Checkpoint chứa project logic hash; đổi title không chặn resume, đổi scope/dependency/policy phải chặn. Full hash ghi cả presentation/state để truy vết. Monitor không sửa checkpoint, tự khôi phục job, hoặc biến receipt thành accepted.</p>
+<p>File <code>monitor/state.json</code> là progress ledger phạm vi dự án, không là canonical registry của từng module. Cập nhật từ evidence thực; state invalid phải hiển thị unavailable thay vì giữ màu xanh. API không mở filesystem tùy ý. Worker health chỉ tính worker đăng ký của dự án này, không khẳng định toàn máy không có job.</p>
+<h2>Bảo vệ tài nguyên</h2>
+<p>Mặc định metadata/header/small manifest; không recursive full scan, count(*) DB lớn, decompress toàn archive hay hash toàn universe trong giờ nghiên cứu. Capture/hash thật chạy quota do owner duyệt sau pilot I/O; ETA phải đo pilot, không bịa. Đĩa cần headroom cho raw + candidate + evidence; không dọn dữ liệu đang chạy để lấy chỗ.</p>
+<h2>DoD và điều chưa làm</h2>
+<p>DoD mỗi gói: paths/authority đúng; output truy cập được từ entry point; tests phù hợp; không có đổi ngoài allowlist; docs tiến độ/setup/roadmap đúng thực trạng; receipt và next gate rõ. Không sửa decisions/research-log nguồn khi chưa được duyệt. Không commit/push theo chỉ thị phiên này; vì vậy không gọi gói uncommitted này là clean committed release. DoD kỹ thuật không đồng nghĩa release production.</p><footer>Governance document sanitized for public snapshot · captured 2026-10-23T11:34:40.804296+07:00</footer></main></body></html>

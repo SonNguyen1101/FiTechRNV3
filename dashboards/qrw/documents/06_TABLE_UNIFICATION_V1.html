@@ -1,0 +1,14 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QRW · Hồ sơ quản trị</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script></head><body><main class="document-page"><div class="snapshot-banner"><a href="../#documents">← Hồ sơ QRW</a> · <a href="../../../../">← FiTechHub</a><p>BẢN ĐÓNG BĂNG · OFFLINE · Chỉ quan sát hồ sơ monitor. Không cấp quyền thực thi, nhập dữ liệu, cutover hay hoàn tất P10.</p><button id="theme-toggle" type="button">Đổi giao diện</button></div><h1>Đề xuất thống nhất bảng trên 7 module</h1>
+<p>Đây là proposal, chưa thay UI hay công thức module. Dựa trên chức năng quan sát được và yêu cầu người dùng; chưa có pixel/UI inventory đầy đủ.</p>
+<div class="table-wrap"><table>
+<tr><th>Bảng dùng chung</th><th>QRW V2 cung cấp</th><th>Module giữ riêng</th></tr>
+<tr><td>Security/universe</td><td>security_id, ticker, sàn, lifecycle, ngành và as-of/version</td><td>Filter phục vụ mục tiêu từng module</td></tr>
+<tr><td>Giá/chart input</td><td>date/timezone, OHLCV basis/units, adjusted_as_of, source release</td><td>Chart interactions/indicators riêng</td></tr>
+<tr><td>Company/finance</td><td>period, đơn vị, source, published/available/revision, sector schema</td><td>Valuation model và giải thích ngành của Panel</td></tr>
+<tr><td>News/events</td><td>publisher, published/first_seen, correction, ticker mapping, dedup key</td><td>Ranking/tóm tắt/phân loại do owner quyết định</td></tr>
+<tr><td>Data quality</td><td>missing/stale/seam/unit/PIT status + evidence link</td><td>Scientific gate/status của RN/ML</td></tr>
+<tr><td>Run/input lineage</td><td>run ID, input pins, contract, owner, cutoff</td><td>Hypothesis, metrics, selection, experiment authority</td></tr>
+<tr><td>Job/update log</td><td>technical state, batch, last capture, error/retry, version</td><td>Runtime/controller execution authority</td></tr>
+</table></div>
+<p>Quy chuẩn trình bày: cùng tên cột, đơn vị hiển thị cạnh số, ngày giờ có timezone, badge VERIFIED/PARTIAL/UNKNOWN có tooltip bằng chứng, source release và as-of trên bảng, zero khác missing/null, symbol click theo security_id. Mọi derived field có definition_id/version; hai công thức khác nhau không nhập chung chỉ vì cùng tên.</p>
+<p>Triển khai theo inventory cột thực → mapping definition/unit/time → component token shared → screenshot/behavior acceptance từng module. Không viết lại 7 UI trước khi data contract ổn định. Monitor dự án hiện chỉ đưa registry consumer và link docs, không claim đã hợp nhất bảng.</p><footer>Governance document sanitized for public snapshot · captured 2026-10-23T11:34:40.804296+07:00</footer></main></body></html>

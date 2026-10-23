@@ -1,0 +1,68 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QRW · Hồ sơ quản trị</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script></head><body><main class="document-page"><div class="snapshot-banner"><a href="../#documents">← Hồ sơ QRW</a> · <a href="../../../../">← FiTechHub</a><p>BẢN ĐÓNG BĂNG · OFFLINE · Chỉ quan sát hồ sơ monitor. Không cấp quyền thực thi, nhập dữ liệu, cutover hay hoàn tất P10.</p><button id="theme-toggle" type="button">Đổi giao diện</button></div><h1>QRW V2 — Data Master Architecture</h1>
+<p>Version: DESIGN V2, 23/10/2026. Đề xuất kỹ thuật để review; không phải xác nhận các thành phần đã chạy.</p>
+<h2>Mục tiêu</h2>
+<p>QRW V2 là nơi lưu trữ và phân phối dữ liệu chung cho cả 7 module. Khi kết thúc chuyển đổi, mọi luồng dữ liệu vận hành thuộc phạm vi đã kiểm kê phải đọc/ghi qua QRW V2; số dependency dữ liệu vận hành ngoài QRW bằng 0. Không xóa các bản lịch sử bất biến đang phục vụ research để đạt chỉ tiêu này. Bản lưu bên ngoài còn giữ phải có danh mục, owner và kế hoạch nghỉ hưu riêng.</p>
+<p>V1 đã có OHLCV, universe, chỉ số, futures, foreign flow và macro. V2 bổ sung custody chung cho SSI fundamentals/company profile/corporate actions, ngành/ICB/GICS, membership và news/report; kiểm soát version, availability, lineage, chất lượng, consumer và quyền truy cập theo từng dataset/run.</p>
+<h2>Luồng dữ liệu</h2>
+<pre>flowchart LR
+  S[Nguồn QRW V1 + SSI + kho module] --&gt; I[Capture bất biến + receipt]
+  I --&gt; R[Raw có hash + source version]
+  R --&gt; N[Normalized + units + thời gian]
+  N --&gt; C[Curated và feature có version]
+  C --&gt; API[Reader contracts + manifest pin]
+  API --&gt; M[7 module và bản export có lineage]
+  R --&gt; G[Catalog / lineage / DQ / quyền truy cập]
+  N --&gt; G
+  C --&gt; G
+  G --&gt; D[Database Studio độc lập]
+  D --&gt; H[FiTech Hub sau nghiệm thu]</pre>
+<p>Không có đường tự động từ dashboard tới sửa raw, đổi pin, chạy research hoặc mở holdout.</p>
+<h2>Bố trí đề xuất, chưa tạo kho dữ liệu</h2>
+<p>Data root tương lai: <code>[local data root omitted]</code>. Tên/thư mục chỉ được tạo sau gate CC02 và phê duyệt allowlist thực tế.</p>
+<div class="table-wrap"><table>
+<tr><th>Lớp</th><th>Thư mục dự kiến</th><th>Quy tắc</th></tr>
+<tr><td>Catalog control</td><td>catalog/releases/&lt;id&gt;</td><td>JSON manifest bất biến là nguồn chính thức ban đầu; SQLite index chỉ là projection có thể dựng lại</td></tr>
+<tr><td>Raw</td><td>raw/&lt;provider&gt;/&lt;dataset&gt;/&lt;capture_id&gt;</td><td>Giữ nguyên bytes, hash, source path, captured_at, license reference; không overwrite</td></tr>
+<tr><td>Normalized</td><td>normalized/&lt;domain&gt;/&lt;release_id&gt;</td><td>Schema/units/calendar/timezone và transform version rõ ràng</td></tr>
+<tr><td>Curated</td><td>curated/&lt;dataset&gt;/&lt;release_id&gt;</td><td>Universe, adjustment, as-of policy được chốt; lineage tới raw</td></tr>
+<tr><td>Features/labels</td><td>features/&lt;definition_id&gt;/&lt;release_id&gt;</td><td>Feature/label tách riêng; lookback/horizon/availability và phương pháp có version</td></tr>
+<tr><td>Research custody</td><td>research_artifacts/&lt;owner&gt;/&lt;run_id&gt;</td><td>Lưu bất biến; quyền khoa học vẫn thuộc RN/ML và Runtime tương ứng</td></tr>
+<tr><td>Serving</td><td>serving/&lt;consumer&gt;/&lt;contract&gt;/&lt;release_id&gt;</td><td>Snapshot/export được pin; không dùng mtime làm identity</td></tr>
+<tr><td>Evidence</td><td>receipts/&lt;capture_or_release_id&gt;</td><td>DQ, parity, lineage, owner acceptance; manifest phát hành cuối cùng</td></tr>
+</table></div>
+<p>Không ép mọi domain thành một bảng hoặc một DB lớn. File CSV/JSON nguyên bản vẫn được giữ; Parquet/SQLite chỉ là đề xuất sau benchmark có giới hạn. Không lựa chọn engine bằng full-scan production.</p>
+<h2>Data master inventory</h2>
+<div class="table-wrap"><table>
+<tr><th>Domain</th><th>V1 / nguồn hiện có</th><th>V2 cần quản lý</th><th>Trạng thái chứng cứ</th></tr>
+<tr><td>Market equity</td><td>QRW OHLCV HOSE/HNX D1</td><td>Raw/adjusted tách biệt, price basis, currency/units, calendar, seams, version</td><td>VERIFIED về path/schema; lịch sử raw đầy đủ UNKNOWN</td></tr>
+<tr><td>Universe/security master</td><td>QRW ticker_universe.csv</td><td>security_id ổn định; ticker/exchange/lifecycle history; đổi mã/chuyển sàn/delist</td><td>VERIFIED V1 có ACTIVE/STOPPED; STOPPED không chứng minh delist</td></tr>
+<tr><td>Index</td><td>VNINDEX/VN30 D1/W1/H1</td><td>Bars, constituent effective/knowledge times, weights nếu có nguồn</td><td>PARTIAL; không suy diễn index membership lịch sử</td></tr>
+<tr><td>Futures</td><td>VN30F1M M3</td><td>Contract/continuous method, roll calendar/basis</td><td>PARTIAL; một series không chứng minh toàn thị trường</td></tr>
+<tr><td>Foreign flow</td><td>171 CSV quan sát</td><td>Đơn vị giá/giá trị, thời điểm sẵn có, revision</td><td>PARTIAL</td></tr>
+<tr><td>Macro</td><td>111 IIP series</td><td>Vintage, period, release/available_at; cờ estimated</td><td>PARTIAL; lịch sử period+7 ngày là giả định, không PIT strict</td></tr>
+<tr><td>Finance/company</td><td>SSI snapshot ngoài QRW</td><td>Profile, indicators, statements nếu thật sự có, publication/revisions</td><td>PARTIAL; không coi finance-indicator là đầy đủ 3 BCTC</td></tr>
+<tr><td>Corporate actions</td><td>SSI corporate-actions, stock-info</td><td>Event terms, event lifecycle, adjustment factors và source oracle</td><td>PARTIAL; SSI chart parity NOT_VERIFIED</td></tr>
+<tr><td>Sector</td><td>FiTechTrade + Luna local map</td><td>ICB/GICS namespace/version và effective history</td><td>PARTIAL; GICS thực có UNKNOWN, không đổi nhãn ICB thành GICS</td></tr>
+<tr><td>News/reports</td><td>Kho Finpath/ACBS/24hMoney/TCBS/SHS/SSI/VNDIRECT/Aseansc/VSDC</td><td>Raw, normalized, dedup, correction history, publish/first_seen/ingest</td><td>PARTIAL; snapshot_date hiện không phải ingestion time</td></tr>
+<tr><td>Features/models/research</td><td>Kho riêng của các owner</td><td>Custody/catalog/immutable artifact refs, không tự sửa phương pháp</td><td>PARTIAL; chưa kiểm kê đầy đủ mọi output</td></tr>
+<tr><td>Execution/performance</td><td>Chưa kiểm chứng trong scope</td><td>Registry tương lai nếu owner xác nhận; không xây broker/trading engine ở dự án này</td><td>UNKNOWN / OUT_OF_CURRENT_IMPLEMENTATION</td></tr>
+</table></div>
+<h2>Hợp đồng metadata tối thiểu</h2>
+<p>Release: <code>dataset_id</code>, <code>release_id</code>, <code>schema_version</code>, <code>provider</code>, <code>source_revision</code>, <code>captured_at</code>, <code>manifest_sha256</code>, <code>object_sha256</code>, <code>row_count</code> có nguồn đếm, <code>source_units</code>, <code>normalized_units</code>, <code>timezone</code>, <code>calendar_id/version</code>, <code>transform_code_hash</code>, <code>price_basis</code>, <code>adjustment_policy_id</code>, <code>universe_release_id</code>, <code>pit_policy</code>, <code>quality_status</code>, <code>lineage_parents</code>, <code>owner</code>, <code>license_ref</code>, <code>supersedes</code>.</p>
+<p>Record/event: phân biệt <code>event_time/period_end</code>, <code>effective_at</code>, <code>published_at</code>, <code>first_seen_at</code>, <code>ingested_at</code>, <code>available_at</code>, <code>revision_id</code>, <code>valid_from/to</code>, <code>known_from/to</code>. Không tạo historical first_seen bằng thời điểm backfill rồi gọi đó là thời gian thị trường biết. Availability ước tính phải gắn cờ và bị từ chối ở PIT_STRICT.</p>
+<p>As-of query dùng thời gian cutoff, timezone và quy tắc đóng/mở biên rõ ràng. Tại cutoff, chỉ record có <code>known_from &lt;= cutoff &lt; known_to</code>, <code>available_at &lt;= cutoff</code>; interval effective được áp theo câu hỏi nghiệp vụ. Chọn revision mới nhất trong tập đủ điều kiện, không dùng latest hiện tại cho lịch sử. Feature lineage chứa cả input window và availability cutoff. Nhãn tương lai bị chặn khỏi tập feature.</p>
+<h2>Hợp đồng phân phối cho 7 module</h2>
+<div class="table-wrap"><table>
+<tr><th>Module</th><th>Nguồn cần nhận từ V2</th><th>Quy tắc</th></tr>
+<tr><td>G1 RN V2 / FiTechSNM</td><td>Market/index/universe; feature/research artifacts nếu input contract yêu cầu</td><td>Hiện binding successor còn thiếu; không suy diễn từ legacy</td></tr>
+<tr><td>G1 RN V3 INDPOP</td><td>Market/index/universe/indicator definitions/features</td><td>Cố định release theo run; PIT_STRICT gate giữ nguyên</td></tr>
+<tr><td>FiTechML</td><td>D1 scope đã cho phép, features/labels split-specific, artifact lineage</td><td>Không tự mở toàn universe/ngoài D1 hoặc real-data research</td></tr>
+<tr><td>KronosVN</td><td>Market, company/sector/news theo contract, model artifacts</td><td>Không đồng nhất trạng thái model_eligible với dữ liệu có mặt</td></tr>
+<tr><td>Fipath_News</td><td>News/report, company/ticker/sector master, market context nếu contract có</td><td>first_seen/publish/revision tách biệt; không gọi build dashboard khi capture</td></tr>
+<tr><td>LunaVN</td><td>OHLCV/index/macro, sector/universe, shared input features</td><td>Công thức xếp hạng giữ owner; hash version thay mtime-only cache</td></tr>
+<tr><td>Fundamental Panel</td><td>Market, SSI company/finance/CA, sector/universe, source provenance</td><td>Theo ngành; công thức định giá không bị thay đổi trong data cutover</td></tr>
+</table></div>
+<p>Mọi API/adapter yêu cầu pin hoặc resolve một release rồi ghi pin trước lúc run. Alias <code>latest</code> chỉ cho màn hình vận hành đã cho phép, không dùng ngầm cho research. Adapter legacy giữ tên cột/units/sort/NaN/calendar semantics; thay đổi này đều là potential breaking change.</p>
+<h2>Studio mục tiêu và monitor hiện tại</h2>
+<p>Studio đầy đủ gồm explorer schema/table, catalog versions, lineage graph, PIT/as-of inspector, DQ, jobs/backfill, lifecycle/CA, consumer bindings, permission/approval, export/audit trail và project progress. Trước mắt chỉ xây monitor dự án có điều hướng docs/roadmap/consumer/worker; chưa có DB explorer thật hoặc nút ghi DB.</p>
+<p>Studio là lớp quan sát và yêu cầu hành động. Mutation trong tương lai phải có preview, allowlist, dry-run, owner receipt và audit; không mở trong monitor ban đầu. Query explorer có timeout/row cap/read-only connection, không count/full-scan mặc định. Không hiển thị kết quả research đang chạy để tránh optional stopping.</p><footer>Governance document sanitized for public snapshot · captured 2026-10-23T11:34:40.804296+07:00</footer></main></body></html>

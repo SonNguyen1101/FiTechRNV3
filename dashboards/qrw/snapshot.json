@@ -1,0 +1,445 @@
+{
+  "project": {
+    "schema_version": "qrw-project-monitor/1",
+    "project_id": "qrw-v2",
+    "title": "QRW V2 Data Foundation",
+    "updated_at": "2026-10-23T04:23:43.602145+00:00",
+    "scope": "PROJECT_DELIVERY_ONLY",
+    "cutover_count": 0,
+    "data_stage": "Chưa nhập dữ liệu thật · chưa cutover",
+    "notices": [
+      "Chưa nhập dữ liệu thật, chưa chuyển nguồn module và chưa kết nối FiTech Hub.",
+      "Nghiên cứu RN2/RN3/ML giữ nguyên bytes, universe, version pin và quyền IS/OOS/holdout.",
+      "SSI/iBoard chart parity và historical availability còn NOT_VERIFIED; không gọi candidate là PIT_STRICT.",
+      "Monitor chỉ đọc progress record. Không tự dispatch CC hay theo dõi kết quả nghiên cứu."
+    ],
+    "events": [
+      {
+        "at": "2026-10-23T04:16:49.081483+00:00",
+        "text": "Hồ sơ master và 5 prompt CC đã lưu tại namespace triển khai mới; chưa dispatch worker."
+      },
+      {
+        "at": "2026-10-23T04:16:49.081483+00:00",
+        "text": "Monitor đang được kiểm chứng bằng fixture; chưa nhập data thật, chưa cutover hay kết nối Hub."
+      },
+      {
+        "at": "2026-10-23T04:23:43.602145+00:00",
+        "text": "Monitor đã kiểm tra kỹ thuật bằng fixture và UI; dark theme nhớ lựa chọn đã xác minh. Owner acceptance còn PENDING; CC01 chưa dispatch."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "P00",
+        "title": "Master architecture và hồ sơ triển khai",
+        "owner": "Codex",
+        "depends_on": [],
+        "status": "READY_FOR_REVIEW",
+        "acceptance": "PENDING",
+        "scope": "DOCUMENTATION_ONLY",
+        "next_action": "Review master docs; CC01 là gói kỹ thuật đầu tiên",
+        "worker_id": null,
+        "evidence": [
+          {
+            "href": "documents/01_DATA_MASTER_ARCHITECTURE_V2.html",
+            "label": "Tài liệu quản trị",
+            "reason": null
+          },
+          {
+            "href": "documents/02_ROADMAP_V1.html",
+            "label": "Tài liệu quản trị",
+            "reason": null
+          },
+          {
+            "href": "documents/03_PROCESS_V1.html",
+            "label": "Tài liệu quản trị",
+            "reason": null
+          }
+        ]
+      },
+      {
+        "id": "P01",
+        "title": "Monitor dự án local",
+        "owner": "Codex",
+        "depends_on": [
+          "P00"
+        ],
+        "status": "VERIFIED_ENGINEERING",
+        "acceptance": "PENDING",
+        "scope": "READ_ONLY_PROJECT_MONITOR",
+        "next_action": "Owner review; CC01 đã chuẩn bị để anh giao",
+        "worker_id": null,
+        "evidence": [
+          {
+            "href": null,
+            "label": "Bằng chứng local không xuất bản",
+            "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+          },
+          {
+            "href": null,
+            "label": "Bằng chứng local không xuất bản",
+            "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+          }
+        ]
+      },
+      {
+        "id": "P02",
+        "title": "Catalog và input contracts",
+        "owner": "CC + reviewer",
+        "depends_on": [
+          "P00"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "SYNTHETIC_CATALOG_CONTRACTS_ONLY",
+        "next_action": "Anh chuyển prompt CC01; chưa dispatch",
+        "worker_id": "CC01",
+        "evidence": []
+      },
+      {
+        "id": "P03",
+        "title": "Ingestion engine bất biến",
+        "owner": "CC + reviewer",
+        "depends_on": [
+          "P02"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "SYNTHETIC_CAPTURE_ENGINE_ONLY",
+        "next_action": "Chờ CC01 QC và scope CC02 được chấp nhận",
+        "worker_id": "CC02",
+        "evidence": []
+      },
+      {
+        "id": "P04",
+        "title": "Capture nguồn thực toàn scope",
+        "owner": "QRW data owner",
+        "depends_on": [
+          "P03"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "REAL_CAPTURE_REQUIRES_SEPARATE_ALLOWLIST",
+        "next_action": "Chốt source/destination/quota và consistency trước capture",
+        "worker_id": null,
+        "evidence": []
+      },
+      {
+        "id": "P05",
+        "title": "SSI adjustment và security lifecycle",
+        "owner": "QRW + module owners",
+        "depends_on": [
+          "P04"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "CANDIDATE_ONLY_NO_LEGACY_REWRITE",
+        "next_action": "Raw/factor/oracle và tolerance policy còn thiếu",
+        "worker_id": "CC03",
+        "evidence": []
+      },
+      {
+        "id": "P06",
+        "title": "PIT, version, lineage và QC độc lập",
+        "owner": "Independent reviewer + owner",
+        "depends_on": [
+          "P04",
+          "P05"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "NO_SCIENTIFIC_PROMOTION",
+        "next_action": "Kiểm temporal semantics và source binding độc lập",
+        "worker_id": null,
+        "evidence": []
+      },
+      {
+        "id": "P07",
+        "title": "Database Studio độc lập",
+        "owner": "CC + data owner",
+        "depends_on": [
+          "P02",
+          "P06"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "LOCAL_READ_ONLY_STUDIO_FIRST",
+        "next_action": "UI fixture có thể song song sau contract; explorer thật chờ QC",
+        "worker_id": "CC04",
+        "evidence": []
+      },
+      {
+        "id": "P08",
+        "title": "Adapter shadow cho 7 module",
+        "owner": "7 module owners",
+        "depends_on": [
+          "P06",
+          "P07"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "NO_ROUTING_CHANGE_NO_RESEARCH_RUN",
+        "next_action": "So compatibility theo contract và release",
+        "worker_id": "CC05",
+        "evidence": []
+      },
+      {
+        "id": "P09",
+        "title": "Cutover theo module và new run",
+        "owner": "User + module owner",
+        "depends_on": [
+          "P08"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "PER_MODULE_SEPARATE_OWNER_GRANT",
+        "next_action": "Giữ pin job cũ; chỉ run mới sau owner acceptance",
+        "worker_id": "CC05",
+        "evidence": []
+      },
+      {
+        "id": "P10",
+        "title": "Kết nối FiTech Hub",
+        "owner": "Hub + QRW owners",
+        "depends_on": [
+          "P07",
+          "P09"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "OBSERVATION_CONNECTOR_AFTER_STUDIO_ACCEPTANCE",
+        "next_action": "Standalone Studio accepted trước, chưa sửa Hub",
+        "worker_id": null,
+        "evidence": []
+      },
+      {
+        "id": "P11",
+        "title": "Thống nhất bảng và retirement",
+        "owner": "QRW + 7 module owners",
+        "depends_on": [
+          "P09",
+          "P10"
+        ],
+        "status": "NOT_STARTED",
+        "acceptance": "NOT_REQUESTED",
+        "scope": "NO_ARCHIVE_DELETE_WITHOUT_SEPARATE_GRANT",
+        "next_action": "Chứng minh active external dependency=0 và definition parity",
+        "worker_id": null,
+        "evidence": []
+      }
+    ],
+    "consumers": [
+      {
+        "id": "rn2",
+        "name": "G1 RN V2 / FiTechSNM",
+        "current": "Inherited source manifest và R0 input contract; legacy FiTechTrade có QRW usage",
+        "target": "Pinned market/index/universe và artifact custody theo contract",
+        "evidence_status": "PARTIAL",
+        "limitation": "Actual successor R0 binding MISSING; không suy runtime từ legacy"
+      },
+      {
+        "id": "rn3",
+        "name": "RN V3 INDPOP",
+        "current": "QRW source wrapper IS; config pins August; PIT_STRICT lane blocked",
+        "target": "Versioned input reader và feature/indicator definitions",
+        "evidence_status": "PARTIAL",
+        "limitation": "Không đổi split access hoặc mở scientific gate"
+      },
+      {
+        "id": "ml",
+        "name": "FiTechML",
+        "current": "D1 scope và 7-file historical receipt; real-run authority không suy từ config",
+        "target": "D1 pin, features/labels tách scope, ML artifacts có lineage",
+        "evidence_status": "PARTIAL",
+        "limitation": "Không tự mở toàn universe/real data/OOS/holdout"
+      },
+      {
+        "id": "kronos",
+        "name": "KronosVN",
+        "current": "QRW + SSI catalog; raw/Parquet copies và SQLite metadata riêng",
+        "target": "Shared market/company/sector/news, artifacts theo accepted contracts",
+        "evidence_status": "PARTIAL",
+        "limitation": "Active snapshot UNKNOWN; DB không mở trong audit"
+      },
+      {
+        "id": "news",
+        "name": "Fipath_News dashboard",
+        "current": "Finpath và các kho news/report ngoài QRW; sector CSV",
+        "target": "News/report/company mapping có publication/first_seen/revision",
+        "evidence_status": "PARTIAL",
+        "limitation": "Direct QRW binding UNKNOWN; snapshot_date không phải ingestion time"
+      },
+      {
+        "id": "luna",
+        "name": "LunaVN",
+        "current": "QRW export + ICB map riêng + macro; local cache",
+        "target": "Market/index/macro/sector/universe và shared input features",
+        "evidence_status": "PARTIAL",
+        "limitation": "mtime/size/path cache chưa là content pin; ranking owner giữ"
+      },
+      {
+        "id": "panel",
+        "name": "Fundamental Panel",
+        "current": "QRW market export + SSI company/finance ngoài QRW",
+        "target": "Full-universe sector-aware input và source provenance",
+        "evidence_status": "PARTIAL",
+        "limitation": "Finance publication/units/revision coverage còn thiếu"
+      }
+    ],
+    "workers": [
+      {
+        "id": "CC01",
+        "title": "Catalog, registry và contracts",
+        "status": "PREPARED",
+        "gate": "Fixture trước; chưa sửa QRW V1 hoặc capture data thật."
+      },
+      {
+        "id": "CC02",
+        "title": "Immutable ingestion engine",
+        "status": "HOLD",
+        "gate": "Chờ CC01 QC. Engine fixture; real capture cần allowlist riêng."
+      },
+      {
+        "id": "CC03",
+        "title": "SSI adjustment và lifecycle",
+        "status": "HOLD",
+        "gate": "Chờ raw/factor/oracle và owner tolerance; không double-adjust hoặc rewrite IS/OOS."
+      },
+      {
+        "id": "CC04",
+        "title": "Standalone Database Studio",
+        "status": "HOLD",
+        "gate": "Chờ catalog/backend contract; explorer actual data cần accepted capture/QC."
+      },
+      {
+        "id": "CC05",
+        "title": "Shadow adapters và module cutover",
+        "status": "HOLD",
+        "gate": "Chờ independent QC và grant từng module/new run; old pin giữ nguyên."
+      }
+    ],
+    "artifacts": [
+      {
+        "title": "Bắt đầu tại đây",
+        "group": "document",
+        "href": null,
+        "reason": "README chứa chỉ dẫn vận hành local; không xuất bản trong snapshot."
+      },
+      {
+        "title": "01 · Data master architecture",
+        "group": "document",
+        "href": "documents/01_DATA_MASTER_ARCHITECTURE_V2.html",
+        "reason": null
+      },
+      {
+        "title": "02 · Roadmap và dependency",
+        "group": "document",
+        "href": "documents/02_ROADMAP_V1.html",
+        "reason": null
+      },
+      {
+        "title": "03 · Quy trình và QC",
+        "group": "document",
+        "href": "documents/03_PROCESS_V1.html",
+        "reason": null
+      },
+      {
+        "title": "04 · Kế hoạch và allowlist",
+        "group": "document",
+        "href": null,
+        "reason": "Kế hoạch và allowlist thực thi local không xuất bản."
+      },
+      {
+        "title": "05 · Research và cutover",
+        "group": "document",
+        "href": "documents/05_RESEARCH_AND_CUTOVER_V1.html",
+        "reason": null
+      },
+      {
+        "title": "06 · Thống nhất bảng trên 7 module",
+        "group": "document",
+        "href": "documents/06_TABLE_UNIFICATION_V1.html",
+        "reason": null
+      },
+      {
+        "title": "Bằng chứng hiện trạng V1",
+        "group": "document",
+        "href": null,
+        "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      },
+      {
+        "title": "CC01",
+        "group": "prompt",
+        "href": null,
+        "reason": "Không xuất bản prompt / payload thực thi. Chỉ người có quyền dùng hồ sơ local."
+      },
+      {
+        "title": "CC02",
+        "group": "prompt",
+        "href": null,
+        "reason": "Không xuất bản prompt / payload thực thi. Chỉ người có quyền dùng hồ sơ local."
+      },
+      {
+        "title": "CC03",
+        "group": "prompt",
+        "href": null,
+        "reason": "Không xuất bản prompt / payload thực thi. Chỉ người có quyền dùng hồ sơ local."
+      },
+      {
+        "title": "CC04",
+        "group": "prompt",
+        "href": null,
+        "reason": "Không xuất bản prompt / payload thực thi. Chỉ người có quyền dùng hồ sơ local."
+      },
+      {
+        "title": "CC05",
+        "group": "prompt",
+        "href": null,
+        "reason": "Không xuất bản prompt / payload thực thi. Chỉ người có quyền dùng hồ sơ local."
+      },
+      {
+        "title": "Kết quả kiểm chứng monitor",
+        "group": "document",
+        "href": null,
+        "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      },
+      {
+        "title": "Review receipt",
+        "group": "document",
+        "href": null,
+        "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      },
+      {
+        "title": "Monitor tests",
+        "group": "document",
+        "href": null,
+        "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      },
+      {
+        "title": "UI next-action tests",
+        "group": "document",
+        "href": null,
+        "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      },
+      {
+        "title": "Dark theme tests",
+        "group": "document",
+        "href": null,
+        "reason": "Không xuất bản bằng chứng / log thực thi nguồn. Trạng thái chỉ được quan sát từ monitor."
+      }
+    ]
+  },
+  "summary": {
+    "total": 12,
+    "technical_verified": 1,
+    "accepted": 0,
+    "blocked": 0,
+    "eta_seconds": null,
+    "registered_workers_running": 0
+  },
+  "read_at": "2026-10-23T11:34:40.804296+07:00",
+  "logic_hash": "97cc2b06641c6752c2fec966fca7cc22406ddac3e91f0c5f1552dfb9a31bcf5f",
+  "source_full_hash": "7f0c4ec84b974723751696e40624e849dd270a240fe1a8f9bb64c60712e33199",
+  "snapshot_scope": "OBSERVATION_OF_MONITOR_ONLY",
+  "source_observation": "GET /api/status · HTTP 200",
+  "offline": true
+}

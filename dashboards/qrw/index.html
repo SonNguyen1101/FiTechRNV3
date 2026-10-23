@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QRW • Data Foundation</title><script src="./theme.js"></script><link rel="stylesheet" href="./styles.css"><script src="./app.js" defer></script></head>
+<body>
+<a class="skip" href="#main">Đến nội dung</a>
+<aside class="sidebar">
+  <a class="brand" href="#overview"><span class="mark">Q</span><span>QRW<span class="subbrand">DATA FOUNDATION</span></span></a>
+  <div class="workspace-label">PROJECT WORKSPACE <span>V2</span></div>
+  <nav aria-label="Điều hướng"><a href="#overview">Tổng quan <span>01</span></a><a href="#roadmap">Lộ trình <span>02</span></a><a href="#consumers">7 module <span>03</span></a><a href="#workers">Giao việc CC <span>04</span></a><a href="#documents">Tài liệu <span>05</span></a></nav>
+  <div class="sidebar-bottom"><span class="live-dot"></span> ĐÓNG BĂNG · OFFLINE<p>Tiến độ kỹ thuật của dự án.<br>Quyền nghiên cứu thuộc owner.</p><small>PROJECT_DELIVERY_ONLY · OBSERVATION ONLY</small></div>
+</aside>
+<div class="shell">
+  <header class="topbar"><span>FiTech / Infrastructure / <strong>QRW V2</strong></span><div class="topbar-actions"><span id="connection" role="status">Đang đọc trạng thái…</span><button id="theme-toggle" type="button" aria-pressed="false" aria-label="Chuyển sang giao diện tối">☾ Tối</button></div></header>
+  <main id="main" tabindex="-1"><div class="snapshot-banner"><a href="../../../">← FiTechHub</a><strong>BẢN ĐÓNG BĂNG · OFFLINE · CHỈ ĐỌC</strong><p>Đây là quan sát monitor quản trị dữ liệu cho 7 module. Không có job hoặc API live. P10 nguồn vẫn NOT_STARTED; không đồng nghĩa hoàn tất Database Studio, nhập dữ liệu thật hay cutover.</p><small>Captured 2026-10-23T11:34:40.804296+07:00 · source state 2026-10-23T04:23:43.602145+00:00</small></div>
+    <div class="page-heading"><div><p class="eyebrow">DATA FOUNDATION / IMPLEMENTATION</p><h1 id="page-title">Trung tâm triển khai</h1><p id="page-description">Theo dõi lộ trình, bằng chứng và công việc cần thực hiện.</p></div><div class="revision">PROJECT RECORD <strong id="updated">—</strong><span>Asia/Saigon</span></div></div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <section id="overview" class="page">
+      <div class="brief"><div><span class="eyebrow">TRỌNG TÂM HIỆN TẠI</span><h2>Chuẩn bị nền dữ liệu chung.<br>Giữ nguyên nghiên cứu đang chạy.</h2><p>Hồ sơ master và monitor là bước khởi đầu. Nhập dữ liệu, chuẩn hóa SSI và chuyển nguồn từng module đi qua các gate riêng.</p></div><div class="scope-stamp">V1<span>→</span>V2<small>PARALLEL · VERSIONED · TRACEABLE</small></div></div>
+      <div class="summary-strip" id="summary"></div>
+      <div class="overview-grid"><section class="panel"><div class="section-head"><h2>Việc tiếp theo</h2><span id="current-tag" class="tag">—</span></div><div id="current"></div><a id="current-link" class="button" hidden target="_blank" rel="noopener">Mở prompt ↗</a><p class="footnote">Prompt không được xuất bản. Worker status và gate là bản ghi nguồn tại thời điểm chụp; snapshot không gửi hoặc chạy worker.</p></section><section class="panel"><div class="section-head"><h2>Sức khỏe triển khai</h2><span class="small">PHẠM VI DỰ ÁN</span></div><dl id="health"></dl></section></div>
+      <section class="notice-panel"><h2>Điểm cần giữ rõ</h2><ul id="notices"></ul></section>
+      <section class="panel"><div class="section-head"><h2>Nhật ký dự án</h2><span class="small">BẰNG CHỨNG TRƯỚC TRẠNG THÁI</span></div><ol class="journal" id="journal"></ol></section>
+    </section>
+    <section id="roadmap" class="page" hidden><div class="section-head"><h2>Các gói triển khai</h2><a href="./documents/02_ROADMAP_V1.html" target="_blank" rel="noopener">Roadmap chi tiết ↗</a></div><p class="muted">Tình trạng kỹ thuật và nghiệm thu tách riêng. Số gói hoàn tất không đại diện phần trăm toàn bộ dữ liệu đã chuyển.</p><div class="table-wrap"><table><thead><tr><th>Gói / scope</th><th>Kỹ thuật</th><th>Nghiệm thu</th><th>Phụ thuộc</th><th>Bước tiếp theo</th></tr></thead><tbody id="task-rows"></tbody></table></div></section>
+    <section id="consumers" class="page" hidden><div class="section-head"><h2>Bảy module, một nền dữ liệu</h2><span class="tag">CHƯA CUTOVER</span></div><p class="muted">Binding ghi nhận từ code/config/metadata; đây không phải bằng chứng module đang chạy hoặc sẵn sàng nghiên cứu.</p><div class="table-wrap"><table><thead><tr><th>Module</th><th>Hiện trạng V1 / ngoài QRW</th><th>V2 phân phối dự kiến</th><th>Chứng cứ</th></tr></thead><tbody id="consumer-rows"></tbody></table></div></section>
+    <section id="workers" class="page" hidden><div class="section-head"><h2>Giao việc cho Claude Code</h2><span class="small">MANUAL RELAY</span></div><p class="muted">CC01 là gói kỹ thuật đầu tiên trong hồ sơ nguồn. Mọi prompt thực thi bị vô hiệu trên bản công khai; PREPARED không có nghĩa đã dispatch.</p><div id="worker-list" class="worker-list"></div></section>
+    <section id="documents" class="page" hidden><div class="section-head"><h2>Hồ sơ dự án</h2><span class="small">5 HỒ SƠ QUẢN TRỊ · BẢN ĐÃ LỌC</span></div><div id="document-list" class="document-list"></div></section>
+    <footer><span>QRW V2 / Project Monitor <b>01</b></span><span id="hash-label">Logic binding —</span></footer>
+  </main>
+</div>
+</body></html>

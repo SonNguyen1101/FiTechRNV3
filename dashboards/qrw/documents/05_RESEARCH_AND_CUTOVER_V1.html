@@ -1,0 +1,29 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QRW · Hồ sơ quản trị</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script></head><body><main class="document-page"><div class="snapshot-banner"><a href="../#documents">← Hồ sơ QRW</a> · <a href="../../../../">← FiTechHub</a><p>BẢN ĐÓNG BĂNG · OFFLINE · Chỉ quan sát hồ sơ monitor. Không cấp quyền thực thi, nhập dữ liệu, cutover hay hoàn tất P10.</p><button id="theme-toggle" type="button">Đổi giao diện</button></div><h1>Bảo vệ research và chuyển cửa dữ liệu</h1>
+<h2>Split người dùng đã chốt</h2>
+<p>Chỉ áp cho G1 RN V2/FiTechSNM, RN V3 và FiTechML:</p>
+<div class="table-wrap"><table>
+<tr><th>Split</th><th>Interval theo session_date</th></tr>
+<tr><td>IS</td><td>2016-01-01 ≤ date ≤ 2022-04-18</td></tr>
+<tr><td>OOS</td><td>2022-04-18 &lt; date ≤ 2024-05-24</td></tr>
+<tr><td>Final Holdout</td><td>2024-05-24 &lt; date ≤ 2026-06-30</td></tr>
+</table></div>
+<p>Walk-forward chọn tham số ở IS. Lưu interval closed/open và timezone/calendar trong contract, không chỉ text. Có bảng split không đồng nghĩa quyền đọc OOS/holdout; thừa kế quyền hiện hành, fail-closed nếu không có grant. Các module khác không tự động dùng split này.</p>
+<h2>Hai nhánh dataset song song</h2>
+<p>1. <strong>Legacy immutable lane:</strong> exact bytes/hash, universe, schema, units, logic/pins và access policy của run cũ được giữ. Có thể copy bit-for-bit vào V2 sau consistent capture và xác minh; không re-adjust, không thêm mã, không rewrite history.</p>
+<p>2. <strong>Normalized candidate lane:</strong> V2 mới có CA normalization, lifecycle, sector/news/fundamentals/PIT. Đặt release ID mới và policy mới, shadow review; chỉ run mới được owner chấp nhận dùng. Không tái gán kết quả cũ cho dataset mới.</p>
+<p>Pin tối thiểu: dataset/manifest hash, object set, schema/units/calendar, price basis/adjustment policy, universe release, feature definition, availability policy, code hash, split and access grant. Pin phải ghi trước run, không thay đổi giữa run. Symbolic latest, mutable path hoặc mtime không đủ.</p>
+<h2>Giá SSI/iBoard</h2>
+<p>Chuẩn được user chọn: chuỗi giá lịch sử điều chỉnh trên SSI/iBoard. Hiện exact algorithm/rounding/volume policy và coverage 2016 chưa được kiểm chứng. Đề xuất nghiên cứu cách tính factors không phải xác nhận parity.</p>
+<p>Quy trình: xác minh raw unadjusted basis → corporate action terms/source/time → tính candidate factors có version → đối chiếu SSI chart series trên các case cash dividend, stock dividend, split/reverse, bonus, quyền mua, tổ hợp cùng ngày và correction → owner chốt tolerance/precision → chạy candidate toàn universe theo batch có grant → độc lập QC → phát hành. Close/reference/raw/adjusted và volume/value có policy riêng. Thiếu raw/factor/oracle thì BLOCKED, không double-adjust V1.</p>
+<p>PIT legacy và SSI chart “latest adjusted” có thể khác: factor biết trong tương lai có thể sửa quá khứ. Vì vậy lưu cả <code>adjustment_as_of/knowledge_cutoff</code> và price-series release. Không dùng chuỗi latest back-adjusted cho nghiên cứu as-of rồi gắn nhãn PIT_STRICT nếu chưa chứng minh causal semantics.</p>
+<h2>Mã mới và hủy niêm yết</h2>
+<p>Security master có ID bền vững và sự kiện listing/delist/suspension/rename/transfer với effective_at, announcement/known_at, source, reason, actor, supersedes. Danh sách hiện hành loại mã thật sự delist khỏi tradable list theo ngày hiệu lực; history không xóa. STOPPED theo độ stale không phải delisted. PIT universe chọn theo cutoff, tránh survivorship bias.</p>
+<p>DMX đã có trong QRW V1 tại <code>data/hose_ohlcv/DMX_1D.csv</code> và universe hiện tại. Baseline ghi manifest 49 dòng, không đọc full series. Vấn đề có thể nằm downstream/filter nhưng UNKNOWN. Không fetch lại để “bổ sung mã thiếu” khi chưa tìm binding. Mã xuất hiện sau 30/06/2026 không được đưa vào frozen research universe theo các split trên.</p>
+<h2>Cutover từng module</h2>
+<p><code>discover binding → lock old pin → capture immutable → candidate normalization → independent QC → shadow adapter → owner acceptance → new-run routing → observe → rollback/retire</code>.</p>
+<p>- Shadow chỉ đối chiếu dữ liệu hợp quyền; không chạy backtest/OOS để chứng minh adapter.</p>
+<p>- Exact-byte legacy parity và semantic normalized parity là hai tiêu chí khác nhau; schema/units/dates/missing values/order/universe/calendar phải có diff.</p>
+<p>- Cutover áp theo module + contract + release + run boundary, không đổi QRW_ROOT toàn máy.</p>
+<p>- Running jobs dùng pin cũ tới khi kết thúc. Cả reader và writer/export/cache root phải chuyển; writer cũ bị chặn sau migration gate có owner, không tự chạy ở gói này.</p>
+<p>- Rollback pointer của run mới phải giữ release cũ bất biến, không sửa current run dataset. Nếu là schema breaking change thì version adapter và endpoint song song; không giả vờ rollback được qua đổi path đơn giản.</p>
+<p>- Chỉ nghỉ hưu nguồn vận hành ngoài khi audit active dependencies=0 và owner đồng ý. Không xóa archive của run cũ.</p><footer>Governance document sanitized for public snapshot · captured 2026-10-23T11:34:40.804296+07:00</footer></main></body></html>

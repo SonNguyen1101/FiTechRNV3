@@ -1,13 +1,13 @@
 {
   "schema": "FITECHHUB_PUBLIC_SNAPSHOT_V1",
-  "observed_at": "2026-10-21T15:53:40.127842+00:00",
-  "projects": 7,
-  "milestones": 14,
+  "observed_at": "2026-10-23T04:42:32.175658+00:00",
+  "projects": 8,
+  "milestones": 26,
   "scientific_acceptance": false,
   "snapshot_data_included": true,
   "raw_market_series_published": false,
   "raw_execution_evidence_published": false,
-  "child_dashboards": 7,
+  "child_dashboards": 8,
   "files": [
     {
       "path": ".nojekyll",
@@ -15,9 +15,9 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "app.bb6822c25cfc.js",
-      "bytes": 24019,
-      "sha256": "bb6822c25cfc6365a40ddc70143f10e7c61ebd285e34ddcd8e1d9e6ec014960f"
+      "path": "app.be4a3690394d.js",
+      "bytes": 25483,
+      "sha256": "be4a3690394df9204815f30e98dc0ee2c82eb1aa506013e7f9b39eb725635571"
     },
     {
       "path": "assets/fonts/fonts.css",
@@ -1725,6 +1725,56 @@
       "sha256": "6b8496886bb42452875198eb82ca0a05aa445baf33bc92bc29a3e1f3b24666bb"
     },
     {
+      "path": "dashboards/qrw/app.js",
+      "bytes": 7497,
+      "sha256": "03ff083cb7dccb1ca01ea542f0855dba50b685151bcc58489e62cb608c214826"
+    },
+    {
+      "path": "dashboards/qrw/documents/01_DATA_MASTER_ARCHITECTURE_V2.html",
+      "bytes": 11532,
+      "sha256": "8fbd63301bfd75bc269afd778911e1784ca2371e32cd36e463673ccbe512d3a6"
+    },
+    {
+      "path": "dashboards/qrw/documents/02_ROADMAP_V1.html",
+      "bytes": 4959,
+      "sha256": "d73c10ff06651a4be25b3683c3c9f671420216b19bd517c4c24a75060f8e53f0"
+    },
+    {
+      "path": "dashboards/qrw/documents/03_PROCESS_V1.html",
+      "bytes": 5761,
+      "sha256": "0e9a6d3602082bc6ca3fe783bcf00be19a4e1f09f3756b05d59e325c93d62eae"
+    },
+    {
+      "path": "dashboards/qrw/documents/05_RESEARCH_AND_CUTOVER_V1.html",
+      "bytes": 5839,
+      "sha256": "91f7919324c7a04dcc5de2210e88867b19cd6f14d0676e9978b1e4a0c7c1743d"
+    },
+    {
+      "path": "dashboards/qrw/documents/06_TABLE_UNIFICATION_V1.html",
+      "bytes": 2966,
+      "sha256": "de9d23f7746eb1138a07afeab2d3f4750887ca4f480219704cfa740fb62a2841"
+    },
+    {
+      "path": "dashboards/qrw/index.html",
+      "bytes": 5836,
+      "sha256": "93cf3b7b27cd02c213c8f0a6f564cc9b41751eb0aec79bc459f6b25374f78efb"
+    },
+    {
+      "path": "dashboards/qrw/snapshot.json",
+      "bytes": 16171,
+      "sha256": "639c983b7270f6421fb1b4182a84752ee2a83c6c73ccef590412bdf0a9d63055"
+    },
+    {
+      "path": "dashboards/qrw/styles.css",
+      "bytes": 11585,
+      "sha256": "93821e3cf2fe94661656109c57fecc9770d1581933df61796eb3cadab2d49757"
+    },
+    {
+      "path": "dashboards/qrw/theme.js",
+      "bytes": 1204,
+      "sha256": "0ad1427210a30384ffa7ef7fdbca36957c9c943f14ab1d11a7426588d4c02738"
+    },
+    {
       "path": "dashboards/rnv3/.nojekyll",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -2966,23 +3016,23 @@
     },
     {
       "path": "data/portfolio.json",
-      "bytes": 18707,
-      "sha256": "8163855b19b0cd1d942e0397c98a89021f2b4220eea1bfbe9a11f8cb639b0f10"
+      "bytes": 27294,
+      "sha256": "e25f6ddfb42844fdea2c230c62eeeb9423840f4902dcace440e8d32f23095924"
     },
     {
       "path": "index.html",
-      "bytes": 4573,
-      "sha256": "4441b456c0f8a71fc66f88dde2e38d0d82317bdb61a290f6d55ab9f41f54976a"
+      "bytes": 4848,
+      "sha256": "3de25febefbb6447eac9b1a99599f0234a4a87d0660a13269d26bdea3a777988"
     },
     {
       "path": "README.md",
-      "bytes": 704,
-      "sha256": "088820e678d7e3c2057fde00cd65072ce3e3391c6a9ec8eaa319fb8bc4a02183"
+      "bytes": 869,
+      "sha256": "f5e480d0a75837083d9cbfe6889679753b06c98aae24cb4af8aa4d5a5a9ab350"
     },
     {
-      "path": "styles.bda42b8097e7.css",
-      "bytes": 27587,
-      "sha256": "bda42b8097e70f0633bd492842f1c48040b47c31927da2d6e99e255cf17ddb61"
+      "path": "styles.bb6f32ab8e8b.css",
+      "bytes": 31919,
+      "sha256": "bb6f32ab8e8b25c9ebee72a10f21fbce7136de80c1829acb6d319c0890641777"
     }
   ]
 }
