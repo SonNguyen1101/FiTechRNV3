@@ -1,7 +1,7 @@
 {
   "schema": "FITECHHUB_PORTFOLIO_V1",
   "title": "FiTechHub",
-  "observed_at": "2026-10-23T05:07:34.969386+00:00",
+  "observed_at": "2026-10-23T12:53:20.201326+00:00",
   "mode": "PUBLIC_STATIC_SNAPSHOT",
   "projects": [
     {
@@ -732,6 +732,6 @@
   "execution_supported": false,
   "authority_supported": false,
   "auto_refresh_seconds": 30,
-  "snapshot_assembly_note": "Dashboard metadata captures reused from V9 with individual observation dates unchanged. Source-reviewed mission content has a separate review date; it does not refresh dashboard execution/acceptance states.",
-  "prior_snapshot_manifest_sha256": "d0c03847c4a680146c31075318311e176e2bdd36bb2c3c05c1894c20469c8f60"
+  "snapshot_assembly_note": "Dashboard metadata captures reused from V10 with individual observation dates unchanged. Source-reviewed mission content has a separate review date; it does not refresh dashboard execution/acceptance states.",
+  "prior_snapshot_manifest_sha256": "85e0a00322862f7bb9282fa0261fe46538bcd38eb7c00fb0b12bb34fa4a62ebc"
 }
