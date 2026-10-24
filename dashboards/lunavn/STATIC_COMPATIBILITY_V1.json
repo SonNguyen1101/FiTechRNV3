@@ -1,0 +1,15 @@
+{
+  "scope": "STATIC_BROWSER_BUILD_METADATA_ONLY",
+  "source_bundle_sha256": "cca419eebfc43fd31b582fd5001f35ab7226f4bde0cd455d957421c25d042226",
+  "public_bundle_sha256": "3d06a63700b14744c24ce79b9f2b8d55f5c695d8e29bfc794cff3ab3ef19a715",
+  "bundle": "assets/lunavn.3d06a63700b1.js",
+  "substitutions": {
+    "process.env.NEXT_PUBLIC_LUNAVN_VERSION": 1,
+    "process.env.NEXT_PUBLIC_LUNAVN_COMMIT": 1,
+    "process.env.NEXT_PUBLIC_LUNAVN_DIRTY": 1,
+    "process.env.NEXT_PUBLIC_LUNAVN_BUILT_AT": 1
+  },
+  "fallback": "Unknown version ?, empty commit/date and dirty=false; no source version invented",
+  "global_process_shim": false,
+  "data_refreshed": false
+}

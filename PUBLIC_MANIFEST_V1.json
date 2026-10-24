@@ -1070,9 +1070,9 @@
       "sha256": "775b428c7cc88949e4270f7f960eb0cf58ba77be089b0095db98d15bca6c01db"
     },
     {
-      "path": "dashboards/lunavn/assets/lunavn.js",
-      "bytes": 627867,
-      "sha256": "cca419eebfc43fd31b582fd5001f35ab7226f4bde0cd455d957421c25d042226"
+      "path": "dashboards/lunavn/assets/lunavn.3d06a63700b1.js",
+      "bytes": 627725,
+      "sha256": "3d06a63700b14744c24ce79b9f2b8d55f5c695d8e29bfc794cff3ab3ef19a715"
     },
     {
       "path": "dashboards/lunavn/assets/snapshot.css",
@@ -1122,17 +1122,22 @@
     {
       "path": "dashboards/lunavn/index.html",
       "bytes": 1009,
-      "sha256": "7dd1719f03ea22eac1300044d62fac6dcba29b9627f03915ef07f280064971b2"
+      "sha256": "71d12af9bd9ecab50e7a507ae2ccde9d2da22e9b4c04e3ece5603cf9cba2538b"
     },
     {
       "path": "dashboards/lunavn/provenance.json",
-      "bytes": 15448,
-      "sha256": "a143e87dfd5be55dc57b87cd0011e2cb797d6ccc850e597aab9d5f1fd56e5410"
+      "bytes": 15063,
+      "sha256": "07f48c923685dcd5c46457bff9d029da56453f83a310359386de37310818fedb"
     },
     {
       "path": "dashboards/lunavn/SNAPSHOT_DELIVERY_V14.json",
       "bytes": 414,
       "sha256": "7aa5ad16bcba211225f1241b2c08e259ed018b98fd2aa5250e88a7cbbd89a9a0"
+    },
+    {
+      "path": "dashboards/lunavn/STATIC_COMPATIBILITY_V1.json",
+      "bytes": 661,
+      "sha256": "f399b4aaf2bbca8a1239a13e755f600d4d6daf0a80dbbc70fd6664e8244f2594"
     },
     {
       "path": "dashboards/lunavn/THIRD_PARTY_LICENSES.txt",
@@ -2479,5 +2484,7 @@
       "bytes": 39008,
       "sha256": "e4607805265b533f03323ada7ffd2df9013bb1383e70a908d94e3374a9bbda50"
     }
-  ]
+  ],
+  "packaged_at": "2026-10-24",
+  "browser_compatibility_repair": "LunaVN client metadata constants; frozen data and other seven modules unchanged"
 }

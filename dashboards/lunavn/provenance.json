@@ -446,5 +446,6 @@
     "Next links mapped to hash routes; article page made synchronous for client routing.",
     "Persistent DEMO/static notice; namespaced local preferences; sign-in remains disabled."
   ],
-  "packaging_release": "V15"
+  "packaging_release": "V15",
+  "browser_build_compatibility": "STATIC_COMPATIBILITY_V1.json"
 }
