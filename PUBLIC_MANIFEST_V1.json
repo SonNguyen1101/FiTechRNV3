@@ -15,9 +15,9 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "app.1c00585e77fd.js",
-      "bytes": 26910,
-      "sha256": "1c00585e77fda738860975cda9e3c7c3aefb742295b7d621cada78fc350dd430"
+      "path": "app.3413fa3eab75.js",
+      "bytes": 27212,
+      "sha256": "3413fa3eab754e6af4181561f394815accca17864680c3b28735a3a57d68bcfd"
     },
     {
       "path": "assets/fonts/fonts.css",
@@ -2466,8 +2466,18 @@
     },
     {
       "path": "index.html",
-      "bytes": 5003,
-      "sha256": "1bab1164ad06524099bd8bf577c5e994a1e7889cc0a6f49d2744b084984c40ed"
+      "bytes": 5222,
+      "sha256": "9f41dcde4a1205a5a09d5704c8d868c17b0652ed4374fe4393dfd934229dfc07"
+    },
+    {
+      "path": "live.56b047218055.js",
+      "bytes": 18827,
+      "sha256": "56b04721805510c94a93d584f5b4d3e670842758c7a5fad2a00ebbf1100902b6"
+    },
+    {
+      "path": "live.8be754fef84a.css",
+      "bytes": 14513,
+      "sha256": "8be754fef84abb2a1ce91a0c6f5ffc818c2dd2380a62e32dd153d90b7ad0dbd4"
     },
     {
       "path": "missions.5f46134c9e4e.js",
@@ -2484,7 +2494,5 @@
       "bytes": 39008,
       "sha256": "e4607805265b533f03323ada7ffd2df9013bb1383e70a908d94e3374a9bbda50"
     }
-  ],
-  "packaged_at": "2026-10-24",
-  "browser_compatibility_repair": "LunaVN client metadata constants; frozen data and other seven modules unchanged"
+  ]
 }
